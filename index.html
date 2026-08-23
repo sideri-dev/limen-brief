@@ -1,48 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Limen</title>
-<meta name="description" content="Daily reading on AI interaction design.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limen — 2026-08-23</title>
 <style>
   :root {
-    --bg: #fbfbfa; --fg: #1a1a18; --muted: #6b6b66;
-    --rule: #e2e2dd; --accent: #2a2a26;
+    color-scheme: light dark;
+    --bg: #fdfcfa;
+    --fg: #1a1a1a;
+    --muted: #5a5a5a;
+    --accent: #1a1a1a;
+    --btn-bg: #1a1a1a;
+    --btn-fg: #fdfcfa;
+    --rule: #ddd8d0;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #161614; --fg: #eceae4; --muted: #98968e;
-            --rule: #2e2c28; --accent: #eceae4; }
+    :root {
+      --bg: #16161a;
+      --fg: #ececec;
+      --muted: #a3a3a3;
+      --accent: #ececec;
+      --btn-bg: #ececec;
+      --btn-fg: #16161a;
+      --rule: #33333a;
+    }
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+  }
   body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
-    font-size: 18px; line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+    font-family: system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
   }
-  main { max-width: 42rem; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
-  .mark {
-    font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--muted); margin: 0 0 3.5rem;
+  header.page-head {
+    margin-bottom: 2.5rem;
   }
-  h1 { font-size: 1.75rem; line-height: 1.3; font-weight: 600; margin: 0 0 1.5rem; letter-spacing: -0.01em; }
-  p { margin: 0 0 1.25rem; }
-  .lede { color: var(--fg); }
-  .note { color: var(--muted); font-size: 0.95rem; }
-  hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
-  footer { color: var(--muted); font-size: 0.85rem; }
+  header.page-head .date {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+  }
+  header.page-head .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  h2.section-head {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 3rem 0 1.5rem;
+    font-weight: 600;
+  }
+  article.item {
+    margin-bottom: 2.25rem;
+  }
+  article.item .headline {
+    font-weight: 700;
+    font-size: 1.08rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.45;
+  }
+  article.item p {
+    margin: 0 0 0.9rem;
+  }
+  a.source-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.85rem 1rem;
+    margin-top: 0.5rem;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    word-break: break-word;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2.25rem 0;
+  }
+  .run-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .question {
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+  }
 </style>
 </head>
 <body>
-<main>
-  <p class="mark">Limen</p>
-  <h1>Not yet publishing.</h1>
-  <p class="lede">This page will carry a short daily brief on AI interaction design — the research on how people actually behave with these systems, the capability shifts that change what an interface can be, how shipped products are really designed, and the interaction of AI that has no text box at all.</p>
-  <p class="note">The pipeline behind it is running. The first brief appears here once it has something worth reading.</p>
-  <hr>
-  <footer><em>Limen</em> — Latin, <em>threshold</em>. The boundary where a person meets a system, and the work of deciding what crosses it.</footer>
-</main>
+
+<header class="page-head">
+  <p class="date">2026-08-23</p>
+  <p class="meta">~6 minute read</p>
+</header>
+
+<h2 class="section-head">Today</h2>
+
+<article class="item">
+  <p class="headline">A brief demo of "I can see you" does what a face is supposed to do — without the anthropomorphization tax.</p>
+  <p>A HAI Symposium 2026 experiment put a faceless, deliberately minimal-design agent in front of 40 participants and found zero reflexive gaze-cueing effect — until half the group got one short pre-interaction where the agent turned toward a held-up piece of paper, showing it could "see." That group alone showed a real interaction effect (p=0.022) and reaction-time differences that vanished entirely without the demo (p&lt;0.001 vs. p=0.721), plus higher anthropomorphism scores from an identical physical stimulus.</p>
+  <p>The finding upends the assumption that faces or cuteness are what earn social engagement from users — a brief, honest disclosure of what the system can perceive did the same work, and the authors argue it sidesteps the over-anthropomorphization risks (parasocial dependency, lost critical distance) that a face invites. For anyone building a chat or voice avatar, gaze-following looks like a usable implicit signal for whether a user currently holds an "intentional stance" toward the agent — something to read, not just something to design.</p>
+  <a class="source-btn" href="https://www.hai-conference.net/" target="_blank" rel="noopener">HAI Symposium 2026, paper G-29 →</a>
+</article>
+
+<hr class="divider">
+
+<article class="item">
+  <p class="headline">One tunable "assertiveness" slider beat both raw confidence scores and fixed autonomy settings for deciding when a robot should act.</p>
+  <p>WAFFLE, HRI 2026's Best Paper in the Systems track, predicts bite timing for a feeding robot from a wearable's read on head movement, chewing, and talking, then converts that prediction into a stop/go decision through a single user-adjustable threshold. Across 15 participants it matched or beat baseline approaches on feeling of control, robot understanding, and workload, and a follow-up generalization study ran it with motor-impaired participants using a different robot arm in their own homes.</p>
+  <p>The specific move worth stealing is the interface, not the sensor: one tunable knob rather than a confidence number nobody can act on or a fixed autonomy setting nobody can adjust — a pattern that generalizes to any assistive system deciding when to act on an ambiguous physical cue.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2510.03910" target="_blank" rel="noopener">arXiv 2510.03910 →</a>
+</article>
+
+<hr class="divider">
+
+<article class="item">
+  <p class="headline">Hybrid interfaces don't self-regulate risk — who the user is predicts delegation far better than what the task is.</p>
+  <p>A 73-person study at HAI 2026 put people through 16 CRUD tasks in a CMS with an MCP-connected agent, comparing traditional-only, AI-first, and hybrid conditions. AI assistance cut clicks and navigation but not total task time, and there was no relationship between how risky a task was and how much people delegated to the agent — individual differences accounted for roughly half the variance (ICC=.50).</p>
+  <p>That kills the comfortable assumption that a hybrid GUI/agent interface will naturally gate itself toward caution on high-stakes actions. Approval and confirmation logic needs to be set explicitly by task risk, and the more useful lever for tuning delegation is a per-user default, not a per-task heuristic.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.19551" target="_blank" rel="noopener">arXiv 2608.19551 →</a>
+</article>
+
+<hr class="divider">
+
+<article class="item">
+  <p class="headline">Linear rejected giving its coding agent broad API access on purpose — and named the tradeoff.</p>
+  <p>Building Linear Agent, the team chose not to hand it the Linear SDK, a CLI, or direct GraphQL access, instead encoding constraints into the agent's tools themselves rather than writing them into a prompt. Their own framing: "we trade some breadth for predictability," describing it as replacing software's old goal of predictability with a more deliberate form of control.</p>
+  <p>It's a clean, reasoned counter to the default instinct of giving an agent maximum tool access and trusting the model to behave — tool-level constraint beats prompt-level instruction once you're operating at scale.</p>
+  <a class="source-btn" href="https://linear.app/blog" target="_blank" rel="noopener">Linear — How we built Linear Agent →</a>
+</article>
+
+<hr class="divider">
+
+<article class="item">
+  <p class="headline">Claude's computer-use tool can now take several actions per model call — the latency tax on GUI agents just dropped.</p>
+  <p>Anthropic made computer use, the Skills API, and the Files API generally available, and the headline change is architectural: the updated tool lets Claude execute multiple actions per turn instead of one action per model call, meaning fewer round trips and less time per task. Computer use is also now eligible for HIPAA-regulated workloads under Anthropic's BAA. One customer, Asteroid, is quoted cutting a workflow from 32 minutes to 13.</p>
+  <p>The practical shift is that GUI-automation agents can now plausibly sit inside a synchronous, user-facing flow instead of needing to run async in the background — and the HIPAA eligibility changes how much of a regulated workflow can be delegated versus gated behind a human.</p>
+  <a class="source-btn" href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic — Claude news →</a>
+</article>
+
+<div class="run-note">
+  <p>Twelve more items cleared verification but didn't make today's cap of five — including a Replit post on why stacking prompt reminders backfires, a 10-day UIST field study on feed personalization, and Cerebras's CS-4 announcement.</p>
+</div>
+
 </body>
 </html>
