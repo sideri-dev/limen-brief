@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-08-23</title>
+<title>Limen — 2026-08-24</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -110,57 +110,80 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-08-23</p>
-  <p class="meta">~6 minute read</p>
+  <p class="date">2026-08-24</p>
+  <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">A brief demo of "I can see you" does what a face is supposed to do — without the anthropomorphization tax.</p>
-  <p>A HAI Symposium 2026 experiment put a faceless, deliberately minimal-design agent in front of 40 participants and found zero reflexive gaze-cueing effect — until half the group got one short pre-interaction where the agent turned toward a held-up piece of paper, showing it could "see." That group alone showed a real interaction effect (p=0.022) and reaction-time differences that vanished entirely without the demo (p&lt;0.001 vs. p=0.721), plus higher anthropomorphism scores from an identical physical stimulus.</p>
-  <p>The finding upends the assumption that faces or cuteness are what earn social engagement from users — a brief, honest disclosure of what the system can perceive did the same work, and the authors argue it sidesteps the over-anthropomorphization risks (parasocial dependency, lost critical distance) that a face invites. For anyone building a chat or voice avatar, gaze-following looks like a usable implicit signal for whether a user currently holds an "intentional stance" toward the agent — something to read, not just something to design.</p>
-  <a class="source-btn" href="https://www.hai-conference.net/" target="_blank" rel="noopener">HAI Symposium 2026, paper G-29 →</a>
+  <p class="headline">Two-thirds of the time, a user isn't updating their trust at all — and a slider can't tell you that.</p>
+  <p>A reanalysis of a preregistered CHI 2026 dataset (240 participants, 7,200 trials) finds most trial-level belief changes are exactly zero (67.3%) or nearly so (76.4% under five points), and the two kinds of movement run on different signals: whether feedback disagrees with belief predicts <em>if</em> a person updates at all, direction predicts <em>how much and which way</em> — but only among the third of trials that move.</p>
+  <p>That kills a quiet assumption behind most trust-calibration instrumentation: a continuous slider or check-in survey treats every reading as movement, and pooling non-movers with movers washes out the real signal. Any in-product trust measurement needs a gate that asks whether the user updated before interpreting how much.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.20828" target="_blank" rel="noopener">arXiv 2608.20828 (CHI 2026 reanalysis) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">One tunable "assertiveness" slider beat both raw confidence scores and fixed autonomy settings for deciding when a robot should act.</p>
-  <p>WAFFLE, HRI 2026's Best Paper in the Systems track, predicts bite timing for a feeding robot from a wearable's read on head movement, chewing, and talking, then converts that prediction into a stop/go decision through a single user-adjustable threshold. Across 15 participants it matched or beat baseline approaches on feeling of control, robot understanding, and workload, and a follow-up generalization study ran it with motor-impaired participants using a different robot arm in their own homes.</p>
-  <p>The specific move worth stealing is the interface, not the sensor: one tunable knob rather than a confidence number nobody can act on or a fixed autonomy setting nobody can adjust — a pattern that generalizes to any assistive system deciding when to act on an ambiguous physical cue.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2510.03910" target="_blank" rel="noopener">arXiv 2510.03910 →</a>
+  <p class="headline">OpenAI killed its standalone Atlas browser nine months after launch — folding it into ChatGPT and a Chrome extension instead.</p>
+  <p>TechCrunch confirms the shutdown, framing it as OpenAI concluding "the browser is a feature, not the destination" — its own characterization, not a quoted company line, but the shutdown date (August 9, 2026) and original October 2025 launch date are independently confirmed via OpenAI's own developer forum and original announcement.</p>
+  <p>It's a clean, verified failure of the "build a dedicated AI-first app" instinct for a capability — page-aware browsing — that people apparently wanted folded into the tool they already had open, not a new destination. Worth holding against Adobe's opposite bet the same week: a brand-new dedicated review surface for agent work inside Workfront.</p>
+  <a class="source-btn" href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noopener">TechCrunch →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Hybrid interfaces don't self-regulate risk — who the user is predicts delegation far better than what the task is.</p>
-  <p>A 73-person study at HAI 2026 put people through 16 CRUD tasks in a CMS with an MCP-connected agent, comparing traditional-only, AI-first, and hybrid conditions. AI assistance cut clicks and navigation but not total task time, and there was no relationship between how risky a task was and how much people delegated to the agent — individual differences accounted for roughly half the variance (ICC=.50).</p>
-  <p>That kills the comfortable assumption that a hybrid GUI/agent interface will naturally gate itself toward caution on high-stakes actions. Approval and confirmation logic needs to be set explicitly by task risk, and the more useful lever for tuning delegation is a per-user default, not a per-task heuristic.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.19551" target="_blank" rel="noopener">arXiv 2608.19551 →</a>
+  <p class="headline">Anthropic's new "Concise" output style draws a hard, citable line: shrink the narration, never the safety-relevant content.</p>
+  <p>Claude Code's docs describe a style that "leads with the result, skips preamble and narration, and keeps responses short by default" while doing the same underlying work — but explicitly refuses to compress "error reports, security warnings, and confirmations for destructive actions."</p>
+  <p>The exact ship date can't be pinned down (Anthropic's changelog carries no per-version dates), so read this as recent rather than dated to a specific day. It's a directly reusable pattern for approval or confirmation UI in an agentic tool: verbosity is a dial, but there's a fixed floor of content that never shortens.</p>
+  <a class="source-btn" href="https://code.claude.com/docs/en/output-styles" target="_blank" rel="noopener">Claude Code docs — output styles →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Linear rejected giving its coding agent broad API access on purpose — and named the tradeoff.</p>
-  <p>Building Linear Agent, the team chose not to hand it the Linear SDK, a CLI, or direct GraphQL access, instead encoding constraints into the agent's tools themselves rather than writing them into a prompt. Their own framing: "we trade some breadth for predictability," describing it as replacing software's old goal of predictability with a more deliberate form of control.</p>
-  <p>It's a clean, reasoned counter to the default instinct of giving an agent maximum tool access and trusting the model to behave — tool-level constraint beats prompt-level instruction once you're operating at scale.</p>
-  <a class="source-btn" href="https://linear.app/blog" target="_blank" rel="noopener">Linear — How we built Linear Agent →</a>
+  <p class="headline">A voice model just posted sub-90ms latency — low enough to support real interruption, not just fast turn-taking.</p>
+  <p>Cartesia's Sonic-3.6, paired with its Ink-2 transcription model, claims "sub-90ms TTS and 100ms transcript latency with native turn detection," and Artificial Analysis's independent leaderboard puts it #1 on both its speech arenas, ahead of Speechify's Simba 3.2 and Alibaba's Qwen-Audio-3.0-TTS-Plus.</p>
+  <p>That matters because it sits below the roughly 200ms threshold this lane treats as the line between "the system responds" and "the system can be talked over" — a voice interface that takes turns versus one that supports genuine barge-in.</p>
+  <a class="source-btn" href="https://cartesia.ai/launch" target="_blank" rel="noopener">Cartesia — Sonic-3.6 launch →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Claude's computer-use tool can now take several actions per model call — the latency tax on GUI agents just dropped.</p>
-  <p>Anthropic made computer use, the Skills API, and the Files API generally available, and the headline change is architectural: the updated tool lets Claude execute multiple actions per turn instead of one action per model call, meaning fewer round trips and less time per task. Computer use is also now eligible for HIPAA-regulated workloads under Anthropic's BAA. One customer, Asteroid, is quoted cutting a workflow from 32 minutes to 13.</p>
-  <p>The practical shift is that GUI-automation agents can now plausibly sit inside a synchronous, user-facing flow instead of needing to run async in the background — and the HIPAA eligibility changes how much of a regulated workflow can be delegated versus gated behind a human.</p>
-  <a class="source-btn" href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic — Claude news →</a>
+  <p class="headline">Warm, empathetic chatbot design can inflate trust independent of whether the system is actually safe — and mental-health AI is where that gap shows up first.</p>
+  <p>A 61-paper survey proposes separating trust into three layers — how much a person trusts the system, how trustworthy the interaction itself is, and how trustworthy the underlying AI is — and argues the field has been optimizing the wrong one: "empathetic chatbots can elicit strong user trust without commensurate safety, while safer systems are under-trusted when their boundaries are opaque."</p>
+  <p>For any high-stakes advisory product, that's a design-team-level split worth adopting directly: warm copy and safety-boundary disclosure are two separate levers, and only one of them should move the trust number. The empirical base here is mental-health specific — treat the framework, not the numbers, as portable elsewhere.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2604.20166" target="_blank" rel="noopener">arXiv 2604.20166 →</a>
 </article>
+
+<h2 class="section-head">Yesterday's dossier</h2>
+
+<article class="item">
+  <p class="headline">Perceived intention, not a face: what the HAI 2026 gaze-cueing result actually establishes.</p>
+  <p>Corrects yesterday's #1 digest item on the record: the underlying paper was presented February 28, 2026, not August, and the venue explicitly carries no peer review — the digest's "peer-reviewed experimental result" framing was wrong. The gaze-cueing mechanism itself is fourteen years old; what's genuinely new is inducing the belief via a witnessed demonstration rather than an instruction, and doing it with a faceless cue-giver.</p>
+  <p>The manipulation is confounded (exposure to the physical robot isn't separated from the capability demonstration), and the paper's proposed use — gaze-following as a covert probe of user stance — runs into a known dissociation between implicit gaze measures and self-reported trust.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-23-perceived-intention-joint-attention.md" target="_blank" rel="noopener">Full dossier →</a>
+</article>
+
+<h2 class="section-head">Needs your answer</h2>
+
+<div class="question">
+  <p><strong>2026-08-24 / curator:</strong> Second cycle running that ACM DL blocks both <code>curl</code> and <code>WebFetch</code> with a Cloudflare challenge, and a corroboration source (MarkTechPost) failed the same way this cycle. Worked around both times — is this worth a standing fix, a standing noted gap, or something else?</p>
+</div>
+<div class="question">
+  <p><strong>2026-08-23 / dossier-writer:</strong> Yesterday's #1 digest item shipped with a wrong presentation date and a false "peer-reviewed" claim that the dossier caught. Should the verifier add a one-line venue/review-status check whenever a ranking leans on "peer-reviewed," and should published digests carry a visible correction pointer to the dossier?</p>
+</div>
+<div class="question">
+  <p><strong>2026-08-23 / verifier (via curator):</strong> e-Gov's public-comment portal blocks keyword search outright and its RSS only shows ~5 days of postings — the monthly Japan sweep can't currently guarantee it's found every live comment window. Invest in an alternate access path, or accept and note the gap every sweep?</p>
+</div>
+
+<a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 
 <div class="run-note">
-  <p>Twelve more items cleared verification but didn't make today's cap of five — including a Replit post on why stacking prompt reminders backfires, a 10-day UIST field study on feed personalization, and Cerebras's CS-4 announcement.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md" target="_blank" rel="noopener">Read the full version →</a>
 </div>
 
 </body>
