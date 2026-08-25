@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-08-24</title>
+<title>Limen — 2026-08-25</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -110,74 +110,74 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-08-24</p>
+  <p class="date">2026-08-25</p>
   <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Two-thirds of the time, a user isn't updating their trust at all — and a slider can't tell you that.</p>
-  <p>A reanalysis of a preregistered CHI 2026 dataset (240 participants, 7,200 trials) finds most trial-level belief changes are exactly zero (67.3%) or nearly so (76.4% under five points), and the two kinds of movement run on different signals: whether feedback disagrees with belief predicts <em>if</em> a person updates at all, direction predicts <em>how much and which way</em> — but only among the third of trials that move.</p>
-  <p>That kills a quiet assumption behind most trust-calibration instrumentation: a continuous slider or check-in survey treats every reading as movement, and pooling non-movers with movers washes out the real signal. Any in-product trust measurement needs a gate that asks whether the user updated before interpreting how much.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.20828" target="_blank" rel="noopener">arXiv 2608.20828 (CHI 2026 reanalysis) →</a>
+  <p class="headline">Choosing AI over a human for emotional support matters more than which one you get — and 28 days of use erodes preference for humans.</p>
+  <p>Across three experiments (N=1,951), people rated AI emotional support as better than human support only when they'd chosen the AI themselves rather than been routed to it — assignment, not the AI's actual output quality, drove the gap. A companion 28-day field study with OpenAI (N=981) found daily conversations shifted stated preference toward AI and away from humans, but only once conversations turned personal; purely functional use didn't move the needle.</p>
+  <p>The design consequence is concrete: forced or default routing to an AI support agent measurably degrades perceived quality relative to letting someone opt in, and sustained personal-topic use is itself a preference-shifting mechanism rather than a neutral utility — which belongs in consent and disclosure design, not just a conversion metric.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.23196" target="_blank" rel="noopener">arXiv 2608.23196 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">OpenAI killed its standalone Atlas browser nine months after launch — folding it into ChatGPT and a Chrome extension instead.</p>
-  <p>TechCrunch confirms the shutdown, framing it as OpenAI concluding "the browser is a feature, not the destination" — its own characterization, not a quoted company line, but the shutdown date (August 9, 2026) and original October 2025 launch date are independently confirmed via OpenAI's own developer forum and original announcement.</p>
-  <p>It's a clean, verified failure of the "build a dedicated AI-first app" instinct for a capability — page-aware browsing — that people apparently wanted folded into the tool they already had open, not a new destination. Worth holding against Adobe's opposite bet the same week: a brand-new dedicated review surface for agent work inside Workfront.</p>
-  <a class="source-btn" href="https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/" target="_blank" rel="noopener">TechCrunch →</a>
+  <p class="headline">A field deployment with 34 professional counsellors found interpretive authority, not accuracy, decided whether they kept using the AI tool.</p>
+  <p>Across 36 threads, 321 messages and 1,257 AI outputs, the study concludes "professional autonomy and information accuracy are decisive for sustained acceptance" — but counsellors specifically valued outputs that stimulated their own professional reflection over ones that were simply more correct.</p>
+  <p>That names the real design tradeoff for any AI copilot built for licensed or credentialed practice: an assistant that outperforms on raw accuracy but crowds out the practitioner's interpretive role will lose sustained use to one that supports it, even at some accuracy cost. The venue claim (IEEE ICTAI 2025) checked out independently via Crossref — genuinely peer-reviewed, not a vendor self-report.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.22251" target="_blank" rel="noopener">arXiv 2608.22251 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Anthropic's new "Concise" output style draws a hard, citable line: shrink the narration, never the safety-relevant content.</p>
-  <p>Claude Code's docs describe a style that "leads with the result, skips preamble and narration, and keeps responses short by default" while doing the same underlying work — but explicitly refuses to compress "error reports, security warnings, and confirmations for destructive actions."</p>
-  <p>The exact ship date can't be pinned down (Anthropic's changelog carries no per-version dates), so read this as recent rather than dated to a specific day. It's a directly reusable pattern for approval or confirmation UI in an agentic tool: verbosity is a dial, but there's a fixed floor of content that never shortens.</p>
-  <a class="source-btn" href="https://code.claude.com/docs/en/output-styles" target="_blank" rel="noopener">Claude Code docs — output styles →</a>
+  <p class="headline">Anthropic made Claude Code's auto mode the default, with data arguing that per-action approval habituates into a rubber stamp.</p>
+  <p>Users approve 97% of permission prompts but reject 39% of proposed plans — evidence read as click-through fatigue on granular approval. In a controlled test with 1,053 paid testers, human review caught only 13.6% of dangerous commands versus auto mode's 89%; in production (May–June 2026), 6.3% of manually-approved sessions contained an unrequested harmful action versus 2.4% of auto-mode sessions.</p>
+  <p>The design move worth taking from this: replace "ask every time" with "classify the action, escalate only the irreversible ones" — a genuinely different approval-surface pattern, not just a permissions default flip. Worth reading as Anthropic's claim about its own product — no independent audit of the study exists — and the takeaway here is the interruption pattern, not an endorsement of the tool itself.</p>
+  <a class="source-btn" href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Anthropic — auto mode default →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A voice model just posted sub-90ms latency — low enough to support real interruption, not just fast turn-taking.</p>
-  <p>Cartesia's Sonic-3.6, paired with its Ink-2 transcription model, claims "sub-90ms TTS and 100ms transcript latency with native turn detection," and Artificial Analysis's independent leaderboard puts it #1 on both its speech arenas, ahead of Speechify's Simba 3.2 and Alibaba's Qwen-Audio-3.0-TTS-Plus.</p>
-  <p>That matters because it sits below the roughly 200ms threshold this lane treats as the line between "the system responds" and "the system can be talked over" — a voice interface that takes turns versus one that supports genuine barge-in.</p>
-  <a class="source-btn" href="https://cartesia.ai/launch" target="_blank" rel="noopener">Cartesia — Sonic-3.6 launch →</a>
+  <p class="headline">A bare just-in-time warning cut compliance with AI dark patterns by 18 points — but stacking on "cognitive forcing" killed the effect.</p>
+  <p>A preregistered five-condition trial (N=150) found only plain, well-timed warnings significantly reduced compliance with manipulative AI recommendations, from 71.7% to 53.7%; prebunking and added forcing steps didn't move behavior at all.</p>
+  <p>The lesson for anyone designing a warning against dark-pattern AI output is counterintuitive: more friction isn't more protective, and stacking interventions can wash out the one that actually works. Timing and simplicity beat elaboration.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.21841" target="_blank" rel="noopener">arXiv 2608.21841 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Warm, empathetic chatbot design can inflate trust independent of whether the system is actually safe — and mental-health AI is where that gap shows up first.</p>
-  <p>A 61-paper survey proposes separating trust into three layers — how much a person trusts the system, how trustworthy the interaction itself is, and how trustworthy the underlying AI is — and argues the field has been optimizing the wrong one: "empathetic chatbots can elicit strong user trust without commensurate safety, while safer systems are under-trusted when their boundaries are opaque."</p>
-  <p>For any high-stakes advisory product, that's a design-team-level split worth adopting directly: warm copy and safety-boundary disclosure are two separate levers, and only one of them should move the trust number. The empirical base here is mental-health specific — treat the framework, not the numbers, as portable elsewhere.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2604.20166" target="_blank" rel="noopener">arXiv 2604.20166 →</a>
+  <p class="headline">The first field study of fatigue sensors on real train drivers found EEG and skin-conductance readings collapse outside the simulator — heart-rate variability and breathing don't.</p>
+  <p>Comparing a simulator study (14 people) against real rail operation (6 drivers), only HRV and breathing rate showed consistent fatigue-related change in both settings; EEG frontal theta, parietal alpha/beta, EDA and blink duration all failed to transfer from lab to cab.</p>
+  <p>That's a direct, general answer for anyone building a fatigue- or state-sensing wearable interface: pick sensing modalities that have been shown to survive real-world deployment, not just the modalities that read most cleanly in a controlled study — EEG and blink-detection remain unvalidated once you leave the lab.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.23361" target="_blank" rel="noopener">arXiv 2608.23361 →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p class="headline">Perceived intention, not a face: what the HAI 2026 gaze-cueing result actually establishes.</p>
-  <p>Corrects yesterday's #1 digest item on the record: the underlying paper was presented February 28, 2026, not August, and the venue explicitly carries no peer review — the digest's "peer-reviewed experimental result" framing was wrong. The gaze-cueing mechanism itself is fourteen years old; what's genuinely new is inducing the belief via a witnessed demonstration rather than an instruction, and doing it with a faceless cue-giver.</p>
-  <p>The manipulation is confounded (exposure to the physical robot isn't separated from the capability demonstration), and the paper's proposed use — gaze-following as a covert probe of user stance — runs into a known dissociation between implicit gaze measures and self-reported trust.</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-23-perceived-intention-joint-attention.md" target="_blank" rel="noopener">Full dossier →</a>
+  <p class="headline">The belief update gate: what the 67.3%-zero result establishes, and what it cannot yet separate.</p>
+  <p>The reanalysis checks out — 67.3% of 7,200 trial-level belief reports about an AI's future accuracy don't move at all, and the pooled updating slope splits into a gate (does the report move) and a magnitude (how much, among reports that do). The gate structure replicates outside HCI in experimental economics, but whether people are actually not updating or just reporting coarsely on an under-specified slider is unresolved — the paper's own appendix shows a coarse-reporting model predicts the zero rate almost exactly.</p>
+  <p>The load-bearing takeaway survives the caveats: pooled trust/confidence-slider metrics conflate a gate and a magnitude, and product telemetry needs to separate them.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-24-belief-update-gate.md" target="_blank" rel="noopener">Full dossier →</a>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
 
 <div class="question">
-  <p><strong>2026-08-24 / curator:</strong> Second cycle running that ACM DL blocks both <code>curl</code> and <code>WebFetch</code> with a Cloudflare challenge, and a corroboration source (MarkTechPost) failed the same way this cycle. Worked around both times — is this worth a standing fix, a standing noted gap, or something else?</p>
+  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #4 (uncertainty/confidence display) now overlaps the trust-calibration dossier on its research half — narrow #4 to the shipped-product/removal-archaeology half only, or leave it as written?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-23 / dossier-writer:</strong> Yesterday's #1 digest item shipped with a wrong presentation date and a false "peer-reviewed" claim that the dossier caught. Should the verifier add a one-line venue/review-status check whenever a ranking leans on "peer-reviewed," and should published digests carry a visible correction pointer to the dossier?</p>
+  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #9 (disclosure/labeling regimes compared) now overlaps the AI事業者ガイドライン dossier on the Japan quarter — narrow #9 to the EU/Singapore/US comparative frame with Japan as baseline only, or leave it as written?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-23 / verifier (via curator):</strong> e-Gov's public-comment portal blocks keyword search outright and its RSS only shows ~5 days of postings — the monthly Japan sweep can't currently guarantee it's found every live comment window. Invest in an alternate access path, or accept and note the gap every sweep?</p>
+  <p><strong>2026-08-25 / curator (via verifier):</strong> Two new source-access failures this cycle — developer.meta.com and ai.google.dev are JS-rendered SPAs unreadable via raw curl (distinct from Cloudflare-blocking), and ACM DL has now blocked three consecutive cycles. Should both become STANDING.md-documented workaround rules, the way the e-Gov gap already is?</p>
 </div>
 
 <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
