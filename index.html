@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-08-25</title>
+<title>Limen — 2026-08-26</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -101,6 +101,12 @@
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
   }
+  .run-note ul {
+    padding-left: 1.2rem;
+  }
+  .run-note li {
+    margin-bottom: 0.6rem;
+  }
   .question {
     margin-bottom: 1rem;
     font-size: 0.98rem;
@@ -110,74 +116,74 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-08-25</p>
+  <p class="date">2026-08-26</p>
   <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Choosing AI over a human for emotional support matters more than which one you get — and 28 days of use erodes preference for humans.</p>
-  <p>Across three experiments (N=1,951), people rated AI emotional support as better than human support only when they'd chosen the AI themselves rather than been routed to it — assignment, not the AI's actual output quality, drove the gap. A companion 28-day field study with OpenAI (N=981) found daily conversations shifted stated preference toward AI and away from humans, but only once conversations turned personal; purely functional use didn't move the needle.</p>
-  <p>The design consequence is concrete: forced or default routing to an AI support agent measurably degrades perceived quality relative to letting someone opt in, and sustained personal-topic use is itself a preference-shifting mechanism rather than a neutral utility — which belongs in consent and disclosure design, not just a conversion metric.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.23196" target="_blank" rel="noopener">arXiv 2608.23196 →</a>
+  <p class="headline">Euro NCAP's 2026 protocol makes menu-based touch input more than two steps an automatic fail for nine driving functions — and manufacturers are visibly reversing course.</p>
+  <p>For nine safety-critical functions — indicators, gear selector, hazard lights, eCall, horn, wipers, full beam, vehicle assistance — the protocol forbids burying the control more than two menu taps deep: "a Function implementation which consists of a Menu-based touch input (>2 steps) is never acceptable." In force since Jan 1, 2026; it scores the worst qualifying path, not the best, so a good shortcut doesn't rescue a bad fallback.</p>
+  <p>Mercedes CEO Ola Källenius already says the industry "might have gone a little too far" toward digital controls, promising "the most sensible buttons" back and fitting a hard-key strip to its new electric GLC. For anyone specifying in-car or in-home HMI, this is a binding floor.</p>
+  <a class="source-btn" href="https://cdn.euroncap.com/cars/assets/sd_203_driver_controls_test_procedure_v11_a8155228ca.pdf" target="_blank" rel="noopener">Euro NCAP SD 203 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A field deployment with 34 professional counsellors found interpretive authority, not accuracy, decided whether they kept using the AI tool.</p>
-  <p>Across 36 threads, 321 messages and 1,257 AI outputs, the study concludes "professional autonomy and information accuracy are decisive for sustained acceptance" — but counsellors specifically valued outputs that stimulated their own professional reflection over ones that were simply more correct.</p>
-  <p>That names the real design tradeoff for any AI copilot built for licensed or credentialed practice: an assistant that outperforms on raw accuracy but crowds out the practitioner's interpretive role will lose sustained use to one that supports it, even at some accuracy cost. The venue claim (IEEE ICTAI 2025) checked out independently via Crossref — genuinely peer-reviewed, not a vendor self-report.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.22251" target="_blank" rel="noopener">arXiv 2608.22251 →</a>
+  <p class="headline">A memory feature can ace a recall-accuracy benchmark and still fail the thing users actually notice — the gap measured 71 points.</p>
+  <p>A four-month deployment (40 users, 1,872 sessions, seven memory conditions) found direct-QA recall accuracy ranged from 19.7% to 70.1% across conditions, but satisfaction didn't move at all. Holding model and context fixed, the same system that scored 78.8% when asked directly about a fact volunteered only 7.9% of it unprompted in conversation — a 71-point gap between what memory "knows" and what it surfaces.</p>
+  <p>Only natural-integration, not QA-accuracy, correlated with satisfaction: test whether memory surfaces itself, not just whether it can be interrogated.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.24189" target="_blank" rel="noopener">arXiv 2608.24189 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Anthropic made Claude Code's auto mode the default, with data arguing that per-action approval habituates into a rubber stamp.</p>
-  <p>Users approve 97% of permission prompts but reject 39% of proposed plans — evidence read as click-through fatigue on granular approval. In a controlled test with 1,053 paid testers, human review caught only 13.6% of dangerous commands versus auto mode's 89%; in production (May–June 2026), 6.3% of manually-approved sessions contained an unrequested harmful action versus 2.4% of auto-mode sessions.</p>
-  <p>The design move worth taking from this: replace "ask every time" with "classify the action, escalate only the irreversible ones" — a genuinely different approval-surface pattern, not just a permissions default flip. Worth reading as Anthropic's claim about its own product — no independent audit of the study exists — and the takeaway here is the interruption pattern, not an endorsement of the tool itself.</p>
-  <a class="source-btn" href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Anthropic — auto mode default →</a>
+  <p class="headline">Handing an AI the final call changes what it's willing to commit to — even when its rule-following is otherwise perfect.</p>
+  <p>A controlled audit of three LLMs found that when two applicable rules pointed to different actions, the models "almost never committed when users retained authority, but committed in every delegated case," despite executing both rules perfectly when directly instructed.</p>
+  <p>The divergence lives entirely in authority framing, not capability — a control-surface decision for multi-stakeholder agent features: does the user keep the tie-break, or hand it off. Testable per product, independent of the model.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.23966" target="_blank" rel="noopener">arXiv 2608.23966 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A bare just-in-time warning cut compliance with AI dark patterns by 18 points — but stacking on "cognitive forcing" killed the effect.</p>
-  <p>A preregistered five-condition trial (N=150) found only plain, well-timed warnings significantly reduced compliance with manipulative AI recommendations, from 71.7% to 53.7%; prebunking and added forcing steps didn't move behavior at all.</p>
-  <p>The lesson for anyone designing a warning against dark-pattern AI output is counterintuitive: more friction isn't more protective, and stacking interventions can wash out the one that actually works. Timing and simplicity beat elaboration.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.21841" target="_blank" rel="noopener">arXiv 2608.21841 →</a>
+  <p class="headline">A webcam-driven tutoring interface silently swaps its own explanation style mid-conversation based on inferred confusion or boredom — and no one could tell.</p>
+  <p>Aura, from ETH Zürich, infers boredom, confusion, frustration or engagement from facial expression and hot-swaps its response style in under 10ms at sentence boundaries, undisclosed. In a 20-person study against GPT-4o and Llama-3-8B, its learning-gain edge holds against Llama-3 but is statistically tied with GPT-4o once the full comparison runs; the cleaner win is speed — 73 seconds per task against GPT-4o's 93 and Llama-3's 100.</p>
+  <p>More telling: asked directly, no participant reported noticing an abrupt shift, and 11 of 20 still ranked Aura first. Strong evidence that undetected mid-generation adaptation is achievable and preferred in aggregate — making "the user should always tell it changed" a design choice being traded away for efficiency, not a free assumption.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.24224" target="_blank" rel="noopener">arXiv 2608.24224 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">The first field study of fatigue sensors on real train drivers found EEG and skin-conductance readings collapse outside the simulator — heart-rate variability and breathing don't.</p>
-  <p>Comparing a simulator study (14 people) against real rail operation (6 drivers), only HRV and breathing rate showed consistent fatigue-related change in both settings; EEG frontal theta, parietal alpha/beta, EDA and blink duration all failed to transfer from lab to cab.</p>
-  <p>That's a direct, general answer for anyone building a fatigue- or state-sensing wearable interface: pick sensing modalities that have been shown to survive real-world deployment, not just the modalities that read most cleanly in a controlled study — EEG and blink-detection remain unvalidated once you leave the lab.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.23361" target="_blank" rel="noopener">arXiv 2608.23361 →</a>
+  <p class="headline">A position paper names eight concrete interface mechanisms that actually preserve human oversight of AI agents, not just the gesture of a human in the loop.</p>
+  <p>Its core claim is structural: "the very act of being an overseer degrades the capacities oversight requires" — oversight design has to fight the erosion of the overseer's own judgment, not just police the AI. Its Section 5 taxonomy is genuinely usable: delay-and-choice mechanisms (let the user decide whether and when to see the AI's output), batch review (one diff for a completed unit, not action-by-action), and override-rate monitoring as a proxy for creeping approval fatigue.</p>
+  <p>No empirical study backs it — cite the argument, not the evidence — but each mechanism is a decision surface for agent approval flows.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.23642" target="_blank" rel="noopener">arXiv 2608.23642 →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p class="headline">The belief update gate: what the 67.3%-zero result establishes, and what it cannot yet separate.</p>
-  <p>The reanalysis checks out — 67.3% of 7,200 trial-level belief reports about an AI's future accuracy don't move at all, and the pooled updating slope splits into a gate (does the report move) and a magnitude (how much, among reports that do). The gate structure replicates outside HCI in experimental economics, but whether people are actually not updating or just reporting coarsely on an under-specified slider is unresolved — the paper's own appendix shows a coarse-reporting model predicts the zero rate almost exactly.</p>
-  <p>The load-bearing takeaway survives the caveats: pooled trust/confidence-slider metrics conflate a gate and a magnitude, and product telemetry needs to separate them.</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-24-belief-update-gate.md" target="_blank" rel="noopener">Full dossier →</a>
+  <p class="headline">AI emotional support and the choice moment: what the congruence result actually establishes, and what no shipped product or statute does about it.</p>
+  <p>The headline claim — AI support rates superior only when chosen — rests on a design where choice was self-selected and only assignment congruence was randomized, so choosers of AI and humans arrive with very different priors and "forced routing degrades quality" doesn't hold up. The cleaner result: one randomized 5-minute AI conversation raised future AI-choice from 45.5% to 70.1% regardless of what the person originally wanted, while an LLM-judge found no actual empathy difference between congruent and incongruent conversations — the effect is interpretive, not behavioral.</p>
+  <p>The 28-day field study reanalyzes the existing Fang et al. 2025 MIT×OpenAI dataset, not new data, and its abstract undersells a significant open-ended shift the Discussion concedes. Shipped practice already sits on the other side of the choice variable — OpenAI, Character.AI, Meta and Wysa route or price around choice rather than expose it — and none of the five statutes in force regulates choice, only disclosure and prohibition.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-25-ai-support-choice-congruence.md" target="_blank" rel="noopener">Full dossier →</a>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
 
 <div class="question">
-  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #4 (uncertainty/confidence display) now overlaps the trust-calibration dossier on its research half — narrow #4 to the shipped-product/removal-archaeology half only, or leave it as written?</p>
+  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #9 (disclosure/labeling regimes) now overlaps the AI事業者ガイドライン dossier on Japan — narrow #9 to EU/Singapore/US with Japan as baseline, or leave as written?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #9 (disclosure/labeling regimes compared) now overlaps the AI事業者ガイドライン dossier on the Japan quarter — narrow #9 to the EU/Singapore/US comparative frame with Japan as baseline only, or leave it as written?</p>
+  <p><strong>2026-08-25 / curator (via verifier):</strong> ai.google.dev and developer.meta.com are unreadable via raw curl (JS-rendered SPAs, a third recurring cycle), and ACM DL has blocked three cycles running. Standing workaround rules for both, like the e-Gov gap?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-25 / curator (via verifier):</strong> Two new source-access failures this cycle — developer.meta.com and ai.google.dev are JS-rendered SPAs unreadable via raw curl (distinct from Cloudflare-blocking), and ACM DL has now blocked three consecutive cycles. Should both become STANDING.md-documented workaround rules, the way the e-Gov gap already is?</p>
+  <p><strong>2026-08-26 / backfill-writer:</strong> Three cited guidance pages changed or vanished without notice (Gemini double-check, Apple HIG confidence phrase, FiveThirtyEight corpus). Commit dated captures into the repo, or is cite-with-fetch-date plus Internet Archive enough?</p>
 </div>
 
 <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
