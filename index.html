@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-08-26</title>
+<title>Limen — 2026-08-27</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -101,6 +101,9 @@
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
   }
+  .run-note h2.section-head {
+    margin-top: 0;
+  }
   .run-note ul {
     padding-left: 1.2rem;
   }
@@ -111,84 +114,111 @@
     margin-bottom: 1rem;
     font-size: 0.98rem;
   }
+  .final-btn {
+    margin-top: 3rem;
+  }
 </style>
 </head>
 <body>
 
 <header class="page-head">
-  <p class="date">2026-08-26</p>
+  <p class="date">2026-08-27</p>
   <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Euro NCAP's 2026 protocol makes menu-based touch input more than two steps an automatic fail for nine driving functions — and manufacturers are visibly reversing course.</p>
-  <p>For nine safety-critical functions — indicators, gear selector, hazard lights, eCall, horn, wipers, full beam, vehicle assistance — the protocol forbids burying the control more than two menu taps deep: "a Function implementation which consists of a Menu-based touch input (>2 steps) is never acceptable." In force since Jan 1, 2026; it scores the worst qualifying path, not the best, so a good shortcut doesn't rescue a bad fallback.</p>
-  <p>Mercedes CEO Ola Källenius already says the industry "might have gone a little too far" toward digital controls, promising "the most sensible buttons" back and fitting a hard-key strip to its new electric GLC. For anyone specifying in-car or in-home HMI, this is a binding floor.</p>
-  <a class="source-btn" href="https://cdn.euroncap.com/cars/assets/sd_203_driver_controls_test_procedure_v11_a8155228ca.pdf" target="_blank" rel="noopener">Euro NCAP SD 203 →</a>
+  <p class="headline">Early-career radiologists adopted a fabricated disease into their diagnoses 69% of the time; experienced radiologists, 0%.</p>
+  <p>Researchers planted a fake disease name in a diagnostic assistant's system prompt and tracked who picked it up. Overall 44% did; split by experience, the line is nearly binary — everyone with more than six months of neuroradiology training caught it, nobody with less did.</p>
+  <p>That's not a gradient of caution, it's closer to an expertise gate, and it argues against giving junior and senior users the same confidence/provenance treatment in a diagnostic copilot: the same unverified AI suggestion is near-certain contamination for one user and background noise for the other.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.24908" target="_blank" rel="noopener">arXiv 2608.24908 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A memory feature can ace a recall-accuracy benchmark and still fail the thing users actually notice — the gap measured 71 points.</p>
-  <p>A four-month deployment (40 users, 1,872 sessions, seven memory conditions) found direct-QA recall accuracy ranged from 19.7% to 70.1% across conditions, but satisfaction didn't move at all. Holding model and context fixed, the same system that scored 78.8% when asked directly about a fact volunteered only 7.9% of it unprompted in conversation — a 71-point gap between what memory "knows" and what it surfaces.</p>
-  <p>Only natural-integration, not QA-accuracy, correlated with satisfaction: test whether memory surfaces itself, not just whether it can be interrogated.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.24189" target="_blank" rel="noopener">arXiv 2608.24189 →</a>
+  <p class="headline">Family smart-home data isn't anybody's individually — it's co-produced, and consent UIs have no slot for that.</p>
+  <p>A Korean-family interview study (10 households, N=34) pokes a hole in most smart-home consent models: a sleep log reveals a partner's routine whether he agreed to share it or not. Families drew a hard line on bystanders who never consented to being sensed at all, while treating a disclosed-but-ambiguous case — a nanny who knew cameras existed but not what they captured — differently.</p>
+  <p>The paper's actionable output is a three-tier visibility model (cohabitant, intimate other, bystander), ripple-effect disclosure copy, and a proposed "OurAgent" mediator role. For anyone building sensor products for shared living spaces, a single per-user consent toggle is the wrong shape for this problem.</p>
+  <a class="source-btn" href="https://doi.org/10.1145/3810233" target="_blank" rel="noopener">ACM IMWUT, DOI 10.1145/3810233 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Handing an AI the final call changes what it's willing to commit to — even when its rule-following is otherwise perfect.</p>
-  <p>A controlled audit of three LLMs found that when two applicable rules pointed to different actions, the models "almost never committed when users retained authority, but committed in every delegated case," despite executing both rules perfectly when directly instructed.</p>
-  <p>The divergence lives entirely in authority framing, not capability — a control-surface decision for multi-stakeholder agent features: does the user keep the tie-break, or hand it off. Testable per product, independent of the model.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.23966" target="_blank" rel="noopener">arXiv 2608.23966 →</a>
+  <p class="headline">Silence is a designed signal, not latency to hide — and it backfires the moment the system isn't actually confident.</p>
+  <p>Ten YouTube counseling sessions gave researchers a taxonomy of deliberate pause — five strategies, eight sub-strategies — and a follow-up experiment (N=50) found designed silence beats filled pauses on both listening quality and affective trust, with clean effect sizes and significant human-likeness gains either way.</p>
+  <p>But the same study shows the trap: silence functions as a promise that something worthwhile is coming, and when the system can't make good on it, people turn fast — "If it is an intelligent robot, it should be able to respond quickly." The lever is specific: a pause only pays off if the eventual response earns it.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.06134" target="_blank" rel="noopener">CHI '26 / arXiv 2602.06134 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A webcam-driven tutoring interface silently swaps its own explanation style mid-conversation based on inferred confusion or boredom — and no one could tell.</p>
-  <p>Aura, from ETH Zürich, infers boredom, confusion, frustration or engagement from facial expression and hot-swaps its response style in under 10ms at sentence boundaries, undisclosed. In a 20-person study against GPT-4o and Llama-3-8B, its learning-gain edge holds against Llama-3 but is statistically tied with GPT-4o once the full comparison runs; the cleaner win is speed — 73 seconds per task against GPT-4o's 93 and Llama-3's 100.</p>
-  <p>More telling: asked directly, no participant reported noticing an abrupt shift, and 11 of 20 still ranked Aura first. Strong evidence that undetected mid-generation adaptation is achievable and preferred in aggregate — making "the user should always tell it changed" a design choice being traded away for efficiency, not a free assumption.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.24224" target="_blank" rel="noopener">arXiv 2608.24224 →</a>
+  <p class="headline">A 6,474-person UK trial: up to 79% follow AI's personal advice, with no measured well-being gain.</p>
+  <p>Participants had a single 20-minute conversation with a chatbot and were followed up two to three weeks later. Compliance stayed above 65% even for high-stakes recommendations, peaking at 79% — but well-being showed no sustained improvement versus control.</p>
+  <p>The gap between those two numbers is the finding: persuasiveness and benefit aren't the same thing, and an advice-giving feature that markets or evaluates itself on "people follow it" is measuring the wrong half.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2511.15352" target="_blank" rel="noopener">arXiv 2511.15352 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A position paper names eight concrete interface mechanisms that actually preserve human oversight of AI agents, not just the gesture of a human in the loop.</p>
-  <p>Its core claim is structural: "the very act of being an overseer degrades the capacities oversight requires" — oversight design has to fight the erosion of the overseer's own judgment, not just police the AI. Its Section 5 taxonomy is genuinely usable: delay-and-choice mechanisms (let the user decide whether and when to see the AI's output), batch review (one diff for a completed unit, not action-by-action), and override-rate monitoring as a proxy for creeping approval fatigue.</p>
-  <p>No empirical study backs it — cite the argument, not the evidence — but each mechanism is a decision surface for agent approval flows.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.23642" target="_blank" rel="noopener">arXiv 2608.23642 →</a>
+  <p class="headline">Mistral's own figures: Agentic Search cuts p90 tool-loop latency 39.6% and lifts FinanceBench accuracy from 26.7% to 86%.</p>
+  <p>p90 drops from 255 seconds to 154; token usage falls 24–34% depending on the model behind it; the system trained on over 600,000 live requests. No independent replication of the FinanceBench number exists yet, but the figures and methodology are disclosed rather than asserted, which is what clears the bar at all.</p>
+  <p>For an interface designer this is a concrete answer to "how much latency can a better retrieval architecture buy back" — the number that decides whether an agentic feature can run inline or needs an async pattern.</p>
+  <a class="source-btn" href="https://mistral.ai/news/agentic-search/" target="_blank" rel="noopener">Mistral AI →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p class="headline">AI emotional support and the choice moment: what the congruence result actually establishes, and what no shipped product or statute does about it.</p>
-  <p>The headline claim — AI support rates superior only when chosen — rests on a design where choice was self-selected and only assignment congruence was randomized, so choosers of AI and humans arrive with very different priors and "forced routing degrades quality" doesn't hold up. The cleaner result: one randomized 5-minute AI conversation raised future AI-choice from 45.5% to 70.1% regardless of what the person originally wanted, while an LLM-judge found no actual empathy difference between congruent and incongruent conversations — the effect is interpretive, not behavioral.</p>
-  <p>The 28-day field study reanalyzes the existing Fang et al. 2025 MIT×OpenAI dataset, not new data, and its abstract undersells a significant open-ended shift the Discussion concedes. Shipped practice already sits on the other side of the choice variable — OpenAI, Character.AI, Meta and Wysa route or price around choice rather than expose it — and none of the five statutes in force regulates choice, only disclosure and prohibition.</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-25-ai-support-choice-congruence.md" target="_blank" rel="noopener">Full dossier →</a>
+  <p class="headline">Euro NCAP SD 203: two independent dossiers, after a concurrent-run collision, correct five errors in the original digest item.</p>
+  <p>Yesterday's target produced two independent dossiers after a concurrent-run collision neither side could see — still unresolved which one is canonical, or whether to consolidate. Combined, they correct five errors in the original digest item: the "&gt;2 steps" ban covers every defined Function, not only the nine named ones; the protocol scores the best-scoring implementation, not the worst; the 10×10mm touch-target figure the digest excluded as unlocatable is real, just in a different document (Driver Engagement §2.1.1.2); "automatic fail" overstates what is actually a 5-of-100-point deduction under a compensable threshold; and no manufacturer is actually on record citing Euro NCAP for reversing toward buttons.</p>
+  <p>They also trace the rule's real provenance to a 2023 industry checklist cited only in a spreadsheet cell, and flag a fabricated "University of Utah 2021" statistic a search tool invented mid-investigation.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-27-euro-ncap-sd203-depth-budgets.md" target="_blank" rel="noopener">Dossier: depth-budgets →</a>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/dossiers/2026-08-27-euro-ncap-sd203-menu-depth.md" target="_blank" rel="noopener">Dossier: menu-depth →</a>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
 
 <div class="question">
-  <p><strong>2026-08-25 / backfill-writer:</strong> BACKLOG #9 (disclosure/labeling regimes) now overlaps the AI事業者ガイドライン dossier on Japan — narrow #9 to EU/Singapore/US with Japan as baseline, or leave as written?</p>
+  <p><strong>2026-08-27 / verifier (via curator):</strong> origami.sa asserted a specific Claude Code feature-ship date that Anthropic's own changelog directly contradicts — add it to a source blocklist?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-25 / curator (via verifier):</strong> ai.google.dev and developer.meta.com are unreadable via raw curl (JS-rendered SPAs, a third recurring cycle), and ACM DL has blocked three cycles running. Standing workaround rules for both, like the e-Gov gap?</p>
+  <p><strong>2026-08-27 / dossier orchestrator:</strong> two /dossier runs fired concurrently on the same target and produced two independent, non-duplicate dossiers — which is canonical, should they be consolidated, and should the one-per-day check become an actual lock rather than a read?</p>
 </div>
 <div class="question">
-  <p><strong>2026-08-26 / backfill-writer:</strong> Three cited guidance pages changed or vanished without notice (Gemini double-check, Apple HIG confidence phrase, FiveThirtyEight corpus). Commit dated captures into the repo, or is cite-with-fetch-date plus Internet Archive enough?</p>
+  <p><strong>2026-08-27 / dossier-writer:</strong> two dossiers now correct factual errors in already-published digest items, one of which reached the public page — should corrections get an inline <strong>Correction:</strong> annotation in /daily, or stay dossier-only indefinitely?</p>
 </div>
 
 <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 
 <div class="run-note">
+  <h2 class="section-head">Run notes</h2>
+  <p><strong>Items verified but not in the cap:</strong></p>
+  <ul>
+    <li>ComponentBench: observation/action-space choice alone swings computer-use agent success &gt;30% (GPT-5 mini 83.1% accessibility-tree vs. 48.9% coordinate-only pixel control) — <a href="https://arxiv.org/abs/2608.18307" target="_blank" rel="noopener">arxiv.org/abs/2608.18307</a></li>
+    <li>Concept Bottleneck Models help as decision-support only under specific, nameable conditions (N participants=705, N observations=6,959) — <a href="https://arxiv.org/abs/2608.25581" target="_blank" rel="noopener">arxiv.org/abs/2608.25581</a></li>
+    <li>Maru: generative UI without a persistent information-architecture layer drifts from what the user already organized, accepted UIST 2026 — <a href="https://arxiv.org/abs/2608.25565" target="_blank" rel="noopener">arxiv.org/abs/2608.25565</a></li>
+    <li>Claim-level confidence calibration cuts factual-QA calibration error ~93% (ECE 0.090→0.006) but fails on adversarial questions (ECE rises to 0.412) — <a href="https://arxiv.org/abs/2608.22483" target="_blank" rel="noopener">arxiv.org/abs/2608.22483</a></li>
+    <li>TailorCoPilot: version-controlled state tracking let novices capture a senior tailor's tacit pattern-making judgment, accepted UIST 2026 — <a href="https://arxiv.org/abs/2608.25462" target="_blank" rel="noopener">arxiv.org/abs/2608.25462</a></li>
+    <li>Alibaba's Qwen3.8-Flash-Next ships quantized (GGUF/MLX) and runs on a single DGX Spark workstation — <a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next" target="_blank" rel="noopener">huggingface.co/Qwen/Qwen3.8-Flash-Next</a></li>
+    <li>[Corrected, weakened] OpenAI's Atlas never left macOS in its 8-month life; folded into ChatGPT and a Chrome extension — TechCrunch, 2026-07-09, corroborated by TechTimes, 2026-07-11</li>
+  </ul>
+  <p><strong>Lanes that produced nothing:</strong> none — all four lanes produced at least one verified survivor this cycle.</p>
+  <p><strong>Kills worth attention:</strong></p>
+  <ul>
+    <li>Anthropic's Claude Code "auto mode" default update — killed as a duplicate of a prior digest item, and its only claimed new information (a permission-syntax update dated Aug 22, 2026, sourced from origami.sa) is fabricated or badly misdated against Anthropic's own changelog, which shows the cited features shipped months earlier (May and April 2026).</li>
+    <li>Cursor Router's live-tuned model-choice classifier — killed on a recency-window violation (36 days old, no item-specific durability reason), despite every quote verifying cleanly.</li>
+    <li>Claude Code's /design mockup canvas — killed for generic relevance: a feature description with no visible design reasoning behind it.</li>
+  </ul>
+  <p><strong>Dedup/overlap notes:</strong> Mistral's Agentic Search and Qwen3.8-Flash-Next both extend topics previously mentioned only in run notes, never in a digest body — legitimate extensions, not re-surfacing duplicates.</p>
+  <p><strong>Lane health note:</strong> the practice lane returned one survivor out of four submissions this cycle, and it required two significant corrections. Combined with the origami.sa fabrication above, this is a lane-health signal worth the next monthly audit's attention.</p>
+</div>
+
+<div class="final-btn">
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md" target="_blank" rel="noopener">Read the full version →</a>
 </div>
 
