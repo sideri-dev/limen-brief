@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-08-30</title>
+<title>Limen — 2026-08-31</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -122,60 +122,60 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-08-30</p>
+  <p class="date">2026-08-31</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Concept-based AI explanations only help decision-makers under specific conditions — not by default.</p>
-  <p>Two large studies (705 participants, nearly 7,000 observations) tested Concept Bottleneck Models — interfaces that expose the intermediate concepts an AI used to reach a decision — against plain AI output and against unaided human judgment. The benefit only showed up when the task was perceived as genuinely difficult, the underlying concepts were easy to identify, and the user could actively interact with the model; outside those conditions, an interactive concept-explanation layer bought nothing. Worse, when the model's concept detection was inaccurate, it undermined trust rather than building it.</p>
-  <p>That's a real build/skip decision for anyone weighing an interactive explanation surface, not a case for explainability in general.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.25581" target="_blank" rel="noopener">arXiv 2608.25581 →</a>
+  <p class="headline">Where people actually look on a robot's face — and it flips depending on whether they're speaking or listening.</p>
+  <p>A secondary analysis of eye-tracking data from 31 people talking with a Furhat robot found gaze concentrates almost entirely on the eyes and mouth, but the split reverses by conversational role: people watch the face 95.8% of the time while listening versus 69.2% while speaking, and mouth-gaze roughly triples from 5.9% to 16.8% across that same shift (both large, well-powered effects). A separate exploratory analysis found that whether the robot itself averted or held its gaze changed <em>where</em> on the face people looked, but not whether they looked at the face at all.</p>
+  <p>That gives embodied-agent designers a real render-budget baseline — eyes and mouth first — and reframes a human's gaze aversion while speaking as normal behavior, not a disengagement signal to penalize.</p>
+  <a class="source-btn" href="https://doi.org/10.1145/3776734.3794558" target="_blank" rel="noopener">DOI 10.1145/3776734.3794558 (Smilde &amp; Mishra, HRI Companion '26, ACM) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A voice agent changes how people talk around it even when it never says a word.</p>
-  <p>A conversation-analytic study of human speech around an always-listening voice agent found that people shape what they say around the "ever-present risk" that any utterance might trigger an unwanted response — the agent's mere potential to speak becomes a constant, background constraint on human conversation, whether or not it ever activates.</p>
-  <p>This reframes barge-in design: the real decision isn't just when the agent should yield the floor, it's how the possibility of unwanted activation reshapes what people say around it in the first place. It's a durable method — conversation analysis — rarely applied to voice-agent design.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2510.22610" target="_blank" rel="noopener">arXiv 2510.22610, DOI 10.1145/3820655 (ACM TOCHI) →</a>
+  <p class="headline">The same explanation format helps trust calibration for one task type and actively hurts it for another.</p>
+  <p>A 204-person study tested graph visualizations of an LLM's reasoning against plain text explanations, split across verbal-reasoning tasks and visual-reasoning tasks. For verbal reasoning, the graph version improved how well people's trust tracked actual correctness — but felt more demanding and less satisfying to use. For visual reasoning it did the opposite: it impaired calibration while feeling more engaging and helpful.</p>
+  <p>The paper's own framing is the useful part — the format people prefer is not the format that produces better decisions, so a single explanation-UI default across output types is the wrong instinct.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.27932" target="_blank" rel="noopener">arXiv 2608.27932 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">The worst AI persona isn't "too agreeable" — it's flattering and inconsistent.</p>
-  <p>A controlled 224-person study crossed two variables — whether an assistant complimented the user, and whether it adapted its stance to match theirs — and found the interaction, not either factor alone, drives trust. Complimentary AI that also flip-flopped its position reduced both perceived authenticity and trust; neutral AI that adapted its stance raised both.</p>
-  <p>That argues against the default instinct to make assistant personas "warm and agreeable": personality and consistency interact non-linearly with trust, and the worst-performing cell is exactly the one a lot of products default to.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2502.10844" target="_blank" rel="noopener">arXiv 2502.10844, DOI 10.1145/3772318.3791079 (CHI 2026, Barcelona) →</a>
+  <p class="headline">A great demo output proves a system can do something, not that it will do it reliably.</p>
+  <p>Nielsen Norman Group's Raluca Budiu makes the case plainly: "one good output demonstrates that a system can perform a task. It does not show how often or how reliably the system will do so." Her worked example runs 10 questions across 5 repeated runs each, rather than trusting one polished pass — the same logic behind coding's pass@k benchmarks and Chatbot Arena's published confidence intervals.</p>
+  <p>The practical consequence: what you show a client should be a distribution across repeated runs, not a screenshot of your best output.</p>
+  <a class="source-btn" href="https://www.nngroup.com/articles/eval-ai-output/" target="_blank" rel="noopener">nngroup.com/articles/eval-ai-output/ →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">The strongest argument for Anthropic's auto-mode-default has a specific hole: prompt injection.</p>
-  <p>Anthropic's data-backed case for defaulting Claude Code to a classifier-gated auto-approval mode — reflexive 97% human approval rates, a 1,053-tester study, and catch-rate numbers favoring the classifier over manual review — was covered here on 2026-08-25. Simon Willison's response, published the same week, doesn't dispute those numbers; he wants "more independent confirmation," specifically because a classifier trained to distinguish "dangerous command" from "safe command" may not generalize to prompt injection, a different threat class entirely.</p>
-  <p>His evidence: Anthropic's own internal sessions still run under heavy sandboxing, suggesting the company doesn't fully trust the classifier unsandboxed either. Anyone copying this pattern needs an answer to the injection case specifically, not just a good approval-rate number.</p>
-  <a class="source-btn" href="https://simonwillison.net/2026/Aug/8/auto-mode/" target="_blank" rel="noopener">simonwillison.net/2026/Aug/8/auto-mode/ →</a>
+  <p class="headline">Handing a case to a human reviewer isn't a neutral safety valve — the mix of cases you defer changes how well that human performs.</p>
+  <p>A 226-person study found that when an AI's rejection queue skews heavily toward one class, the human reviewers who receive it get measurably worse at classifying the majority class correctly — regardless of which class was actually overrepresented. The authors call it a "test-taker's effect": an unbalanced stream of deferred cases distorts the reviewer's calibration, not just their workload.</p>
+  <p>That means a human-review queue needs to be designed for composition, not just volume — dumping whatever the model rejects into one undifferentiated queue can quietly degrade the humans handling it.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.28050" target="_blank" rel="noopener">arXiv 2608.28050 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Tuning a proactive voice assistant is a per-driver optimization problem, not a single threshold.</p>
-  <p>A within-subjects VR study (19 participants) used Bayesian optimization to search for the best trade-off between an in-vehicle assistant's helpfulness and its cost in mental demand and predictability — run separately for each driver rather than against one fixed "how proactive" setting.</p>
-  <p>The result is a Pareto front of optimal trade-offs rather than a single number: a concrete research method for negotiating interruption cost against usefulness that generalizes past cars to any proactive assistant deciding when to speak up uninvited.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2601.19421" target="_blank" rel="noopener">arXiv 2601.19421, DOI 10.1145/3772318.3791877 (CHI 2026) →</a>
+  <p class="headline">Figma scaled its qualitative user research to nearly 640 interviews by having AI moderate them — and the design decision that made the results trustworthy wasn't AI at all.</p>
+  <p>Figma's own writeup of its AI-impact index describes 639 transcripts, 2 million words, and over 40,000 codes distilled into 553 recurring themes — a scale no human research team runs. The team's stated principle: "we couldn't just punt the process to AI; we needed to design a system that enforced rigor at every step," meaning the coding method, granularity, and conflict-handling rules were fixed up front rather than left to the model.</p>
+  <p>The resulting index reportedly nearly doubled, from roughly 32 to 62 points (modeled on the University of Michigan's consumer sentiment index) since 2024. It's a concrete pattern for anyone scaling qualitative research with AI without losing methodological control — the rigor lives in the coding parameters, not the interview count.</p>
+  <a class="source-btn" href="https://www.figma.com/blog/measuring-the-impact-of-ai/" target="_blank" rel="noopener">figma.com/blog/measuring-the-impact-of-ai/ →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>The 0.1/1/10-second latency triad everyone cites is a citation chain that lost its meaning at every link: Miller 1968 actually wrote seventeen task-relative categories he called "the best calculated guesses," and Shneiderman's oft-cited variability finding is repeated backwards — he measured that ±50% timing variation had "little impact on performance." The real counter-current is narrower than its retellings: two 2026 experiments show slower, visible "thinking" raises perceived warmth and thoughtfulness but not trust or competence, and can backfire — transparency on an unfavorable outcome scored worse than instant response. Conversational timing turns out to be a human constant, not a UI convention (120ms detection, 700–800ms reluctance), while 2026 serving reality makes it urgent: one model version spans 103× in time-to-first-token depending on its effort setting, so there's no stable median to design a loading state against.</p>
-  <p><em>dossiers/2026-08-29-latency-perception-intelligence.md</em></p>
+  <p>The concept-bottleneck-model paper this corpus flagged as a dossier target turned out to be weaker than its own abstract: of the three conditions it claims gate when concept-level explanations help, one was never measured at all and another is inter-annotator agreement between two of the paper's own authors, never actually asked of participants. Read as an experiment rather than an abstract, every AI-supported condition across both studies is statistically indistinguishable from a plain label — the entire headline rests on one Bonferroni-corrected contrast at p=.049 after dropping over a third of one group. The trust claim collapses too: the eight-item trust index was never significant, and the one item that was says interaction <em>lowered</em> trust, the opposite of the paper's framing. An independent prior study (12 dermatology experts, 104 lay participants) had already found the same null. The defensible practitioner answer is mostly skip: build an interactive concept surface only where the concepts are objectively verifiable, few in number, and the user genuinely can't answer without them.</p>
+  <p><em>dossiers/2026-08-30-concept-bottleneck-decision-support.md</em></p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -190,21 +190,27 @@
   <h2 class="section-head">Run notes</h2>
   <p><strong>Items verified but not in the cap:</strong></p>
   <ul>
-    <li>Pupil diameter, not a survey, predicts comfort with a humanoid robot's distance — Decision Tree F1=0.73, N=19, robot "Ameca" — <a href="https://arxiv.org/abs/2512.08518" target="_blank" rel="noopener">arXiv 2512.08518</a></li>
-    <li>Qwen3.8-Flash-Next ships as a 125B/6B-active MoE for single-GPU local deployment, 262,144-token context in deployment examples — <a href="https://github.com/QwenLM/Qwen3.8-Flash-Next" target="_blank" rel="noopener">github.com/QwenLM/Qwen3.8-Flash-Next</a></li>
-    <li>GLM-5.3-Flash: 320B/18B-active natively multimodal MoE at promotional $0.075/$0.25 pricing through Sept 9, 1M-token context — <a href="https://huggingface.co/zai-org/GLM-5.3-Flash" target="_blank" rel="noopener">huggingface.co/zai-org/GLM-5.3-Flash</a></li>
-    <li>Claude Code brings a /design skill (Claude Design's artboard workflow) into the CLI/desktop app, research preview ~Aug 17 2026 — the claimed "stated design goal" quote could not be verified from any primary source and was dropped</li>
-    <li>An adversarial AI critic produces more design reconsideration than the same framework delivered as static text — N=45 novice design students, CMU HCII — <a href="https://arxiv.org/abs/2608.04166" target="_blank" rel="noopener">arXiv 2608.04166</a></li>
-    <li>Trust in AI-sourced health information shifts with both agent type and delivery interface, not content alone — two small studies (N=21, N=20), a lead rather than a settled finding — <a href="https://arxiv.org/abs/2608.21177" target="_blank" rel="noopener">arXiv 2608.21177</a></li>
+    <li>Qwen3.8-27B model card</li>
+    <li>Figma workflow-lab agent/design-system pattern</li>
+    <li>GLM-5.3-Flash pricing/context</li>
+    <li>AI sensemaking interpretive-work tradeoff — <a href="https://arxiv.org/abs/2608.27799" target="_blank" rel="noopener">arXiv 2608.27799</a></li>
+    <li>Cursor multi-agent coordination architecture (~7 months old, kept on stated-reasoning-trail grounds; third Cursor-lane item in two weeks to hit a recency question)</li>
+    <li>GlassTENG self-powered glasses sensors (55 days old, weakest durability case of the ambient items)</li>
+    <li>GPT-5.6 Sol Ultrafast/Cerebras (14x figure re-sourced to independent secondary reporting, one unconfirmable phrase dropped)</li>
+    <li>Superhuman/Coda MCP rebuild (38 days old, survives on the verifier's own supplied reason)</li>
+    <li>DeepSeek-V4-Flash-Vision-Exp image pricing (major correction — stale dollar figures corrected to DeepSeek's live dynamic peak/off-peak schedule)</li>
+    <li>FocusGen persona-agent focus groups — <a href="https://arxiv.org/abs/2608.28001" target="_blank" rel="noopener">arXiv 2608.28001</a></li>
+    <li>CrabOS OS-level task-handoff proposal (weakest evidentiary base, case-studies only) — <a href="https://arxiv.org/abs/2608.28165" target="_blank" rel="noopener">arXiv 2608.28165</a></li>
   </ul>
-  <p><strong>Lanes that produced nothing:</strong> none. Across all 11 verified survivors this cycle: interaction 4, ambient/embodied 3, practice 2, capability 2.</p>
+  <p><strong>Lanes that produced nothing:</strong> none. All four lanes contributed verified items this cycle; capability's four survivors ranked below the cap.</p>
   <p><strong>Kills worth attention:</strong></p>
   <ul>
-    <li>Four straight duplicates of already-published material: an LLM-rewritten-error-messages paper, Anthropic's "Concise" output style, DeepSeek's time-of-day pricing, and Qwen3.8-27B — all previously covered in this corpus.</li>
-    <li>OpenAI's Assistants API sunset — killed on source misattribution, not dedupe: a chain-of-thought-hiding quote presented as the vendor's own text actually traced to an unrelated independent blogger's commentary. Stripped of that claim, the surviving fact named no design decision.</li>
+    <li>OpenAI kills ChatGPT Atlas after under a year — killed as a duplicate of already-published material (same URL, dates, and framing as a prior digest item).</li>
+    <li>An LLM-generated vehicle-to-pedestrian signal item — killed on wrong-source: the cited DOI resolved, on independent check, to a different paper than the one actually quoted. Every quoted statistic was real, just attached to the wrong citation.</li>
   </ul>
-  <p><strong>Process note:</strong> dedupe was the dominant failure mode this cycle — 4 of 11 raw items died as straight duplicates of material already published here, with two lanes each losing 3 of their 4 raw items to it. No rule change needed, just tighter pre-submission discipline against the recent digest set.</p>
-  <p><strong>Public-render note:</strong> both ambient items above (voice-agent presence, in-vehicle proactivity tuning) and the below-cap robot-proxemics item are described at the level of general practitioner relevance — barge-in design, proactivity tuning, humanoid-robot proxemics generally — and none names or gestures at any unreleased hardware product. Nothing was rewritten or cut for this page.</p>
+  <p><strong>Process notes:</strong> ACM DL has now returned a Cloudflare block for a third cycle running, and it directly caused the kill above by forcing reliance on a plausible but wrong substitute source — a new standing check (independently confirming a substitute is the same paper before trusting any quote from it) is now in place. Separately, three of five practice-lane items this cycle ran well past the usual recency window; all survived verification cleanly, but the pattern is being watched rather than acted on.</p>
+  <p><strong>Corrections applied in place (not kills):</strong> a misquote corrected to the actual page wording on one item; stale pricing corrected to a live dynamic schedule on another; an unconfirmable phrase dropped from a third.</p>
+  <p><strong>Public-render note:</strong> checked against all items verified this cycle, not just the five above — none references or gestures at unreleased hardware, a sensor stack, price, market, or timeline for any specific product. Nothing was rewritten or cut for this page.</p>
 </div>
 
 <div class="final-btn">
