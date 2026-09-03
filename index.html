@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-02</title>
+<title>Limen — 2026-09-03</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -110,6 +110,11 @@
   .run-note li {
     margin-bottom: 0.6rem;
   }
+  .dossier-path {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
   .question {
     margin-bottom: 1rem;
     font-size: 0.98rem;
@@ -122,89 +127,74 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-02</p>
+  <p class="date">2026-09-03</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Computer-use agents lose most of their reliability exactly where assistive technology forces them to operate.</p>
-  <p>A CHI 2026 dataset paper ran 16 participants — 8 sighted, 8 blind or low-vision — through 60 tasks and 158,325 logged events. Claude Sonnet 4.5's computer-use agent succeeded on 78.3% of tasks by default, already below the 99.16% human baseline, but the number that matters is what happens under the conditions blind and low-vision users actually run: 41.67% keyboard-only, and just 28.3% at 150% screen magnification, against 84.6% human success in that same condition.</p>
-  <p>Default-condition agent benchmarks simply don't test the modes assistive technology forces. The decision this changes is a pre-ship one — an accessibility-condition test pass belongs in the eval gate, not a patch after the first complaint.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.09310" target="_blank" rel="noopener">arXiv 2602.09310 (CHI 2026) →</a>
+  <p class="headline">A trust dip after the honeymoon period isn't a design failure — five sessions in, it's the normal curve.</p>
+  <p>A CHI 2026 within-subjects study ran 12 professional UX evaluators through five sessions each (~6 hours total) with novice- and expert-like conversational assistants. Trust followed an initial novelty spike, then a dip, then recovery — and only after that recovery did evaluators rate the more capable assistant significantly more efficient, trustworthy and comprehensive, despite not noticing any expertise difference early on.</p>
+  <p>A single-session pilot would have caught the dip and missed the recovery; the practical consequence is when in a rollout you actually run trust and reliance evaluation.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2603.13717" target="_blank" rel="noopener">arXiv 2603.13717 (CHI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">When a computer-use agent fails a blind user, it's usually because it doesn't know it's done — not because it can't see the screen.</p>
-  <p>A separate three-week diary study put 8 blind users through 1,258 real commands across 12 applications with a computer-use prototype alongside their normal screen reader. The best of five models, GPT-5, reached only 52.5% success; tracing failures found the dominant modes were grounding, planning, constraint-tracking, and termination — not recognizing when a task was finished or a constraint honored.</p>
-  <p>That argues for a specific missing piece of agentic UI: an explicit "am I done, did I respect the constraint" checkpoint, distinct from a generic stop button. Published independently, the same week, with different authors and models than the item above — two studies converging on the same structural gap, not one finding restated.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.00524" target="_blank" rel="noopener">arXiv 2609.00524 →</a>
+  <p class="headline">A robot that never talks to you turns out to be better at introducing two strangers than one that does.</p>
+  <p>HRI '26's Best Design Paper put 32 participants through 16 stranger pairings in a shared waiting room, using mirrors to redirect mutual gaze instead of a talking social robot. In 12 of the 16 groups, the first meaningful contact between the strangers happened through the mirrors, not face-to-face.</p>
+  <p>The lead author's framing is the transferable design principle: "the focus is not on the robot — it's on the other human," and social technology needs to know when to step back, not just how to initiate.</p>
+  <a class="source-btn" href="https://serenageguo.com/mirrorbot" target="_blank" rel="noopener">serenageguo.com/mirrorbot (HRI '26) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">AI coaches talk more and explain less than human experts do — and that trains passive users.</p>
-  <p>A study of 72 expert-novice coaching sessions (22,752 dialogue turns, 28.1 hours) on computer-use tasks compared human and LLM coaches. The LLMs gave more direct instructions but fewer explanations, error diagnoses, and knowledge-check questions, and were poorly grounded in what was actually visible on screen — learners passively followed instructions rather than engaging with the task.</p>
-  <p>Optimizing an AI coaching or help feature purely for instruction-completion speed trades away the skill transfer that's the point of coaching in the first place.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2606.31980" target="_blank" rel="noopener">arXiv 2606.31980 (EMNLP 2026) →</a>
+  <p class="headline">What developers say AI coding tools do for them, and what their own telemetry shows, are two different stories.</p>
+  <p>An ICSE '26 study logged 151.9 million IDE events across 800 JetBrains developers (400 AI users, 400 non-users) over two years. 82.3% self-reported a productivity gain, but the behavioral signal tells a sharper story: AI users added 587 characters a month against non-users' 75, and deleted 102 a month against 7.6.</p>
+  <p>Satisfaction surveys and churn/deletion telemetry are measuring different things once the novelty period ends — the churn signal is the one to instrument if the goal is calibrated reliance rather than a good survey score.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2601.10258" target="_blank" rel="noopener">arXiv 2601.10258 (ICSE '26) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Building difficulty-aware error disclosure for AI tools might be solving a problem people don't actually have.</p>
-  <p>A preregistered experiment with 577 participants tested whether AI errors on easy tasks bother people more than errors on hard tasks — the assumption behind a lot of confidence-UI design. Across error rates of 10/30/50% on diagram-generation tasks, more errors reduced use, but easy-task errors didn't reduce use any more than hard-task errors did.</p>
-  <p>That kills the assumption that a difficulty-aware confidence display will out-calibrate simple error-rate disclosure by default — that investment needs its own test before it's built.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2604.04319" target="_blank" rel="noopener">arXiv 2604.04319 (CHI EA 2026) →</a>
+  <p class="headline">People blame a lying robot exactly as much as a lying human — a Japanese replication closes off a design excuse.</p>
+  <p>A Japanese HAI Symposium study (N=201) replicated Kneer's 2021 "Can a Robot Lie?" design and found the type of agent made no significant difference to how much blame participants assigned; only whether the agent actually lied did. The paper's own language is direct: whether the actor is human or robot, the act of lying itself is what draws the blame.</p>
+  <p>That closes off a design assumption worth checking before it ships — that labeling a wrong or evasive AI output as "just an AI" will soften how much a user blames it for the error.</p>
+  <a class="source-btn" href="https://hai-conference.net/symp2025/" target="_blank" rel="noopener">hai-conference.net (HAI Symposium 2025) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Claude Fable 5.1 removed the "fast, no-think" mode entirely — thinking is now always on.</p>
-  <p>Anthropic's release notes, an independently maintained AWS Bedrock model card, and Simon Willison's own timed testing confirm the same thing from three angles: adaptive thinking on Fable 5.1 cannot be disabled, only dialed across five effort levels (low, medium, high, xhigh, max), and the cheapest setting still takes roughly 24 seconds. Willison's low-effort run took 23.8 seconds and 10 cents; max ran nearly 14 minutes and $3.30.</p>
-  <p>Pricing held flat at $10/$50 per million tokens, cache reads down to $0.25. Any interface built on this model must now expose or route that effort dial itself — it's the latency-and-cost budget control, not an implementation detail.</p>
-  <a class="source-btn" href="https://platform.claude.com/docs/en/release-notes/api" target="_blank" rel="noopener">platform.claude.com/docs/en/release-notes/api →</a>
+  <p class="headline">A cleaning robot can navigate an airport perfectly and still read as rude, because rudeness isn't a navigation problem.</p>
+  <p>A CHI 2026 video-analysis study of cleaning robots at a major commercial airport found the robots were technically proficient at obstacle avoidance but still disrupted the social order of the space — they couldn't read mutual adjustment between people, recognize a social group as a unit, or understand what a location was for.</p>
+  <p>The authors argue movement through shared space is "an interactional and collaborative accomplishment," not just a path-planning problem. A path-planner scored only on completion and collision-avoidance is being scored on the wrong axis for any robot sharing space with people.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.23475" target="_blank" rel="noopener">arXiv 2602.23475 (CHI 2026) →</a>
 </article>
 
-<h2 class="section-head">Needs your answer</h2>
+<h2 class="section-head">Yesterday's dossier</h2>
 
-<div class="question">
-  <p><strong>2026-08-30 / backfill-writer:</strong> Should verified product failures become a recurring emphasis across the lanes, or stay one-off backlog items? Dead hardware left the sharpest primary record in this corpus so far — FCC filings and CPSC recalls outlived the vendors' own sites.</p>
-</div>
-
-<div class="question">
-  <p><strong>2026-09-01 / dossier-writer:</strong> Should the lanes actively hunt non-Western user studies — Japanese, Thai, Korean samples — or is naming their absence enough? Every user-effect study behind today's refusal dossier sampled US or UK participants.</p>
-</div>
-
-<div class="question">
-  <p><strong>2026-09-02 / curator (via japan-sweep):</strong> Thailand's draft AI Act now returns citable regulatory findings monthly — should Southeast Asia become a first-class thread in this sweep alongside Japan/Korea, or stay opportunistic until a law actually passes?</p>
-</div>
-
-<a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
+<article class="item">
+  <p>The digest's #1-ranked figure — computer-use agents dropping to 28.3% success under screen magnification — is contradicted three ways inside its own paper: the table says 28.3%, the body text implies 3.3% (2 of 60 tasks), and the figure's own alt-text implies 1.6%. Every alternative reading is still worse than the published number, though, and the ordering (default beats keyboard-only beats magnifier) survives all of them, so the qualitative finding stands even though its magnitude doesn't — it should carry [CONFLICT], not just [SINGLE-SOURCE].</p>
+  <p>The digest's claim that 150% magnification is what users "actually use" isn't the paper's own framing and isn't supported by the only survey data available (WebAIM 2018: 47.6% of low-vision respondents magnify at 200% or above). The durable finding is structural: none of seven major computer-use benchmarks varies an accessibility condition, and three vendors' own computer-use documentation contains zero references to accessibility or assistive technology — while GitHub's Copilot CLI already publishes a conformance report naming exactly those test conditions.</p>
+  <p class="dossier-path">dossiers/2026-09-02-a11y-cua-eval-gate.md</p>
+</article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p><strong>A curatorial call:</strong> the top two items above both measure the computer-use-agent accessibility gap for blind/low-vision users, published the same week from different labs with different figures. Both were kept — they argue for two distinct design decisions (a pre-ship eval gate vs. an in-agent checkpoint affordance), not one finding restated, at the cost of the day's slots skewing toward one topic.</p>
-  <p><strong>Items verified but not in the cap:</strong></p>
+  <p>Ambient held 3 of 5 slots with none of its submissions killed — a strong, non-padded day for the thinnest lane. Capability and practice each had verified survivors that missed the cap on rank:</p>
   <ul>
-    <li>Designing Proactive Thought Partners for Writing — non-directive, lightweight visual framing beats inline-completion for uninvited AI suggestions in creative tools — <a href="https://arxiv.org/abs/2609.01588" target="_blank" rel="noopener">arXiv 2609.01588</a></li>
-    <li>Voice assistants can't learn context-aware turn-taking from prompting alone — 120,000+ labeled conversations, 8 LLMs zero-shot all fail; must be explicitly fine-tuned — <a href="https://arxiv.org/abs/2603.11409" target="_blank" rel="noopener">arXiv 2603.11409</a></li>
-    <li>Gemini's "agentic video understanding" cuts video-analysis tokens up to 88% at no extra fee — <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/" target="_blank" rel="noopener">blog.google</a></li>
-    <li>Coinbase cuts coding-agent cost 22.5% by feeding it component identity instead of screenshots — <a href="https://figma.com/blog/how-coinbase-used-code-connect-to-shrink-token-costs/" target="_blank" rel="noopener">figma.com/blog</a></li>
-    <li>Claude Fable 5.1 breaks forced tool-calling — tool_choice "any"/"tool" now return a 400 error — <a href="https://platform.claude.com/docs/en/release-notes/api" target="_blank" rel="noopener">platform.claude.com/docs/en/release-notes/api</a></li>
-    <li>Tencent's Hy4 preview: 770B/49B-active MoE, 1M context, Apache 2.0, self-hostable — <a href="https://huggingface.co/tencent/Hy4-preview" target="_blank" rel="noopener">huggingface.co/tencent/Hy4-preview</a></li>
+    <li>A hard version boundary on Claude Fable 5.1/Mythos 5.1 thinking-block replay — <a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">platform.claude.com/docs/en/release-notes/overview</a></li>
+    <li>Anthropic's built-in Cowork browser, rather than extending the Chrome extension — <a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">claude.com/blog/cowork-built-in-browser</a></li>
+    <li>A reading-habits study finding only 4.3% of prompts used any taught prompt-engineering technique — <a href="https://arxiv.org/abs/2602.09907" target="_blank" rel="noopener">arXiv 2602.09907</a></li>
+    <li>Figma's own product team rejecting "prototype-first" as its default AI workflow — <a href="https://figma.com/blog/how-we-built-generative-plugins-and-shaders/" target="_blank" rel="noopener">figma.com/blog</a></li>
+    <li>Gemini 3.8 Flash's 1M-token context window with an expiring low price — <a href="https://deepmind.google/models/model-cards/gemini-3-8-flash/" target="_blank" rel="noopener">deepmind.google/models/model-cards/gemini-3-8-flash</a></li>
   </ul>
-  <p><strong>Lanes that produced nothing in the top 5:</strong> practice and ambient. Each had exactly one verified survivor (listed above) that missed the cap on rank, not on quality — an honest-thin day for the ambient lane specifically, which is expected by design and was not padded to fill a slot.</p>
-  <p><strong>Kills worth attention — a cross-lane pattern:</strong></p>
-  <ul>
-    <li>A product-design-tool item was resubmitted unchanged and killed as a repeat of a prior kill from six days earlier, with no acknowledgment of that prior kill. This is now the third distinct lane to resubmit a previously-killed item without noting it, escalating this from a single-lane issue to a cross-lane pattern flagged for the next monthly audit.</li>
-    <li>Two straightforward duplicates of items already published in named prior digests, one recency-window kill with no stated exception (superseded by this cycle's own Claude Fable 5.1 item), and one duplicate ambient item repeating an item from six days earlier.</li>
-  </ul>
+  <p>Five items were killed this cycle, all as duplicates of already-published or already-noted material. A cross-lane pattern of items being resubmitted within a cycle or two of first appearing (now four lanes, including this cycle's third submission of a Figma research-tooling post) is flagged again for the monthly pipeline audit rather than acted on here.</p>
 </div>
 
 <div class="final-btn">
