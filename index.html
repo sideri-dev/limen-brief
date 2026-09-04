@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-03</title>
+<title>Limen — 2026-09-04</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -115,6 +115,9 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
+  .week-item {
+    margin-bottom: 1.75rem;
+  }
   .question {
     margin-bottom: 1rem;
     font-size: 0.98rem;
@@ -127,74 +130,82 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-03</p>
-  <p class="meta">~6 minute read</p>
+  <p class="date">2026-09-04</p>
+  <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">A trust dip after the honeymoon period isn't a design failure — five sessions in, it's the normal curve.</p>
-  <p>A CHI 2026 within-subjects study ran 12 professional UX evaluators through five sessions each (~6 hours total) with novice- and expert-like conversational assistants. Trust followed an initial novelty spike, then a dip, then recovery — and only after that recovery did evaluators rate the more capable assistant significantly more efficient, trustworthy and comprehensive, despite not noticing any expertise difference early on.</p>
-  <p>A single-session pilot would have caught the dip and missed the recovery; the practical consequence is when in a rollout you actually run trust and reliance evaluation.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2603.13717" target="_blank" rel="noopener">arXiv 2603.13717 (CHI 2026) →</a>
+  <p class="headline">Nobody shipping a smart-home app in China has built a consent screen for the people who live there but don't own the account.</p>
+  <p>A CHI 2026 audit of 49 apps found 19 recognize that bystanders — housemates, guests, cleaners — can be harmed by the app's sensing, but none offer them consent or notification for registration, permissions, or data deletion. 36 of the 49 apps can operate cameras, 27 can control door locks.</p>
+  <p>The gap is a missing screen, not a missing policy: shared-space sensing products need a first-class non-account-holder consent surface, distinct from the primary user's settings. It converges with the independent Korean "OurData" study published here five weeks ago — same structural gap, different country and method.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.09254" target="_blank" rel="noopener">arXiv 2602.09254 (CHI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A robot that never talks to you turns out to be better at introducing two strangers than one that does.</p>
-  <p>HRI '26's Best Design Paper put 32 participants through 16 stranger pairings in a shared waiting room, using mirrors to redirect mutual gaze instead of a talking social robot. In 12 of the 16 groups, the first meaningful contact between the strangers happened through the mirrors, not face-to-face.</p>
-  <p>The lead author's framing is the transferable design principle: "the focus is not on the robot — it's on the other human," and social technology needs to know when to step back, not just how to initiate.</p>
-  <a class="source-btn" href="https://serenageguo.com/mirrorbot" target="_blank" rel="noopener">serenageguo.com/mirrorbot (HRI '26) →</a>
+  <p class="headline">When a chatbot is wrong, have it correct itself out loud — routing the fix through a separate fact-check layer costs trust.</p>
+  <p>A controlled experiment (N=120) found three correction methods — webpage retraction, self-correction, separate-chatbot correction — fixed the error equally well, but only self-correction avoided damaging trust. Self-correcting chatbots rated significantly higher on both trustworthiness and perceived expertise.</p>
+  <p>Users' social connection to a chatbot only converted into belief change when the same chatbot corrected itself; outsourcing the correction to a separate source severed that link entirely. Single-source finding — no independent replication yet.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2606.19286" target="_blank" rel="noopener">arXiv 2606.19286 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">What developers say AI coding tools do for them, and what their own telemetry shows, are two different stories.</p>
-  <p>An ICSE '26 study logged 151.9 million IDE events across 800 JetBrains developers (400 AI users, 400 non-users) over two years. 82.3% self-reported a productivity gain, but the behavioral signal tells a sharper story: AI users added 587 characters a month against non-users' 75, and deleted 102 a month against 7.6.</p>
-  <p>Satisfaction surveys and churn/deletion telemetry are measuring different things once the novelty period ends — the churn signal is the one to instrument if the goal is calibrated reliance rather than a good survey score.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2601.10258" target="_blank" rel="noopener">arXiv 2601.10258 (ICSE '26) →</a>
+  <p class="headline">What a driving alert says, not just whether it fires, is what earns trust — and the effect flips sharply by age.</p>
+  <p>A 240-person driving-simulator study found plain object notifications ("there is a car in front of you on the right") beat vaguer or alarm-framed phrasing on both acceptance and adaptive-cruise-control comfort, with a significant Condition × Age interaction (p&lt;0.001): older drivers responded more to alert-framed language, younger drivers to plain description.</p>
+  <p>There's no single best default phrasing for an ADAS notification — specificity, tuned by driver age, is the supported design lever. Single-source, peer-reviewed.</p>
+  <a class="source-btn" href="https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1806452/full" target="_blank" rel="noopener">Frontiers in Computer Science, Vol. 8 (2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">People blame a lying robot exactly as much as a lying human — a Japanese replication closes off a design excuse.</p>
-  <p>A Japanese HAI Symposium study (N=201) replicated Kneer's 2021 "Can a Robot Lie?" design and found the type of agent made no significant difference to how much blame participants assigned; only whether the agent actually lied did. The paper's own language is direct: whether the actor is human or robot, the act of lying itself is what draws the blame.</p>
-  <p>That closes off a design assumption worth checking before it ships — that labeling a wrong or evasive AI output as "just an AI" will soften how much a user blames it for the error.</p>
-  <a class="source-btn" href="https://hai-conference.net/symp2025/" target="_blank" rel="noopener">hai-conference.net (HAI Symposium 2025) →</a>
+  <p class="headline">OpenAI's GPT-6 Astra pauses for human review only on its own chat surfaces — the API just stops.</p>
+  <p>Astra crosses OpenAI's "Critical" cybersecurity threshold under its Preparedness Framework, scoring a perfect 100% on ExploitBench against 78.5% for GPT-5.6 Sol. The confirm-dialog safety behavior is scoped to ChatGPT and Codex only — the model card states that in the API, a paused task simply stops, with no review prompt and no path to continue.</p>
+  <p>Anyone building on the API rather than the chat surface needs a different failure-mode plan: a hard stop with no recovery, not an interruptible confirm dialog.</p>
+  <a class="source-btn" href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">openai.com/index/gpt-6-astra →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A cleaning robot can navigate an airport perfectly and still read as rude, because rudeness isn't a navigation problem.</p>
-  <p>A CHI 2026 video-analysis study of cleaning robots at a major commercial airport found the robots were technically proficient at obstacle avoidance but still disrupted the social order of the space — they couldn't read mutual adjustment between people, recognize a social group as a unit, or understand what a location was for.</p>
-  <p>The authors argue movement through shared space is "an interactional and collaborative accomplishment," not just a path-planning problem. A path-planner scored only on completion and collision-avoidance is being scored on the wrong axis for any robot sharing space with people.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.23475" target="_blank" rel="noopener">arXiv 2602.23475 (CHI 2026) →</a>
+  <p class="headline">Google swapped Gemini's numeric "thinking budget" for three named tiers — low, medium, high.</p>
+  <p>Gemini 3.8 Flash replaces the thinking_budget token count with a thinking_level enum: low for latency-critical tasks like incident response or real-time chat, medium (the default) for complex code and agentic use, high for deep multi-step reasoning — each mapped by Google to explicit task types.</p>
+  <p>The design shift is real: picking a discrete, named tier rather than calibrating a number. Introductory pricing ($0.75/1M input, $3.75/1M output) runs only "through the end of year," per the page's own wording, not a fixed date.</p>
+  <a class="source-btn" href="https://ai.google.dev/gemini-api/docs/latest-model" target="_blank" rel="noopener">ai.google.dev/gemini-api/docs/latest-model →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>The digest's #1-ranked figure — computer-use agents dropping to 28.3% success under screen magnification — is contradicted three ways inside its own paper: the table says 28.3%, the body text implies 3.3% (2 of 60 tasks), and the figure's own alt-text implies 1.6%. Every alternative reading is still worse than the published number, though, and the ordering (default beats keyboard-only beats magnifier) survives all of them, so the qualitative finding stands even though its magnitude doesn't — it should carry [CONFLICT], not just [SINGLE-SOURCE].</p>
-  <p>The digest's claim that 150% magnification is what users "actually use" isn't the paper's own framing and isn't supported by the only survey data available (WebAIM 2018: 47.6% of low-vision respondents magnify at 200% or above). The durable finding is structural: none of seven major computer-use benchmarks varies an accessibility condition, and three vendors' own computer-use documentation contains zero references to accessibility or assistive technology — while GitHub's Copilot CLI already publishes a conformance report naming exactly those test conditions.</p>
-  <p class="dossier-path">dossiers/2026-09-02-a11y-cua-eval-gate.md</p>
+  <p>A re-read of yesterday's #1 item (the five-session trust-dip study) found the digest reported the wrong finding. Trust medians are identical across all five sessions, "recovery" was never tested, and evaluators' actual rate of ignoring the assistant's suggestions gets worse after session 2 and stays worse through session 4.</p>
+  <p>The paper's own better explanation isn't a fading novelty effect but calibration: evaluators couldn't tell a 93%-precision assistant from an 80%-precision one until a second exposure — a durable correction, not decay. Two reporting anomalies (identical statistics across unrelated measures) raise integrity questions the dossier flags but can't resolve. The timing lesson survives even though "dip and recovery" doesn't: a single-session pilot will misjudge assistant-quality perception.</p>
+  <p class="dossier-path">dossiers/2026-09-03-evaluation-timing-novelty-effect.md</p>
 </article>
+
+<h2 class="section-head">This week</h2>
+
+<div class="week-item">
+  <p><strong>Eval numbers are conditional, and the condition is usually the tooling's default, not a choice anyone made.</strong> Five sources this week varied one axis of an eval's condition — repetition, accessibility display settings, model identity, agent chain depth, session count — and each flipped a ship/no-ship call. Sharpest case: no major computer-use benchmark varies display scale at all. A number without its condition envelope isn't a finding.</p>
+</div>
+
+<div class="week-item">
+  <p><strong>Four jurisdictions are legislating a uniform AI-content label this quarter; the week's evidence says uniform labels are the failure mode.</strong> The EU AI Act's Article 50 is now in force with no conformity-presumption route; China, India and Thailand still haven't specified what the mark should look like. A calibrated Bayesian model shows a shared, identical credibility signal can lock a crowd into wrong beliefs — diversifying it per user is the fix, and no statute forbids that.</p>
+</div>
+
+<div class="week-item">
+  <p><strong>The "it's only an AI" discount doesn't exist, measured three ways.</strong> A Japanese replication (N=201) found blame for lying statistically identical whether the liar is human or robot. A 16-model refusal taxonomy found declines read as moral conduct, hedging switched off entirely. An airport robot study found flawless navigation still reads as a violation when it misreads the room. What actually recovers trust is an offered alternative or partial compliance — not an apology.</p>
+</div>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Ambient held 3 of 5 slots with none of its submissions killed — a strong, non-padded day for the thinnest lane. Capability and practice each had verified survivors that missed the cap on rank:</p>
-  <ul>
-    <li>A hard version boundary on Claude Fable 5.1/Mythos 5.1 thinking-block replay — <a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">platform.claude.com/docs/en/release-notes/overview</a></li>
-    <li>Anthropic's built-in Cowork browser, rather than extending the Chrome extension — <a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">claude.com/blog/cowork-built-in-browser</a></li>
-    <li>A reading-habits study finding only 4.3% of prompts used any taught prompt-engineering technique — <a href="https://arxiv.org/abs/2602.09907" target="_blank" rel="noopener">arXiv 2602.09907</a></li>
-    <li>Figma's own product team rejecting "prototype-first" as its default AI workflow — <a href="https://figma.com/blog/how-we-built-generative-plugins-and-shaders/" target="_blank" rel="noopener">figma.com/blog</a></li>
-    <li>Gemini 3.8 Flash's 1M-token context window with an expiring low price — <a href="https://deepmind.google/models/model-cards/gemini-3-8-flash/" target="_blank" rel="noopener">deepmind.google/models/model-cards/gemini-3-8-flash</a></li>
-  </ul>
-  <p>Five items were killed this cycle, all as duplicates of already-published or already-noted material. A cross-lane pattern of items being resubmitted within a cycle or two of first appearing (now four lanes, including this cycle's third submission of a Figma research-tooling post) is flagged again for the monthly pipeline audit rather than acted on here.</p>
+  <p>Practice lane returned zero items today — all four submissions resubmitted material already published in the last 1–12 days. This systemic resubmission pattern has now reached three of four daily lanes, flagged for three consecutive cycles, escalating each time. Routed to the monthly pipeline audit.</p>
+  <p>A claim in the already-published 2026-09-03 digest ("banking/email/SSO sites excluded by default" for Claude Cowork's built-in browser) could not be substantiated anywhere on its source page on re-fetch — an error that appears to have propagated across two cycles and already reached this page. Flagged for correction at the next audit; not edited here.</p>
+  <p class="dossier-path">Full digest, below-cap survivors, and the kill list: daily/2026-09-04.md</p>
 </div>
 
 <div class="final-btn">
