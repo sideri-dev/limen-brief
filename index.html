@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-04</title>
+<title>Limen — 2026-09-05</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -115,12 +115,8 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
-  .week-item {
-    margin-bottom: 1.75rem;
-  }
-  .question {
-    margin-bottom: 1rem;
-    font-size: 0.98rem;
+  .gate-item {
+    margin-bottom: 1.25rem;
   }
   .final-btn {
     margin-top: 3rem;
@@ -130,82 +126,84 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-04</p>
-  <p class="meta">~7 minute read</p>
+  <p class="date">2026-09-05</p>
+  <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Nobody shipping a smart-home app in China has built a consent screen for the people who live there but don't own the account.</p>
-  <p>A CHI 2026 audit of 49 apps found 19 recognize that bystanders — housemates, guests, cleaners — can be harmed by the app's sensing, but none offer them consent or notification for registration, permissions, or data deletion. 36 of the 49 apps can operate cameras, 27 can control door locks.</p>
-  <p>The gap is a missing screen, not a missing policy: shared-space sensing products need a first-class non-account-holder consent surface, distinct from the primary user's settings. It converges with the independent Korean "OurData" study published here five weeks ago — same structural gap, different country and method.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.09254" target="_blank" rel="noopener">arXiv 2602.09254 (CHI 2026) →</a>
+  <p class="headline">An activity-tracking app's own "not sure" suggestion talks people out of admitting they're not sure.</p>
+  <p>A peer-reviewed IMWUT study paired an auto-suggest labeling feature with an explicit uncertainty-annotation control and found honest "uncertain" tags collapse from 44.1% to 7.6% once the system starts guessing. In a 7-day free-living deployment, only 1.5% of 93,905 annotated minutes got marked uncertain at all, and just 5 of 14 participants said they used the control regularly — the paper's own diagnosis is that pairing a suggestion with an uncertainty affordance breeds false confidence rather than honest calibration.</p>
+  <p>Any product putting an AI guess next to a "not sure" button needs to test whether the guess is quietly switching the button off.</p>
+  <a class="source-btn" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12758905/" target="_blank" rel="noopener">PMC (IMWUT / UbiComp 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">When a chatbot is wrong, have it correct itself out loud — routing the fix through a separate fact-check layer costs trust.</p>
-  <p>A controlled experiment (N=120) found three correction methods — webpage retraction, self-correction, separate-chatbot correction — fixed the error equally well, but only self-correction avoided damaging trust. Self-correcting chatbots rated significantly higher on both trustworthiness and perceived expertise.</p>
-  <p>Users' social connection to a chatbot only converted into belief change when the same chatbot corrected itself; outsourcing the correction to a separate source severed that link entirely. Single-source finding — no independent replication yet.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2606.19286" target="_blank" rel="noopener">arXiv 2606.19286 →</a>
+  <p class="headline">What makes a reviewer actually catch an LLM's mistake isn't a better explanation — it's whether the reasoning is retrievable later.</p>
+  <p>Two randomized experiments with 640 customer-facing employees found self-generated explanations (the reviewer writes their own reasoning first) improved error detection and recall, and a later cue that reactivated that reasoning kept detection working under repeated use. Richer AI-authored explanations did neither job.</p>
+  <p>That names the actual design lever for an oversight surface: an onboarding step where the human explains their own check, then a later prompt that brings the reasoning back, rather than a fancier explanation panel. Single-source preprint, not yet peer-reviewed.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.01976" target="_blank" rel="noopener">arXiv 2609.01976 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">What a driving alert says, not just whether it fires, is what earns trust — and the effect flips sharply by age.</p>
-  <p>A 240-person driving-simulator study found plain object notifications ("there is a car in front of you on the right") beat vaguer or alarm-framed phrasing on both acceptance and adaptive-cruise-control comfort, with a significant Condition × Age interaction (p&lt;0.001): older drivers responded more to alert-framed language, younger drivers to plain description.</p>
-  <p>There's no single best default phrasing for an ADAS notification — specificity, tuned by driver age, is the supported design lever. Single-source, peer-reviewed.</p>
-  <a class="source-btn" href="https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1806452/full" target="_blank" rel="noopener">Frontiers in Computer Science, Vol. 8 (2026) →</a>
+  <p class="headline">Anthropic's commerce-agent architecture never lets the model itself move money — and it rejected custom UI markup for a plain engineering reason.</p>
+  <p>The harness, not the model, controls every write: payments, refunds, price changes and campaign launches all pass through a call that only succeeds for actions already approved on a real human-facing surface — a portal button, a CLI confirmation, a tool-approval prompt. Anthropic also tried and dropped custom XML-style UI tags for agent-built interfaces, because tag definitions living in the system prompt meant every new component bloated context and every edit risked regressions elsewhere.</p>
+  <p>The maker-checker split, not model alignment, is the load-bearing safety mechanism here, and the UI-markup rejection is a concrete argument against a pattern a lot of teams are currently building.</p>
+  <a class="source-btn" href="https://claude.com/blog/the-anatomy-of-effective-commerce-agents" target="_blank" rel="noopener">claude.com/blog — commerce agents →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">OpenAI's GPT-6 Astra pauses for human review only on its own chat surfaces — the API just stops.</p>
-  <p>Astra crosses OpenAI's "Critical" cybersecurity threshold under its Preparedness Framework, scoring a perfect 100% on ExploitBench against 78.5% for GPT-5.6 Sol. The confirm-dialog safety behavior is scoped to ChatGPT and Codex only — the model card states that in the API, a paused task simply stops, with no review prompt and no path to continue.</p>
-  <p>Anyone building on the API rather than the chat surface needs a different failure-mode plan: a hard stop with no recovery, not an interruptible confirm dialog.</p>
-  <a class="source-btn" href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">openai.com/index/gpt-6-astra →</a>
+  <p class="headline">Zed concluded no instruction can stop an agent that really wants to touch your files — so it moved enforcement to the OS.</p>
+  <p>Its own reasoning: "a rule that bans <code>git .*</code> does very little to prevent an agent that really wants to modify your .git folder," and prompt-level rules do even less against prompt injection. Sandboxing now runs through Seatbelt on macOS, Bubblewrap namespaces on Linux, and WSL on Windows, because "agents cannot be trusted to determine whether an action is something the user would want."</p>
+  <p>It's a durable line — prompt-level guardrails versus enforcement-level ones — independent of which model is asking.</p>
+  <a class="source-btn" href="https://zed.dev/blog/sandboxing" target="_blank" rel="noopener">zed.dev/blog/sandboxing →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Google swapped Gemini's numeric "thinking budget" for three named tiers — low, medium, high.</p>
-  <p>Gemini 3.8 Flash replaces the thinking_budget token count with a thinking_level enum: low for latency-critical tasks like incident response or real-time chat, medium (the default) for complex code and agentic use, high for deep multi-step reasoning — each mapped by Google to explicit task types.</p>
-  <p>The design shift is real: picking a discrete, named tier rather than calibrating a number. Introductory pricing ($0.75/1M input, $3.75/1M output) runs only "through the end of year," per the page's own wording, not a fixed date.</p>
-  <a class="source-btn" href="https://ai.google.dev/gemini-api/docs/latest-model" target="_blank" rel="noopener">ai.google.dev/gemini-api/docs/latest-model →</a>
+  <p class="headline">Vercel stopped trying to keep agent credentials secret and started making them short-lived instead.</p>
+  <p>Their argument: a vaulted long-lived token "never expires, and no vault limits what a leaked credential can do," and agents make that worse by touching more systems, more autonomously, more often, while the tooling to contain a secret hasn't changed. Vercel Connect replaces the vault with per-deployment OIDC identity and auto-scoped, expiring, per-task tokens.</p>
+  <p>Credential design for agents is a scope-and-lifetime problem, not a secrecy problem — that's the axis to design against.</p>
+  <a class="source-btn" href="https://vercel.com/blog/the-end-of-credential-sprawl-for-agents" target="_blank" rel="noopener">vercel.com/blog — credential sprawl →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>A re-read of yesterday's #1 item (the five-session trust-dip study) found the digest reported the wrong finding. Trust medians are identical across all five sessions, "recovery" was never tested, and evaluators' actual rate of ignoring the assistant's suggestions gets worse after session 2 and stays worse through session 4.</p>
-  <p>The paper's own better explanation isn't a fading novelty effect but calibration: evaluators couldn't tell a 93%-precision assistant from an 80%-precision one until a second exposure — a durable correction, not decay. Two reporting anomalies (identical statistics across unrelated measures) raise integrity questions the dossier flags but can't resolve. The timing lesson survives even though "dip and recovery" doesn't: a single-session pilot will misjudge assistant-quality perception.</p>
-  <p class="dossier-path">dossiers/2026-09-03-evaluation-timing-novelty-effect.md</p>
+  <p>Yesterday's #1 (Chinese smart-home bystander-privacy audit) turns out to be the weakest reading of a converging finding, not a China-specific one: two other bystander-consent audits, in different countries and years, found the identical absolute zero. The gap is structural, not negligent — every shipped bystander-consent mechanism (Meet, Call Recording) works because the bystander is reachable and can leave; a visitor at a smart-home's front door has neither property.</p>
+  <p>Almost no law actually requires the missing screen inside a private home, and the one controlled study that tested whether people even want it (N=761) found no significant owner/bystander difference. The corrected read: don't ship the missing consent screen — decide what the device refuses to do when the person in front of it isn't addressable.</p>
+  <p class="dossier-path">dossiers/2026-09-04-bystander-consent-surface.md</p>
 </article>
 
-<h2 class="section-head">This week</h2>
+<h2 class="section-head">Saturday gate</h2>
 
-<div class="week-item">
-  <p><strong>Eval numbers are conditional, and the condition is usually the tooling's default, not a choice anyone made.</strong> Five sources this week varied one axis of an eval's condition — repetition, accessibility display settings, model identity, agent chain depth, session count — and each flipped a ship/no-ship call. Sharpest case: no major computer-use benchmark varies display scale at all. A number without its condition envelope isn't a finding.</p>
-</div>
-
-<div class="week-item">
-  <p><strong>Four jurisdictions are legislating a uniform AI-content label this quarter; the week's evidence says uniform labels are the failure mode.</strong> The EU AI Act's Article 50 is now in force with no conformity-presumption route; China, India and Thailand still haven't specified what the mark should look like. A calibrated Bayesian model shows a shared, identical credibility signal can lock a crowd into wrong beliefs — diversifying it per user is the fix, and no statute forbids that.</p>
-</div>
-
-<div class="week-item">
-  <p><strong>The "it's only an AI" discount doesn't exist, measured three ways.</strong> A Japanese replication (N=201) found blame for lying statistically identical whether the liar is human or robot. A 16-model refusal taxonomy found declines read as moral conduct, hedging switched off entirely. An airport robot study found flawless navigation still reads as a violation when it misreads the room. What actually recovers trust is an offered alternative or partial compliance — not an apology.</p>
-</div>
+<article class="item">
+  <p>Two drafts are open, awaiting a promotion decision:</p>
+  <div class="gate-item">
+    <p><strong>DRAFT-KB-03</strong> — Evaluation condition envelopes: five axes that each moved a number far enough to reverse a ship call, and the harness-defaults mechanism under them. Review: 1 block, 8 objections (2026-09-04).</p>
+  </div>
+  <div class="gate-item">
+    <p><strong>DRAFT-KB-04</strong> — The AI disclosure mark as a design problem: two-party application, no conformity route, no specification, and a uniform signal the evidence argues against. Review: 1 block, 8 objections (2026-09-04).</p>
+  </div>
+  <p>No BACKLOG changes are tied to either draft this cycle.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md" target="_blank" rel="noopener">Decide on GitHub →</a>
+  <p>Then run /promote.</p>
+</article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Practice lane returned zero items today — all four submissions resubmitted material already published in the last 1–12 days. This systemic resubmission pattern has now reached three of four daily lanes, flagged for three consecutive cycles, escalating each time. Routed to the monthly pipeline audit.</p>
-  <p>A claim in the already-published 2026-09-03 digest ("banking/email/SSO sites excluded by default" for Claude Cowork's built-in browser) could not be substantiated anywhere on its source page on re-fetch — an error that appears to have propagated across two cycles and already reached this page. Flagged for correction at the next audit; not edited here.</p>
-  <p class="dossier-path">Full digest, below-cap survivors, and the kill list: daily/2026-09-04.md</p>
+  <p>Practice lane took 3 of 5 slots today on independently-judged merit — the verifier found four distinct, non-padding architectural arguments from that lane and only the weakest (Descript's MCP-vs-API post, 74 days old) lost the room. Capability lane produced three verified items (a KV-cache eviction paper, a quantization paper, an updated Gemini video post) but none reached the cap.</p>
+  <p>Two items were killed: a duplicate writer-AI-partner resubmission, and an HRI 2026 proxemics paper that never returned a fetchable page.</p>
+  <p>Mirror-publish: clone and redaction gate (CLEAN) succeeded, push hit the recurring git-proxy 403, no repo-attach recovery available here — same gap as three prior cycles. Page not confirmed updated unless the orchestrator completed it after.</p>
+  <p class="dossier-path">Full digest, below-cap survivors, and the kill list: daily/2026-09-05.md</p>
 </div>
 
 <div class="final-btn">
