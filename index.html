@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-05</title>
+<title>Limen — 2026-09-06</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -115,9 +115,6 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
-  .gate-item {
-    margin-bottom: 1.25rem;
-  }
   .final-btn {
     margin-top: 3rem;
   }
@@ -126,84 +123,74 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-05</p>
+  <p class="date">2026-09-06</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">An activity-tracking app's own "not sure" suggestion talks people out of admitting they're not sure.</p>
-  <p>A peer-reviewed IMWUT study paired an auto-suggest labeling feature with an explicit uncertainty-annotation control and found honest "uncertain" tags collapse from 44.1% to 7.6% once the system starts guessing. In a 7-day free-living deployment, only 1.5% of 93,905 annotated minutes got marked uncertain at all, and just 5 of 14 participants said they used the control regularly — the paper's own diagnosis is that pairing a suggestion with an uncertainty affordance breeds false confidence rather than honest calibration.</p>
-  <p>Any product putting an AI guess next to a "not sure" button needs to test whether the guess is quietly switching the button off.</p>
-  <a class="source-btn" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12758905/" target="_blank" rel="noopener">PMC (IMWUT / UbiComp 2026) →</a>
+  <p class="headline">A CHI 2026 study finally answers how often an agent should stop and ask — not just whether it should.</p>
+  <p>Researchers ran a formative study that surfaced a recurring failure pattern (confirm, diagnose, correct, redo) in multi-step agent tasks, then built a decision-theoretic model for where to place confirmation checkpoints and tested it head-to-head against the standard confirm-only-at-the-end approach with 48 participants. 81% preferred the intermediate-confirmation model, and it cut task completion time 13.54%.</p>
+  <p>That's a measured alternative to the binary approve/auto-run choice most agent products still ship — checkpoint interval and placement turn out to be design variables, not an afterthought.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2510.05307" target="_blank" rel="noopener">arXiv 2510.05307 (CHI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">What makes a reviewer actually catch an LLM's mistake isn't a better explanation — it's whether the reasoning is retrievable later.</p>
-  <p>Two randomized experiments with 640 customer-facing employees found self-generated explanations (the reviewer writes their own reasoning first) improved error detection and recall, and a later cue that reactivated that reasoning kept detection working under repeated use. Richer AI-authored explanations did neither job.</p>
-  <p>That names the actual design lever for an oversight surface: an onboarding step where the human explains their own check, then a later prompt that brings the reasoning back, rather than a fancier explanation panel. Single-source preprint, not yet peer-reviewed.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.01976" target="_blank" rel="noopener">arXiv 2609.01976 →</a>
+  <p class="headline">Only one explanation format actually helps people tell a correct AI answer from a wrong one — and it isn't any of the three currently shipped as "transparency."</p>
+  <p>A 192-person between-subjects study found reasoning traces and post-hoc explanations are persuasive but not informative: they raise acceptance of an LLM's output regardless of whether that output is right. Dual explanation — presenting the case for and against a prediction together — was the only condition that genuinely improved people's ability to catch errors.</p>
+  <p>Worth testing against whatever explanation UI is currently shipping under the trust-building banner. Single-source preprint.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2605.10930" target="_blank" rel="noopener">arXiv 2605.10930 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Anthropic's commerce-agent architecture never lets the model itself move money — and it rejected custom UI markup for a plain engineering reason.</p>
-  <p>The harness, not the model, controls every write: payments, refunds, price changes and campaign launches all pass through a call that only succeeds for actions already approved on a real human-facing surface — a portal button, a CLI confirmation, a tool-approval prompt. Anthropic also tried and dropped custom XML-style UI tags for agent-built interfaces, because tag definitions living in the system prompt meant every new component bloated context and every edit risked regressions elsewhere.</p>
-  <p>The maker-checker split, not model alignment, is the load-bearing safety mechanism here, and the UI-markup rejection is a concrete argument against a pattern a lot of teams are currently building.</p>
-  <a class="source-btn" href="https://claude.com/blog/the-anatomy-of-effective-commerce-agents" target="_blank" rel="noopener">claude.com/blog — commerce agents →</a>
+  <p class="headline">An oversight redesign made people faster and more confident — and no more accurate.</p>
+  <p>Microsoft Research ran three user studies on a computer-use agent and found their redesigned oversight interface cut the time participants spent hunting for errors and raised their confidence in their own decisions, but final accuracy was not meaningfully improved.</p>
+  <p>That's a direct warning against the obvious success metric for an oversight surface: confidence and speed can both go up while the thing the interface exists to do — catching real errors — stays flat.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.16844" target="_blank" rel="noopener">arXiv 2602.16844 (Microsoft Research) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Zed concluded no instruction can stop an agent that really wants to touch your files — so it moved enforcement to the OS.</p>
-  <p>Its own reasoning: "a rule that bans <code>git .*</code> does very little to prevent an agent that really wants to modify your .git folder," and prompt-level rules do even less against prompt injection. Sandboxing now runs through Seatbelt on macOS, Bubblewrap namespaces on Linux, and WSL on Windows, because "agents cannot be trusted to determine whether an action is something the user would want."</p>
-  <p>It's a durable line — prompt-level guardrails versus enforcement-level ones — independent of which model is asking.</p>
-  <a class="source-btn" href="https://zed.dev/blog/sandboxing" target="_blank" rel="noopener">zed.dev/blog/sandboxing →</a>
+  <p class="headline">Developers reviewing agent-generated code have converged on three shortcuts that feel like verification and aren't.</p>
+  <p>Interviews with 17 developers (13 with 7+ years' experience) at an ACM FAccT 2026 venue found working engineers treat an agent's stated plan as a faithful proxy for what it actually did, treat passing tests as proof the code is correct, and treat a quick eyeball of agent output as a reliable issue-signal — three heuristics that substitute for real checking.</p>
+  <p>That names the exact UI elements — diff view, plan display, test pass/fail — that function as trust shortcuts rather than checks, useful for anyone designing what an oversight surface actually shows.</p>
+  <a class="source-btn" href="https://arxiv.org/html/2606.05391v1" target="_blank" rel="noopener">arXiv 2606.05391 (FAccT 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Vercel stopped trying to keep agent credentials secret and started making them short-lived instead.</p>
-  <p>Their argument: a vaulted long-lived token "never expires, and no vault limits what a leaked credential can do," and agents make that worse by touching more systems, more autonomously, more often, while the tooling to contain a secret hasn't changed. Vercel Connect replaces the vault with per-deployment OIDC identity and auto-scoped, expiring, per-task tokens.</p>
-  <p>Credential design for agents is a scope-and-lifetime problem, not a secrecy problem — that's the axis to design against.</p>
-  <a class="source-btn" href="https://vercel.com/blog/the-end-of-credential-sprawl-for-agents" target="_blank" rel="noopener">vercel.com/blog — credential sprawl →</a>
+  <p class="headline">Letting an LLM score its own robot's social performance works for engagement — and gets comfort backwards.</p>
+  <p>A RO-MAN 2026 paper had five LLMs complete standard human-robot-interaction questionnaires as the robot, compared against 25 human-rated interactions and replicated live on a Claude Sonnet 4.5-powered Nao robot. Satisfaction and enjoyment scores correlated well with human ratings (r up to .72), but the comfort/strangeness dimension came out systematically inverted.</p>
+  <p>A team automating embodied-agent evaluation can trust the LLM for engagement metrics but needs a human in the loop for anything about discomfort or uncanny-valley reactions.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2606.23339" target="_blank" rel="noopener">arXiv 2606.23339 (RO-MAN 2026) →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Yesterday's #1 (Chinese smart-home bystander-privacy audit) turns out to be the weakest reading of a converging finding, not a China-specific one: two other bystander-consent audits, in different countries and years, found the identical absolute zero. The gap is structural, not negligent — every shipped bystander-consent mechanism (Meet, Call Recording) works because the bystander is reachable and can leave; a visitor at a smart-home's front door has neither property.</p>
-  <p>Almost no law actually requires the missing screen inside a private home, and the one controlled study that tested whether people even want it (N=761) found no significant owner/bystander difference. The corrected read: don't ship the missing consent screen — decide what the device refuses to do when the person in front of it isn't addressable.</p>
-  <p class="dossier-path">dossiers/2026-09-04-bystander-consent-surface.md</p>
+  <p>Yesterday's #1 (the activity-tracker uncertainty-suppression study) mostly holds up under deep re-checking, but the headline number doesn't mean quite what it looked like. Measuring the paper's own figures directly, the dossier finds the real per-annotation suppression from pairing an AI suggestion with an uncertainty control is roughly 2.7x, not the ~5.8x the reported 44.1%-to-7.6% figure implies — the gap is a segmentation artifact of how the system pre-chunks the timeline, not double the effect.</p>
+  <p>It also surfaces the paper's real, unstated thesis: the suggestion and the human "uncertain" control were answering the same underlying question (when something happened), so they were competing rather than one simply suppressing the other. The suppression direction itself replicates independently at much larger scale (N=3,132) in a separate preprint. No design vocabulary exists anywhere in current UX guidance (Apple, Google PAIR, Microsoft HAX, NIST) for this failure mode — user-side uncertainty, as opposed to the system's own confidence display.</p>
+  <p class="dossier-path">dossiers/2026-09-05-uncertainty-elicitation-suppression.md</p>
 </article>
 
-<h2 class="section-head">Saturday gate</h2>
+<h2 class="section-head">Needs your answer</h2>
 
 <article class="item">
-  <p>Two drafts are open, awaiting a promotion decision:</p>
-  <div class="gate-item">
-    <p><strong>DRAFT-KB-03</strong> — Evaluation condition envelopes: five axes that each moved a number far enough to reverse a ship call, and the harness-defaults mechanism under them. Review: 1 block, 8 objections (2026-09-04).</p>
-  </div>
-  <div class="gate-item">
-    <p><strong>DRAFT-KB-04</strong> — The AI disclosure mark as a design problem: two-party application, no conformity route, no specification, and a uniform signal the evidence argues against. Review: 1 block, 8 objections (2026-09-04).</p>
-  </div>
-  <p>No BACKLOG changes are tied to either draft this cycle.</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md" target="_blank" rel="noopener">Decide on GitHub →</a>
-  <p>Then run /promote.</p>
+  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane, or stay out of scope? Persistence is the product there, and its memory design decisions are sharper and more explicit than any assistant's. (asked 2026-09-06)</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Practice lane took 3 of 5 slots today on independently-judged merit — the verifier found four distinct, non-padding architectural arguments from that lane and only the weakest (Descript's MCP-vs-API post, 74 days old) lost the room. Capability lane produced three verified items (a KV-cache eviction paper, a quantization paper, an updated Gemini video post) but none reached the cap.</p>
-  <p>Two items were killed: a duplicate writer-AI-partner resubmission, and an HRI 2026 proxemics paper that never returned a fetchable page.</p>
-  <p>Mirror-publish: clone and redaction gate (CLEAN) succeeded, push hit the recurring git-proxy 403, no repo-attach recovery available here — same gap as three prior cycles. Page not confirmed updated unless the orchestrator completed it after.</p>
-  <p class="dossier-path">Full digest, below-cap survivors, and the kill list: daily/2026-09-05.md</p>
+  <p>Interaction took 4 of 5 slots today, all independently verified as distinct questions (checkpoint timing, explanation format, confidence-vs-accuracy, developer heuristics) rather than padding. Ambient returned exactly 2 survivors after a third item was killed as a duplicate — expected for the thinnest lane, not a shortfall. Practice (3 survivors) and capability (2 survivors) produced real items but none outranked today's top five; six below-cap items and three duplicate kills are logged in the full digest.</p>
+  <p>No question added this run beyond the one already open — nothing in today's material cleared the research-direction bar.</p>
 </div>
 
 <div class="final-btn">
