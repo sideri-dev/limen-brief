@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-06</title>
+<title>Limen — 2026-09-07</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -123,61 +123,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-06</p>
+  <p class="date">2026-09-07</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">A CHI 2026 study finally answers how often an agent should stop and ask — not just whether it should.</p>
-  <p>Researchers ran a formative study that surfaced a recurring failure pattern (confirm, diagnose, correct, redo) in multi-step agent tasks, then built a decision-theoretic model for where to place confirmation checkpoints and tested it head-to-head against the standard confirm-only-at-the-end approach with 48 participants. 81% preferred the intermediate-confirmation model, and it cut task completion time 13.54%.</p>
-  <p>That's a measured alternative to the binary approve/auto-run choice most agent products still ship — checkpoint interval and placement turn out to be design variables, not an afterthought.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2510.05307" target="_blank" rel="noopener">arXiv 2510.05307 (CHI 2026) →</a>
+  <p class="headline">A privacy control should be something you can check with your hand, not something you have to trust a menu about.</p>
+  <p>A within-subjects HCI study proposes PIPS — physical privacy controls that give "perceptible assurance" of sensor state through direct manipulation and default-safe deactivation — and backs it with three separate case studies: a physical webcam cover, a "Candid Mic," and an on-demand RFID reader.</p>
+  <p>A software mute toggle or a bare LED fails this test because its state isn't physically tethered to the capture hardware, so the design should default to automatic deactivation rather than something the user has to remember to check. It's kept past the usual 7-day window because it's a replicated design principle, not a version-pinned capability claim.</p>
+  <a class="source-btn" href="https://arxiv.org/html/2604.00312v1" target="_blank" rel="noopener">arXiv 2604.00312 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Only one explanation format actually helps people tell a correct AI answer from a wrong one — and it isn't any of the three currently shipped as "transparency."</p>
-  <p>A 192-person between-subjects study found reasoning traces and post-hoc explanations are persuasive but not informative: they raise acceptance of an LLM's output regardless of whether that output is right. Dual explanation — presenting the case for and against a prediction together — was the only condition that genuinely improved people's ability to catch errors.</p>
-  <p>Worth testing against whatever explanation UI is currently shipping under the trust-building banner. Single-source preprint.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2605.10930" target="_blank" rel="noopener">arXiv 2605.10930 →</a>
+  <p class="headline">The channel you sync a robot arm to matters more than whether you sync it at all — and breath beats heart rate.</p>
+  <p>An HRI 2026 "embreathment" study found that syncing a teleoperated arm's movement to the user's own breathing, rather than an involuntary signal like heart rate or skin conductance, significantly increased felt body ownership and was the participants' preferred condition.</p>
+  <p>The finding names the specific lever: a user-controllable physiological signal, not an involuntary one, is what makes a remote or prosthetic body feel like yours.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2512.14952" target="_blank" rel="noopener">arXiv 2512.14952 (HRI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">An oversight redesign made people faster and more confident — and no more accurate.</p>
-  <p>Microsoft Research ran three user studies on a computer-use agent and found their redesigned oversight interface cut the time participants spent hunting for errors and raised their confidence in their own decisions, but final accuracy was not meaningfully improved.</p>
-  <p>That's a direct warning against the obvious success metric for an oversight surface: confidence and speed can both go up while the thing the interface exists to do — catching real errors — stays flat.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.16844" target="_blank" rel="noopener">arXiv 2602.16844 (Microsoft Research) →</a>
+  <p class="headline">Bio-mimetic haptics on a social robot make people like it more even as it gets creepier — those two reactions don't cancel each other out.</p>
+  <p>Glasgow researchers added heartbeat, purring, and thermal feedback to a PARO robot in a 42-person study and found the haptic layer significantly raised perceived warmth and likeability at the same time as it raised perceived eeriness.</p>
+  <p>That's a caution against reading rising "eeriness" scores during haptic prototyping as an automatic stop signal — the evidence here shows it can coexist with a net-positive reaction rather than override it.</p>
+  <a class="source-btn" href="https://eprints.gla.ac.uk/383409/" target="_blank" rel="noopener">Glasgow Enlighten repository (HRI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Developers reviewing agent-generated code have converged on three shortcuts that feel like verification and aren't.</p>
-  <p>Interviews with 17 developers (13 with 7+ years' experience) at an ACM FAccT 2026 venue found working engineers treat an agent's stated plan as a faithful proxy for what it actually did, treat passing tests as proof the code is correct, and treat a quick eyeball of agent output as a reliable issue-signal — three heuristics that substitute for real checking.</p>
-  <p>That names the exact UI elements — diff view, plan display, test pass/fail — that function as trust shortcuts rather than checks, useful for anyone designing what an oversight surface actually shows.</p>
-  <a class="source-btn" href="https://arxiv.org/html/2606.05391v1" target="_blank" rel="noopener">arXiv 2606.05391 (FAccT 2026) →</a>
+  <p class="headline">How you structure oversight of a computer-use agent matters more than how much of it you add.</p>
+  <p>A 48-participant study comparing four oversight strategies for computer-use agents found that strategy, not the amount of human-in-the-loop checking, was what actually shaped whether users caught a problematic action — plan-based strategies specifically lowered the rate at which the agent's mistakes went unnoticed.</p>
+  <p>That argues against the reflexive fix of bolting on more checkpoints; the real lever is making the moment of decision legible.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2604.04918" target="_blank" rel="noopener">arXiv 2604.04918 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Letting an LLM score its own robot's social performance works for engagement — and gets comfort backwards.</p>
-  <p>A RO-MAN 2026 paper had five LLMs complete standard human-robot-interaction questionnaires as the robot, compared against 25 human-rated interactions and replicated live on a Claude Sonnet 4.5-powered Nao robot. Satisfaction and enjoyment scores correlated well with human ratings (r up to .72), but the comfort/strangeness dimension came out systematically inverted.</p>
-  <p>A team automating embodied-agent evaluation can trust the LLM for engagement metrics but needs a human in the loop for anything about discomfort or uncanny-valley reactions.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2606.23339" target="_blank" rel="noopener">arXiv 2606.23339 (RO-MAN 2026) →</a>
+  <p class="headline">Hybrid GUI-plus-agent interfaces make tasks less effortful, not faster — and who chooses to delegate has nothing to do with how risky the task is.</p>
+  <p>A 73-person HAI 2026 (Osaka) lab study comparing three interaction modes on a CRUD task found AI assistance cut clicks, navigation, and scrolling significantly without changing overall task duration, and that individual preference — not task risk — explained about half the variance in whether people used the assistant.</p>
+  <p>That's evidence against risk-tiered delegation gating as a design lever; a personalization-based default is the better one.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2608.19551" target="_blank" rel="noopener">arXiv 2608.19551 (HAI 2026) →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Yesterday's #1 (the activity-tracker uncertainty-suppression study) mostly holds up under deep re-checking, but the headline number doesn't mean quite what it looked like. Measuring the paper's own figures directly, the dossier finds the real per-annotation suppression from pairing an AI suggestion with an uncertainty control is roughly 2.7x, not the ~5.8x the reported 44.1%-to-7.6% figure implies — the gap is a segmentation artifact of how the system pre-chunks the timeline, not double the effect.</p>
-  <p>It also surfaces the paper's real, unstated thesis: the suggestion and the human "uncertain" control were answering the same underlying question (when something happened), so they were competing rather than one simply suppressing the other. The suppression direction itself replicates independently at much larger scale (N=3,132) in a separate preprint. No design vocabulary exists anywhere in current UX guidance (Apple, Google PAIR, Microsoft HAX, NIST) for this failure mode — user-side uncertainty, as opposed to the system's own confidence display.</p>
-  <p class="dossier-path">dossiers/2026-09-05-uncertainty-elicitation-suppression.md</p>
+  <p>Backlog item #15 asked three questions about agent memory, and only one turns out to be a design question. What to surface is now measurable and asymmetric — a 4-month, 40-user randomized deployment found user-requested recall helps satisfaction while system-initiated recall doesn't, and mistimed callbacks actively hurt. What must stay editable or forgettable is a legal question with misaligned answers across regimes — the word "memory" appears zero times in the EU AI Act, while Japan's APPI defines the protected category by whether the operator can delete a record.</p>
+  <p>How to signal memory has no reliable answer: bare signalling reads as invasive across five studies, and the 25-year personalization-transparency record shows an inspectable profile mostly reassures rather than lets people meaningfully act. The actual undesigned surface is the write path — 96% of real ChatGPT memories are created unilaterally by the system, with confirm-before-persist and a diff view still unbuilt.</p>
+  <p class="dossier-path">dossiers/2026-09-06-agent-memory-personalization.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -189,8 +189,10 @@
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Interaction took 4 of 5 slots today, all independently verified as distinct questions (checkpoint timing, explanation format, confidence-vs-accuracy, developer heuristics) rather than padding. Ambient returned exactly 2 survivors after a third item was killed as a duplicate — expected for the thinnest lane, not a shortfall. Practice (3 survivors) and capability (2 survivors) produced real items but none outranked today's top five; six below-cap items and three duplicate kills are logged in the full digest.</p>
-  <p>No question added this run beyond the one already open — nothing in today's material cleared the research-direction bar.</p>
+  <p>Ambient took 4 of 5 slots today, all independently verified and none padded — a strong day for the corpus's thinnest lane. Interaction took the fifth. Practice and capability produced real survivors (source labels/fallacy detection, GitHub Copilot's canvas split, Cursor's self-hosting split, GPT-6 Astra's context repricing, Gemini 3.8 Flash's live-voice gap, Notion's memory architecture, Meta's Muse transcription) but none outranked today's top five.</p>
+  <p>The cross-lane resubmission problem escalated this cycle to three of four lanes in one day: a verbatim duplicate (InsightToast), a capability fact surviving to verification for a third cycle despite being killed twice already (Fable/Mythos cache pricing), and a same-story resubmission under a new URL one day later (Notion Mail's shutdown). Flagged prominently for the monthly audit. A verifier judgment call is also on record: a Replit benchmark-rejection post was killed for overlapping today's own backfill dossier on evaluation methods rather than for literal duplication — worth revisiting if a named vendor case is judged to earn its own slot.</p>
+  <p>No new question added — nothing this run cleared the research-direction bar independently of the one already open.</p>
+  <p>Mirror-publish failed this cycle: the redaction gate passed CLEAN, but the push to the public mirror hit a recurring access denial with no recovery path available this run.</p>
 </div>
 
 <div class="final-btn">
