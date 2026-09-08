@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-07</title>
+<title>Limen — 2026-09-08</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -123,76 +123,79 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-07</p>
+  <p class="date">2026-09-08</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">A privacy control should be something you can check with your hand, not something you have to trust a menu about.</p>
-  <p>A within-subjects HCI study proposes PIPS — physical privacy controls that give "perceptible assurance" of sensor state through direct manipulation and default-safe deactivation — and backs it with three separate case studies: a physical webcam cover, a "Candid Mic," and an on-demand RFID reader.</p>
-  <p>A software mute toggle or a bare LED fails this test because its state isn't physically tethered to the capture hardware, so the design should default to automatic deactivation rather than something the user has to remember to check. It's kept past the usual 7-day window because it's a replicated design principle, not a version-pinned capability claim.</p>
-  <a class="source-btn" href="https://arxiv.org/html/2604.00312v1" target="_blank" rel="noopener">arXiv 2604.00312 →</a>
+  <p class="headline">The grain of an uncertainty display, not just its presence, decides whether people verify an AI's answer or defer to it.</p>
+  <p>A 192-person FAccT 2026 study tested three ways of showing model uncertainty in medical Q&amp;A. Token-level highlighting increased agreement with the AI. Output- and relation-level uncertainty didn't increase agreement — instead it quietly eroded people's confidence in their own answers, and relation-level display specifically suppressed independent verification (searches, checking sources).</p>
+  <p>A confidence badge and a highlighted-phrase treatment are not the same intervention and need separate evaluation.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2605.28571" target="_blank" rel="noopener">arXiv 2605.28571 (FAccT 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">The channel you sync a robot arm to matters more than whether you sync it at all — and breath beats heart rate.</p>
-  <p>An HRI 2026 "embreathment" study found that syncing a teleoperated arm's movement to the user's own breathing, rather than an involuntary signal like heart rate or skin conductance, significantly increased felt body ownership and was the participants' preferred condition.</p>
-  <p>The finding names the specific lever: a user-controllable physiological signal, not an involuntary one, is what makes a remote or prosthetic body feel like yours.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2512.14952" target="_blank" rel="noopener">arXiv 2512.14952 (HRI 2026) →</a>
+  <p class="headline">Months of daily use don't teach people which parts of their voice assistant are the device and which are a third party.</p>
+  <p>A CHI 2026 longitudinal study of five older adults found participants who reported little worry about their voice-first ambient AI still couldn't say who could access their data or distinguish built-in function from third-party app access — even after extended use.</p>
+  <p>One-time settings screens don't fix this; it argues for a persistent, queryable "who can hear this" surface instead.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2603.00384" target="_blank" rel="noopener">arXiv 2603.00384 (CHI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Bio-mimetic haptics on a social robot make people like it more even as it gets creepier — those two reactions don't cancel each other out.</p>
-  <p>Glasgow researchers added heartbeat, purring, and thermal feedback to a PARO robot in a 42-person study and found the haptic layer significantly raised perceived warmth and likeability at the same time as it raised perceived eeriness.</p>
-  <p>That's a caution against reading rising "eeriness" scores during haptic prototyping as an automatic stop signal — the evidence here shows it can coexist with a net-positive reaction rather than override it.</p>
-  <a class="source-btn" href="https://eprints.gla.ac.uk/383409/" target="_blank" rel="noopener">Glasgow Enlighten repository (HRI 2026) →</a>
+  <p class="headline">Showing people the evidence behind a claim beats stamping it "Made with AI."</p>
+  <p>An 81-person study out of the University of Tokyo (with Jun Rekimoto) compared an idealized "Provenance Density" interface — surfacing evidence and a consistency check — against a plain no-signal control, finding a large gap in people's ability to tell truth from fabrication (d=1.82) where the no-signal group showed none at all.</p>
+  <p>It's a lab result on an idealized interface, not a shipped product, but it's a direct, citable argument against binary AI-content labels as sufficient transparency.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.03460" target="_blank" rel="noopener">arXiv 2609.03460 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">How you structure oversight of a computer-use agent matters more than how much of it you add.</p>
-  <p>A 48-participant study comparing four oversight strategies for computer-use agents found that strategy, not the amount of human-in-the-loop checking, was what actually shaped whether users caught a problematic action — plan-based strategies specifically lowered the rate at which the agent's mistakes went unnoticed.</p>
-  <p>That argues against the reflexive fix of bolting on more checkpoints; the real lever is making the moment of decision legible.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2604.04918" target="_blank" rel="noopener">arXiv 2604.04918 →</a>
+  <p class="headline">Not telling people what a sensor is doing doesn't make them comply — it makes them over-restrict themselves defensively.</p>
+  <p>A qualitative study of 24 people under mandatory electronic monitoring in China found that where participants had mapped out how the system actually behaved, they regained some flexibility; where the system stayed opaque, they contracted their movement and activity well beyond what the rules required, and some kept those habits after the device came off.</p>
+  <p>The lesson generalizes past this device: undisclosed consequential sensing produces defensive behavior the system itself never sees.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2607.09009" target="_blank" rel="noopener">arXiv 2607.09009 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Hybrid GUI-plus-agent interfaces make tasks less effortful, not faster — and who chooses to delegate has nothing to do with how risky the task is.</p>
-  <p>A 73-person HAI 2026 (Osaka) lab study comparing three interaction modes on a CRUD task found AI assistance cut clicks, navigation, and scrolling significantly without changing overall task duration, and that individual preference — not task risk — explained about half the variance in whether people used the assistant.</p>
-  <p>That's evidence against risk-tiered delegation gating as a design lever; a personalization-based default is the better one.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2608.19551" target="_blank" rel="noopener">arXiv 2608.19551 (HAI 2026) →</a>
+  <p class="headline">Replit stopped stuffing agent instructions into one static system prompt — it now injects each rule only at the moment it's needed.</p>
+  <p>Their own writeup: stacking reminders in a system prompt causes compliance to collapse once you pass a handful at once, because the model falls back to pretrained habits when rules get verbose or conflicting. Injecting guidance at the decision point via a classifier fixed it at 90% lower cost than dynamically rewriting the prompt.</p>
+  <p>The actual lever is injection timing plus a hard cap on simultaneous reminders — not "more prompt" or "less prompt."</p>
+  <a class="source-btn" href="https://replit.com/blog/decision-time-guidance" target="_blank" rel="noopener">Replit blog →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Backlog item #15 asked three questions about agent memory, and only one turns out to be a design question. What to surface is now measurable and asymmetric — a 4-month, 40-user randomized deployment found user-requested recall helps satisfaction while system-initiated recall doesn't, and mistimed callbacks actively hurt. What must stay editable or forgettable is a legal question with misaligned answers across regimes — the word "memory" appears zero times in the EU AI Act, while Japan's APPI defines the protected category by whether the operator can delete a record.</p>
-  <p>How to signal memory has no reliable answer: bare signalling reads as invasive across five studies, and the 25-year personalization-transparency record shows an inspectable profile mostly reassures rather than lets people meaningfully act. The actual undesigned surface is the write path — 96% of real ChatGPT memories are created unilaterally by the system, with confirm-before-persist and a diff view still unbuilt.</p>
-  <p class="dossier-path">dossiers/2026-09-06-agent-memory-personalization.md</p>
+  <p>Yesterday's dossier stress-tested the corpus's own physical-privacy-controls item against its cited sources and found it doesn't hold together as published: it's a position paper with no new data, and its "perceptible assurance" half has a published null result against it at N=261, in a paper it cites four times without ever reporting that result.</p>
+  <p>Shipped 2026 practice is diverging from physical toggles, not converging on them — Apple, Microsoft and Meta all moved away from a hard physical off-state. No privacy regulation anywhere requires a sensor off-state; the one binding rule that touches perceptible sensor state at all is accessibility law, and it requires exactly the software-mediated channel the paper argues against trusting.</p>
+  <p class="dossier-path">dossiers/2026-09-07-physical-privacy-controls-verification.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
 
 <article class="item">
   <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane, or stay out of scope? Persistence is the product there, and its memory design decisions are sharper and more explicit than any assistant's. (asked 2026-09-06)</p>
+</article>
+
+<article class="item">
+  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field's de facto interaction guidance — Apple's HIG is silent on persona and Google PAIR's references stop in 2019. (asked 2026-09-08)</p>
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Ambient took 4 of 5 slots today, all independently verified and none padded — a strong day for the corpus's thinnest lane. Interaction took the fifth. Practice and capability produced real survivors (source labels/fallacy detection, GitHub Copilot's canvas split, Cursor's self-hosting split, GPT-6 Astra's context repricing, Gemini 3.8 Flash's live-voice gap, Notion's memory architecture, Meta's Muse transcription) but none outranked today's top five.</p>
-  <p>The cross-lane resubmission problem escalated this cycle to three of four lanes in one day: a verbatim duplicate (InsightToast), a capability fact surviving to verification for a third cycle despite being killed twice already (Fable/Mythos cache pricing), and a same-story resubmission under a new URL one day later (Notion Mail's shutdown). Flagged prominently for the monthly audit. A verifier judgment call is also on record: a Replit benchmark-rejection post was killed for overlapping today's own backfill dossier on evaluation methods rather than for literal duplication — worth revisiting if a named vendor case is judged to earn its own slot.</p>
-  <p>No new question added — nothing this run cleared the research-direction bar independently of the one already open.</p>
-  <p>Mirror-publish failed this cycle: the redaction gate passed CLEAN, but the push to the public mirror hit a recurring access denial with no recovery path available this run.</p>
+  <p>The cross-lane resubmission pattern (flagged 2026-09-01 through -07) continued today with two new failure modes for the audit: a killed item resubmitted unchanged four days later with the same fetch failure (Perplexity's hybrid-compute post), and three practice-lane items (Cursor, Notion, GitHub) wrongly treated as new because "verified but below the digest cap" isn't the same as "not yet covered" — all three were already published in 2026-09-07's digest text.</p>
+  <p>The GPT-6 Astra pricing item that just missed the cap was reframed rather than duplicated outright: its token-surcharge fact ran 2026-09-07, but its Fast Mode latency/price lever is genuinely new.</p>
+  <p>The recurring ACM DL 403 access failure (since 2026-08-24, 2026-08-31) killed an ambient-lane HRI Companion 2026 proxemics item this cycle too.</p>
 </div>
 
 <div class="final-btn">
