@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-08</title>
+<title>Limen — 2026-09-09</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -123,61 +123,60 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-08</p>
-  <p class="meta">~6 minute read</p>
+  <p class="date">2026-09-09</p>
+  <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">The grain of an uncertainty display, not just its presence, decides whether people verify an AI's answer or defer to it.</p>
-  <p>A 192-person FAccT 2026 study tested three ways of showing model uncertainty in medical Q&amp;A. Token-level highlighting increased agreement with the AI. Output- and relation-level uncertainty didn't increase agreement — instead it quietly eroded people's confidence in their own answers, and relation-level display specifically suppressed independent verification (searches, checking sources).</p>
-  <p>A confidence badge and a highlighted-phrase treatment are not the same intervention and need separate evaluation.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2605.28571" target="_blank" rel="noopener">arXiv 2605.28571 (FAccT 2026) →</a>
+  <p class="headline">Matching a dialogue system's latency to the direction a user's pace just shifted beats matching their rolling average — and the version that reads as more polite is the "less smooth" one.</p>
+  <p>A within-subjects HAI Symposium 2026 study (Keio University, Most Outstanding Research Award — independently re-checked against the symposium's own page and confirmed genuine) compared a fixed 300ms delay, a smoothed moving average of the user's last three turn-gaps, and a condition where system latency shifts in the same direction the user's own just moved.</p>
+  <p>Direction-matching won on recall, produced the highest heart rate and best overall impression, and rated more "polite" — despite testing as objectively less smooth. The smoothed condition instead produced anxious complaints from participants unsure if the system was slow or stuck. Design target: sync to the direction of change, not the average, even when that reads as rougher.</p>
+  <a class="source-btn" href="https://hai-conference.net/symp2026/proceedings/pdf/D-1.pdf" target="_blank" rel="noopener">HAI Symposium 2026, paper D-1 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Months of daily use don't teach people which parts of their voice assistant are the device and which are a third party.</p>
-  <p>A CHI 2026 longitudinal study of five older adults found participants who reported little worry about their voice-first ambient AI still couldn't say who could access their data or distinguish built-in function from third-party app access — even after extended use.</p>
-  <p>One-time settings screens don't fix this; it argues for a persistent, queryable "who can hear this" surface instead.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2603.00384" target="_blank" rel="noopener">arXiv 2603.00384 (CHI 2026) →</a>
+  <p class="headline">Which explanation an AI-assisted decision tool shows should depend on the user's real-time trust level, not the task.</p>
+  <p>An ACM IUI 2026 study found supporting explanations during low inferred trust, paired with counter-explanations or forced pauses during high trust, cut inappropriate reliance up to 38% and raised accuracy 20%, across laypeople and physicians.</p>
+  <p>Correction: an earlier version of this finding carried fabricated "limitations." The paper's real caveats are a simulated AI assistant rather than a real model, U.K./U.S. Prolific participants only, and budget/sample constraints. The design point stands: the explanation surface needs a live trust signal driving it, not one fixed style per session.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2502.13321" target="_blank" rel="noopener">arXiv 2502.13321 (ACM IUI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Showing people the evidence behind a claim beats stamping it "Made with AI."</p>
-  <p>An 81-person study out of the University of Tokyo (with Jun Rekimoto) compared an idealized "Provenance Density" interface — surfacing evidence and a consistency check — against a plain no-signal control, finding a large gap in people's ability to tell truth from fabrication (d=1.82) where the no-signal group showed none at all.</p>
-  <p>It's a lab result on an idealized interface, not a shipped product, but it's a direct, citable argument against binary AI-content labels as sufficient transparency.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.03460" target="_blank" rel="noopener">arXiv 2609.03460 →</a>
+  <p class="headline">Camera glasses' bystander-privacy problem doesn't have a fix, because it's a genuine four-way tradeoff, not a missing feature.</p>
+  <p>A CHI 2026 study surveying 525 people and interviewing 20 more in China found 65–90% of bystanders would take defensive action in sensitive settings, and tested twelve privacy mechanisms against each other — every one trades among visibility, disruption, empowerment, burden, protection, agency, accountability and exposure, none escaping all four.</p>
+  <p>The design decision this sets for camera-wearable products generally: pick which tradeoff is being accepted, and for which context, because no single mechanism avoids the choice.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2603.04930" target="_blank" rel="noopener">arXiv 2603.04930 (CHI 2026) →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Not telling people what a sensor is doing doesn't make them comply — it makes them over-restrict themselves defensively.</p>
-  <p>A qualitative study of 24 people under mandatory electronic monitoring in China found that where participants had mapped out how the system actually behaved, they regained some flexibility; where the system stayed opaque, they contracted their movement and activity well beyond what the rules required, and some kept those habits after the device came off.</p>
-  <p>The lesson generalizes past this device: undisclosed consequential sensing produces defensive behavior the system itself never sees.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2607.09009" target="_blank" rel="noopener">arXiv 2607.09009 →</a>
+  <p class="headline">GPT-6 Astra's indirect prompt-injection resistance jumped from 73% to 91.5% under independent red-teaming against 1,810 curated attacks — the 8.5% residual crack rate is the number that should size an agentic browsing flow's confirmation-dialog load.</p>
+  <p>OpenAI's system card and independent corroboration from The Decoder agree: GPT-5.6 Sol failed 27% of the time, Astra fails 8.5%. Real improvement, not solved — prior-generation interfaces can responsibly thin their confirmation UI, not remove it.</p>
+  <a class="source-btn" href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener">GPT-6 Astra System Card →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Replit stopped stuffing agent instructions into one static system prompt — it now injects each rule only at the moment it's needed.</p>
-  <p>Their own writeup: stacking reminders in a system prompt causes compliance to collapse once you pass a handful at once, because the model falls back to pretrained habits when rules get verbose or conflicting. Injecting guidance at the decision point via a classifier fixed it at 90% lower cost than dynamically rewriting the prompt.</p>
-  <p>The actual lever is injection timing plus a hard cap on simultaneous reminders — not "more prompt" or "less prompt."</p>
-  <a class="source-btn" href="https://replit.com/blog/decision-time-guidance" target="_blank" rel="noopener">Replit blog →</a>
+  <p class="headline">When a GUI agent fails, the fix people reach for is their own manual oversight — because the agent has no way to recognize or signal that it failed.</p>
+  <p>A CHI 2026 study combining social-media analysis (221 posts) and interviews (14 people) found the recurring coping pattern is user-initiated technical adjustment and manual double-checking, not anything the agent offers.</p>
+  <p>The gap needing design attention is the agent's own error-recognition and feedback loop — without a legible failure signal, users build ad-hoc verification habits the interface never supports.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2505.09875" target="_blank" rel="noopener">arXiv 2505.09875 (ACM CHI 2026) →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Yesterday's dossier stress-tested the corpus's own physical-privacy-controls item against its cited sources and found it doesn't hold together as published: it's a position paper with no new data, and its "perceptible assurance" half has a published null result against it at N=261, in a paper it cites four times without ever reporting that result.</p>
-  <p>Shipped 2026 practice is diverging from physical toggles, not converging on them — Apple, Microsoft and Meta all moved away from a hard physical off-state. No privacy regulation anywhere requires a sensor off-state; the one binding rule that touches perceptible sensor state at all is accessibility law, and it requires exactly the software-mediated channel the paper argues against trusting.</p>
-  <p class="dossier-path">dossiers/2026-09-07-physical-privacy-controls-verification.md</p>
+  <p>The dossier stress-tested yesterday's top item and found a four-arm study, not three, with task accuracy statistically null across all arms — every uncertainty condition scored below the no-uncertainty control. Its "granularity" variable is confounded with estimation method, a confound the authors name but that weakens the granularity claim.</p>
+  <p>Four prior peer-reviewed studies point different, sometimes opposite, directions and stay unreconciled. Sharpest finding: the relation-level display that roughly halved external verification resembles what FDA and EU AI Act rules already prescribe as compliant disclosure — an untested collision — while shipped products (Gemini, Anthropic Citations, OpenEvidence) already moved the opposite way. Net: the headline claim survives only in weakened form against the paper's own null result.</p>
+  <p class="dossier-path">dossiers/2026-09-08-uncertainty-granularity-verification.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -188,14 +187,19 @@
 
 <article class="item">
   <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field's de facto interaction guidance — Apple's HIG is silent on persona and Google PAIR's references stop in 2019. (asked 2026-09-08)</p>
+</article>
+
+<article class="item">
+  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design for the daily lanes, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>The cross-lane resubmission pattern (flagged 2026-09-01 through -07) continued today with two new failure modes for the audit: a killed item resubmitted unchanged four days later with the same fetch failure (Perplexity's hybrid-compute post), and three practice-lane items (Cursor, Notion, GitHub) wrongly treated as new because "verified but below the digest cap" isn't the same as "not yet covered" — all three were already published in 2026-09-07's digest text.</p>
-  <p>The GPT-6 Astra pricing item that just missed the cap was reframed rather than duplicated outright: its token-surcharge fact ran 2026-09-07, but its Fast Mode latency/price lever is genuinely new.</p>
-  <p>The recurring ACM DL 403 access failure (since 2026-08-24, 2026-08-31) killed an ambient-lane HRI Companion 2026 proxemics item this cycle too.</p>
+  <p>Practice lane produced two verified survivors — Anthropic's split of its coding-agent infrastructure, and an essay arguing against bolting AI chat onto the existing IDE — that didn't clear the cap; both carry large age flags (5, 6 months) kept under the durability exception, logged rather than padded in.</p>
+  <p>A source-fidelity catch: item 2's originally submitted "limitations" quotes were fabricated and are corrected above — the second time a researcher "verbatim" quote failed a full-text check, flagged for the monthly audit.</p>
+  <p>A positive-control catch cuts the other way: today's lead item's award claim was independently re-verified and confirmed genuine, the first such confirmation since the 2026-08-23 fabricated-award incident.</p>
+  <p>The cross-lane resubmission pattern continues, concentrated in the practice lane this cycle — flagged for the auditor rather than re-litigated here. One ambient item was killed pre-verification as a repeat of an already-corrected 2026-08-23 item.</p>
 </div>
 
 <div class="final-btn">
