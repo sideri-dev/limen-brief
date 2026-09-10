@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-09</title>
+<title>Limen — 2026-09-10</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -123,60 +123,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-09</p>
-  <p class="meta">~7 minute read</p>
+  <p class="date">2026-09-10</p>
+  <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Matching a dialogue system's latency to the direction a user's pace just shifted beats matching their rolling average — and the version that reads as more polite is the "less smooth" one.</p>
-  <p>A within-subjects HAI Symposium 2026 study (Keio University, Most Outstanding Research Award — independently re-checked against the symposium's own page and confirmed genuine) compared a fixed 300ms delay, a smoothed moving average of the user's last three turn-gaps, and a condition where system latency shifts in the same direction the user's own just moved.</p>
-  <p>Direction-matching won on recall, produced the highest heart rate and best overall impression, and rated more "polite" — despite testing as objectively less smooth. The smoothed condition instead produced anxious complaints from participants unsure if the system was slow or stuck. Design target: sync to the direction of change, not the average, even when that reads as rougher.</p>
-  <a class="source-btn" href="https://hai-conference.net/symp2026/proceedings/pdf/D-1.pdf" target="_blank" rel="noopener">HAI Symposium 2026, paper D-1 →</a>
+  <p class="headline">When a human supervises a GUI agent, the safety gain comes from the agent's own caution — not from the human noticing more.</p>
+  <p>A two-phase CHI 2026 study tested six computer-use agents against 16 dark patterns, then had 22 people supervise the strongest. Supervised participants avoided the patterns in 14 of 16 tasks, but noticed fewer of them (66% "No" when asked if they'd spotted one) than when working alone (59% "No") — the gain traces to the agent's own conservative habit of stopping when something looks off, not sharper human vigilance.</p>
+  <p>That reverses a common assumption about approval-step UI: a human-in-the-loop screen can raise safe outcomes while actual scrutiny of the manipulative element drops, changing what that screen needs to surface rather than what it can assume gets caught.</p>
+  <a class="source-btn" href="https://dl.acm.org/doi/10.1145/3772318.3791568" target="_blank" rel="noopener">ACM CHI 2026 proceedings →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Which explanation an AI-assisted decision tool shows should depend on the user's real-time trust level, not the task.</p>
-  <p>An ACM IUI 2026 study found supporting explanations during low inferred trust, paired with counter-explanations or forced pauses during high trust, cut inappropriate reliance up to 38% and raised accuracy 20%, across laypeople and physicians.</p>
-  <p>Correction: an earlier version of this finding carried fabricated "limitations." The paper's real caveats are a simulated AI assistant rather than a real model, U.K./U.S. Prolific participants only, and budget/sample constraints. The design point stands: the explanation surface needs a live trust signal driving it, not one fixed style per session.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2502.13321" target="_blank" rel="noopener">arXiv 2502.13321 (ACM IUI 2026) →</a>
+  <p class="headline">Listing more of an assistant's capabilities builds perceived competence, not the trust dimension that predicts whether people rely on it.</p>
+  <p>A randomized 270-person experiment on an embedded AI assistant varied whether it displayed one function or three, with or without a rationale. Showing three functions raised perceived multifunctionality and nothing else — no other effect survived correction, and a rationale didn't reliably raise perceived intelligence.</p>
+  <p>Anthropomorphism tracked with perceived benevolence but not integrity or ability, the traits closer to reliance. A capability-listing pattern does less trust-building work than it looks like.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.09713" target="_blank" rel="noopener">arXiv 2609.09713 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Camera glasses' bystander-privacy problem doesn't have a fix, because it's a genuine four-way tradeoff, not a missing feature.</p>
-  <p>A CHI 2026 study surveying 525 people and interviewing 20 more in China found 65–90% of bystanders would take defensive action in sensitive settings, and tested twelve privacy mechanisms against each other — every one trades among visibility, disruption, empowerment, burden, protection, agency, accountability and exposure, none escaping all four.</p>
-  <p>The design decision this sets for camera-wearable products generally: pick which tradeoff is being accepted, and for which context, because no single mechanism avoids the choice.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2603.04930" target="_blank" rel="noopener">arXiv 2603.04930 (CHI 2026) →</a>
+  <p class="headline">Agents in a long-horizon Civilization VI benchmark follow through on their own stated near-term plans only 48–66% of the time.</p>
+  <p>CivBench, a pilot across four model families and 23 runs, found plan follow-through ranging 48.2%–65.8%, and self-monitoring worse than instructed: agents told to check victory progress every 20 turns instead checked every 30–75, missing the warning window in 7 of 20 detectable defeats. The authors call these deviations under instruction, not capability gaps.</p>
+  <p>Design argument: don't trust an agent's self-reported plan as a proxy for behavior — build an external checkpoint that doesn't depend on it remembering to look.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.02459" target="_blank" rel="noopener">arXiv 2609.02459 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">GPT-6 Astra's indirect prompt-injection resistance jumped from 73% to 91.5% under independent red-teaming against 1,810 curated attacks — the 8.5% residual crack rate is the number that should size an agentic browsing flow's confirmation-dialog load.</p>
-  <p>OpenAI's system card and independent corroboration from The Decoder agree: GPT-5.6 Sol failed 27% of the time, Astra fails 8.5%. Real improvement, not solved — prior-generation interfaces can responsibly thin their confirmation UI, not remove it.</p>
-  <a class="source-btn" href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener">GPT-6 Astra System Card →</a>
+  <p class="headline">A head-worn assistant that keys its alerts off inferred cognitive load, not just posture, cuts alert frequency 81% and still improves outcomes.</p>
+  <p>ErgoAssist classifies posture at 81% and cognitive load at 90.2% accuracy; in a preliminary deployment, routing alerts through the load estimate cut alert frequency 81% while usability rose 43%, performance 25%, and posture correction 38%.</p>
+  <p>A quantified answer to a question that recurs across ambient/embodied design: interruption threshold should key off inferred attentional state, not raw sensed condition — measured before/after, not a demo.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.00440" target="_blank" rel="noopener">arXiv 2609.00440 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">When a GUI agent fails, the fix people reach for is their own manual oversight — because the agent has no way to recognize or signal that it failed.</p>
-  <p>A CHI 2026 study combining social-media analysis (221 posts) and interviews (14 people) found the recurring coping pattern is user-initiated technical adjustment and manual double-checking, not anything the agent offers.</p>
-  <p>The gap needing design attention is the agent's own error-recognition and feedback loop — without a legible failure signal, users build ad-hoc verification habits the interface never supports.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2505.09875" target="_blank" rel="noopener">arXiv 2505.09875 (ACM CHI 2026) →</a>
+  <p class="headline">Raycast is replacing flat-rate AI pricing with usage-based credits, saying it can no longer subsidize the gap.</p>
+  <p>Raycast's own post: "we've been covering the difference, but we can't subsidize it the way the big model labs can"; and "we've been sitting on features that let AI work on its own, because there was no way to account for what they cost." New tiers: Pro $10/mo (500 credits), Pro+ $20/mo (3,000), Max $50/mo (7,500).</p>
+  <p>The pricing-gates-affordance pattern stated outright — flat per-seat pricing worked for single-turn Q&A but breaks against autonomous multi-step work, and metering UI unlocks the feature set, not just monetizes it.</p>
+  <a class="source-btn" href="https://www.raycast.com/blog/changing-how-raycast-ai-is-priced" target="_blank" rel="noopener">Raycast Blog →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>The dossier stress-tested yesterday's top item and found a four-arm study, not three, with task accuracy statistically null across all arms — every uncertainty condition scored below the no-uncertainty control. Its "granularity" variable is confounded with estimation method, a confound the authors name but that weakens the granularity claim.</p>
-  <p>Four prior peer-reviewed studies point different, sometimes opposite, directions and stay unreconciled. Sharpest finding: the relation-level display that roughly halved external verification resembles what FDA and EU AI Act rules already prescribe as compliant disclosure — an untested collision — while shipped products (Gemini, Anthropic Citations, OpenEvidence) already moved the opposite way. Net: the headline claim survives only in weakened form against the paper's own null result.</p>
-  <p class="dossier-path">dossiers/2026-09-08-uncertainty-granularity-verification.md</p>
+  <p>Stress-testing yesterday's #1 item (the HAI turn-taking-latency study) overturns its own headline: the smoothed-average condition loses seven of eight significant impression comparisons, and "direction-matching" never significantly beats a fixed delay on anything except losing on smoothness — the real finding is "the moving-average rule is actively bad," not "direction-matching wins."</p>
+  <p>The reported recall advantage is an unmatched word-count ratio never scored against what was actually said, with an effect size that doesn't arithmetically match its own p-value, and the direction-matching rule itself is left unspecified. What survives: the diagnosis of why the moving average fails maps onto a real shipped bug — LiveKit Agents 1.8.0's <code>DynamicEndpointing</code> computes the same quantity this study manipulated and never feeds it to the filter. The award is genuine (independently re-verified) and the venue has no peer review — both true at once.</p>
+  <p class="dossier-path">dossiers/2026-09-09-turn-latency-adaptation-rules.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -196,10 +197,10 @@
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Practice lane produced two verified survivors — Anthropic's split of its coding-agent infrastructure, and an essay arguing against bolting AI chat onto the existing IDE — that didn't clear the cap; both carry large age flags (5, 6 months) kept under the durability exception, logged rather than padded in.</p>
-  <p>A source-fidelity catch: item 2's originally submitted "limitations" quotes were fabricated and are corrected above — the second time a researcher "verbatim" quote failed a full-text check, flagged for the monthly audit.</p>
-  <p>A positive-control catch cuts the other way: today's lead item's award claim was independently re-verified and confirmed genuine, the first such confirmation since the 2026-08-23 fabricated-award incident.</p>
-  <p>The cross-lane resubmission pattern continues, concentrated in the practice lane this cycle — flagged for the auditor rather than re-litigated here. One ambient item was killed pre-verification as a repeat of an already-corrected 2026-08-23 item.</p>
+  <p>Interaction (3/3) and ambient (2/2, thin, not padded) survived clean; capability and practice each lost two submissions to straight duplicates published in the last 3–8 days.</p>
+  <p>Killed as duplicates: GPT-6 Astra's long-context repricing (3rd occurrence), Claude Fable/Mythos cache-pricing (5th), Cursor's sandbox-split post and Figma's vibe-coding post-mortem (3rd each) — a resubmission pattern escalating since 2026-09-01, flagged for the next monthly audit rather than re-litigated here.</p>
+  <p>Two items cleared verification but missed the daily cap: a 185-report study of chatbot-linked delusional-belief harms (self-selected, non-causal sample, flagged plainly by its own authors) and FocusBuddy, a small (N=20) hydration/movement wearable where the same attachment mechanism that drives compliance can convert neglect into guilt.</p>
+  <p>A 15-day-old digest was archived this run. No item this cycle required any redaction alteration for this page.</p>
 </div>
 
 <div class="final-btn">
