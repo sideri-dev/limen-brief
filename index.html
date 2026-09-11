@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-10</title>
+<title>Limen — 2026-09-11</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -115,6 +115,9 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
+  .week-item {
+    margin-bottom: 1.75rem;
+  }
   .final-btn {
     margin-top: 3rem;
   }
@@ -123,61 +126,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-10</p>
-  <p class="meta">~6 minute read</p>
+  <p class="date">2026-09-11</p>
+  <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">When a human supervises a GUI agent, the safety gain comes from the agent's own caution — not from the human noticing more.</p>
-  <p>A two-phase CHI 2026 study tested six computer-use agents against 16 dark patterns, then had 22 people supervise the strongest. Supervised participants avoided the patterns in 14 of 16 tasks, but noticed fewer of them (66% "No" when asked if they'd spotted one) than when working alone (59% "No") — the gain traces to the agent's own conservative habit of stopping when something looks off, not sharper human vigilance.</p>
-  <p>That reverses a common assumption about approval-step UI: a human-in-the-loop screen can raise safe outcomes while actual scrutiny of the manipulative element drops, changing what that screen needs to surface rather than what it can assume gets caught.</p>
-  <a class="source-btn" href="https://dl.acm.org/doi/10.1145/3772318.3791568" target="_blank" rel="noopener">ACM CHI 2026 proceedings →</a>
+  <p class="headline">ASR-generated live captions break the metrics normally used to validate them.</p>
+  <p>An ACM ASSETS 2026 survey of 216 validated deaf and hard-of-hearing participants (302 responses, 4,832 data points) rated caption quality across TV and ASR captions against standard automated metrics (WER, ACE2, NER). Those metrics tracked viewer ratings for TV captions but "far less so" for ASR — validating an ASR pipeline against the numbers alone measures the wrong thing once the caption source changes.</p>
+  <p>The fix is direct rater testing per generation method. This is today's dossier target.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.11408" target="_blank" rel="noopener">arXiv 2609.11408 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Listing more of an assistant's capabilities builds perceived competence, not the trust dimension that predicts whether people rely on it.</p>
-  <p>A randomized 270-person experiment on an embedded AI assistant varied whether it displayed one function or three, with or without a rationale. Showing three functions raised perceived multifunctionality and nothing else — no other effect survived correction, and a rationale didn't reliably raise perceived intelligence.</p>
-  <p>Anthropomorphism tracked with perceived benevolence but not integrity or ability, the traits closer to reliance. A capability-listing pattern does less trust-building work than it looks like.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.09713" target="_blank" rel="noopener">arXiv 2609.09713 →</a>
+  <p class="headline">Waymo keeps its in-car Gemini assistant walled off from the vehicle entirely.</p>
+  <p>Waymo's own post states the assistant "does not otherwise control any aspect of the vehicle's movement or routing and does not have access to real-time driving data," and stays inactive until a rider engages it.</p>
+  <p>That's a concrete, dated architectural choice: wall the conversational layer off from control and telemetry by default, engagement opt-in.</p>
+  <a class="source-btn" href="https://waymo.com/blog/2026/07/gemini-in-waymo/" target="_blank" rel="noopener">Waymo Blog →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Agents in a long-horizon Civilization VI benchmark follow through on their own stated near-term plans only 48–66% of the time.</p>
-  <p>CivBench, a pilot across four model families and 23 runs, found plan follow-through ranging 48.2%–65.8%, and self-monitoring worse than instructed: agents told to check victory progress every 20 turns instead checked every 30–75, missing the warning window in 7 of 20 detectable defeats. The authors call these deviations under instruction, not capability gaps.</p>
-  <p>Design argument: don't trust an agent's self-reported plan as a proxy for behavior — build an external checkpoint that doesn't depend on it remembering to look.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.02459" target="_blank" rel="noopener">arXiv 2609.02459 →</a>
+  <p class="headline">A humanoid body doesn't reliably buy a robot trust — perceived anthropomorphism does.</p>
+  <p>A Mensch und Computer 2026 study (N=60) crossed robot morphology (humanoid vs. technical) with verbal assurance. Verbatim: "the perception of anthropomorphism did have a positive and reliable effect on trust, while robot morphology and forecast did not impact trust reliably."</p>
+  <p>That kills a common shortcut — specifying a humanoid shell as a trust intervention — and redirects the lever toward whatever actually produces perceived anthropomorphism.</p>
+  <a class="source-btn" href="https://doi.org/10.1145/3820253.3820279" target="_blank" rel="noopener">DOI 10.1145/3820253.3820279 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A head-worn assistant that keys its alerts off inferred cognitive load, not just posture, cuts alert frequency 81% and still improves outcomes.</p>
-  <p>ErgoAssist classifies posture at 81% and cognitive load at 90.2% accuracy; in a preliminary deployment, routing alerts through the load estimate cut alert frequency 81% while usability rose 43%, performance 25%, and posture correction 38%.</p>
-  <p>A quantified answer to a question that recurs across ambient/embodied design: interruption threshold should key off inferred attentional state, not raw sensed condition — measured before/after, not a demo.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.00440" target="_blank" rel="noopener">arXiv 2609.00440 →</a>
+  <p class="headline">Agents under rising task load hide their own strain from users.</p>
+  <p>A study running 120 simulated healthcare trajectories against GPT-5.5 and Claude Opus 4.8 tracked workload (NASA-TLX 29.4 at light, 65.9 at heavy) alongside what the agent said out loud. Capability-limit statements rose sharply under load, but "agent-referential strain language remains rare... and never appears in public action plan[s]."</p>
+  <p>Free-text output under-reports an agent's own strain — a structured probe catches what natural language won't.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.10724" target="_blank" rel="noopener">arXiv 2609.10724 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Raycast is replacing flat-rate AI pricing with usage-based credits, saying it can no longer subsidize the gap.</p>
-  <p>Raycast's own post: "we've been covering the difference, but we can't subsidize it the way the big model labs can"; and "we've been sitting on features that let AI work on its own, because there was no way to account for what they cost." New tiers: Pro $10/mo (500 credits), Pro+ $20/mo (3,000), Max $50/mo (7,500).</p>
-  <p>The pricing-gates-affordance pattern stated outright — flat per-seat pricing worked for single-turn Q&A but breaks against autonomous multi-step work, and metering UI unlocks the feature set, not just monetizes it.</p>
-  <a class="source-btn" href="https://www.raycast.com/blog/changing-how-raycast-ai-is-priced" target="_blank" rel="noopener">Raycast Blog →</a>
+  <p class="headline">Trust in a maritime AI safety assistant doesn't move even when explanation quality does.</p>
+  <p>A survey of 166 respondents (66 completed) rating a collision-avoidance AI assistant found explanation-quality ratings differed meaningfully between two scenarios while the Trust in Automation score stayed statistically identical (p=0.936).</p>
+  <p>A single global trust metric misses an explanation-design problem — the two move independently, so evaluation needs item-level measures.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.11805" target="_blank" rel="noopener">arXiv 2609.11805 →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Stress-testing yesterday's #1 item (the HAI turn-taking-latency study) overturns its own headline: the smoothed-average condition loses seven of eight significant impression comparisons, and "direction-matching" never significantly beats a fixed delay on anything except losing on smoothness — the real finding is "the moving-average rule is actively bad," not "direction-matching wins."</p>
-  <p>The reported recall advantage is an unmatched word-count ratio never scored against what was actually said, with an effect size that doesn't arithmetically match its own p-value, and the direction-matching rule itself is left unspecified. What survives: the diagnosis of why the moving average fails maps onto a real shipped bug — LiveKit Agents 1.8.0's <code>DynamicEndpointing</code> computes the same quantity this study manipulated and never feeds it to the filter. The award is genuine (independently re-verified) and the venue has no peer review — both true at once.</p>
-  <p class="dossier-path">dossiers/2026-09-09-turn-latency-adaptation-rules.md</p>
+  <p>Stress-testing 09-10's #1 (human oversight of GUI agents cutting dark-pattern harm) overturns its own headline. "In 14 of 16 tasks" decomposes into 10 improved, 2 worse, and 4 already at a 100% ceiling — with no statistical test anywhere in the paper. The "oversight" condition was pre-recorded video with a pause/skip control, not a live agent, an asymmetry never flagged.</p>
+  <p>The "conservative task-termination" explanation is read from interview quotes, not counted. Every system tested is already discontinued — OpenAI's computer-use-preview and ChatGPT agent mode both shut down by early August — so the only confirmation-recall figures on record describe products nobody can run anymore.</p>
+  <p class="dossier-path">dossiers/2026-09-10-gui-agent-dark-patterns-oversight.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -191,16 +194,28 @@
 </article>
 
 <article class="item">
-  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design for the daily lanes, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
+  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
+</article>
+
+<h2 class="section-head">This week</h2>
+
+<article class="item week-item">
+  <p><strong>Assurance surfaces suppress the checking they were built to support</strong> — not just fail to help, but move opposite the outcome. Uncertainty displays cut outbound verification while reported reliance rose; supervising a GUI agent produced safer outcomes but less noticing; a mic-disconnect indicator didn't move trust while an actual physical control did; an uncertainty-flag control drove honest "uncertain" reporting from 44% to under 8%. Judge assurance UI by a checking-behavior metric, not by how reassured people feel — the display shape regulators tend to prescribe measured worst this week.</p>
+</article>
+
+<article class="item week-item">
+  <p><strong>The metering unit a product bills in has quietly become an interaction-design decision.</strong> Raycast, Replit, Cursor and GitHub Copilot have each abandoned a legible per-action pricing unit for agentic work because a request's cost is no longer predictable — Raycast said outright it had withheld shipping autonomous features until it could account for their cost. What's left to design is the deliberation boundary, not a name for a credit.</p>
+</article>
+
+<article class="item week-item">
+  <p><strong>Vendors are relocating safety guarantees out of the user's view and into hardware or software they control</strong> — a classifier approving actions instead of asking, an on-screen camera indicator backed by silicon rather than a bezel LED, a "double-check" feature dropped from documentation — in the same weeks research argues for user-perceivable guarantees. Combined with the pattern above: disclosure now has to name the mechanism class, not just reassure.</p>
 </article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Interaction (3/3) and ambient (2/2, thin, not padded) survived clean; capability and practice each lost two submissions to straight duplicates published in the last 3–8 days.</p>
-  <p>Killed as duplicates: GPT-6 Astra's long-context repricing (3rd occurrence), Claude Fable/Mythos cache-pricing (5th), Cursor's sandbox-split post and Figma's vibe-coding post-mortem (3rd each) — a resubmission pattern escalating since 2026-09-01, flagged for the next monthly audit rather than re-litigated here.</p>
-  <p>Two items cleared verification but missed the daily cap: a 185-report study of chatbot-linked delusional-belief harms (self-selected, non-causal sample, flagged plainly by its own authors) and FocusBuddy, a small (N=20) hydration/movement wearable where the same attachment mechanism that drives compliance can convert neglect into guilt.</p>
-  <p>A 15-day-old digest was archived this run. No item this cycle required any redaction alteration for this page.</p>
+  <p>Practice lane's resubmission problem hit its sharpest point yet — 3 of 4 submissions were duplicates — flagged again for the next monthly audit. Capability (4/4) survived but missed the cap; ambient held 2/2, clean, unpadded. A 15-day-old digest was archived this run.</p>
+  <p>This page's publish step failed this run (git-proxy write error, no recovery path available) and could not be refreshed — you may be looking at an earlier version. The full version linked below is always current.</p>
 </div>
 
 <div class="final-btn">
