@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-11</title>
+<title>Limen — 2026-09-12</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -126,96 +126,92 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-11</p>
+  <p class="date">2026-09-12</p>
   <p class="meta">~7 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">ASR-generated live captions break the metrics normally used to validate them.</p>
-  <p>An ACM ASSETS 2026 survey of 216 validated deaf and hard-of-hearing participants (302 responses, 4,832 data points) rated caption quality across TV and ASR captions against standard automated metrics (WER, ACE2, NER). Those metrics tracked viewer ratings for TV captions but "far less so" for ASR — validating an ASR pipeline against the numbers alone measures the wrong thing once the caption source changes.</p>
-  <p>The fix is direct rater testing per generation method. This is today's dossier target.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.11408" target="_blank" rel="noopener">arXiv 2609.11408 →</a>
+  <p class="headline">A two-week CHI 2026 study of 19 screenwriters finds they actively shape how AI enters their process, not just react to it.</p>
+  <p>Tang, Zhou, Li, Xie, Ma and Qu framed the study through Bandura's theory of human agency and found screenwriters "not only mindfully planned, foresaw, and responded to AI usage, but... developed themselves and human-AI co-creation paradigms."</p>
+  <p>That argues for building co-creation tools around a workflow that evolves across a project's life, not a static assistance mode. The sample is likely Hong Kong/China-based (four of six authors at HKUST, two at Microsoft Research), though the paper states no participant nationality, so treat that as probable, not confirmed.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.06327" target="_blank" rel="noopener">arXiv 2602.06327 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Waymo keeps its in-car Gemini assistant walled off from the vehicle entirely.</p>
-  <p>Waymo's own post states the assistant "does not otherwise control any aspect of the vehicle's movement or routing and does not have access to real-time driving data," and stays inactive until a rider engages it.</p>
-  <p>That's a concrete, dated architectural choice: wall the conversational layer off from control and telemetry by default, engagement opt-in.</p>
-  <a class="source-btn" href="https://waymo.com/blog/2026/07/gemini-in-waymo/" target="_blank" rel="noopener">Waymo Blog →</a>
+  <p class="headline">Independent measurement finds Claude's long-context latency scales linearly while GPT-5.6's scales quadratically.</p>
+  <p>Epoch AI's own benchmark — independent of either vendor — put a number on it: at 10 million tokens of context, the marginal time-to-first-token for an extra 10,000 tokens is 1.66s (GPT-5.6 Terra) and 2.20s (GPT-5.6 Sol) against 0.129s (Claude Sonnet 5) and 0.218s (Claude Opus 5). Sonnet 5 "stayed close to linear scaling with no observable curvature," while Opus was noisier but still linear.</p>
+  <p>That's a real latency-budget decision: a long-context feature that reads as instant on one model family degrades unpredictably on another, so model choice for a long-context product is a UX decision, not just a cost one.</p>
+  <a class="source-btn" href="https://epoch.ai/" target="_blank" rel="noopener">Epoch AI →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A humanoid body doesn't reliably buy a robot trust — perceived anthropomorphism does.</p>
-  <p>A Mensch und Computer 2026 study (N=60) crossed robot morphology (humanoid vs. technical) with verbal assurance. Verbatim: "the perception of anthropomorphism did have a positive and reliable effect on trust, while robot morphology and forecast did not impact trust reliably."</p>
-  <p>That kills a common shortcut — specifying a humanoid shell as a trust intervention — and redirects the lever toward whatever actually produces perceived anthropomorphism.</p>
-  <a class="source-btn" href="https://doi.org/10.1145/3820253.3820279" target="_blank" rel="noopener">DOI 10.1145/3820253.3820279 →</a>
+  <p class="headline">A usability study of Operator and Manus finds agents fail from missing meta-cognition, not missing capability.</p>
+  <p>Shome, Krishnan and Das first mapped 102 commercial AI agents into three categories (orchestration, creation, insight), then ran a usability study (N=31) on Operator and Manus, finding "agent capabilities that were misaligned with user mental models" and "agents lacking the meta-cognitive abilities necessary for effective collaboration" — the agents don't know what they don't know, and don't say so.</p>
+  <p>That argues for meta-cognitive disclosure as a first-class affordance, not the fallback error state it is today. Preprint, single-source.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2509.14528" target="_blank" rel="noopener">arXiv 2509.14528 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Agents under rising task load hide their own strain from users.</p>
-  <p>A study running 120 simulated healthcare trajectories against GPT-5.5 and Claude Opus 4.8 tracked workload (NASA-TLX 29.4 at light, 65.9 at heavy) alongside what the agent said out loud. Capability-limit statements rose sharply under load, but "agent-referential strain language remains rare... and never appears in public action plan[s]."</p>
-  <p>Free-text output under-reports an agent's own strain — a structured probe catches what natural language won't.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.10724" target="_blank" rel="noopener">arXiv 2609.10724 →</a>
+  <p class="headline">Anthropic's Claude Managed Agents can now let the server, not your code, decide whether a tool call runs.</p>
+  <p>A September 10 release note adds an "auto" permission policy: "the server evaluates each agent or MCP tool call and runs it, denies it, or pauses for your approval," with an <code>evaluation</code> field on every tool-use event.</p>
+  <p>That decouples per-call risk evaluation from any local runtime — the question shifts from "ask every time" vs. "never ask" to tuning what the evaluator treats as reversible.</p>
+  <a class="source-btn" href="https://platform.claude.com/" target="_blank" rel="noopener">Claude Platform release notes →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Trust in a maritime AI safety assistant doesn't move even when explanation quality does.</p>
-  <p>A survey of 166 respondents (66 completed) rating a collision-avoidance AI assistant found explanation-quality ratings differed meaningfully between two scenarios while the Trust in Automation score stayed statistically identical (p=0.936).</p>
-  <p>A single global trust metric misses an explanation-design problem — the two move independently, so evaluation needs item-level measures.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.11805" target="_blank" rel="noopener">arXiv 2609.11805 →</a>
+  <p class="headline">A 134-paper, 20-year literature review gives practitioners a checklist for AI co-creation control patterns — corrected on venue.</p>
+  <p>Zhang, Wang and Yi reviewed 134 CHI/UIST/CSCW papers on human-AI co-creation through the lens of agency, producing an "integrated theoretical framework" and "comprehensive operational catalog." Correction: this is Proceedings of the ACM on Human-Computer Interaction, Vol. 9, Issue 7, Article CSCW413 — the CSCW track within PACM HCI — not "ACM Transactions on Computer-Human Interaction" as first reported.</p>
+  <p>Read as a citable cross-study taxonomy of control mechanisms, usable directly as a checklist against a product's own control surface.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2507.06000" target="_blank" rel="noopener">arXiv 2507.06000 →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Stress-testing 09-10's #1 (human oversight of GUI agents cutting dark-pattern harm) overturns its own headline. "In 14 of 16 tasks" decomposes into 10 improved, 2 worse, and 4 already at a 100% ceiling — with no statistical test anywhere in the paper. The "oversight" condition was pre-recorded video with a pause/skip control, not a live agent, an asymmetry never flagged.</p>
-  <p>The "conservative task-termination" explanation is read from interview quotes, not counted. Every system tested is already discontinued — OpenAI's computer-use-preview and ChatGPT agent mode both shut down by early August — so the only confirmation-recall figures on record describe products nobody can run anymore.</p>
-  <p class="dossier-path">dossiers/2026-09-10-gui-agent-dark-patterns-oversight.md</p>
+  <p>The caption-metrics paper doesn't show quality metrics fail on ASR captions — it shows they degrade by roughly half and bias in opposite directions per metric, with WER and ACE2 flattering ASR captions while NER over-corrects, even though viewers rated the two sources the same. The comparison isn't human-vs-machine either: the authors don't know which TV captions were steno, re-speech, or ASR.</p>
+  <p>The finding that actually carries a design decision is latency, not accuracy — removing TV's 8.46s delay bought back more rating points than removing ASR's 2s delay, and NHK has already shipped a delay-based fix since 2021. No regulator numerically mandates caption accuracy, though two live US proceedings are building toward one. The original prescription — test with DHH raters per generation method — holds, and is shipped by nobody today, including these authors, whose own Limitations call their method "clearly not sustainable."</p>
+  <p class="dossier-path">dossiers/2026-09-11-caption-metrics-asr-validity.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
 
 <article class="item">
-  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane, or stay out of scope? Persistence is the product there, and its memory design decisions are sharper and more explicit than any assistant's. (asked 2026-09-06)</p>
+  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane? Persistence is the product there, and its memory design decisions are sharper than any assistant's. (asked 2026-09-06)</p>
 </article>
 
 <article class="item">
-  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field's de facto interaction guidance — Apple's HIG is silent on persona and Google PAIR's references stop in 2019. (asked 2026-09-08)</p>
+  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They're now the field's de facto interaction guidance — Apple's HIG is silent on persona, Google PAIR stops in 2019. (asked 2026-09-08)</p>
 </article>
 
 <article class="item">
-  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
+  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
 
-<h2 class="section-head">This week</h2>
+<h2 class="section-head">Gate</h2>
 
-<article class="item week-item">
-  <p><strong>Assurance surfaces suppress the checking they were built to support</strong> — not just fail to help, but move opposite the outcome. Uncertainty displays cut outbound verification while reported reliance rose; supervising a GUI agent produced safer outcomes but less noticing; a mic-disconnect indicator didn't move trust while an actual physical control did; an uncertainty-flag control drove honest "uncertain" reporting from 44% to under 8%. Judge assurance UI by a checking-behavior metric, not by how reassured people feel — the display shape regulators tend to prescribe measured worst this week.</p>
+<article class="item">
+  <p><strong>DRAFT-KB-05 — assurance surfaces displace the checking they were built to support</strong> — 1 block, 8 objections.</p>
 </article>
 
-<article class="item week-item">
-  <p><strong>The metering unit a product bills in has quietly become an interaction-design decision.</strong> Raycast, Replit, Cursor and GitHub Copilot have each abandoned a legible per-action pricing unit for agentic work because a request's cost is no longer predictable — Raycast said outright it had withheld shipping autonomous features until it could account for their cost. What's left to design is the deliberation boundary, not a name for a credit.</p>
-</article>
-
-<article class="item week-item">
-  <p><strong>Vendors are relocating safety guarantees out of the user's view and into hardware or software they control</strong> — a classifier approving actions instead of asking, an on-screen camera indicator backed by silicon rather than a bezel LED, a "double-check" feature dropped from documentation — in the same weeks research argues for user-perceivable guarantees. Combined with the pattern above: disclosure now has to name the mechanism class, not just reassure.</p>
+<article class="item">
+  <p><strong>DRAFT-KB-06 — persona effects come from the language channel, not the dressing</strong> — 1 block, 8 objections.</p>
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md" target="_blank" rel="noopener">Edit GATE.md on GitHub →</a>
 </article>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Practice lane's resubmission problem hit its sharpest point yet — 3 of 4 submissions were duplicates — flagged again for the next monthly audit. Capability (4/4) survived but missed the cap; ambient held 2/2, clean, unpadded. A 15-day-old digest was archived this run.</p>
-  <p>This page is refreshed for today.</p>
+  <p>Ambient lane returned zero survivors this cycle — a dedup/access lane failure (two exact duplicates, one unfetchable source), not the routine thin-field day, flagged for the monthly audit. Interaction took 3 of today's 5 slots, capability 2; two same-publisher/same-date Vercel customer-story items both passed independent verification but missed the cap. Zed's "Introducing Delta" was killed as a duplicate resubmission for the third separate cycle — flagged again for the audit. A 15-day-old digest was archived this run.</p>
 </div>
 
 <div class="final-btn">
