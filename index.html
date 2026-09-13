@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-12</title>
+<title>Limen — 2026-09-13</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -126,61 +126,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-12</p>
-  <p class="meta">~7 minute read</p>
+  <p class="date">2026-09-13</p>
+  <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">A two-week CHI 2026 study of 19 screenwriters finds they actively shape how AI enters their process, not just react to it.</p>
-  <p>Tang, Zhou, Li, Xie, Ma and Qu framed the study through Bandura's theory of human agency and found screenwriters "not only mindfully planned, foresaw, and responded to AI usage, but... developed themselves and human-AI co-creation paradigms."</p>
-  <p>That argues for building co-creation tools around a workflow that evolves across a project's life, not a static assistance mode. The sample is likely Hong Kong/China-based (four of six authors at HKUST, two at Microsoft Research), though the paper states no participant nationality, so treat that as probable, not confirmed.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.06327" target="_blank" rel="noopener">arXiv 2602.06327 →</a>
+  <p class="headline">Anthropic names the exact interface tradeoff its prompt-cache design forces on you.</p>
+  <p>Most in-conversation settings render ahead of your content into the cached prefix, so changing them mid-conversation breaks the cache — with one exception: on Claude Opus 5 and Fable 5.1 you can now update reasoning effort mid-conversation without that cost. Rather than reordering tool lists dynamically, Anthropic recommends declaring every tool upfront and marking rare ones <code>defer_loading</code>, entering the conversation only when the model looks them up.</p>
+  <p>On effort: too low and "Claude stops before it has enough evidence," too high and it "spends more time deliberating than the task warrants" — an argument for per-task tuning over a universal default. The team's own account, verified verbatim against the live page.</p>
+  <a class="source-btn" href="https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform" target="_blank" rel="noopener">Anthropic blog →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Independent measurement finds Claude's long-context latency scales linearly while GPT-5.6's scales quadratically.</p>
-  <p>Epoch AI's own benchmark — independent of either vendor — put a number on it: at 10 million tokens of context, the marginal time-to-first-token for an extra 10,000 tokens is 1.66s (GPT-5.6 Terra) and 2.20s (GPT-5.6 Sol) against 0.129s (Claude Sonnet 5) and 0.218s (Claude Opus 5). Sonnet 5 "stayed close to linear scaling with no observable curvature," while Opus was noisier but still linear.</p>
-  <p>That's a real latency-budget decision: a long-context feature that reads as instant on one model family degrades unpredictably on another, so model choice for a long-context product is a UX decision, not just a cost one.</p>
-  <a class="source-btn" href="https://epoch.ai/" target="_blank" rel="noopener">Epoch AI →</a>
+  <p class="headline">Microsoft's design-system team found API docs nearly useless for guiding AI-assisted design — intent is what agents actually lack.</p>
+  <p>Jenny Lanier Wolski, Principal Design Manager on Microsoft's CoreAI team, writes that Azure/Foundry products "felt disjointed" even while reusing the same atomic components; testing found "agents can often understand component APIs directly from installed packages and TypeScript definitions. What they struggle with is intent."</p>
+  <p>The fix is two parallel tracks rather than one shared artifact: a Figma library for designers, and an MCP server carrying "a context layer" of references and metadata built for how agents interpret guidance. Documentation written for people cannot double as guidance for a generating agent — a design system now needs two guidance layers, not one reused across both audiences.</p>
+  <a class="source-btn" href="https://commandline.microsoft.com/design-product-simplicity-seamless-ux-ui-agentic-ai-azure-developer-services-foundry/" target="_blank" rel="noopener">Microsoft CommandLine →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A usability study of Operator and Manus finds agents fail from missing meta-cognition, not missing capability.</p>
-  <p>Shome, Krishnan and Das first mapped 102 commercial AI agents into three categories (orchestration, creation, insight), then ran a usability study (N=31) on Operator and Manus, finding "agent capabilities that were misaligned with user mental models" and "agents lacking the meta-cognitive abilities necessary for effective collaboration" — the agents don't know what they don't know, and don't say so.</p>
-  <p>That argues for meta-cognitive disclosure as a first-class affordance, not the fallback error state it is today. Preprint, single-source.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2509.14528" target="_blank" rel="noopener">arXiv 2509.14528 →</a>
+  <p class="headline">Making a robot deliver something physically only helps immersion if the user already likes robots.</p>
+  <p>A between-subjects HRI 2026 study (N=67) of a robot game-master found no overall effect of physical versus digital delivery — until split by pre-existing attitude toward robots. Participants wary of robots lost immersion under tangible delivery while comfortable participants saw no drop; the authors conclude "the digital interface acts as a protective social buffer" for anxious users.</p>
+  <p>That kills a common default: upgrading a digital cue to a physical one isn't a safe universal improvement — infer robot-attitude first, or keep a digital fallback. Single peer-reviewed source, six months old, kept as a durable interaction finding.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2603.08136" target="_blank" rel="noopener">arXiv 2603.08136 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Anthropic's Claude Managed Agents can now let the server, not your code, decide whether a tool call runs.</p>
-  <p>A September 10 release note adds an "auto" permission policy: "the server evaluates each agent or MCP tool call and runs it, denies it, or pauses for your approval," with an <code>evaluation</code> field on every tool-use event.</p>
-  <p>That decouples per-call risk evaluation from any local runtime — the question shifts from "ask every time" vs. "never ask" to tuning what the evaluator treats as reversible.</p>
-  <a class="source-btn" href="https://platform.claude.com/" target="_blank" rel="noopener">Claude Platform release notes →</a>
+  <p class="headline">A 0.6-billion-parameter model now transcribes overlapping speakers in just over a second, at near-single-speaker accuracy.</p>
+  <p>NVIDIA's new streaming architecture hits 1.04 seconds of latency — matching its own single-speaker baseline — while cutting multi-speaker word-error rate to 16.18 versus 45.25 for a conventional diarize-then-transcribe pipeline, degrading single-speaker accuracy only marginally (7.44 vs. 7.16 WER).</p>
+  <p>That makes real-time multi-party meeting captioning viable as one small edge model, rather than a diarization service bolted onto a separate ASR pipeline. Single-source preprint, accepted to Interspeech 2026, figures confirmed against the paper's own table.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.10265" target="_blank" rel="noopener">arXiv 2609.10265 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A 134-paper, 20-year literature review gives practitioners a checklist for AI co-creation control patterns — corrected on venue.</p>
-  <p>Zhang, Wang and Yi reviewed 134 CHI/UIST/CSCW papers on human-AI co-creation through the lens of agency, producing an "integrated theoretical framework" and "comprehensive operational catalog." Correction: this is Proceedings of the ACM on Human-Computer Interaction, Vol. 9, Issue 7, Article CSCW413 — the CSCW track within PACM HCI — not "ACM Transactions on Computer-Human Interaction" as first reported.</p>
-  <p>Read as a citable cross-study taxonomy of control mechanisms, usable directly as a checklist against a product's own control surface.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2507.06000" target="_blank" rel="noopener">arXiv 2507.06000 →</a>
+  <p class="headline">OpenAI's new Agents API hands you context compaction and session recovery as a managed primitive.</p>
+  <p>The public beta pairs a "managed Codex harness" with server-side session orchestration: durable sessions "continue work across turns, stream progress, and connect your own tools and MCP servers," in OpenAI-hosted sandboxes or your own infrastructure.</p>
+  <p>A genuinely long-running background agent no longer requires the designer to build custom logic for what gets dropped when context fills up — that's now a vendor-managed default. Confirmed on the changelog, corroborated independently by three outlets.</p>
+  <a class="source-btn" href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">OpenAI API changelog →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>The caption-metrics paper doesn't show quality metrics fail on ASR captions — it shows they degrade by roughly half and bias in opposite directions per metric, with WER and ACE2 flattering ASR captions while NER over-corrects, even though viewers rated the two sources the same. The comparison isn't human-vs-machine either: the authors don't know which TV captions were steno, re-speech, or ASR.</p>
-  <p>The finding that actually carries a design decision is latency, not accuracy — removing TV's 8.46s delay bought back more rating points than removing ASR's 2s delay, and NHK has already shipped a delay-based fix since 2021. No regulator numerically mandates caption accuracy, though two live US proceedings are building toward one. The original prescription — test with DHH raters per generation method — holds, and is shipped by nobody today, including these authors, whose own Limitations call their method "clearly not sustainable."</p>
-  <p class="dossier-path">dossiers/2026-09-11-caption-metrics-asr-validity.md</p>
+  <p>The dossier resolves the prior digest's open question as a genuine absence: neither this paper nor its 2025 predecessor states the screenwriters' nationality, though both admit a shared, unnamed cultural background. The framing theory also doesn't do what the digest implied — Bandura's modes of agency concern influencing other people, with no category for delegation, the behavior this paper mostly documents.</p>
+  <p>The optimistic abstract obscures a split result: some participants showed no growth at all, and the same group's own 2025 participant said delegation costs the ability to handle complex work. The "build for an evolving relationship" implication is decades old (Horvitz 1999, Shneiderman 2007, MSR 2020) — this paper is fresh evidence for an already-named gap. What survives: automatic writing-stage inference barely beats a clock-only baseline (44.80% vs. 41.77%), arguing for adaptable, not adaptive, controls.</p>
+  <p class="dossier-path">dossiers/2026-09-12-screenwriter-agency-cocreation.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -198,20 +198,9 @@
   <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
 
-<h2 class="section-head">Gate</h2>
-
-<article class="item">
-  <p><strong>DRAFT-KB-05 — assurance surfaces displace the checking they were built to support</strong> — 1 block, 8 objections.</p>
-</article>
-
-<article class="item">
-  <p><strong>DRAFT-KB-06 — persona effects come from the language channel, not the dressing</strong> — 1 block, 8 objections.</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md" target="_blank" rel="noopener">Edit GATE.md on GitHub →</a>
-</article>
-
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Ambient lane returned zero survivors this cycle — a dedup/access lane failure (two exact duplicates, one unfetchable source), not the routine thin-field day, flagged for the monthly audit. Interaction took 3 of today's 5 slots, capability 2; two same-publisher/same-date Vercel customer-story items both passed independent verification but missed the cap. Zed's "Introducing Delta" was killed as a duplicate resubmission for the third separate cycle — flagged again for the audit. A 15-day-old digest was archived this run.</p>
+  <p>Interaction lane returned zero survivors this cycle — all five duplicated material already published (09-02, -05, -06), the first time this pattern has consumed a whole lane rather than 1-3 items within one; flagged for the monthly audit. Capability lost 2 of 4 to the same problem independently. Ambient held only 1 of 5 slots despite three verified survivors — the other two were outranked, not defective. The verifier's rank order was kept with no deviation. Two promotion-gate drafts remain open awaiting decision. Mirror-publish failed this cycle (git-proxy access denial, no recovery path available) — this page's prior version stays live until the next successful push.</p>
 </div>
 
 <div class="final-btn">
