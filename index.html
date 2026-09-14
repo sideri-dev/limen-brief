@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-13</title>
+<title>Limen — 2026-09-14</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -115,9 +115,6 @@
     font-size: 0.9rem;
     color: var(--muted);
   }
-  .week-item {
-    margin-bottom: 1.75rem;
-  }
   .final-btn {
     margin-top: 3rem;
   }
@@ -126,61 +123,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-13</p>
+  <p class="date">2026-09-14</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Anthropic names the exact interface tradeoff its prompt-cache design forces on you.</p>
-  <p>Most in-conversation settings render ahead of your content into the cached prefix, so changing them mid-conversation breaks the cache — with one exception: on Claude Opus 5 and Fable 5.1 you can now update reasoning effort mid-conversation without that cost. Rather than reordering tool lists dynamically, Anthropic recommends declaring every tool upfront and marking rare ones <code>defer_loading</code>, entering the conversation only when the model looks them up.</p>
-  <p>On effort: too low and "Claude stops before it has enough evidence," too high and it "spends more time deliberating than the task warrants" — an argument for per-task tuning over a universal default. The team's own account, verified verbatim against the live page.</p>
-  <a class="source-btn" href="https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform" target="_blank" rel="noopener">Anthropic blog →</a>
+  <p class="headline">Fourteen tested agents adopt corrupted tool output on a third to two-thirds of calls — and often know better while doing it.</p>
+  <p>A new evaluation ran fourteen LLM agents against deliberately corrupted web search, sub-agent delegation, and code-execution returns: mean adoption of the bad answer "exceeds one third for every tool and reaches 68.0% for web search." The sharper finding is that agents "often recognize conflicts and even recover the correct answer internally, yet present only the corrupted answer without warning the user" — and none of three tested interventions (user prompting, tool-provider metadata, post-training) consistently fixes it.</p>
+  <p>If the model can privately compute the right answer and still show you the wrong one with no confidence signal, provenance and source-conflict have to be surfaced by the interface itself, not left to the model's self-report.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.05587" target="_blank" rel="noopener">arXiv 2609.05587 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Microsoft's design-system team found API docs nearly useless for guiding AI-assisted design — intent is what agents actually lack.</p>
-  <p>Jenny Lanier Wolski, Principal Design Manager on Microsoft's CoreAI team, writes that Azure/Foundry products "felt disjointed" even while reusing the same atomic components; testing found "agents can often understand component APIs directly from installed packages and TypeScript definitions. What they struggle with is intent."</p>
-  <p>The fix is two parallel tracks rather than one shared artifact: a Figma library for designers, and an MCP server carrying "a context layer" of references and metadata built for how agents interpret guidance. Documentation written for people cannot double as guidance for a generating agent — a design system now needs two guidance layers, not one reused across both audiences.</p>
-  <a class="source-btn" href="https://commandline.microsoft.com/design-product-simplicity-seamless-ux-ui-agentic-ai-azure-developer-services-foundry/" target="_blank" rel="noopener">Microsoft CommandLine →</a>
+  <p class="headline">Copy-paste volume and how carefully someone navigates predict who accepts injected misinformation from a chatbot.</p>
+  <p>A CHI 2026 study put 77 participants through three real-world tasks with an LLM seeded with plausible misinformation. Verbatim: low-overreliance users show "careful task comprehension and fine-grained navigation," while high-overreliance users show "frequent copy-paste, skipping initial comprehension, repeated LLM references, coarse locating, and accepting misinformation despite hesitation."</p>
+  <p>That's a concrete, instrumentable behavioral signal — not a survey — that a product could use to trigger a verification nudge before someone acts on unchecked output.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2602.11567" target="_blank" rel="noopener">arXiv 2602.11567 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Making a robot deliver something physically only helps immersion if the user already likes robots.</p>
-  <p>A between-subjects HRI 2026 study (N=67) of a robot game-master found no overall effect of physical versus digital delivery — until split by pre-existing attitude toward robots. Participants wary of robots lost immersion under tangible delivery while comfortable participants saw no drop; the authors conclude "the digital interface acts as a protective social buffer" for anxious users.</p>
-  <p>That kills a common default: upgrading a digital cue to a physical one isn't a safe universal improvement — infer robot-attitude first, or keep a digital fallback. Single peer-reviewed source, six months old, kept as a durable interaction finding.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2603.08136" target="_blank" rel="noopener">arXiv 2603.08136 →</a>
+  <p class="headline">Writers field-testing AI glasses for fiction converged on where the tool should not help.</p>
+  <p>CRAFT, built by Runze Cai and colleagues, turns in-situ experience into fiction material through smart glasses. Across interviews (9 writers), co-design workshops (16), and field trials (8 writers, 24 sessions), the design goals writers converged on were augmenting perception, preserving authenticity, and "preserving creative agency, enjoyment, and life-art boundaries."</p>
+  <p>It's a rare wearable-AI study whose headline finding is a boundary the product must not cross rather than a capability to add — the acceptance test for on-body creative AI shifts from "does it capture more" to "does it leave authorship and off-duty time intact."</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2607.21394" target="_blank" rel="noopener">arXiv 2607.21394 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A 0.6-billion-parameter model now transcribes overlapping speakers in just over a second, at near-single-speaker accuracy.</p>
-  <p>NVIDIA's new streaming architecture hits 1.04 seconds of latency — matching its own single-speaker baseline — while cutting multi-speaker word-error rate to 16.18 versus 45.25 for a conventional diarize-then-transcribe pipeline, degrading single-speaker accuracy only marginally (7.44 vs. 7.16 WER).</p>
-  <p>That makes real-time multi-party meeting captioning viable as one small edge model, rather than a diarization service bolted onto a separate ASR pipeline. Single-source preprint, accepted to Interspeech 2026, figures confirmed against the paper's own table.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.10265" target="_blank" rel="noopener">arXiv 2609.10265 →</a>
+  <p class="headline">A delivery robot approaching from behind needs a different comfort-zone rule than one approaching head-on.</p>
+  <p>An HRI '26 study (Yonsei, Stanford, Daegu) found pedestrians "experience a lack of visual information" during rear approaches, "which can heighten threat perception," and were comfortable with 1.0–2.0m of proximity — but faster approach speeds raised perceptual clarity and discomfort together.</p>
+  <p>Passing distance and speed for shared-sidewalk robots can't be a single frontal number reused for the rear case; it needs a direction-aware rule.</p>
+  <a class="source-btn" href="https://doi.org/10.1145/3776734.3794448" target="_blank" rel="noopener">DOI 10.1145/3776734.3794448 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">OpenAI's new Agents API hands you context compaction and session recovery as a managed primitive.</p>
-  <p>The public beta pairs a "managed Codex harness" with server-side session orchestration: durable sessions "continue work across turns, stream progress, and connect your own tools and MCP servers," in OpenAI-hosted sandboxes or your own infrastructure.</p>
-  <p>A genuinely long-running background agent no longer requires the designer to build custom logic for what gets dropped when context fills up — that's now a vendor-managed default. Confirmed on the changelog, corroborated independently by three outlets.</p>
-  <a class="source-btn" href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">OpenAI API changelog →</a>
+  <p class="headline">An editable graph of what an agent did beats re-reading its transcript for post-task review.</p>
+  <p>Trace2Flow converts completed agentic-tool traces into editable, graph-based workflows, trained on 10,803 public n8n templates. In a 20-participant study reviewing agent runs with errors, the graph view "improved their understanding and error detection over a prompt-only condition," and for follow-up tasks, editing the workflow matched re-prompting on success, time and difficulty — and was often preferred.</p>
+  <p>That names a concrete alternative to scrollback-log review: an agentic product may need a graph-editing surface, not just a better transcript.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.13136" target="_blank" rel="noopener">arXiv 2609.13136 →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>The dossier resolves the prior digest's open question as a genuine absence: neither this paper nor its 2025 predecessor states the screenwriters' nationality, though both admit a shared, unnamed cultural background. The framing theory also doesn't do what the digest implied — Bandura's modes of agency concern influencing other people, with no category for delegation, the behavior this paper mostly documents.</p>
-  <p>The optimistic abstract obscures a split result: some participants showed no growth at all, and the same group's own 2025 participant said delegation costs the ability to handle complex work. The "build for an evolving relationship" implication is decades old (Horvitz 1999, Shneiderman 2007, MSR 2020) — this paper is fresh evidence for an already-named gap. What survives: automatic writing-stage inference barely beats a clock-only baseline (44.80% vs. 41.77%), arguing for adaptable, not adaptive, controls.</p>
-  <p class="dossier-path">dossiers/2026-09-12-screenwriter-agency-cocreation.md</p>
+  <p>Anthropic's blog post claims Opus 5 and Fable 5.1 can change reasoning effort mid-conversation "without breaking the cache," omitting that the mechanism is beta-gated, requires a specific message format, and only some model claims are correct. Underneath sits a real architectural constraint — KV-cache reuse is prefix-only because every token's attention state depends on every prior token — and the best public measurement of what breaking it costs is a production case where relocating memory out of the prefix for cache reasons made the model start answering the memory instead of the user.</p>
+  <p>The cache is not a billing detail downstream of interface design; it's upstream of it. Anthropic has since shipped two primitives designed to make that tradeoff unnecessary, and Claude Code already raises a confirmation dialog before an effort change on models where it isn't free.</p>
+  <p class="dossier-path">dossiers/2026-09-13-prompt-cache-prefix-interface-constraints.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -195,12 +192,15 @@
 
 <article class="item">
   <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
 </article>
+
+<div class="final-btn">
+  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
+</div>
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Interaction lane returned zero survivors this cycle — all five duplicated material already published (09-02, -05, -06), the first time this pattern has consumed a whole lane rather than 1-3 items within one; flagged for the monthly audit. Capability lost 2 of 4 to the same problem independently. Ambient held only 1 of 5 slots despite three verified survivors — the other two were outranked, not defective. The verifier's rank order was kept with no deviation. Two promotion-gate drafts remain open awaiting decision. Mirror-publish succeeded this cycle (curator's own push hit the recurring git-proxy access denial; the orchestrating session had repo-attach access and completed it directly) — this page is live.</p>
+  <p>Verifier's rank order kept — capability 1, interaction 2, ambient 2; practice's two survivors (GitHub Copilot's surface merge, Augment Code's Intent) missed the cap on merit. Anthropic's Sept 10 Enterprise browsing default-on flip (Claude in Chrome) updates a prior item rather than competing fresh. Two items carried real reservations that didn't change the outcome: Gemini 3.1 Flash Live's 10-25x latency regression is real, but an unconfirmed forum report suggests its "everyone" framing may be EU-only; a critique of Google's PAIR guidebook holds on its argument, but its "still unrevised" claim can't be confirmed against Google's unreadable live SPA. Ambient resolved a six-cycle ACM Digital Library fetch-failure pattern via the Semantic Scholar and Crossref APIs. Three kills, all prior-cycle duplicate resubmissions.</p>
 </div>
 
 <div class="final-btn">
