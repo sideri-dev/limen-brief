@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-14</title>
+<title>Limen — 2026-09-15</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -123,61 +123,61 @@
 <body>
 
 <header class="page-head">
-  <p class="date">2026-09-14</p>
+  <p class="date">2026-09-15</p>
   <p class="meta">~6 minute read</p>
 </header>
 
 <h2 class="section-head">Today</h2>
 
 <article class="item">
-  <p class="headline">Fourteen tested agents adopt corrupted tool output on a third to two-thirds of calls — and often know better while doing it.</p>
-  <p>A new evaluation ran fourteen LLM agents against deliberately corrupted web search, sub-agent delegation, and code-execution returns: mean adoption of the bad answer "exceeds one third for every tool and reaches 68.0% for web search." The sharper finding is that agents "often recognize conflicts and even recover the correct answer internally, yet present only the corrupted answer without warning the user" — and none of three tested interventions (user prompting, tool-provider metadata, post-training) consistently fixes it.</p>
-  <p>If the model can privately compute the right answer and still show you the wrong one with no confidence signal, provenance and source-conflict have to be surfaced by the interface itself, not left to the model's self-report.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.05587" target="_blank" rel="noopener">arXiv 2609.05587 →</a>
+  <p class="headline">Professional developers don't delegate to coding agents — they impose deliberate control strategies.</p>
+  <p>A mixed-methods study of experienced developers (13 field-observed, 99 surveyed) finds they "retain their agency in software design and implementation out of insistence on fundamental software quality attributes" — trusting agents for starter code, tests, docs and small refactors, never for complex logic, security-sensitive work, or big design calls.</p>
+  <p>That's a direct answer to the mixed-initiative question every agentic coding tool is guessing at: default to tight-loop review checkpoints and scoped boundaries, not autonomous "vibe" delegation, because that's how expert users already self-regulate. Nine months outside the usual recency window, but a measured behavioral pattern, not a version-pinned claim, so it holds.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2512.14012" target="_blank" rel="noopener">arXiv 2512.14012 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Copy-paste volume and how carefully someone navigates predict who accepts injected misinformation from a chatbot.</p>
-  <p>A CHI 2026 study put 77 participants through three real-world tasks with an LLM seeded with plausible misinformation. Verbatim: low-overreliance users show "careful task comprehension and fine-grained navigation," while high-overreliance users show "frequent copy-paste, skipping initial comprehension, repeated LLM references, coarse locating, and accepting misinformation despite hesitation."</p>
-  <p>That's a concrete, instrumentable behavioral signal — not a survey — that a product could use to trigger a verification nudge before someone acts on unchecked output.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2602.11567" target="_blank" rel="noopener">arXiv 2602.11567 →</a>
+  <p class="headline">Sub-2B on-device models cannot be trusted with autonomous tool calls — and it's structural, not a prompting problem.</p>
+  <p>A new CPU benchmark ran five small language models against 100 MCP-style tool-calling prompts. Qwen2.5-1.5B held up (75-79%); Qwen2.5-0.5B collapsed under sampling (72% to 32%); Phi-1.5 scored zero; Pythia and TinyLlama never exceeded 7%. Sharper still: only 5 of 1,000 raw responses were directly parseable JSON.</p>
+  <p>For fully on-device tool-calling with no server round-trip, this pins the floor at roughly 1.5B parameters, below which you need a recovery-parsing layer and a confirmation gate before anything fires — not a bigger context window or a better prompt.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.07370" target="_blank" rel="noopener">arXiv 2609.07370 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">Writers field-testing AI glasses for fiction converged on where the tool should not help.</p>
-  <p>CRAFT, built by Runze Cai and colleagues, turns in-situ experience into fiction material through smart glasses. Across interviews (9 writers), co-design workshops (16), and field trials (8 writers, 24 sessions), the design goals writers converged on were augmenting perception, preserving authenticity, and "preserving creative agency, enjoyment, and life-art boundaries."</p>
-  <p>It's a rare wearable-AI study whose headline finding is a boundary the product must not cross rather than a capability to add — the acceptance test for on-body creative AI shifts from "does it capture more" to "does it leave authorship and off-duty time intact."</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2607.21394" target="_blank" rel="noopener">arXiv 2607.21394 →</a>
+  <p class="headline">A robot's proactive interruption channel should be chosen by inferred cognitive load, not fixed to speech.</p>
+  <p>An 87-participant HRI 2026 study with an ElliQ robot crossed verbal against nonverbal proactive cues over a high-load writing task and a low-load sorting task. The result is directional: under low load, verbal cues win regardless of nonverbal cues present; under high load, nonverbal-only cues produce the best experience.</p>
+  <p>A concrete design rule for any proactive ambient or embodied system — infer task load first, then pick the interruption channel.</p>
+  <a class="source-btn" href="https://doi.org/10.1145/3776734.3794456" target="_blank" rel="noopener">DOI 10.1145/3776734.3794456 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">A delivery robot approaching from behind needs a different comfort-zone rule than one approaching head-on.</p>
-  <p>An HRI '26 study (Yonsei, Stanford, Daegu) found pedestrians "experience a lack of visual information" during rear approaches, "which can heighten threat perception," and were comfortable with 1.0–2.0m of proximity — but faster approach speeds raised perceptual clarity and discomfort together.</p>
-  <p>Passing distance and speed for shared-sidewalk robots can't be a single frontal number reused for the rear case; it needs a direction-aware rule.</p>
-  <a class="source-btn" href="https://doi.org/10.1145/3776734.3794448" target="_blank" rel="noopener">DOI 10.1145/3776734.3794448 →</a>
+  <p class="headline">Companion-chatbot memory needs user-facing continuity controls, not onboarding disclaimers.</p>
+  <p>A thematic analysis of 17,053 verified quotations from 3,930 teen-relevant Reddit posts documents "problematic attachment, social substitution, emotional dependence" alongside genuine identity-exploration benefits, arguing "companion-AI safety must address relationships over time through user-controlled memory, privacy, relational boundaries, and healthy disengagement."</p>
+  <p>That names the feature gap directly: engagement-driving memory features need controls to inspect, reset, or bound continuity, plus a designed "healthy disengagement" affordance, not a one-time signup disclosure. Self-reported forum text — user perception, not measured usage.</p>
+  <a class="source-btn" href="https://arxiv.org/abs/2609.14843" target="_blank" rel="noopener">arXiv 2609.14843 →</a>
 </article>
 
 <hr class="divider">
 
 <article class="item">
-  <p class="headline">An editable graph of what an agent did beats re-reading its transcript for post-task review.</p>
-  <p>Trace2Flow converts completed agentic-tool traces into editable, graph-based workflows, trained on 10,803 public n8n templates. In a 20-participant study reviewing agent runs with errors, the graph view "improved their understanding and error detection over a prompt-only condition," and for follow-up tasks, editing the workflow matched re-prompting on success, time and difficulty — and was often preferred.</p>
-  <p>That names a concrete alternative to scrollback-log review: an agentic product may need a graph-editing surface, not just a better transcript.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.13136" target="_blank" rel="noopener">arXiv 2609.13136 →</a>
+  <p class="headline">Cursor's Projects lets human review cadence decay as an agent coordinator earns trust.</p>
+  <p>Beyond the productivity stats already covered here (30% more PRs merged, 6x for heavy users), Cursor's own writeup names the mechanism: "Early on, you review each PR closely. As the fixes hold up, you review less, and the coordinator keeps working through the migration on its own."</p>
+  <p>A transferable, trust-calibrated review pattern — cadence that decays with track record rather than a fixed approval gate — worth testing wherever an agent coordinates multi-step work unattended. Vendor's own unaudited claim: a design idea to test, not a proven result.</p>
+  <a class="source-btn" href="https://cursor.com/blog/projects" target="_blank" rel="noopener">cursor.com/blog/projects →</a>
 </article>
 
 <h2 class="section-head">Yesterday's dossier</h2>
 
 <article class="item">
-  <p>Anthropic's blog post claims Opus 5 and Fable 5.1 can change reasoning effort mid-conversation "without breaking the cache," omitting that the mechanism is beta-gated, requires a specific message format, and only some model claims are correct. Underneath sits a real architectural constraint — KV-cache reuse is prefix-only because every token's attention state depends on every prior token — and the best public measurement of what breaking it costs is a production case where relocating memory out of the prefix for cache reasons made the model start answering the memory instead of the user.</p>
-  <p>The cache is not a billing detail downstream of interface design; it's upstream of it. Anthropic has since shipped two primitives designed to make that tradeoff unnecessary, and Claude Code already raises a confirmation dialog before an effort change on models where it isn't free.</p>
-  <p class="dossier-path">dossiers/2026-09-13-prompt-cache-prefix-interface-constraints.md</p>
+  <p>The digest's lead claim — that tool-return provenance and conflict should be shown by the interface itself — only half survives scrutiny. The headline 68% adoption-of-corrupted-output figure is the single most-plausible-corruption cell of a three-level design, and the paper's "agents secretly know better" claim rests on unrubricked inspection of two same-family models. The buildable half fails on infrastructure: MCP's tool-result format has zero provenance fields, and across Anthropic, Google, OpenAI and Perplexity, corroboration and contradiction between two sources are the same data structure.</p>
+  <p>Where provenance displays exist, they move trust without moving verification. FDA's January 2026 guidance is the only regulator anywhere requiring surfaced "missing, corrupted, or unexpected input data" — and it prescribes the granularity this corpus already found roughly halves fact-checking.</p>
+  <p class="dossier-path">dossiers/2026-09-14-tool-return-overtrust-conflict-surface.md</p>
 </article>
 
 <h2 class="section-head">Needs your answer</h2>
@@ -200,7 +200,8 @@
 
 <div class="run-note">
   <h2 class="section-head">Run notes</h2>
-  <p>Verifier's rank order kept — capability 1, interaction 2, ambient 2; practice's two survivors (GitHub Copilot's surface merge, Augment Code's Intent) missed the cap on merit. Anthropic's Sept 10 Enterprise browsing default-on flip (Claude in Chrome) updates a prior item rather than competing fresh. Two items carried real reservations that didn't change the outcome: Gemini 3.1 Flash Live's 10-25x latency regression is real, but an unconfirmed forum report suggests its "everyone" framing may be EU-only; a critique of Google's PAIR guidebook holds on its argument, but its "still unrevised" claim can't be confirmed against Google's unreadable live SPA. Ambient resolved a six-cycle ACM Digital Library fetch-failure pattern via the Semantic Scholar and Crossref APIs. Three kills, all prior-cycle duplicate resubmissions.</p>
+  <p>All four lanes reached the ranked list (interaction 2, capability 1, ambient 1, practice 1). Practice's resubmission problem is still live: 3 of 4 submissions were dead-on-arrival duplicates (Raycast pricing, Replit's "Closing the Loop," Livelymerge) — flagged for the auditor since 2026-09-01; only Cursor Projects survived, on a new fact from an already-cited source. Other kills: a duplicate delivery-robot proxemics DOI, an IPSJ earbuds paper contradicting its own "for walking users" framing, and fourth-occurrence duplicates of the GPT-6 Astra pricing cliff and Anthropic's cancelled Sonnet 5 price rise.</p>
+  <p>Below-cap survivors: writers' prompt-sharing preferences, in-vehicle gaze-deixis fusion (Mercedes-Benz), CALICO's versioned-prompt annotation, Claude Opus 5's Fast Mode spec, and a 20-month chatbot-relationship case study. Two ACM DL DOIs hit the same Cloudflare wall; both cleared via Crossref + Semantic Scholar — a two-cycle recovery route worth the audit noting as standing. QUESTIONS.md is at its five-open maximum — no new question. No redaction alteration needed this cycle.</p>
 </div>
 
 <div class="final-btn">
