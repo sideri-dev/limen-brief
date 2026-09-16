@@ -3,210 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-15</title>
+<title>Limen — 2026-09-16</title>
 <style>
   :root {
-    color-scheme: light dark;
-    --bg: #fdfcfa;
+    --bg: #faf9f7;
     --fg: #1a1a1a;
     --muted: #5a5a5a;
-    --accent: #1a1a1a;
-    --btn-bg: #1a1a1a;
-    --btn-fg: #fdfcfa;
-    --rule: #ddd8d0;
+    --accent: #8a4f2e;
+    --card-bg: #ffffff;
+    --border: #e4e0da;
+    --button-bg: #1a1a1a;
+    --button-fg: #faf9f7;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #16161a;
-      --fg: #ececec;
-      --muted: #a3a3a3;
-      --accent: #ececec;
-      --btn-bg: #ececec;
-      --btn-fg: #16161a;
-      --rule: #33333a;
+      --bg: #161513;
+      --fg: #ece9e4;
+      --muted: #a3a09a;
+      --accent: #d99a6c;
+      --card-bg: #1f1e1b;
+      --border: #322f2a;
+      --button-bg: #ece9e4;
+      --button-fg: #161513;
     }
   }
   * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
+  html { -webkit-text-size-adjust: 100%; }
+  body {
     background: var(--bg);
     color: var(--fg);
-  }
-  body {
-    font-family: system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
     font-size: 18px;
     line-height: 1.7;
     max-width: 42rem;
     margin: 0 auto;
     padding: 2.5rem 1.25rem 4rem;
   }
-  header.page-head {
-    margin-bottom: 2.5rem;
-  }
-  header.page-head .date {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem;
-  }
-  header.page-head .meta {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-  h2.section-head {
+  header { margin-bottom: 2.5rem; }
+  header .date { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.25rem; }
+  header .read-time { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  h2 {
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--muted);
-    margin: 3rem 0 1.5rem;
-    font-weight: 600;
+    color: var(--accent);
+    margin: 3rem 0 1.25rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
   }
-  article.item {
-    margin-bottom: 2.25rem;
-  }
-  article.item .headline {
-    font-weight: 700;
-    font-size: 1.08rem;
+  .item { margin-bottom: 2.25rem; }
+  .item h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
     margin: 0 0 0.75rem;
-    line-height: 1.45;
+    font-weight: 700;
   }
-  article.item p {
-    margin: 0 0 0.9rem;
-  }
-  a.source-btn {
+  .item p { margin: 0 0 0.9rem; }
+  .btn {
     display: block;
     width: 100%;
     text-align: center;
-    box-sizing: border-box;
-    padding: 0.85rem 1rem;
-    margin-top: 0.5rem;
-    background: var(--btn-bg);
-    color: var(--btn-fg);
+    background: var(--button-bg);
+    color: var(--button-fg);
     text-decoration: none;
-    border-radius: 0.4rem;
-    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.6rem;
     font-weight: 600;
-    word-break: break-word;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
   }
-  hr.divider {
+  .btn:active { opacity: 0.85; }
+  hr {
     border: none;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--border);
     margin: 2.25rem 0;
   }
-  .run-note {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
+  .question {
+    margin: 0 0 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--border);
   }
-  .run-note h2.section-head {
-    margin-top: 0;
-  }
-  .run-note ul {
-    padding-left: 1.2rem;
-  }
-  .run-note li {
-    margin-bottom: 0.6rem;
-  }
-  .dossier-path {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  .final-btn {
-    margin-top: 3rem;
-  }
+  .question:last-of-type { border-bottom: none; }
+  .question .meta { color: var(--muted); font-size: 0.9rem; }
+  .run-notes p { color: var(--muted); font-size: 0.95rem; }
+  .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
+  footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
-<header class="page-head">
-  <p class="date">2026-09-15</p>
-  <p class="meta">~6 minute read</p>
+<header>
+  <p class="date">Limen — 2026-09-16</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
-<h2 class="section-head">Today</h2>
+<h2>Today</h2>
 
-<article class="item">
-  <p class="headline">Professional developers don't delegate to coding agents — they impose deliberate control strategies.</p>
-  <p>A mixed-methods study of experienced developers (13 field-observed, 99 surveyed) finds they "retain their agency in software design and implementation out of insistence on fundamental software quality attributes" — trusting agents for starter code, tests, docs and small refactors, never for complex logic, security-sensitive work, or big design calls.</p>
-  <p>That's a direct answer to the mixed-initiative question every agentic coding tool is guessing at: default to tight-loop review checkpoints and scoped boundaries, not autonomous "vibe" delegation, because that's how expert users already self-regulate. Nine months outside the usual recency window, but a measured behavioral pattern, not a version-pinned claim, so it holds.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2512.14012" target="_blank" rel="noopener">arXiv 2512.14012 →</a>
-</article>
-
-<hr class="divider">
-
-<article class="item">
-  <p class="headline">Sub-2B on-device models cannot be trusted with autonomous tool calls — and it's structural, not a prompting problem.</p>
-  <p>A new CPU benchmark ran five small language models against 100 MCP-style tool-calling prompts. Qwen2.5-1.5B held up (75-79%); Qwen2.5-0.5B collapsed under sampling (72% to 32%); Phi-1.5 scored zero; Pythia and TinyLlama never exceeded 7%. Sharper still: only 5 of 1,000 raw responses were directly parseable JSON.</p>
-  <p>For fully on-device tool-calling with no server round-trip, this pins the floor at roughly 1.5B parameters, below which you need a recovery-parsing layer and a confirmation gate before anything fires — not a bigger context window or a better prompt.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.07370" target="_blank" rel="noopener">arXiv 2609.07370 →</a>
-</article>
-
-<hr class="divider">
-
-<article class="item">
-  <p class="headline">A robot's proactive interruption channel should be chosen by inferred cognitive load, not fixed to speech.</p>
-  <p>An 87-participant HRI 2026 study with an ElliQ robot crossed verbal against nonverbal proactive cues over a high-load writing task and a low-load sorting task. The result is directional: under low load, verbal cues win regardless of nonverbal cues present; under high load, nonverbal-only cues produce the best experience.</p>
-  <p>A concrete design rule for any proactive ambient or embodied system — infer task load first, then pick the interruption channel.</p>
-  <a class="source-btn" href="https://doi.org/10.1145/3776734.3794456" target="_blank" rel="noopener">DOI 10.1145/3776734.3794456 →</a>
-</article>
-
-<hr class="divider">
-
-<article class="item">
-  <p class="headline">Companion-chatbot memory needs user-facing continuity controls, not onboarding disclaimers.</p>
-  <p>A thematic analysis of 17,053 verified quotations from 3,930 teen-relevant Reddit posts documents "problematic attachment, social substitution, emotional dependence" alongside genuine identity-exploration benefits, arguing "companion-AI safety must address relationships over time through user-controlled memory, privacy, relational boundaries, and healthy disengagement."</p>
-  <p>That names the feature gap directly: engagement-driving memory features need controls to inspect, reset, or bound continuity, plus a designed "healthy disengagement" affordance, not a one-time signup disclosure. Self-reported forum text — user perception, not measured usage.</p>
-  <a class="source-btn" href="https://arxiv.org/abs/2609.14843" target="_blank" rel="noopener">arXiv 2609.14843 →</a>
-</article>
-
-<hr class="divider">
-
-<article class="item">
-  <p class="headline">Cursor's Projects lets human review cadence decay as an agent coordinator earns trust.</p>
-  <p>Beyond the productivity stats already covered here (30% more PRs merged, 6x for heavy users), Cursor's own writeup names the mechanism: "Early on, you review each PR closely. As the fixes hold up, you review less, and the coordinator keeps working through the migration on its own."</p>
-  <p>A transferable, trust-calibrated review pattern — cadence that decays with track record rather than a fixed approval gate — worth testing wherever an agent coordinates multi-step work unattended. Vendor's own unaudited claim: a design idea to test, not a proven result.</p>
-  <a class="source-btn" href="https://cursor.com/blog/projects" target="_blank" rel="noopener">cursor.com/blog/projects →</a>
-</article>
-
-<h2 class="section-head">Yesterday's dossier</h2>
-
-<article class="item">
-  <p>The digest's lead claim — that tool-return provenance and conflict should be shown by the interface itself — only half survives scrutiny. The headline 68% adoption-of-corrupted-output figure is the single most-plausible-corruption cell of a three-level design, and the paper's "agents secretly know better" claim rests on unrubricked inspection of two same-family models. The buildable half fails on infrastructure: MCP's tool-result format has zero provenance fields, and across Anthropic, Google, OpenAI and Perplexity, corroboration and contradiction between two sources are the same data structure.</p>
-  <p>Where provenance displays exist, they move trust without moving verification. FDA's January 2026 guidance is the only regulator anywhere requiring surfaced "missing, corrupted, or unexpected input data" — and it prescribes the granularity this corpus already found roughly halves fact-checking.</p>
-  <p class="dossier-path">dossiers/2026-09-14-tool-return-overtrust-conflict-surface.md</p>
-</article>
-
-<h2 class="section-head">Needs your answer</h2>
-
-<article class="item">
-  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane? Persistence is the product there, and its memory design decisions are sharper than any assistant's. (asked 2026-09-06)</p>
-</article>
-
-<article class="item">
-  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They're now the field's de facto interaction guidance — Apple's HIG is silent on persona, Google PAIR stops in 2019. (asked 2026-09-08)</p>
-</article>
-
-<article class="item">
-  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but consumer-contract law is unexpectedly specific. (asked 2026-09-09)</p>
-</article>
-
-<div class="final-btn">
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md" target="_blank" rel="noopener">Answer on GitHub →</a>
+<div class="item">
+  <h3>1. A six-month cohort of 673 Chinese AI users shows two companion-bonding profiles that look identical until you check for harm.</h3>
+  <p>Study 1 interviewed 52 users to build the taxonomy; Study 2 followed 673 people for six months and sorted them into four impact profiles. Two &mdash; &ldquo;mixed impact&rdquo; and &ldquo;risk-driven impact&rdquo; &mdash; run equally high on affective bonding, but only the risk-driven group shows greater need frustration, emotion-regulation difficulty, depressive/anxiety symptoms, and lower self-esteem and flourishing.</p>
+  <p>That kills the simple safety question (&ldquo;does bonding predict harm?&rdquo;) and replaces it with the actionable one: detect which profile a user is trending into and intervene there, not at the bonding metric itself. It&rsquo;s also the first non-Western longitudinal companion-AI sample this corpus has found since the hunt was requested.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.16645">Read the source →</a>
 </div>
 
-<div class="run-note">
-  <h2 class="section-head">Run notes</h2>
-  <p>All four lanes reached the ranked list (interaction 2, capability 1, ambient 1, practice 1). Practice's resubmission problem is still live: 3 of 4 submissions were dead-on-arrival duplicates (Raycast pricing, Replit's "Closing the Loop," Livelymerge) — flagged for the auditor since 2026-09-01; only Cursor Projects survived, on a new fact from an already-cited source. Other kills: a duplicate delivery-robot proxemics DOI, an IPSJ earbuds paper contradicting its own "for walking users" framing, and fourth-occurrence duplicates of the GPT-6 Astra pricing cliff and Anthropic's cancelled Sonnet 5 price rise.</p>
-  <p>Below-cap survivors: writers' prompt-sharing preferences, in-vehicle gaze-deixis fusion (Mercedes-Benz), CALICO's versioned-prompt annotation, Claude Opus 5's Fast Mode spec, and a 20-month chatbot-relationship case study. Two ACM DL DOIs hit the same Cloudflare wall; both cleared via Crossref + Semantic Scholar — a two-cycle recovery route worth the audit noting as standing. QUESTIONS.md is at its five-open maximum — no new question. No redaction alteration needed this cycle.</p>
+<hr>
+
+<div class="item">
+  <h3>2. Users say they&rsquo;d rather get a wrong answer than hear &ldquo;I can&rsquo;t help with that&rdquo; too often.</h3>
+  <p>A 599-person study found people most satisfied with genuine responses, next-most with hallucinations, least with refusals &mdash; despite knowing the hallucinations were less accurate. Explanations helped satisfaction with occasional refusals but not frequent ones, and high-need-for-closure users rated refusal-heavy systems worse across the board.</p>
+  <p>This undercuts &ldquo;refuse when uncertain&rdquo; as a neutral safe default: refusal-rate tuning is a satisfaction-versus-safety tradeoff a client has to consciously own.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.16191">Read the source →</a>
 </div>
 
-<div class="final-btn">
-  <a class="source-btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md" target="_blank" rel="noopener">Read the full version →</a>
+<hr>
+
+<div class="item">
+  <h3>3. Letting people build an analysis piece by piece beats handing them a finished one, even when both cover the same ground.</h3>
+  <p>An 800-person, four-condition randomized experiment compared chat-based analysis against workflows scaffolded around how professionals actually structure a task. The scaffolded versions improved coverage over plain chat, and the user-directed variant additionally produced a broader range of analytic requests and lower subjective effort.</p>
+  <p>The fork is concrete &mdash; ship a finished analysis, or scaffold an incremental, user-steered build &mdash; and incremental wins on effort and analytic range at matched output quality, arguing against defaulting to &ldquo;just give me the answer&rdquo; UX.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.16482">Read the source →</a>
 </div>
+
+<hr>
+
+<div class="item">
+  <h3>4. Getting people to judge their own AI-assisted work correctly and getting them to perform better are two different design problems &mdash; and most interventions only move one.</h3>
+  <p>Across 917 participants and 12 tasks, only two of four calibration interventions &mdash; reliability cards and contrasting replies &mdash; reduced estimation error and overconfidence and improved confidence discrimination; none produced a measurable task-performance gain.</p>
+  <p>That separation matters for scoping a feature: a reliability-card UI is a trust-calibration play, not a productivity one, and selling it as the latter disappoints whoever measures the wrong outcome.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.17065">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Forcing people to consult the model on every task only captures about half of what the model is actually better at &mdash; and makes people worse judges of their own answers.</h3>
+  <p>A 535-person study across a 40-item reasoning battery and four models found mandatory consultation captured roughly half the model&rsquo;s own accuracy edge, and post-advice confidence distinguished correct from incorrect answers less reliably than unaided confidence did.</p>
+  <p>An argument against always-on, mandatory-consult advice surfaces: selective, optional deference captures more of the available gain without degrading judgment as much as forcing it does.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.16793">Read the source →</a>
+</div>
+
+<h2>Yesterday&rsquo;s dossier</h2>
+
+<div class="item">
+  <p>The digest&rsquo;s #1 item from 2026-09-15 &mdash; &ldquo;developers control rather than delegate to coding agents&rdquo; &mdash; mostly holds, but not as cleanly as the headline suggested. The paper&rsquo;s own numbers show 31% of participants (3 of 13) didn&rsquo;t review every change, and those three were working outside their professional domain, so control is domain-contingent, not categorical. Corroboration runs along a clean self-report-versus-behavior fault line: self-report sources agree experts control their agents, behavioral data (PR-intervention rates, sabotage-detection, screen-recording time) shows substantially less review than people claim. Four control models now ship side by side across major coding tools, interruption budget a designed choice. Open question: whether &ldquo;control not delegation&rdquo; is driven by expertise or by how verifiable the work is &mdash; confounded in every study so far.</p>
+  <p class="dossier-path">dossiers/2026-09-15-developer-agent-control-strategies.md</p>
+</div>
+
+<h2>Needs your answer</h2>
+
+<div class="question">
+  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane? Persistence is the product there, and its memory design decisions are sharper than any assistant&rsquo;s.</p>
+  <p class="meta">asked 2026-09-06</p>
+</div>
+
+<div class="question">
+  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They&rsquo;re now the field&rsquo;s de facto interaction guidance &mdash; Apple&rsquo;s HIG is silent on persona, Google PAIR stops in 2019.</p>
+  <p class="meta">asked 2026-09-08</p>
+</div>
+
+<div class="question">
+  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but consumer-contract law is unexpectedly specific.</p>
+  <p class="meta">asked 2026-09-09</p>
+</div>
+
+<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+
+<h2>Run notes</h2>
+
+<div class="run-notes">
+  <p>All five cap slots went to interaction this cycle &mdash; ranking on strength, not a lane failure elsewhere: capability (3/4), practice (3/3) and ambient (3/3) all produced verified items, they simply ranked lower.</p>
+  <p>Below-cap survivors: a wrist-worn pressure band recovering hand pose and contact force with no skin contact; EgoAsk&rsquo;s robot-initiated-questioning household study; Notion&rsquo;s Lore memory schema (55&ndash;60% of stored memories were noise in their own pilot); INT8 quantization&rsquo;s hardware-dependent sign flip; GitHub Copilot&rsquo;s self-resolving review comments with severity-weighted ensemble data; Slack&rsquo;s channel-not-private-pane agent placement; GPT-6 Astra&rsquo;s halved OSWorld 2.0 task time; an update-only Claude Fable 5.1 router-fallback fact; a contactless home-health-sensing paper.</p>
+  <p>One duplicate killed outright: Claude Fable 5.1&rsquo;s cache-read pricing cut, a sixth resubmission across three weeks, flagged for the auditor. No new research-direction question this run &mdash; five are already open. <code>/daily/2026-09-01.md</code> archived (15 days old). No redaction alteration was needed on this render &mdash; no item gestured at unreleased hardware. Mirror-publish for this render initially failed under the curator&rsquo;s toolset (git-proxy 403, no repo-attach capability available in that run); completed as a follow-up step once repo access was attached &mdash; this page is live as of this render.</p>
+</div>
+
+<footer>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
+</footer>
 
 </body>
 </html>
