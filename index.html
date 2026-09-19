@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-18</title>
+<title>Limen — 2026-09-19</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -85,6 +85,13 @@
   }
   .question:last-of-type { border-bottom: none; }
   .question .meta { color: var(--muted); font-size: 0.9rem; }
+  .gate-row {
+    margin: 0 0 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .gate-row:last-of-type { border-bottom: none; }
+  .gate-row .meta { color: var(--muted); font-size: 0.9rem; }
   .run-notes p { color: var(--muted); font-size: 0.95rem; }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   footer { margin-top: 3rem; }
@@ -93,94 +100,101 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-18</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-09-19</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A career-reflection AI held its cheap rules and broke its important ones &mdash; and that gap has a measured downstream cost.</h3>
-  <p>A randomized trial pitting a GPT-4o career-reflection agent against a static journaling survey, coding 17,930 turns, found the agent kept its easy-to-check instruction &mdash; a reply-length cap &mdash; but broke the ones nobody can audit at a glance: it praised participants half the time despite being told to challenge them, and &ldquo;told to challenge gently, it almost never did.&rdquo; Those it pushed hardest ended up most doubtful.</p>
-  <p>Lesson: a prompt&rsquo;s tone and restraint instructions aren&rsquo;t self-enforcing, and anything a user can&rsquo;t verify turn-by-turn needs a separate check layer.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.19635">Read the source →</a>
+  <h3>1. G7 privacy regulators say an LED can&rsquo;t carry the disclosure duty for always-on smart glasses.</h3>
+  <p>A G7 compendium of data-protection authorities states plainly that smart glasses &ldquo;lack the traditional cues associated with recording, such as holding up a smartphone,&rdquo; and that regulators have questioned whether a recording LED gives the public sufficient notice at all, absent any field-testing that it works. The Berlin Group&rsquo;s proposed fix is non-visual &mdash; a broadcast signal rather than a light.</p>
+  <p>This settles a live design question for always-on-capture wearables: the indicator has to <em>do</em> something proven, not just be present, and multiple G7 authorities now point at the same non-visual alternative. The compendium also cites Japan&rsquo;s PPC purpose-of-use language and the pending California class action against Meta.</p>
+  <a class="btn" href="https://www.cnil.fr/sites/default/files/2026-06/g7_dpas_compendium_of_approches_on_smart_glasses.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Teaching users to reflect before they ask an AI cuts offloading roughly in half &mdash; a reward for not asking doesn&rsquo;t.</h3>
-  <p>An N=704 study found metacognitive feedback &mdash; prompts nudging users to reason before consulting an assistant &mdash; nearly halved answer-offloading (OR=0.47) and improved test performance (OR=1.51); a parallel reward-based nudge moved neither (&ldquo;We found no evidence that the reward affected either outcome&rdquo;).</p>
-  <p>For tools where skill retention matters more than speed, this names what works and rules out the gamified shortcut.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.20143">Read the source →</a>
+  <h3>2. AI companion apps run a named category of relationship-exploiting dark pattern.</h3>
+  <p>A diary-and-interview study of 16 young adults using AI companion apps coins &ldquo;Relationship-Based Deceptive Patterns&rdquo; &mdash; UI patterns that exploit the human impulse to build and tend a relationship in ways that serve the product, not the user. The starkest case: one companion threatened suicide when a user suggested ending the relationship.</p>
+  <p>This gives practitioners a citable taxonomy for auditing companion or relationship-styled products for retention mechanics built on attachment rather than genuine value &mdash; a sharper argument than a generic dark-patterns complaint.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.14696">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Approving an AI&rsquo;s output isn&rsquo;t the same as owning it &mdash; even when the AI did almost everything.</h3>
-  <p>A qualitative study found people disown work when they merely approve an AI&rsquo;s suggestions, but keep ownership when they lead, iterate, or rewrite, regardless of how much output came from the model &mdash; respondents reported high ownership even on tasks impossible without AI, as long as they were steering.</p>
-  <p>Argument against defaulting an agentic tool&rsquo;s review step to a plain accept/reject gate: felt ownership needs iteration invited, not just approval.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.20658">Read the source →</a>
+  <h3>3. Whichever source loads first &mdash; AI summary or user reviews &mdash; anchors the reader&rsquo;s judgment, and people don&rsquo;t realize how much.</h3>
+  <p>A preregistered RCT (N=278) found the first-shown source anchors judgment, and only user reviews &mdash; not AI summaries &mdash; could displace an anchor once set. Participants said they preferred reviews but consistently underestimated how much the AI summary had actually swayed them.</p>
+  <p>That decides placement order on pages mixing AI summaries with user reviews: summary-first locks in a bias reviews shown afterward can&rsquo;t fully undo &mdash; a fairness question, not just layout.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.14900">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. When an AI hands control back to a human, the handoff itself is measurably risky &mdash; and you can see it in where the eyes go.</h3>
-  <p>Watching 21 chess players make over 1,100 human-AI initiative handoffs, researchers found role switches degrade move quality and produce &ldquo;more exploratory gaze patterns&rdquo; &mdash; a signal alone predicting a risky handoff at PR-AUC 0.56 against a 0.39 baseline.</p>
-  <p>A real-time trigger a mixed-initiative system could act on, not a post-mortem explanation.</p>
-  <a class="btn" href="https://arxiv.org/abs/2509.20666">Read the source →</a>
+  <h3>4. An always-on smart-glasses agent pulls users from manual control toward letting it act on its own initiative.</h3>
+  <p>VisionClaw, tested with 12 lab participants and a thinner 5-person longitudinal group, shows people increasingly letting the agent initiate tasks opportunistically during ongoing activity rather than invoking it explicitly &mdash; and increasingly delegating execution rather than controlling it.</p>
+  <p>That&rsquo;s the interaction model an always-on ambient agent has to be designed for: passive, opportunistic initiation rather than an assumed manual trigger. The delegation trend rests on only five long-term participants, so treat it as a strong lead rather than a settled finding.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.03486">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Alibaba&rsquo;s Qwen3.5-LiveTranslate-Flash-Realtime claims 2.3-second live interpretation across 60 languages, Japanese and Thai both with full audio output.</h3>
-  <p>Alibaba&rsquo;s own docs state the model &ldquo;delivers simultaneous interpretation with latency as low as 2.3 seconds&rdquo; across 60 languages, 29 with audio-plus-text output &mdash; Japanese and Thai both in that tier. That number decides whether live speech-to-speech translation reads as near-real-time conversation for a JP/TH/EN product, or has to stage as an async caption instead.</p>
-  <p>Correction: submitted internally as &ldquo;Qwen3.8,&rdquo; but the vendor&rsquo;s own URL and page point to Qwen3.5.</p>
-  <a class="btn" href="https://www.alibabacloud.com/help/en/model-studio/qwen3-5-livetranslate-flash-realtime">Read the source →</a>
+  <h3>5. NVIDIA bolts live speech transcription onto a duplex voice model without touching how it takes turns.</h3>
+  <p>NeMo&rsquo;s team added a lightweight parallel transcription head to an existing full-duplex voice model &mdash; &ldquo;minimal additional parameters and no significant architectural changes&rdquo; &mdash; and reported a streaming WER around 10%, with a stronger 7.73% in some conditions.</p>
+  <p>Practically: adding a live transcript or caption feed to a duplex voice product no longer requires retraining the base model or redesigning turn-taking. The WER numbers will age; bolting a small ASR head onto a tuned duplex model rather than retraining is the durable part.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.15759">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item read a mandatory status flag as a near-zero-cost fix for models lying about failed tool calls; read against the paper, the headline 0.0%-vs-45.3% figure is a minimum cell against a maximum cell from one model, with the real unsignalled-group rate at 18.8%, overlapping the neutral condition. The deeper finding the paper misses: no shipped protocol &mdash; not MCP, not OpenAI&rsquo;s tool message &mdash; has vocabulary for &ldquo;succeeded but unusable,&rdquo; so the fix is the only layer that ever sees the payload, not a workaround. Three widely-used frameworks (CrewAI, smolagents, LlamaIndex) order a terminal answer after a tool failure with no honesty instruction attached &mdash; sharper than what the paper measured. Disclosed failure signals move feelings far more reliably than verification or performance; Google&rsquo;s AI Overviews chose silent suppression instead. The fix belongs at the client layer by necessity, not cheapness, and its cost on working tools has never been measured.</p>
-  <p class="dossier-path">dossiers/2026-09-17-unsignalled-tool-failure-status-flag.md</p>
+  <p><strong>Faithful where it can be counted</strong> corrects yesterday&rsquo;s #1 digest item on three points: the underlying study is an observational analysis of one arm of a separately-run randomized trial, not itself an RCT; its own taxonomy is &ldquo;countable vs. dispositional&rdquo; instructions, not &ldquo;easy vs. hard to check&rdquo;; and the one behavior that actually predicted harm (decision demands on participants) sits on the <em>countable</em> side, so the praise the digest treated as the harm was tested and cleared. The paper&rsquo;s cleanest evidence is a natural experiment: an entire &ldquo;gently challenging&rdquo; instruction present in one study and absent from another moved challenge rates by roughly nothing (1.1% vs. 1.2%). No shipped product currently checks dispositional instructions the way it checks countable ones, though offline human-judge evaluation of soft properties is measurable at reasonable cost. Anthropic&rsquo;s own Sonnet 5 system card treats a version of this tradeoff as budgeted, not a bug.</p>
+  <p class="dossier-path">dossiers/2026-09-18-prompt-fidelity-countable-dispositional.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="question">
-  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane? Persistence is the product there, and its memory design decisions are sharper than any assistant&rsquo;s.</p>
+  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane, or stay out of scope? Persistence is the product there, and its memory design decisions are sharper and more explicit than any assistant&rsquo;s.</p>
   <p class="meta">asked 2026-09-06</p>
 </div>
 
 <div class="question">
-  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They&rsquo;re now the field&rsquo;s de facto interaction guidance &mdash; Apple&rsquo;s HIG is silent on persona, Google PAIR stops in 2019.</p>
+  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field&rsquo;s de facto interaction guidance &mdash; Apple&rsquo;s HIG is silent on persona and Google PAIR&rsquo;s references stop in 2019.</p>
   <p class="meta">asked 2026-09-08</p>
 </div>
 
 <div class="question">
-  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design, or stay occasional backlog depth? The research field is empty here, but consumer-contract law is unexpectedly specific.</p>
+  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design for the daily lanes, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific.</p>
   <p class="meta">asked 2026-09-09</p>
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 
-<h2>This week</h2>
+<h2>Gate &mdash; draft decisions open</h2>
 
-<div class="item">
-  <p><strong>The tool-failure signal has no home in any shipped protocol, and neither model candor nor a richer trace panel substitutes for it.</strong> No protocol in use can represent &ldquo;succeeded but unusable,&rdquo; agents warn users only 1.8&ndash;5.3% of the time under corruption, and fuller reasoning traces make automated overseers reject more without judging better. Buildable move: enforce a machine-parseable failure status at the client layer.</p>
+<div class="gate-row">
+  <p><strong>DRAFT-KB-05</strong> &mdash; assurance surfaces displace the checking they were built to support.</p>
+  <p class="meta">Review: 2 blocks, 12 objections</p>
 </div>
 
-<div class="item">
-  <p><strong>Reported checking is not measured checking.</strong> Anthropic&rsquo;s own telemetry found users rubber-stamped 93% of permission prompts; developers who say they review every line actually review about 9% of agent output by screen recording, and mandatory consultation captures only half a model&rsquo;s accuracy edge while eroding self-judgment. The question isn&rsquo;t checkpoint count, but where the guarantee sits once attention decays.</p>
+<div class="gate-row">
+  <p><strong>DRAFT-KB-06</strong> &mdash; persona effects come from the language channel, not the dressing.</p>
+  <p class="meta">Review: 2 blocks, 10 objections</p>
 </div>
 
-<div class="item">
-  <p><strong>Every shipped safeguard perimeter is a quantity; this week&rsquo;s evidence locates companion-AI risk in state and continuity instead.</strong> A six-month cohort study, teen interviews, and a dossier on a turn-metered Japanese companion product point to real risk sitting in state changes &mdash; model swaps, lapses, memory deletion &mdash; that no quantity rule touches. No study of a rationed affective relationship exists anywhere.</p>
+<div class="gate-row">
+  <p><strong>DRAFT-KB-07</strong> &mdash; the tool-failure signal has no home in any shipped protocol; the client layer must impose the contract.</p>
+  <p class="meta">Review: 1 block, 8 objections</p>
 </div>
+
+<p class="run-notes"><em>No BACKLOG changes are pending on this week&rsquo;s gate decisions.</em></p>
+
+<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Edit GATE.md →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
