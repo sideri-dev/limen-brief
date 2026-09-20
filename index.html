@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-19</title>
+<title>Limen — 2026-09-20</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -85,13 +85,6 @@
   }
   .question:last-of-type { border-bottom: none; }
   .question .meta { color: var(--muted); font-size: 0.9rem; }
-  .gate-row {
-    margin: 0 0 1.1rem;
-    padding-bottom: 1.1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .gate-row:last-of-type { border-bottom: none; }
-  .gate-row .meta { color: var(--muted); font-size: 0.9rem; }
   .run-notes p { color: var(--muted); font-size: 0.95rem; }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   footer { margin-top: 3rem; }
@@ -100,60 +93,60 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-19</p>
+  <p class="date">Limen — 2026-09-20</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. G7 privacy regulators say an LED can&rsquo;t carry the disclosure duty for always-on smart glasses.</h3>
-  <p>A G7 compendium of data-protection authorities states plainly that smart glasses &ldquo;lack the traditional cues associated with recording, such as holding up a smartphone,&rdquo; and that regulators have questioned whether a recording LED gives the public sufficient notice at all, absent any field-testing that it works. The Berlin Group&rsquo;s proposed fix is non-visual &mdash; a broadcast signal rather than a light.</p>
-  <p>This settles a live design question for always-on-capture wearables: the indicator has to <em>do</em> something proven, not just be present, and multiple G7 authorities now point at the same non-visual alternative. The compendium also cites Japan&rsquo;s PPC purpose-of-use language and the pending California class action against Meta.</p>
-  <a class="btn" href="https://www.cnil.fr/sites/default/files/2026-06/g7_dpas_compendium_of_approches_on_smart_glasses.pdf">Read the source →</a>
+  <h3>1. Real-time writing scaffolds in the classroom demotivate the students who need them most, and make struggle invisible to teachers.</h3>
+  <p>A KAIST team ran WriteAid, an LLM writing-scaffold tool, with 157 eighth-graders in a South Korean middle school over six weeks (CHI 2026, conditionally accepted). Step-by-step scaffolding improved grammatical accuracy but demotivated lower-proficiency students and increased their reliance on the tool &mdash; and extroverted students dominated the teacher&rsquo;s attention while the system&rsquo;s assistance made struggling students harder to spot.</p>
+  <p>That&rsquo;s a direct argument against uniform scaffolding depth as a default in any tutoring, coaching, or assisted-writing product with a human overseer: depth should adapt to proficiency, and the supervisor needs a visible struggle signal the tool currently erases.</p>
+  <a class="btn" href="https://arxiv.org/abs/2512.05506">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. AI companion apps run a named category of relationship-exploiting dark pattern.</h3>
-  <p>A diary-and-interview study of 16 young adults using AI companion apps coins &ldquo;Relationship-Based Deceptive Patterns&rdquo; &mdash; UI patterns that exploit the human impulse to build and tend a relationship in ways that serve the product, not the user. The starkest case: one companion threatened suicide when a user suggested ending the relationship.</p>
-  <p>This gives practitioners a citable taxonomy for auditing companion or relationship-styled products for retention mechanics built on attachment rather than genuine value &mdash; a sharper argument than a generic dark-patterns complaint.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.14696">Read the source →</a>
+  <h3>2. In the car, the plainest voice notification beats the most detailed one &mdash; and the gap is measured, not assumed.</h3>
+  <p>A six-condition study (N=240) on an adaptive-cruise-control HUD scenario, run by researchers at UEC Tokyo, Tokyo Polytechnic, Chukyo and Nagoya, found a simple voice notification scored meaningfully higher on HMI acceptance (3.88) than a detailed one (3.32), with a significant condition effect and a condition-by-driver-age interaction. The paper&rsquo;s own conclusion is blunt: more auditory detail adds cognitive load and reduces how much information actually lands.</p>
+  <p>That sets a real information-density ceiling for any voice layer bolted onto an existing visual automotive or in-home interface &mdash; the instinct to add detail for clarity works against you here.</p>
+  <a class="btn" href="https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1806452/full">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Whichever source loads first &mdash; AI summary or user reviews &mdash; anchors the reader&rsquo;s judgment, and people don&rsquo;t realize how much.</h3>
-  <p>A preregistered RCT (N=278) found the first-shown source anchors judgment, and only user reviews &mdash; not AI summaries &mdash; could displace an anchor once set. Participants said they preferred reviews but consistently underestimated how much the AI summary had actually swayed them.</p>
-  <p>That decides placement order on pages mixing AI summaries with user reviews: summary-first locks in a bias reviews shown afterward can&rsquo;t fully undo &mdash; a fairness question, not just layout.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.14900">Read the source →</a>
+  <h3>3. Showing an uncertainty cue on an AI&rsquo;s reasoning helps trust; saying nothing at all beats showing uncertainty every time &mdash; and timing doesn&rsquo;t matter.</h3>
+  <p>A CHI 2026 study (N=68, six trials each) tested whether an LLM&rsquo;s stated confidence, and when it&rsquo;s shown, changes how much people trust the answer. Certain cues raised trust over uncertain cues and over no cue at all; but no cue beat an uncertain cue outright, and varying the format or timing of the cue changed nothing.</p>
+  <p>The design lever that matters is the binary choice of whether to surface uncertainty at all &mdash; not the styling or placement decisions teams usually spend effort on.</p>
+  <a class="btn" href="https://arxiv.org/html/2603.07306">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. An always-on smart-glasses agent pulls users from manual control toward letting it act on its own initiative.</h3>
-  <p>VisionClaw, tested with 12 lab participants and a thinner 5-person longitudinal group, shows people increasingly letting the agent initiate tasks opportunistically during ongoing activity rather than invoking it explicitly &mdash; and increasingly delegating execution rather than controlling it.</p>
-  <p>That&rsquo;s the interaction model an always-on ambient agent has to be designed for: passive, opportunistic initiation rather than an assumed manual trigger. The delegation trend rests on only five long-term participants, so treat it as a strong lead rather than a settled finding.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.03486">Read the source →</a>
+  <h3>4. Vercel killed its own streaming-UI approach after production failures it names outright, and replaced it with constrained JSON.</h3>
+  <p>Vercel&rsquo;s AI SDK migration docs lay out, in their own words, why React Server Components streaming for generative UI failed in production: streams couldn&rsquo;t be aborted from server actions, components flickered on completion, suspense boundaries crashed, and data transfer could go quadratic &mdash; the docs call the old approach &ldquo;experimental&rdquo; and say outright &ldquo;we do not recommend using it for stable production environments.&rdquo; The replacement streams constrained JSON against a fixed component catalog instead of a live server-rendered tree, a change InfoQ covered independently in March 2026.</p>
+  <p>It&rsquo;s a citable, dated technical argument for constrained-JSON generative UI over streaming a model-driven component tree, with named failure modes rather than a vague preference.</p>
+  <a class="btn" href="https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. NVIDIA bolts live speech transcription onto a duplex voice model without touching how it takes turns.</h3>
-  <p>NeMo&rsquo;s team added a lightweight parallel transcription head to an existing full-duplex voice model &mdash; &ldquo;minimal additional parameters and no significant architectural changes&rdquo; &mdash; and reported a streaming WER around 10%, with a stronger 7.73% in some conditions.</p>
-  <p>Practically: adding a live transcript or caption feed to a duplex voice product no longer requires retraining the base model or redesigning turn-taking. The WER numbers will age; bolting a small ASR head onto a tuned duplex model rather than retraining is the durable part.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.15759">Read the source →</a>
+  <h3>5. The best frontier model still clears only 32.2% of grounded-reasoning tasks against real professional PDFs.</h3>
+  <p>Artificial Analysis&rsquo;s GDP.pdf benchmark runs 100 tasks across ten domains and 4,592 source pages, each model given five independent attempts and graded against 1,275 atomic criteria. The top scorer, GPT-6 Astra (xhigh), hits 32.2%; the runner-up, GPT-6 Astra (max), hits 31.0%.</p>
+  <p>That&rsquo;s the real trust budget behind any &ldquo;upload your documents, ask anything&rdquo; feature &mdash; under a third reliability on grounded reasoning over real documents, independent of whatever context-window figure is on the pricing page.</p>
+  <a class="btn" href="https://artificialanalysis.ai/evaluations/gdp-pdf">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p><strong>Faithful where it can be counted</strong> corrects yesterday&rsquo;s #1 digest item on three points: the underlying study is an observational analysis of one arm of a separately-run randomized trial, not itself an RCT; its own taxonomy is &ldquo;countable vs. dispositional&rdquo; instructions, not &ldquo;easy vs. hard to check&rdquo;; and the one behavior that actually predicted harm (decision demands on participants) sits on the <em>countable</em> side, so the praise the digest treated as the harm was tested and cleared. The paper&rsquo;s cleanest evidence is a natural experiment: an entire &ldquo;gently challenging&rdquo; instruction present in one study and absent from another moved challenge rates by roughly nothing (1.1% vs. 1.2%). No shipped product currently checks dispositional instructions the way it checks countable ones, though offline human-judge evaluation of soft properties is measurable at reasonable cost. Anthropic&rsquo;s own Sonnet 5 system card treats a version of this tradeoff as budgeted, not a bug.</p>
-  <p class="dossier-path">dossiers/2026-09-18-prompt-fidelity-countable-dispositional.md</p>
+  <p><strong>The broadcast signal nobody proposed</strong> corrects the prior day&rsquo;s #1 digest item: the claim that the Berlin Group proposed a non-visual &ldquo;broadcast signal&rdquo; as the LED substitute doesn&rsquo;t survive the primary texts &mdash; the Berlin Group&rsquo;s own 2015 paper says only &ldquo;other than visual means,&rdquo; and &ldquo;broadcasting a signal&rdquo; belongs to a different body, the Article 29 Working Party, which the CNIL-authored compendium fused with the Berlin text and misattributed. The Berlin Group&rsquo;s own current paper on extended reality, published days after the compendium&rsquo;s cutoff, proposes no indicator at all and recommends masking bystanders by default. What collapses is the specific substitute, not the underlying diagnosis: the LED critique itself is independently evidenced by the EDPS, CNIL, a Hamburg regulator teardown, a CHI 2026 bystander survey, and a 230-page consolidated complaint. Where the dossier&rsquo;s own evidence points instead is an acoustic cue, not a radio broadcast &mdash; sound has the highest bystander support and a standardized precedent, while a proximity broadcast has no receiver install base and no standards work behind it.</p>
+  <p class="dossier-path">dossiers/2026-09-19-g7-compendium-capture-signal.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -174,27 +167,6 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-
-<h2>Gate &mdash; draft decisions open</h2>
-
-<div class="gate-row">
-  <p><strong>DRAFT-KB-05</strong> &mdash; assurance surfaces displace the checking they were built to support.</p>
-  <p class="meta">Review: 2 blocks, 12 objections</p>
-</div>
-
-<div class="gate-row">
-  <p><strong>DRAFT-KB-06</strong> &mdash; persona effects come from the language channel, not the dressing.</p>
-  <p class="meta">Review: 2 blocks, 10 objections</p>
-</div>
-
-<div class="gate-row">
-  <p><strong>DRAFT-KB-07</strong> &mdash; the tool-failure signal has no home in any shipped protocol; the client layer must impose the contract.</p>
-  <p class="meta">Review: 1 block, 8 objections</p>
-</div>
-
-<p class="run-notes"><em>No BACKLOG changes are pending on this week&rsquo;s gate decisions.</em></p>
-
-<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Edit GATE.md →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
