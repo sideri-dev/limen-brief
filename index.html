@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-20</title>
+<title>Limen — 2026-09-21</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -93,68 +93,63 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-20</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-09-21</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Real-time writing scaffolds in the classroom demotivate the students who need them most, and make struggle invisible to teachers.</h3>
-  <p>A KAIST team ran WriteAid, an LLM writing-scaffold tool, with 157 eighth-graders in a South Korean middle school over six weeks (CHI 2026, conditionally accepted). Step-by-step scaffolding improved grammatical accuracy but demotivated lower-proficiency students and increased their reliance on the tool &mdash; and extroverted students dominated the teacher&rsquo;s attention while the system&rsquo;s assistance made struggling students harder to spot.</p>
-  <p>That&rsquo;s a direct argument against uniform scaffolding depth as a default in any tutoring, coaching, or assisted-writing product with a human overseer: depth should adapt to proficiency, and the supervisor needs a visible struggle signal the tool currently erases.</p>
-  <a class="btn" href="https://arxiv.org/abs/2512.05506">Read the source →</a>
+  <h3>1. A 1,524-incident workplace study puts a number on a design instinct: defaulting to speed over precision is what breaks AI tools for the people using them.</h3>
+  <p>An ACM FAccT &lsquo;26 study analyzed 1,524 real workplace AI incidents across 171 occupational tasks and 12 industry sectors, then compared them against stated preferences from 202 workers and 197 developers. 83% of the incidents trace to a mismatch between what workers wanted &mdash; systems that are precise, insightful, or personal &mdash; and what they got, which skewed basic, simple, or general; 74% of that is attributable to developers overfocusing on efficiency and speed.</p>
+  <p>A large-N, peer-reviewed number behind an argument design teams usually make on instinct alone: shipping the fast, generic version of a feature is itself the failure mode.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.21035">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. In the car, the plainest voice notification beats the most detailed one &mdash; and the gap is measured, not assumed.</h3>
-  <p>A six-condition study (N=240) on an adaptive-cruise-control HUD scenario, run by researchers at UEC Tokyo, Tokyo Polytechnic, Chukyo and Nagoya, found a simple voice notification scored meaningfully higher on HMI acceptance (3.88) than a detailed one (3.32), with a significant condition effect and a condition-by-driver-age interaction. The paper&rsquo;s own conclusion is blunt: more auditory detail adds cognitive load and reduces how much information actually lands.</p>
-  <p>That sets a real information-density ceiling for any voice layer bolted onto an existing visual automotive or in-home interface &mdash; the instinct to add detail for clarity works against you here.</p>
-  <a class="btn" href="https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1806452/full">Read the source →</a>
+  <h3>2. Criticize the AI in front of the user, and the user hears it as criticism of themselves &mdash; but only when it&rsquo;s negative.</h3>
+  <p>A CHI 2026 experiment had participants delegate a scheduling task to either a human or an AI assistant, then varied the assistant&rsquo;s competence and the feedback it received. Negative feedback toward the AI delegate got internalized as self-directed criticism &mdash; the paper&rsquo;s own term is an &ldquo;AI Phantom Limb&rdquo; effect &mdash; while positive feedback transferred much less, and neither asymmetry showed up when the delegate was human. (One sub-claim, about low-competence assistants triggering more self-blame, couldn&rsquo;t be confirmed against the paper&rsquo;s own text and was dropped.)</p>
+  <p>The finding argues against UI copy that scolds an AI agent in front of the user during error or correction flows &mdash; the rebuke lands on the person, not the software &mdash; and for keeping system-fault language separate from user-fault language in any repair interface.</p>
+  <a class="btn" href="https://dl.acm.org/doi/10.1145/3772318.3791075">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Showing an uncertainty cue on an AI&rsquo;s reasoning helps trust; saying nothing at all beats showing uncertainty every time &mdash; and timing doesn&rsquo;t matter.</h3>
-  <p>A CHI 2026 study (N=68, six trials each) tested whether an LLM&rsquo;s stated confidence, and when it&rsquo;s shown, changes how much people trust the answer. Certain cues raised trust over uncertain cues and over no cue at all; but no cue beat an uncertain cue outright, and varying the format or timing of the cue changed nothing.</p>
-  <p>The design lever that matters is the binary choice of whether to surface uncertainty at all &mdash; not the styling or placement decisions teams usually spend effort on.</p>
-  <a class="btn" href="https://arxiv.org/html/2603.07306">Read the source →</a>
+  <h3>3. Anthropic stopped letting Claude grade its own work &mdash; not because self-critique is impossible to prompt for, but because it structurally doesn&rsquo;t work.</h3>
+  <p>In its own engineering writeup, Anthropic describes agents asked to evaluate their own output confidently praising it &ldquo;even when, to a human observer, the quality is obviously mediocre.&rdquo; Their fix wasn&rsquo;t a better self-critique prompt &mdash; it was separating the agent that does the work from the agent that judges it, then tuning that second evaluator to be skeptical, which proved far more tractable than making a generator self-critical.</p>
+  <p>A first-party admission with a named mechanism, and a direct architectural note for anyone building an AI design-review loop: the judge has to sit outside the maker.</p>
+  <a class="btn" href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Vercel killed its own streaming-UI approach after production failures it names outright, and replaced it with constrained JSON.</h3>
-  <p>Vercel&rsquo;s AI SDK migration docs lay out, in their own words, why React Server Components streaming for generative UI failed in production: streams couldn&rsquo;t be aborted from server actions, components flickered on completion, suspense boundaries crashed, and data transfer could go quadratic &mdash; the docs call the old approach &ldquo;experimental&rdquo; and say outright &ldquo;we do not recommend using it for stable production environments.&rdquo; The replacement streams constrained JSON against a fixed component catalog instead of a live server-rendered tree, a change InfoQ covered independently in March 2026.</p>
-  <p>It&rsquo;s a citable, dated technical argument for constrained-JSON generative UI over streaming a model-driven component tree, with named failure modes rather than a vague preference.</p>
-  <a class="btn" href="https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui">Read the source →</a>
+  <h3>4. Gemini 3.8 Live now bills voice by the minute and genuinely lets you interrupt it mid-sentence &mdash; but &ldquo;enterprise-ready&rdquo; is still private preview, not GA.</h3>
+  <p>Google&rsquo;s pricing page confirms per-minute audio billing ($0.005/min in, $0.018/min out) alongside the usual per-token rate, and Simon Willison independently verified the interruption behavior over the live WebSocket connection. The model also auto-switches between 97 languages mid-conversation and narrates background tool calls as they run. Worth correcting: the announcement reads like a general release, but Google&rsquo;s own rollout language puts enterprise access at &ldquo;private preview,&rdquo; with only developer access live today.</p>
+  <p>Per-minute pricing plus real barge-in makes an always-on voice interface something you can actually cost out and design as a continuous channel &mdash; the question becomes what the interface does while it&rsquo;s being interrupted, not when to open the mic.</p>
+  <a class="btn" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. The best frontier model still clears only 32.2% of grounded-reasoning tasks against real professional PDFs.</h3>
-  <p>Artificial Analysis&rsquo;s GDP.pdf benchmark runs 100 tasks across ten domains and 4,592 source pages, each model given five independent attempts and graded against 1,275 atomic criteria. The top scorer, GPT-6 Astra (xhigh), hits 32.2%; the runner-up, GPT-6 Astra (max), hits 31.0%.</p>
-  <p>That&rsquo;s the real trust budget behind any &ldquo;upload your documents, ask anything&rdquo; feature &mdash; under a third reliability on grounded reasoning over real documents, independent of whatever context-window figure is on the pricing page.</p>
-  <a class="btn" href="https://artificialanalysis.ai/evaluations/gdp-pdf">Read the source →</a>
+  <h3>5. Cocoa treats delegation as something you renegotiate step by step, not a single switch you flip at the start.</h3>
+  <p>A CHI 2026 system lets users assign individual steps of a plan to themselves or an AI agent, and lets the plan keep adjusting as steps complete rather than locking in upfront. A lab study of 16 people found it added steerability without hurting ease of use, and a week-long field deployment with 7 researchers showed the pattern holding on real work.</p>
+  <p>A concrete alternative to the single global autonomy toggle most agent tools ship &mdash; approval and handoff controls belong at the level of individual steps, reassignable as work unfolds, not one decision made upfront.</p>
+  <a class="btn" href="https://arxiv.org/abs/2412.10999">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p><strong>The broadcast signal nobody proposed</strong> corrects the prior day&rsquo;s #1 digest item: the claim that the Berlin Group proposed a non-visual &ldquo;broadcast signal&rdquo; as the LED substitute doesn&rsquo;t survive the primary texts &mdash; the Berlin Group&rsquo;s own 2015 paper says only &ldquo;other than visual means,&rdquo; and &ldquo;broadcasting a signal&rdquo; belongs to a different body, the Article 29 Working Party, which the CNIL-authored compendium fused with the Berlin text and misattributed. The Berlin Group&rsquo;s own current paper on extended reality, published days after the compendium&rsquo;s cutoff, proposes no indicator at all and recommends masking bystanders by default. What collapses is the specific substitute, not the underlying diagnosis: the LED critique itself is independently evidenced by the EDPS, CNIL, a Hamburg regulator teardown, a CHI 2026 bystander survey, and a 230-page consolidated complaint. Where the dossier&rsquo;s own evidence points instead is an acoustic cue, not a radio broadcast &mdash; sound has the highest bystander support and a standardized precedent, while a proximity broadcast has no receiver install base and no standards work behind it.</p>
-  <p class="dossier-path">dossiers/2026-09-19-g7-compendium-capture-signal.md</p>
+  <p><strong>Withholding under the clock</strong> substantially corrects yesterday&rsquo;s #1 item. The WriteAid paper is titled &ldquo;When Scaffolding Breaks,&rdquo; was published in CHI 2026 proceedings five months ago (not &ldquo;conditionally accepted&rdquo;), and analyzed 133 of 157 students, not 157. Its headline claim &mdash; that scaffolding demotivated lower-proficiency students &mdash; is an inference from unsignificance-tested counts in a single-arm, no-control design with a mid-study model change, not a measured result. The strongest comparable evidence, a preregistered PNAS study of nearly 1,000 students, found the opposite: answer-withholding won, with no significant heterogeneity by proficiency. What survives: making struggle &ldquo;visible&rdquo; only surfaces whatever the tool detects, so the detector inventory is the real design decision.</p>
+  <p class="dossier-path">dossiers/2026-09-20-withholding-under-the-clock.md</p>
 </div>
 
 <h2>Needs your answer</h2>
-
-<div class="question">
-  <p>Should companion AI (Replika, Character.AI) become a named source in the interaction lane, or stay out of scope? Persistence is the product there, and its memory design decisions are sharper and more explicit than any assistant&rsquo;s.</p>
-  <p class="meta">asked 2026-09-06</p>
-</div>
 
 <div class="question">
   <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field&rsquo;s de facto interaction guidance &mdash; Apple&rsquo;s HIG is silent on persona and Google PAIR&rsquo;s references stop in 2019.</p>
@@ -164,6 +159,11 @@
 <div class="question">
   <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design for the daily lanes, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific.</p>
   <p class="meta">asked 2026-09-09</p>
+</div>
+
+<div class="question">
+  <p>Should regulator device teardowns &mdash; the Hamburg DPA&rsquo;s 53-page Ray-Ban Meta report, CNIL&rsquo;s national survey &mdash; become a named ambient-lane source alongside the academic venues? On shipped hardware they currently out-measure the research literature.</p>
+  <p class="meta">asked 2026-09-11</p>
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
