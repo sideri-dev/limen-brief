@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-21</title>
+<title>Limen — 2026-09-22</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -93,60 +93,60 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-21</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-09-22</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A 1,524-incident workplace study puts a number on a design instinct: defaulting to speed over precision is what breaks AI tools for the people using them.</h3>
-  <p>An ACM FAccT &lsquo;26 study analyzed 1,524 real workplace AI incidents across 171 occupational tasks and 12 industry sectors, then compared them against stated preferences from 202 workers and 197 developers. 83% of the incidents trace to a mismatch between what workers wanted &mdash; systems that are precise, insightful, or personal &mdash; and what they got, which skewed basic, simple, or general; 74% of that is attributable to developers overfocusing on efficiency and speed.</p>
-  <p>A large-N, peer-reviewed number behind an argument design teams usually make on instinct alone: shipping the fast, generic version of a feature is itself the failure mode.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.21035">Read the source →</a>
+  <h3>1. A field RCT of 9,586 users shows a warmer AI persona isn&rsquo;t a nice-to-have &mdash; it&rsquo;s an engagement lever whose effect depends on why the person showed up.</h3>
+  <p>A randomized field experiment on a live commercial LLM platform held the model constant and varied only the persona, finding a relational, warmer tone raised sessions 8.1%, session duration 10.6%, and chat rounds 24.2% overall. The effect fractures by declared intent: users there to socialize returned 49.4% more often, task-execution users showed no first-session bump but 12.2% more return visits, and knowledge-exploration users produced more output without more back-and-forth.</p>
+  <p>The authors&rsquo; own framing is the useful part: persona is an operational lever, and interactions and outputs need to be evaluated separately &mdash; which argues against shipping one blanket assistant tone and for segmenting persona by what the user is declaring they&rsquo;re there to do.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.23274">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Criticize the AI in front of the user, and the user hears it as criticism of themselves &mdash; but only when it&rsquo;s negative.</h3>
-  <p>A CHI 2026 experiment had participants delegate a scheduling task to either a human or an AI assistant, then varied the assistant&rsquo;s competence and the feedback it received. Negative feedback toward the AI delegate got internalized as self-directed criticism &mdash; the paper&rsquo;s own term is an &ldquo;AI Phantom Limb&rdquo; effect &mdash; while positive feedback transferred much less, and neither asymmetry showed up when the delegate was human. (One sub-claim, about low-competence assistants triggering more self-blame, couldn&rsquo;t be confirmed against the paper&rsquo;s own text and was dropped.)</p>
-  <p>The finding argues against UI copy that scolds an AI agent in front of the user during error or correction flows &mdash; the rebuke lands on the person, not the software &mdash; and for keeping system-fault language separate from user-fault language in any repair interface.</p>
-  <a class="btn" href="https://dl.acm.org/doi/10.1145/3772318.3791075">Read the source →</a>
+  <h3>2. AR-glasses assistants should watch your hands continuously, not wait for you to ask.</h3>
+  <p>A peer-reviewed IMWUT&rsquo;26 system, Pro&sup2;Assist, tracks task progress continuously through egocentric motion sensing rather than the reactive, query-triggered pattern most assistants default to. Against that reactive baseline it improved procedural-action-understanding accuracy by over 21% and hit up to 2.29x the proactive-timing accuracy, with 90% of a 20-person study finding it useful.</p>
+  <p>For anyone building an AR or glasses assistant, this is a quantified argument to design the default trigger as continuous step-awareness rather than a wake-word or query box.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.04227">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Anthropic stopped letting Claude grade its own work &mdash; not because self-critique is impossible to prompt for, but because it structurally doesn&rsquo;t work.</h3>
-  <p>In its own engineering writeup, Anthropic describes agents asked to evaluate their own output confidently praising it &ldquo;even when, to a human observer, the quality is obviously mediocre.&rdquo; Their fix wasn&rsquo;t a better self-critique prompt &mdash; it was separating the agent that does the work from the agent that judges it, then tuning that second evaluator to be skeptical, which proved far more tractable than making a generator self-critical.</p>
-  <p>A first-party admission with a named mechanism, and a direct architectural note for anyone building an AI design-review loop: the judge has to sit outside the maker.</p>
-  <a class="btn" href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Read the source →</a>
+  <h3>3. More autonomy in a near-body robot doesn&rsquo;t make people trust it more &mdash; legible, spatially predictable behavior does.</h3>
+  <p>A CHI&rsquo;26 Wizard-of-Oz study of wearable supernumerary robotic limbs (N=18) found that increasing the robot&rsquo;s autonomy did not improve perceived safety or trust on its own; what moved trust was whether the robot&rsquo;s behavior was spatially calibrated and legible, zone by zone.</p>
+  <p>That kills &ldquo;just give it more autonomy&rdquo; as a default trust fix for any actuator operating close to the body, and points instead to designing explicit, readable proxemic zones.</p>
+  <a class="btn" href="https://arxiv.org/abs/2602.00494">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Gemini 3.8 Live now bills voice by the minute and genuinely lets you interrupt it mid-sentence &mdash; but &ldquo;enterprise-ready&rdquo; is still private preview, not GA.</h3>
-  <p>Google&rsquo;s pricing page confirms per-minute audio billing ($0.005/min in, $0.018/min out) alongside the usual per-token rate, and Simon Willison independently verified the interruption behavior over the live WebSocket connection. The model also auto-switches between 97 languages mid-conversation and narrates background tool calls as they run. Worth correcting: the announcement reads like a general release, but Google&rsquo;s own rollout language puts enterprise access at &ldquo;private preview,&rdquo; with only developer access live today.</p>
-  <p>Per-minute pricing plus real barge-in makes an always-on voice interface something you can actually cost out and design as a continuous channel &mdash; the question becomes what the interface does while it&rsquo;s being interrupted, not when to open the mic.</p>
-  <a class="btn" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Read the source →</a>
+  <h3>4. Making someone write one sentence justifying why they accepted an AI suggestion cuts uncritical acceptance of bad ones nearly in half.</h3>
+  <p>In a randomized experiment with 129 students writing data-analysis proposals, requiring a written justification before accepting an AI writing suggestion dropped uncritical adoption of flawed suggestions from 65% to 41% &mdash; a 24-point swing &mdash; while acceptance of genuinely sound suggestions barely moved (81% vs. 86%).</p>
+  <p>It&rsquo;s a cheap, concrete interface pattern: a one-line &ldquo;why&rdquo; field before accept/reject, which improves discrimination between good and bad AI output without suppressing the good output.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.23936">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Cocoa treats delegation as something you renegotiate step by step, not a single switch you flip at the start.</h3>
-  <p>A CHI 2026 system lets users assign individual steps of a plan to themselves or an AI agent, and lets the plan keep adjusting as steps complete rather than locking in upfront. A lab study of 16 people found it added steerability without hurting ease of use, and a week-long field deployment with 7 researchers showed the pattern holding on real work.</p>
-  <p>A concrete alternative to the single global autonomy toggle most agent tools ship &mdash; approval and handoff controls belong at the level of individual steps, reassignable as work unfolds, not one decision made upfront.</p>
-  <a class="btn" href="https://arxiv.org/abs/2412.10999">Read the source →</a>
+  <h3>5. Claude Opus 5.5 cuts pricing up to 60%, sells a 2.5x-faster streaming mode, and permanently locks its &ldquo;thinking&rdquo; on &mdash; breaking any interface that relied on switching it off for a hard latency budget.</h3>
+  <p>Anthropic&rsquo;s own docs confirm Opus 5.5 at $4/$20 per million input/output tokens against Opus 5&rsquo;s $5/$25, with cache reads cut from 10% to 5% of input price. Four breaking changes accompany it: thinking can no longer be disabled, forced tool use now errors, and effort is the new dial (default &ldquo;medium&rdquo;).</p>
+  <p>A separate, waitlisted &ldquo;Fast mode&rdquo; sells up to 2.5x output tokens per second for teams whose bottleneck is streaming speed rather than time-to-first-token &mdash; a genuinely purchasable interface knob for coding and agent UIs &mdash; but any product that depended on disabling thinking to hit a deterministic latency budget at Opus quality now has to redesign around <code>effort</code> or drop to Sonnet 5.</p>
+  <a class="btn" href="https://platform.claude.com/docs/en/models/opus-5-5/overview">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p><strong>Withholding under the clock</strong> substantially corrects yesterday&rsquo;s #1 item. The WriteAid paper is titled &ldquo;When Scaffolding Breaks,&rdquo; was published in CHI 2026 proceedings five months ago (not &ldquo;conditionally accepted&rdquo;), and analyzed 133 of 157 students, not 157. Its headline claim &mdash; that scaffolding demotivated lower-proficiency students &mdash; is an inference from unsignificance-tested counts in a single-arm, no-control design with a mid-study model change, not a measured result. The strongest comparable evidence, a preregistered PNAS study of nearly 1,000 students, found the opposite: answer-withholding won, with no significant heterogeneity by proficiency. What survives: making struggle &ldquo;visible&rdquo; only surfaces whatever the tool detects, so the detector inventory is the real design decision.</p>
-  <p class="dossier-path">dossiers/2026-09-20-withholding-under-the-clock.md</p>
+  <p><strong>&ldquo;Fast&rdquo; means &ldquo;without explanation&rdquo;</strong> substantially corrects the 2026-09-21 digest&rsquo;s #1 item. The paper&rsquo;s own body doesn&rsquo;t support the headline numbers: it collected 1,256 incidents and analyzed 214, and 83%/74% each print as three different, mutually inconsistent figures across the paper&rsquo;s own tables. The trait the digest read as &ldquo;speed&rdquo; is actually defined in the paper as deciding &ldquo;fast, automatic... without explanation&rdquo; &mdash; the study measures disclosure and contestability, not latency, and licenses no latency-budget conclusion at all. The upstream CHI &lsquo;26 paper supplying the underlying preference data found the real worker-developer gap concentrated on politeness, strictness and imagination &mdash; not speed &mdash; and reported zero significant misalignment on the very traits the digest&rsquo;s headline emphasized; the significance threshold used was transplanted from an aggregate-level test to per-task use without the adjustment that made it valid. What survives: a genuinely strong three-stage LLM-validation method, and a defensible read that people-facing systems in the English-language incident record often decide without explanation &mdash; with no Japanese, Thai or Korean replication of any of it.</p>
+  <p class="dossier-path">dossiers/2026-09-21-fast-means-without-explanation.md</p>
 </div>
 
 <h2>Needs your answer</h2>
