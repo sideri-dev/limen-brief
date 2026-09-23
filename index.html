@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-22</title>
+<title>Limen — 2026-09-23</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -78,13 +78,6 @@
     border-top: 1px solid var(--border);
     margin: 2.25rem 0;
   }
-  .question {
-    margin: 0 0 1.1rem;
-    padding-bottom: 1.1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .question:last-of-type { border-bottom: none; }
-  .question .meta { color: var(--muted); font-size: 0.9rem; }
   .run-notes p { color: var(--muted); font-size: 0.95rem; }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   footer { margin-top: 3rem; }
@@ -93,80 +86,61 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-22</p>
+  <p class="date">Limen — 2026-09-23</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A field RCT of 9,586 users shows a warmer AI persona isn&rsquo;t a nice-to-have &mdash; it&rsquo;s an engagement lever whose effect depends on why the person showed up.</h3>
-  <p>A randomized field experiment on a live commercial LLM platform held the model constant and varied only the persona, finding a relational, warmer tone raised sessions 8.1%, session duration 10.6%, and chat rounds 24.2% overall. The effect fractures by declared intent: users there to socialize returned 49.4% more often, task-execution users showed no first-session bump but 12.2% more return visits, and knowledge-exploration users produced more output without more back-and-forth.</p>
-  <p>The authors&rsquo; own framing is the useful part: persona is an operational lever, and interactions and outputs need to be evaluated separately &mdash; which argues against shipping one blanket assistant tone and for segmenting persona by what the user is declaring they&rsquo;re there to do.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.23274">Read the source →</a>
+  <h3>1. A per-user optimization loop that starts from zero beats a human expert&rsquo;s cabin-display design within three days &mdash; but the daily feedback it needs wears people out.</h3>
+  <p>A peer-reviewed AutomotiveUI 2026 study (N=74) tested a cold-start Bayesian optimization loop that tunes an AV cabin&rsquo;s trust/safety visualization to each individual driver, with no prior model of that person. Within three days it beat an expert-designed default on trust, beat the combined expert-plus-end-user design on perceived safety, and beat the expert design on predictability &mdash; a clean win for per-user tuning over a single one-size-fits-all default.</p>
+  <p>The catch is built into the same paper: the loop needs a daily explicit query to keep learning, and that causes fatigue, which argues for collecting the signal implicitly rather than asking the driver directly if this pattern ships.</p>
+  <a class="btn" href="https://arxiv.org/abs/2607.28552">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. AR-glasses assistants should watch your hands continuously, not wait for you to ask.</h3>
-  <p>A peer-reviewed IMWUT&rsquo;26 system, Pro&sup2;Assist, tracks task progress continuously through egocentric motion sensing rather than the reactive, query-triggered pattern most assistants default to. Against that reactive baseline it improved procedural-action-understanding accuracy by over 21% and hit up to 2.29x the proactive-timing accuracy, with 90% of a 20-person study finding it useful.</p>
-  <p>For anyone building an AR or glasses assistant, this is a quantified argument to design the default trigger as continuous step-awareness rather than a wake-word or query box.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.04227">Read the source →</a>
+  <h3>2. &ldquo;Sycophantic&rdquo; may be the wrong word for the AI trait people actually like &mdash; and conflating it with real deference is a design mistake.</h3>
+  <p>A preregistered study argues that flat anti-sycophancy scores blur two different behaviors: substantive deference (changing a stated position to match the user, which should be resisted) and receptiveness (acknowledging someone&rsquo;s view without necessarily agreeing, which people want). The authors report a simple intervention that raises receptiveness substantially without increasing substantive deference &mdash; the two move independently, which means a guardrail built around a single sycophancy score is punishing a trait users prefer.</p>
+  <p>The design implication: stop tuning against one flat score and start measuring receptiveness and deference as separate targets.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.26579">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. More autonomy in a near-body robot doesn&rsquo;t make people trust it more &mdash; legible, spatially predictable behavior does.</h3>
-  <p>A CHI&rsquo;26 Wizard-of-Oz study of wearable supernumerary robotic limbs (N=18) found that increasing the robot&rsquo;s autonomy did not improve perceived safety or trust on its own; what moved trust was whether the robot&rsquo;s behavior was spatially calibrated and legible, zone by zone.</p>
-  <p>That kills &ldquo;just give it more autonomy&rdquo; as a default trust fix for any actuator operating close to the body, and points instead to designing explicit, readable proxemic zones.</p>
-  <a class="btn" href="https://arxiv.org/abs/2602.00494">Read the source →</a>
+  <h3>3. AI email drafts quietly overwrite how direct or contextual a writer sounds &mdash; and the pull is strongest exactly where it fights the writer&rsquo;s own cultural norm.</h3>
+  <p>A preregistered within-subject study found AI drafts shifted participants&rsquo; emails toward the draft&rsquo;s own style, with the shift largest when the draft&rsquo;s style clashed with the writer&rsquo;s cultural communication norm. The authors&rsquo; own conclusion: AI drafts risk overwriting cultural communication norms unless they adapt to the user&rsquo;s own style.</p>
+  <p>For any writing assistant shipping into Japanese, Thai and English markets at once, a single global tone default is measurably not neutral &mdash; it&rsquo;s a design decision that favors whichever norm the model defaults to.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.26403">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Making someone write one sentence justifying why they accepted an AI suggestion cuts uncritical acceptance of bad ones nearly in half.</h3>
-  <p>In a randomized experiment with 129 students writing data-analysis proposals, requiring a written justification before accepting an AI writing suggestion dropped uncritical adoption of flawed suggestions from 65% to 41% &mdash; a 24-point swing &mdash; while acceptance of genuinely sound suggestions barely moved (81% vs. 86%).</p>
-  <p>It&rsquo;s a cheap, concrete interface pattern: a one-line &ldquo;why&rdquo; field before accept/reject, which improves discrimination between good and bad AI output without suppressing the good output.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.23936">Read the source →</a>
+  <h3>4. Anthropic now marks subagent output as untrusted by construction, not by trying to detect what&rsquo;s dangerous in it.</h3>
+  <p>Claude Code&rsquo;s changelog (v2.1.277, September 18) states that subagent results now reach the main agent under a header marking them as subagent output, indented, specifically so that text inside a subagent&rsquo;s result can&rsquo;t pass as the session&rsquo;s own instructions. It&rsquo;s a structural fix rather than a classifier: the transcript format itself carries the trust boundary.</p>
+  <p>For anyone building multi-agent orchestration UIs, this is a concrete, shippable pattern &mdash; mark delegated output as data at the formatting layer, don&rsquo;t rely on scanning it for injected instructions after the fact.</p>
+  <a class="btn" href="https://code.claude.com/docs/en/changelog">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Claude Opus 5.5 cuts pricing up to 60%, sells a 2.5x-faster streaming mode, and permanently locks its &ldquo;thinking&rdquo; on &mdash; breaking any interface that relied on switching it off for a hard latency budget.</h3>
-  <p>Anthropic&rsquo;s own docs confirm Opus 5.5 at $4/$20 per million input/output tokens against Opus 5&rsquo;s $5/$25, with cache reads cut from 10% to 5% of input price. Four breaking changes accompany it: thinking can no longer be disabled, forced tool use now errors, and effort is the new dial (default &ldquo;medium&rdquo;).</p>
-  <p>A separate, waitlisted &ldquo;Fast mode&rdquo; sells up to 2.5x output tokens per second for teams whose bottleneck is streaming speed rather than time-to-first-token &mdash; a genuinely purchasable interface knob for coding and agent UIs &mdash; but any product that depended on disabling thinking to hit a deterministic latency budget at Opus quality now has to redesign around <code>effort</code> or drop to Sonnet 5.</p>
-  <a class="btn" href="https://platform.claude.com/docs/en/models/opus-5-5/overview">Read the source →</a>
+  <h3>5. Models can spot a broken conversation about as well as a clinician can &mdash; they just don&rsquo;t know how to fix it the way a clinician would.</h3>
+  <p>A study comparing three LLMs against 22 human experts across 21 conversations found the models detected conversational &ldquo;ruptures&rdquo; (breakdowns in rapport or understanding) at a level comparable to the clinicians. Where they diverged was repair: the experts improvised responses tailored to the specific breakdown, while the models produced scripted, generic repair moves.</p>
+  <p>It&rsquo;s a small study and a lead rather than a settled benchmark, but it draws a clean line for anyone designing repair behavior into a conversational agent: detection is close to solved, open-ended repair is not.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.25287">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p><strong>&ldquo;Fast&rdquo; means &ldquo;without explanation&rdquo;</strong> substantially corrects the 2026-09-21 digest&rsquo;s #1 item. The paper&rsquo;s own body doesn&rsquo;t support the headline numbers: it collected 1,256 incidents and analyzed 214, and 83%/74% each print as three different, mutually inconsistent figures across the paper&rsquo;s own tables. The trait the digest read as &ldquo;speed&rdquo; is actually defined in the paper as deciding &ldquo;fast, automatic... without explanation&rdquo; &mdash; the study measures disclosure and contestability, not latency, and licenses no latency-budget conclusion at all. The upstream CHI &lsquo;26 paper supplying the underlying preference data found the real worker-developer gap concentrated on politeness, strictness and imagination &mdash; not speed &mdash; and reported zero significant misalignment on the very traits the digest&rsquo;s headline emphasized; the significance threshold used was transplanted from an aggregate-level test to per-task use without the adjustment that made it valid. What survives: a genuinely strong three-stage LLM-validation method, and a defensible read that people-facing systems in the English-language incident record often decide without explanation &mdash; with no Japanese, Thai or Korean replication of any of it.</p>
-  <p class="dossier-path">dossiers/2026-09-21-fast-means-without-explanation.md</p>
+  <p>The 2026-09-22 dossier narrows the digest&rsquo;s #1 item substantially. The &ldquo;relational persona&rdquo; field experiment (Agnes AI, N=9,586) manipulated only system-prompt wording &mdash; a warm, elaborating style against an equally engineered terse, bullet-pointed control, not name, avatar, voice or backstory &mdash; and &ldquo;entry intent&rdquo; is machine-inferred with a 16.1% error rate, not user-declared as reported. The effects are real but narrower than published: the duration gain decays from +9.3% to +2.6% over 18 days, the headline +12.8% figure is significant only at p&lt;0.1 (the abstract drops that caveat), and the same warm prompt also raised content-free return sessions 28% with no accuracy, satisfaction or task-success measure anywhere in the paper. Shipped practice already disagrees with the paper&rsquo;s own implication &mdash; OpenAI, Anthropic and Google all put tone in the user&rsquo;s hands rather than silently assigning it, and OpenAI rolled back a warmer default a week after it won its own A/B test in April 2025. The defensible claim that survives: the language channel moves behavior, engagement metrics alone can&rsquo;t distinguish a helpful persona from a merely retentive one, and any persona-by-intent segmentation needs consented tone choice plus output/accuracy measured separately from volume.</p>
+  <p class="dossier-path">dossiers/2026-09-22-relational-persona-engagement-decoupling.md</p>
 </div>
-
-<h2>Needs your answer</h2>
-
-<div class="question">
-  <p>Should vendor model specs and constitutions become a tracked source series, diffed across versions? They are now the field&rsquo;s de facto interaction guidance &mdash; Apple&rsquo;s HIG is silent on persona and Google PAIR&rsquo;s references stop in 2019.</p>
-  <p class="meta">asked 2026-09-08</p>
-</div>
-
-<div class="question">
-  <p>Should pricing, metering, cancellation and billing surfaces count as in-scope AI interaction design for the daily lanes, or stay occasional backlog depth? The research field is empty here, but the consumer-contract law is unexpectedly specific.</p>
-  <p class="meta">asked 2026-09-09</p>
-</div>
-
-<div class="question">
-  <p>Should regulator device teardowns &mdash; the Hamburg DPA&rsquo;s 53-page Ray-Ban Meta report, CNIL&rsquo;s national survey &mdash; become a named ambient-lane source alongside the academic venues? On shipped hardware they currently out-measure the research literature.</p>
-  <p class="meta">asked 2026-09-11</p>
-</div>
-
-<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
