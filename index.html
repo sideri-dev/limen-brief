@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-23</title>
+<title>Limen — 2026-09-24</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -86,60 +86,60 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-23</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-09-24</p>
+  <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A per-user optimization loop that starts from zero beats a human expert&rsquo;s cabin-display design within three days &mdash; but the daily feedback it needs wears people out.</h3>
-  <p>A peer-reviewed AutomotiveUI 2026 study (N=74) tested a cold-start Bayesian optimization loop that tunes an AV cabin&rsquo;s trust/safety visualization to each individual driver, with no prior model of that person. Within three days it beat an expert-designed default on trust, beat the combined expert-plus-end-user design on perceived safety, and beat the expert design on predictability &mdash; a clean win for per-user tuning over a single one-size-fits-all default.</p>
-  <p>The catch is built into the same paper: the loop needs a daily explicit query to keep learning, and that causes fatigue, which argues for collecting the signal implicitly rather than asking the driver directly if this pattern ships.</p>
-  <a class="btn" href="https://arxiv.org/abs/2607.28552">Read the source →</a>
+  <h3>1. Awareness-only safety nudges don&rsquo;t reliably change how people use a chatbot &mdash; a field result, not a lab one.</h3>
+  <p>A two-week field study put a browser tool in front of 45 frequent chatbot users that flagged hallucination, sycophancy, overconfidence and anthropomorphism as they happened. Nearly everyone came away more aware of the risks; almost none of them behaved differently as a result.</p>
+  <p>The design implication is specific: a user-facing risk-flag layer can&rsquo;t stand in for model-level guardrails unless the nudge is calibrated and actionable, not just present &mdash; awareness is necessary but insufficient, and this is the first field evidence saying so.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.26865">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. &ldquo;Sycophantic&rdquo; may be the wrong word for the AI trait people actually like &mdash; and conflating it with real deference is a design mistake.</h3>
-  <p>A preregistered study argues that flat anti-sycophancy scores blur two different behaviors: substantive deference (changing a stated position to match the user, which should be resisted) and receptiveness (acknowledging someone&rsquo;s view without necessarily agreeing, which people want). The authors report a simple intervention that raises receptiveness substantially without increasing substantive deference &mdash; the two move independently, which means a guardrail built around a single sycophancy score is punishing a trait users prefer.</p>
-  <p>The design implication: stop tuning against one flat score and start measuring receptiveness and deference as separate targets.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.26579">Read the source →</a>
+  <h3>2. Google&rsquo;s Gemini redesign is an on-record argument against the scrolling chat log as AI&rsquo;s default interface.</h3>
+  <p>Jenny Blackburn, Gemini&rsquo;s UI/UX lead, calls the old interface &ldquo;the giant wall of text.&rdquo; The shipped replacement &mdash; Google&rsquo;s &ldquo;Neural Expressive&rdquo; design language &mdash; responds to what you&rsquo;re asking with layout and visuals instead of one continuous scroll of text, on the reasoning that &ldquo;as this technology becomes more capable, the interface should actually get simpler.&rdquo;</p>
+  <p>It&rsquo;s four months old, but a named UX lead&rsquo;s shipped reasoning against the field&rsquo;s default pattern is durable in a way a demo isn&rsquo;t.</p>
+  <a class="btn" href="https://fastcompanyme.com/co-design/google-redesigns-gemini-ai-to-do-away-with-the-giant-wall-of-text/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. AI email drafts quietly overwrite how direct or contextual a writer sounds &mdash; and the pull is strongest exactly where it fights the writer&rsquo;s own cultural norm.</h3>
-  <p>A preregistered within-subject study found AI drafts shifted participants&rsquo; emails toward the draft&rsquo;s own style, with the shift largest when the draft&rsquo;s style clashed with the writer&rsquo;s cultural communication norm. The authors&rsquo; own conclusion: AI drafts risk overwriting cultural communication norms unless they adapt to the user&rsquo;s own style.</p>
-  <p>For any writing assistant shipping into Japanese, Thai and English markets at once, a single global tone default is measurably not neutral &mdash; it&rsquo;s a design decision that favors whichever norm the model defaults to.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.26403">Read the source →</a>
+  <h3>3. Cursor turns post-merge agent autonomy into a dial, not a gate.</h3>
+  <p>&ldquo;Rollouts&rdquo; watches a merged change all the way from PR to production, at three configurable autonomy levels &mdash; a ping to the author, a paused progressive rollout, or a revert PR waiting on approval. A companion &ldquo;Security Reviewer&rdquo; reads the diff &ldquo;the way a security engineer does: where does user input enter, where does it end up.&rdquo;</p>
+  <p>The interesting move isn&rsquo;t the feature, it&rsquo;s where the approval moment sits: past the PR-review checkpoint, into a graduated ladder that keeps watching after the merge &mdash; interruption as a spectrum rather than a single binary gate.</p>
+  <a class="btn" href="https://cursor.com/blog/rollouts-and-security-reviewer">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Anthropic now marks subagent output as untrusted by construction, not by trying to detect what&rsquo;s dangerous in it.</h3>
-  <p>Claude Code&rsquo;s changelog (v2.1.277, September 18) states that subagent results now reach the main agent under a header marking them as subagent output, indented, specifically so that text inside a subagent&rsquo;s result can&rsquo;t pass as the session&rsquo;s own instructions. It&rsquo;s a structural fix rather than a classifier: the transcript format itself carries the trust boundary.</p>
-  <p>For anyone building multi-agent orchestration UIs, this is a concrete, shippable pattern &mdash; mark delegated output as data at the formatting layer, don&rsquo;t rely on scanning it for injected instructions after the fact.</p>
-  <a class="btn" href="https://code.claude.com/docs/en/changelog">Read the source →</a>
+  <h3>4. Voice agents can now look something up without breaking character to do it.</h3>
+  <p>A new frontend-backend architecture lets full-duplex speech-to-speech models call tools mid-conversation while preserving normal turn-taking and interruption handling &mdash; 92-97% tool-call recall, 81.2% accuracy rejecting irrelevant calls, beating GPT-realtime-mini and Qwen3-Omni-30B-A3B-Instruct on the EVA-Bench benchmark.</p>
+  <p>It removes the forced &ldquo;let me check that&rdquo; mode-switch every current voice assistant uses to cover a lookup &mdash; the assistant can stay in one conversational register while it acts, instead of visibly dropping out of the conversation.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.19334">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Models can spot a broken conversation about as well as a clinician can &mdash; they just don&rsquo;t know how to fix it the way a clinician would.</h3>
-  <p>A study comparing three LLMs against 22 human experts across 21 conversations found the models detected conversational &ldquo;ruptures&rdquo; (breakdowns in rapport or understanding) at a level comparable to the clinicians. Where they diverged was repair: the experts improvised responses tailored to the specific breakdown, while the models produced scripted, generic repair moves.</p>
-  <p>It&rsquo;s a small study and a lead rather than a settled benchmark, but it draws a clean line for anyone designing repair behavior into a conversational agent: detection is close to solved, open-ended repair is not.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.25287">Read the source →</a>
+  <h3>5. Point expert reviewers at where models disagree, not at the whole codebook, and get faster and more accurate labels.</h3>
+  <p>Comparing three ways to route expert attention on an LLM-applied annotation codebook for thousands of tutoring-session transcripts, rationale-labeling driven by cross-model disagreement beat a fully expert-revised codebook on accuracy (64.9% vs. 57.8%) while shortening months of revision to days.</p>
+  <p>It&rsquo;s a concrete alternative to blanket human review in any AI-assisted labeling or QA pipeline: capture rationale at the points models disagree, skip the full manual pass.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.26926">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>The 2026-09-22 dossier narrows the digest&rsquo;s #1 item substantially. The &ldquo;relational persona&rdquo; field experiment (Agnes AI, N=9,586) manipulated only system-prompt wording &mdash; a warm, elaborating style against an equally engineered terse, bullet-pointed control, not name, avatar, voice or backstory &mdash; and &ldquo;entry intent&rdquo; is machine-inferred with a 16.1% error rate, not user-declared as reported. The effects are real but narrower than published: the duration gain decays from +9.3% to +2.6% over 18 days, the headline +12.8% figure is significant only at p&lt;0.1 (the abstract drops that caveat), and the same warm prompt also raised content-free return sessions 28% with no accuracy, satisfaction or task-success measure anywhere in the paper. Shipped practice already disagrees with the paper&rsquo;s own implication &mdash; OpenAI, Anthropic and Google all put tone in the user&rsquo;s hands rather than silently assigning it, and OpenAI rolled back a warmer default a week after it won its own A/B test in April 2025. The defensible claim that survives: the language channel moves behavior, engagement metrics alone can&rsquo;t distinguish a helpful persona from a merely retentive one, and any persona-by-intent segmentation needs consented tone choice plus output/accuracy measured separately from volume.</p>
-  <p class="dossier-path">dossiers/2026-09-22-relational-persona-engagement-decoupling.md</p>
+  <p>The dossier narrows yesterday&rsquo;s #1 item substantially. The digest&rsquo;s &ldquo;cold-start optimization beats both expert and end-user designs&rdquo; was actually the headline of an earlier CHI 2025 study, replicated here as one of six conditions &mdash; on two of three measures (trust, predictability) the optimizer beat the expert design only, not both. This paper&rsquo;s real contribution is narrower still: the gains hold only while the optimizer keeps running, and the authors concede part of the benefit is novelty and repeated exposure rather than genuine personalization. The objective the loop maximizes never varies simulated-vehicle error, so it can&rsquo;t in principle produce evidence about trust calibration, and nobody &mdash; this group included &mdash; has run a personalized AV-display optimizer and then measured what the passenger actually does. Five specific claims in yesterday&rsquo;s digest item don&rsquo;t survive the paper&rsquo;s own text: the headline&rsquo;s scope, the verification line (it checked only the abstract), &ldquo;AV cabin&rdquo; (it was a desktop Unity render), an unsupported fatigue claim, and a result that belongs to the predecessor study.</p>
+  <p class="dossier-path">dossiers/2026-09-23-optimizer-gain-lives-in-the-loop.md</p>
 </div>
 
 <footer>
