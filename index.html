@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-24</title>
+<title>Limen — 2026-09-25</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -86,60 +86,68 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-24</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-09-25</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Awareness-only safety nudges don&rsquo;t reliably change how people use a chatbot &mdash; a field result, not a lab one.</h3>
-  <p>A two-week field study put a browser tool in front of 45 frequent chatbot users that flagged hallucination, sycophancy, overconfidence and anthropomorphism as they happened. Nearly everyone came away more aware of the risks; almost none of them behaved differently as a result.</p>
-  <p>The design implication is specific: a user-facing risk-flag layer can&rsquo;t stand in for model-level guardrails unless the nudge is calibrated and actionable, not just present &mdash; awareness is necessary but insufficient, and this is the first field evidence saying so.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.26865">Read the source →</a>
+  <h3>1. A new benchmark shows the field&rsquo;s own turn-taking metrics reward the wrong behavior in voice AI.</h3>
+  <p>TACT scores turn-taking against six latent-intent classes instead of binary silence/overlap rules, across 9,728 episodes and 73.2 hours from five dyadic corpora. The best of eleven systems tested reaches only 0.47 against a 0.86 human topline, and agrees with human judgment at Spearman 0.81 versus 0.46 for the binary metrics most products QA against &mdash; every system shows an over-eagerness pathology on reflective turns.</p>
+  <p>If a voice product leans on latency or takeover-rate as its turn-taking KPI, this is the documented case the metric optimizes the wrong thing; silence-tolerance needs testing per-intent, not minimized across the board. Single-source preprint, two-person team &mdash; a strong lead, not a settled result.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.27372">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Google&rsquo;s Gemini redesign is an on-record argument against the scrolling chat log as AI&rsquo;s default interface.</h3>
-  <p>Jenny Blackburn, Gemini&rsquo;s UI/UX lead, calls the old interface &ldquo;the giant wall of text.&rdquo; The shipped replacement &mdash; Google&rsquo;s &ldquo;Neural Expressive&rdquo; design language &mdash; responds to what you&rsquo;re asking with layout and visuals instead of one continuous scroll of text, on the reasoning that &ldquo;as this technology becomes more capable, the interface should actually get simpler.&rdquo;</p>
-  <p>It&rsquo;s four months old, but a named UX lead&rsquo;s shipped reasoning against the field&rsquo;s default pattern is durable in a way a demo isn&rsquo;t.</p>
-  <a class="btn" href="https://fastcompanyme.com/co-design/google-redesigns-gemini-ai-to-do-away-with-the-giant-wall-of-text/">Read the source →</a>
+  <h3>2. Agent-initiated interruption on a shared document raised output quality with zero cognitive-load cost.</h3>
+  <p>DocuTeam&rsquo;s agents monitor a live document and proactively start or redirect discussion as the work evolves, rather than waiting to be invoked. In a within-subjects study of 20 participants, outcomes were rated significantly more novel, relevant and specific than a baseline &mdash; with no increase in perceived cognitive load, the usual argument against unsolicited AI interruption.</p>
+  <p>Small n and one domain, so treat it as a lead on interruption timing, not a rule &mdash; but it&rsquo;s evidence for letting an agent surface a prompt on document change rather than gating every intervention behind a request.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.29309">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Cursor turns post-merge agent autonomy into a dial, not a gate.</h3>
-  <p>&ldquo;Rollouts&rdquo; watches a merged change all the way from PR to production, at three configurable autonomy levels &mdash; a ping to the author, a paused progressive rollout, or a revert PR waiting on approval. A companion &ldquo;Security Reviewer&rdquo; reads the diff &ldquo;the way a security engineer does: where does user input enter, where does it end up.&rdquo;</p>
-  <p>The interesting move isn&rsquo;t the feature, it&rsquo;s where the approval moment sits: past the PR-review checkpoint, into a graduated ladder that keeps watching after the merge &mdash; interruption as a spectrum rather than a single binary gate.</p>
-  <a class="btn" href="https://cursor.com/blog/rollouts-and-security-reviewer">Read the source →</a>
+  <h3>3. How domain experts actually verify agentic AI: familiar tools, not novel agent UI.</h3>
+  <p>Fourteen contextual inquiries plus an observational study of ten spatial biologists using Claude Science on their own data produced four design directions: execution control, familiar interactive views, source/execution transparency, and accessible verification.</p>
+  <p>Experts verify by re-applying their own domain knowledge inside tools they already trust, not by learning an agent-native interface &mdash; a concrete provenance-surface decision for anyone building agentic tools for domain experts: show what the agent is doing right now, inside the view the expert already knows.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.28723">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Voice agents can now look something up without breaking character to do it.</h3>
-  <p>A new frontend-backend architecture lets full-duplex speech-to-speech models call tools mid-conversation while preserving normal turn-taking and interruption handling &mdash; 92-97% tool-call recall, 81.2% accuracy rejecting irrelevant calls, beating GPT-realtime-mini and Qwen3-Omni-30B-A3B-Instruct on the EVA-Bench benchmark.</p>
-  <p>It removes the forced &ldquo;let me check that&rdquo; mode-switch every current voice assistant uses to cover a lookup &mdash; the assistant can stay in one conversational register while it acts, instead of visibly dropping out of the conversation.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.19334">Read the source →</a>
+  <h3>4. Interrupting a duplex voice model mid-response nearly doubles its jailbreak success rate.</h3>
+  <p>Testing four open-source full-duplex models against 720 harmful requests, fixed-delay spoken interruption pushed whole-response attack success on AdvBench to 40.3% for PersonaPlex and 48.7% for PersonaPlex-RL &mdash; increases of 33.8 and 39.3 points over uninterrupted baselines. The failure only appears mid-turn, under a spoken cut-in, so a standard safety eval misses it entirely.</p>
+  <p>Anyone shipping interruptible voice needs interruption-specific guardrail testing before launch, not just the model&rsquo;s off-the-shelf numbers. Kept past the usual 7-day window as a durable reliability-boundary finding.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.09420">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Point expert reviewers at where models disagree, not at the whole codebook, and get faster and more accurate labels.</h3>
-  <p>Comparing three ways to route expert attention on an LLM-applied annotation codebook for thousands of tutoring-session transcripts, rationale-labeling driven by cross-model disagreement beat a fully expert-revised codebook on accuracy (64.9% vs. 57.8%) while shortening months of revision to days.</p>
-  <p>It&rsquo;s a concrete alternative to blanket human review in any AI-assisted labeling or QA pipeline: capture rationale at the points models disagree, skip the full manual pass.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.26926">Read the source →</a>
+  <h3>5. The AI tutor design that looks most thoughtful &mdash; Socratic style plus full context &mdash; tested worst.</h3>
+  <p>In a 132-student RCT, the Socratic AI teaching assistant with full context awareness was rated least favorably, with significantly lower perceived support than the other conditions, and the highest (though not statistically significant) observed rate of students bypassing it for an external LLM.</p>
+  <p>The intuitive pairing &mdash; maximal context awareness with maximal Socratic restraint &mdash; is the one that backfired. Worth testing guidance style and context depth as independent knobs rather than assuming they scale together.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.29995">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>The dossier narrows yesterday&rsquo;s #1 item substantially. The digest&rsquo;s &ldquo;cold-start optimization beats both expert and end-user designs&rdquo; was actually the headline of an earlier CHI 2025 study, replicated here as one of six conditions &mdash; on two of three measures (trust, predictability) the optimizer beat the expert design only, not both. This paper&rsquo;s real contribution is narrower still: the gains hold only while the optimizer keeps running, and the authors concede part of the benefit is novelty and repeated exposure rather than genuine personalization. The objective the loop maximizes never varies simulated-vehicle error, so it can&rsquo;t in principle produce evidence about trust calibration, and nobody &mdash; this group included &mdash; has run a personalized AV-display optimizer and then measured what the passenger actually does. Five specific claims in yesterday&rsquo;s digest item don&rsquo;t survive the paper&rsquo;s own text: the headline&rsquo;s scope, the verification line (it checked only the abstract), &ldquo;AV cabin&rdquo; (it was a desktop Unity render), an unsupported fatigue claim, and a result that belongs to the predecessor study.</p>
-  <p class="dossier-path">dossiers/2026-09-23-optimizer-gain-lives-in-the-loop.md</p>
+  <p>Yesterday&rsquo;s dossier corrects the digest&rsquo;s own top item: Safety Nudges&rsquo; single-source marker was right on the tool-specific numbers but wrong on the directional claim &mdash; a preregistered N=2,610 experiment and a pooled n=3,982 meta-analysis both independently show warnings shift perception, not behavior, making &ldquo;awareness moves, behavior doesn&rsquo;t&rdquo; the best-corroborated negative finding in the corpus. The detector behind the nudges was never evaluated as a detector &mdash; no precision or recall figures exist, and the model auditing most participants&rsquo; conversations was never scored against the gold set. The flag users rejected most, anthropomorphism, is one trained raters themselves can&rsquo;t agree on (Krippendorff&rsquo;s &alpha; as low as 0.101) &mdash; the users were right. Every disclosure regime surveyed (EU Art. 50, Japan&rsquo;s AI法, California SB 243, Singapore) discharges its duty on presence alone, and the green &ldquo;No issues detected&rdquo; chip reads as a correctness guarantee it hasn&rsquo;t earned.</p>
+  <p class="dossier-path">dossiers/2026-09-24-unearned-all-clear.md</p>
+</div>
+
+<h2>This week</h2>
+
+<div class="item">
+  <p><strong>The forcing fork.</strong> Awareness-only interventions &mdash; flags, warnings, disclosure banners &mdash; move perception but not behavior, now corroborated across three studies at roughly 6,600 combined participants. What does move behavior is friction that forces an act before acceptance: a required written justification cut adoption of flawed AI suggestions 24 points with no cost to sound ones. Every disclosure regulation in reach (EU, Japan, California, Singapore) is satisfied by the failing, awareness-only class &mdash; the forcing pattern argues above the legal floor, not to it.</p>
+  <p><strong>The metric that can&rsquo;t tell help from retention.</strong> A field RCT (N=9,586), an automotive optimization loop, and two vendor postmortems all located engagement gains in the loop itself, not output quality: a warm system prompt raised chat rounds 24% but also raised content-free junk sessions 28%, and a trust-optimizing in-car loop&rsquo;s gains evaporated once the optimizer stopped. Evaluate outcome quality separately from the interaction metric, with an evaluator tuned outside the loop that generated what&rsquo;s judged.</p>
+  <p><strong>Voice stops needing to break character to act.</strong> Vendor pricing (per-minute audio channels), model architecture (tool calls inside full-duplex speech without breaking turn-taking), and peer-reviewed ambient research (continuous step-aware AR guidance beating query-triggered help 21%+) converged on the same shift: voice and glasses interfaces no longer need to break conversational continuity to act. The open question is what the interface narrates while acting mid-conversation &mdash; narrating fake progress is a truthfulness violation, not a latency trick.</p>
 </div>
 
 <footer>
