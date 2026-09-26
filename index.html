@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-25</title>
+<title>Limen — 2026-09-26</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -79,75 +79,97 @@
     margin: 2.25rem 0;
   }
   .run-notes p { color: var(--muted); font-size: 0.95rem; }
+  .run-notes li { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
+  .gate-item { margin-bottom: 0.75rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-25</p>
+  <p class="date">Limen — 2026-09-26</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A new benchmark shows the field&rsquo;s own turn-taking metrics reward the wrong behavior in voice AI.</h3>
-  <p>TACT scores turn-taking against six latent-intent classes instead of binary silence/overlap rules, across 9,728 episodes and 73.2 hours from five dyadic corpora. The best of eleven systems tested reaches only 0.47 against a 0.86 human topline, and agrees with human judgment at Spearman 0.81 versus 0.46 for the binary metrics most products QA against &mdash; every system shows an over-eagerness pathology on reflective turns.</p>
-  <p>If a voice product leans on latency or takeover-rate as its turn-taking KPI, this is the documented case the metric optimizes the wrong thing; silence-tolerance needs testing per-intent, not minimized across the board. Single-source preprint, two-person team &mdash; a strong lead, not a settled result.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.27372">Read the source →</a>
+  <h3>1. People don&rsquo;t know when they&rsquo;re leaning on an LLM as an oracle for personal questions &mdash; and once shown, they don&rsquo;t like it.</h3>
+  <p>A new study built a privacy-preserving tool that logs when someone treats an LLM as a single authoritative answer on subjective, personal questions, then ran it on 68,000 public WildChat/ThoughtTrace prompts plus a longitudinal donation study of 140,000 prompts from 52 real participants. Oracle-style reliance has risen steadily from 2023 to 2026 and skews younger.</p>
+  <p>The finding that should change a product decision: people are largely unaware they&rsquo;re doing this, and when shown their own pattern, they reacted with dissatisfaction. That argues for detecting the &ldquo;personal, subjective&rdquo; prompt class and deliberately softening the answer&rsquo;s tone toward &ldquo;one perspective&rdquo; rather than a verdict.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.14849">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Agent-initiated interruption on a shared document raised output quality with zero cognitive-load cost.</h3>
-  <p>DocuTeam&rsquo;s agents monitor a live document and proactively start or redirect discussion as the work evolves, rather than waiting to be invoked. In a within-subjects study of 20 participants, outcomes were rated significantly more novel, relevant and specific than a baseline &mdash; with no increase in perceived cognitive load, the usual argument against unsolicited AI interruption.</p>
-  <p>Small n and one domain, so treat it as a lead on interruption timing, not a rule &mdash; but it&rsquo;s evidence for letting an agent surface a prompt on document change rather than gating every intervention behind a request.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.29309">Read the source →</a>
+  <h3>2. A mall robot&rsquo;s slower-starting filler produced a faster-feeling answer overall.</h3>
+  <p>Kyoto University researchers tested two ways to fill the half-second before a route-guidance robot&rsquo;s real answer: a generic filler phrase versus a content-aware preface referencing the actual question. The context-aware version took measurably longer to begin speaking, but the total gap between that preface and the main answer was significantly shorter &mdash; 0.74 seconds for the generic filler versus 0.43 seconds for the content-aware one (p&lt;.001).</p>
+  <p>For anyone building duplex voice, that&rsquo;s a quantified answer to a design question usually settled by taste: a slightly slower, content-aware start beats a fast, generic one on perceived responsiveness.</p>
+  <a class="btn" href="https://arxiv.org/abs/2607.23204">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. How domain experts actually verify agentic AI: familiar tools, not novel agent UI.</h3>
-  <p>Fourteen contextual inquiries plus an observational study of ten spatial biologists using Claude Science on their own data produced four design directions: execution control, familiar interactive views, source/execution transparency, and accessible verification.</p>
-  <p>Experts verify by re-applying their own domain knowledge inside tools they already trust, not by learning an agent-native interface &mdash; a concrete provenance-surface decision for anyone building agentic tools for domain experts: show what the agent is doing right now, inside the view the expert already knows.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.28723">Read the source →</a>
+  <h3>3. A shopping-agent benchmark shows how easily a marketplace can steer an agent away from what its user actually wants.</h3>
+  <p>CAVEAT tested delegated-purchasing agents across nine environments, eight adversarial steering mechanisms, and five model families. Left alone, agents bought the user-optimal product 78.6% of the time; with marketplace steering switched on, that collapsed to 17.3%. The failure isn&rsquo;t random &mdash; agents distort the user&rsquo;s stated priorities, narrow the option set too early, or commit before resolving the evidence that mattered.</p>
+  <p>A tested defense harness recovered some ground (+55.0 points), but the finding argues for a mandatory, not optional, confirmation checkpoint before commit, and names evidence-resolution as the exact stage where a human needs to be in the loop.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.27273">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Interrupting a duplex voice model mid-response nearly doubles its jailbreak success rate.</h3>
-  <p>Testing four open-source full-duplex models against 720 harmful requests, fixed-delay spoken interruption pushed whole-response attack success on AdvBench to 40.3% for PersonaPlex and 48.7% for PersonaPlex-RL &mdash; increases of 33.8 and 39.3 points over uninterrupted baselines. The failure only appears mid-turn, under a spoken cut-in, so a standard safety eval misses it entirely.</p>
-  <p>Anyone shipping interruptible voice needs interruption-specific guardrail testing before launch, not just the model&rsquo;s off-the-shelf numbers. Kept past the usual 7-day window as a durable reliability-boundary finding.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.09420">Read the source →</a>
+  <h3>4. Claude power users have already built the &ldquo;context library&rdquo; most agent products don&rsquo;t yet have a home for.</h3>
+  <p>A Nielsen Norman Group study of people who rely on Claude daily for serious professional work found every one of them had assembled a personal context library &mdash; files, databases, live connections the agent draws on beyond whatever gets typed into the prompt box. The piece names three distinct roles context plays (global, local, ambient) and argues curating that library now matters as much as writing a good prompt. Sample size and recruitment method aren&rsquo;t disclosed, a real gap in an otherwise concrete finding.</p>
+  <p>The design implication: a persistent, first-class context-library affordance, separate from the prompt box, with different handling for raw ambient streams versus curated material.</p>
+  <a class="btn" href="https://www.nngroup.com/articles/3-agent-context-roles/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. The AI tutor design that looks most thoughtful &mdash; Socratic style plus full context &mdash; tested worst.</h3>
-  <p>In a 132-student RCT, the Socratic AI teaching assistant with full context awareness was rated least favorably, with significantly lower perceived support than the other conditions, and the highest (though not statistically significant) observed rate of students bypassing it for an external LLM.</p>
-  <p>The intuitive pairing &mdash; maximal context awareness with maximal Socratic restraint &mdash; is the one that backfired. Worth testing guidance style and context depth as independent knobs rather than assuming they scale together.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.29995">Read the source →</a>
+  <h3>5. Reve shuts down image generation two months after taking OpenAI&rsquo;s money.</h3>
+  <p>In July, Reve announced OpenAI investment meant to &ldquo;accelerate that broader product ambition,&rdquo; with its own post promising it &ldquo;will continue to operate independently and focus on what we do best: building.&rdquo; Two months later, its image-generation product is shutting down September 27 &mdash; per DigitalToday, from 12 p.m. Pacific (a secondary, unconfirmed report says 11:59 p.m.; treat the hour as DigitalToday&rsquo;s figure, not settled fact).</p>
+  <p>It&rsquo;s a clean, verified case of the dependency risk built into vendor-investment ties for AI-native creative tools &mdash; worth raising whenever a client is evaluating a young AI vendor for their stack.</p>
+  <a class="btn" href="https://www.digitaltoday.co.kr/en/view/105109/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier corrects the digest&rsquo;s own top item: Safety Nudges&rsquo; single-source marker was right on the tool-specific numbers but wrong on the directional claim &mdash; a preregistered N=2,610 experiment and a pooled n=3,982 meta-analysis both independently show warnings shift perception, not behavior, making &ldquo;awareness moves, behavior doesn&rsquo;t&rdquo; the best-corroborated negative finding in the corpus. The detector behind the nudges was never evaluated as a detector &mdash; no precision or recall figures exist, and the model auditing most participants&rsquo; conversations was never scored against the gold set. The flag users rejected most, anthropomorphism, is one trained raters themselves can&rsquo;t agree on (Krippendorff&rsquo;s &alpha; as low as 0.101) &mdash; the users were right. Every disclosure regime surveyed (EU Art. 50, Japan&rsquo;s AI法, California SB 243, Singapore) discharges its duty on presence alone, and the green &ldquo;No issues detected&rdquo; chip reads as a correctness guarantee it hasn&rsquo;t earned.</p>
-  <p class="dossier-path">dossiers/2026-09-24-unearned-all-clear.md</p>
+  <p>Yesterday&rsquo;s dossier corrects the digest&rsquo;s own top item: the TACT turn-taking paper was actually accepted to IEEE SLT 2026 &mdash; peer-reviewed, not the &ldquo;self-published preprint&rdquo; the digest tagged it. But the paper&rsquo;s own scoring rule is broken in the same way it accuses the field&rsquo;s metrics of being broken: a degenerate policy of one fixed response per intent scores 0.935, beating the paper&rsquo;s own human topline of 0.870. It&rsquo;s also not reimplementable as published &mdash; three of six timing kernels are given only as medians, weights are never numeric, and the promised supplementary material isn&rsquo;t in the source. The durable finding: across nine voice platforms, every shipped turn-taking control is a &ldquo;wait longer&rdquo; knob &mdash; nothing lets a system come in early &mdash; so the anticipatory half of the paper&rsquo;s own argument has no real-world instrument anywhere. None of the underlying corpora are non-English: Japanese needs the silence threshold shifted 200&ndash;400ms earlier, Thai has no published turn-timing constant at all, and the one constant that already spans both languages sits unused in the paper&rsquo;s own bibliography.</p>
+  <p class="dossier-path">dossiers/2026-09-25-every-knob-is-a-wait-longer-knob.md</p>
 </div>
 
-<h2>This week</h2>
+<h2>This Saturday&rsquo;s gate</h2>
 
 <div class="item">
-  <p><strong>The forcing fork.</strong> Awareness-only interventions &mdash; flags, warnings, disclosure banners &mdash; move perception but not behavior, now corroborated across three studies at roughly 6,600 combined participants. What does move behavior is friction that forces an act before acceptance: a required written justification cut adoption of flawed AI suggestions 24 points with no cost to sound ones. Every disclosure regulation in reach (EU, Japan, California, Singapore) is satisfied by the failing, awareness-only class &mdash; the forcing pattern argues above the legal floor, not to it.</p>
-  <p><strong>The metric that can&rsquo;t tell help from retention.</strong> A field RCT (N=9,586), an automotive optimization loop, and two vendor postmortems all located engagement gains in the loop itself, not output quality: a warm system prompt raised chat rounds 24% but also raised content-free junk sessions 28%, and a trust-optimizing in-car loop&rsquo;s gains evaporated once the optimizer stopped. Evaluate outcome quality separately from the interaction metric, with an evaluator tuned outside the loop that generated what&rsquo;s judged.</p>
-  <p><strong>Voice stops needing to break character to act.</strong> Vendor pricing (per-minute audio channels), model architecture (tool calls inside full-duplex speech without breaking turn-taking), and peer-reviewed ambient research (continuous step-aware AR guidance beating query-triggered help 21%+) converged on the same shift: voice and glasses interfaces no longer need to break conversational continuity to act. The open question is what the interface narrates while acting mid-conversation &mdash; narrating fake progress is a truthfulness violation, not a latency trick.</p>
+  <p>Two drafts are open, awaiting a decision:</p>
+  <p class="gate-item"><strong>DRAFT-KB-08</strong> &mdash; the speech-interface measurement stack is English-defaulted at every layer. Review: 1 block, 4 objections.</p>
+  <p class="gate-item"><strong>DRAFT-KB-09</strong> &mdash; the latency budget: broken threshold folklore, real conversational constants, no stable median. Review: 1 block, 4 objections.</p>
+  <p>No BACKLOG changes are tied to this gate this run.</p>
+</div>
+
+<h2>Run notes</h2>
+
+<div class="item run-notes">
+  <p><strong>Verified but below the 5-item cap this cycle:</strong></p>
+  <ul>
+    <li>Stripping speech before classification, not after recording, as the privacy architecture for always-on audio sensing &mdash; 0% detectable speech after processing at 76% activity-classification precision/recall. <a href="https://arxiv.org/abs/2609.02376">arxiv.org/abs/2609.02376</a></li>
+    <li>Nielsen Norman Group&rsquo;s PACED framework for AI-disclosure timing &mdash; argues against a blanket disclosure policy; disclosure design should vary by audience and content category. <a href="https://www.nngroup.com/articles/disclose-ai-paced/">nngroup.com/articles/disclose-ai-paced</a></li>
+    <li>TypeSafe AI ships &ldquo;Jev,&rdquo; a decision-model category returning calibrated probabilities instead of text &mdash; an independent benchmark shows 15.9&ndash;26.5% lower decision latency and 69.0&ndash;70.6% lower fees-per-correct-completion. <a href="https://simonwillison.net/2026/Sep/21/jev/">simonwillison.net/2026/Sep/21/jev</a></li>
+    <li>A company&rsquo;s shipped multimodal agents shift between voice, text and visuals per-turn rather than one fixed channel. <a href="https://sierra.ai/blog/multimodal-agents">sierra.ai/blog/multimodal-agents</a></li>
+    <li>DolphinBench finds agent memory cost and accuracy don&rsquo;t track each other &mdash; the pricier memory backend isn&rsquo;t reliably the more accurate one, and the best choice varies by model family. <a href="https://arxiv.org/abs/2609.24971">arxiv.org/abs/2609.24971</a></li>
+    <li>RecreationWorld: agents clone visible app structure but rarely get the interaction logic right &mdash; 58.1% success reproducing an app&rsquo;s surface, far less on working logic. <a href="https://arxiv.org/abs/2609.22000">arxiv.org/abs/2609.22000</a></li>
+    <li>A Korean design-practitioner conference argued for a new deliverable &mdash; UX documentation authored for AI consumption, not just humans &mdash; and reframed agentic-product success as an adoption/trust design problem. <a href="https://www.etnews.com/20260824000105">etnews.com/20260824000105</a></li>
+    <li>Handoff Debt: structured session-resume summaries cut a coding agent&rsquo;s rediscovery cost 20&ndash;59% in events and 42&ndash;63% in tokens versus raw-log takeover. <a href="https://arxiv.org/abs/2606.02875">arxiv.org/abs/2606.02875</a></li>
+  </ul>
+  <p><strong>Lanes producing nothing:</strong> none &mdash; all four daily lanes returned verified survivors this cycle.</p>
+  <p><strong>Kills worth attention:</strong> a family-scale home-sensing privacy study was confirmed as a 5th-generation resubmission of the same paper, with a standing correction on record never incorporated by any resubmission &mdash; flagged as a named recurring-source problem. A second, distinct failure mode surfaced separately: an item was killed as a duplicate not of a numbered top-5 digest entry but of a prior day&rsquo;s uncapped run-notes item &mdash; dedupe needs to check those lists too, not just the top 5. Both flagged for the monthly pipeline audit.</p>
+  <p>One quote was corrected in place (the PACED item&rsquo;s &ldquo;disclosure paradox&rdquo; line, now attributed to its actual authors rather than the researcher&rsquo;s paraphrase); one figure was flagged with an explicit caveat rather than corrected (RecreationWorld&rsquo;s 2.8% figure, plausible but not independently re-confirmed verbatim); one conflicting fact was resolved by attribution rather than assertion (Reve&rsquo;s exact shutdown hour, above).</p>
 </div>
 
 <footer>
