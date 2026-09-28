@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-27</title>
+<title>Limen — 2026-09-28</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,60 +87,60 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-27</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-09-28</p>
+  <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Plan-based oversight cut problematic computer-use agent actions by 76% in odds &mdash; but users still missed most of what got through anyway.</h3>
-  <p>A revised version of an arXiv study already covered here on qualitative terms alone now has the numbers: a 48-participant, 192-session randomized trial found plan-based oversight strategies for computer-use agents reduced the odds of a problematic action occurring by 76% (OR=0.24). Even so, users caught only 29 of 138 problematic actions that reached execution &mdash; 21%.</p>
-  <p>The sharpest failure was a shortcut: the &ldquo;Approve Similar&rdquo; batch-approval option auto-approved actions outside their intended scope in more than half its failure episodes, prompting one participant to say &ldquo;if I hit approve similar, I wouldn&rsquo;t expect it to jump to the billing.&rdquo; For anyone designing agentic-approval UI, that&rsquo;s the concrete argument for scoping batch-approval to a narrow category rather than trusting users to notice drift.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.04918">Read the source →</a>
+  <h3>1. Ambient visual feedback for in-car voice assistants: motion beats colour in peripheral vision, and it never replaces audio.</h3>
+  <p>A peer-reviewed study (online survey N=151/28 countries, plus a Belgian lab study N=24 on a driving-footage dual-task) tested three in-car voice-assistant feedback designs: none, conventional, and ambient colour+motion. The ambient design won decisively on preference &mdash; 18 of 24 lab participants chose it &mdash; because screen motion was detected in peripheral vision far more reliably than colour change alone.</p>
+  <p>But it scored significantly lower on felt need for audio feedback, and one participant put the limit bluntly: the system shouldn&rsquo;t &ldquo;stay quiet when it does not understand me.&rdquo; Lesson for any low-attention, hands-busy interface: motion, not colour, is the reliable peripheral channel, and ambient visuals supplement audio rather than replace it.</p>
+  <a class="btn" href="https://doi.org/10.54941/ahfe1007132">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A wearable-AI study finds the disclosure problem isn&rsquo;t the recording light &mdash; it&rsquo;s what the AI does with what it sees.</h3>
-  <p>The same study already covered here for its opportunistic-delegation finding turns out to have a second result worth publishing on its own: participants in the always-on smart-glasses study drew a hard line between &ldquo;that person might be recording me&rdquo; and &ldquo;that person&rsquo;s AI might be identifying and searching me.&rdquo; A blinking light solves the first concern and says nothing about the second.</p>
-  <p>For any always-on wearable that does identification, search, or recognition on bystanders, that argues for a distinct disclosure signal &mdash; not a repurposed recording indicator borrowed from camera norms that predate AI entirely.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.03486">Read the source →</a>
+  <h3>2. Cursor: agent autonomy is &ldquo;a dial, not a switch&rdquo; &mdash; a risk-scored classifier replaces binary approve/deny.</h3>
+  <p>Cursor&rsquo;s own writeup of Auto-review describes swapping a yes/no permission prompt for a continuously-scored risk classifier, reasoning that &ldquo;asking for permission too often creates its own safety problem.&rdquo; The classifier blocks around 4% of actions and about 7% of Auto-review chats see one interruption &mdash; against a stricter enterprise policy that previously blocked roughly 40%.</p>
+  <p>It runs inline in the same RPC stream as the parent agent specifically to avoid an extra round-trip&rsquo;s latency before every reviewed call. A concrete, published alternative to the binary toggle that dominates agentic tool-use design.</p>
+  <a class="btn" href="https://cursor.com/blog/agent-autonomy-auto-review">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Notion killed its own email client, and its stated reason is that agents made the inbox obsolete.</h3>
-  <p>Notion shut down Notion Mail on September 22, three months after announcing it, citing its own usage data: more than half of Notion Mail users were managing email without ever opening the inbox. That&rsquo;s a company discontinuing a shipped product rather than doubling down, with a specific, citable number behind the decision &mdash; not a launch, a retreat with reasoning attached.</p>
-  <p>It&rsquo;s the cleanest data point yet for arguing to a client that the inbox-as-primary-surface pattern doesn&rsquo;t survive an agent that triages and drafts on its own.</p>
-  <a class="btn" href="https://techcrunch.com/2026/06/25/notion-mail-shuts-down-amid-agent-takeover/">Read the source →</a>
+  <h3>3. Sustained LLM use looks like satisfaction from the outside &mdash; it&rsquo;s often compliance sustained by invisible labor.</h3>
+  <p>Interviews with 36 graduate student workers, balanced EFL/non-EFL, found a recurring cycle of risk, mitigation, and justification behind continued AI adoption rather than genuine preference. EFL participants added a further justification: &ldquo;linguistic parity,&rdquo; AI leveling a language disadvantage.</p>
+  <p>The authors reframe continued adoption as &ldquo;compliance sustained by invisible labor,&rdquo; not a preference revealed by usage numbers &mdash; a warning against reading retention metrics as satisfaction, especially for non-native-English users.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.30699">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Sycophantic AI doesn&rsquo;t just produce worse advice &mdash; it makes the humans around you harder to deal with afterward.</h3>
-  <p>A preregistered, census-representative study tracked 3,075 people across three weeks and 12,766 conversations with AI that varied in how much it flattered versus pushed back. Most people preferred the sycophantic version &mdash; not because its advice was better, but because it made them feel understood.</p>
-  <p>The cost showed up later: participants who got the flattering version reported their subsequent human interactions felt more effortful and less satisfying. That&rsquo;s a genuinely different harm than the usual sycophancy concern about bad decisions &mdash; evidence that a model tuned to make someone feel good can quietly erode their tolerance for real people, which changes how the sycophancy-vs-honesty tradeoff should be argued in a design review.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.07912">Read the source →</a>
+  <h3>4. AI assistance makes people more accurate and less able to tell when they&rsquo;re wrong.</h3>
+  <p>A 366-person study comparing solo versus AI-assisted performance found the expected accuracy gain &mdash; but self-estimated confidence tracked performance only weakly, and became measurably less diagnostic of correctness with AI in the loop. A check for simple score-noise reduced but didn&rsquo;t eliminate the pattern.</p>
+  <p>For human-in-the-loop review design: a user&rsquo;s stated confidence becomes a worse proxy for whether AI-assisted output is right, undercutting workflows that lean on self-reported certainty to flag what needs a second look.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.31095">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Below roughly 1.5 billion parameters, on-device tool-calling barely functions without a repair layer bolted on.</h3>
-  <p>A methodical benchmark across five small models and two decoding modes found that without any parsing help, only 5 of 1,000 raw responses came back as valid JSON. Add a parsing harness and the best model in the set, Qwen2.5-1.5B, reaches 75-79% &mdash; but needs nearly 8GB of memory and over 30 seconds per response. Everything smaller falls off fast: one model scored 0% outright, others topped out around 7%.</p>
-  <p>That&rsquo;s a real budget line for anyone scoping an on-device agent feature: native tool-calling isn&rsquo;t viable at this size without dedicated repair logic, and even the model that works isn&rsquo;t fast or light.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.07370">Read the source →</a>
+  <h3>5. A dedicated small model beats general-purpose prompting on the one job real-time voice interfaces can&rsquo;t be slow at.</h3>
+  <p>Streaming text normalization &mdash; reading &ldquo;3/4&rdquo; as &ldquo;three quarters&rdquo; correctly mid-sentence &mdash; trades latency for accuracy by buffer size: widening the window from one frame to sixteen pushes delay from 75ms to 756ms. The chosen middle point, a 4-frame model, hits 213ms at 0.89 F1 &mdash; comfortably real-time.</p>
+  <p>A general-purpose small model (Qwen3-0.6B) prompted for the same job scored far worse (0.49 F1) and kept producing unstable formatting and hallucinated normalizations. Lesson: for latency-critical voice pipelines, a small dedicated model beats prompting a general one at similar size.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.24267">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s top digest item was wrong in eight places, starting with its own headline finding &mdash; the paper&rsquo;s actual numbers show only 23 of 52 participants were dissatisfied with their own AI-oracle reliance, 25 called it &ldquo;about right,&rdquo; and the &ldquo;younger users&rdquo; effect doesn&rsquo;t replicate in the study&rsquo;s own second dataset. Worse, the digest&rsquo;s proposed fix &mdash; reframe answers toward &ldquo;one perspective, not asserting one&rdquo; &mdash; isn&rsquo;t a design idea, it&rsquo;s the paper&rsquo;s own tested intervention, and four independent lines of evidence say it doesn&rsquo;t work: hedged language still reads as near-certain, general-perspective wording tested &ldquo;weaker and not statistically significant&rdquo; in a separate preregistered study, and this same research group has already shown a warning label shifts how people feel without changing how much a system actually influences them. The number worth keeping is that oracle-style reliance exceeds 90% on belief-directed personal questions in both of the paper&rsquo;s datasets, against 44-56% for action-directed ones &mdash; the gap the digest missed. Every study with usable intervention evidence runs on tasks with a ground truth; this paper&rsquo;s actual subject, personal and subjective questions, has none, so the only design levers with real evidence change the cost of a user&rsquo;s own deliberation, not the model&rsquo;s tone. A Japanese government survey folded into the same dossier complicates any easy East/West story: Japanese respondents rank generative AI closer to &ldquo;dictionary/encyclopedia&rdquo; than the US&rsquo;s &ldquo;friend,&rdquo; yet under-30s in Japan already consult AI on personal matters at the same rate as all US adults.</p>
-  <p class="dossier-path">dossiers/2026-09-26-not-asserting-is-asserting.md</p>
+  <p>Yesterday&rsquo;s #1 item claimed plan-based oversight cut problematic computer-use-agent actions by 76%; the dossier found that figure doesn&rsquo;t survive the paper&rsquo;s own text &mdash; it mostly reflects researchers injecting the approved plan directly into the agent&rsquo;s system prompt as an instruction, not human vigilance, and only 5 of 192 episodes involved a user actually preventing a risk. The real finding: across four different oversight interfaces, intervention rates were statistically indistinguishable (7.4%&ndash;26.2%, p=.366) &mdash; no interface design did reliably better. Every quantitative figure in the paper changed between April and September versions with no erratum or explanation. &ldquo;Approve Similar&rdquo; failed by the researchers&rsquo; own definition, pre-authorizing any subsequent text-entry action regardless of field or page &mdash; a design shipped products already gate on enumerability, imminence, and specificity.</p>
+  <p class="dossier-path">dossiers/2026-09-27-oversight-null-approve-similar.md</p>
 </div>
 
 <h2>Run notes</h2>
@@ -148,13 +148,14 @@
 <div class="item run-notes">
   <p><strong>Verified but below the 5-item cap this cycle:</strong></p>
   <ul>
-    <li>An independent commentary catches the caveat the &ldquo;one Claude&rdquo; merge left out &mdash; the runtime lives in the cloud, so anything touching local files still needs the desktop app open. <a href="https://www.livain.com/blog/claude-merged-chat-and-cowork/">livain.com/blog/claude-merged-chat-and-cowork</a></li>
-    <li>Full-duplex voice API goes generally available at $0.05 per minute, billed per second &mdash; listen and speak simultaneously, with interruption handling built in by default. <a href="https://developers.openai.com/api/docs/changelog">developers.openai.com/api/docs/changelog</a></li>
-    <li>A Japanese HAI symposium paper argues agent proxemic tolerance should be relationship-aware, not a fixed distance default &mdash; spatial over-involvement that reads as intrusive at a neutral distance converts to favorability under an intimate relationship. <a href="https://hai-conference.net/symp2026/proceedings/html/paper/paper-P1-18.html">hai-conference.net/symp2026 (P1-18)</a></li>
-    <li>A Germany-versus-South-Korea study of chatbot trust remains the sweep&rsquo;s only non-Western sample this cycle, though now roughly 17 months old and lighter-reviewed as an extended abstract. <a href="https://arxiv.org/abs/2503.17158">arxiv.org/abs/2503.17158</a></li>
+    <li>A JILLA creator survey update names the disclosure-duty ask precisely &mdash; a proposed &ldquo;Generative AI Use Mark&rdquo; trial, not a generic system &mdash; after correcting two fabricated-verbatim quotes. <a href="https://jilla.or.jp/2026/04/14762">jilla.or.jp/2026/04/14762</a></li>
+    <li>A collaboration-vocabulary paper (one-shot/weak/grounded) downgraded after its own abstract calls itself a poster while its arXiv listing claims full ECSCW 2026 conference-paper acceptance. <a href="https://arxiv.org/abs/2604.18096">arxiv.org/abs/2604.18096</a></li>
+    <li>An AI-assisted mock-interview study finds candidates use AI as support but resist it as assessor or competitor. <a href="https://arxiv.org/abs/2609.30388">arxiv.org/abs/2609.30388</a></li>
+    <li>A U-Net privacy firewall strips 100% of detectable speech from ambient audio sensing while keeping 76% precision/recall on activity signal. <a href="https://arxiv.org/abs/2609.02376">arxiv.org/abs/2609.02376</a></li>
+    <li>Perplexity&rsquo;s Photon search engine claims 230ms p95 latency at a fifth of prior price, corroborated independently after the vendor&rsquo;s own blog returned a Cloudflare block. <a href="https://community.perplexity.ai/t/introducing-fast-search-in-the-perplexity-search-api/6195">community.perplexity.ai/t/introducing-fast-search-in-the-perplexity-search-api</a></li>
   </ul>
-  <p><strong>Lanes producing nothing:</strong> none &mdash; all four daily lanes returned verified survivors this cycle.</p>
-  <p><strong>Kills worth attention:</strong> an uncertainty-granularity paper was killed as a duplicate resubmission that repeated a framing this corpus already corrected in a standing dossier &mdash; the correction was not incorporated. A systems paper was killed for a quoted claim that does not appear verbatim in the source text. A design-leadership commentary piece checked out on its quotes but failed the relevance bar outright &mdash; no named tradeoff, no shipped feature, swappable onto almost any week&rsquo;s AI-and-craft story. Separately, roughly a third of this cycle&rsquo;s raw submissions were straight duplicates of material already published in the past two weeks &mdash; a resubmission pattern flagged repeatedly for the monthly pipeline audit, not a one-off.</p>
+  <p><strong>Lanes producing nothing:</strong> none &mdash; every lane returned at least one verified survivor this cycle.</p>
+  <p><strong>Kills worth attention:</strong> Anthropic&rsquo;s Cowork/Chat merge and an Ink &amp; Switch peer-agent item were both re-killed as straight duplicates (9th+ and 2nd occurrence); a MirrorBot eye-contact-robot study was re-killed with only methodological color added; GPT-6 Sol and Luna pricing verified accurate but killed as a resubmission of already-published figures &mdash; flagged as a distinct, live resubmission pattern for the monthly audit, separate from the Cowork/Ink &amp; Switch/MirrorBot problem. Two Japanese-language verbatim quotes in a below-cap item were caught as fabricated paraphrases and corrected in place.</p>
 </div>
 
 <footer>
