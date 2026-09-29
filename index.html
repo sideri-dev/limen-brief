@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-09-28</title>
+<title>Limen — 2026-09-29</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,75 +87,76 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-09-28</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-09-29</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Ambient visual feedback for in-car voice assistants: motion beats colour in peripheral vision, and it never replaces audio.</h3>
-  <p>A peer-reviewed study (online survey N=151/28 countries, plus a Belgian lab study N=24 on a driving-footage dual-task) tested three in-car voice-assistant feedback designs: none, conventional, and ambient colour+motion. The ambient design won decisively on preference &mdash; 18 of 24 lab participants chose it &mdash; because screen motion was detected in peripheral vision far more reliably than colour change alone.</p>
-  <p>But it scored significantly lower on felt need for audio feedback, and one participant put the limit bluntly: the system shouldn&rsquo;t &ldquo;stay quiet when it does not understand me.&rdquo; Lesson for any low-attention, hands-busy interface: motion, not colour, is the reliable peripheral channel, and ambient visuals supplement audio rather than replace it.</p>
-  <a class="btn" href="https://doi.org/10.54941/ahfe1007132">Read the source →</a>
+  <h3>1. A six-month field study names the real tradeoff in AI coding assistants: faster feedback loops are eroding flow state even as self-reported productivity holds steady.</h3>
+  <p>Two surveys of professional developers six months apart &mdash; 158 participants, then 101, with a matched cohort of 95 across both &mdash; found 82% reporting less time spent writing code and 84% a productivity gain at both points. But in that matched cohort, the share reporting worsened developer experience in at least one dimension nearly doubled, 14% to 27%, as flow and cognitive load eroded.</p>
+  <p>Field data six months out, not launch-week self-report &mdash; the real fork for a coding-assistant or agent-supervision interface is optimize-the-loop versus protect-the-flow, and you can lose ground on the second while the headline productivity number looks fine.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.23135">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Cursor: agent autonomy is &ldquo;a dial, not a switch&rdquo; &mdash; a risk-scored classifier replaces binary approve/deny.</h3>
-  <p>Cursor&rsquo;s own writeup of Auto-review describes swapping a yes/no permission prompt for a continuously-scored risk classifier, reasoning that &ldquo;asking for permission too often creates its own safety problem.&rdquo; The classifier blocks around 4% of actions and about 7% of Auto-review chats see one interruption &mdash; against a stricter enterprise policy that previously blocked roughly 40%.</p>
-  <p>It runs inline in the same RPC stream as the parent agent specifically to avoid an extra round-trip&rsquo;s latency before every reviewed call. A concrete, published alternative to the binary toggle that dominates agentic tool-use design.</p>
-  <a class="btn" href="https://cursor.com/blog/agent-autonomy-auto-review">Read the source →</a>
+  <h3>2. A concrete number for when a voice assistant should let you interrupt it: 240 milliseconds, and a judgment call, not a wait.</h3>
+  <p>A new full-duplex voice system streams audio in 240ms chunks and decides mid-turn whether an interruption should go through, by judging whether the user&rsquo;s fragment already carries enough intent rather than waiting for a complete sentence. That change alone raised interruption success from 89% to 98% and cut mean stop latency by nearly two-thirds.</p>
+  <p>A specific, usable barge-in policy fork &mdash; respond-to-intent versus wait-for-completeness &mdash; with numbers attached, not a vague responsiveness goal.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.34096">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Sustained LLM use looks like satisfaction from the outside &mdash; it&rsquo;s often compliance sustained by invisible labor.</h3>
-  <p>Interviews with 36 graduate student workers, balanced EFL/non-EFL, found a recurring cycle of risk, mitigation, and justification behind continued AI adoption rather than genuine preference. EFL participants added a further justification: &ldquo;linguistic parity,&rdquo; AI leveling a language disadvantage.</p>
-  <p>The authors reframe continued adoption as &ldquo;compliance sustained by invisible labor,&rdquo; not a preference revealed by usage numbers &mdash; a warning against reading retention metrics as satisfaction, especially for non-native-English users.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.30699">Read the source →</a>
+  <h3>3. Voice models can now generate believable &ldquo;mm-hmm&rdquo; backchannels from internal state alone &mdash; no scripted timing rule required.</h3>
+  <p>A lightweight add-on reading the hidden states of two open voice models learned to emit listening cues in real time. In blind human evaluation its timing scored statistically indistinguishable from real human backchannel timing, and both clearly beat a random-timing baseline.</p>
+  <p>Closes a persistent gap in duplex voice UX: no hand-authored rulebook needed to sound like it&rsquo;s listening while you talk.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.29418">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. AI assistance makes people more accurate and less able to tell when they&rsquo;re wrong.</h3>
-  <p>A 366-person study comparing solo versus AI-assisted performance found the expected accuracy gain &mdash; but self-estimated confidence tracked performance only weakly, and became measurably less diagnostic of correctness with AI in the loop. A check for simple score-noise reduced but didn&rsquo;t eliminate the pattern.</p>
-  <p>For human-in-the-loop review design: a user&rsquo;s stated confidence becomes a worse proxy for whether AI-assisted output is right, undercutting workflows that lean on self-reported certainty to flag what needs a second look.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.31095">Read the source →</a>
+  <h3>4. In a simulated self-driving cabin, ambient scent and lighting carried two-thirds of riders&rsquo; trust in the ride &mdash; not the dashboard.</h3>
+  <p>A within-subject study (24 participants, 216 observations) found perceived atmosphere accounted for 66.5% of variance in overall journey experience. Processing was layered: individual sensory cues were judged independently at first, combining into an overall trust judgment only later, at a higher level of evaluation.</p>
+  <p>The argument: budget real design effort to ambient channels as their own trust-building layer in a high-stakes automated cabin, not a single blended &ldquo;mood&rdquo; setting under the screen.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.32604">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A dedicated small model beats general-purpose prompting on the one job real-time voice interfaces can&rsquo;t be slow at.</h3>
-  <p>Streaming text normalization &mdash; reading &ldquo;3/4&rdquo; as &ldquo;three quarters&rdquo; correctly mid-sentence &mdash; trades latency for accuracy by buffer size: widening the window from one frame to sixteen pushes delay from 75ms to 756ms. The chosen middle point, a 4-frame model, hits 213ms at 0.89 F1 &mdash; comfortably real-time.</p>
-  <p>A general-purpose small model (Qwen3-0.6B) prompted for the same job scored far worse (0.49 F1) and kept producing unstable formatting and hallucinated normalizations. Lesson: for latency-critical voice pipelines, a small dedicated model beats prompting a general one at similar size.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.24267">Read the source →</a>
+  <h3>5. Zed says the pull request is the wrong review unit once an agent writes most of the code, and ships a reasoning-thread replacement.</h3>
+  <p>Zed&rsquo;s own writeup argues &ldquo;the diffs we&rsquo;re asking each other to review have mushroomed&rdquo; now that agents generate most code, and that feeding a diff to a second agent for a summary just makes it reconstruct decisions someone already worked through. It considered and rejected the obvious incremental fix &mdash; stacking smaller branches &mdash; because &ldquo;the decisions behind the code still need review&rdquo; regardless of diff size.</p>
+  <p>Its replacement, Delta, gives reviewers an isolated copy of the original reasoning thread plus dedicated review subthreads: the load-bearing review artifact should be the reasoning, not the diff.</p>
+  <a class="btn" href="https://zed.dev/blog/delta-public-beta">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item claimed plan-based oversight cut problematic computer-use-agent actions by 76%; the dossier found that figure doesn&rsquo;t survive the paper&rsquo;s own text &mdash; it mostly reflects researchers injecting the approved plan directly into the agent&rsquo;s system prompt as an instruction, not human vigilance, and only 5 of 192 episodes involved a user actually preventing a risk. The real finding: across four different oversight interfaces, intervention rates were statistically indistinguishable (7.4%&ndash;26.2%, p=.366) &mdash; no interface design did reliably better. Every quantitative figure in the paper changed between April and September versions with no erratum or explanation. &ldquo;Approve Similar&rdquo; failed by the researchers&rsquo; own definition, pre-authorizing any subsequent text-entry action regardless of field or page &mdash; a design shipped products already gate on enumerability, imminence, and specificity.</p>
-  <p class="dossier-path">dossiers/2026-09-27-oversight-null-approve-similar.md</p>
+  <p>Yesterday&rsquo;s #1 item claimed ambient visual feedback for in-car voice assistants scored lower on &ldquo;need for auditory feedback,&rdquo; read as evidence the design still needed audio as a backup. The dossier found this runs backward: the item measured stated <em>necessity</em> of audio, the no-feedback condition scored highest on it, and the quoted participant was describing the no-visual-feedback condition, not the ambient one. The &ldquo;significant&rdquo; result was a chi-square association test on a 5x5 table from 24 people &mdash; most expected cells below 5 &mdash; that does not reproduce under a proper paired test. The durable finding survives: motion beats colour in the periphery, but that result is decades old and already converged on in shipped products (Amazon, Google, BMW, NIO all discriminate assistant states by motion within one hue), and boundary conditions this study never tested &mdash; colour returns at large patch sizes, motion&rsquo;s salience collapses when the primary task is itself motion-heavy &mdash; are already documented elsewhere.</p>
+  <p class="dossier-path">dossiers/2026-09-28-periphery-can-say-no-not-what-next.md</p>
 </div>
 
 <h2>Run notes</h2>
 
 <div class="item run-notes">
-  <p><strong>Verified but below the 5-item cap this cycle:</strong></p>
+  <p><strong>Below the cap, verified:</strong></p>
   <ul>
-    <li>A JILLA creator survey update names the disclosure-duty ask precisely &mdash; a proposed &ldquo;Generative AI Use Mark&rdquo; trial, not a generic system &mdash; after correcting two fabricated-verbatim quotes. <a href="https://jilla.or.jp/2026/04/14762">jilla.or.jp/2026/04/14762</a></li>
-    <li>A collaboration-vocabulary paper (one-shot/weak/grounded) downgraded after its own abstract calls itself a poster while its arXiv listing claims full ECSCW 2026 conference-paper acceptance. <a href="https://arxiv.org/abs/2604.18096">arxiv.org/abs/2604.18096</a></li>
-    <li>An AI-assisted mock-interview study finds candidates use AI as support but resist it as assessor or competitor. <a href="https://arxiv.org/abs/2609.30388">arxiv.org/abs/2609.30388</a></li>
-    <li>A U-Net privacy firewall strips 100% of detectable speech from ambient audio sensing while keeping 76% precision/recall on activity signal. <a href="https://arxiv.org/abs/2609.02376">arxiv.org/abs/2609.02376</a></li>
-    <li>Perplexity&rsquo;s Photon search engine claims 230ms p95 latency at a fifth of prior price, corroborated independently after the vendor&rsquo;s own blog returned a Cloudflare block. <a href="https://community.perplexity.ai/t/introducing-fast-search-in-the-perplexity-search-api/6195">community.perplexity.ai/t/introducing-fast-search-in-the-perplexity-search-api</a></li>
+    <li>Public sensemaking of an AI lifelogging device&rsquo;s market entry &mdash; a 5,053-comment social-media discourse analysis. <a href="https://arxiv.org/abs/2609.34950">arxiv.org/abs/2609.34950</a></li>
+    <li>Earbud-only gaze-direction estimation needing GPS correction, still inverting on curves &mdash; Japan, non-peer-reviewed technical report. <a href="https://dl.mtstlab.org/papers/523">dl.mtstlab.org/papers/523</a></li>
+    <li>NemotronLabs VoiceChat, the first shipped open-weight full-duplex voice model with tool-calling. <a href="https://arxiv.org/abs/2609.21967">arxiv.org/abs/2609.21967</a></li>
+    <li>PaMER, a long-context token-reduction technique &mdash; carries a correctable Table 1/3 figure-blend error in its own paper if ever resubmitted. <a href="https://arxiv.org/abs/2609.27286">arxiv.org/abs/2609.27286</a></li>
+    <li>Liquid AI&rsquo;s LFM2.5-VL-3B-DSpark vision-language model release.</li>
   </ul>
-  <p><strong>Lanes producing nothing:</strong> none &mdash; every lane returned at least one verified survivor this cycle.</p>
-  <p><strong>Kills worth attention:</strong> Anthropic&rsquo;s Cowork/Chat merge and an Ink &amp; Switch peer-agent item were both re-killed as straight duplicates (9th+ and 2nd occurrence); a MirrorBot eye-contact-robot study was re-killed with only methodological color added; GPT-6 Sol and Luna pricing verified accurate but killed as a resubmission of already-published figures &mdash; flagged as a distinct, live resubmission pattern for the monthly audit, separate from the Cowork/Ink &amp; Switch/MirrorBot problem. Two Japanese-language verbatim quotes in a below-cap item were caught as fabricated paraphrases and corrected in place.</p>
+  <p><strong>Lanes producing nothing:</strong> none. Ambient had an unusually strong day &mdash; 3 of the top 6 ranked items &mdash; real oversupply, not padding.</p>
+  <p><strong>Kills worth attention:</strong> the interaction lane ran a 4-of-5 duplicate rate this cycle, worst of the day&rsquo;s lanes, flagged for the monthly audit. Claude Opus 5.5&rsquo;s speed/price claim was re-killed for the 6th+ time as noise. A misgendering-repair paper&rsquo;s &ldquo;accepted AIES 2026&rdquo; claim proved unsupported on resubmission (AIES&rsquo;s own site 404s on its accepted-papers page). A Korean Cartoonists Association survey and a Japan Freelance League survey were both killed as saturated, stale professional-body sentiment surveys.</p>
+  <p><strong>Redaction check:</strong> item 4&rsquo;s relevance line was drafted in general terms with no gesture at a specific automotive product; nothing needed cutting for this page.</p>
 </div>
 
 <footer>
