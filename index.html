@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-01</title>
+<title>Limen — 2026-10-02</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,60 +88,62 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-01</p>
+  <p class="date">Limen — 2026-10-02</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Google deployed a persistent, proactive &ldquo;AI teammate&rdquo; across more than 20 teams &mdash; and the thing that broke wasn&rsquo;t task performance, it was workplace norms.</h3>
-  <p>Team Agent lives inside chat, docs and the bug tracker as a standing presence, not something invoked per task. A qualitative study &mdash; 17 interviews across 11 of the 20+ teams that adopted it &mdash; finds the friction sits in three places: unwritten collaborative norms the agent doesn&rsquo;t know it&rsquo;s breaking, what &ldquo;relational boundaries&rdquo; even mean for a non-human teammate, and a redistribution of trust and agency nobody designed for.</p>
-  <p>The lesson for practitioners: a proactive agent&rsquo;s intervention rights can&rsquo;t be scoped once at rollout &mdash; they get negotiated continuously, in situ, the way a new hire&rsquo;s standing in a team gets negotiated. That&rsquo;s the opposite problem from a one-time consent screen.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.29901">Read the source →</a>
+  <h3>1. A controlled study finds that understanding how an AI writing assistant works can make you worse at catching its mistakes.</h3>
+  <p>An N=48 CHI 2026 lab study gave participants different mental models of an AI writing assistant. The group given the deeper &ldquo;structural&rdquo; model understood the system better and rated it more usable &mdash; but produced letters with more grammatical errors slipping through, because that same deeper understanding correlated with less scrutiny of its flawed suggestions. The authors call it a &ldquo;complex relationship between system understanding, trust, and control in contexts that require user oversight.&rdquo;</p>
+  <p>The read for practice: explaining &ldquo;how it works&rdquo; is not an error-catching mechanism. If a product needs real oversight, it needs an actual verification affordance, not a better explanation.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.05166">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. One ChatGPT interface, four countries, three years of data &mdash; &ldquo;how people use AI&rdquo; isn&rsquo;t one answer, and it&rsquo;s a moving target that moves differently by market.</h3>
-  <p>A study of 202,590 conversations from 1,252 users in India, Nigeria, Brazil and Pakistan (Dec 2022&ndash;Feb 2026) finds self-expression use grew from a few percent of traffic to a fifth or more, while information-seeking only modestly declined and task delegation never grew at all. The country detail matters more than the aggregate: health topics dominate in India and Brazil, Urdu-English translation in Pakistan, current-affairs and religious inquiry in Nigeria and Pakistan.</p>
-  <p>For anyone designing one platform surface across Japanese, Thai and English markets, this argues directly against a single onboarding or affordance design traveling unchanged across locales.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.38279">Read the source →</a>
+  <h3>2. Withdrawal studies on an AI advisor find the help doesn&rsquo;t fully evaporate &mdash; but only on one measure, and how often you pushed back against it predicts how well you do alone.</h3>
+  <p>A preprint ran two preregistered experiments (N=200, n=198) in a simulated factory task, with and without an LLM advisor, then measured unaided performance after withdrawal. Previously-supported participants beat controls when scored against repeating their earlier choices &mdash; but not against the task&rsquo;s defaults &mdash; and the strongest predictor of good unaided performance was how often someone had overridden the AI while it was available.</p>
+  <p>Evaluating an advisor on with-assistance performance alone hides whether anything durable was learned; override frequency is a cheap leading indicator of what sticks.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.00163">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Claude Sonnet 5.5 quietly changed what a streaming agent UI shows between tool calls &mdash; most will go silent unless someone catches it first.</h3>
-  <p>Anthropic&rsquo;s own docs state it plainly: text that used to stream between tool calls now defaults into <code>thinking</code> blocks, so &ldquo;an application that streams that text to its users goes quiet between tool calls&rdquo; unless it explicitly sets a <code>display</code> value or turns off up-front thinking. This is a concrete pre-upgrade audit item, not a benchmark change.</p>
-  <p>Any product that used visible intermediate reasoning as a liveness signal during tool use needs to check this before flipping the model. Ships with 1M context, 128K max output, $2/$10 per million tokens.</p>
-  <a class="btn" href="https://platform.claude.com/docs/en/models/sonnet-5-5/overview">Read the source →</a>
+  <h3>3. A field deployment of a home reminder robot finds families want it to interrupt them unasked, and that failing silently is worse than failing loudly.</h3>
+  <p>Researchers co-designed a reminder system with 10 families, then deployed it in 8 homes for four days with a modified Temi robot. Of 77 delivered reminders, 49 were triggered proactively by the robot noticing something via vision; the rest were users checking in on a screen. Families preferred proactive delivery &mdash; one parent said it &ldquo;took some of the emotion out of it.&rdquo; The sharper finding is about failure: the robot&rsquo;s navigation often failed silently, and families didn&rsquo;t realize anything was wrong until much later, which frustrated them more than an obvious failure would have.</p>
+  <p>Two decisions for in-home agents: default to proactive, sensor-triggered delivery over a passive check-in screen, and build explicit help-seeking behavior &mdash; a quiet failure is the worse one.</p>
+  <a class="btn" href="https://arxiv.org/abs/2602.22628">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Making a companion robot feel eerier also made it more likeable &mdash; the &ldquo;safe&rdquo; choice, abstract vibration, is the empirically weaker one.</h3>
-  <p>A within-subjects study (n=42) on the PARO robot compared no haptics, abstract vibration, and bio-physiological cues &mdash; heartbeat, purring, warmth. Bio-mimetic cues significantly increased perceived anthropomorphism, social warmth and likeability over both other conditions, even though they also measurably increased eeriness.</p>
-  <p>The authors call it the first empirical evidence that lifelike tactile cues enhance perceptions of a social robot &mdash; reframing the haptic-channel decision for any touch-surfaced embodied agent: the uncanny bump doesn&rsquo;t need designing away if it&rsquo;s buying warmth and likeability.</p>
-  <a class="btn" href="https://eprints.gla.ac.uk/383409/1/383409.pdf">Read the source →</a>
+  <h3>4. Superhuman killed &ldquo;every integration is its own chatbot&rdquo; and said why.</h3>
+  <p>Superhuman&rsquo;s Packs SDK blog documents walking back its original architecture, where every connected app surfaced as its own chattable agent. In their words: &ldquo;we found that the approach didn&rsquo;t scale to more complex use cases, where an agent needs to work across multiple applications and services.&rdquo; The fix: integrations now surface as connectors &mdash; bundles of tools, data and skills &mdash; composed by a separate orchestrating agent, rather than forcing users between per-integration chat panels. Three old APIs are deprecated outright.</p>
+  <p>A concrete, stated-reasoning retreat from a popular multi-app agent pattern, six weeks old but durable as a design argument.</p>
+  <a class="btn" href="https://docs.superhuman.com/packs/build/latest/blog/archive/2026/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A scheduling fix, not new hardware, cuts full-duplex voice&rsquo;s timing failures roughly 7x while running faster and using less memory.</h3>
-  <p>DuplexCadence targets the exact failure mode that makes &ldquo;listen while speaking&rdquo; voice interfaces feel broken &mdash; speaking past the natural turn-taking window. Across four released full-duplex models and three decoder architectures, it drops the share of SPEAK turns overrunning the one-second cadence budget from 14% to 2%, while running at 2.85x stock-runtime speed, using 38.8% less peak memory, and producing bit-for-bit identical output.</p>
-  <p>Preprint, unreplicated &mdash; but if it holds, it&rsquo;s the difference between budgeting new compute for natural interrupt-capable voice and just fixing the scheduler on what already ships.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.35115">Read the source →</a>
+  <h3>5. shadcn/ui shipped a standard way to script and test human-in-the-loop approval flows.</h3>
+  <p>The changelog describes a helper that can &ldquo;mock human-in-the-loop flows for the AI SDK&rdquo; &mdash; a scripted conversation that pauses for real input, waits on an approval, and resumes with whatever the user decided, streaming through the same lifecycle production chat uses. It ships with a <code>needsApproval</code> parameter as a first-class, testable primitive.</p>
+  <p>Infrastructure, not a feature announcement: it standardizes the vocabulary for an approval/pause state at the design-system level, independent of which model sits behind the product.</p>
+  <a class="btn" href="https://ui.shadcn.com/docs/changelog/2026-08-helpers-human-in-the-loop">Read the source →</a>
 </div>
 
-<h2>Yesterday&rsquo;s dossier</h2>
+<h2>This week</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item led with a year-long CHI Best Paper study naming &ldquo;intuition rust&rdquo; &mdash; AI quietly dulling expert judgment in oncology. Today&rsquo;s dossier found the paper is qualitative, not the measured trajectory the digest implied: the n=42 is 34 clinicians plus 8 administrators, not &ldquo;oncologists,&rdquo; and the only quantitative figure in it is an unsourced &ldquo;~15% faster.&rdquo; The surrounding measurement literature doesn&rsquo;t corroborate the claimed trajectory &mdash; it shows the trajectory hasn&rsquo;t been measured: the one positive retrospective result is matched by a true withdrawal study of 13 endoscopists across 5,013 colonoscopies finding no upskilling or deskilling, the largest dataset in existence (~334,000 colonoscopies) calling the question &ldquo;undetermined,&rdquo; and a software-outage natural experiment running the opposite direction. What is robustly measured sits one layer down &mdash; in-the-moment anchoring on AI suggestions &mdash; and the paper&rsquo;s real contribution is a set of instrumentable behavioral residues and a disclosure constraint on the telemetry that would detect them, not the eroding-skill trajectory it was read for.</p>
-  <p class="dossier-path">dossiers/2026-09-30-intuition-rust-is-a-quote-not-a-measurement.md</p>
+  <p>Three patterns from this week&rsquo;s synthesis:</p>
+  <p><strong>The human-facing autonomy dial doesn&rsquo;t really exist &mdash; the working control is a visible boundary on the tool&rsquo;s scope.</strong> Across Cursor, Google&rsquo;s Team Agent, a four-UI oversight study, Linear and Adobe, every attempt at an adjustable &ldquo;how much autonomy&rdquo; setting was inert, never built, or quietly moved to the machine side. What works is a typed, displayed, revertible scope &mdash; withheld wherever that scope can&rsquo;t be shown, because the measured failure mode is a grant whose class the system computed but never displayed.</p>
+  <p><strong>This week&rsquo;s loudest &ldquo;AI erodes expert skill&rdquo; claims rest on quotes and null results, not measurement.</strong> The CHI Best Paper&rsquo;s &ldquo;intuition rust&rdquo; is a participant&rsquo;s phrase, not a trend; a widely-cited &ldquo;productivity-experience paradox&rdquo; reports a non-significant result (p=.195) as if established; a true withdrawal study of 13 endoscopists across 5,013 procedures found no measurable change at all. The defensible client-room deliverable is a seeded-probe or behavioral-residue instrument, not the erosion story itself.</p>
+  <p><strong>The same chat interface produces different use patterns by country, and the dominant &ldquo;AI as oracle&rdquo; framing is itself US-centric.</strong> A four-country ChatGPT study found self-expression use rising while delegation stayed flat, split by topic per country; a Japanese government survey found a reference-tool-authority model displacing the US&rsquo;s friend/counselor framing entirely. No Thai sample exists anywhere in the corpus yet &mdash; named here, not papered over.</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -156,25 +158,21 @@
 <div class="item run-notes">
   <p><strong>Verified but below the 5-item cap this cycle (do not resubmit unchanged):</strong></p>
   <ul>
-    <li>ReCAP cuts agent memory-compaction latency ~95% while halving per-call context, no additional model calls for selection (single-source preprint). <a href="https://arxiv.org/abs/2609.40118">arxiv.org/abs/2609.40118</a></li>
-    <li>ProVoice: VR driving simulator uses Bayesian optimization (N=19, Pareto front, not a threshold) to decide when an in-car voice assistant should speak &mdash; CHI &rsquo;26. <a href="https://arxiv.org/abs/2601.19421">arxiv.org/abs/2601.19421</a></li>
-    <li>TaFall: passive thermal-array fall detection, 27-day field test across four homes, no camera, $18.35 hardware, 0.00126% real-home false-alarm rate (single-source preprint). <a href="https://arxiv.org/abs/2604.09693">arxiv.org/abs/2604.09693</a></li>
-    <li>Large representative US survey (N=1,503, Google): high public awareness of GenAI mistakes, people already check output against outside sources (single-source). <a href="https://arxiv.org/abs/2609.38186">arxiv.org/abs/2609.38186</a></li>
-    <li>[Update] JILLA institutional-ask ranking: AI-disclosure labeling a distant third (174 mentions) behind copyright protection (299) and government advocacy (248) (single-source, Japanese-language). <a href="https://jilla.or.jp/2026/04/14762">jilla.or.jp/2026/04/14762</a></li>
-    <li>Diptych: AI-interpreted reference-listening comparison names a control-surface principle for creative-critique tools &mdash; scope to user selection, inspectable evidence, withhold authoritative verdicts (single-source). <a href="https://arxiv.org/abs/2609.39963">arxiv.org/abs/2609.39963</a></li>
-    <li>A 357-robot audit plus a co-design study (n=12) and online pilot (n=89) turn undesigned &ldquo;informational&rdquo; robot screens into a design space and guidelines &mdash; HRI &rsquo;26 (abstract-verified, single-source). <a href="https://doi.org/10.1145/3757279.3785557">doi.org/10.1145/3757279.3785557</a></li>
-    <li>Figma puts its design agent on the canvas, not in a chat panel &mdash; &ldquo;you shouldn&rsquo;t have to choose&rdquo; between prompting and direct manipulation (single-source, vendor-primary). <a href="https://figma.com/blog/the-figma-agent-is-here/">figma.com/blog/the-figma-agent-is-here</a></li>
-    <li>[Lead, track only] Inline typed annotations as a provenance/authoring-transaction log, proposed as an alternative to a chat-history sidebar &mdash; single-author system paper, too thin to cite as validated. <a href="https://arxiv.org/abs/2609.40126">arxiv.org/abs/2609.40126</a></li>
+    <li>LongHarness Bench: the same model&rsquo;s efficiency diverges sharply by harness, not just by model (single-source) &mdash; &ldquo;the best reaches 68% macro-average accuracy across four evaluation suites... the same underlying model can exhibit markedly different efficiency under different harnesses.&rdquo; <a href="https://arxiv.org/abs/2609.38137">arxiv.org/abs/2609.38137</a></li>
+    <li>[Corrected] OpenAI&rsquo;s Ultrafast tier: 300 tokens/second in Codex (up to 8x), up to 6x in the API, at 6x price &mdash; $60/$300 per million tokens for GPT-6 Astra, bundled with $500/month Pro 500. Ratio claims verbatim-confirmed; the absolute-time figures originally claimed did not appear in any cited source and were dropped. The Decoder, 2026-09-29.</li>
+    <li>[Corrected] OpenAI&rsquo;s Decisions API: &ldquo;ten times faster than GPT-6 Luna does through the regular API&rdquo; &mdash; the originally claimed millisecond figures do not appear in any cited source and were dropped; only the 10x ratio is verbatim-confirmed.</li>
+    <li>Google&rsquo;s Agent Skills architecture: progressive disclosure cuts baseline context ~90% vs. a monolithic system prompt. Google Developers Blog, 2026-04-01; six months old, kept for a stated durability reason, ranked at the bottom of the surviving pool.</li>
   </ul>
-  <p><strong>Lanes producing thin or nothing:</strong> none &mdash; all four lanes placed at least one verified survivor this cycle. Lane survival: interaction 5 of 5 (one carried only as a tracked lead); capability 3 of 4; practice 2 of 5 (the two above missed the cap on rank); ambient 4 of 4 &mdash; a strong, non-padded day for the thinnest lane.</p>
+  <p><strong>Lanes producing thin or nothing:</strong> the capability lane returned zero items in today&rsquo;s published top 5 &mdash; not a scope failure. Three of its four submissions cleared verification (listed above), but two of those three needed correction after carrying a precise, highly quotable absolute-latency or absolute-time figure attributed to a named source that does not exist in any of the independently-fetched citing sources &mdash; only the ratio claims (10x, 8x, 6x) checked out verbatim across all three. A fourth submission (&ldquo;OpenAI&rsquo;s Agents API scores 64.2% on OSWorld 2.0&rdquo;) was killed outright: neither cited source contains &ldquo;OSWorld&rdquo; or &ldquo;64.2&rdquo; anywhere in the page text &mdash; a fabricated benchmark figure, not a correctable one. This is a hallucination-detection catch, not a scope failure: raw-fetch/quote-grounding discipline is being flagged to extend past Japanese/government pages to any item carrying a suspiciously precise absolute number attributed to a press report of a vendor event.</p>
   <p><strong>Kills worth attention:</strong></p>
   <ul>
-    <li>Vercel&rsquo;s design.md item (the 39-vs-91-failures figure) was killed as a duplicate &mdash; identical URL and figures, already published and re-cited in the week-36 synthesis.</li>
-    <li>The Japan Freelance League survey (N=24,991) was killed as a duplicate of a prior explicit kill, same source and figures, no new angle.</li>
-    <li>Linear exposing model-routing as an admin control was killed for generic relevance &mdash; no stated tradeoff, no rejected alternative, no design reasoning &mdash; unlike the Linear tool-harness item already in the corpus, which survives because it argues one.</li>
-    <li>GPT-6.1 Sol&rsquo;s 272K-token pricing cliff and discounted cache reads were killed as a duplicate of an already-delivered lesson: the same billing-cliff mechanism has now run on sibling model GPT-6 Astra on five consecutive weekly cycles.</li>
+    <li>A Korean-classroom AI writing-scaffold study was killed as a duplicate of an item already published.</li>
+    <li>&ldquo;OpenAI&rsquo;s Agents API scores 64.2% on OSWorld 2.0&rdquo; was killed as unsupported/fabricated &mdash; neither cited source contains that figure anywhere in the page text.</li>
+    <li>A &ldquo;Notion kills its email client&rdquo; story was killed as a duplicate &mdash; same facts, different outlet.</li>
+    <li>A browser-folds-back-into-chat story was killed as a duplicate already published multiple times.</li>
+    <li>A gaze-redirection-robot study was killed as a third submission of the same already-published paper.</li>
   </ul>
-  <p><strong>Pipeline-mechanics call, decided directly this run rather than routed to a question:</strong> the fifth consecutive week of a GPT-6-family pricing-cliff item being resubmitted under a new model name and killed as a near-duplicate is a dedupe-methodology gap, not a research-direction question. Recommending the next monthly pipeline audit treat &ldquo;same underlying mechanism, new model name&rdquo; as its own dedupe category. Separately, an extended workaround for ACM DL&rsquo;s Cloudflare block &mdash; the Semantic Scholar Graph API returning a full verbatim abstract where the Crossref API alone (bibliographic metadata only) was insufficient &mdash; worked cleanly this cycle and is being recommended as a standing secondary route.</p>
+  <p><strong>Lane tallies this cycle:</strong> interaction 3 of 4 survive (1 duplicate killed); capability 3 of 4 survive but none reached the published cap (2 corrected down, 1 killed for a fabricated figure); practice 3 of 5 survive (2 duplicates killed); ambient 1 of 2 survives (1 duplicate killed). No lane returned verifier-empty, but the capability lane&rsquo;s hallucinated figures are the most serious single defect this cycle.</p>
 </div>
 
 <footer>
