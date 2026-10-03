@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-02</title>
+<title>Limen — 2026-10-03</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -78,72 +78,71 @@
     border-top: 1px solid var(--border);
     margin: 2.25rem 0;
   }
-  .run-notes p { color: var(--muted); font-size: 0.95rem; }
-  .run-notes li { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
+  .gate-row { font-size: 1rem; margin-bottom: 0.9rem; }
+  .gate-note { color: var(--muted); font-size: 0.95rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-02</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-10-03</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A controlled study finds that understanding how an AI writing assistant works can make you worse at catching its mistakes.</h3>
-  <p>An N=48 CHI 2026 lab study gave participants different mental models of an AI writing assistant. The group given the deeper &ldquo;structural&rdquo; model understood the system better and rated it more usable &mdash; but produced letters with more grammatical errors slipping through, because that same deeper understanding correlated with less scrutiny of its flawed suggestions. The authors call it a &ldquo;complex relationship between system understanding, trust, and control in contexts that require user oversight.&rdquo;</p>
-  <p>The read for practice: explaining &ldquo;how it works&rdquo; is not an error-catching mechanism. If a product needs real oversight, it needs an actual verification affordance, not a better explanation.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.05166">Read the source →</a>
+  <h3>1. Meta&rsquo;s Muse agent bundled &ldquo;share my address&rdquo; into a single &ldquo;Allow Always&rdquo; toggle &mdash; and sent a stranger to a seller&rsquo;s door. <em>[CONFLICT]</em></h3>
+  <p>A YouTuber let Muse run his Facebook Marketplace listings. It accepted a lowball offer on his keyboard and sent his home address to the buyer, who then showed up at his building. He says he&rsquo;d checked &ldquo;Allow Always&rdquo; believing it would still ask before accepting offers; Meta disputes this, saying Muse &ldquo;correctly asked for permission&rdquo; in similar cases. Both accounts are on record and this isn&rsquo;t resolved here.</p>
+  <p>The design lesson holds regardless of who&rsquo;s right: a bundled always-allow toggle is not a substitute for scoping consent by action. Disclosing an address and accepting a price are different decisions, and conflating them is the flaw.</p>
+  <a class="btn" href="https://thenextweb.com/news/meta-muse-facebook-marketplace-address-buyer-robb">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Withdrawal studies on an AI advisor find the help doesn&rsquo;t fully evaporate &mdash; but only on one measure, and how often you pushed back against it predicts how well you do alone.</h3>
-  <p>A preprint ran two preregistered experiments (N=200, n=198) in a simulated factory task, with and without an LLM advisor, then measured unaided performance after withdrawal. Previously-supported participants beat controls when scored against repeating their earlier choices &mdash; but not against the task&rsquo;s defaults &mdash; and the strongest predictor of good unaided performance was how often someone had overridden the AI while it was available.</p>
-  <p>Evaluating an advisor on with-assistance performance alone hides whether anything durable was learned; override frequency is a cheap leading indicator of what sticks.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.00163">Read the source →</a>
+  <h3>2. Replit is betting that a hand-built model router will always lose to letting the frontier model route itself.</h3>
+  <p>Its own blog argues routing logic &mdash; deciding which model handles which step &mdash; is scaffolding that each new model generation makes obsolete faster than you can tune it. The numbers it publishes: its coding agent clears 72% of tasks at $2.11 each on a baseline config, rising to 74% at $4.43 at higher effort, using the frontier model directly rather than a router choosing between models.</p>
+  <p>Worth testing against &mdash; most agentic cost-control architectures right now assume the opposite, that money is saved by routing cheap tasks to cheap models.</p>
+  <a class="btn" href="https://replit.com/blog/free-the-models">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A field deployment of a home reminder robot finds families want it to interrupt them unasked, and that failing silently is worse than failing loudly.</h3>
-  <p>Researchers co-designed a reminder system with 10 families, then deployed it in 8 homes for four days with a modified Temi robot. Of 77 delivered reminders, 49 were triggered proactively by the robot noticing something via vision; the rest were users checking in on a screen. Families preferred proactive delivery &mdash; one parent said it &ldquo;took some of the emotion out of it.&rdquo; The sharper finding is about failure: the robot&rsquo;s navigation often failed silently, and families didn&rsquo;t realize anything was wrong until much later, which frustrated them more than an obvious failure would have.</p>
-  <p>Two decisions for in-home agents: default to proactive, sensor-triggered delivery over a passive check-in screen, and build explicit help-seeking behavior &mdash; a quiet failure is the worse one.</p>
-  <a class="btn" href="https://arxiv.org/abs/2602.22628">Read the source →</a>
+  <h3>3. Occasionally speaking directly to a bystander beats both one-on-one persuasion and pure eavesdropping, in a Japanese multi-agent study.</h3>
+  <p>Keio University researchers ran a 66-person comparison of three conditions: a persuader talking straight at you, two agents talking to each other while you only overhear, and an overheard dialogue that occasionally breaks to address you directly. The last condition won on sense of ownership, self-determination, and actual behavior change &mdash; the highest selection rate for the pro-environmental action on offer.</p>
+  <p>Single-source and not peer-reviewed by the symposium&rsquo;s own convention, but it names a specific structural choice for any multi-agent ambient system trying to influence someone without lecturing them.</p>
+  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/html/paper/paper-G-33.html">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Superhuman killed &ldquo;every integration is its own chatbot&rdquo; and said why.</h3>
-  <p>Superhuman&rsquo;s Packs SDK blog documents walking back its original architecture, where every connected app surfaced as its own chattable agent. In their words: &ldquo;we found that the approach didn&rsquo;t scale to more complex use cases, where an agent needs to work across multiple applications and services.&rdquo; The fix: integrations now surface as connectors &mdash; bundles of tools, data and skills &mdash; composed by a separate orchestrating agent, rather than forcing users between per-integration chat panels. Three old APIs are deprecated outright.</p>
-  <p>A concrete, stated-reasoning retreat from a popular multi-app agent pattern, six weeks old but durable as a design argument.</p>
-  <a class="btn" href="https://docs.superhuman.com/packs/build/latest/blog/archive/2026/">Read the source →</a>
+  <h3>4. A faceless, screenless, silent object built for about $40 can still read as socially engaging.</h3>
+  <p>An HRI &rsquo;26 paper tested simple actuated &ldquo;robotic objects&rdquo; with no face, screen or voice across five settings &mdash; a co-design workshop, a sensory room, distribution to outside labs, a graduate course, and public exhibitions &mdash; and found they evoke social engagement anyway.</p>
+  <p>Single-source for now, but it bears directly on the build-vs-buy and form-factor decision for any low-stakes ambient-presence product: the thing doesn&rsquo;t have to look back at you to work.</p>
+  <a class="btn" href="https://arxiv.org/abs/2601.22381">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. shadcn/ui shipped a standard way to script and test human-in-the-loop approval flows.</h3>
-  <p>The changelog describes a helper that can &ldquo;mock human-in-the-loop flows for the AI SDK&rdquo; &mdash; a scripted conversation that pauses for real input, waits on an approval, and resumes with whatever the user decided, streaming through the same lifecycle production chat uses. It ships with a <code>needsApproval</code> parameter as a first-class, testable primitive.</p>
-  <p>Infrastructure, not a feature announcement: it standardizes the vocabulary for an approval/pause state at the design-system level, independent of which model sits behind the product.</p>
-  <a class="btn" href="https://ui.shadcn.com/docs/changelog/2026-08-helpers-human-in-the-loop">Read the source →</a>
+  <h3>5. Cloudflare shipped a classifier that returns a calibrated probability instead of generated text, at 38.8 milliseconds median latency.</h3>
+  <p>Clef-flash runs a 9B model and answers in 38.8ms; the larger base Clef model takes 209ms; a comparison model (Jev) takes 524ms. It&rsquo;s Apache 2.0 licensed with a 64k context window.</p>
+  <p>For anyone building an agent runtime, this is a usable primitive for act/escalate/fail-closed decisions that skips generative-call latency and non-determinism &mdash; it changes where a confidence threshold can live in a pipeline.</p>
+  <a class="btn" href="https://blog.cloudflare.com/clef-decision-models/">Read the source →</a>
 </div>
 
-<h2>This week</h2>
+<h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Three patterns from this week&rsquo;s synthesis:</p>
-  <p><strong>The human-facing autonomy dial doesn&rsquo;t really exist &mdash; the working control is a visible boundary on the tool&rsquo;s scope.</strong> Across Cursor, Google&rsquo;s Team Agent, a four-UI oversight study, Linear and Adobe, every attempt at an adjustable &ldquo;how much autonomy&rdquo; setting was inert, never built, or quietly moved to the machine side. What works is a typed, displayed, revertible scope &mdash; withheld wherever that scope can&rsquo;t be shown, because the measured failure mode is a grant whose class the system computed but never displayed.</p>
-  <p><strong>This week&rsquo;s loudest &ldquo;AI erodes expert skill&rdquo; claims rest on quotes and null results, not measurement.</strong> The CHI Best Paper&rsquo;s &ldquo;intuition rust&rdquo; is a participant&rsquo;s phrase, not a trend; a widely-cited &ldquo;productivity-experience paradox&rdquo; reports a non-significant result (p=.195) as if established; a true withdrawal study of 13 endoscopists across 5,013 procedures found no measurable change at all. The defensible client-room deliverable is a seeded-probe or behavioral-residue instrument, not the erosion story itself.</p>
-  <p><strong>The same chat interface produces different use patterns by country, and the dominant &ldquo;AI as oracle&rdquo; framing is itself US-centric.</strong> A four-country ChatGPT study found self-expression use rising while delegation stayed flat, split by topic per country; a Japanese government survey found a reference-tool-authority model displacing the US&rsquo;s friend/counselor framing entirely. No Thai sample exists anywhere in the corpus yet &mdash; named here, not papered over.</p>
+  <p>Yesterday&rsquo;s #1 item claimed a CHI &rsquo;26 study found that deeper understanding of an AI writing assistant made people worse at catching its errors. The dossier found the paper actually measured scrutiny directly &mdash; edit ratio, acceptance ratio, suggestion requests &mdash; and none of it moved; the &ldquo;more usable&rdquo; verdict rests on a single Likert item that fails the paper&rsquo;s own statistical correction.</p>
+  <p>The real pattern, echoing a better-powered 2021 CHI study the paper doesn&rsquo;t cite, is a clean split: interventions that lower the cost of checking one specific span of text reliably improve catching, while anything aimed at general understanding or vigilance does not. The EU AI Act&rsquo;s own literacy guidance, as of July 2026, still prescribes exactly the &ldquo;how it works&rdquo; intervention this literature keeps finding doesn&rsquo;t help.</p>
+  <p class="dossier-path">dossiers/2026-10-02-explanation-moved-what-they-felt-not-what-they-caught.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -153,26 +152,15 @@
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
-<h2>Run notes</h2>
+<h2>Gate</h2>
 
-<div class="item run-notes">
-  <p><strong>Verified but below the 5-item cap this cycle (do not resubmit unchanged):</strong></p>
-  <ul>
-    <li>LongHarness Bench: the same model&rsquo;s efficiency diverges sharply by harness, not just by model (single-source) &mdash; &ldquo;the best reaches 68% macro-average accuracy across four evaluation suites... the same underlying model can exhibit markedly different efficiency under different harnesses.&rdquo; <a href="https://arxiv.org/abs/2609.38137">arxiv.org/abs/2609.38137</a></li>
-    <li>[Corrected] OpenAI&rsquo;s Ultrafast tier: 300 tokens/second in Codex (up to 8x), up to 6x in the API, at 6x price &mdash; $60/$300 per million tokens for GPT-6 Astra, bundled with $500/month Pro 500. Ratio claims verbatim-confirmed; the absolute-time figures originally claimed did not appear in any cited source and were dropped. The Decoder, 2026-09-29.</li>
-    <li>[Corrected] OpenAI&rsquo;s Decisions API: &ldquo;ten times faster than GPT-6 Luna does through the regular API&rdquo; &mdash; the originally claimed millisecond figures do not appear in any cited source and were dropped; only the 10x ratio is verbatim-confirmed.</li>
-    <li>Google&rsquo;s Agent Skills architecture: progressive disclosure cuts baseline context ~90% vs. a monolithic system prompt. Google Developers Blog, 2026-04-01; six months old, kept for a stated durability reason, ranked at the bottom of the surviving pool.</li>
-  </ul>
-  <p><strong>Lanes producing thin or nothing:</strong> the capability lane returned zero items in today&rsquo;s published top 5 &mdash; not a scope failure. Three of its four submissions cleared verification (listed above), but two of those three needed correction after carrying a precise, highly quotable absolute-latency or absolute-time figure attributed to a named source that does not exist in any of the independently-fetched citing sources &mdash; only the ratio claims (10x, 8x, 6x) checked out verbatim across all three. A fourth submission (&ldquo;OpenAI&rsquo;s Agents API scores 64.2% on OSWorld 2.0&rdquo;) was killed outright: neither cited source contains &ldquo;OSWorld&rdquo; or &ldquo;64.2&rdquo; anywhere in the page text &mdash; a fabricated benchmark figure, not a correctable one. This is a hallucination-detection catch, not a scope failure: raw-fetch/quote-grounding discipline is being flagged to extend past Japanese/government pages to any item carrying a suspiciously precise absolute number attributed to a press report of a vendor event.</p>
-  <p><strong>Kills worth attention:</strong></p>
-  <ul>
-    <li>A Korean-classroom AI writing-scaffold study was killed as a duplicate of an item already published.</li>
-    <li>&ldquo;OpenAI&rsquo;s Agents API scores 64.2% on OSWorld 2.0&rdquo; was killed as unsupported/fabricated &mdash; neither cited source contains that figure anywhere in the page text.</li>
-    <li>A &ldquo;Notion kills its email client&rdquo; story was killed as a duplicate &mdash; same facts, different outlet.</li>
-    <li>A browser-folds-back-into-chat story was killed as a duplicate already published multiple times.</li>
-    <li>A gaze-redirection-robot study was killed as a third submission of the same already-published paper.</li>
-  </ul>
-  <p><strong>Lane tallies this cycle:</strong> interaction 3 of 4 survive (1 duplicate killed); capability 3 of 4 survive but none reached the published cap (2 corrected down, 1 killed for a fabricated figure); practice 3 of 5 survive (2 duplicates killed); ambient 1 of 2 survives (1 duplicate killed). No lane returned verifier-empty, but the capability lane&rsquo;s hallucinated figures are the most serious single defect this cycle.</p>
+<div class="item">
+  <p>Two drafts are open, awaiting a decision:</p>
+  <p class="gate-row"><strong>DRAFT-KB-10</strong> &mdash; the scope of a standing grant is a display obligation. Review: 1 block, 4 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-11</strong> &mdash; erosion claims vs the seeded-probe and residue-telemetry spec. Review: 1 block, 6 objections.</p>
+  <p class="gate-note">Tell Claude the decision, e.g. &ldquo;promote KB-05&rdquo; &mdash; or edit the gate file directly.</p>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
+  <p class="gate-note">A backlog item raised from one draft&rsquo;s own gap is still queued, unchanged this week.</p>
 </div>
 
 <footer>
