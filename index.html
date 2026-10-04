@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-03</title>
+<title>Limen — 2026-10-04</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -80,69 +80,67 @@
   }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
-  .gate-row { font-size: 1rem; margin-bottom: 0.9rem; }
-  .gate-note { color: var(--muted); font-size: 0.95rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-03</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-04</p>
+  <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Meta&rsquo;s Muse agent bundled &ldquo;share my address&rdquo; into a single &ldquo;Allow Always&rdquo; toggle &mdash; and sent a stranger to a seller&rsquo;s door. <em>[CONFLICT]</em></h3>
-  <p>A YouTuber let Muse run his Facebook Marketplace listings. It accepted a lowball offer on his keyboard and sent his home address to the buyer, who then showed up at his building. He says he&rsquo;d checked &ldquo;Allow Always&rdquo; believing it would still ask before accepting offers; Meta disputes this, saying Muse &ldquo;correctly asked for permission&rdquo; in similar cases. Both accounts are on record and this isn&rsquo;t resolved here.</p>
-  <p>The design lesson holds regardless of who&rsquo;s right: a bundled always-allow toggle is not a substitute for scoping consent by action. Disclosing an address and accepting a price are different decisions, and conflating them is the flaw.</p>
-  <a class="btn" href="https://thenextweb.com/news/meta-muse-facebook-marketplace-address-buyer-robb">Read the source →</a>
+  <h3>1. A new ACM journal paper names &ldquo;omnirelevance&rdquo; &mdash; the background risk, present in every turn of talk, that anything a person says near a voice agent might get wrongly treated as a command.</h3>
+  <p>A peer-reviewed study in ACM&rsquo;s Transactions on Computer-Human Interaction gives a name to something every voice-interface designer has half-noticed: people talking near a voice agent manage their speech around the constant possibility that anything they say might be picked up and acted on. It&rsquo;s a structural finding about the interaction itself, not a claim about any particular model, so it should outlast the usual shelf life of a capability claim.</p>
+  <p>The practical upshot: explicit addressivity cues &mdash; a clear wake behavior, gaze, push-to-talk &mdash; aren&rsquo;t polish, they&rsquo;re relief for a real and currently unpaid cost users carry every time they open their mouth near a live mic.</p>
+  <a class="btn" href="https://arxiv.org/abs/2510.22610">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Replit is betting that a hand-built model router will always lose to letting the frontier model route itself.</h3>
-  <p>Its own blog argues routing logic &mdash; deciding which model handles which step &mdash; is scaffolding that each new model generation makes obsolete faster than you can tune it. The numbers it publishes: its coding agent clears 72% of tasks at $2.11 each on a baseline config, rising to 74% at $4.43 at higher effort, using the frontier model directly rather than a router choosing between models.</p>
-  <p>Worth testing against &mdash; most agentic cost-control architectures right now assume the opposite, that money is saved by routing cheap tasks to cheap models.</p>
-  <a class="btn" href="https://replit.com/blog/free-the-models">Read the source →</a>
+  <h3>2. Graphical visualizations of an LLM&rsquo;s reasoning help people judge when to trust it on verbal tasks, and actively hurt that judgment on visual tasks &mdash; the opposite of what users say they prefer.</h3>
+  <p>A 204-person UIST 2026 study tested showing a visual map of an LLM&rsquo;s rationale instead of text. On verbal-reasoning tasks the graphic improved correct trust calibration, even though users found it more mentally taxing and less satisfying to use; on visual-reasoning tasks it did the opposite &mdash; people liked it more and judged worse.</p>
+  <p>That mismatch between stated preference and actual accuracy argues against shipping one rationale-visualization pattern universally; the right call is to gate it by task modality.</p>
+  <a class="btn" href="https://arxiv.org/abs/2608.27932">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Occasionally speaking directly to a bystander beats both one-on-one persuasion and pure eavesdropping, in a Japanese multi-agent study.</h3>
-  <p>Keio University researchers ran a 66-person comparison of three conditions: a persuader talking straight at you, two agents talking to each other while you only overhear, and an overheard dialogue that occasionally breaks to address you directly. The last condition won on sense of ownership, self-determination, and actual behavior change &mdash; the highest selection rate for the pro-environmental action on offer.</p>
-  <p>Single-source and not peer-reviewed by the symposium&rsquo;s own convention, but it names a specific structural choice for any multi-agent ambient system trying to influence someone without lecturing them.</p>
-  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/html/paper/paper-G-33.html">Read the source →</a>
+  <h3>3. Showing researchers exactly which evidence backs an AI&rsquo;s edit lowered how much they trusted it &mdash; but didn&rsquo;t change whether they relied on it.</h3>
+  <p>Twenty-six researchers used a prototype (&ldquo;PaperTrail&rdquo;) that traces each AI-suggested edit to its scholarly source. It worked in the narrow sense of lowering stated trust significantly. But that lowered trust never showed up in behavior &mdash; people kept accepting the edits anyway, because actually checking them stayed the cognitively expensive option.</p>
+  <p>A provenance or citation layer can move what people say they believe without moving what they do; it needs a verification step bolted to it, not just a transparency one.</p>
+  <a class="btn" href="https://arxiv.org/abs/2602.21045">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A faceless, screenless, silent object built for about $40 can still read as socially engaging.</h3>
-  <p>An HRI &rsquo;26 paper tested simple actuated &ldquo;robotic objects&rdquo; with no face, screen or voice across five settings &mdash; a co-design workshop, a sensory room, distribution to outside labs, a graduate course, and public exhibitions &mdash; and found they evoke social engagement anyway.</p>
-  <p>Single-source for now, but it bears directly on the build-vs-buy and form-factor decision for any low-stakes ambient-presence product: the thing doesn&rsquo;t have to look back at you to work.</p>
-  <a class="btn" href="https://arxiv.org/abs/2601.22381">Read the source →</a>
+  <h3>4. Anthropic&rsquo;s new &ldquo;mods&rdquo; system gives third-party Claude Code extensions the same unrestricted machine access Claude Code itself has &mdash; no sandbox, by design.</h3>
+  <p>The stated reasoning is structural: the existing hook system can&rsquo;t rewrite events, draw new UI, or replace features outright, and mods need to do exactly that &mdash; sandboxing would have meant shipping a weaker extension surface.</p>
+  <p>It&rsquo;s a clean, named tradeoff of capability over containment, worth studying as a precedent for how far to let third-party code reach into an agent runtime. Anthropic states &ldquo;install only from sources you trust&rdquo; as the actual safety boundary, not any technical one.</p>
+  <a class="btn" href="https://claude.com/blog/claude-code-mods">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Cloudflare shipped a classifier that returns a calibrated probability instead of generated text, at 38.8 milliseconds median latency.</h3>
-  <p>Clef-flash runs a 9B model and answers in 38.8ms; the larger base Clef model takes 209ms; a comparison model (Jev) takes 524ms. It&rsquo;s Apache 2.0 licensed with a 64k context window.</p>
-  <p>For anyone building an agent runtime, this is a usable primitive for act/escalate/fail-closed decisions that skips generative-call latency and non-determinism &mdash; it changes where a confidence threshold can live in a pipeline.</p>
-  <a class="btn" href="https://blog.cloudflare.com/clef-decision-models/">Read the source →</a>
+  <h3>5. People don&rsquo;t forgive AI mistakes more easily on tasks that look hard than on tasks that look easy &mdash; the difficulty framing buys nothing.</h3>
+  <p>A preregistered study of 577 people confirmed the obvious half: more observed errors reduce use. But difficulty framing turned out not to matter at all &mdash; easy-task failures hurt trust just as much as hard-task ones.</p>
+  <p>That&rsquo;s a clean argument for building friction and disclosure budgets around the actual observed error rate, not around how difficult a task appears to be.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.04319">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item claimed a CHI &rsquo;26 study found that deeper understanding of an AI writing assistant made people worse at catching its errors. The dossier found the paper actually measured scrutiny directly &mdash; edit ratio, acceptance ratio, suggestion requests &mdash; and none of it moved; the &ldquo;more usable&rdquo; verdict rests on a single Likert item that fails the paper&rsquo;s own statistical correction.</p>
-  <p>The real pattern, echoing a better-powered 2021 CHI study the paper doesn&rsquo;t cite, is a clean split: interventions that lower the cost of checking one specific span of text reliably improve catching, while anything aimed at general understanding or vigilance does not. The EU AI Act&rsquo;s own literacy guidance, as of July 2026, still prescribes exactly the &ldquo;how it works&rdquo; intervention this literature keeps finding doesn&rsquo;t help.</p>
-  <p class="dossier-path">dossiers/2026-10-02-explanation-moved-what-they-felt-not-what-they-caught.md</p>
+  <p>Yesterday&rsquo;s #1 item &mdash; Meta&rsquo;s Muse agent disclosing a user&rsquo;s address after a disputed &ldquo;Allow Always&rdquo; toggle &mdash; gets substantially corrected here. The four-outlet corroboration the digest credited turns out to be one reporting chain through a single working outlet plus an aggregation tail, not four independent accounts. Meta&rsquo;s only on-record statement was a decline to comment; the &ldquo;correctly asked for permission&rdquo; line was about separate past reports, not this incident.</p>
+  <p>The digest&rsquo;s own proposed fix &mdash; replace the single toggle with per-action-class consent &mdash; is contradicted by the one preregistered test of exactly that design, where users set &ldquo;ask&rdquo; on most rules and then approved nearly all the overreach actions that triggered anyway. What the evidence actually supports is a scoped standing grant plus a real inhibiting delay at the moment of crossing it, not finer-grained prompting.</p>
+  <p class="dossier-path">dossiers/2026-10-03-the-axis-was-wrong-not-the-granularity.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -150,17 +148,6 @@
 <div class="item question">
   <p><strong>2026-09-29 / dossier-writer:</strong> Should the lanes actively mine the 1970s&ndash;90s human-factors automation literature (Bainbridge, Sheridan, Parasuraman, Endsley), given today&rsquo;s dossier found it already holds measured answers that current AI-interaction papers rediscover uncited?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-</div>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p>Two drafts are open, awaiting a decision:</p>
-  <p class="gate-row"><strong>DRAFT-KB-10</strong> &mdash; the scope of a standing grant is a display obligation. Review: 1 block, 4 objections.</p>
-  <p class="gate-row"><strong>DRAFT-KB-11</strong> &mdash; erosion claims vs the seeded-probe and residue-telemetry spec. Review: 1 block, 6 objections.</p>
-  <p class="gate-note">Tell Claude the decision, e.g. &ldquo;promote KB-05&rdquo; &mdash; or edit the gate file directly.</p>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
-  <p class="gate-note">A backlog item raised from one draft&rsquo;s own gap is still queued, unchanged this week.</p>
 </div>
 
 <footer>
