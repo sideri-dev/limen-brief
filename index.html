@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-04</title>
+<title>Limen — 2026-10-05</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -58,6 +58,7 @@
     margin: 0 0 0.75rem;
     font-weight: 700;
   }
+  .item .tag { color: var(--muted); font-size: 0.9rem; font-weight: 500; display: block; margin: -0.5rem 0 0.75rem; }
   .item p { margin: 0 0 0.9rem; }
   .btn {
     display: block;
@@ -86,67 +87,69 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-04</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-10-05</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A new ACM journal paper names &ldquo;omnirelevance&rdquo; &mdash; the background risk, present in every turn of talk, that anything a person says near a voice agent might get wrongly treated as a command.</h3>
-  <p>A peer-reviewed study in ACM&rsquo;s Transactions on Computer-Human Interaction gives a name to something every voice-interface designer has half-noticed: people talking near a voice agent manage their speech around the constant possibility that anything they say might be picked up and acted on. It&rsquo;s a structural finding about the interaction itself, not a claim about any particular model, so it should outlast the usual shelf life of a capability claim.</p>
-  <p>The practical upshot: explicit addressivity cues &mdash; a clear wake behavior, gaze, push-to-talk &mdash; aren&rsquo;t polish, they&rsquo;re relief for a real and currently unpaid cost users carry every time they open their mouth near a live mic.</p>
-  <a class="btn" href="https://arxiv.org/abs/2510.22610">Read the source →</a>
+  <h3>1. Anthropic&rsquo;s own usage data says per-action approval stops working as agent users gain experience &mdash; continuous monitoring plus interrupt is what replaces it.</h3>
+  <p>Anthropic&rsquo;s telemetry across real Claude Code usage finds 73% of tool calls already have some human in the loop, yet only 0.8% of all actions are irreversible &mdash; so most of what gets approved didn&rsquo;t strictly need gating. The sharper finding is behavioral: as people get more experienced with an agent, they don&rsquo;t approve every action more carefully, they auto-approve more while also intervening more &mdash; shifting from gatekeeping to supervision.</p>
+  <p>That&rsquo;s a direct argument against the default &ldquo;insert an approval modal before every action&rdquo; pattern baked into most agentic UIs; the oversight mechanism that survives contact with real use is visibility plus the ability to interrupt, not a checkpoint on every step.</p>
+  <a class="btn" href="https://www.anthropic.com/news/measuring-agent-autonomy">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Graphical visualizations of an LLM&rsquo;s reasoning help people judge when to trust it on verbal tasks, and actively hurt that judgment on visual tasks &mdash; the opposite of what users say they prefer.</h3>
-  <p>A 204-person UIST 2026 study tested showing a visual map of an LLM&rsquo;s rationale instead of text. On verbal-reasoning tasks the graphic improved correct trust calibration, even though users found it more mentally taxing and less satisfying to use; on visual-reasoning tasks it did the opposite &mdash; people liked it more and judged worse.</p>
-  <p>That mismatch between stated preference and actual accuracy argues against shipping one rationale-visualization pattern universally; the right call is to gate it by task modality.</p>
-  <a class="btn" href="https://arxiv.org/abs/2608.27932">Read the source →</a>
+  <h3>2. GitHub rebuilt its pull-request review renderer because AI-scale PRs broke the obvious approach &mdash; a per-block ResizeObserver that can retrigger itself under its own output.</h3>
+  <p>Stress-tested against a 2,200-file, million-plus-line, 400-comment PR, GitHub&rsquo;s team designed and then rejected the straightforward fix &mdash; one ResizeObserver watching each collapsible block &mdash; because an observer that writes height back into layout can retrigger itself, and that cost compounds with every mounted block. The shipped replacement splits rendering into two virtualized domains instead.</p>
+  <p>It&rsquo;s a concrete, named architectural decision, not a feature post, for any review surface that now has to survive pull requests an order of magnitude larger than anything a human alone would generate.</p>
+  <a class="btn" href="https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Showing researchers exactly which evidence backs an AI&rsquo;s edit lowered how much they trusted it &mdash; but didn&rsquo;t change whether they relied on it.</h3>
-  <p>Twenty-six researchers used a prototype (&ldquo;PaperTrail&rdquo;) that traces each AI-suggested edit to its scholarly source. It worked in the narrow sense of lowering stated trust significantly. But that lowered trust never showed up in behavior &mdash; people kept accepting the edits anyway, because actually checking them stayed the cognitively expensive option.</p>
-  <p>A provenance or citation layer can move what people say they believe without moving what they do; it needs a verification step bolted to it, not just a transparency one.</p>
-  <a class="btn" href="https://arxiv.org/abs/2602.21045">Read the source →</a>
+  <h3>3. A service robot that lies and gets lucky doesn&rsquo;t get forgiven the way a human would &mdash; people hold it to an outcome-independent honesty standard, at least in adversarial complaint contexts.</h3>
+  <span class="tag">(single-source, not peer-reviewed)</span>
+  <p>A Japanese HAI Symposium study ran two between-subjects scenarios (N=150 and N=156) where a dishonest statement either turned out true or false. For a human who told the same lie, blame dropped sharply once the lie came true; for a robot making the identical statement, blame stayed flat and ran significantly higher than the human&rsquo;s, specifically in the adversarial complaint scenario.</p>
+  <p>Don&rsquo;t design a complaint-handling or customer-facing agent assuming a lie that &ldquo;worked out&rdquo; will be forgiven the way it would for a person &mdash; keep the agent&rsquo;s statements honest regardless of outcome, especially wherever the interaction is already adversarial.</p>
+  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/G-13.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Anthropic&rsquo;s new &ldquo;mods&rdquo; system gives third-party Claude Code extensions the same unrestricted machine access Claude Code itself has &mdash; no sandbox, by design.</h3>
-  <p>The stated reasoning is structural: the existing hook system can&rsquo;t rewrite events, draw new UI, or replace features outright, and mods need to do exactly that &mdash; sandboxing would have meant shipping a weaker extension surface.</p>
-  <p>It&rsquo;s a clean, named tradeoff of capability over containment, worth studying as a precedent for how far to let third-party code reach into an agent runtime. Anthropic states &ldquo;install only from sources you trust&rdquo; as the actual safety boundary, not any technical one.</p>
-  <a class="btn" href="https://claude.com/blog/claude-code-mods">Read the source →</a>
+  <h3>4. A companion robot&rsquo;s over-proximity reads as intrusive no matter how close the relationship is supposed to be &mdash; relationship depth moves the minimum comfortable distance, not the ceiling for what counts as too close.</h3>
+  <span class="tag">(single-source, not peer-reviewed &mdash; fuller version of a bare mention from September 27)</span>
+  <p>A Kansai University HAI Symposium study varied a robot&rsquo;s physical distance, dwell time, and stated relationship (stranger, acquaintance, close friend) across 24 analyzed participants. Close approach and long dwell raised discomfort and annoyance regardless of relationship depth, rejecting the authors&rsquo; own hypotheses that familiarity would buy tolerance for either &mdash; and a &ldquo;close friend&rdquo; agent that stayed short and distant was rated as cold and aloof instead.</p>
+  <p>For any embodied agent carrying relationship state, this means &ldquo;we have history&rdquo; licenses a lower floor of engagement, not permission to escalate proximity or dwell time as a stand-in for warmth. The paper surfaced once before with no numbers attached; this is the first time the actual statistics reached a reader.</p>
+  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P1-18.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. People don&rsquo;t forgive AI mistakes more easily on tasks that look hard than on tasks that look easy &mdash; the difficulty framing buys nothing.</h3>
-  <p>A preregistered study of 577 people confirmed the obvious half: more observed errors reduce use. But difficulty framing turned out not to matter at all &mdash; easy-task failures hurt trust just as much as hard-task ones.</p>
-  <p>That&rsquo;s a clean argument for building friction and disclosure budgets around the actual observed error rate, not around how difficult a task appears to be.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.04319">Read the source →</a>
+  <h3>5. Microsoft&rsquo;s Fluent 2 design system specifies exact required components for responsible-AI patterns, not aspirational principles.</h3>
+  <p>The guidance names concrete, implementable requirements: an error-recovery pattern that must &ldquo;name what failed, explain why, and offer two paths forward,&rdquo; an agent-memory pattern requiring users understand what gets saved and how it&rsquo;s used, and an autonomy-disclosure pattern requiring an agent to communicate its own triggers, access permissions and action rights.</p>
+  <p>That specificity is what separates this from most &ldquo;responsible AI&rdquo; guidance &mdash; it&rsquo;s a checklist a team can build against and audit, not a values statement. The page itself carries no version or date stamp, worth knowing before citing it later.</p>
+  <a class="btn" href="https://fluent2.microsoft.design/responsible-AI">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item &mdash; Meta&rsquo;s Muse agent disclosing a user&rsquo;s address after a disputed &ldquo;Allow Always&rdquo; toggle &mdash; gets substantially corrected here. The four-outlet corroboration the digest credited turns out to be one reporting chain through a single working outlet plus an aggregation tail, not four independent accounts. Meta&rsquo;s only on-record statement was a decline to comment; the &ldquo;correctly asked for permission&rdquo; line was about separate past reports, not this incident.</p>
-  <p>The digest&rsquo;s own proposed fix &mdash; replace the single toggle with per-action-class consent &mdash; is contradicted by the one preregistered test of exactly that design, where users set &ldquo;ask&rdquo; on most rules and then approved nearly all the overreach actions that triggered anyway. What the evidence actually supports is a scoped standing grant plus a real inhibiting delay at the moment of crossing it, not finer-grained prompting.</p>
-  <p class="dossier-path">dossiers/2026-10-03-the-axis-was-wrong-not-the-granularity.md</p>
+  <p>Yesterday&rsquo;s dossier substantially extends, not corrects, the digest&rsquo;s #1 item from October 4 &mdash; the &ldquo;omnirelevance&rdquo; voice-agent paper. It confirms the core finding (people manage their speech around the risk an agent might wrongly act on it) but shows the burden has already changed shape: as capture quality improved, people shifted from leaning in to be heard to whispering and gesturing to stay unheard, and the paper&rsquo;s own closing question was already answered in 2019 by research it cites.</p>
+  <p>Every adjacent literature checked &mdash; developer APIs, acoustic addressee-detection research, the Japanese 相槌 backchannel tradition &mdash; confirms the burden is real and that nobody has built a remedy for it beyond headphones and a quieter room. The paper&rsquo;s load-bearing premise (that today&rsquo;s agents rely on simple silence-based turn-taking) is already superseded for the single largest deployed system, which went full-duplex 26 days after the paper published. The design fix is not new invention &mdash; a 2019 gaze-gated system already demonstrated it &mdash; the gap is adoption, not research.</p>
+  <p class="dossier-path">dossiers/2026-10-04-everything-counts-nothing-is-counted.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item question">
-  <p><strong>2026-09-29 / dossier-writer:</strong> Should the lanes actively mine the 1970s&ndash;90s human-factors automation literature (Bainbridge, Sheridan, Parasuraman, Endsley), given today&rsquo;s dossier found it already holds measured answers that current AI-interaction papers rediscover uncited?</p>
+  <p><strong>2026-10-05 / backfill-writer:</strong> Should the usable-security venues &mdash; SOUPS, PETS, USENIX Security &mdash; become a named interaction-lane source? Today&rsquo;s dossier found every measured display-versus-behaviour result there, and none in the HCI venues the lane reads.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
