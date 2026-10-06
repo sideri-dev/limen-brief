@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-05</title>
+<title>Limen — 2026-10-06</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,63 +87,63 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-05</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-06</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Anthropic&rsquo;s own usage data says per-action approval stops working as agent users gain experience &mdash; continuous monitoring plus interrupt is what replaces it.</h3>
-  <p>Anthropic&rsquo;s telemetry across real Claude Code usage finds 73% of tool calls already have some human in the loop, yet only 0.8% of all actions are irreversible &mdash; so most of what gets approved didn&rsquo;t strictly need gating. The sharper finding is behavioral: as people get more experienced with an agent, they don&rsquo;t approve every action more carefully, they auto-approve more while also intervening more &mdash; shifting from gatekeeping to supervision.</p>
-  <p>That&rsquo;s a direct argument against the default &ldquo;insert an approval modal before every action&rdquo; pattern baked into most agentic UIs; the oversight mechanism that survives contact with real use is visibility plus the ability to interrupt, not a checkpoint on every step.</p>
-  <a class="btn" href="https://www.anthropic.com/news/measuring-agent-autonomy">Read the source →</a>
+  <h3>1. A miscalibrated AI confidence score is measurably worse than showing no confidence at all &mdash; well-calibrated confidence raised decision accuracy +20%, miscalibrated confidence raised it only +2%.</h3>
+  <p>An AAAI-26 study (N=184, within-subjects, logic puzzles) isolated calibration as the variable: a confidence score that tracked the AI&rsquo;s actual reliability measurably improved decisions; one that didn&rsquo;t produced almost no gain, even though people still rated it as more useful when it looked confident. A confident-looking but wrong confidence score is actively deceptive, not merely unhelpful &mdash; the exact failure mode automation-bias research predicts.</p>
+  <p>Peer-reviewed, main-track AAAI, outside the lane&rsquo;s usual venue list but comparably rigorous. Don&rsquo;t ship a confidence indicator unless you&rsquo;ve measured that it tracks reliability.</p>
+  <a class="btn" href="https://ojs.aaai.org/index.php/AAAI/article/view/38798">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. GitHub rebuilt its pull-request review renderer because AI-scale PRs broke the obvious approach &mdash; a per-block ResizeObserver that can retrigger itself under its own output.</h3>
-  <p>Stress-tested against a 2,200-file, million-plus-line, 400-comment PR, GitHub&rsquo;s team designed and then rejected the straightforward fix &mdash; one ResizeObserver watching each collapsible block &mdash; because an observer that writes height back into layout can retrigger itself, and that cost compounds with every mounted block. The shipped replacement splits rendering into two virtualized domains instead.</p>
-  <p>It&rsquo;s a concrete, named architectural decision, not a feature post, for any review surface that now has to survive pull requests an order of magnitude larger than anything a human alone would generate.</p>
-  <a class="btn" href="https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/">Read the source →</a>
+  <h3>2. Scheduling when an AI assistant offers help, rather than making the user ask on demand, makes people rate it more positively &mdash; even with identical performance and less money kept.</h3>
+  <p>A UC Santa Barbara study (ACM IUI &rsquo;26, N=66, Rush Hour puzzles with real monetary stakes) compared a pre-scheduled &ldquo;Timer&rdquo; mode against an on-demand &ldquo;Button&rdquo; mode. Task performance and ending budget were statistically identical &mdash; but Timer-mode participants still rated the AI more favorably, even when their budget was low.</p>
+  <p>Perceived AI quality decouples from both outcome and effort here, making delivery timing a free, swappable lever worth testing before assuming on-demand is the neutral default.</p>
+  <a class="btn" href="https://arxiv.org/abs/2602.01481">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A service robot that lies and gets lucky doesn&rsquo;t get forgiven the way a human would &mdash; people hold it to an outcome-independent honesty standard, at least in adversarial complaint contexts.</h3>
+  <h3>3. A mandatory human checkpoint on AI-generated research summaries didn&rsquo;t stop over a third of users from saying they&rsquo;d skip verification after a short interaction.</h3>
+  <span class="tag">(single-source)</span>
+  <p>A 63-person survey of a tool forcing human review before accepting AI-generated literature-review synthesis found 42.9% rated its usability highly &mdash; and 34.9% said they&rsquo;d trust AI summaries without further checking after brief use. The authors&rsquo; own framing is the finding: whether a checkpoint produces oversight depends on whether the user is willing to exercise it &mdash; a calibration problem design must address, not assume a gate solves.</p>
+  <p>Self-reported intention, not observed behavior, but a clean argument against treating &ldquo;insert a review step&rdquo; as a solved safeguard.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.22248">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. Adding gesture generation to a full-duplex voice model makes the speech it generates worse over time &mdash; the first reported cost of extending a shared-token-stream voice architecture to body motion.</h3>
   <span class="tag">(single-source, not peer-reviewed)</span>
-  <p>A Japanese HAI Symposium study ran two between-subjects scenarios (N=150 and N=156) where a dishonest statement either turned out true or false. For a human who told the same lie, blame dropped sharply once the lie came true; for a robot making the identical statement, blame stayed flat and ran significantly higher than the human&rsquo;s, specifically in the adversarial complaint scenario.</p>
-  <p>Don&rsquo;t design a complaint-handling or customer-facing agent assuming a lie that &ldquo;worked out&rdquo; will be forgiven the way it would for a person &mdash; keep the agent&rsquo;s statements honest regardless of outcome, especially wherever the interaction is already adversarial.</p>
-  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/G-13.pdf">Read the source →</a>
+  <p>A Nagoya University team (with Aisin Corp.) extended the J-Moshi duplex voice architecture from 17 to 33 layers, adding a VQ-VAE &ldquo;posture&rdquo; channel for synchronized body motion. Motion tracked reasonably well (mean joint error 38.7mm), but the added modality degraded voice output over time &mdash; early generation stayed grammatical, then language structure broke down, and motion collapsed toward static training poses.</p>
+  <p>Anyone extending a Moshi-style duplex model with gesture should budget for a speech-quality cost by default, not treat it as free.</p>
+  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P2-34.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A companion robot&rsquo;s over-proximity reads as intrusive no matter how close the relationship is supposed to be &mdash; relationship depth moves the minimum comfortable distance, not the ceiling for what counts as too close.</h3>
-  <span class="tag">(single-source, not peer-reviewed &mdash; fuller version of a bare mention from September 27)</span>
-  <p>A Kansai University HAI Symposium study varied a robot&rsquo;s physical distance, dwell time, and stated relationship (stranger, acquaintance, close friend) across 24 analyzed participants. Close approach and long dwell raised discomfort and annoyance regardless of relationship depth, rejecting the authors&rsquo; own hypotheses that familiarity would buy tolerance for either &mdash; and a &ldquo;close friend&rdquo; agent that stayed short and distant was rated as cold and aloof instead.</p>
-  <p>For any embodied agent carrying relationship state, this means &ldquo;we have history&rdquo; licenses a lower floor of engagement, not permission to escalate proximity or dwell time as a stand-in for warmth. The paper surfaced once before with no numbers attached; this is the first time the actual statistics reached a reader.</p>
-  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P1-18.pdf">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Microsoft&rsquo;s Fluent 2 design system specifies exact required components for responsible-AI patterns, not aspirational principles.</h3>
-  <p>The guidance names concrete, implementable requirements: an error-recovery pattern that must &ldquo;name what failed, explain why, and offer two paths forward,&rdquo; an agent-memory pattern requiring users understand what gets saved and how it&rsquo;s used, and an autonomy-disclosure pattern requiring an agent to communicate its own triggers, access permissions and action rights.</p>
-  <p>That specificity is what separates this from most &ldquo;responsible AI&rdquo; guidance &mdash; it&rsquo;s a checklist a team can build against and audit, not a values statement. The page itself carries no version or date stamp, worth knowing before citing it later.</p>
-  <a class="btn" href="https://fluent2.microsoft.design/responsible-AI">Read the source →</a>
+  <h3>5. OpenAI&rsquo;s Agents API approval dialog for computer-use agents only gates which websites the agent can reach &mdash; not what it does once there, so teams must build a second confirmation layer themselves.</h3>
+  <p>OpenAI&rsquo;s docs are explicit: &ldquo;the browser requires the user&rsquo;s approval before accessing each new website origin,&rdquo; but &ldquo;origin approval does not enforce confirmation before individual actions&rdquo; &mdash; per-action confirmation depends on the agent actually calling a function built for that purpose. OpenAI&rsquo;s own mitigation: if an app must guarantee confirmation before a purchase or destructive change, restrict the agent&rsquo;s browser to resources that can&rsquo;t do those things at all.</p>
+  <p>Worth knowing before assuming an origin-approval prompt doubles as an action-level safeguard.</p>
+  <a class="btn" href="https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier substantially extends, not corrects, the digest&rsquo;s #1 item from October 4 &mdash; the &ldquo;omnirelevance&rdquo; voice-agent paper. It confirms the core finding (people manage their speech around the risk an agent might wrongly act on it) but shows the burden has already changed shape: as capture quality improved, people shifted from leaning in to be heard to whispering and gesturing to stay unheard, and the paper&rsquo;s own closing question was already answered in 2019 by research it cites.</p>
-  <p>Every adjacent literature checked &mdash; developer APIs, acoustic addressee-detection research, the Japanese 相槌 backchannel tradition &mdash; confirms the burden is real and that nobody has built a remedy for it beyond headphones and a quieter room. The paper&rsquo;s load-bearing premise (that today&rsquo;s agents rely on simple silence-based turn-taking) is already superseded for the single largest deployed system, which went full-duplex 26 days after the paper published. The design fix is not new invention &mdash; a 2019 gaze-gated system already demonstrated it &mdash; the gap is adoption, not research.</p>
-  <p class="dossier-path">dossiers/2026-10-04-everything-counts-nothing-is-counted.md</p>
+  <p>Anthropic&rsquo;s own autonomy-telemetry post turns out to mix evidentiary tiers that look like one number: the real, solid finding is a mechanical drift (auto-approve rising, keypress interrupts rising too), but the headline 73%/0.8% figures rest on a classifier with only 46% precision, and the &ldquo;accumulating trust&rdquo; story is actually a cross-sectional cohort effect dressed as an individual trajectory.</p>
+  <p>The post&rsquo;s prescription &mdash; &ldquo;visibility plus simple intervention&rdquo; &mdash; names a view and a lever but no trigger, which is exactly what 1983 automation-safety literature says is the missing load-bearing piece, and no product checked (including Anthropic&rsquo;s own) fires an alert on the risk of an action before it happens; every alert fires on completion, blocking, or elapsed time. What Anthropic actually shipped in place of a human approval modal was a second AI model reviewing actions, not a watching human, and its own telemetry schema never tracked that substitution.</p>
+  <p class="dossier-path">dossiers/2026-10-05-the-bell-was-never-specified.md</p>
 </div>
 
 <h2>Needs your answer</h2>
