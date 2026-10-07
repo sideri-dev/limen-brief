@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-06</title>
+<title>Limen — 2026-10-07</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,71 +87,78 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-06</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-10-07</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A miscalibrated AI confidence score is measurably worse than showing no confidence at all &mdash; well-calibrated confidence raised decision accuracy +20%, miscalibrated confidence raised it only +2%.</h3>
-  <p>An AAAI-26 study (N=184, within-subjects, logic puzzles) isolated calibration as the variable: a confidence score that tracked the AI&rsquo;s actual reliability measurably improved decisions; one that didn&rsquo;t produced almost no gain, even though people still rated it as more useful when it looked confident. A confident-looking but wrong confidence score is actively deceptive, not merely unhelpful &mdash; the exact failure mode automation-bias research predicts.</p>
-  <p>Peer-reviewed, main-track AAAI, outside the lane&rsquo;s usual venue list but comparably rigorous. Don&rsquo;t ship a confidence indicator unless you&rsquo;ve measured that it tracks reliability.</p>
-  <a class="btn" href="https://ojs.aaai.org/index.php/AAAI/article/view/38798">Read the source →</a>
+  <h3>1. Voice cloning doesn&rsquo;t neutrally preserve a voice &mdash; it makes the clone sound more trustworthy than the person it copied, and people disclose more to it as a result.</h3>
+  <p>A NeurIPS 2026 paper (Zhou, Bianchi, Bartelds, Pot, Kwon, Zou) finds cloned voices are rated more authoritative, warmer, more customer-service-like and more human-like than their source speakers &mdash; a systematic upward shift, not noise. That shift isn&rsquo;t cosmetic: people are measurably more willing to disclose sensitive personal information to a cloned voice than to the original, and the paper also finds a homogenization effect across cloned speakers generally.</p>
+  <p>Treat a voice clone as something that actively changes how much a user trusts and tells it, not as a fidelity exercise &mdash; that&rsquo;s a disclosure-duty question for anyone shipping cloned or synthetic voice.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.16578">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Scheduling when an AI assistant offers help, rather than making the user ask on demand, makes people rate it more positively &mdash; even with identical performance and less money kept.</h3>
-  <p>A UC Santa Barbara study (ACM IUI &rsquo;26, N=66, Rush Hour puzzles with real monetary stakes) compared a pre-scheduled &ldquo;Timer&rdquo; mode against an on-demand &ldquo;Button&rdquo; mode. Task performance and ending budget were statistically identical &mdash; but Timer-mode participants still rated the AI more favorably, even when their budget was low.</p>
-  <p>Perceived AI quality decouples from both outcome and effort here, making delivery timing a free, swappable lever worth testing before assuming on-demand is the neutral default.</p>
-  <a class="btn" href="https://arxiv.org/abs/2602.01481">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. A mandatory human checkpoint on AI-generated research summaries didn&rsquo;t stop over a third of users from saying they&rsquo;d skip verification after a short interaction.</h3>
+  <h3>2. Addressee detection in shared virtual spaces breaks badly when a speaker&rsquo;s body orientation and their words disagree &mdash; and giving the agent more context about bystanders makes it overshare.</h3>
   <span class="tag">(single-source)</span>
-  <p>A 63-person survey of a tool forcing human review before accepting AI-generated literature-review synthesis found 42.9% rated its usability highly &mdash; and 34.9% said they&rsquo;d trust AI summaries without further checking after brief use. The authors&rsquo; own framing is the finding: whether a checkpoint produces oversight depends on whether the user is willing to exercise it &mdash; a calibration problem design must address, not assume a gate solves.</p>
-  <p>Self-reported intention, not observed behavior, but a clean argument against treating &ldquo;insert a review step&rdquo; as a solved safeguard.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.22248">Read the source →</a>
+  <p>A study of 40 sessions, 80 personas and 18,000 addressee-detection decisions in multi-user 3D environments found that adding body-orientation cues took one model from 56% to 99.5% accuracy on &ldquo;who is talking to me&rdquo; &mdash; but other models defaulted to orientation over 85% of the time even when it contradicted what was actually said. Richer awareness of who else was in the room didn&rsquo;t just help: it raised the rate at which the agent shared information with the wrong listener, up to 45.3% of answers for one model.</p>
+  <p>Orientation cues are a real lever here, but they can fix addressee detection or break it depending on how they&rsquo;re weighted, and more social context is not a free safety improvement.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.07732">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Adding gesture generation to a full-duplex voice model makes the speech it generates worse over time &mdash; the first reported cost of extending a shared-token-stream voice architecture to body motion.</h3>
-  <span class="tag">(single-source, not peer-reviewed)</span>
-  <p>A Nagoya University team (with Aisin Corp.) extended the J-Moshi duplex voice architecture from 17 to 33 layers, adding a VQ-VAE &ldquo;posture&rdquo; channel for synchronized body motion. Motion tracked reasonably well (mean joint error 38.7mm), but the added modality degraded voice output over time &mdash; early generation stayed grammatical, then language structure broke down, and motion collapsed toward static training poses.</p>
-  <p>Anyone extending a Moshi-style duplex model with gesture should budget for a speech-quality cost by default, not treat it as free.</p>
-  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P2-34.pdf">Read the source →</a>
+  <h3>3. Handing an agent its procedure one step at a time over MCP, instead of all at once in the prompt, nearly kills ungrounded &ldquo;I did it&rdquo; answers.</h3>
+  <span class="tag">(single-source)</span>
+  <p>Across 15,475 trials in 13 SOP-Bench domains, step-gated delivery raised adherence to a standard operating procedure from the 76-95% range to 95-99%, and cut outright ungrounded success claims from 2.1-4.5% of trials down to 0.2-0.3%. It&rsquo;s not a universal fix &mdash; in one domain, 31-49% of correct answers still bypassed the procedure entirely.</p>
+  <p>Worth testing as a default architecture for any agent that has to follow a fixed process: trade upfront autonomy for predictability, and expect at least one domain where the procedure gets routed around anyway.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.07817">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. OpenAI&rsquo;s Agents API approval dialog for computer-use agents only gates which websites the agent can reach &mdash; not what it does once there, so teams must build a second confirmation layer themselves.</h3>
-  <p>OpenAI&rsquo;s docs are explicit: &ldquo;the browser requires the user&rsquo;s approval before accessing each new website origin,&rdquo; but &ldquo;origin approval does not enforce confirmation before individual actions&rdquo; &mdash; per-action confirmation depends on the agent actually calling a function built for that purpose. OpenAI&rsquo;s own mitigation: if an app must guarantee confirmation before a purchase or destructive change, restrict the agent&rsquo;s browser to resources that can&rsquo;t do those things at all.</p>
-  <p>Worth knowing before assuming an origin-approval prompt doubles as an action-level safeguard.</p>
-  <a class="btn" href="https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use">Read the source →</a>
+  <h3>4. Teaching an image editor to refuse impossible requests is a separate skill from making it good at editing &mdash; a model trained specifically for abstention refuses 93% of infeasible edits against 0.4% for the best general editor.</h3>
+  <span class="tag">(single-source)</span>
+  <p>The general editor reaches 68.4% accuracy on real edits but almost never says no to an impossible one. The abstention-trained model (VisTA-BAGEL) refuses 93.0% of infeasible requests while completing 74.3% of feasible ones and only falsely refusing 0.8% of the time.</p>
+  <p>If you want an editor &mdash; or any generative tool &mdash; to say &ldquo;I can&rsquo;t do that&rdquo; reliably, that has to be trained for directly; it doesn&rsquo;t fall out of making the model better at the task.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.07887">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. A proactive speech agent in group conversation stays silent 97% of the time the group resolves things on its own, and tends to speak up when it should.</h3>
+  <span class="tag">(single-source)</span>
+  <p>A live study with 23 participants backs this up for &ldquo;Jarvis,&rdquo; a system designed to judge when to interject in multi-party talk. The number worth taking away is the restraint rate, not the intervention logic &mdash; 97% silence when self-correction is already happening is a strong baseline for any proactive agent sharing a conversational floor.</p>
+  <p>One flag: this sits close to the line drawn to keep research coverage of ambient, non-chat AI from drifting into agent-architecture papers published at ML venues rather than HCI ones; it cleared on having a live interaction study and no ML-venue attachment, but it&rsquo;s the second time that exact boundary call has come up.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.07506">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Anthropic&rsquo;s own autonomy-telemetry post turns out to mix evidentiary tiers that look like one number: the real, solid finding is a mechanical drift (auto-approve rising, keypress interrupts rising too), but the headline 73%/0.8% figures rest on a classifier with only 46% precision, and the &ldquo;accumulating trust&rdquo; story is actually a cross-sectional cohort effect dressed as an individual trajectory.</p>
-  <p>The post&rsquo;s prescription &mdash; &ldquo;visibility plus simple intervention&rdquo; &mdash; names a view and a lever but no trigger, which is exactly what 1983 automation-safety literature says is the missing load-bearing piece, and no product checked (including Anthropic&rsquo;s own) fires an alert on the risk of an action before it happens; every alert fires on completion, blocking, or elapsed time. What Anthropic actually shipped in place of a human approval modal was a second AI model reviewing actions, not a watching human, and its own telemetry schema never tracked that substitution.</p>
-  <p class="dossier-path">dossiers/2026-10-05-the-bell-was-never-specified.md</p>
+  <p>The AAAI-26 confidence-calibration study the digest led with doesn&rsquo;t say what the digest&rsquo;s relevance line claimed: every item in the study carried a confidence label, so there&rsquo;s no no-display comparison anywhere in the design &mdash; &ldquo;calibrated&rdquo; and &ldquo;miscalibrated&rdquo; are just item subsets, and the paper&rsquo;s bias metrics turn out to report the same cells twice under different names.</p>
+  <p>The same research group&rsquo;s clinical companion study found disuse, not automation bias, was the bigger problem &mdash; inside a protocol variant their own earlier work had already scored as the weaker one. Every regulator-cleared numeric confidence display examined states on its own label that it isn&rsquo;t calibrated to the deployment population, and none of the major guidance documents ask anyone to check whether a displayed confidence actually is calibrated. The correction lives in the dossier, not retroactively in the published digest.</p>
+  <p class="dossier-path">dossiers/2026-10-06-worse-than-nothing-was-never-measured.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item question">
-  <p><strong>2026-10-05 / backfill-writer:</strong> Should the usable-security venues &mdash; SOUPS, PETS, USENIX Security &mdash; become a named interaction-lane source? Today&rsquo;s dossier found every measured display-versus-behaviour result there, and none in the HCI venues the lane reads.</p>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+  <p><strong>2026-10-07 / backfill-writer:</strong> Should the applied-linguistics writing venues &mdash; Assessing Writing, JSLW, Language Learning &amp; Technology, CALL &mdash; become a named interaction-lane source? Today&rsquo;s dossier found the only measured tool-recall and false-positive-acceptance figures there, and the HCI writing papers cite none.</p>
 </div>
+
+<div class="item question">
+  <p><strong>2026-10-05 / backfill-writer:</strong> Should the usable-security venues &mdash; SOUPS, PETS, USENIX Security &mdash; become a named interaction-lane source? Today&rsquo;s dossier found every measured display-versus-behaviour result there, and none in the HCI venues the lane reads.</p>
+</div>
+
+<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
