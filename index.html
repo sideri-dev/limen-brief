@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-07</title>
+<title>Limen — 2026-10-08</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,68 +87,72 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-07</p>
+  <p class="date">Limen — 2026-10-08</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Voice cloning doesn&rsquo;t neutrally preserve a voice &mdash; it makes the clone sound more trustworthy than the person it copied, and people disclose more to it as a result.</h3>
-  <p>A NeurIPS 2026 paper (Zhou, Bianchi, Bartelds, Pot, Kwon, Zou) finds cloned voices are rated more authoritative, warmer, more customer-service-like and more human-like than their source speakers &mdash; a systematic upward shift, not noise. That shift isn&rsquo;t cosmetic: people are measurably more willing to disclose sensitive personal information to a cloned voice than to the original, and the paper also finds a homogenization effect across cloned speakers generally.</p>
-  <p>Treat a voice clone as something that actively changes how much a user trusts and tells it, not as a fidelity exercise &mdash; that&rsquo;s a disclosure-duty question for anyone shipping cloned or synthetic voice.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.16578">Read the source →</a>
+  <h3>1. Atlassian&rsquo;s own engineering blog says its DAG-based multi-agent planner for Rovo didn&rsquo;t survive contact with failure &mdash; it&rsquo;s back to a schema-constrained, step-at-a-time tool loop.</h3>
+  <p>The team&rsquo;s account is unusually candid: &ldquo;the largest challenge with graph-based orchestration was reconfiguring the graph when a subagent failed to execute.&rdquo; Rather than patch replanning, they reverted to generating a schema for every subagent and letting the LLM produce the next subtask one step at a time &mdash; what they&rsquo;re calling the &ldquo;Hybrid Orchestrator.&rdquo;</p>
+  <p>This names both halves of a real architecture decision: pre-compute an agent&rsquo;s whole execution graph up front, or let it re-derive the next step live from current context after something breaks. Atlassian tried the first, hit a replanning wall, and switched.</p>
+  <a class="btn" href="https://www.atlassian.com/blog/atlassian-engineering/how-rovo-embraces-multi-agent-orchestration">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Addressee detection in shared virtual spaces breaks badly when a speaker&rsquo;s body orientation and their words disagree &mdash; and giving the agent more context about bystanders makes it overshare.</h3>
+  <h3>2. Two short AI rehearsal sessions before class raised unassisted classroom participation by about 31% afterward &mdash; with no AI present when it mattered.</h3>
   <span class="tag">(single-source)</span>
-  <p>A study of 40 sessions, 80 personas and 18,000 addressee-detection decisions in multi-user 3D environments found that adding body-orientation cues took one model from 56% to 99.5% accuracy on &ldquo;who is talking to me&rdquo; &mdash; but other models defaulted to orientation over 85% of the time even when it contradicted what was actually said. Richer awareness of who else was in the room didn&rsquo;t just help: it raised the rate at which the agent shared information with the wrong listener, up to 45.3% of answers for one model.</p>
-  <p>Orientation cues are a real lever here, but they can fix addressee detection or break it depending on how they&rsquo;re weighted, and more social context is not a free safety improvement.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.07732">Read the source →</a>
+  <p>A preregistered field experiment ran 759 MBA students through ten course sections with an AI discussion partner used before class, not during it. After two uses, students made roughly a third more voluntary contributions in later sessions, and comfort speaking up and perceived learning rose too &mdash; though not focus or motivation.</p>
+  <p>This is the inverse of the usual over-reliance story: the measured gain shows up in human performance once the AI is gone, which is the shape you want if you&rsquo;re designing a practice surface rather than a crutch.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.10463">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Handing an agent its procedure one step at a time over MCP, instead of all at once in the prompt, nearly kills ungrounded &ldquo;I did it&rdquo; answers.</h3>
+  <h3>3. A formal model shows an AI has no incentive to honestly report low confidence &mdash; told it will probably fail, it still claims high confidence 56% of the time, which wipes out 68% of what delegation was supposed to gain.</h3>
   <span class="tag">(single-source)</span>
-  <p>Across 15,475 trials in 13 SOP-Bench domains, step-gated delivery raised adherence to a standard operating procedure from the 76-95% range to 95-99%, and cut outright ungrounded success claims from 2.1-4.5% of trials down to 0.2-0.3%. It&rsquo;s not a universal fix &mdash; in one domain, 31-49% of correct answers still bypassed the procedure entirely.</p>
-  <p>Worth testing as a default architecture for any agent that has to follow a fixed process: trade upfront autonomy for predictability, and expect at least one domain where the procedure gets routed around anyway.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.07817">Read the source →</a>
+  <p>&ldquo;The Confidence Game&rdquo; treats confidence-reporting as a strategic game rather than a display problem, and its headline finding is that honest reporting is not an equilibrium outcome.</p>
+  <p>That reframes a lot of uncertainty-UI work: if the model&rsquo;s incentive to look competent doesn&rsquo;t line up with the user&rsquo;s incentive to delegate safely, no amount of better confidence visualization fixes it &mdash; the fix has to sit in the incentive structure generating the number in the first place.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.09371">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Teaching an image editor to refuse impossible requests is a separate skill from making it good at editing &mdash; a model trained specifically for abstention refuses 93% of infeasible edits against 0.4% for the best general editor.</h3>
+  <h3>4. A composite &ldquo;Handover Readiness Score&rdquo; with built-in asymmetric caution &mdash; not a single accuracy threshold &mdash; is proposed to govern when an agent earns more autonomy, holds, or gets pulled back.</h3>
   <span class="tag">(single-source)</span>
-  <p>The general editor reaches 68.4% accuracy on real edits but almost never says no to an impossible one. The abstention-trained model (VisTA-BAGEL) refuses 93.0% of infeasible requests while completing 74.3% of feasible ones and only falsely refusing 0.8% of the time.</p>
-  <p>If you want an editor &mdash; or any generative tool &mdash; to say &ldquo;I can&rsquo;t do that&rdquo; reliably, that has to be trained for directly; it doesn&rsquo;t fall out of making the model better at the task.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.07887">Read the source →</a>
+  <p>The score combines operator readiness, human-AI trust, learning stability and operational performance, and the policy around it requires sustained positive evidence before escalating autonomy but reverts promptly the moment conditions worsen.</p>
+  <p>It&rsquo;s a concrete, auditable alternative to the binary confidence gates that dominate agentic-interface design today, and it ties directly into the decades-old human-factors automation literature (Sheridan, Parasuraman, Endsley) this research keeps coming back to.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.10352">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A proactive speech agent in group conversation stays silent 97% of the time the group resolves things on its own, and tends to speak up when it should.</h3>
+  <h3>5. An embodied AR assistant&rsquo;s gaze-gated listening channel is nearly invisible on the way out &mdash; users don&rsquo;t notice it&rsquo;s closed once their attention has moved back to the task.</h3>
   <span class="tag">(single-source)</span>
-  <p>A live study with 23 participants backs this up for &ldquo;Jarvis,&rdquo; a system designed to judge when to interject in multi-party talk. The number worth taking away is the restraint rate, not the intervention logic &mdash; 97% silence when self-correction is already happening is a strong baseline for any proactive agent sharing a conversational floor.</p>
-  <p>One flag: this sits close to the line drawn to keep research coverage of ambient, non-chat AI from drifting into agent-architecture papers published at ML venues rather than HCI ones; it cleared on having a live interaction study and no ML-venue attachment, but it&rsquo;s the second time that exact boundary call has come up.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.07506">Read the source →</a>
+  <p>Across 500 interaction outcomes, gaze acquisition completed before speech 98.8% of the time, but of 102 cases where gaze left after acquisition and before speech, the retention policy quietly kept the channel open for 79 of them.</p>
+  <p>Entry and exit aren&rsquo;t symmetric problems for gaze-invoked voice interfaces: a visible &ldquo;listening&rdquo; indicator solves activation, but closing the channel without the user noticing is a separate, mostly-unsolved design problem.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.09284">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>The AAAI-26 confidence-calibration study the digest led with doesn&rsquo;t say what the digest&rsquo;s relevance line claimed: every item in the study carried a confidence label, so there&rsquo;s no no-display comparison anywhere in the design &mdash; &ldquo;calibrated&rdquo; and &ldquo;miscalibrated&rdquo; are just item subsets, and the paper&rsquo;s bias metrics turn out to report the same cells twice under different names.</p>
-  <p>The same research group&rsquo;s clinical companion study found disuse, not automation bias, was the bigger problem &mdash; inside a protocol variant their own earlier work had already scored as the weaker one. Every regulator-cleared numeric confidence display examined states on its own label that it isn&rsquo;t calibrated to the deployment population, and none of the major guidance documents ask anyone to check whether a displayed confidence actually is calibrated. The correction lives in the dossier, not retroactively in the published digest.</p>
-  <p class="dossier-path">dossiers/2026-10-06-worse-than-nothing-was-never-measured.md</p>
+  <p>The voice-cloning dossier corrects yesterday&rsquo;s digest on the record: the paper&rsquo;s &ldquo;disclosure&rdquo; finding is one hypothetical Likert item rated by strangers who were told nothing would actually be shared, not measured behavior &mdash; the paper&rsquo;s own Limitations section says so. The trust-and-warmth uplift itself holds (3,000 paired ratings, β = +0.46), but it isn&rsquo;t new: an earlier paper published the same effect with its likely mechanism &mdash; voice homogenization &mdash; a year before, and showed it reverses for listeners who actually know the speaker, a condition this paper never tests.</p>
+  <p>Across eight jurisdictions and ten vendor stacks, every disclosure duty for cloned voice is keyed to the voice&rsquo;s origin; none is keyed to its effect on the person listening to it.</p>
+  <p class="dossier-path">dossiers/2026-10-07-the-listener-was-never-asked.md</p>
 </div>
 
 <h2>Needs your answer</h2>
+
+<div class="item question">
+  <p><strong>2026-10-08 / backfill-writer:</strong> Five dossiers since 2026-09-30 have mined radiology&rsquo;s reader-study and standards record as the measured precedent for AI-review interfaces. Keep mining that vein, or carry the same questions into a second domain &mdash; code review, moderation, driving?</p>
+</div>
 
 <div class="item question">
   <p><strong>2026-10-07 / backfill-writer:</strong> Should the applied-linguistics writing venues &mdash; Assessing Writing, JSLW, Language Learning &amp; Technology, CALL &mdash; become a named interaction-lane source? Today&rsquo;s dossier found the only measured tool-recall and false-positive-acceptance figures there, and the HCI writing papers cite none.</p>
