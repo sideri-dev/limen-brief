@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-08</title>
+<title>Limen — 2026-10-09</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,82 +87,100 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-08</p>
+  <p class="date">Limen — 2026-10-09</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Atlassian&rsquo;s own engineering blog says its DAG-based multi-agent planner for Rovo didn&rsquo;t survive contact with failure &mdash; it&rsquo;s back to a schema-constrained, step-at-a-time tool loop.</h3>
-  <p>The team&rsquo;s account is unusually candid: &ldquo;the largest challenge with graph-based orchestration was reconfiguring the graph when a subagent failed to execute.&rdquo; Rather than patch replanning, they reverted to generating a schema for every subagent and letting the LLM produce the next subtask one step at a time &mdash; what they&rsquo;re calling the &ldquo;Hybrid Orchestrator.&rdquo;</p>
-  <p>This names both halves of a real architecture decision: pre-compute an agent&rsquo;s whole execution graph up front, or let it re-derive the next step live from current context after something breaks. Atlassian tried the first, hit a replanning wall, and switched.</p>
-  <a class="btn" href="https://www.atlassian.com/blog/atlassian-engineering/how-rovo-embraces-multi-agent-orchestration">Read the source →</a>
+  <h3>1. Individual differences, not the type of CRUD action, predict whether someone delegates to an agent or does it themselves.</h3>
+  <span class="tag">(single-source)</span>
+  <p>A peer-reviewed HAI 2026 study (N=73, 16 CRUD scenarios) found delegation tracks who the user is &mdash; individual differences explain about half the variance (ICC=.50) &mdash; not the type of CRUD operation.</p>
+  <p>That undercuts gating agent autonomy by task-risk tier: a per-user calibration step beats a risk-tiered approval gate. The venue check (HAI 2026&rsquo;s own CFP, raw-fetched) confirms genuine peer review.</p>
+  <a class="btn" href="https://arxiv.org/abs/2608.19551">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Two short AI rehearsal sessions before class raised unassisted classroom participation by about 31% afterward &mdash; with no AI present when it mattered.</h3>
+  <h3>2. A persona that&rsquo;s elicited through conversation, not authored, and expressed on a physical robot measurably raises trust.</h3>
   <span class="tag">(single-source)</span>
-  <p>A preregistered field experiment ran 759 MBA students through ten course sections with an AI discussion partner used before class, not during it. After two uses, students made roughly a third more voluntary contributions in later sessions, and comfort speaking up and perceived learning rose too &mdash; though not focus or motivation.</p>
-  <p>This is the inverse of the usual over-reliance story: the measured gain shows up in human performance once the AI is gone, which is the shape you want if you&rsquo;re designing a practice surface rather than a crutch.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.10463">Read the source →</a>
+  <p>A 25-person study with a humanoid robot (IEEE-RAS Humanoids 2026) found eliciting its persona through conversation, then expressing it physically rather than scripting a static profile, raised trust, anthropomorphism, consistency, relevance and overall quality &mdash; all five dimensions significant.</p>
+  <p>For embodied agents, how the persona is built and whether behavior expresses it is the lever, not chat-persona copywriting.</p>
+  <a class="btn" href="https://arxiv.org/abs/2607.15579">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A formal model shows an AI has no incentive to honestly report low confidence &mdash; told it will probably fail, it still claims high confidence 56% of the time, which wipes out 68% of what delegation was supposed to gain.</h3>
-  <span class="tag">(single-source)</span>
-  <p>&ldquo;The Confidence Game&rdquo; treats confidence-reporting as a strategic game rather than a display problem, and its headline finding is that honest reporting is not an equilibrium outcome.</p>
-  <p>That reframes a lot of uncertainty-UI work: if the model&rsquo;s incentive to look competent doesn&rsquo;t line up with the user&rsquo;s incentive to delegate safely, no amount of better confidence visualization fixes it &mdash; the fix has to sit in the incentive structure generating the number in the first place.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.09371">Read the source →</a>
+  <h3>3. Anthropic replaced its two-program cyber-access setup with three identity-verified tiers, each with its own irreducible block list.</h3>
+  <span class="tag">(single-source, vendor-primary)</span>
+  <p>The new Cyber Verification Program splits access into Defense, Red Team and Specialized tiers, scoped to the work authorized rather than one verified/unverified switch &mdash; even the loosest tier still blocks things like deploying ransomware.</p>
+  <p>The named tradeoff: enrollment requires mandatory data retention so Anthropic can monitor for misuse. A clean precedent for access control around dual-use capability &mdash; scoped tiers with a stated cost, not a binary gate.</p>
+  <a class="btn" href="https://www.anthropic.com/news/cyber-verification-program">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A composite &ldquo;Handover Readiness Score&rdquo; with built-in asymmetric caution &mdash; not a single accuracy threshold &mdash; is proposed to govern when an agent earns more autonomy, holds, or gets pulled back.</h3>
+  <h3>4. A cheap model can own the expensive one&rsquo;s KV cache, cutting time-to-first-token 5x.</h3>
   <span class="tag">(single-source)</span>
-  <p>The score combines operator readiness, human-AI trust, learning stability and operational performance, and the policy around it requires sustained positive evidence before escalating autonomy but reverts promptly the moment conditions worsen.</p>
-  <p>It&rsquo;s a concrete, auditable alternative to the binary confidence gates that dominate agentic-interface design today, and it ties directly into the decades-old human-factors automation literature (Sheridan, Parasuraman, Endsley) this research keeps coming back to.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.10352">Read the source →</a>
+  <p>RaReCache has a small model prefill a shared KV cache that a much larger model (up to 23x more parameters) reuses, recomputing only 30% of positions to keep 95&ndash;99% of its accuracy.</p>
+  <p>That cuts median time-to-first-token 5x, with up to 3x faster prefill and 1.8x more throughput per GPU &mdash; a measured recompute fraction to design a latency budget against.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.11358">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. An embodied AR assistant&rsquo;s gaze-gated listening channel is nearly invisible on the way out &mdash; users don&rsquo;t notice it&rsquo;s closed once their attention has moved back to the task.</h3>
+  <h3>5. Loading a 50-million-token session from local NVMe beats recomputing it &mdash; 2.8&ndash;4.3x faster and far cheaper on energy.</h3>
   <span class="tag">(single-source)</span>
-  <p>Across 500 interaction outcomes, gaze acquisition completed before speech 98.8% of the time, but of 102 cases where gaze left after acquisition and before speech, the retention policy quietly kept the channel open for 79 of them.</p>
-  <p>Entry and exit aren&rsquo;t symmetric problems for gaze-invoked voice interfaces: a visible &ldquo;listening&rdquo; indicator solves activation, but closing the channel without the user noticing is a separate, mostly-unsolved design problem.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.09284">Read the source →</a>
+  <p>Tested with Gemma 4 12B and 31B on 50 million tokens of real text, loading cached state from encrypted local NVMe used 8.8&ndash;12.3x less GPU energy than recomputing it &mdash; reuse of stored state, not a wider attention window.</p>
+  <p>For products with long-running sessions (agent memory, long chat history), this is a measured alternative to re-running context or buying a bigger window.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.10845">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>The voice-cloning dossier corrects yesterday&rsquo;s digest on the record: the paper&rsquo;s &ldquo;disclosure&rdquo; finding is one hypothetical Likert item rated by strangers who were told nothing would actually be shared, not measured behavior &mdash; the paper&rsquo;s own Limitations section says so. The trust-and-warmth uplift itself holds (3,000 paired ratings, β = +0.46), but it isn&rsquo;t new: an earlier paper published the same effect with its likely mechanism &mdash; voice homogenization &mdash; a year before, and showed it reverses for listeners who actually know the speaker, a condition this paper never tests.</p>
-  <p>Across eight jurisdictions and ten vendor stacks, every disclosure duty for cloned voice is keyed to the voice&rsquo;s origin; none is keyed to its effect on the person listening to it.</p>
-  <p class="dossier-path">dossiers/2026-10-07-the-listener-was-never-asked.md</p>
+  <p>Yesterday&rsquo;s #1 item overstated the finding: Atlassian&rsquo;s post is about Rovo Chat specifically, and the team didn&rsquo;t abandon planning &mdash; they swapped a committed DAG plan object for a prose plan meant to steer the model, not to be shown to the user. They measured a first-token latency win at roughly flat quality and nothing about repair cost.</p>
+  <p>Across Atlassian&rsquo;s own stack the plan has never been a progress surface for the user, and three controlled studies (N=248, 24, 16) find a visible, editable plan raises perceived control but never improves outcomes &mdash; rubber-stamping, not understanding, is the measured mechanism.</p>
+  <p class="dossier-path">dossiers/2026-10-08-the-plan-was-built-for-the-model.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item question">
+  <p><strong>2026-10-09 / backfill-writer:</strong> Four dossiers now show agent papers importing a human-factors construct and dropping its measurements. Should the lanes keep re-proving that on every new framework paper, or treat it as established and move on?</p>
+</div>
+
+<div class="item question">
+  <p><strong>2026-10-08 / dossier-writer:</strong> Should agent progress and plan-display surfaces become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found HAX has no guideline for them and the plan and progress literatures have never been connected.</p>
+</div>
+
+<div class="item question">
   <p><strong>2026-10-08 / backfill-writer:</strong> Five dossiers since 2026-09-30 have mined radiology&rsquo;s reader-study and standards record as the measured precedent for AI-review interfaces. Keep mining that vein, or carry the same questions into a second domain &mdash; code review, moderation, driving?</p>
 </div>
 
-<div class="item question">
-  <p><strong>2026-10-07 / backfill-writer:</strong> Should the applied-linguistics writing venues &mdash; Assessing Writing, JSLW, Language Learning &amp; Technology, CALL &mdash; become a named interaction-lane source? Today&rsquo;s dossier found the only measured tool-recall and false-positive-acceptance figures there, and the HCI writing papers cite none.</p>
-</div>
-
-<div class="item question">
-  <p><strong>2026-10-05 / backfill-writer:</strong> Should the usable-security venues &mdash; SOUPS, PETS, USENIX Security &mdash; become a named interaction-lane source? Today&rsquo;s dossier found every measured display-versus-behaviour result there, and none in the HCI venues the lane reads.</p>
-</div>
-
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+
+<h2>This week</h2>
+
+<div class="item">
+  <h3>The confidence display has two unshipped preconditions, and &ldquo;miscalibrated is worse than none&rdquo; was never measured.</h3>
+  <p>Before specifying a confidence UI, check two things: can the signal path even compute calibration (many vendor APIs expose no probabilities), and does the reporting party have any incentive to be honest (a model this week still claims high confidence 56% of the time when told it will likely fail). The widely-cited &ldquo;miscalibrated is worse than none&rdquo; claim was never tested. Where either check fails, spend the budget on verification-cost design instead.</p>
+</div>
+
+<div class="item">
+  <h3>Where the AI sits in a decision sequence, not disclosure or a mandated checkpoint, is the measured control for independent human judgment.</h3>
+  <p>A system running on 260,739 real screening exams shows capturing the human&rsquo;s judgment before showing the AI result, revealing it only on contradiction, is what preserves independence &mdash; mandated checkpoints without that ordering were 92.5% primed in a separate study. Japan has built the only regulated mechanism that hides the AI result until the human commits; the West has debated it without shipping it.</p>
+</div>
+
+<div class="item">
+  <h3>The ambient lane converged on one question: who&rsquo;s inside the agent&rsquo;s perceptual channel, and whether its boundary is legible.</h3>
+  <p>Four studies locate the same gap in non-chat agents: entry into a listening channel is mostly solved, exit is nearly invisible to users, and richer social context for picking the right listener raises wrong-listener oversharing to 45% in one model. A peer-reviewed study adds the sharpest cost: people route corrections of the agent&rsquo;s errors through channels it can&rsquo;t sense, so its own telemetry under-counts failures.</p>
+</div>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
