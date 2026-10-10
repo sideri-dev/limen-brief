@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-09</title>
+<title>Limen — 2026-10-10</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -81,72 +81,74 @@
   }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
+  .gate-row { margin: 0 0 1rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-09</p>
+  <p class="date">Limen — 2026-10-10</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Individual differences, not the type of CRUD action, predict whether someone delegates to an agent or does it themselves.</h3>
+  <h3>1. A new benchmark shows a model&rsquo;s single-step &ldquo;is this action right&rdquo; score overstates its chained-execution reliability by 30&ndash;60+ points.</h3>
   <span class="tag">(single-source)</span>
-  <p>A peer-reviewed HAI 2026 study (N=73, 16 CRUD scenarios) found delegation tracks who the user is &mdash; individual differences explain about half the variance (ICC=.50) &mdash; not the type of CRUD operation.</p>
-  <p>That undercuts gating agent autonomy by task-risk tier: a per-user calibration step beats a risk-tiered approval gate. The venue check (HAI 2026&rsquo;s own CFP, raw-fetched) confirms genuine peer review.</p>
-  <a class="btn" href="https://arxiv.org/abs/2608.19551">Read the source →</a>
+  <p>SafeActBench scored five model families &mdash; Claude Opus 5, GPT-5.6 Sol, DeepSeek-V4-Flash, Qwen3.8-Flash, GLM-5.2 &mdash; with a deterministic evaluator, not an LLM judge, across protocols from static judgment through multi-step dependency chains. Every model clusters 92&ndash;98% on the static check; under real multi-step execution they fall sharply and unevenly, GLM-5.2&rsquo;s agent collapsing to 12.1% while Claude&rsquo;s holds in the low 60s.</p>
+  <p>A static accuracy gate is measuring the wrong thing &mdash; autonomy and audit thresholds need to be set per action-chain depth.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.07753">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A persona that&rsquo;s elicited through conversation, not authored, and expressed on a physical robot measurably raises trust.</h3>
-  <span class="tag">(single-source)</span>
-  <p>A 25-person study with a humanoid robot (IEEE-RAS Humanoids 2026) found eliciting its persona through conversation, then expressing it physically rather than scripting a static profile, raised trust, anthropomorphism, consistency, relevance and overall quality &mdash; all five dimensions significant.</p>
-  <p>For embodied agents, how the persona is built and whether behavior expresses it is the lever, not chat-persona copywriting.</p>
-  <a class="btn" href="https://arxiv.org/abs/2607.15579">Read the source →</a>
+  <h3>2. Anthropic moved Claude Cowork&rsquo;s execution sandbox to the cloud by default and removed the local-only toggle.</h3>
+  <span class="tag">(dual-sourced, vendor + named engineer)</span>
+  <p>As of October 6, new Cowork tasks on Pro and Max run in a cloud VM rather than on-device; Anthropic&rsquo;s own article confirms the &ldquo;Only on your computer&rdquo; setting is gone, and engineer Felix Rieseberg names the actual tradeoff &mdash; people didn&rsquo;t love the disk, battery and performance cost of a local VM, but closing the laptop used to stop the work.</p>
+  <p>It&rsquo;s the concrete, dated version of a cloud-vs-local sandbox tradeoff this corpus has watched since late September: local buys offline/no-round-trip, cloud buys resume-anywhere continuity.</p>
+  <a class="btn" href="https://support.claude.com/en/articles/15520349">Read the source →</a>
+  <a class="btn" href="https://simonwillison.net/2026/Oct/5/felix-rieseberg/">Read the corroborating source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Anthropic replaced its two-program cyber-access setup with three identity-verified tiers, each with its own irreducible block list.</h3>
+  <h3>3. Figma&rsquo;s agent defaults to doing nothing and annotating when a repair is ambiguous, and treats reusing an existing component as more durable than building a new one.</h3>
   <span class="tag">(single-source, vendor-primary)</span>
-  <p>The new Cyber Verification Program splits access into Defense, Red Team and Specialized tiers, scoped to the work authorized rather than one verified/unverified switch &mdash; even the loosest tier still blocks things like deploying ransomware.</p>
-  <p>The named tradeoff: enrollment requires mandatory data retention so Anthropic can monitor for misuse. A clean precedent for access control around dual-use capability &mdash; scoped tiers with a stated cost, not a binary gate.</p>
-  <a class="btn" href="https://www.anthropic.com/news/cyber-verification-program">Read the source →</a>
+  <p>On an ambiguous fix, Figma&rsquo;s agent leaves the frame unchanged and annotates what it found and why it stopped, rather than guessing. And when a fix could extend an existing design-system component or add a new one, it treats the new component as the worse option &mdash; it broadens scope and detaches the work from the system &mdash; keeping the spec drafted inside the working file instead of a separate handoff.</p>
+  <p>Two reusable guardrails for any agentic design tool: ambiguity defaults to annotate-not-act, and reuse beats new surface area.</p>
+  <a class="btn" href="https://www.figma.com/blog/workflow-lab-staying-in-the-flow-with-the-figma-agent/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A cheap model can own the expensive one&rsquo;s KV cache, cutting time-to-first-token 5x.</h3>
-  <span class="tag">(single-source)</span>
-  <p>RaReCache has a small model prefill a shared KV cache that a much larger model (up to 23x more parameters) reuses, recomputing only 30% of positions to keep 95&ndash;99% of its accuracy.</p>
-  <p>That cuts median time-to-first-token 5x, with up to 3x faster prefill and 1.8x more throughput per GPU &mdash; a measured recompute fraction to design a latency budget against.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.11358">Read the source →</a>
+  <h3>4. Claude power users now spend more effort building &ldquo;context libraries&rdquo; than writing prompts &mdash; and unscoped loading lets context bleed across unrelated projects.</h3>
+  <span class="tag">(single-source; sample size and recruitment unstated)</span>
+  <p>Nielsen Norman Group&rsquo;s Tanner Kohler found power users maintaining thousands of context files across hundreds of nested folders, with one case where visual-design guidance written for a podcast silently got applied to an unrelated book-tracking app.</p>
+  <p>The fix emerging isn&rsquo;t more context, it&rsquo;s structure: an indexed &ldquo;card&rdquo; per folder, and a rule that context moves up or down a hierarchy before moving sideways &mdash; the affordance choice for any persistent-memory system, against the unscoped default that&rsquo;s failing people silently.</p>
+  <a class="btn" href="https://www.nngroup.com/articles/context-libraries/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Loading a 50-million-token session from local NVMe beats recomputing it &mdash; 2.8&ndash;4.3x faster and far cheaper on energy.</h3>
-  <span class="tag">(single-source)</span>
-  <p>Tested with Gemma 4 12B and 31B on 50 million tokens of real text, loading cached state from encrypted local NVMe used 8.8&ndash;12.3x less GPU energy than recomputing it &mdash; reuse of stored state, not a wider attention window.</p>
-  <p>For products with long-running sessions (agent memory, long chat history), this is a measured alternative to re-running context or buying a bigger window.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.10845">Read the source →</a>
+  <h3>5. Superhuman Go builds suggestion-dismissal into when it decides to speak up, not into a settings menu.</h3>
+  <span class="tag">(single-source, vendor-primary)</span>
+  <p>Grammarly&rsquo;s Superhuman Go proactively surfaces writing suggestions rather than waiting to be asked, and its own rationale is explicit that the trigger logic &mdash; not a separate control panel &mdash; is where &ldquo;easy to dismiss&rdquo; has to live.</p>
+  <p>A small, exportable pattern for any proactive AI surface folded into an existing tool rather than fronted as a chat box: the dismissal contract belongs at the moment of interruption.</p>
+  <a class="btn" href="https://blog.superhuman.com/grammarlys-writing-agents-become-proactive-with-go/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item overstated the finding: Atlassian&rsquo;s post is about Rovo Chat specifically, and the team didn&rsquo;t abandon planning &mdash; they swapped a committed DAG plan object for a prose plan meant to steer the model, not to be shown to the user. They measured a first-token latency win at roughly flat quality and nothing about repair cost.</p>
-  <p>Across Atlassian&rsquo;s own stack the plan has never been a progress surface for the user, and three controlled studies (N=248, 24, 16) find a visible, editable plan raises perceived control but never improves outcomes &mdash; rubber-stamping, not understanding, is the measured mechanism.</p>
-  <p class="dossier-path">dossiers/2026-10-08-the-plan-was-built-for-the-model.md</p>
+  <p>Yesterday&rsquo;s #1 item&rsquo;s headline statistic was real but overstated: the &ldquo;roughly half the variance&rdquo; figure is a latent-scale Poisson ICC over only the 50 participants with assistant access, on chat-turn counts averaging under half a turn per task &mdash; not the full 73-participant sample implied. The authors themselves call the individual-differences account &ldquo;an interpretation, not a result,&rdquo; and their cited support actually found a non-significant r=.14.</p>
+  <p>Re-deriving the standard variance approximations on the paper&rsquo;s own data gives .50, .32 or .13 depending which is used &mdash; under-determined, not simply wrong. The design implication &mdash; that CRUD-tiered approval gates are miscalibrated &mdash; doesn&rsquo;t survive contact with seven shipped agent products, none of which implements such a gate. What the paper actually shows and the digest missed: an explicit &ldquo;rely on the assistant&rdquo; instruction left usage sparse and uneven and raised delegation only modestly.</p>
+  <p class="dossier-path">dossiers/2026-10-09-fifty-columns-not-a-trait.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,22 +167,15 @@
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 
-<h2>This week</h2>
+<h2>Gate</h2>
 
 <div class="item">
-  <h3>The confidence display has two unshipped preconditions, and &ldquo;miscalibrated is worse than none&rdquo; was never measured.</h3>
-  <p>Before specifying a confidence UI, check two things: can the signal path even compute calibration (many vendor APIs expose no probabilities), and does the reporting party have any incentive to be honest (a model this week still claims high confidence 56% of the time when told it will likely fail). The widely-cited &ldquo;miscalibrated is worse than none&rdquo; claim was never tested. Where either check fails, spend the budget on verification-cost design instead.</p>
+  <p class="gate-row"><strong>DRAFT-KB-12</strong> &mdash; the confidence display&rsquo;s two unshipped preconditions (computable calibration, aligned incentive). Review: 1 block, 2 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-13</strong> &mdash; sequence as the control surface for independent human judgment. Review: 1 block, 6 objections.</p>
+  <p>BACKLOG #38 &mdash; cited by DRAFT-KB-13 as its queued catch-at-re-prompt instrument &mdash; closed today; DRAFT-KB-13&rsquo;s own red-team block already flags that #38 never covered this draft&rsquo;s gap, so the closure doesn&rsquo;t resolve it. #39 and #41 remain queued, unchanged.</p>
 </div>
 
-<div class="item">
-  <h3>Where the AI sits in a decision sequence, not disclosure or a mandated checkpoint, is the measured control for independent human judgment.</h3>
-  <p>A system running on 260,739 real screening exams shows capturing the human&rsquo;s judgment before showing the AI result, revealing it only on contradiction, is what preserves independence &mdash; mandated checkpoints without that ordering were 92.5% primed in a separate study. Japan has built the only regulated mechanism that hides the AI result until the human commits; the West has debated it without shipping it.</p>
-</div>
-
-<div class="item">
-  <h3>The ambient lane converged on one question: who&rsquo;s inside the agent&rsquo;s perceptual channel, and whether its boundary is legible.</h3>
-  <p>Four studies locate the same gap in non-chat agents: entry into a listening channel is mostly solved, exit is nearly invisible to users, and richer social context for picking the right listener raises wrong-listener oversharing to 45% in one model. A peer-reviewed study adds the sharpest cost: people route corrections of the agent&rsquo;s errors through channels it can&rsquo;t sense, so its own telemetry under-counts failures.</p>
-</div>
+<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
