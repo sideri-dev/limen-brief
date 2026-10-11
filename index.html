@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-10</title>
+<title>Limen — 2026-10-11</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,67 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-10</p>
+  <p class="date">Limen — 2026-10-11</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A new benchmark shows a model&rsquo;s single-step &ldquo;is this action right&rdquo; score overstates its chained-execution reliability by 30&ndash;60+ points.</h3>
+  <h3>1. EvoMaestro gives experts slider-level steering handles into an LLM-driven program-evolution search, and a 12-person study shows it works.</h3>
+  <span class="tag">(single-source, accepted ACM UIST 2026)</span>
+  <p>A formative study with 8 domain experts produced six design requirements; the resulting tool lets a person guide the search with natural language, combine promising directions, and prune unproductive ones &mdash; &ldquo;semantic oversight&rdquo; between opaque autorun and full manual control. A 12-participant within-subjects study found it improves understanding of the evolution process and reduces cognitive workload while still supporting real steering, with a 7-day single-expert field demo reported alongside, though not as a formal study.</p>
+  <p>Generalizes past this tool: any agentic or generative search product needs a mid-process control surface below &ldquo;see the final result.&rdquo;</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.03721">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>2. Feeling in control of an AI&rsquo;s first move doesn&rsquo;t mean you feel responsible for what it did &mdash; that&rsquo;s a separate, reflective judgment.</h3>
   <span class="tag">(single-source)</span>
-  <p>SafeActBench scored five model families &mdash; Claude Opus 5, GPT-5.6 Sol, DeepSeek-V4-Flash, Qwen3.8-Flash, GLM-5.2 &mdash; with a deterministic evaluator, not an LLM judge, across protocols from static judgment through multi-step dependency chains. Every model clusters 92&ndash;98% on the static check; under real multi-step execution they fall sharply and unevenly, GLM-5.2&rsquo;s agent collapsing to 12.1% while Claude&rsquo;s holds in the low 60s.</p>
-  <p>A static accuracy gate is measuring the wrong thing &mdash; autonomy and audit thresholds need to be set per action-chain depth.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.07753">Read the source →</a>
+  <p>Two experiments found people experience immediate &ldquo;I caused that&rdquo; agency over the initial action a delegated system takes, but not over its final outcome &mdash; yet they do judge themselves to have caused the outcome when their original command was specific and the result mattered. The authors are blunt: designers &ldquo;cannot rely on pre-reflective intuition&rdquo; to produce ownership over delegated outcomes.</p>
+  <p>For an approval or confirmation step in an agentic product, that means echoing the user&rsquo;s own prior instruction back at them when showing a result &mdash; not just displaying what happened &mdash; is what produces reflective ownership.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.03722">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Anthropic moved Claude Cowork&rsquo;s execution sandbox to the cloud by default and removed the local-only toggle.</h3>
-  <span class="tag">(dual-sourced, vendor + named engineer)</span>
-  <p>As of October 6, new Cowork tasks on Pro and Max run in a cloud VM rather than on-device; Anthropic&rsquo;s own article confirms the &ldquo;Only on your computer&rdquo; setting is gone, and engineer Felix Rieseberg names the actual tradeoff &mdash; people didn&rsquo;t love the disk, battery and performance cost of a local VM, but closing the laptop used to stop the work.</p>
-  <p>It&rsquo;s the concrete, dated version of a cloud-vs-local sandbox tradeoff this corpus has watched since late September: local buys offline/no-round-trip, cloud buys resume-anywhere continuity.</p>
-  <a class="btn" href="https://support.claude.com/en/articles/15520349">Read the source →</a>
-  <a class="btn" href="https://simonwillison.net/2026/Oct/5/felix-rieseberg/">Read the corroborating source →</a>
+  <h3>3. Locking an AI writing tool&rsquo;s generation behind a measured &ldquo;meaningful engagement&rdquo; threshold shifts effort toward writing and evaluating, without making the task take longer.</h3>
+  <span class="tag">(single-source)</span>
+  <p>A controlled 398-person experiment, four conditions including a timing-matched control isolating the engagement requirement from simple delay, found this redistributed effort: more time writing, less time evaluating, and the best accuracy-per-time evaluation efficiency of any condition, without lengthening the overall task.</p>
+  <p>A real alternative to the two defaults most generation UIs use &mdash; a plain unlocked button or a fixed-timer rate limit: measure engagement, not time.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.01518">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Figma&rsquo;s agent defaults to doing nothing and annotating when a repair is ambiguous, and treats reusing an existing component as more durable than building a new one.</h3>
+  <h3>4. A robot that deliberately speaks haltingly to English learners really does improve approachability, reduce anxiety, AND raise motivation &mdash; a researcher error nearly reported the opposite.</h3>
+  <span class="tag">(single-source, non-peer-reviewed poster &mdash; corrected)</span>
+  <p>The original write-up of this HAI Symposium poster mapped its one non-significant result onto &ldquo;motivation&rdquo; &mdash; a genuinely counterintuitive finding, had it been true. Reading the full Japanese text off the page, not the results figure, shows the opposite: motivation is significant (p=0.026), with approachability (p=0.0035) and anxiety reduction (p=0.001) &mdash; all three benefits the abstract claims hold up. The actual non-significant result, continued-use intention (p=0.18), is something the abstract never claimed; it splits participants by whether they value the robot&rsquo;s functional accuracy or emotional support, with no net benefit either way.</p>
+  <p>The lesson sharpens on correction: a hesitant &ldquo;weak robot&rdquo; persona is validated for a coaching agent on first contact, but before betting on it for sustained use, know which way your users split.</p>
+  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P2-21.pdf">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Notion keeps an AI agent&rsquo;s authoritative context in page bodies, not database properties, after the properties got overloaded &mdash; and a Slack correction is a trigger to investigate, never permission to rewrite a number.</h3>
   <span class="tag">(single-source, vendor-primary)</span>
-  <p>On an ambiguous fix, Figma&rsquo;s agent leaves the frame unchanged and annotates what it found and why it stopped, rather than guessing. And when a fix could extend an existing design-system component or add a new one, it treats the new component as the worse option &mdash; it broadens scope and detaches the work from the system &mdash; keeping the spec drafted inside the working file instead of a separate handoff.</p>
-  <p>Two reusable guardrails for any agentic design tool: ambiguity defaults to annotate-not-act, and reuse beats new surface area.</p>
-  <a class="btn" href="https://www.figma.com/blog/workflow-lab-staying-in-the-flow-with-the-figma-agent/">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. Claude power users now spend more effort building &ldquo;context libraries&rdquo; than writing prompts &mdash; and unscoped loading lets context bleed across unrelated projects.</h3>
-  <span class="tag">(single-source; sample size and recruitment unstated)</span>
-  <p>Nielsen Norman Group&rsquo;s Tanner Kohler found power users maintaining thousands of context files across hundreds of nested folders, with one case where visual-design guidance written for a podcast silently got applied to an unrelated book-tracking app.</p>
-  <p>The fix emerging isn&rsquo;t more context, it&rsquo;s structure: an indexed &ldquo;card&rdquo; per folder, and a rule that context moves up or down a hierarchy before moving sideways &mdash; the affordance choice for any persistent-memory system, against the unscoped default that&rsquo;s failing people silently.</p>
-  <a class="btn" href="https://www.nngroup.com/articles/context-libraries/">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Superhuman Go builds suggestion-dismissal into when it decides to speak up, not into a settings menu.</h3>
-  <span class="tag">(single-source, vendor-primary)</span>
-  <p>Grammarly&rsquo;s Superhuman Go proactively surfaces writing suggestions rather than waiting to be asked, and its own rationale is explicit that the trigger logic &mdash; not a separate control panel &mdash; is where &ldquo;easy to dismiss&rdquo; has to live.</p>
-  <p>A small, exportable pattern for any proactive AI surface folded into an existing tool rather than fronted as a chat box: the dismissal contract belongs at the moment of interruption.</p>
-  <a class="btn" href="https://blog.superhuman.com/grammarlys-writing-agents-become-proactive-with-go/">Read the source →</a>
+  <p>Notion&rsquo;s own engineering account describes metadata fields that got &ldquo;harder to maintain&rdquo; once asked to carry curated context alongside structured data, where &ldquo;a query could run cleanly and still answer the wrong question.&rdquo; Their fix separates the two: context lives in page bodies, read by a scoped Custom Agent, not a database automation.</p>
+  <p>The more exportable decision: an informal correction to an agent&rsquo;s output is a signal to investigate the underlying data, never a license to silently patch the number it got wrong.</p>
+  <a class="btn" href="https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item&rsquo;s headline statistic was real but overstated: the &ldquo;roughly half the variance&rdquo; figure is a latent-scale Poisson ICC over only the 50 participants with assistant access, on chat-turn counts averaging under half a turn per task &mdash; not the full 73-participant sample implied. The authors themselves call the individual-differences account &ldquo;an interpretation, not a result,&rdquo; and their cited support actually found a non-significant r=.14.</p>
-  <p>Re-deriving the standard variance approximations on the paper&rsquo;s own data gives .50, .32 or .13 depending which is used &mdash; under-determined, not simply wrong. The design implication &mdash; that CRUD-tiered approval gates are miscalibrated &mdash; doesn&rsquo;t survive contact with seven shipped agent products, none of which implements such a gate. What the paper actually shows and the digest missed: an explicit &ldquo;rely on the assistant&rdquo; instruction left usage sparse and uneven and raised delegation only modestly.</p>
-  <p class="dossier-path">dossiers/2026-10-09-fifty-columns-not-a-trait.md</p>
+  <p>Yesterday&rsquo;s #1 digest item was directionally right but wrong on every cited number: the paper&rsquo;s actual static-judgment range is 77.9&ndash;97.7, not &ldquo;92&ndash;98,&rdquo; and its own class-balanced control shrinks the headline 43&ndash;69 point static-vs-interactive gap to 5&ndash;13 points, which the authors say partly reflects output-format validity, not evidence reasoning. &ldquo;Calibrate audits per action-chain depth&rdquo; has no support either &mdash; the deeper protocol beats the shallower one in six of ten configurations, traced here to an undisclosed 1,900-call budget in the deep protocol against a two-call median slack elsewhere.</p>
+  <p>No shipped agent gates autonomy on an accuracy score at all; every regulator with a written autonomy rule gates on oversight capability and reversibility instead. The paper&rsquo;s own diagnostics point to a different real problem: the dominant failure is stopping before investigation is complete &mdash; an omission humans catch only 39.4% of the time, barely moved by a &ldquo;verify&rdquo; prompt or an evidence-gap display.</p>
+  <p class="dossier-path">dossiers/2026-10-10-five-points-not-sixty.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -166,16 +165,6 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p class="gate-row"><strong>DRAFT-KB-12</strong> &mdash; the confidence display&rsquo;s two unshipped preconditions (computable calibration, aligned incentive). Review: 1 block, 2 objections.</p>
-  <p class="gate-row"><strong>DRAFT-KB-13</strong> &mdash; sequence as the control surface for independent human judgment. Review: 1 block, 6 objections.</p>
-  <p>BACKLOG #38 &mdash; cited by DRAFT-KB-13 as its queued catch-at-re-prompt instrument &mdash; closed today; DRAFT-KB-13&rsquo;s own red-team block already flags that #38 never covered this draft&rsquo;s gap, so the closure doesn&rsquo;t resolve it. #39 and #41 remain queued, unchanged.</p>
-</div>
-
-<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
