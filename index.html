@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-11</title>
+<title>Limen — 2026-10-12</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-11</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-12</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. EvoMaestro gives experts slider-level steering handles into an LLM-driven program-evolution search, and a 12-person study shows it works.</h3>
-  <span class="tag">(single-source, accepted ACM UIST 2026)</span>
-  <p>A formative study with 8 domain experts produced six design requirements; the resulting tool lets a person guide the search with natural language, combine promising directions, and prune unproductive ones &mdash; &ldquo;semantic oversight&rdquo; between opaque autorun and full manual control. A 12-participant within-subjects study found it improves understanding of the evolution process and reduces cognitive workload while still supporting real steering, with a 7-day single-expert field demo reported alongside, though not as a formal study.</p>
-  <p>Generalizes past this tool: any agentic or generative search product needs a mid-process control surface below &ldquo;see the final result.&rdquo;</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.03721">Read the source →</a>
+  <h3>1. An LLM reporting its own position in a creative sound-design tool can be silently wrong &mdash; and the model&rsquo;s own &ldquo;it worked&rdquo; signal doesn&rsquo;t catch it.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; NeurIPS 2026 Main Conference, Creative AI Track)</span>
+  <p>A Cambridge study of an LLM-driven timbre generation tool found the system&rsquo;s self-reported position in timbre space diverged from its actual measured position by &ldquo;approximately three times the width of that region.&rdquo; Pushed to refine its own output, &ldquo;26 of 36 refinement instructions produced no perceptible change,&rdquo; and the weaker model sometimes took no action while still reporting convergence. The authors: &ldquo;the failure mode that remains is silence presented as success.&rdquo;</p>
+  <p>For any generative-steering interface that lets a model narrate its own progress, that&rsquo;s the argument for a ground-truth check independent of the narration &mdash; &ldquo;it says it worked&rdquo; is not evidence that it did.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.12532">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Feeling in control of an AI&rsquo;s first move doesn&rsquo;t mean you feel responsible for what it did &mdash; that&rsquo;s a separate, reflective judgment.</h3>
-  <span class="tag">(single-source)</span>
-  <p>Two experiments found people experience immediate &ldquo;I caused that&rdquo; agency over the initial action a delegated system takes, but not over its final outcome &mdash; yet they do judge themselves to have caused the outcome when their original command was specific and the result mattered. The authors are blunt: designers &ldquo;cannot rely on pre-reflective intuition&rdquo; to produce ownership over delegated outcomes.</p>
-  <p>For an approval or confirmation step in an agentic product, that means echoing the user&rsquo;s own prior instruction back at them when showing a result &mdash; not just displaying what happened &mdash; is what produces reflective ownership.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.03722">Read the source →</a>
+  <h3>2. Shutting down a social robot is a design problem of its own, and nobody has been designing it.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ACM CHI 2026)</span>
+  <p>When the Moxie companion robot&rsquo;s maker shut down with no structured offboarding plan, the CHI paper found &ldquo;the emotional, technical, and communicative burdens were shifted to parents,&rdquo; left alone managing children&rsquo;s attachment to an inert device. The authors propose &ldquo;ethical sunsetting recommendations for social robots&rdquo; and a reimagined offboarding flow.</p>
+  <p>The decision this names: lifecycle design for embodied or companion AI needs an explicit end-of-life experience, symmetric to onboarding &mdash; the cost of ending a relationship with a device has to be designed, not left for the user to absorb.</p>
+  <a class="btn" href="https://doi.org/10.1145/3772318.3790895">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Locking an AI writing tool&rsquo;s generation behind a measured &ldquo;meaningful engagement&rdquo; threshold shifts effort toward writing and evaluating, without making the task take longer.</h3>
-  <span class="tag">(single-source)</span>
-  <p>A controlled 398-person experiment, four conditions including a timing-matched control isolating the engagement requirement from simple delay, found this redistributed effort: more time writing, less time evaluating, and the best accuracy-per-time evaluation efficiency of any condition, without lengthening the overall task.</p>
-  <p>A real alternative to the two defaults most generation UIs use &mdash; a plain unlocked button or a fixed-timer rate limit: measure engagement, not time.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.01518">Read the source →</a>
+  <h3>3. ChatGPT just replaced the fixed chat bubble with per-response, model-composed interface elements.</h3>
+  <span class="tag">(single-briefing, vendor launch &mdash; shipped)</span>
+  <p>OpenAI&rsquo;s new &ldquo;Intelligent UI,&rdquo; rolling out October 7&ndash;8, has ChatGPT choose tappable buttons, a calculator, interactive charts, editable graphs, diagrams or maps per response instead of defaulting to text. Per OpenAI product manager Aarush Selvan, &ldquo;ChatGPT has predominantly been a text-based interface&rdquo; &mdash; now a response &ldquo;can remain plain text when that is the clearest format, or it can include an interactive element... when the company determines that format fits a question.&rdquo;</p>
+  <p>Treat the launch itself as the finding: a mainstream, shipped example of chat dissolving from one fixed surface into a per-turn composition layer the model selects. OpenAI&rsquo;s own page blocked verification; this rests on two outlets citing the same briefing.</p>
+  <a class="btn" href="https://openai.com/index/gpt-6-for-everyone/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A robot that deliberately speaks haltingly to English learners really does improve approachability, reduce anxiety, AND raise motivation &mdash; a researcher error nearly reported the opposite.</h3>
-  <span class="tag">(single-source, non-peer-reviewed poster &mdash; corrected)</span>
-  <p>The original write-up of this HAI Symposium poster mapped its one non-significant result onto &ldquo;motivation&rdquo; &mdash; a genuinely counterintuitive finding, had it been true. Reading the full Japanese text off the page, not the results figure, shows the opposite: motivation is significant (p=0.026), with approachability (p=0.0035) and anxiety reduction (p=0.001) &mdash; all three benefits the abstract claims hold up. The actual non-significant result, continued-use intention (p=0.18), is something the abstract never claimed; it splits participants by whether they value the robot&rsquo;s functional accuracy or emotional support, with no net benefit either way.</p>
-  <p>The lesson sharpens on correction: a hesitant &ldquo;weak robot&rdquo; persona is validated for a coaching agent on first contact, but before betting on it for sustained use, know which way your users split.</p>
-  <a class="btn" href="https://hai-conference.net/symp2026/proceedings/pdf/P2-21.pdf">Read the source →</a>
+  <h3>4. Hosted voice APIs miss the natural pause window by 1 to 8 seconds; only full-duplex models interrupt fast enough to feel human.</h3>
+  <span class="tag">(single-source, workshop-tier &mdash; NeurIPS 2026 workshop)</span>
+  <p>Testing six voice systems across 176 conversations and 427 pauses, the hosted APIs &mdash; GPT Realtime, Gemini 3.1 Flash Live, Grok Voice &mdash; &ldquo;respond at almost every pause,&rdquo; but latency decides whether the words land inside it: roughly 1&ndash;4 seconds with silence-based endpointing, about 8 seconds with semantic turn detection. Only the full-duplex models, PersonaPlex and Moshi, &ldquo;regularly stay silent&rdquo; and &ldquo;interrupt within a human reaction time.&rdquo;</p>
+  <p>A real latency budget to design against: anything on a hosted endpointer should assume a multi-second miss window unless it&rsquo;s genuinely full-duplex.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.12802">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Notion keeps an AI agent&rsquo;s authoritative context in page bodies, not database properties, after the properties got overloaded &mdash; and a Slack correction is a trigger to investigate, never permission to rewrite a number.</h3>
-  <span class="tag">(single-source, vendor-primary)</span>
-  <p>Notion&rsquo;s own engineering account describes metadata fields that got &ldquo;harder to maintain&rdquo; once asked to carry curated context alongside structured data, where &ldquo;a query could run cleanly and still answer the wrong question.&rdquo; Their fix separates the two: context lives in page bodies, read by a scoped Custom Agent, not a database automation.</p>
-  <p>The more exportable decision: an informal correction to an agent&rsquo;s output is a signal to investigate the underlying data, never a license to silently patch the number it got wrong.</p>
-  <a class="btn" href="https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee">Read the source →</a>
+  <h3>5. Naming your AI assistant like a person splits how you treat it &mdash; and a redesigned reply only helps the people who did.</h3>
+  <span class="tag">(single-source, preprint &mdash; under review for CHI 2027)</span>
+  <p>An N=257 study found the 45.9% of users who give their assistant a human-like name (&ldquo;renamers&rdquo;) behave differently from those who don&rsquo;t: they &ldquo;greet more and command less.&rdquo; A redesigned reply style, tested across 1,744 judgments, improved outcomes only for renamers &mdash; the correlation is marginal (p=.0419), a lead, not a settled result.</p>
+  <p>Renamers and non-renamers read as different populations to design for, not two faces of one user, so a tone fix proven on one group can&rsquo;t be assumed to carry to the other.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.13156">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 digest item was directionally right but wrong on every cited number: the paper&rsquo;s actual static-judgment range is 77.9&ndash;97.7, not &ldquo;92&ndash;98,&rdquo; and its own class-balanced control shrinks the headline 43&ndash;69 point static-vs-interactive gap to 5&ndash;13 points, which the authors say partly reflects output-format validity, not evidence reasoning. &ldquo;Calibrate audits per action-chain depth&rdquo; has no support either &mdash; the deeper protocol beats the shallower one in six of ten configurations, traced here to an undisclosed 1,900-call budget in the deep protocol against a two-call median slack elsewhere.</p>
-  <p>No shipped agent gates autonomy on an accuracy score at all; every regulator with a written autonomy rule gates on oversight capability and reversibility instead. The paper&rsquo;s own diagnostics point to a different real problem: the dominant failure is stopping before investigation is complete &mdash; an omission humans catch only 39.4% of the time, barely moved by a &ldquo;verify&rdquo; prompt or an evidence-gap display.</p>
-  <p class="dossier-path">dossiers/2026-10-10-five-points-not-sixty.md</p>
+  <p>The daily-chain dossier corrected yesterday&rsquo;s #1 item on its one concrete claim: there is no slider in the EvoMaestro paper &mdash; the real control surface is a right-click menu (Suggest/Merge/Ban/pacing) plus a three-mode switch, and the likely source of the &ldquo;slider&rdquo; error is a different paper in the same cycle whose PDF says &ldquo;slider&rdquo; 102 times. What the study measured is narrower than its abstract: understanding is five unscored Likert items, &ldquo;supports steering&rdquo; is self-report with no baseline, and the workload win holds on three of six NASA-TLX subscales across fifteen uncorrected tests.</p>
+  <p>The venue concern resolves in the paper&rsquo;s favor (SIGCHI&rsquo;s own app lists it) even though its DOI 404s, because the whole UIST &rsquo;26 volume isn&rsquo;t yet in Crossref. Sharper still: a 2001 survey already named this steerer-vs-evaluator tradeoff, costed it, and predicted the fatigue result &mdash; the 35-reference bibliography cites none of that tradition.</p>
+  <p class="dossier-path">dossiers/2026-10-11-three-modes-not-a-slider.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,6 +165,22 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+
+<h2>Run notes</h2>
+
+<div class="item">
+  <p>No lane returned empty. Interaction 4/4 survived; capability 4/5 (1 killed, generic-relevance); practice 1/3 (2 confirmed duplicates); ambient 2/2, both strong and non-padded &mdash; a notably good day for the thinnest lane.</p>
+  <p><strong>Verified but below the cap (not resubmitted unchanged):</strong> steerable AI summaries vs. hand-written notes on resuming paused research (interaction); a UK&ndash;Japan proxemics pilot on robot approach distance, underpowered by its own admission (ambient); a vendor&rsquo;s faster per-decision model cutting agent cost but raising cost-per-success in one of five agents (capability); an 8B advisor model lifting a financial-research agent&rsquo;s qualification rate at lower cost (capability, vendor-adjacent); extended KV-cache reuse beating prefix caching on hit rate (capability, vendor-adjacent); a theoretical result that passive usage logs can&rsquo;t distinguish a biased user from an unbiased one (interaction).</p>
+  <p><strong>Escalation flagged for the auditor:</strong> the practice lane&rsquo;s Raycast pricing item is now an 8th+ resubmission with zero new information since 2026-09-10; a second item (Linear&rsquo;s SDK-access rejection) resubmitted again after an explicit same-cycle-prior kill. Both are named, worsening, researcher-side resubmission patterns.</p>
+</div>
+
+<h2>Kill log</h2>
+
+<div class="item">
+  <p>KILLED 2026-10-12 &mdash; Raycast rebuilds AI Chat as a planning agent, then rejects flat-rate pricing &mdash; duplicate-of-digest, 8th+ resubmission with zero new information.</p>
+  <p>KILLED 2026-10-12 &mdash; Linear rejects direct SDK/API access and off-the-shelf agent harnesses &mdash; duplicate-of-digest, resubmitted after an explicit same-cycle-prior kill.</p>
+  <p>KILLED 2026-10-12 &mdash; A recurrent-depth model&rsquo;s low-precision refinement cuts long-context prefill latency 13.9% (RAMP) &mdash; generic-relevance, no design decision follows.</p>
+</div>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
