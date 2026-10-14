@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-13</title>
+<title>Limen — 2026-10-14</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-13</p>
+  <p class="date">Limen — 2026-10-14</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. An engineer at Linear treats scheduling an AI agent as delegation, not automation &mdash; and when a loop misbehaved, he had the agent rewrite its own instructions instead of hand-tuning them.</h3>
-  <span class="tag">(single-source, vendor-primary &mdash; shipped feature, own design reasoning)</span>
-  <p>Linear&rsquo;s new &ldquo;Loops&rdquo; let an engineer hand recurring work to the Linear Agent on a schedule or trigger. Andrew Moedinger: &ldquo;I try to think about automation the way you might think about delegation,&rdquo; escalating a cleanup loop from identify-only to create-batches to direct-assign over time, under the rule &ldquo;start small, both in the scope of the task and in the consequences of getting it wrong.&rdquo; When a meeting-prep loop grew too verbose and searched the wrong Slack channel, he didn&rsquo;t fine-tune its prompt by hand &mdash; &ldquo;I asked the Linear Agent to update the loop and run it again.&rdquo; Loops stay visible at team level, so peer review substitutes for approval.</p>
-  <p>The transferable pattern: grant scheduled-agent authority on scope and consequence first, and treat letting the agent edit its own instructions as a legitimate alternative to manual prompting.</p>
-  <a class="btn" href="https://linear.app/now/five-principles-working-with-loops">Read the source →</a>
+  <h3>1. A decision-theoretic model finally gives agentic UI a real answer to &ldquo;where does the approval gate go&rdquo; &mdash; and it cuts task time 13.54% while winning 81% preference over confirming only at the end.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; CHI 2026, venue-checked fresh)</span>
+  <p>Researchers started from an 8-participant formative study naming a recurring error pattern &mdash; confirm, diagnose, correct, redo &mdash; and modeled confirmation placement as a scheduling problem rather than a fixed interval. In a 48-person test, the adaptive placement beat confirm-at-the-end on both measures: preferred 81% of the time, and faster.</p>
+  <p>The transferable claim: checkpoint placement in a multi-step agent can be computed from observed failure patterns, not guessed at once per product.</p>
+  <a class="btn" href="https://arxiv.org/abs/2510.05307">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A five-year interview study of Chinese digital painters finds creative-AI delegation boundaries get renegotiated every year, not settled once.</h3>
-  <span class="tag">(single-source, preprint &mdash; durable field method)</span>
-  <p>Seventeen painters, interviewed annually from 2021 to 2025, describe what the authors call &ldquo;longitudinal agency partitioning&rdquo; &mdash; the ongoing work of deciding which stages and claims stay human. By 2025 the group had split: some built stable hybrid workflows around human-only zones, others reported &ldquo;fatigue, precarity, or difficulty locating a remaining human role.&rdquo;</p>
-  <p>If boundaries move with peer norms and capability over years, a creative-AI feature&rsquo;s human/AI split can&rsquo;t be a fixed first-use setting &mdash; it needs to stay reopenable.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.09333">Read the source →</a>
+  <h3>2. A field study of a public sensing robot found that a one-time disclosure notice is worse for trust than no notice at all.</h3>
+  <span class="tag">(single-source &mdash; HRI &lsquo;26 Companion Proceedings, mutual-review track, lighter than main-track)</span>
+  <p>Thirty-six people encountered a data-collecting robot under three conditions: no disclosure, a static one-time notice, and dynamic, granular consent. Dynamic consent raised both trust and awareness, as expected. What didn&rsquo;t survive contact with reality: a static sign discharging the obligation &mdash; people trusted the robot <em>less</em> after a one-time notice than after no notice at all.</p>
+  <p>For anyone designing always-on public sensing, the safe-looking default &mdash; post a sign &mdash; is not safe; the finding argues for a persistent, interactive consent surface instead. Note this ran in HRI&rsquo;s Companion track, where review is mutual among submitters, not full double-blind &mdash; slightly less weight than a main-track paper if carried further.</p>
+  <a class="btn" href="https://doi.org/10.1145/3776734.3794372">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Trust and perceived competence in an AI response peak at moderate validation, then fall if the AI gets either colder or more sycophantic.</h3>
-  <span class="tag">(single-source, preprint &mdash; mechanism study)</span>
-  <p>A Tsinghua study built a five-level validation framework and a sycophancy-perception scale, running it across 1,003 retained responses to personal and work conflicts. Trust and competence both varied sharply and non-monotonically with validation strength (F(4,9009)=61.3 and 52.0, both p&lt;.001), peaking at moderate validation and dropping on both sides toward coldness or full sycophancy. Across ten models, Claude Sonnet 4.6 scored lowest on generated sycophancy; Gemini 3.1 Pro, GLM 5.1, and Doubao Seed 1.8 scored highest.</p>
-  <p>That gives tone design a measurable target instead of the usual vague &ldquo;warm but not sycophantic.&rdquo;</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.03731">Read the source →</a>
+  <h3>3. Mixed-reality notifications should be placed by urgency, not by habit &mdash; and getting it right costs nothing in missed alerts.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; TVCG/IEEE VR 2026)</span>
+  <p>An 18-person study compared a fixed-central notification position against one that moved &mdash; periphery, hand, or progressive-center &mdash; by urgency. The adaptive version measurably cut mental workload, temporal pressure, and frustration, with alerts noticed just as reliably as the fixed position.</p>
+  <p>The implication for XR interfaces: a single default notification slot costs users workload with no safety benefit from keeping everything centered.</p>
+  <a class="btn" href="https://arxiv.org/abs/2603.05893">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A misleading chart cuts web-agent task success by more than 34 points, and the finding is now peer-reviewed, not just a preprint.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; accepted EMNLP 2026)</span>
-  <p>MisVisAgentBench ran 280 matched clean/misleading chart pairs against thirteen vision-language web agents and found swapping in a misleading chart dropped average task success by more than 34 percentage points. It was logged as an unreviewed preprint; raw fetch found an EMNLP 2026 acceptance in the paper&rsquo;s own metadata, moving it up the ranking under the standing rule that peer review outranks a bare benchmark.</p>
-  <p>The duty this names: any computer-use or browsing agent reading a chart as tool input needs an independent verification step &mdash; the reading itself can&rsquo;t be assumed reliable.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.12823">Read the source →</a>
+  <h3>4. A five-session CHI study pins down exactly when the &ldquo;novelty wears off&rdquo; trust dip happens, and what changes it back.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; CHI 2026)</span>
+  <p>Twelve professional UX evaluators worked with the same AI tool across five sessions, six hours each. Their ignore rate rose sharply from session 1 (8.0%) through sessions 2&ndash;4 (16.2%, 13.3%, 17.8%), then recovered &mdash; not because trust quietly rebuilt, but because evaluators visibly changed workflow strategy partway through.</p>
+  <p>&ldquo;Trust recovers with use&rdquo; is too vague to design against; what&rsquo;s worth instrumenting is the workflow-strategy shift itself, not just a trust score.</p>
+  <a class="btn" href="https://arxiv.org/abs/2603.13717">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. LongHarness swaps an agent&rsquo;s growing chat history for explicit evidence/conclusion state, and the gain is large on 100-million-token document sets.</h3>
-  <span class="tag">(single-source, preprint)</span>
-  <p>The authors&rsquo; complaint: &ldquo;acquired evidence and evolving conclusions often remain entangled in a growing interaction history,&rdquo; which drifts as the history grows. Replacing it with a maintained evidence/conclusion state lifted one model&rsquo;s exact-match score on a long-document benchmark from 15.8% to 60.2% on one set and 4.4% to 61.1% on another, beating Claude Code by 12 points and Codex by nearly 19.</p>
-  <p>The architecture choice this names: for any agent reasoning over more material than fits its context window, track evidence and conclusions as explicit state, not as chat history.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.13075">Read the source →</a>
+  <h3>5. Superhuman&rsquo;s own account of its internal security agent makes a clean, first-party case against using an AI to check an AI&rsquo;s work.</h3>
+  <span class="tag">(single-source, vendor-primary)</span>
+  <p>The team built &ldquo;Barney&rdquo; on the explicit assumption that it will hallucinate, so verifying its own claims runs through a separate, deterministic, non-AI Python script &mdash; &ldquo;we explicitly chose not to use AI for this, given the risk of reintroducing hallucinations.&rdquo; Barney&rsquo;s ability to modify its own instructions is gated by a code-reviewer agent, a stop hook, and human review, with a flat rule against learning any skill that touches real people&rsquo;s actions.</p>
+  <p>Useful citable precedent against LLM-judges-LLM verification loops, and a concrete example of a named gate specifically for an agent&rsquo;s self-modification path.</p>
+  <a class="btn" href="https://blog.superhuman.com/barney-threat-hunter-ai-agent/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>The dossier corrected yesterday&rsquo;s #1 ranking claim: NeurIPS&rsquo;s Creative AI Track is explicitly non-archival and single-blind, with zero occurrences of &ldquo;peer&rdquo; or &ldquo;reviewer&rdquo; in its own call &mdash; the paper is genuinely accepted, just not peer-reviewed as the digest said. The headline figures shrink on inspection: &ldquo;three times the width&rdquo; is a ratio that varies by canvas (3.12x/3.75x/2.97x, the two error terms reversing dominance), and &ldquo;26 of 36, no perceptible change&rdquo; was thresholded against a re-render noise floor, not any listener. Unreported: the weaker model&rsquo;s error (0.515) is worse than just guessing the corpus mean (0.476) behind an identical-looking display.</p>
-  <p>The corrected rule: show a number as a measurement only where a validated measure and its conditions hold; otherwise show provenance, and keep &ldquo;no change&rdquo; distinct from &ldquo;no detectable change.&rdquo;</p>
-  <p class="dossier-path">dossiers/2026-10-12-legible-and-false.md</p>
+  <p>Yesterday&rsquo;s dossier tested Linear&rsquo;s own account of its agent-automation design against the evidence and found it holds up unevenly. The escalation ladder it describes is real but lives only in prompt text &mdash; Linear&rsquo;s own docs expose capability scopes with no pre-execution gate, and the recommended &ldquo;control&rdquo; is a sentence in a system prompt, not a guardrail. The &ldquo;consequences first&rdquo; ordering matches 18 months of vendor and regulatory consensus (OpenAI, Apple, OWASP, the EU AI Act) but has zero controlling measurement behind it, and the few field measurements of widening agent autonomy over time show scrutiny falling as authority rises, not holding steady.</p>
+  <p>Letting the agent rewrite its own instructions is already shipped elsewhere, but the one direct controlled comparison found machine-written standing instructions performing worse in five of eight settings at higher cost &mdash; a second study flips the sign on different models with the identical change, so the real variable is how the rewrite gets produced, not whether self-editing works. Peer visibility is not a substitute for an approval gate: the only study manipulating shared responsibility for watching an automation found less checking and a quarter fewer failures caught, with no team-level gain.</p>
+  <p class="dossier-path">dossiers/2026-10-13-the-ladder-is-prose.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,20 +165,6 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-
-<h2>Run notes</h2>
-
-<div class="item">
-  <p>All four lanes produced verified survivors this cycle &mdash; none returned empty. Practice 1, interaction 2, capability 2 took the cap; ambient&rsquo;s two survivors (voice-agent personality/perception studies) missed the cap on rank, not scope.</p>
-  <p><strong>Verified but below the cap (not resubmitted unchanged):</strong> a voice agent&rsquo;s social-strategy language lifting perceived competence and changing how users speak back; a voice agent&rsquo;s extraversion changing likeability only on a female-coded voice, with personality-matching buying nothing; Elastic Latent Recurrence trading inference compute for accuracy at serve time from one checkpoint; peer reviewers&rsquo; citation-verification practice varying by citation type, with desired AI autonomy varying alongside it; a three-axis framework for when to sunset an AI feature, where low adoption alone is not sufficient grounds; patients understanding a diabetes-risk ML interface better than expected, with unclear terminology the actual barrier; a hybrid co-controlled adaptation mode beating pure user- and pure AI-driven control for an emotionally-supportive chatbot; Work2Skill turning recorded GUI demonstrations into reusable computer-use agent skills; an updated survey on generative-image-AI sentiment splitting sharply by role and generation, with copyright the universal top concern.</p>
-  <p><strong>Flagged for the auditor, not acted on as kills:</strong> one quote-fabrication was caught and corrected in item #2 &mdash; a researcher paraphrased a paper&rsquo;s opening sentence and submitted it as verbatim, the same failure mode as an earlier fabrication on a Japanese-language source, now recurring in an English-language abstract. One sourcing correction upgraded item #4&rsquo;s rank after raw fetch found a peer-reviewed acceptance that had been logged as a bare preprint. The sentiment-survey update item was narrowed rather than killed: its institutional-ranking figures were already published; only the sentiment-breakdown material is new.</p>
-</div>
-
-<h2>Kill log</h2>
-
-<div class="item">
-  <p>No items killed this run &mdash; every one of the fourteen verified candidates survived. One quote correction and one dedupe-narrowing were handled in place per protocol, not as kills.</p>
-</div>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
