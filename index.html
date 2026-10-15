@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-14</title>
+<title>Limen — 2026-10-15</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-14</p>
+  <p class="date">Limen — 2026-10-15</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A decision-theoretic model finally gives agentic UI a real answer to &ldquo;where does the approval gate go&rdquo; &mdash; and it cuts task time 13.54% while winning 81% preference over confirming only at the end.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; CHI 2026, venue-checked fresh)</span>
-  <p>Researchers started from an 8-participant formative study naming a recurring error pattern &mdash; confirm, diagnose, correct, redo &mdash; and modeled confirmation placement as a scheduling problem rather than a fixed interval. In a 48-person test, the adaptive placement beat confirm-at-the-end on both measures: preferred 81% of the time, and faster.</p>
-  <p>The transferable claim: checkpoint placement in a multi-step agent can be computed from observed failure patterns, not guessed at once per product.</p>
-  <a class="btn" href="https://arxiv.org/abs/2510.05307">Read the source →</a>
+  <h3>1. A GUI-agent framework tags every action as reversible, compensatable, or irreversible, treating the task itself as a contract that can be renegotiated mid-flight rather than a fixed plan.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, v1, cs.HC)</span>
+  <p>Today&rsquo;s plan-centric agent interfaces leave users watching a procedure while what matters is the state changes underneath it. TaskVM instead classifies every action by how hard it is to undo, and treats the task as an editable contract the user can renegotiate instead of a plan fixed at launch. Holding execution outcomes constant across conditions, the authors measured a real gain in contract compliance and in users&rsquo; sense of recovery control and trust &mdash; exactly what today&rsquo;s &ldquo;approve the plan, then watch&rdquo; agent UIs are missing.</p>
+  <p>A reusable taxonomy worth checking against any undo-boundary or approval-gate spec.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.20100">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A field study of a public sensing robot found that a one-time disclosure notice is worse for trust than no notice at all.</h3>
-  <span class="tag">(single-source &mdash; HRI &lsquo;26 Companion Proceedings, mutual-review track, lighter than main-track)</span>
-  <p>Thirty-six people encountered a data-collecting robot under three conditions: no disclosure, a static one-time notice, and dynamic, granular consent. Dynamic consent raised both trust and awareness, as expected. What didn&rsquo;t survive contact with reality: a static sign discharging the obligation &mdash; people trusted the robot <em>less</em> after a one-time notice than after no notice at all.</p>
-  <p>For anyone designing always-on public sensing, the safe-looking default &mdash; post a sign &mdash; is not safe; the finding argues for a persistent, interactive consent surface instead. Note this ran in HRI&rsquo;s Companion track, where review is mutual among submitters, not full double-blind &mdash; slightly less weight than a main-track paper if carried further.</p>
-  <a class="btn" href="https://doi.org/10.1145/3776734.3794372">Read the source →</a>
+  <h3>2. A new usability metric finds 54% of LLM agent replies fail the person who delegated the task &mdash; and a rewrite step nearly halves that rate.</h3>
+  <span class="tag">(single-source &mdash; 480 replies, eight models, seven families)</span>
+  <p>The study built a reader-model check for whether a delegated reply is actually usable by the person who asked for it, not whether it&rsquo;s factually correct &mdash; and found the majority fail, with even the best model still failing 30% of the time. Stating explicit requirements for the reply drops the failure rate from 52% to 43%; adding a second model that rewrites the reply drops it to 36%, confirmed by blind human judges.</p>
+  <p>The finding separates &ldquo;correct&rdquo; from &ldquo;usable&rdquo; as two different design targets for agent output, with two concrete, measured fixes for the gap.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.19659">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Mixed-reality notifications should be placed by urgency, not by habit &mdash; and getting it right costs nothing in missed alerts.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; TVCG/IEEE VR 2026)</span>
-  <p>An 18-person study compared a fixed-central notification position against one that moved &mdash; periphery, hand, or progressive-center &mdash; by urgency. The adaptive version measurably cut mental workload, temporal pressure, and frustration, with alerts noticed just as reliably as the fixed position.</p>
-  <p>The implication for XR interfaces: a single default notification slot costs users workload with no safety benefit from keeping everything centered.</p>
-  <a class="btn" href="https://arxiv.org/abs/2603.05893">Read the source →</a>
+  <h3>3. Feedback that only nudges one way &mdash; toward more or less reliance on AI advice &mdash; quietly narrows a person&rsquo;s in-the-moment judgment even when team performance looks unchanged.</h3>
+  <span class="tag">(single-source &mdash; N=244 behavioral study)</span>
+  <p>Researchers tested feedback interventions aimed at the moment someone overrides AI advice. One-directional feedback produced opposing shifts in reliance that cancel out at the team-performance level while still measurably narrowing reflection-in-the-moment for the individual making the call.</p>
+  <p>Balanced feedback, able to point either way, didn&rsquo;t carry that risk &mdash; worth checking before a flat performance metric hides the same damage in your own product.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.19991">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A five-session CHI study pins down exactly when the &ldquo;novelty wears off&rdquo; trust dip happens, and what changes it back.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; CHI 2026)</span>
-  <p>Twelve professional UX evaluators worked with the same AI tool across five sessions, six hours each. Their ignore rate rose sharply from session 1 (8.0%) through sessions 2&ndash;4 (16.2%, 13.3%, 17.8%), then recovered &mdash; not because trust quietly rebuilt, but because evaluators visibly changed workflow strategy partway through.</p>
-  <p>&ldquo;Trust recovers with use&rdquo; is too vague to design against; what&rsquo;s worth instrumenting is the workflow-strategy shift itself, not just a trust score.</p>
-  <a class="btn" href="https://arxiv.org/abs/2603.13717">Read the source →</a>
+  <h3>4. Anthropic&rsquo;s new policy for outside safety evaluators grants deep internal access but reserves redaction rights, not a veto, over what they publish.</h3>
+  <span class="tag">(vendor-primary)</span>
+  <p>The company has onboarded a six-person METR team with its own hardware, office space and internal-tool access, with other METR staff walled off from that team&rsquo;s work, and names SecureBio and Accenture as active evaluators, Hugging Face as early discussion. Anthropic says it can&rsquo;t block an evaluator&rsquo;s publication outright, only require redaction for information inside narrow, predefined categories, under a three-tier access framework still being built out.</p>
+  <p>Its second tiered-access disclosure in six days (after its Cyber Verification Program), and a concrete precedent for &ldquo;access without control&rdquo; for anyone designing a third-party-audit surface.</p>
+  <a class="btn" href="https://www.anthropic.com/news/an-update-on-independent-evaluators">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Superhuman&rsquo;s own account of its internal security agent makes a clean, first-party case against using an AI to check an AI&rsquo;s work.</h3>
-  <span class="tag">(single-source, vendor-primary)</span>
-  <p>The team built &ldquo;Barney&rdquo; on the explicit assumption that it will hallucinate, so verifying its own claims runs through a separate, deterministic, non-AI Python script &mdash; &ldquo;we explicitly chose not to use AI for this, given the risk of reintroducing hallucinations.&rdquo; Barney&rsquo;s ability to modify its own instructions is gated by a code-reviewer agent, a stop hook, and human review, with a flat rule against learning any skill that touches real people&rsquo;s actions.</p>
-  <p>Useful citable precedent against LLM-judges-LLM verification loops, and a concrete example of a named gate specifically for an agent&rsquo;s self-modification path.</p>
-  <a class="btn" href="https://blog.superhuman.com/barney-threat-hunter-ai-agent/">Read the source →</a>
+  <h3>5. A simple three-in-a-row launch rule for streaming voice-agent tool calls cuts stale executions from 50% to 3.15%.</h3>
+  <span class="tag">(single-source &mdash; code published)</span>
+  <p>RASSG only fires a tool call once three consecutive speech-recognition results arrive with identical, nonempty arguments, with a cancellation policy for calls triggered on input the user has since corrected. Against the LocalAgreement-2 baseline this drops the stale-execution rate from 50.00% to 3.15%, at a mean delay of 3.68 seconds &mdash; a small latency cost against a large correctness gain.</p>
+  <p>A directly reusable default for any duplex voice agent deciding when to act on a still-forming transcript, with working code behind it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.14659">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier tested Linear&rsquo;s own account of its agent-automation design against the evidence and found it holds up unevenly. The escalation ladder it describes is real but lives only in prompt text &mdash; Linear&rsquo;s own docs expose capability scopes with no pre-execution gate, and the recommended &ldquo;control&rdquo; is a sentence in a system prompt, not a guardrail. The &ldquo;consequences first&rdquo; ordering matches 18 months of vendor and regulatory consensus (OpenAI, Apple, OWASP, the EU AI Act) but has zero controlling measurement behind it, and the few field measurements of widening agent autonomy over time show scrutiny falling as authority rises, not holding steady.</p>
-  <p>Letting the agent rewrite its own instructions is already shipped elsewhere, but the one direct controlled comparison found machine-written standing instructions performing worse in five of eight settings at higher cost &mdash; a second study flips the sign on different models with the identical change, so the real variable is how the rewrite gets produced, not whether self-editing works. Peer visibility is not a substitute for an approval gate: the only study manipulating shared responsibility for watching an automation found less checking and a quarter fewer failures caught, with no team-level gain.</p>
-  <p class="dossier-path">dossiers/2026-10-13-the-ladder-is-prose.md</p>
+  <p>Yesterday&rsquo;s dossier re-investigated the CHI 2026 confirmation-placement paper that led the previous digest and found the digest&rsquo;s own framing wrong: the model&rsquo;s &ldquo;adaptive, not a fixed interval&rdquo; claim only holds in simulation, while the condition the 48 participants actually experienced applied one fixed parameter set per domain &mdash; making the tested version an interval after all. The measured time gain is concentrated almost entirely in early errors (~29%) and nearly vanishes for mid- and late-task errors (~2% and ~4.5%), and the study never measured error-catching itself, only elapsed time and a single preference question.</p>
+  <p>The paper is in fact published at CHI 2026 with four independent deposits and eight citing preprints, so the digest&rsquo;s &ldquo;not yet in proceedings&rdquo; single-source marker was also wrong. Against it, a separate live-agent study (N=48) found per-action confirmation produced the highest rate of problematic actions despite scoring best on workload and trust, and no shipped product exposes confirmation frequency as a review checkpoint &mdash; most substitute a second model as reviewer instead.</p>
+  <p class="dossier-path">dossiers/2026-10-14-the-schedule-was-an-interval.md</p>
 </div>
 
 <h2>Needs your answer</h2>
