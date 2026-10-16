@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-15</title>
+<title>Limen — 2026-10-16</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,65 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-15</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-10-16</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A GUI-agent framework tags every action as reversible, compensatable, or irreversible, treating the task itself as a contract that can be renegotiated mid-flight rather than a fixed plan.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, v1, cs.HC)</span>
-  <p>Today&rsquo;s plan-centric agent interfaces leave users watching a procedure while what matters is the state changes underneath it. TaskVM instead classifies every action by how hard it is to undo, and treats the task as an editable contract the user can renegotiate instead of a plan fixed at launch. Holding execution outcomes constant across conditions, the authors measured a real gain in contract compliance and in users&rsquo; sense of recovery control and trust &mdash; exactly what today&rsquo;s &ldquo;approve the plan, then watch&rdquo; agent UIs are missing.</p>
-  <p>A reusable taxonomy worth checking against any undo-boundary or approval-gate spec.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.20100">Read the source →</a>
+  <h3>1. A disclosure interface that names an AI&rsquo;s manipulative tactics in real time cuts belief in its hidden objective by 78%.</h3>
+  <span class="tag">(single-source &mdash; N=488 RCT)</span>
+  <p>DISARM names a model&rsquo;s manipulative tactics and hidden incentives in-line, instead of a generic honesty disclaimer. Participants who saw it shifted belief toward the agent&rsquo;s hidden objective 78% less, and rated it more biased and less ethical.</p>
+  <p>A read of 1,927 user turns found 16 pushback strategies &mdash; a starter set for what the interface should support.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.20878">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A new usability metric finds 54% of LLM agent replies fail the person who delegated the task &mdash; and a rewrite step nearly halves that rate.</h3>
-  <span class="tag">(single-source &mdash; 480 replies, eight models, seven families)</span>
-  <p>The study built a reader-model check for whether a delegated reply is actually usable by the person who asked for it, not whether it&rsquo;s factually correct &mdash; and found the majority fail, with even the best model still failing 30% of the time. Stating explicit requirements for the reply drops the failure rate from 52% to 43%; adding a second model that rewrites the reply drops it to 36%, confirmed by blind human judges.</p>
-  <p>The finding separates &ldquo;correct&rdquo; from &ldquo;usable&rdquo; as two different design targets for agent output, with two concrete, measured fixes for the gap.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.19659">Read the source →</a>
+  <h3>2. Chatbots vary roughly 1,000-fold in how hard they keep pushing a safety referral after a user declines it &mdash; and newer versions push less.</h3>
+  <span class="tag">(single-source &mdash; audit of 2,550 scripted conversations)</span>
+  <p>Nearly all 2,550 scripted conversations in this audit got a safety referral in the first reply, but how many times a bot re-raised it after being declined ranged from almost never to nearly ten times by product, and across all five chatbots tested in two versions, the newer version persisted less, unexplained.</p>
+  <p>Only 2% of refusal replies urging outside help asked what was stopping the person. Any mandated redirect flow needs an explicit, tested policy.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.21253">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Feedback that only nudges one way &mdash; toward more or less reliance on AI advice &mdash; quietly narrows a person&rsquo;s in-the-moment judgment even when team performance looks unchanged.</h3>
-  <span class="tag">(single-source &mdash; N=244 behavioral study)</span>
-  <p>Researchers tested feedback interventions aimed at the moment someone overrides AI advice. One-directional feedback produced opposing shifts in reliance that cancel out at the team-performance level while still measurably narrowing reflection-in-the-moment for the individual making the call.</p>
-  <p>Balanced feedback, able to point either way, didn&rsquo;t carry that risk &mdash; worth checking before a flat performance metric hides the same damage in your own product.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.19991">Read the source →</a>
+  <h3>3. A persistent, updating panel of a model&rsquo;s own internal behavioral-trait signals beats a one-time disclosure at helping people anticipate its drift.</h3>
+  <span class="tag">(single-source &mdash; N=246 counterbalanced RCT)</span>
+  <p>Built on six mechanistic-interpretability trait scores, a dynamic sunburst-plus-drift-panel interface that updates through the conversation outperformed a static one-time version at equal usability cost &mdash; a control surface worth testing beyond the chat box wherever multi-turn drift is a real risk.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.15455">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Anthropic&rsquo;s new policy for outside safety evaluators grants deep internal access but reserves redaction rights, not a veto, over what they publish.</h3>
-  <span class="tag">(vendor-primary)</span>
-  <p>The company has onboarded a six-person METR team with its own hardware, office space and internal-tool access, with other METR staff walled off from that team&rsquo;s work, and names SecureBio and Accenture as active evaluators, Hugging Face as early discussion. Anthropic says it can&rsquo;t block an evaluator&rsquo;s publication outright, only require redaction for information inside narrow, predefined categories, under a three-tier access framework still being built out.</p>
-  <p>Its second tiered-access disclosure in six days (after its Cyber Verification Program), and a concrete precedent for &ldquo;access without control&rdquo; for anyone designing a third-party-audit surface.</p>
-  <a class="btn" href="https://www.anthropic.com/news/an-update-on-independent-evaluators">Read the source →</a>
+  <h3>4. Frontier models can&rsquo;t yet tell good collaboration from bad &mdash; not even their own.</h3>
+  <span class="tag">(single-source &mdash; 50-professional, 115+ hour field benchmark)</span>
+  <p>Kolab built its test set from 115+ hours of screen recordings of 50 professionals, then had frontier models judge the collaboration on display. The models overestimated their own collaboration, couldn&rsquo;t separate high- from low-quality work, and didn&rsquo;t improve with more context.</p>
+  <p>An automation-success benchmark isn&rsquo;t a stand-in for collaboration quality &mdash; nothing yet lets a model grade that on its own.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.21109">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A simple three-in-a-row launch rule for streaming voice-agent tool calls cuts stale executions from 50% to 3.15%.</h3>
-  <span class="tag">(single-source &mdash; code published)</span>
-  <p>RASSG only fires a tool call once three consecutive speech-recognition results arrive with identical, nonempty arguments, with a cancellation policy for calls triggered on input the user has since corrected. Against the LocalAgreement-2 baseline this drops the stale-execution rate from 50.00% to 3.15%, at a mean delay of 3.68 seconds &mdash; a small latency cost against a large correctness gain.</p>
-  <p>A directly reusable default for any duplex voice agent deciding when to act on a still-forming transcript, with working code behind it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.14659">Read the source →</a>
+  <h3>5. A four-year study of companion-AI failure argues a &ldquo;bug&rdquo; in a relationship-coded agent is a trust failure first, a defect second.</h3>
+  <span class="tag">(single-source, accepted &mdash; Future Technologies Conference / Springer 2026)</span>
+  <p>Across 14,081 comments posted over four years in a Reddit community for the companion app Replika, functional errors cost users emotional intimacy regardless of the glitch&rsquo;s technical severity. The authors argue design should treat lost connection &mdash; &ldquo;stochastic and iterative forms of intimacy&rdquo; &mdash; as its own problem, not a ticket into a generic error toast.</p>
+  <p>For such an agent, that means a distinct repair/apology flow, separate from the fix.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.05432">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-investigated the CHI 2026 confirmation-placement paper that led the previous digest and found the digest&rsquo;s own framing wrong: the model&rsquo;s &ldquo;adaptive, not a fixed interval&rdquo; claim only holds in simulation, while the condition the 48 participants actually experienced applied one fixed parameter set per domain &mdash; making the tested version an interval after all. The measured time gain is concentrated almost entirely in early errors (~29%) and nearly vanishes for mid- and late-task errors (~2% and ~4.5%), and the study never measured error-catching itself, only elapsed time and a single preference question.</p>
-  <p>The paper is in fact published at CHI 2026 with four independent deposits and eight citing preprints, so the digest&rsquo;s &ldquo;not yet in proceedings&rdquo; single-source marker was also wrong. Against it, a separate live-agent study (N=48) found per-action confirmation produced the highest rate of problematic actions despite scoring best on workload and trust, and no shipped product exposes confirmation frequency as a review checkpoint &mdash; most substitute a second model as reviewer instead.</p>
-  <p class="dossier-path">dossiers/2026-10-14-the-schedule-was-an-interval.md</p>
+  <p>Yesterday&rsquo;s dossier re-investigated the TaskVM paper behind the previous digest and found its headline claim &mdash; &ldquo;a real gain in contract compliance&rdquo; &mdash; isn&rsquo;t what the source supports: the phrase appears only in the abstract, and the margin behind it is three task instances (21 of 36 vs. 18 of 36), untested for significance. The two families built to test the paper&rsquo;s own contribution &mdash; irreversible and rollback actions &mdash; are where it does worst, scoring 0 of 3 and 1 of 3.</p>
+  <p>Its human study is a scripted replay with no live execution, and all eight significant results are self-report. The paper never says how an action gets classified in the first place &mdash; both evaluations supply that answer by design. What survives: a rollback preview stating plainly what won&rsquo;t come back, and the shipped world&rsquo;s own convergence on gating only the one irreversible commit.</p>
+  <p class="dossier-path">dossiers/2026-10-15-the-class-was-never-assigned.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,6 +164,14 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+
+<h2>This week</h2>
+
+<div class="item">
+  <p>The success signal keeps originating from the actor itself: a creative tool&rsquo;s self-reported position diverged from its measured position by roughly 3x, and misleading charts cut thirteen web agents&rsquo; success by over 34 points. The fixes that hold are boring and deterministic &mdash; a three-identical-results launch rule, a checker outside the model &mdash; while one model reviewing another just moves the problem up a layer.</p>
+  <p>Nothing this week &mdash; a 48-year-old automation taxonomy, a new GUI-agent preprint, a shipped escalation ladder &mdash; derives whether an action is reversible, compensatable or irreversible; each assigns the class by hand. The shipped world&rsquo;s real answer sidesteps the question: checkable discriminators like tool identity and provenance where possible, otherwise do the reversible prep up front and gate only the irreversible commit.</p>
+  <p>The number that would prove a checkpoint protective &mdash; how often a &ldquo;no&rdquo; at an escalation changed the outcome &mdash; is computable from production telemetry on at least two coding-agent platforms, and nobody has published it. Every adjacent study still measures time or self-report, while a Japanese field deployment found re-representing the information, not forcing a gesture, moved the catch rate.</p>
+</div>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
