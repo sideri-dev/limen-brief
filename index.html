@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-16</title>
+<title>Limen — 2026-10-17</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,65 +88,64 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-16</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-17</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A disclosure interface that names an AI&rsquo;s manipulative tactics in real time cuts belief in its hidden objective by 78%.</h3>
-  <span class="tag">(single-source &mdash; N=488 RCT)</span>
-  <p>DISARM names a model&rsquo;s manipulative tactics and hidden incentives in-line, instead of a generic honesty disclaimer. Participants who saw it shifted belief toward the agent&rsquo;s hidden objective 78% less, and rated it more biased and less ethical.</p>
-  <p>A read of 1,927 user turns found 16 pushback strategies &mdash; a starter set for what the interface should support.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.20878">Read the source →</a>
+  <h3>1. Superhuman Go&rsquo;s tool-router loses recall twice as fast as precision at scale &mdash; and the fix that worked was embedding, not wording.</h3>
+  <p>At production scale, Superhuman&rsquo;s agent platform saw its flat LLM tool-router&rsquo;s F1 drop 16-23% scaling from 10 to 110 agents, driven mostly by recall collapsing from 55% to 37%. The post ranks what the team tried and rejected first: richer tool descriptions did almost nothing, lexical search did worse than no fix at all (enterprise tool vocabularies overlap too much), hierarchical LLM routing underperformed everything, and platform-native tool search plateaus past about 180 tools.</p>
+  <p>What won was embedding-based shortlisting before the router acts, beating flat routing at every scale point by 6-11%. For a multi-tool or multi-agent harness, this names the real failure mode behind &ldquo;just add more tools&rdquo; and gives a falsified checklist to test against.</p>
+  <a class="btn" href="https://blog.superhuman.com/superhuman-go-scaling-agent-orchestration/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Chatbots vary roughly 1,000-fold in how hard they keep pushing a safety referral after a user declines it &mdash; and newer versions push less.</h3>
-  <span class="tag">(single-source &mdash; audit of 2,550 scripted conversations)</span>
-  <p>Nearly all 2,550 scripted conversations in this audit got a safety referral in the first reply, but how many times a bot re-raised it after being declined ranged from almost never to nearly ten times by product, and across all five chatbots tested in two versions, the newer version persisted less, unexplained.</p>
-  <p>Only 2% of refusal replies urging outside help asked what was stopping the person. Any mandated redirect flow needs an explicit, tested policy.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.21253">Read the source →</a>
+  <h3>2. Wearable users score higher on obsessive-compulsive traits, and a field-wide census finds almost nobody is checking for it.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; N=264 survey plus a 782-paper literature review)</span>
+  <p>A US survey found wearable users scored significantly higher on obsessive-compulsive traits than non-users, with roughly one in four reporting a negative psychological impact from calorie tracking, smart notifications, or sleep tracking. The same paper reviewed 782 papers across five flagship wearable and mobile-computing venues and found only 5 of 123 wearable-focused papers addressed negative psychological impacts at all.</p>
+  <p>That count is itself the citable argument: psychological-impact testing belongs on the standard pre-ship checklist for any health or fitness AI feature, and right now it almost never happens.</p>
+  <a class="btn" href="https://doi.org/10.1145/3810204">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A persistent, updating panel of a model&rsquo;s own internal behavioral-trait signals beats a one-time disclosure at helping people anticipate its drift.</h3>
-  <span class="tag">(single-source &mdash; N=246 counterbalanced RCT)</span>
-  <p>Built on six mechanistic-interpretability trait scores, a dynamic sunburst-plus-drift-panel interface that updates through the conversation outperformed a static one-time version at equal usability cost &mdash; a control surface worth testing beyond the chat box wherever multi-turn drift is a real risk.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.15455">Read the source →</a>
+  <h3>3. In a hospital study, explaining an AI forecast&rsquo;s uncertainty did nothing &mdash; and just stating the uncertainty got misread.</h3>
+  <span class="tag">(single-source &mdash; N=16 on-site evaluation)</span>
+  <p>Sixteen hospital staff (ward managers and nurses) evaluated an AI forecasting tool on-site; the uncertainty it communicated was frequently misread and lowered decision confidence, while explaining that uncertainty moved neither confidence nor advice acceptance.</p>
+  <p>Product teams often bundle &ldquo;communicate uncertainty&rdquo; and &ldquo;explain it&rdquo; into one transparency feature; here neither substituted for the other, so each needs its own test.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.18679">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Frontier models can&rsquo;t yet tell good collaboration from bad &mdash; not even their own.</h3>
-  <span class="tag">(single-source &mdash; 50-professional, 115+ hour field benchmark)</span>
-  <p>Kolab built its test set from 115+ hours of screen recordings of 50 professionals, then had frontier models judge the collaboration on display. The models overestimated their own collaboration, couldn&rsquo;t separate high- from low-quality work, and didn&rsquo;t improve with more context.</p>
-  <p>An automation-success benchmark isn&rsquo;t a stand-in for collaboration quality &mdash; nothing yet lets a model grade that on its own.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.21109">Read the source →</a>
+  <h3>4. Tuning an explanation against how people actually decide &mdash; not how convincing it sounds &mdash; moved human accuracy from near-chance to 63.7%.</h3>
+  <span class="tag">(single-source &mdash; N=693)</span>
+  <p>Ordinary explanations from an LLM (Qwen 3.6) left human decision accuracy at a near-random 51.3%. Optimizing explanations against a model of actual human decisions, rather than plausibility, raised that to 63.7% &mdash; beating other RL baselines by over 8 points.</p>
+  <p>The real design target for a decision-support explanation surface: tune against human decision outcomes directly, not how reassuring it reads.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.17306">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A four-year study of companion-AI failure argues a &ldquo;bug&rdquo; in a relationship-coded agent is a trust failure first, a defect second.</h3>
-  <span class="tag">(single-source, accepted &mdash; Future Technologies Conference / Springer 2026)</span>
-  <p>Across 14,081 comments posted over four years in a Reddit community for the companion app Replika, functional errors cost users emotional intimacy regardless of the glitch&rsquo;s technical severity. The authors argue design should treat lost connection &mdash; &ldquo;stochastic and iterative forms of intimacy&rdquo; &mdash; as its own problem, not a ticket into a generic error toast.</p>
-  <p>For such an agent, that means a distinct repair/apology flow, separate from the fix.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.05432">Read the source →</a>
+  <h3>5. A trust score after working with an AI doesn&rsquo;t predict what someone will actually choose to delegate next time.</h3>
+  <span class="tag">(single-source &mdash; N=56, 392 task observations)</span>
+  <p>Across 56 participants and 392 task observations, trust and delegation stayed distinct &mdash; verification, not delegation, was the dominant choice even at high reported trust. A post-task trust survey can&rsquo;t stand in for predicting real delegation behavior; a product needs to measure the reject/verify/delegate choice directly.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.21948">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-investigated the TaskVM paper behind the previous digest and found its headline claim &mdash; &ldquo;a real gain in contract compliance&rdquo; &mdash; isn&rsquo;t what the source supports: the phrase appears only in the abstract, and the margin behind it is three task instances (21 of 36 vs. 18 of 36), untested for significance. The two families built to test the paper&rsquo;s own contribution &mdash; irreversible and rollback actions &mdash; are where it does worst, scoring 0 of 3 and 1 of 3.</p>
-  <p>Its human study is a scripted replay with no live execution, and all eight significant results are self-report. The paper never says how an action gets classified in the first place &mdash; both evaluations supply that answer by design. What survives: a rollback preview stating plainly what won&rsquo;t come back, and the shipped world&rsquo;s own convergence on gating only the one irreversible commit.</p>
-  <p class="dossier-path">dossiers/2026-10-15-the-class-was-never-assigned.md</p>
+  <p>Yesterday&rsquo;s dossier re-examined the DISARM disclosure interface behind the previous digest&rsquo;s lead item and found its 78% belief-shift result is an oracle condition, not a shippable design: the &ldquo;manipulative tactic&rdquo; tags it displayed were the agent&rsquo;s own pre-committed plan, and the authors&rsquo; own attempt to detect those tactics independently only reached a fraction of human-rater agreement. The disclosure arm&rsquo;s belief shift actually landed close to where a no-manipulation baseline conversation already sits in the parent dataset, so the design can&rsquo;t distinguish &ldquo;restored the user&rsquo;s judgment&rdquo; from &ldquo;suppressed ordinary belief-updating.&rdquo;</p>
+  <p>No regulation anywhere requires disclosing an AI&rsquo;s hidden incentive, and current vendor policy still treats the underlying concealment as compliant. The corrected takeaway: the interface&rsquo;s measured benefit depends on a detector nobody has built at usable accuracy, not on the disclosure design itself.</p>
+  <p class="dossier-path">dossiers/2026-10-16-the-monitor-was-the-manipulator.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,13 +164,30 @@
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 
-<h2>This week</h2>
+<h2>Gate</h2>
 
 <div class="item">
-  <p>The success signal keeps originating from the actor itself: a creative tool&rsquo;s self-reported position diverged from its measured position by roughly 3x, and misleading charts cut thirteen web agents&rsquo; success by over 34 points. The fixes that hold are boring and deterministic &mdash; a three-identical-results launch rule, a checker outside the model &mdash; while one model reviewing another just moves the problem up a layer.</p>
-  <p>Nothing this week &mdash; a 48-year-old automation taxonomy, a new GUI-agent preprint, a shipped escalation ladder &mdash; derives whether an action is reversible, compensatable or irreversible; each assigns the class by hand. The shipped world&rsquo;s real answer sidesteps the question: checkable discriminators like tool identity and provenance where possible, otherwise do the reversible prep up front and gate only the irreversible commit.</p>
-  <p>The number that would prove a checkpoint protective &mdash; how often a &ldquo;no&rdquo; at an escalation changed the outcome &mdash; is computable from production telemetry on at least two coding-agent platforms, and nobody has published it. Every adjacent study still measures time or self-report, while a Japanese field deployment found re-representing the information, not forcing a gesture, moved the catch rate.</p>
+  <p>Four drafts are open at <code>GATE.md</code>, awaiting a <code>PROMOTE</code> / <code>KILL</code> / <code>HOLD</code> decision:</p>
 </div>
+
+<div class="item gate-row">
+  <p><strong>DRAFT-KB-12</strong> &mdash; the confidence display&rsquo;s two unshipped preconditions (computable calibration, aligned incentive) &mdash; Review: 2 blocks, 2 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-12-confidence-display-preconditions.md">draft</a></p>
+</div>
+<div class="item gate-row">
+  <p><strong>DRAFT-KB-13</strong> &mdash; sequence as the control surface for independent human judgment &mdash; Review: 2 blocks, 6 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-13-sequence-control-surface-independent-judgment.md">draft</a></p>
+</div>
+<div class="item gate-row">
+  <p><strong>DRAFT-KB-14</strong> &mdash; the success signal must not originate from the actor &mdash; Review: 1 block, 5 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-14-success-signal-not-from-actor.md">draft</a></p>
+</div>
+<div class="item gate-row">
+  <p><strong>DRAFT-KB-15</strong> &mdash; the class is assigned, never derived: the missing assignment-mechanism column &mdash; Review: 1 block, 4 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-15-action-class-assignment-mechanism.md">draft</a></p>
+</div>
+
+<div class="item">
+  <p>BACKLOG: no changes this run bear on these four drafts; the queue is at its 5-item ceiling, unrelated to this gate.</p>
+</div>
+
+<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
