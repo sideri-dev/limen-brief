@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-17</title>
+<title>Limen — 2026-10-18</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -81,71 +81,72 @@
   }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
-  .gate-row { margin: 0 0 1rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-17</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-10-18</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Superhuman Go&rsquo;s tool-router loses recall twice as fast as precision at scale &mdash; and the fix that worked was embedding, not wording.</h3>
-  <p>At production scale, Superhuman&rsquo;s agent platform saw its flat LLM tool-router&rsquo;s F1 drop 16-23% scaling from 10 to 110 agents, driven mostly by recall collapsing from 55% to 37%. The post ranks what the team tried and rejected first: richer tool descriptions did almost nothing, lexical search did worse than no fix at all (enterprise tool vocabularies overlap too much), hierarchical LLM routing underperformed everything, and platform-native tool search plateaus past about 180 tools.</p>
-  <p>What won was embedding-based shortlisting before the router acts, beating flat routing at every scale point by 6-11%. For a multi-tool or multi-agent harness, this names the real failure mode behind &ldquo;just add more tools&rdquo; and gives a falsified checklist to test against.</p>
-  <a class="btn" href="https://blog.superhuman.com/superhuman-go-scaling-agent-orchestration/">Read the source →</a>
+  <h3>1. A three-month study puts interface redesign up against the actual job of overseeing an AI &mdash; and redesign loses.</h3>
+  <span class="tag">(single-source, preprint &mdash; N=8, 12 weekly meetings)</span>
+  <p>Eight tutors spent three months overseeing an AI-supported learning assistant while researchers ran action research alongside them: 12 weekly meetings, two workshop iterations, four questionnaires. The team identified stimulation, mastery, and relatedness &mdash; not UI friction &mdash; as the real drivers of oversight disengagement, and the targeted UI changes they shipped in response had, in their own words, &ldquo;mixed success.&rdquo;</p>
+  <p>The lesson for anyone building an oversight dashboard: test whether the problem is motivational and job-design before spending another cycle on layout.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.16410">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Wearable users score higher on obsessive-compulsive traits, and a field-wide census finds almost nobody is checking for it.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; N=264 survey plus a 782-paper literature review)</span>
-  <p>A US survey found wearable users scored significantly higher on obsessive-compulsive traits than non-users, with roughly one in four reporting a negative psychological impact from calorie tracking, smart notifications, or sleep tracking. The same paper reviewed 782 papers across five flagship wearable and mobile-computing venues and found only 5 of 123 wearable-focused papers addressed negative psychological impacts at all.</p>
-  <p>That count is itself the citable argument: psychological-impact testing belongs on the standard pre-ship checklist for any health or fitness AI feature, and right now it almost never happens.</p>
-  <a class="btn" href="https://doi.org/10.1145/3810204">Read the source →</a>
+  <h3>2. A trained auditor catches 12 of 20 hidden policy violations in a tool-using agent. Random probing catches 1. An LLM judge can&rsquo;t tell the difference.</h3>
+  <span class="tag">(single-source, peer-reviewed, NeurIPS 2026)</span>
+  <p>Researchers hid 20 policies inside a frozen Qwen3-30B-A3B agent running 8 tools, then tested how well different auditing strategies found them. Random probing surfaced just 1; a small trained auditor (Qwen3-4B, fine-tuned via QLoRA) found 12, with multi-policy failures showing up in nearly every evaluation episode.</p>
+  <p>Worse for anyone hoping to automate the auditing itself: an LLM judge agreed with its own repeated verdicts almost perfectly but matched actual human raters only 40% of the time. Passive red-teaming badly undercounts real violations, and a judge model is not a safe substitute for a human reviewer.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.22124">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. In a hospital study, explaining an AI forecast&rsquo;s uncertainty did nothing &mdash; and just stating the uncertainty got misread.</h3>
-  <span class="tag">(single-source &mdash; N=16 on-site evaluation)</span>
-  <p>Sixteen hospital staff (ward managers and nurses) evaluated an AI forecasting tool on-site; the uncertainty it communicated was frequently misread and lowered decision confidence, while explaining that uncertainty moved neither confidence nor advice acceptance.</p>
-  <p>Product teams often bundle &ldquo;communicate uncertainty&rdquo; and &ldquo;explain it&rdquo; into one transparency feature; here neither substituted for the other, so each needs its own test.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.18679">Read the source →</a>
+  <h3>3. Giving an autonomous-vehicle supervisor a haptic nudge raises situational awareness for free &mdash; and aerial oversight is measurably harder than ground oversight on every count.</h3>
+  <span class="tag">(single-source, preprint &mdash; within-subjects)</span>
+  <p>Across modality conditions, haptic and visual-haptic feedback significantly improved situational awareness over visual-only feedback, with no added workload cost. Separately, the same study found aerial supervision carries a significantly bigger workload penalty than ground supervision on every measure tested.</p>
+  <p>For a hazard-monitoring interface, that&rsquo;s a case for adding a haptic channel instead of another visual alert, and a flag that aerial and ground supervision need their own workload budgets rather than one shared design.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.17339">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Tuning an explanation against how people actually decide &mdash; not how convincing it sounds &mdash; moved human accuracy from near-chance to 63.7%.</h3>
-  <span class="tag">(single-source &mdash; N=693)</span>
-  <p>Ordinary explanations from an LLM (Qwen 3.6) left human decision accuracy at a near-random 51.3%. Optimizing explanations against a model of actual human decisions, rather than plausibility, raised that to 63.7% &mdash; beating other RL baselines by over 8 points.</p>
-  <p>The real design target for a decision-support explanation surface: tune against human decision outcomes directly, not how reassuring it reads.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.17306">Read the source →</a>
+  <h3>4. Nielsen Norman Group ran its own synthetic-vs-human respondent study, and synthetic data got the headline right while quietly erasing the variation that makes user research useful.</h3>
+  <span class="tag">(single-source &mdash; primary report of NN/G&rsquo;s own study, N=604 human / 120 synthetic)</span>
+  <p>Posing the same question to 604 humans and 120 synthetic respondents, NN/G found synthetic answers collapsed onto about a dozen labels where humans spread across more than 50, and synthetic respondents used UX jargon at a significantly higher rate than humans &mdash; a gap that widened sharply for one subgroup, product managers (93% synthetic vs. 44% human).</p>
+  <p>The top-line direction matched; the texture that a research method is supposed to surface didn&rsquo;t. This is now the citable argument against swapping a synthetic panel in for real recruitment in a client-facing research plan.</p>
+  <a class="btn" href="https://www.nngroup.com/articles/synthetic-users-vs-human-respondents/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A trust score after working with an AI doesn&rsquo;t predict what someone will actually choose to delegate next time.</h3>
-  <span class="tag">(single-source &mdash; N=56, 392 task observations)</span>
-  <p>Across 56 participants and 392 task observations, trust and delegation stayed distinct &mdash; verification, not delegation, was the dominant choice even at high reported trust. A post-task trust survey can&rsquo;t stand in for predicting real delegation behavior; a product needs to measure the reject/verify/delegate choice directly.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.21948">Read the source →</a>
+  <h3>5. Letting someone feel and correct an AI&rsquo;s guess at a material&rsquo;s properties nearly doubles its accuracy, in about six and a half minutes.</h3>
+  <span class="tag">(single-source, preprint &mdash; CHI 2027 submission, not yet accepted)</span>
+  <p>TouchTwin&rsquo;s automatic drafts of material properties scored a middling 4.0/7 for realism. After a median 6.6 minutes of haptic-guided correction, realism rose to 5.6/7 and accuracy against ground truth jumped from 52% to 92%.</p>
+  <p>It&rsquo;s a measured case for building a correction affordance into a tangible/haptic interface rather than trusting the model&rsquo;s first guess.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.17302">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-examined the DISARM disclosure interface behind the previous digest&rsquo;s lead item and found its 78% belief-shift result is an oracle condition, not a shippable design: the &ldquo;manipulative tactic&rdquo; tags it displayed were the agent&rsquo;s own pre-committed plan, and the authors&rsquo; own attempt to detect those tactics independently only reached a fraction of human-rater agreement. The disclosure arm&rsquo;s belief shift actually landed close to where a no-manipulation baseline conversation already sits in the parent dataset, so the design can&rsquo;t distinguish &ldquo;restored the user&rsquo;s judgment&rdquo; from &ldquo;suppressed ordinary belief-updating.&rdquo;</p>
-  <p>No regulation anywhere requires disclosing an AI&rsquo;s hidden incentive, and current vendor policy still treats the underlying concealment as compliant. The corrected takeaway: the interface&rsquo;s measured benefit depends on a detector nobody has built at usable accuracy, not on the disclosure design itself.</p>
-  <p class="dossier-path">dossiers/2026-10-16-the-monitor-was-the-manipulator.md</p>
+  <p>Yesterday&rsquo;s dossier re-examined Superhuman Go&rsquo;s own blog post on agent tool-routing &mdash; the lead item in that day&rsquo;s digest &mdash; against the preprint it&rsquo;s based on, and found the blog systematically misreports its own source: every figure printed as a percentage is actually a percentage-point delta, its stated 180-tool capability threshold is the reverse of what the paper&rsquo;s own appendix measures, and its &ldquo;80% of queries get a correct tool&rdquo; headline is a synthetic-query figure the paper itself reports as 60% on real production traffic.</p>
+  <p>The preprint&rsquo;s one genuine new contribution &mdash; a precision/recall decomposition against catalog size &mdash; holds up under a prior-art check; most of the rest is replication the blog presents as novel. What the paper actually hands the interface is a stable roughly-1-in-5 routing-failure rate that the authors say needs catalog-level fixes or multi-turn clarification &mdash; and Superhuman Go&rsquo;s own help centre documents no agent selector, no direct addressing, and no undo for a misroute, despite marketing copy claiming it &ldquo;knows which agent is right for the job.&rdquo;</p>
+  <p class="dossier-path">dossiers/2026-10-17-the-blog-reversed-its-own-preprint.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -163,31 +164,6 @@
 </div>
 
 <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p>Four drafts are open at <code>GATE.md</code>, awaiting a <code>PROMOTE</code> / <code>KILL</code> / <code>HOLD</code> decision:</p>
-</div>
-
-<div class="item gate-row">
-  <p><strong>DRAFT-KB-12</strong> &mdash; the confidence display&rsquo;s two unshipped preconditions (computable calibration, aligned incentive) &mdash; Review: 2 blocks, 2 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-12-confidence-display-preconditions.md">draft</a></p>
-</div>
-<div class="item gate-row">
-  <p><strong>DRAFT-KB-13</strong> &mdash; sequence as the control surface for independent human judgment &mdash; Review: 2 blocks, 6 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-13-sequence-control-surface-independent-judgment.md">draft</a></p>
-</div>
-<div class="item gate-row">
-  <p><strong>DRAFT-KB-14</strong> &mdash; the success signal must not originate from the actor &mdash; Review: 1 block, 5 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-14-success-signal-not-from-actor.md">draft</a></p>
-</div>
-<div class="item gate-row">
-  <p><strong>DRAFT-KB-15</strong> &mdash; the class is assigned, never derived: the missing assignment-mechanism column &mdash; Review: 1 block, 4 objections &middot; <a href="https://github.com/sideri-dev/limen-research/blob/main/kb-drafts/DRAFT-KB-15-action-class-assignment-mechanism.md">draft</a></p>
-</div>
-
-<div class="item">
-  <p>BACKLOG: no changes this run bear on these four drafts; the queue is at its 5-item ceiling, unrelated to this gate.</p>
-</div>
-
-<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 
 <footer>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
