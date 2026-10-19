@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-18</title>
+<title>Limen — 2026-10-19</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,66 +87,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-18</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-19</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A three-month study puts interface redesign up against the actual job of overseeing an AI &mdash; and redesign loses.</h3>
-  <span class="tag">(single-source, preprint &mdash; N=8, 12 weekly meetings)</span>
-  <p>Eight tutors spent three months overseeing an AI-supported learning assistant while researchers ran action research alongside them: 12 weekly meetings, two workshop iterations, four questionnaires. The team identified stimulation, mastery, and relatedness &mdash; not UI friction &mdash; as the real drivers of oversight disengagement, and the targeted UI changes they shipped in response had, in their own words, &ldquo;mixed success.&rdquo;</p>
-  <p>The lesson for anyone building an oversight dashboard: test whether the problem is motivational and job-design before spending another cycle on layout.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.16410">Read the source →</a>
+  <h3>1. A feedback button after a wrong AI answer repairs trust &mdash; but never fully, and only if the next answer is right.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; N=1,035 across five experiments)</span>
+  <p>A study in the Journal of the Association for Information Systems found that once an LLM-based assistant gives wrong information, user trust drops, and giving people a way to flag it only partially brings trust back &mdash; &ldquo;not to baseline levels.&rdquo; The repair only holds if the system&rsquo;s follow-up answers are actually accurate; a second bad regenerated answer taints perceived accuracy on later tasks, even unrelated ones, rather than resetting the relationship.</p>
+  <p>For anyone designing a &ldquo;thumbs down&rdquo; or correction surface, this is the real bar: it&rsquo;s not a trust-restoring gesture on its own, it&rsquo;s a conditional one, gated entirely on whether the system gets it right next time.</p>
+  <a class="btn" href="https://aisel.aisnet.org/jais_preprints/262">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A trained auditor catches 12 of 20 hidden policy violations in a tool-using agent. Random probing catches 1. An LLM judge can&rsquo;t tell the difference.</h3>
-  <span class="tag">(single-source, peer-reviewed, NeurIPS 2026)</span>
-  <p>Researchers hid 20 policies inside a frozen Qwen3-30B-A3B agent running 8 tools, then tested how well different auditing strategies found them. Random probing surfaced just 1; a small trained auditor (Qwen3-4B, fine-tuned via QLoRA) found 12, with multi-policy failures showing up in nearly every evaluation episode.</p>
-  <p>Worse for anyone hoping to automate the auditing itself: an LLM judge agreed with its own repeated verdicts almost perfectly but matched actual human raters only 40% of the time. Passive red-teaming badly undercounts real violations, and a judge model is not a safe substitute for a human reviewer.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.22124">Read the source →</a>
+  <h3>2. LLM-written pedestrian signals for self-driving cars are understandable but don&rsquo;t make people act correctly.</h3>
+  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
+  <p>A 26-participant field study compared human-designed external vehicle signals against ones a GPT-o3-mini generated. People interpreted the AI-written signals about as well as the human-designed ones &mdash; but that didn&rsquo;t translate into pedestrians behaving correctly. The authors are explicit: correct interpretation and correct reaction are not the same test.</p>
+  <p>That&rsquo;s a direct warning against validating a redesigned external vehicle signal purely on comprehension surveys; it needs a behavioral test too.</p>
+  <a class="btn" href="https://doi.org/10.1145/3810200">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Giving an autonomous-vehicle supervisor a haptic nudge raises situational awareness for free &mdash; and aerial oversight is measurably harder than ground oversight on every count.</h3>
-  <span class="tag">(single-source, preprint &mdash; within-subjects)</span>
-  <p>Across modality conditions, haptic and visual-haptic feedback significantly improved situational awareness over visual-only feedback, with no added workload cost. Separately, the same study found aerial supervision carries a significantly bigger workload penalty than ground supervision on every measure tested.</p>
-  <p>For a hazard-monitoring interface, that&rsquo;s a case for adding a haptic channel instead of another visual alert, and a flag that aerial and ground supervision need their own workload budgets rather than one shared design.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.17339">Read the source →</a>
+  <h3>3. A hearable can borrow other people&rsquo;s microphones by tracking who&rsquo;s actually facing whom.</h3>
+  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
+  <p>CoHear groups nearby hearable-device wearers into a shared processing unit based on head orientation &mdash; who is actually in conversation with whom &mdash; rather than relying on dedicated shared infrastructure. Grouping hits over 90% accuracy, speech quality improves by up to 8.8 dB over prior baselines, and a 20-person usability study scored it well above baseline.</p>
+  <p>The design implication: the unit of audio processing for a hearable should be the conversation, not the single wearer &mdash; which changes what a hearable&rsquo;s mic array needs to coordinate with across devices.</p>
+  <a class="btn" href="https://doi.org/10.1145/3789685">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Nielsen Norman Group ran its own synthetic-vs-human respondent study, and synthetic data got the headline right while quietly erasing the variation that makes user research useful.</h3>
-  <span class="tag">(single-source &mdash; primary report of NN/G&rsquo;s own study, N=604 human / 120 synthetic)</span>
-  <p>Posing the same question to 604 humans and 120 synthetic respondents, NN/G found synthetic answers collapsed onto about a dozen labels where humans spread across more than 50, and synthetic respondents used UX jargon at a significantly higher rate than humans &mdash; a gap that widened sharply for one subgroup, product managers (93% synthetic vs. 44% human).</p>
-  <p>The top-line direction matched; the texture that a research method is supposed to surface didn&rsquo;t. This is now the citable argument against swapping a synthetic panel in for real recruitment in a client-facing research plan.</p>
-  <a class="btn" href="https://www.nngroup.com/articles/synthetic-users-vs-human-respondents/">Read the source →</a>
+  <h3>4. A car&rsquo;s wireless phone charger can double as a gesture sensor &mdash; no camera needed.</h3>
+  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
+  <p>MagHarp repurposes the magnetic field of an ordinary in-car wireless charging pad to recognize hand gestures, hitting 97.6% accuracy across a 3,500-sample dataset, tested on 5 chargers and 4 phones, effective to 20cm.</p>
+  <p>It&rsquo;s a concrete alternative to camera- or IR-based in-car gesture systems, trading a bit of range for avoiding the privacy and cost exposure of adding a camera array.</p>
+  <a class="btn" href="https://doi.org/10.1145/3831984">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Letting someone feel and correct an AI&rsquo;s guess at a material&rsquo;s properties nearly doubles its accuracy, in about six and a half minutes.</h3>
-  <span class="tag">(single-source, preprint &mdash; CHI 2027 submission, not yet accepted)</span>
-  <p>TouchTwin&rsquo;s automatic drafts of material properties scored a middling 4.0/7 for realism. After a median 6.6 minutes of haptic-guided correction, realism rose to 5.6/7 and accuracy against ground truth jumped from 52% to 92%.</p>
-  <p>It&rsquo;s a measured case for building a correction affordance into a tangible/haptic interface rather than trusting the model&rsquo;s first guess.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.17302">Read the source →</a>
+  <h3>5. A new attention method cuts long-context LLM response time by 3.4x.</h3>
+  <span class="tag">(single-source, peer-reviewed, NeurIPS 2026, venue-checked)</span>
+  <p>Prism Attention exploits the fact that a model&rsquo;s most-attended tokens stay stable across layers even when the exact ranked list shifts, letting it share attention indices across layers instead of recomputing them. The payoff: a 3.4x end-to-end decoding speedup over FlashAttention at 128K context length.</p>
+  <p>That&rsquo;s a real number for deciding whether a long-context feature can be served live in a conversation or needs to be designed as an async, batch-style operation instead.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.22985">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-examined Superhuman Go&rsquo;s own blog post on agent tool-routing &mdash; the lead item in that day&rsquo;s digest &mdash; against the preprint it&rsquo;s based on, and found the blog systematically misreports its own source: every figure printed as a percentage is actually a percentage-point delta, its stated 180-tool capability threshold is the reverse of what the paper&rsquo;s own appendix measures, and its &ldquo;80% of queries get a correct tool&rdquo; headline is a synthetic-query figure the paper itself reports as 60% on real production traffic.</p>
-  <p>The preprint&rsquo;s one genuine new contribution &mdash; a precision/recall decomposition against catalog size &mdash; holds up under a prior-art check; most of the rest is replication the blog presents as novel. What the paper actually hands the interface is a stable roughly-1-in-5 routing-failure rate that the authors say needs catalog-level fixes or multi-turn clarification &mdash; and Superhuman Go&rsquo;s own help centre documents no agent selector, no direct addressing, and no undo for a misroute, despite marketing copy claiming it &ldquo;knows which agent is right for the job.&rdquo;</p>
-  <p class="dossier-path">dossiers/2026-10-17-the-blog-reversed-its-own-preprint.md</p>
+  <p>Testing the prior day&rsquo;s #1 digest item (an AI-oversight-UI preprint) found the &ldquo;interface design hit a motivational ceiling&rdquo; reading doesn&rsquo;t hold up: the missing feedback loop the paper blamed was a deliberate governance choice by the researchers running the study, not evidence a wall was hit. The paper&rsquo;s own data undercuts its stated conclusion &mdash; three of five measured wellbeing scores moved the wrong direction relative to the features the authors marked as fixes, a contradiction never addressed in the text.</p>
+  <p>Its claim that &ldquo;the missing sense of impact is not an interface problem but an oversight problem&rdquo; ignores measured research the paper doesn&rsquo;t cite that says otherwise. Shipped tools already handle peer-visibility of reviewer judgments in contested ways, but none tells a reviewer whether their input changed anything downstream. The paper&rsquo;s own data-availability link also returned a 404 on verification.</p>
+  <p class="dossier-path">dossiers/2026-10-18-the-loop-was-withheld-not-absent.md</p>
 </div>
 
 <h2>Needs your answer</h2>
