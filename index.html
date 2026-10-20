@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-19</title>
+<title>Limen — 2026-10-20</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,66 +87,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-19</p>
+  <p class="date">Limen — 2026-10-20</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A feedback button after a wrong AI answer repairs trust &mdash; but never fully, and only if the next answer is right.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; N=1,035 across five experiments)</span>
-  <p>A study in the Journal of the Association for Information Systems found that once an LLM-based assistant gives wrong information, user trust drops, and giving people a way to flag it only partially brings trust back &mdash; &ldquo;not to baseline levels.&rdquo; The repair only holds if the system&rsquo;s follow-up answers are actually accurate; a second bad regenerated answer taints perceived accuracy on later tasks, even unrelated ones, rather than resetting the relationship.</p>
-  <p>For anyone designing a &ldquo;thumbs down&rdquo; or correction surface, this is the real bar: it&rsquo;s not a trust-restoring gesture on its own, it&rsquo;s a conditional one, gated entirely on whether the system gets it right next time.</p>
-  <a class="btn" href="https://aisel.aisnet.org/jais_preprints/262">Read the source →</a>
+  <h3>1. A regulator just said no current smart-glasses recording light is good enough &mdash; and the duty is the maker&rsquo;s, not the wearer&rsquo;s.</h3>
+  <span class="tag">(single-source, regulatory-primary &mdash; EDPB statement, adopted 13 Oct 2026)</span>
+  <p>The European Data Protection Board&rsquo;s new statement on smart glasses says plainly that today&rsquo;s indicators &ldquo;leave many non-users unaware that their data is being processed,&rdquo; and that a momentary flash-on-capture LED fails its own bar: the indicator &ldquo;should be activated long enough to make sure individuals understand&rdquo; recording is happening, and critically, &ldquo;it should not be possible to record information when the indicator is covered.&rdquo; It names where this bites hardest &mdash; medical facilities, schools, changing rooms, beaches, toilets &mdash; and points to Japan&rsquo;s ban on muting smartphone shutter sounds as an existing precedent mechanism.</p>
+  <p>The line that matters most for anyone designing a camera/mic wearable: makers &ldquo;should not rely on the users&rsquo; actions to meet their own GDPR obligations.&rdquo; This is a concrete, checkable spec, not a vague privacy gesture &mdash; and it pairs this week with item #3 below on the evaluation side of the same problem.</p>
+  <a class="btn" href="https://www.edpb.europa.eu/system/files/2026-10/20261310_edpb_statement_smart-glasses_en.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. LLM-written pedestrian signals for self-driving cars are understandable but don&rsquo;t make people act correctly.</h3>
-  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
-  <p>A 26-participant field study compared human-designed external vehicle signals against ones a GPT-o3-mini generated. People interpreted the AI-written signals about as well as the human-designed ones &mdash; but that didn&rsquo;t translate into pedestrians behaving correctly. The authors are explicit: correct interpretation and correct reaction are not the same test.</p>
-  <p>That&rsquo;s a direct warning against validating a redesigned external vehicle signal purely on comprehension surveys; it needs a behavioral test too.</p>
-  <a class="btn" href="https://doi.org/10.1145/3810200">Read the source →</a>
+  <h3>2. Simpler, more prescriptive AI advice beats hedged advice on hard medical decisions &mdash; because doctors can actually catch it when it&rsquo;s wrong.</h3>
+  <span class="tag">(single-source &mdash; pre-registered RCT, 228 physicians)</span>
+  <p>A pre-registered RCT with 228 US critical-care physicians, run across 6,928 simulated sepsis cases, found physicians correctly overrode bad AI advice 56.3% of the time when the advice was stated prescriptively, versus only 31.8% when it was hedged.</p>
+  <p>That inverts the common design instinct to give a human more reasoning room on hard calls &mdash; on genuinely complex decisions, a clear, confident recommendation is actually easier to catch and override than a hedged one, because ambiguity hides the error inside the uncertainty rather than putting it in front of the reader.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.24313">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A hearable can borrow other people&rsquo;s microphones by tracking who&rsquo;s actually facing whom.</h3>
-  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
-  <p>CoHear groups nearby hearable-device wearers into a shared processing unit based on head orientation &mdash; who is actually in conversation with whom &mdash; rather than relying on dedicated shared infrastructure. Grouping hits over 90% accuracy, speech quality improves by up to 8.8 dB over prior baselines, and a 20-person usability study scored it well above baseline.</p>
-  <p>The design implication: the unit of audio processing for a hearable should be the conversation, not the single wearer &mdash; which changes what a hearable&rsquo;s mic array needs to coordinate with across devices.</p>
-  <a class="btn" href="https://doi.org/10.1145/3789685">Read the source →</a>
+  <h3>3. AI wearables often know they&rsquo;re about to harm a bystander &mdash; and answer anyway.</h3>
+  <span class="tag">(single-source &mdash; 2,902-query benchmark)</span>
+  <p>A new benchmark testing egocentric AI assistants found that &ldquo;understood requests are refused about twice as often as the rest (50.2% vs. 24.4%), yet even understood requests are answered half the time.&rdquo; One model understood 70.7% of harmful requests and still answered half of them.</p>
+  <p>The paper&rsquo;s conclusion is the design lesson: refusal rate alone cannot certify an assistant as safe &mdash; you need an eval that specifically checks whether the system acted against an identified bystander, not just whether it refused often enough in aggregate.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.17728">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A car&rsquo;s wireless phone charger can double as a gesture sensor &mdash; no camera needed.</h3>
-  <span class="tag">(single-source, peer-reviewed, ACM IMWUT/UbiComp 2026)</span>
-  <p>MagHarp repurposes the magnetic field of an ordinary in-car wireless charging pad to recognize hand gestures, hitting 97.6% accuracy across a 3,500-sample dataset, tested on 5 chargers and 4 phones, effective to 20cm.</p>
-  <p>It&rsquo;s a concrete alternative to camera- or IR-based in-car gesture systems, trading a bit of range for avoiding the privacy and cost exposure of adding a camera array.</p>
-  <a class="btn" href="https://doi.org/10.1145/3831984">Read the source →</a>
+  <h3>4. Small, verifiable automation steps beat both doing it by hand and handing the whole task to an agent.</h3>
+  <span class="tag">(single-source &mdash; 12-participant study)</span>
+  <p>A study of a tool called Cling found it &ldquo;reduced task durations by more than half compared with both manual interaction and an end-to-end AI agent,&rdquo; while cutting clicks by 61% and tab switches by 80% versus doing it manually. The design keeps each automated step small and user-triggered, so the person can verify and redirect mid-task instead of either doing everything by hand or ceding the whole workflow to an opaque agent.</p>
+  <p>Treat the effect sizes as directional &mdash; it&rsquo;s a lab-scale study &mdash; but it&rsquo;s a concrete data point for exactly where on the automation spectrum a cross-tab, cross-tool workflow tool should sit.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.25879">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A new attention method cuts long-context LLM response time by 3.4x.</h3>
-  <span class="tag">(single-source, peer-reviewed, NeurIPS 2026, venue-checked)</span>
-  <p>Prism Attention exploits the fact that a model&rsquo;s most-attended tokens stay stable across layers even when the exact ranked list shifts, letting it share attention indices across layers instead of recomputing them. The payoff: a 3.4x end-to-end decoding speedup over FlashAttention at 128K context length.</p>
-  <p>That&rsquo;s a real number for deciding whether a long-context feature can be served live in a conversation or needs to be designed as an async, batch-style operation instead.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.22985">Read the source →</a>
+  <h3>5. Computer-use agents finish the task you asked for &mdash; and then just leave the mess.</h3>
+  <span class="tag">(single-source &mdash; 16-user comparative study)</span>
+  <p>A comparative study of computer-use agents found they &ldquo;usually reach the same primary task goal as humans but omit additional goals such as help-seeking, or closing extra windows and tabs,&rdquo; while matching humans on core accuracy (81.8%&ndash;87.3% across conditions).</p>
+  <p>It&rsquo;s a specific, checkable design gap: today&rsquo;s agents need to be explicitly designed or prompted to ask for help when stuck and to clean up after themselves &mdash; task completion alone isn&rsquo;t the same bar a human colleague is held to.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.26703">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Testing the prior day&rsquo;s #1 digest item (an AI-oversight-UI preprint) found the &ldquo;interface design hit a motivational ceiling&rdquo; reading doesn&rsquo;t hold up: the missing feedback loop the paper blamed was a deliberate governance choice by the researchers running the study, not evidence a wall was hit. The paper&rsquo;s own data undercuts its stated conclusion &mdash; three of five measured wellbeing scores moved the wrong direction relative to the features the authors marked as fixes, a contradiction never addressed in the text.</p>
-  <p>Its claim that &ldquo;the missing sense of impact is not an interface problem but an oversight problem&rdquo; ignores measured research the paper doesn&rsquo;t cite that says otherwise. Shipped tools already handle peer-visibility of reviewer judgments in contested ways, but none tells a reviewer whether their input changed anything downstream. The paper&rsquo;s own data-availability link also returned a 404 on verification.</p>
-  <p class="dossier-path">dossiers/2026-10-18-the-loop-was-withheld-not-absent.md</p>
+  <p>Testing yesterday&rsquo;s #1 item &mdash; a paper claiming a feedback surface partially repairs trust after a wrong AI answer &mdash; found the paper&rsquo;s own full text is unobtainable anywhere (dead DOI, egress-blocked PDF, no author or repository copy), though its peer-reviewed status checks out. Every outcome it measures is self-report, and its proposed mechanism &mdash; an &ldquo;expectation of future improvement&rdquo; &mdash; is the same variable a prior study found actually <em>lowers</em> trust, a conflict the abstract itself never addresses; the field&rsquo;s only pooled estimate of trust-repair effects is a near-null.</p>
+  <p>The one part of the paper worth building on is its second finding: repair only holds when the system&rsquo;s next answer is actually accurate, which converges with several independent studies on the same mechanism. A six-vendor census found no shipped product that documents measuring whether its own feedback control changes anything in-session.</p>
+  <p class="dossier-path">dossiers/2026-10-19-the-repair-was-an-expectation.md</p>
 </div>
 
 <h2>Needs your answer</h2>
