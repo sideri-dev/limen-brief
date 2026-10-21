@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-20</title>
+<title>Limen — 2026-10-21</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,87 +87,67 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-20</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-10-21</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A regulator just said no current smart-glasses recording light is good enough &mdash; and the duty is the maker&rsquo;s, not the wearer&rsquo;s.</h3>
-  <span class="tag">(single-source, regulatory-primary &mdash; EDPB statement, adopted 13 Oct 2026)</span>
-  <p>The European Data Protection Board&rsquo;s new statement on smart glasses says plainly that today&rsquo;s indicators &ldquo;leave many non-users unaware that their data is being processed,&rdquo; and that a momentary flash-on-capture LED fails its own bar: the indicator &ldquo;should be activated long enough to make sure individuals understand&rdquo; recording is happening, and critically, &ldquo;it should not be possible to record information when the indicator is covered.&rdquo; It names where this bites hardest &mdash; medical facilities, schools, changing rooms, beaches, toilets &mdash; and points to Japan&rsquo;s ban on muting smartphone shutter sounds as an existing precedent mechanism.</p>
-  <p>The line that matters most for anyone designing a camera/mic wearable: makers &ldquo;should not rely on the users&rsquo; actions to meet their own GDPR obligations.&rdquo; This is a concrete, checkable spec, not a vague privacy gesture &mdash; and it pairs this week with item #3 below on the evaluation side of the same problem.</p>
-  <a class="btn" href="https://www.edpb.europa.eu/system/files/2026-10/20261310_edpb_statement_smart-glasses_en.pdf">Read the source →</a>
+  <h3>1. People who stay in a sustained AI-companionship relationship end up worse off &mdash; because it&rsquo;s replacing human contact, not because the relationship itself is unhealthy.</h3>
+  <span class="tag">(single-source &mdash; two-wave longitudinal study, 1,182 users)</span>
+  <p>A two-wave study surveyed 1,182 CharacterAI users at baseline and resurveyed 439 of them after a 12-month gap. Engagement held steady over that year, and sustained use was consistently tied to lower well-being &mdash; driven mainly by reduced in-person social contact (&ldquo;social displacement&rdquo;), not by engagement depth itself.</p>
+  <p>For any product sustaining long-term conversational engagement, that&rsquo;s the real design lever: whether it crowds out human contact or leaves room for it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.07243">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Simpler, more prescriptive AI advice beats hedged advice on hard medical decisions &mdash; because doctors can actually catch it when it&rsquo;s wrong.</h3>
-  <span class="tag">(single-source &mdash; pre-registered RCT, 228 physicians)</span>
-  <p>A pre-registered RCT with 228 US critical-care physicians, run across 6,928 simulated sepsis cases, found physicians correctly overrode bad AI advice 56.3% of the time when the advice was stated prescriptively, versus only 31.8% when it was hedged.</p>
-  <p>That inverts the common design instinct to give a human more reasoning room on hard calls &mdash; on genuinely complex decisions, a clear, confident recommendation is actually easier to catch and override than a hedged one, because ambiguity hides the error inside the uncertainty rather than putting it in front of the reader.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.24313">Read the source →</a>
+  <h3>2. Confidence is not a reliable signal that someone actually checked an AI agent&rsquo;s output.</h3>
+  <span class="tag">(single-source &mdash; N=12 formative + N=36 controlled study)</span>
+  <p>Researchers found users &ldquo;accepted plausible outputs without thorough evaluation, and only recognized these lapses in retrospect.&rdquo; A follow-on study of 36 people doing programming tasks, instrumented with gaze and physiological data, found people were &ldquo;often highly confident while missing silent defects&rdquo; &mdash; running only generic checks, never generating real diagnostic evidence.</p>
+  <p>An oversight UI for agentic tools needs to force diagnostic evidence-gathering on anything plausible-looking, not just surface a confidence score.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.27801">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. AI wearables often know they&rsquo;re about to harm a bystander &mdash; and answer anyway.</h3>
-  <span class="tag">(single-source &mdash; 2,902-query benchmark)</span>
-  <p>A new benchmark testing egocentric AI assistants found that &ldquo;understood requests are refused about twice as often as the rest (50.2% vs. 24.4%), yet even understood requests are answered half the time.&rdquo; One model understood 70.7% of harmful requests and still answered half of them.</p>
-  <p>The paper&rsquo;s conclusion is the design lesson: refusal rate alone cannot certify an assistant as safe &mdash; you need an eval that specifically checks whether the system acted against an identified bystander, not just whether it refused often enough in aggregate.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.17728">Read the source →</a>
+  <h3>3. Letting an AI advisor say &ldquo;I don&rsquo;t know&rdquo; helps confident users trust it more, and hurts unsure users&rsquo; trust in it.</h3>
+  <span class="tag">(single-source &mdash; preregistered experiment, N=455)</span>
+  <p>A preregistered experiment gave an AI advisor the option to abstain instead of &ldquo;always provide a response.&rdquo; High-expertise users&rsquo; acceptance rose from 38.2% to 53.3% when abstention was available; low-expertise users&rsquo; fell from 73.4% to 68.1% &mdash; a genuine crossover, mediated by the added cognitive burden of handling &ldquo;I don&rsquo;t know.&rdquo;</p>
+  <p>A single abstention policy across a whole user base is the wrong default &mdash; it&rsquo;s a segmentation call.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.27258">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Small, verifiable automation steps beat both doing it by hand and handing the whole task to an agent.</h3>
-  <span class="tag">(single-source &mdash; 12-participant study)</span>
-  <p>A study of a tool called Cling found it &ldquo;reduced task durations by more than half compared with both manual interaction and an end-to-end AI agent,&rdquo; while cutting clicks by 61% and tab switches by 80% versus doing it manually. The design keeps each automated step small and user-triggered, so the person can verify and redirect mid-task instead of either doing everything by hand or ceding the whole workflow to an opaque agent.</p>
-  <p>Treat the effect sizes as directional &mdash; it&rsquo;s a lab-scale study &mdash; but it&rsquo;s a concrete data point for exactly where on the automation spectrum a cross-tab, cross-tool workflow tool should sit.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.25879">Read the source →</a>
+  <h3>4. Notion dropped pure LLM-as-judge scoring, decided full pairwise comparison doesn&rsquo;t scale, and calibrated a pointwise judge against pairwise results instead.</h3>
+  <span class="tag">(vendor-primary, single-source &mdash; Notion&rsquo;s own account)</span>
+  <p>Its own writeup on model router Auto: &ldquo;simply asking an LLM to score the outputs was not reliable enough,&rdquo; while full pairwise/Elo comparison &ldquo;would have been both too slow and too costly&rdquo; to run daily. The calibrated pointwise judge agreed with pairwise rankings &ldquo;more than 80% of the time,&rdquo; and Auto now hits &ldquo;roughly 90% of the performance of frontier models&hellip; for about a 90% lower cost&rdquo; (5/10/25 credits vs. Opus 5.5&rsquo;s 50/85/150).</p>
+  <p>The reusable pattern for any model router or quality gate: pointwise scoring calibrated against pairwise ground truth, not either alone.</p>
+  <a class="btn" href="https://www.notion.com/blog/inside-notions-upgraded-model-router-auto">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Computer-use agents finish the task you asked for &mdash; and then just leave the mess.</h3>
-  <span class="tag">(single-source &mdash; 16-user comparative study)</span>
-  <p>A comparative study of computer-use agents found they &ldquo;usually reach the same primary task goal as humans but omit additional goals such as help-seeking, or closing extra windows and tabs,&rdquo; while matching humans on core accuracy (81.8%&ndash;87.3% across conditions).</p>
-  <p>It&rsquo;s a specific, checkable design gap: today&rsquo;s agents need to be explicitly designed or prompted to ask for help when stuck and to clean up after themselves &mdash; task completion alone isn&rsquo;t the same bar a human colleague is held to.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.26703">Read the source →</a>
+  <h3>5. The dead time while an agent works on a multi-minute task doesn&rsquo;t need a spinner &mdash; it needs something to do.</h3>
+  <span class="tag">(single-source &mdash; N=12 formative + N=16 within-subjects)</span>
+  <p>A study of 12 daily agent users found &ldquo;staying felt like wasted time, while switching away fragmented attention and forfeited the context needed to re-engage.&rdquo; The fix, Sidecar, is a same-surface panel that &ldquo;reads the run and surfaces implicit decisions the agent made&rdquo; while it&rsquo;s still working.</p>
+  <p>In a 16-person study it helped people &ldquo;stay focused on their main task&hellip; and recognize under-specification in their own prompts&rdquo; &mdash; catching their own bad instructions before the agent finished acting on them.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.27170">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Testing yesterday&rsquo;s #1 item &mdash; a paper claiming a feedback surface partially repairs trust after a wrong AI answer &mdash; found the paper&rsquo;s own full text is unobtainable anywhere (dead DOI, egress-blocked PDF, no author or repository copy), though its peer-reviewed status checks out. Every outcome it measures is self-report, and its proposed mechanism &mdash; an &ldquo;expectation of future improvement&rdquo; &mdash; is the same variable a prior study found actually <em>lowers</em> trust, a conflict the abstract itself never addresses; the field&rsquo;s only pooled estimate of trust-repair effects is a near-null.</p>
-  <p>The one part of the paper worth building on is its second finding: repair only holds when the system&rsquo;s next answer is actually accurate, which converges with several independent studies on the same mechanism. A six-vendor census found no shipped product that documents measuring whether its own feedback control changes anything in-session.</p>
-  <p class="dossier-path">dossiers/2026-10-19-the-repair-was-an-expectation.md</p>
+  <p>Deep-checking yesterday&rsquo;s #1 item found the EDPB&rsquo;s smart-glasses statement is weaker than it reads: non-binding &ldquo;preliminary reflections,&rdquo; adopted without consultation, with no scheduled follow-up. Its central clause &mdash; no indicator coverable without stopping capture &mdash; already fights the capture mode the market is moving toward, since at least one major wearable maker runs its AI-assistance camera continuously with the indicator light off by design.</p>
+  <p>The claim that today&rsquo;s indicators leave bystanders unaware cites no detection study, only preference surveys, and two of its supporting details &mdash; a Japan ordinance, a California bill &mdash; don&rsquo;t check out under a primary-source read. The statement&rsquo;s own text places the disclosure duty on &ldquo;the controller,&rdquo; not makers.</p>
+  <p class="dossier-path">dossiers/2026-10-20-the-interlock-guards-the-mode-being-retired.md</p>
 </div>
-
-<h2>Needs your answer</h2>
-
-<div class="item question">
-  <p><strong>2026-10-09 / backfill-writer:</strong> Four dossiers now show agent papers importing a human-factors construct and dropping its measurements. Should the lanes keep re-proving that on every new framework paper, or treat it as established and move on?</p>
-</div>
-
-<div class="item question">
-  <p><strong>2026-10-08 / dossier-writer:</strong> Should agent progress and plan-display surfaces become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found HAX has no guideline for them and the plan and progress literatures have never been connected.</p>
-</div>
-
-<div class="item question">
-  <p><strong>2026-10-08 / backfill-writer:</strong> Five dossiers since 2026-09-30 have mined radiology&rsquo;s reader-study and standards record as the measured precedent for AI-review interfaces. Keep mining that vein, or carry the same questions into a second domain &mdash; code review, moderation, driving?</p>
-</div>
-
-<a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-
-<footer>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
-</footer>
 
 </body>
 </html>
