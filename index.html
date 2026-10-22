@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-21</title>
+<title>Limen — 2026-10-22</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -87,67 +87,78 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-21</p>
+  <p class="date">Limen — 2026-10-22</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. People who stay in a sustained AI-companionship relationship end up worse off &mdash; because it&rsquo;s replacing human contact, not because the relationship itself is unhealthy.</h3>
-  <span class="tag">(single-source &mdash; two-wave longitudinal study, 1,182 users)</span>
-  <p>A two-wave study surveyed 1,182 CharacterAI users at baseline and resurveyed 439 of them after a 12-month gap. Engagement held steady over that year, and sustained use was consistently tied to lower well-being &mdash; driven mainly by reduced in-person social contact (&ldquo;social displacement&rdquo;), not by engagement depth itself.</p>
-  <p>For any product sustaining long-term conversational engagement, that&rsquo;s the real design lever: whether it crowds out human contact or leaves room for it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.07243">Read the source →</a>
+  <h3>1. Older adults accept home-IoT awareness but not automated authority &mdash; and family &ldquo;protection&rdquo; erases the distinction anyway.</h3>
+  <span class="tag">(peer-reviewed, ACM IMWUT / UbiComp 2026 &mdash; interview study, N=22)</span>
+  <p>A UbiComp 2026 interview study of 22 people &mdash; those over 65 and the family members who help manage their always-on home IoT &mdash; found a consistent split: people are fine being observed by ambient sensors but want a say before anything acts on what those sensors see. In practice that distinction rarely survives contact with a family caregiver&rsquo;s good intentions: the paper finds preferences are &ldquo;frequently bypassed through structural power asymmetries rooted in device acquisition and management pathways, often rationalized by family members&rsquo; protective intent.&rdquo;</p>
+  <p>For anyone designing a shared-control home system, the fix isn&rsquo;t a better sensing-disclosure UI &mdash; it&rsquo;s an ownership and administration model that keeps &ldquo;may observe&rdquo; and &ldquo;may act&rdquo; as separate, renegotiable grants rather than one onboarding toggle.</p>
+  <a class="btn" href="https://doi.org/10.1145/3831972">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Confidence is not a reliable signal that someone actually checked an AI agent&rsquo;s output.</h3>
-  <span class="tag">(single-source &mdash; N=12 formative + N=36 controlled study)</span>
-  <p>Researchers found users &ldquo;accepted plausible outputs without thorough evaluation, and only recognized these lapses in retrospect.&rdquo; A follow-on study of 36 people doing programming tasks, instrumented with gaze and physiological data, found people were &ldquo;often highly confident while missing silent defects&rdquo; &mdash; running only generic checks, never generating real diagnostic evidence.</p>
-  <p>An oversight UI for agentic tools needs to force diagnostic evidence-gathering on anything plausible-looking, not just surface a confidence score.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.27801">Read the source →</a>
+  <h3>2. A Japan-Germany driverless-car study finds there&rsquo;s no single &ldquo;right&rdquo; way for a vehicle to signal its intentions to pedestrians &mdash; there are two.</h3>
+  <span class="tag">(peer-reviewed, ACM IMWUT / UbiComp 2026 &mdash; N=40, 20 Germany / 20 Japan)</span>
+  <p>Researchers ran the same multi-objective optimization &mdash; comparing external vehicle displays (eHMI) against each other via Bayesian search &mdash; with 20 participants in Germany and 20 in Japan, then compared the resulting Pareto fronts: the sets of designs that no other design beats on every criterion at once. The two fronts diverge &mdash; what wins the tradeoff between clarity, trust and unobtrusiveness in Japan isn&rsquo;t what wins it in Germany.</p>
+  <p>That&rsquo;s a direct challenge to any plan for a single global eHMI standard for autonomous vehicles signaling right-of-way, and a concrete argument for region-specific defaults where a product&rsquo;s market spans both Japan and Europe.</p>
+  <a class="btn" href="https://doi.org/10.1145/3831988">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Letting an AI advisor say &ldquo;I don&rsquo;t know&rdquo; helps confident users trust it more, and hurts unsure users&rsquo; trust in it.</h3>
-  <span class="tag">(single-source &mdash; preregistered experiment, N=455)</span>
-  <p>A preregistered experiment gave an AI advisor the option to abstain instead of &ldquo;always provide a response.&rdquo; High-expertise users&rsquo; acceptance rose from 38.2% to 53.3% when abstention was available; low-expertise users&rsquo; fell from 73.4% to 68.1% &mdash; a genuine crossover, mediated by the added cognitive burden of handling &ldquo;I don&rsquo;t know.&rdquo;</p>
-  <p>A single abstention policy across a whole user base is the wrong default &mdash; it&rsquo;s a segmentation call.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.27258">Read the source →</a>
+  <h3>3. A per-person, learned threshold beats every prompt-and-model combination at predicting how far a shopping agent should go before asking permission.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Researchers trained a lightweight model on a few dozen of a single person&rsquo;s own past purchase-approval labels and used it to predict that person&rsquo;s &ldquo;auto-purchase line&rdquo; &mdash; the boundary between what the agent can just buy and what it must confirm first. With only 30-40 labels it hit a median accuracy of 0.79, beating every prompt-engineering and model-choice combination tested &mdash; and the boundary it learns doesn&rsquo;t transfer from one shopping domain to another.</p>
+  <p>The implication for any agent that acts with money or consequence on a user&rsquo;s behalf: a single global confirmation policy, however well-prompted, is a worse fit than a per-user, per-domain threshold learned from that user&rsquo;s own behavior.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.29216">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Notion dropped pure LLM-as-judge scoring, decided full pairwise comparison doesn&rsquo;t scale, and calibrated a pointwise judge against pairwise results instead.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Notion&rsquo;s own account)</span>
-  <p>Its own writeup on model router Auto: &ldquo;simply asking an LLM to score the outputs was not reliable enough,&rdquo; while full pairwise/Elo comparison &ldquo;would have been both too slow and too costly&rdquo; to run daily. The calibrated pointwise judge agreed with pairwise rankings &ldquo;more than 80% of the time,&rdquo; and Auto now hits &ldquo;roughly 90% of the performance of frontier models&hellip; for about a 90% lower cost&rdquo; (5/10/25 credits vs. Opus 5.5&rsquo;s 50/85/150).</p>
-  <p>The reusable pattern for any model router or quality gate: pointwise scoring calibrated against pairwise ground truth, not either alone.</p>
-  <a class="btn" href="https://www.notion.com/blog/inside-notions-upgraded-model-router-auto">Read the source →</a>
+  <h3>4. 2-bit quantization now recovers full reasoning capability, not just raw accuracy, via a new self-distillation method.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, Qwen3 1.7B/4B/8B)</span>
+  <p>A technique called OnQ (on-policy distillation with candidate-wise Dynamic KL) closes the gap between a heavily compressed model and its full-precision original &mdash; at 2 bits per weight, tested on Qwen3 at 1.7B, 4B and 8B parameters, it &ldquo;outperforms every baseline on every benchmark at every model size,&rdquo; improving the 8B model&rsquo;s average score by 10.26 points over the next-best compression method.</p>
+  <p>That&rsquo;s a meaningful shift in where the on-device/local-inference boundary sits for reasoning-capable models &mdash; a model that previously needed full precision to reason well may now run usably compressed on far more modest hardware.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.29378">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. The dead time while an agent works on a multi-minute task doesn&rsquo;t need a spinner &mdash; it needs something to do.</h3>
-  <span class="tag">(single-source &mdash; N=12 formative + N=16 within-subjects)</span>
-  <p>A study of 12 daily agent users found &ldquo;staying felt like wasted time, while switching away fragmented attention and forfeited the context needed to re-engage.&rdquo; The fix, Sidecar, is a same-surface panel that &ldquo;reads the run and surfaces implicit decisions the agent made&rdquo; while it&rsquo;s still working.</p>
-  <p>In a 16-person study it helped people &ldquo;stay focused on their main task&hellip; and recognize under-specification in their own prompts&rdquo; &mdash; catching their own bad instructions before the agent finished acting on them.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.27170">Read the source →</a>
+  <h3>5. A CMU study of commercial computer-use agents finds users like them &mdash; then get stuck because the agents can&rsquo;t tell you what they don&rsquo;t know.</h3>
+  <span class="tag">(peer-reviewed, ACM CAIS 2026 &mdash; 102-agent survey + N=31 usability study)</span>
+  <p>The researchers surveyed marketing claims from 102 commercial agent products and ran a 31-person usability study against the agents actually built. Users were &ldquo;generally impressed&rdquo; at first contact, but ran into a consistent failure mode: &ldquo;agent capabilities that were misaligned with user mental models&rdquo; and agents &ldquo;lacking the meta-cognitive abilities necessary for effective collaboration&rdquo; &mdash; they can&rsquo;t represent, to themselves or the user, what they can and can&rsquo;t reliably judge about their own output.</p>
+  <p>That&rsquo;s a concrete design target: an agent status or capability-disclosure surface that states its own confidence boundaries, not just its actions, is the gap behind most of today&rsquo;s agent-marketing overreach.</p>
+  <a class="btn" href="https://www.caisconf.org/program/2026/papers/why-johnny-cant-use-agents-industry-aspirations-vs-user-realities-with-ai-agents/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Deep-checking yesterday&rsquo;s #1 item found the EDPB&rsquo;s smart-glasses statement is weaker than it reads: non-binding &ldquo;preliminary reflections,&rdquo; adopted without consultation, with no scheduled follow-up. Its central clause &mdash; no indicator coverable without stopping capture &mdash; already fights the capture mode the market is moving toward, since at least one major wearable maker runs its AI-assistance camera continuously with the indicator light off by design.</p>
-  <p>The claim that today&rsquo;s indicators leave bystanders unaware cites no detection study, only preference surveys, and two of its supporting details &mdash; a Japan ordinance, a California bill &mdash; don&rsquo;t check out under a primary-source read. The statement&rsquo;s own text places the disclosure duty on &ldquo;the controller,&rdquo; not makers.</p>
-  <p class="dossier-path">dossiers/2026-10-20-the-interlock-guards-the-mode-being-retired.md</p>
+  <p>Contests the framing of yesterday&rsquo;s own #1 item (the CharacterAI companionship study). Read at full text, the paper&rsquo;s &ldquo;social displacement&rdquo; mediation claim rests on a mediator measured only once, at the same wave as the outcome &mdash; a design the mediation-methods literature says typically overestimates the indirect effect, with the proper fix needing at least three waves the study doesn&rsquo;t have.</p>
+  <p>The citation record compounds it: the same co-author&rsquo;s own three-year follow-up (loneliness effect exactly 0.00) and a 275,728-participant meta-analysis finding &ldquo;not loneliness&rdquo; are both omitted, while two displacement authorities the paper does cite actually conclude there&rsquo;s &ldquo;very little direct or causal evidence&rdquo; for the mechanism. An independent replication found the same outcome (chatbot use predicts loneliness) but explicitly not the same mechanism (no effect on social connection), and the platform studied filed for Chapter 11 nine days before the paper&rsquo;s own latest revision.</p>
+  <p class="dossier-path">dossiers/2026-10-21-the-mediator-shared-the-wave.md</p>
 </div>
+
+<h2>Needs your answer</h2>
+
+<div class="item">
+  <p class="question">Should the pre-LLM Japanese 校正・校閲 human-factors record (基礎心理学研究, 情報処理学会論文誌, 認知科学, 人間工学) become a named source the lanes actively mine, as the 1970s-90s automation literature already is? Today&rsquo;s dossier found it holds the planted-error instrument the translation field lacks.</p>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+</div>
+
+<footer>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
+</footer>
 
 </body>
 </html>
