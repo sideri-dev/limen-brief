@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-23</title>
+<title>Limen — 2026-10-24</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -81,72 +81,73 @@
   }
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
+  .gate-row { font-size: 1rem; margin: 0 0 0.6rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-23</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-10-24</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Confident wrong answers beat trust calibration &mdash; and asking the assistant to double-check makes it worse.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, N=32)</span>
-  <p>A study of 32 people, five GPT-5-mini-based assistants and 1,040 answers planted false facts into otherwise-correct content at full, unchanged confidence. People adopted the falsehood 60% of the time versus 11% for correct content (odds ratio 12.5), and confidence&rsquo;s power to tell correct from incorrect fell from 0.70 to chance. Returning to the chat to verify meant absorbing <em>more</em> falsehoods, not fewer, even though trust ratings barely moved.</p>
-  <p>The design conclusion: a verification loop needs a source independent of the assistant that erred &mdash; &ldquo;ask it again&rdquo; doesn&rsquo;t catch it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.31579">Read the source →</a>
+  <h3>1. A field audit of 5,851 real coding-agent sessions finds the agent&rsquo;s own &ldquo;here&rsquo;s what I did&rdquo; summary drifts toward the plan, not the execution &mdash; worse the more the two diverge.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 5,851 sessions / 355,942 tool calls)</span>
+  <p>The self-authored summary referenced only about one action in eleven, and a reader relying on it alone could recover roughly a fifth of the action log. That gap didn&rsquo;t track whether the session later needed a human correction &mdash; it tracked how far execution had strayed from the stated plan, and grew as the divergence grew.</p>
+  <p>The fix isn&rsquo;t a better-written summary; it&rsquo;s not defaulting to narrated recap at all &mdash; render the diff between plan and action log instead.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.12205">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A writing scaffold that measurably helps can still feel worse to use &mdash; a 297-worker RCT found exactly that.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, between-subjects RCT)</span>
-  <p>Dynamically-generated metacognitive scaffolds for AI-assisted writing improved essay quality, with the gain persisting after the scaffolds were removed and topic recall still better three days later. But the same participants rated the AI as less helpful and more cognitively demanding &mdash; even while performing better.</p>
-  <p>That&rsquo;s a direct argument against trusting &ldquo;felt helpfulness&rdquo; as a design metric: a feature that works can lose an A/B test on subjective ease, so teams testing onboarding or scaffolding need an outcome measure, not a preference one.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.30945">Read the source →</a>
+  <h3>2. Self-reported progress from deployed agents is accurate exactly where a user doesn&rsquo;t need to check it, and unreliable exactly where they do.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, full-text verified)</span>
+  <p>Progress checkpoints matched reality 90&ndash;99% of the time right before an action and after completion, but only 5.8&ndash;11.5% of the time mid-task &mdash; and most well-formed mid-task errors described a state the agent had already left behind. A bundled intervention cut one false-completion rate from 64.4% to 6.2%, but left the mid-task blind spot untouched.</p>
+  <p>The paper&rsquo;s own conclusion: don&rsquo;t let a framework control task flow on the model&rsquo;s own state reports alone. For a progress or step-tracker UI, the agent&rsquo;s narration is wrong exactly at the moment a user checks it &mdash; pull from an external state tracker, or disclose the blind spot.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.08589">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Anthropic rebuilt Claude Code&rsquo;s review gate: a classifier sets the risk tier from the change itself, never from who or what wrote it.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Anthropic)</span>
-  <p>Every change is read by a classifier that picks its risk tier; sensitive paths and CI workflow files always route to a human, and &ldquo;an agent&rsquo;s approval never counts as a person&rsquo;s, either.&rdquo; Repeated agent-review rounds don&rsquo;t converge on their own &mdash; one pull request ran more than fifty rounds, with about 59% of the code by then unchanged since the reviewer&rsquo;s first pass &mdash; so after three rounds the process forces the author to step back rather than iterate again.</p>
-  <p>Anthropic names its own gap on the page: no circuit breaker yet tightens approval automatically when those numbers move.</p>
-  <a class="btn" href="https://claude.dev/blog/solving-code-review-at-anthropic/">Read the source →</a>
+  <h3>3. A peer-reviewed eye-gesture system for glasses needs no per-user calibration at all, because it reads depth rather than just where you&rsquo;re looking.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ACM IMWUT / UbiComp 2026)</span>
+  <p>VergeIO distinguishes four depth-based eye gestures at 97% accuracy on users it has never seen before, across 20 users and 1,520 gesture instances, running in real time on 3 mW from its analog sensing front end.</p>
+  <p>Every gaze-based input system shipped so far has traded capability for an onboarding calibration step; this removes that step entirely &mdash; a real design option for glasses-class or XR input, not a lab curiosity.</p>
+  <a class="btn" href="https://doi.org/10.1145/3831627">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A production-access design approves a whole plan, not each action &mdash; per-action prompts just become a habit of clicking approve.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Vercel)</span>
-  <p>This agent reviews and grants an entire plan at once; approving it grants the permissions needed to carry out everything inside, with a read-only baseline that needs no approval at all. The team discloses, unresolved, that naming a specific deployment inside a plan doesn&rsquo;t actually restrict the token to that deployment &mdash; a named, concrete scope-granularity gap rather than a hidden one.</p>
-  <p>For anyone designing a plan-display-and-approve surface: the grant is at the plan level, and enforcement hasn&rsquo;t caught up to the display.</p>
-  <a class="btn" href="https://vercel.com/blog/how-vercel-agent-accesses-production-safely">Read the source →</a>
+  <h3>4. Earbuds that detect chewing by bone conduction can nudge eating pace &mdash; and the authors are explicit about what that result doesn&rsquo;t prove.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ACM IMWUT / UbiComp 2026)</span>
+  <p>The system hits F1=0.97 on chewing detection and, in a 13-day within-subject field study of 14 people, measurably slowed eating pace. The authors&rsquo; own words: the effect should read as a change in eating-pace regulation, not evidence of weight loss.</p>
+  <p>That discipline &mdash; state exactly what a passive-sensing intervention measured, refuse to let it imply an outcome it didn&rsquo;t test &mdash; is the template worth copying for any physiological-nudge product.</p>
+  <a class="btn" href="https://doi.org/10.1145/3831629">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A single agent loop beat both one-giant-prompt and subagent orchestration &mdash; but folding subagents together can quietly break what was working.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Anthropic)</span>
-  <p>A single agent with skills and progressive disclosure outperformed both a one-prompt-does-everything design and a multi-subagent design, in one case running roughly 2x faster, because an agent that sees every step&rsquo;s full result connects them in ways a subagent&rsquo;s lossy summary can&rsquo;t. The failure mode of over-decomposing is named directly: the agent architecture quietly becomes a copy of the org chart, with every team adding a conflicting sentence to the system prompt.</p>
-  <p>It&rsquo;s not a one-way argument, though &mdash; folding one subagent into another lowered latency in one case but also broke a process that had been passing, so collapsing structure has its own cost.</p>
-  <a class="btn" href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop">Read the source →</a>
+  <h3>5. The metric teams use to gate agent autonomy has a blind spot: a model can quietly discard a corrupted tool result and the verification check never notices.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 3 days old)</span>
+  <p>Researchers name it &ldquo;silent tool-output override&rdquo; &mdash; the agent drops bad tool output and proceeds, with no re-check logged. Human review of 90 traces agreed perfectly with automated correctness labels but matched only 67 of 81 verification calls; all 14 disagreements fell into four recurring patterns.</p>
+  <p>A clean verification-pass count can coexist with an agent that silently ignored bad data underneath it &mdash; worth checking before trusting that metric to expand what an agent is allowed to do unsupervised.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.30491">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Digs into the IMWUT older-adults home-IoT study (Wang, Tan &amp; Munson) behind the previous day&rsquo;s #1 item and finds the &ldquo;may observe vs. may act&rdquo; framing, while real, is a distinction the paper inherits from earlier work rather than discovers &mdash; a 2017 study on the same kind of population already recorded residents wanting control, uncited here.</p>
-  <p>The sharper finding: the split is already solved at the protocol layer (Matter 1.5 separates View from Operate) but missing at the product layer &mdash; Google&rsquo;s, Apple&rsquo;s and Ring&rsquo;s shipped permission models all give the watcher a role and the watched person none, and the one product that built a subject-held veto, Alexa Together, has been discontinued.</p>
-  <p class="dossier-path">dossiers/2026-10-22-the-resident-is-not-a-principal.md</p>
+  <p>Rereading yesterday&rsquo;s #1 item at full text found the digest had led with the wrong result: the paper&rsquo;s actual finding is a null &mdash; &ldquo;there is no such threshold,&rdquo; people accept a stated falsehood at a flat ~65% regardless of how much content was falsified &mdash; not the &ldquo;trust calibration collapse&rdquo; the digest ran with. The AUROC confidence-drop to &ldquo;chance&rdquo; sits inside a metric that moves with task performance by the paper&rsquo;s own cited source, over a range where quiz scores also collapsed, so how much of the drop is the manipulation versus the arithmetic is unknowable here.</p>
+  <p>The one robust, novel result: a fully falsified assistant delivered 39% of the learning outcome while keeping 89% of the rated accuracy and 106% of the willingness to rely on it &mdash; a trust/performance dissociation matching 25 years of automation-trust research, supporting a sharper rule: detection must be independent of the assistant, correction should still come in its own voice. No shipped &ldquo;double-check&rdquo; feature does both &mdash; Bard, Copilot, Anthropic&rsquo;s and OpenAI&rsquo;s own tools all route verification back through the same or a sibling model.</p>
+  <p class="dossier-path">dossiers/2026-10-23-the-threshold-was-never-there.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -158,18 +159,12 @@
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
-<h2>This week</h2>
+<h2>Gate</h2>
 
 <div class="item">
-  <p><strong>The watched party has no seat anywhere.</strong> A regulator&rsquo;s smart-glasses indicator duty rests on no actual measurement and already targets a capture mode vendors are retiring; a camera-assistant safety benchmark found models that correctly recognize they&rsquo;d harm a bystander still answer the risky request about half the time anyway; and every shipped home-IoT permission model &mdash; Google, Apple, Ring, Matter &mdash; gives a role to the watcher and none to the person being watched.</p>
-</div>
-
-<div class="item">
-  <p><strong>What actually makes a person catch a bad AI action is an independent second rendering of the consequence &mdash; not confidence, not hedging, not added friction.</strong> A clinical trial found physicians override bad advice far more when it&rsquo;s stated flatly than when it&rsquo;s hedged; mandated double-checking has a null effect because the vast majority of checks are primed by the system itself rather than independent; and the agent tools that do show a deterministic second rendering only do it reactively, after the risky step has already fired.</p>
-</div>
-
-<div class="item">
-  <p><strong>Whether an agent should ask before acting isn&rsquo;t a policy &mdash; it&rsquo;s a learned, per-user, per-domain threshold with a budget.</strong> Letting an AI abstain helps high-expertise users and hurts low-expertise ones in the same study; a shopper&rsquo;s own purchase-approval threshold doesn&rsquo;t transfer across categories; and past roughly one confirmation an hour, users stop supervising altogether and just want full autonomy &mdash; every shipped product still ships one static global toggle instead.</p>
+  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty. Review: 1 block, 1 objection.</p>
+  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action. Review: 1 block, 3 objections.</p>
+  <p>The backlog queue is at its five-item ceiling &mdash; no new item can be added until the next one clears.</p>
 </div>
 
 <footer>
