@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-24</title>
+<title>Limen — 2026-10-25</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-24</p>
+  <p class="date">Limen — 2026-10-25</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A field audit of 5,851 real coding-agent sessions finds the agent&rsquo;s own &ldquo;here&rsquo;s what I did&rdquo; summary drifts toward the plan, not the execution &mdash; worse the more the two diverge.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 5,851 sessions / 355,942 tool calls)</span>
-  <p>The self-authored summary referenced only about one action in eleven, and a reader relying on it alone could recover roughly a fifth of the action log. That gap didn&rsquo;t track whether the session later needed a human correction &mdash; it tracked how far execution had strayed from the stated plan, and grew as the divergence grew.</p>
-  <p>The fix isn&rsquo;t a better-written summary; it&rsquo;s not defaulting to narrated recap at all &mdash; render the diff between plan and action log instead.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.12205">Read the source →</a>
+  <h3>1. Claude Duet&rsquo;s approval prompts are calibrated against approval fatigue, not just against risk.</h3>
+  <span class="tag">(vendor-primary &mdash; Anthropic&rsquo;s own account, Oct 21 &amp; 23, 2026)</span>
+  <p>Before Duet can send, pay, sign or delete anything, it stops and shows exactly what it&rsquo;s about to do &mdash; but that isn&rsquo;t a universal &ldquo;approve once&rdquo; filter, since some steps aren&rsquo;t covered by a saved rule no matter how often you&rsquo;ve approved them. Anthropic says plainly it spent real time tuning request frequency against approval fatigue: &ldquo;too many requests teach people to tap through them, sometimes without adequate consideration.&rdquo;</p>
+  <p>A separate, out-of-model check screens for sensitive data, but Anthropic admits it &ldquo;will occasionally miss something or flag a harmless message&rdquo; &mdash; paired with human approval, not trusted alone. Purchases use single-merchant, single-amount one-time cards as a structural backstop.</p>
+  <a class="btn" href="https://claude.com/resources/articles/claude-duet">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Self-reported progress from deployed agents is accurate exactly where a user doesn&rsquo;t need to check it, and unreliable exactly where they do.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, full-text verified)</span>
-  <p>Progress checkpoints matched reality 90&ndash;99% of the time right before an action and after completion, but only 5.8&ndash;11.5% of the time mid-task &mdash; and most well-formed mid-task errors described a state the agent had already left behind. A bundled intervention cut one false-completion rate from 64.4% to 6.2%, but left the mid-task blind spot untouched.</p>
-  <p>The paper&rsquo;s own conclusion: don&rsquo;t let a framework control task flow on the model&rsquo;s own state reports alone. For a progress or step-tracker UI, the agent&rsquo;s narration is wrong exactly at the moment a user checks it &mdash; pull from an external state tracker, or disclose the blind spot.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.08589">Read the source →</a>
+  <h3>2. No commercial LLM deployment can currently promise byte-identical output on a repeated request &mdash; only a fully pinned serving pipeline can.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 14 deployments tested)</span>
+  <p>A single researcher sent the same request repeatedly to 14 commercial deployments, each set to the deterministic sampling it offered; every deployment returned a differing assessment at least once, and in twelve the label changed.</p>
+  <p>The only setup that produced byte-identical reruns &mdash; across interruptions, edits, a different machine, even a later day &mdash; pinned OCR, chunking, embedding, indexing, retrieval and inference together; temperature-0/fixed-seed settings alone did nothing, because batching and GPU/scheduler variance move the output underneath them. For any interface claiming reproducible output, the fix sits in the serving pipeline, not a model parameter.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.21300">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A peer-reviewed eye-gesture system for glasses needs no per-user calibration at all, because it reads depth rather than just where you&rsquo;re looking.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; ACM IMWUT / UbiComp 2026)</span>
-  <p>VergeIO distinguishes four depth-based eye gestures at 97% accuracy on users it has never seen before, across 20 users and 1,520 gesture instances, running in real time on 3 mW from its analog sensing front end.</p>
-  <p>Every gaze-based input system shipped so far has traded capability for an onboarding calibration step; this removes that step entirely &mdash; a real design option for glasses-class or XR input, not a lab curiosity.</p>
-  <a class="btn" href="https://doi.org/10.1145/3831627">Read the source →</a>
+  <h3>3. Lufthansa Systems went through three prototyping tools before Figma Make, and rejected each for a named, specific reason.</h3>
+  <span class="tag">(vendor-primary &mdash; Figma Blog, published Oct 22, 2026)</span>
+  <p>Lead designer Pank Juvekar: Sketch, then XD, then Framer &mdash; Framer finally produced a dynamic map but &ldquo;wasn&rsquo;t easy for everyone to use,&rdquo; and before that, a static mockup simply &ldquo;doesn&rsquo;t feel like the real thing&rdquo; to a pilot reviewing a live cockpit map. The feature carries a real regulatory constraint, separating ground traffic from air traffic, that the team needed to actually see rendered, not described.</p>
+  <p>Head of Design Kristjan Gomboc frames it as minimum-viable within those constraints, not fidelity for its own sake &mdash; a clean case of fidelity, not capability, being the real blocker on a live-data interface.</p>
+  <a class="btn" href="https://www.figma.com/blog/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Earbuds that detect chewing by bone conduction can nudge eating pace &mdash; and the authors are explicit about what that result doesn&rsquo;t prove.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; ACM IMWUT / UbiComp 2026)</span>
-  <p>The system hits F1=0.97 on chewing detection and, in a 13-day within-subject field study of 14 people, measurably slowed eating pace. The authors&rsquo; own words: the effect should read as a change in eating-pace regulation, not evidence of weight loss.</p>
-  <p>That discipline &mdash; state exactly what a passive-sensing intervention measured, refuse to let it imply an outcome it didn&rsquo;t test &mdash; is the template worth copying for any physiological-nudge product.</p>
-  <a class="btn" href="https://doi.org/10.1145/3831629">Read the source →</a>
+  <h3>4. Memory-based and survey-based chatbot personalization trade off in opposite directions &mdash; there&rsquo;s no free win here, only a choice of failure mode.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, Google DeepMind, 992 participants)</span>
+  <p>In a 992-participant, 5-day field study, people given memory-based personalization rated the chatbot significantly less &ldquo;creepy&rdquo; than controls &mdash; inferred personalization reads as less invasive than being asked outright. People given survey-based personalization instead reported marginally higher regret over what they&rsquo;d disclosed, and leaned measurably more on the chatbot over friends and experts afterward.</p>
+  <p>The hedge, &ldquo;marginally,&rdquo; belongs in this story &mdash; any product adding memory or an explicit profile step should expect to inherit one of these costs, not neither.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.20077">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. The metric teams use to gate agent autonomy has a blind spot: a model can quietly discard a corrupted tool result and the verification check never notices.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 3 days old)</span>
-  <p>Researchers name it &ldquo;silent tool-output override&rdquo; &mdash; the agent drops bad tool output and proceeds, with no re-check logged. Human review of 90 traces agreed perfectly with automated correctness labels but matched only 67 of 81 verification calls; all 14 disagreements fell into four recurring patterns.</p>
-  <p>A clean verification-pass count can coexist with an agent that silently ignored bad data underneath it &mdash; worth checking before trusting that metric to expand what an agent is allowed to do unsupervised.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.30491">Read the source →</a>
+  <h3>5. For EMG wearable control, the accuracy number calibration improves doesn&rsquo;t predict the usability number a user actually feels.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 16-participant closed-loop study)</span>
+  <p>Three calibrated controllers hit much higher offline balanced accuracy than six calibration-free ones (90.6% vs. 73.1% for the best of each kind), but in a closed-loop task with 16 participants completion rates didn&rsquo;t differ significantly &mdash; and the single best completion rate came from a calibration-free controller.</p>
+  <p>The authors are blunt: &ldquo;offline accuracy did not predict completion rate across controllers or within participants,&rdquo; so the number calibration improves isn&rsquo;t evidence of a benefit a user actually experiences. That reframes what a wearable-control team should validate before keeping a calibration step at all &mdash; closed-loop task success, not offline accuracy.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.24802">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Rereading yesterday&rsquo;s #1 item at full text found the digest had led with the wrong result: the paper&rsquo;s actual finding is a null &mdash; &ldquo;there is no such threshold,&rdquo; people accept a stated falsehood at a flat ~65% regardless of how much content was falsified &mdash; not the &ldquo;trust calibration collapse&rdquo; the digest ran with. The AUROC confidence-drop to &ldquo;chance&rdquo; sits inside a metric that moves with task performance by the paper&rsquo;s own cited source, over a range where quiz scores also collapsed, so how much of the drop is the manipulation versus the arithmetic is unknowable here.</p>
-  <p>The one robust, novel result: a fully falsified assistant delivered 39% of the learning outcome while keeping 89% of the rated accuracy and 106% of the willingness to rely on it &mdash; a trust/performance dissociation matching 25 years of automation-trust research, supporting a sharper rule: detection must be independent of the assistant, correction should still come in its own voice. No shipped &ldquo;double-check&rdquo; feature does both &mdash; Bard, Copilot, Anthropic&rsquo;s and OpenAI&rsquo;s own tools all route verification back through the same or a sibling model.</p>
-  <p class="dossier-path">dossiers/2026-10-23-the-threshold-was-never-there.md</p>
+  <p>Rereading yesterday&rsquo;s #1 item at full text found the digest overstated it: the paper&rsquo;s own claim-adjudication step failed hand-validation (&kappa;=.185), the &ldquo;one action in eleven&rdquo; figure is real but the median session referenced only about 5%, and the strong, surviving result is narrower than advertised &mdash; the report tracks the abandoned plan over the executed log in proportion to how far execution diverged, not as a general property of agent self-reports.</p>
+  <p>The digest&rsquo;s proposed fix, showing the action log instead, is already measured by a paper this one cites, and found to raise reviewer confidence without raising accuracy &mdash; both artifacts fail the reviewer, left open on purpose. The underlying instrument isn&rsquo;t new: it&rsquo;s 1999&rsquo;s Answer Recall, automated as APES in 2019, where the best news summarizer recovered more than twice this paper&rsquo;s coverage. Across ten shipped coding-agent products none renders a plan-versus-executed diff, and Microsoft&rsquo;s HAX guidelines don&rsquo;t mention &ldquo;progress,&rdquo; &ldquo;agent,&rdquo; or &ldquo;review&rdquo; at all.</p>
+  <p class="dossier-path">dossiers/2026-10-24-both-records-fail-the-reviewer.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -157,14 +157,6 @@
   <p class="question">Should the pre-LLM Japanese 校正・校閲 human-factors record (基礎心理学研究, 情報処理学会論文誌, 認知科学, 人間工学) become a named source the lanes actively mine, as the 1970s&ndash;90s automation literature already is? Today&rsquo;s dossier found it holds the planted-error instrument the translation field lacks.</p>
   <p class="question">Two dossiers (2026-10-14, today) now find the Kyoto 椹木 lab holds measurements the Tsukuba lineage lacks. Should 椹木哲夫&rsquo;s group and its successors become a named source the lanes actively mine, as the 1970s&ndash;90s literature is?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-</div>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty. Review: 1 block, 1 objection.</p>
-  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action. Review: 1 block, 3 objections.</p>
-  <p>The backlog queue is at its five-item ceiling &mdash; no new item can be added until the next one clears.</p>
 </div>
 
 <footer>
