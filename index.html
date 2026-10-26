@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-25</title>
+<title>Limen — 2026-10-26</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-25</p>
+  <p class="date">Limen — 2026-10-26</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Claude Duet&rsquo;s approval prompts are calibrated against approval fatigue, not just against risk.</h3>
-  <span class="tag">(vendor-primary &mdash; Anthropic&rsquo;s own account, Oct 21 &amp; 23, 2026)</span>
-  <p>Before Duet can send, pay, sign or delete anything, it stops and shows exactly what it&rsquo;s about to do &mdash; but that isn&rsquo;t a universal &ldquo;approve once&rdquo; filter, since some steps aren&rsquo;t covered by a saved rule no matter how often you&rsquo;ve approved them. Anthropic says plainly it spent real time tuning request frequency against approval fatigue: &ldquo;too many requests teach people to tap through them, sometimes without adequate consideration.&rdquo;</p>
-  <p>A separate, out-of-model check screens for sensitive data, but Anthropic admits it &ldquo;will occasionally miss something or flag a harmless message&rdquo; &mdash; paired with human approval, not trusted alone. Purchases use single-merchant, single-amount one-time cards as a structural backstop.</p>
-  <a class="btn" href="https://claude.com/resources/articles/claude-duet">Read the source →</a>
+  <h3>1. Lane-keeping systems that say &ldquo;detected&rdquo; are wrong about when to escalate, and it&rsquo;s measured now.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 39,800s of real driving across 13 vehicle models)</span>
+  <p>Across 39,800 seconds of real driving (13 vehicle models, 3 manufacturers), a lane-keeping assist&rsquo;s on-dash &ldquo;detected / not detected&rdquo; status catches only 47% of degraded-perception seconds, against 80% for an independent confidence signal &mdash; and in half the low-confidence episodes it says nothing at all. When the dash reads &ldquo;detected&rdquo; but confidence is actually low and the driver&rsquo;s hands are off the wheel, lateral drift over the next three seconds runs about 60% higher.</p>
+  <p>The researchers&rsquo; own conclusion: staying silent while the driver isn&rsquo;t in control is exactly the condition that most needs an alert &mdash; a concrete answer to when &ldquo;all clear&rdquo; should flip to an active warning instead of silence.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.31899">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. No commercial LLM deployment can currently promise byte-identical output on a repeated request &mdash; only a fully pinned serving pipeline can.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 14 deployments tested)</span>
-  <p>A single researcher sent the same request repeatedly to 14 commercial deployments, each set to the deterministic sampling it offered; every deployment returned a differing assessment at least once, and in twelve the label changed.</p>
-  <p>The only setup that produced byte-identical reruns &mdash; across interruptions, edits, a different machine, even a later day &mdash; pinned OCR, chunking, embedding, indexing, retrieval and inference together; temperature-0/fixed-seed settings alone did nothing, because batching and GPU/scheduler variance move the output underneath them. For any interface claiming reproducible output, the fix sits in the serving pipeline, not a model parameter.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.21300">Read the source →</a>
+  <h3>2. Always-on voice agents run out of road after &ldquo;tens of minutes,&rdquo; not hours.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, new FD-LHB benchmark)</span>
+  <p>A new benchmark tested five full-duplex voice models on hour-long replays and live conversation; every one eventually degrades or runs out of context &mdash; repeating itself, going silent, or producing gibberish. The cause in sliding-window architectures is &ldquo;Initialization-Anchor Eviction&rdquo;: the window quietly discards the first exchange that anchors the conversation.</p>
+  <p>Two training-free fixes, pinning that anchor and penalizing repetition, substantially reduce the collapse in real time without retraining. Any &ldquo;always-on&rdquo; duplex interface on current architectures needs an explicit session-length budget &mdash; reset, anchor-pin, or turn-taking fallback &mdash; because this failure arrives on a clock, not a vendor&rsquo;s roadmap.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.32349">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Lufthansa Systems went through three prototyping tools before Figma Make, and rejected each for a named, specific reason.</h3>
-  <span class="tag">(vendor-primary &mdash; Figma Blog, published Oct 22, 2026)</span>
-  <p>Lead designer Pank Juvekar: Sketch, then XD, then Framer &mdash; Framer finally produced a dynamic map but &ldquo;wasn&rsquo;t easy for everyone to use,&rdquo; and before that, a static mockup simply &ldquo;doesn&rsquo;t feel like the real thing&rdquo; to a pilot reviewing a live cockpit map. The feature carries a real regulatory constraint, separating ground traffic from air traffic, that the team needed to actually see rendered, not described.</p>
-  <p>Head of Design Kristjan Gomboc frames it as minimum-viable within those constraints, not fidelity for its own sake &mdash; a clean case of fidelity, not capability, being the real blocker on a live-data interface.</p>
-  <a class="btn" href="https://www.figma.com/blog/">Read the source →</a>
+  <h3>3. Confidence badges change what people say before they know the answer, then stop mattering.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, interviews + 1,000-person survey + 5,151-person experiment)</span>
+  <p>A mixed-methods study &mdash; 8 interviews, a 1,000-person survey, a 5,151-person experiment &mdash; finds confidence and source indicators do shift initial trust and accuracy judgments, but people&rsquo;s interpretations of &ldquo;AI confidence&rdquo; are genuinely all over the map.</p>
+  <p>Once someone learns whether the answer was right, the indicator&rsquo;s effect disappears entirely; medical queries stay skeptical regardless. That&rsquo;s a real ceiling on confidence UI as error communication: it moves first impressions, not verified judgment, and can&rsquo;t substitute for friction appropriate to the domain.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.32883">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Memory-based and survey-based chatbot personalization trade off in opposite directions &mdash; there&rsquo;s no free win here, only a choice of failure mode.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, Google DeepMind, 992 participants)</span>
-  <p>In a 992-participant, 5-day field study, people given memory-based personalization rated the chatbot significantly less &ldquo;creepy&rdquo; than controls &mdash; inferred personalization reads as less invasive than being asked outright. People given survey-based personalization instead reported marginally higher regret over what they&rsquo;d disclosed, and leaned measurably more on the chatbot over friends and experts afterward.</p>
-  <p>The hedge, &ldquo;marginally,&rdquo; belongs in this story &mdash; any product adding memory or an explicit profile step should expect to inherit one of these costs, not neither.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.20077">Read the source →</a>
+  <h3>4. A Japanese hospital is running its own LLM on-site, and letting the agent ask its own questions beats fixed retrieval by 16 points.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, Hokkaido University Hospital)</span>
+  <p>Hokkaido University Hospital has run an open-weight, roughly 1-trillion-parameter model (Kimi K2.6) on a single 8-GPU host since September 14, serving 16 concurrent clinical users at 908 tokens/second total with no cloud round-trip.</p>
+  <p>On 180 hospital-document questions, interactive, tool-driven document access hit 97.2% accuracy against 81.3% for fixed top-k retrieval &mdash; a 15.9-point gap, tight confidence interval. For a team building a self-hosted clinical assistant to avoid cross-border data negotiation, this is both a real throughput budget and a measured answer on the retrieval-architecture question.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.32151">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. For EMG wearable control, the accuracy number calibration improves doesn&rsquo;t predict the usability number a user actually feels.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 16-participant closed-loop study)</span>
-  <p>Three calibrated controllers hit much higher offline balanced accuracy than six calibration-free ones (90.6% vs. 73.1% for the best of each kind), but in a closed-loop task with 16 participants completion rates didn&rsquo;t differ significantly &mdash; and the single best completion rate came from a calibration-free controller.</p>
-  <p>The authors are blunt: &ldquo;offline accuracy did not predict completion rate across controllers or within participants,&rdquo; so the number calibration improves isn&rsquo;t evidence of a benefit a user actually experiences. That reframes what a wearable-control team should validate before keeping a calibration step at all &mdash; closed-loop task success, not offline accuracy.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.24802">Read the source →</a>
+  <h3>5. Novices correcting AI output are mostly judging fit, not catching errors.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 145 first-year engineering students)</span>
+  <p>A field study of 145 first-year software-engineering students across 962 AI-interaction turns found 74.4% of their interventions were about whether the output fit the task, versus 16.9% about whether it was correct &mdash; and when they intervened, they mostly edited the output directly (51%) or rewrote their prompt (28%), not accepted or rejected it outright.</p>
+  <p>That argues against an oversight interface built around error detection alone: the dominant real behavior is a fitness judgment, favoring edit-in-place over binary accept/reject. The caveat is in the sample &mdash; first-year students, not expert reviewers &mdash; so this is a lead on novice oversight, not yet settled for experts.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.32118">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Rereading yesterday&rsquo;s #1 item at full text found the digest overstated it: the paper&rsquo;s own claim-adjudication step failed hand-validation (&kappa;=.185), the &ldquo;one action in eleven&rdquo; figure is real but the median session referenced only about 5%, and the strong, surviving result is narrower than advertised &mdash; the report tracks the abandoned plan over the executed log in proportion to how far execution diverged, not as a general property of agent self-reports.</p>
-  <p>The digest&rsquo;s proposed fix, showing the action log instead, is already measured by a paper this one cites, and found to raise reviewer confidence without raising accuracy &mdash; both artifacts fail the reviewer, left open on purpose. The underlying instrument isn&rsquo;t new: it&rsquo;s 1999&rsquo;s Answer Recall, automated as APES in 2019, where the best news summarizer recovered more than twice this paper&rsquo;s coverage. Across ten shipped coding-agent products none renders a plan-versus-executed diff, and Microsoft&rsquo;s HAX guidelines don&rsquo;t mention &ldquo;progress,&rdquo; &ldquo;agent,&rdquo; or &ldquo;review&rdquo; at all.</p>
-  <p class="dossier-path">dossiers/2026-10-24-both-records-fail-the-reviewer.md</p>
+  <p>Rereading yesterday&rsquo;s #1 item (Claude Duet&rsquo;s approval-fatigue calibration) found the framing backwards: Anthropic already published the one controlled measurement of a human-approval layer that exists anywhere, for Claude Code back in August &mdash; 143 of 1,053 testers caught a planted dangerous command (13.6%, against the classifier&rsquo;s own 89%), with the catch rate falling from about 17% early in a session to about 5% after 50-plus prior prompts.</p>
+  <p>Duet&rsquo;s own pages contain no percentage anywhere &mdash; &ldquo;we spent a lot of time calibrating&rdquo; publishes no number on either side &mdash; so the human layer isn&rsquo;t unmeasured, it&rsquo;s measured and weak, and Duet ships the hazard without the figure. The &ldquo;one-time card limited to that merchant and amount&rdquo; claim is only amount-bounded on the credential type Anthropic&rsquo;s own help text describes; the merchant field is an agent-written string, mutable before approval. And the classifier meant to catch hidden page instructions &ldquo;outside the model&rdquo; is the same kind of check two independent researchers already defeated in Claude Code, by having a wrapper action report low severity while the real exploit sat several hops away.</p>
+  <p class="dossier-path">dossiers/2026-10-25-the-curve-was-published-for-the-sibling.md</p>
 </div>
 
 <h2>Needs your answer</h2>
