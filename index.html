@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-26</title>
+<title>Limen — 2026-10-27</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-26</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-27</p>
+  <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Lane-keeping systems that say &ldquo;detected&rdquo; are wrong about when to escalate, and it&rsquo;s measured now.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 39,800s of real driving across 13 vehicle models)</span>
-  <p>Across 39,800 seconds of real driving (13 vehicle models, 3 manufacturers), a lane-keeping assist&rsquo;s on-dash &ldquo;detected / not detected&rdquo; status catches only 47% of degraded-perception seconds, against 80% for an independent confidence signal &mdash; and in half the low-confidence episodes it says nothing at all. When the dash reads &ldquo;detected&rdquo; but confidence is actually low and the driver&rsquo;s hands are off the wheel, lateral drift over the next three seconds runs about 60% higher.</p>
-  <p>The researchers&rsquo; own conclusion: staying silent while the driver isn&rsquo;t in control is exactly the condition that most needs an alert &mdash; a concrete answer to when &ldquo;all clear&rdquo; should flip to an active warning instead of silence.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.31899">Read the source →</a>
+  <h3>1. A real care-home transcript shows a voice assistant&rsquo;s own &ldquo;helpfulness&rdquo; is what breaks the conversation, not its silence.</h3>
+  <span class="tag">(single-source &mdash; CUI &rsquo;26, ACM SIGCHI, double-anonymous peer review confirmed)</span>
+  <p>A CUI &rsquo;26 paper built from conversation analysis of a learning-disabled user and her LLM smart speaker in a real deployment finds the system&rsquo;s repeated repair attempts &mdash; not silence &mdash; generate the trouble. A flat &ldquo;No&rdquo; gets answered with &ldquo;I didn&rsquo;t quite catch that, would you like me to set a reminder for your bath or shower?&rdquo; instead of being accepted as a complete turn. Earlier in the same transcript: &ldquo;Sentai, you need to think I&rsquo;ve got a learning disability.&rdquo;</p>
+  <p>ACM blocked direct access; corroborated instead through Crossref, OpenAlex, Semantic Scholar and a co-author&rsquo;s own supporting document, matching the transcript verbatim. For a care or accessibility assistant: treat a short valid answer as a finished turn, and cap how much the system elaborates past it.</p>
+  <a class="btn" href="https://doi.org/10.1145/3816046.3816307">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Always-on voice agents run out of road after &ldquo;tens of minutes,&rdquo; not hours.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, new FD-LHB benchmark)</span>
-  <p>A new benchmark tested five full-duplex voice models on hour-long replays and live conversation; every one eventually degrades or runs out of context &mdash; repeating itself, going silent, or producing gibberish. The cause in sliding-window architectures is &ldquo;Initialization-Anchor Eviction&rdquo;: the window quietly discards the first exchange that anchors the conversation.</p>
-  <p>Two training-free fixes, pinning that anchor and penalizing repetition, substantially reduce the collapse in real time without retraining. Any &ldquo;always-on&rdquo; duplex interface on current architectures needs an explicit session-length budget &mdash; reset, anchor-pin, or turn-taking fallback &mdash; because this failure arrives on a clock, not a vendor&rsquo;s roadmap.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.32349">Read the source →</a>
+  <h3>2. &ldquo;The system prompt always wins&rdquo; doesn&rsquo;t hold on the tasks where it matters most.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 1,887,356 replies across 14 models)</span>
+  <p>A study sending 1,887,356 replies across 14 open-weight models tested only <em>how</em> an instruction is delivered &mdash; position, role, label &mdash; holding the text fixed. On ordinary conflicts, whichever instruction arrives first usually wins.</p>
+  <p>But on tool-use and file-write tasks specifically, a plain user message sent first beats a system-role &ldquo;policy-first&rdquo; instruction in every model tested, and models flag the conflict at most 2.92% of the time. A safety boundary encoded only as &ldquo;put it in the system prompt&rdquo; doesn&rsquo;t hold where it counts; enforcement needs to live outside the model.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.33201">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Confidence badges change what people say before they know the answer, then stop mattering.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, interviews + 1,000-person survey + 5,151-person experiment)</span>
-  <p>A mixed-methods study &mdash; 8 interviews, a 1,000-person survey, a 5,151-person experiment &mdash; finds confidence and source indicators do shift initial trust and accuracy judgments, but people&rsquo;s interpretations of &ldquo;AI confidence&rdquo; are genuinely all over the map.</p>
-  <p>Once someone learns whether the answer was right, the indicator&rsquo;s effect disappears entirely; medical queries stay skeptical regardless. That&rsquo;s a real ceiling on confidence UI as error communication: it moves first impressions, not verified judgment, and can&rsquo;t substitute for friction appropriate to the domain.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.32883">Read the source →</a>
+  <h3>3. Human reviewers catch fewer false alarms exactly as a system gets tuned stricter &mdash; and it depends which algorithm is wrong.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 801 human reviewers)</span>
+  <p>801 human reviewers were tested against face-recognition false positives across three security-threshold settings from four commercial algorithms. Reviewers do reduce false positives, but their catch rate falls as the threshold tightens, and it varies by which algorithm produced the error.</p>
+  <p>A measured limit on &ldquo;human in the loop&rdquo; for any high-stakes flagging system: the backstop weakens as the system is tuned toward fewer, higher-confidence flags, and the underlying model choice is itself part of the oversight design, not just the review screen.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.33045">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A Japanese hospital is running its own LLM on-site, and letting the agent ask its own questions beats fixed retrieval by 16 points.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, Hokkaido University Hospital)</span>
-  <p>Hokkaido University Hospital has run an open-weight, roughly 1-trillion-parameter model (Kimi K2.6) on a single 8-GPU host since September 14, serving 16 concurrent clinical users at 908 tokens/second total with no cloud round-trip.</p>
-  <p>On 180 hospital-document questions, interactive, tool-driven document access hit 97.2% accuracy against 81.3% for fixed top-k retrieval &mdash; a 15.9-point gap, tight confidence interval. For a team building a self-hosted clinical assistant to avoid cross-border data negotiation, this is both a real throughput budget and a measured answer on the retrieval-architecture question.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.32151">Read the source →</a>
+  <h3>4. A tool-output transparency layer that ranks evidence by actual influence, not raw chain-of-thought, tested well and proved itself causally.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint / HCII proceedings, n=50)</span>
+  <p>Filtered Decision Logs rank what an agent&rsquo;s tools returned by measurable signals &mdash; closeness to the final answer, relevance, persistence, structural proximity &mdash; instead of dumping the full trace or a vague summary. Across career advice, investment analysis and travel planning, 50 participants rated the ranked evidence helpful 92% of the time.</p>
+  <p>Removing the top-ranked source changed the answer more than removing a low-ranked one &mdash; causally real, not just preferred. A validated alternative for explaining an agent&rsquo;s tool-use reasoning, short of either a raw trace or an opaque gloss.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.35483">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Novices correcting AI output are mostly judging fit, not catching errors.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 145 first-year engineering students)</span>
-  <p>A field study of 145 first-year software-engineering students across 962 AI-interaction turns found 74.4% of their interventions were about whether the output fit the task, versus 16.9% about whether it was correct &mdash; and when they intervened, they mostly edited the output directly (51%) or rewrote their prompt (28%), not accepted or rejected it outright.</p>
-  <p>That argues against an oversight interface built around error detection alone: the dominant real behavior is a fitness judgment, favoring edit-in-place over binary accept/reject. The caveat is in the sample &mdash; first-year students, not expert reviewers &mdash; so this is a lead on novice oversight, not yet settled for experts.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.32118">Read the source →</a>
+  <h3>5. A trained consistency score cuts an agent&rsquo;s run-to-run flakiness by a third to a half, without needing labeled ground truth.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Recursive Semantic Divergence is a fine-tuning reward signal needing no correctness labels &mdash; it only measures how consistent an agent&rsquo;s behavior is across repeated runs. Used that way, it cut task-progress variation from 132% to 91% on one benchmark and from 90% to 44% on another.</p>
+  <p>For any shipped agent, the same request producing visibly different behavior run to run is itself a UX failure, independent of whether any single run was &ldquo;right&rdquo; &mdash; a measurable fix, with no labeling pipeline required.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.33012">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Rereading yesterday&rsquo;s #1 item (Claude Duet&rsquo;s approval-fatigue calibration) found the framing backwards: Anthropic already published the one controlled measurement of a human-approval layer that exists anywhere, for Claude Code back in August &mdash; 143 of 1,053 testers caught a planted dangerous command (13.6%, against the classifier&rsquo;s own 89%), with the catch rate falling from about 17% early in a session to about 5% after 50-plus prior prompts.</p>
-  <p>Duet&rsquo;s own pages contain no percentage anywhere &mdash; &ldquo;we spent a lot of time calibrating&rdquo; publishes no number on either side &mdash; so the human layer isn&rsquo;t unmeasured, it&rsquo;s measured and weak, and Duet ships the hazard without the figure. The &ldquo;one-time card limited to that merchant and amount&rdquo; claim is only amount-bounded on the credential type Anthropic&rsquo;s own help text describes; the merchant field is an agent-written string, mutable before approval. And the classifier meant to catch hidden page instructions &ldquo;outside the model&rdquo; is the same kind of check two independent researchers already defeated in Claude Code, by having a wrapper action report low severity while the real exploit sat several hops away.</p>
-  <p class="dossier-path">dossiers/2026-10-25-the-curve-was-published-for-the-sibling.md</p>
+  <p>Re-examining yesterday&rsquo;s #1 item (the lane-keeping status-display finding) found the &ldquo;60% larger&rdquo; headline doesn&rsquo;t reconcile with the paper&rsquo;s own tables &mdash; the defensible number is a +5.4cm shift in three-second lateral-position variability, measured on a sample pre-selected for large lateral deviation. The &ldquo;47% vs 80%&rdquo; comparison scores one indicator against a model-estimated proxy, not ground truth; the plainer reading is the dashboard shows &ldquo;detected&rdquo; in 55% of seconds where an independent camera&rsquo;s confidence is actually below 0.5.</p>
+  <p>The paper&rsquo;s real strength is elsewhere: controlling for road curvature collapsed an apparent 4&ndash;5x driver-response effect to a non-significant 0.89. The structural claim still stands &mdash; Toyota&rsquo;s, Kia&rsquo;s and Volvo/Polestar&rsquo;s manuals, plus UN regulation and Euro NCAP&rsquo;s protocol, confirm a vehicle can legitimately show &ldquo;operating&rdquo; while not perceiving the lane, and no scheme scores the indicator&rsquo;s truthfulness, only its placement. The actual fix is narrower than &ldquo;escalate the display&rdquo;: re-sorting the same alerts across tiers cut false alarms from 57% to 12.5% elsewhere, but the digest&rsquo;s own proposed trigger &mdash; low confidence plus hands off the wheel &mdash; has never been tested, and a 2026 CHI paper calls exactly that condition underexplored.</p>
+  <p class="dossier-path">dossiers/2026-10-26-the-silence-was-sanctioned.md</p>
 </div>
 
 <h2>Needs your answer</h2>
