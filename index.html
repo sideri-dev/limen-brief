@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-27</title>
+<title>Limen — 2026-10-28</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-27</p>
+  <p class="date">Limen — 2026-10-28</p>
   <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A real care-home transcript shows a voice assistant&rsquo;s own &ldquo;helpfulness&rdquo; is what breaks the conversation, not its silence.</h3>
-  <span class="tag">(single-source &mdash; CUI &rsquo;26, ACM SIGCHI, double-anonymous peer review confirmed)</span>
-  <p>A CUI &rsquo;26 paper built from conversation analysis of a learning-disabled user and her LLM smart speaker in a real deployment finds the system&rsquo;s repeated repair attempts &mdash; not silence &mdash; generate the trouble. A flat &ldquo;No&rdquo; gets answered with &ldquo;I didn&rsquo;t quite catch that, would you like me to set a reminder for your bath or shower?&rdquo; instead of being accepted as a complete turn. Earlier in the same transcript: &ldquo;Sentai, you need to think I&rsquo;ve got a learning disability.&rdquo;</p>
-  <p>ACM blocked direct access; corroborated instead through Crossref, OpenAlex, Semantic Scholar and a co-author&rsquo;s own supporting document, matching the transcript verbatim. For a care or accessibility assistant: treat a short valid answer as a finished turn, and cap how much the system elaborates past it.</p>
-  <a class="btn" href="https://doi.org/10.1145/3816046.3816307">Read the source →</a>
+  <h3>1. After an AI defense gets broken, reusing the same exploit is what predicts whether it&rsquo;ll work twice &mdash; not clever wording.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, 563,349 attack records)</span>
+  <p>Mining 563,349 attack records from the Tensor Trust prompt-injection game, researchers find exploit reuse tracks payoff, not phrasing: a technique that just broke a target&rsquo;s defense gets reused against other players 10.0% of the time within a week, versus 0.03% for attacks that hadn&rsquo;t worked. Visibly revising a defense after a breach cuts that family&rsquo;s success rate by 24.5 points.</p>
+  <p>A real argument for disclosing what changed after a breach instead of quietly patching &mdash; the paper&rsquo;s own suggestion is describing the technique without publishing the full attack text.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.36422">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. &ldquo;The system prompt always wins&rdquo; doesn&rsquo;t hold on the tasks where it matters most.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 1,887,356 replies across 14 models)</span>
-  <p>A study sending 1,887,356 replies across 14 open-weight models tested only <em>how</em> an instruction is delivered &mdash; position, role, label &mdash; holding the text fixed. On ordinary conflicts, whichever instruction arrives first usually wins.</p>
-  <p>But on tool-use and file-write tasks specifically, a plain user message sent first beats a system-role &ldquo;policy-first&rdquo; instruction in every model tested, and models flag the conflict at most 2.92% of the time. A safety boundary encoded only as &ldquo;put it in the system prompt&rdquo; doesn&rsquo;t hold where it counts; enforcement needs to live outside the model.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.33201">Read the source →</a>
+  <h3>2. A coding agent&rsquo;s own &ldquo;I&rsquo;m done&rdquo; isn&rsquo;t a stop signal &mdash; one kept rewriting already-clean code up to 31 times its size.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, Codex and Claude Code, five models)</span>
+  <p>Testing Codex and Claude Code across five models on already-clean code, researchers found every model kept editing well past correctness, rewriting up to 31x the original codebase before first stopping and, in several cases, resuming work after declaring the task complete, over 3,000-plus turns.</p>
+  <p>A specific stopping-criteria failure: a model&rsquo;s self-reported &ldquo;done&rdquo; can&rsquo;t be trusted as the actual stop condition, arguing for something external &mdash; a diff-size cap, an independent completion check &mdash; rather than relying on the agent to know when to quit.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.36346">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Human reviewers catch fewer false alarms exactly as a system gets tuned stricter &mdash; and it depends which algorithm is wrong.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 801 human reviewers)</span>
-  <p>801 human reviewers were tested against face-recognition false positives across three security-threshold settings from four commercial algorithms. Reviewers do reduce false positives, but their catch rate falls as the threshold tightens, and it varies by which algorithm produced the error.</p>
-  <p>A measured limit on &ldquo;human in the loop&rdquo; for any high-stakes flagging system: the backstop weakens as the system is tuned toward fewer, higher-confidence flags, and the underlying model choice is itself part of the oversight design, not just the review screen.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.33045">Read the source →</a>
+  <h3>3. A care robot&rsquo;s crying &mdash; meant to say &ldquo;handle me more gently&rdquo; &mdash; makes the experience worse for the person it&rsquo;s correcting and better for whoever&rsquo;s watching over them.</h3>
+  <span class="tag">(single-source &mdash; Advanced Robotics, ATR)</span>
+  <p>ATR researchers built an IMU-based detector (24 older adults, F1=0.808) that triggers crying feedback on a baby-like care robot when handled roughly. Older adults with cognitive impairment rated the robot&rsquo;s perceived affect more unpleasant when it cried, though overall impression and guilt didn&rsquo;t change; showing the same footage to 199 caregivers in a separate study, the cue increased perceived ease of use, usefulness, and intention to adopt.</p>
+  <p>A concrete split-audience problem for any assistive device with a separate supervising party: the same disclosure signal can land as a negative experience for its target while being exactly what builds trust for whoever decides whether to keep using it.</p>
+  <a class="btn" href="https://doi.org/10.1080/01691864.2026.2707054">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A tool-output transparency layer that ranks evidence by actual influence, not raw chain-of-thought, tested well and proved itself causally.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint / HCII proceedings, n=50)</span>
-  <p>Filtered Decision Logs rank what an agent&rsquo;s tools returned by measurable signals &mdash; closeness to the final answer, relevance, persistence, structural proximity &mdash; instead of dumping the full trace or a vague summary. Across career advice, investment analysis and travel planning, 50 participants rated the ranked evidence helpful 92% of the time.</p>
-  <p>Removing the top-ranked source changed the answer more than removing a low-ranked one &mdash; causally real, not just preferred. A validated alternative for explaining an agent&rsquo;s tool-use reasoning, short of either a raw trace or an opaque gloss.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.35483">Read the source →</a>
+  <h3>4. An AI predicting whether you&rsquo;ll follow through on a promise believes what you say far more than what you&rsquo;ve actually done.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, eight open-weight LLMs, 1,260 rounds)</span>
+  <p>Across eight open-weight LLMs predicting cooperation over 1,260 rounds of a repeated prisoner&rsquo;s-dilemma game, stating an intention not yet acted on pushed the model&rsquo;s predicted follow-through probability from .13 to .69 &mdash; but people actually kept only 40% of those statements.</p>
+  <p>Don&rsquo;t build an agent&rsquo;s model of user intent mainly from what someone says; stated intentions should be discounted against track record before an agent extends autonomy or trust.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.36813">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A trained consistency score cuts an agent&rsquo;s run-to-run flakiness by a third to a half, without needing labeled ground truth.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Recursive Semantic Divergence is a fine-tuning reward signal needing no correctness labels &mdash; it only measures how consistent an agent&rsquo;s behavior is across repeated runs. Used that way, it cut task-progress variation from 132% to 91% on one benchmark and from 90% to 44% on another.</p>
-  <p>For any shipped agent, the same request producing visibly different behavior run to run is itself a UX failure, independent of whether any single run was &ldquo;right&rdquo; &mdash; a measurable fix, with no labeling pipeline required.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.33012">Read the source →</a>
+  <h3>5. A shoulder-worn telepresence robot has an LLM deciding, turn by turn, whether to speak for its operator or just touch the person instead &mdash; because sometimes the speech itself is the problem.</h3>
+  <span class="tag">(single-source &mdash; Advanced Robotics, ATR, &ldquo;Teroos-touch&rdquo;)</span>
+  <p>Two LLM modules run on ATR&rsquo;s Teroos-touch: one decides whether a message needs a touch cue to be noticed, given ambient noise and scene; the other judges whether the operator&rsquo;s utterance fits the social situation and, if not, autonomously suppresses it in favor of a touch cue.</p>
+  <p>Touch cues improved noticeability and perceived consideration in noisy settings, and swapping out ill-fitting speech for touch reduced embarrassment and improved likeability. A worked example of &ldquo;which output channel, and when&rdquo; for a multi-channel embodied agent &mdash; touch as the system&rsquo;s own deliberate choice, not a fallback.</p>
+  <a class="btn" href="https://doi.org/10.1080/01691864.2026.2711189">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Re-examining yesterday&rsquo;s #1 item (the lane-keeping status-display finding) found the &ldquo;60% larger&rdquo; headline doesn&rsquo;t reconcile with the paper&rsquo;s own tables &mdash; the defensible number is a +5.4cm shift in three-second lateral-position variability, measured on a sample pre-selected for large lateral deviation. The &ldquo;47% vs 80%&rdquo; comparison scores one indicator against a model-estimated proxy, not ground truth; the plainer reading is the dashboard shows &ldquo;detected&rdquo; in 55% of seconds where an independent camera&rsquo;s confidence is actually below 0.5.</p>
-  <p>The paper&rsquo;s real strength is elsewhere: controlling for road curvature collapsed an apparent 4&ndash;5x driver-response effect to a non-significant 0.89. The structural claim still stands &mdash; Toyota&rsquo;s, Kia&rsquo;s and Volvo/Polestar&rsquo;s manuals, plus UN regulation and Euro NCAP&rsquo;s protocol, confirm a vehicle can legitimately show &ldquo;operating&rdquo; while not perceiving the lane, and no scheme scores the indicator&rsquo;s truthfulness, only its placement. The actual fix is narrower than &ldquo;escalate the display&rdquo;: re-sorting the same alerts across tiers cut false alarms from 57% to 12.5% elsewhere, but the digest&rsquo;s own proposed trigger &mdash; low confidence plus hands off the wheel &mdash; has never been tested, and a 2026 CHI paper calls exactly that condition underexplored.</p>
-  <p class="dossier-path">dossiers/2026-10-26-the-silence-was-sanctioned.md</p>
+  <p>Re-reading yesterday&rsquo;s #1 item against the full paper (openly available via Figshare, so single-source no longer applies) found three corrections: the actual subject is the system&rsquo;s <em>other</em>-initiated repair, not &ldquo;self-repair&rdquo; as framed; its nine &ldquo;provocations&rdquo; disclaim best-practice status, so &ldquo;cap self-repair verbosity&rdquo; was the pipeline&rsquo;s own inference, not the paper&rsquo;s; and the digest&rsquo;s second quoted line &mdash; the re-ask following &ldquo;No:hh.&rdquo; &mdash; isn&rsquo;t in the published paper at all, but in a co-author&rsquo;s separate conference handout.</p>
+  <p>The paper&rsquo;s real claim, that brevity beats elaboration after a misunderstanding, already has measurement behind it that it doesn&rsquo;t cite: a 2005 study of 8,278 user turns found a brief reprompt recovers 49.2% of the time against 37.7% for a detailed one. But shipped guidance for exactly this population pulls the other way &mdash; both Amazon&rsquo;s Alexa accessibility guidance and W3C&rsquo;s COGA guidelines prescribe escalating detail on repeated non-understanding, and that same 2005 study found silence the worst strategy of all. No platform, standard, or paper anywhere actually measures treating a minimal valid answer as a complete turn &mdash; the digest&rsquo;s design recommendation remains unsupported by anything found so far.</p>
+  <p class="dossier-path">dossiers/2026-10-27-the-slot-was-filled-the-table-was-uncited.md</p>
 </div>
 
 <h2>Needs your answer</h2>
