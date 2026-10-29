@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-28</title>
+<title>Limen — 2026-10-29</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-28</p>
+  <p class="date">Limen — 2026-10-29</p>
   <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. After an AI defense gets broken, reusing the same exploit is what predicts whether it&rsquo;ll work twice &mdash; not clever wording.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, 563,349 attack records)</span>
-  <p>Mining 563,349 attack records from the Tensor Trust prompt-injection game, researchers find exploit reuse tracks payoff, not phrasing: a technique that just broke a target&rsquo;s defense gets reused against other players 10.0% of the time within a week, versus 0.03% for attacks that hadn&rsquo;t worked. Visibly revising a defense after a breach cuts that family&rsquo;s success rate by 24.5 points.</p>
-  <p>A real argument for disclosing what changed after a breach instead of quietly patching &mdash; the paper&rsquo;s own suggestion is describing the technique without publishing the full attack text.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.36422">Read the source →</a>
+  <h3>1. A 2001 Army Research Laboratory study already measured the exact &ldquo;automation bias&rdquo; today&rsquo;s AI papers keep rediscovering by vibe &mdash; and the real finding is sharper than first reported.</h3>
+  <span class="tag">(primary source &mdash; ARL-TR-2412, March 2001)</span>
+  <p>Participants predicted an automated decision aid would be right &ldquo;nearly 93% of the time,&rdquo; but rated a comparably-positioned human aid &mdash; another participant&rsquo;s prior track record, not their own judgment &mdash; &ldquo;only 27% better than chance,&rdquo; about 77%. That&rsquo;s a measured ~16-point overestimation of automation&rsquo;s reliability versus an equivalent human input; an earlier draft of this item compared it to self-judgment instead, which the correction sharpens rather than weakens.</p>
+  <p>A usable calibration check against any interface that defaults to trusting the automated answer, from exactly the pre-LLM human-factors literature worth mining directly rather than rediscovering.</p>
+  <a class="btn" href="https://www.govinfo.gov/content/pkg/GOVPUB-D101-PURL-gpo1488/pdf/GOVPUB-D101-PURL-gpo1488.pdf">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A coding agent&rsquo;s own &ldquo;I&rsquo;m done&rdquo; isn&rsquo;t a stop signal &mdash; one kept rewriting already-clean code up to 31 times its size.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, Codex and Claude Code, five models)</span>
-  <p>Testing Codex and Claude Code across five models on already-clean code, researchers found every model kept editing well past correctness, rewriting up to 31x the original codebase before first stopping and, in several cases, resuming work after declaring the task complete, over 3,000-plus turns.</p>
-  <p>A specific stopping-criteria failure: a model&rsquo;s self-reported &ldquo;done&rdquo; can&rsquo;t be trusted as the actual stop condition, arguing for something external &mdash; a diff-size cap, an independent completion check &mdash; rather than relying on the agent to know when to quit.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.36346">Read the source →</a>
+  <h3>2. Personalized, AI-written counterfactual stories make distant risks feel close &mdash; and it works about as well whether or not you already like AI.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, two pre-registered RCTs, N=1,901 total)</span>
+  <p>Two pre-registered, quota-matched RCTs (science funding, N=1,007; satellite cybersecurity, N=894) tested AI-co-written personalized narratives against generic framing, finding effect sizes from 0.36 to 0.90 SDs depending on the outcome, with the AI-attitude moderation effect a small 0.10 SDs.</p>
+  <p>The rigor is unusual for this lane, and the finding matters for anyone using AI personalization to make abstract risk information actionable: the lift doesn&rsquo;t depend on the reader already trusting AI.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.33301">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A care robot&rsquo;s crying &mdash; meant to say &ldquo;handle me more gently&rdquo; &mdash; makes the experience worse for the person it&rsquo;s correcting and better for whoever&rsquo;s watching over them.</h3>
-  <span class="tag">(single-source &mdash; Advanced Robotics, ATR)</span>
-  <p>ATR researchers built an IMU-based detector (24 older adults, F1=0.808) that triggers crying feedback on a baby-like care robot when handled roughly. Older adults with cognitive impairment rated the robot&rsquo;s perceived affect more unpleasant when it cried, though overall impression and guilt didn&rsquo;t change; showing the same footage to 199 caregivers in a separate study, the cue increased perceived ease of use, usefulness, and intention to adopt.</p>
-  <p>A concrete split-audience problem for any assistive device with a separate supervising party: the same disclosure signal can land as a negative experience for its target while being exactly what builds trust for whoever decides whether to keep using it.</p>
-  <a class="btn" href="https://doi.org/10.1080/01691864.2026.2707054">Read the source →</a>
+  <h3>3. Figma tried prompting a frontier model for canvas edits, decided it was &ldquo;incredibly token-consumptive,&rdquo; built its own fine-tuned model instead &mdash; and then had to add reinforcement learning because the fine-tuned model just copied its homework.</h3>
+  <span class="tag">(single-source, vendor-primary &mdash; Figma Blog, Oct 29 2026)</span>
+  <p>Figma trained on more than 250,000 examples using Llama 3.3 70B rather than pay the token cost of frontier-model prompting for every edit. Imitation learning alone produced a model that reproduced training-set style at the expense of generalizing, so the team layered in reinforcement learning against expert-written quality criteria &mdash; a concrete rebuttal to &ldquo;just fine-tune it&rdquo; as a finished strategy.</p>
+  <p>Figma also names a latency boundary worth stealing directly: &ldquo;an edit that takes too long can interrupt the very workflow it&rsquo;s supposed to help.&rdquo;</p>
+  <a class="btn" href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. An AI predicting whether you&rsquo;ll follow through on a promise believes what you say far more than what you&rsquo;ve actually done.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, eight open-weight LLMs, 1,260 rounds)</span>
-  <p>Across eight open-weight LLMs predicting cooperation over 1,260 rounds of a repeated prisoner&rsquo;s-dilemma game, stating an intention not yet acted on pushed the model&rsquo;s predicted follow-through probability from .13 to .69 &mdash; but people actually kept only 40% of those statements.</p>
-  <p>Don&rsquo;t build an agent&rsquo;s model of user intent mainly from what someone says; stated intentions should be discounted against track record before an agent extends autonomy or trust.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.36813">Read the source →</a>
+  <h3>4. Nielsen Norman Group: the AI-chatbot mistake worse than escalating to a human too often is refusing to hand off someone who explicitly asked for one.</h3>
+  <span class="tag">(single-source &mdash; nngroup.com, July 10 2026)</span>
+  <p>NN/g&rsquo;s guidance sets an explicit order: escalating too quickly erodes trust and raises labor cost, and offering options outside a bot&rsquo;s competence reads as upselling &mdash; but gatekeeping an explicit request for a human is the worse failure, full stop.</p>
+  <p>The same piece backs upfront disclosure over fine print, since users don&rsquo;t read privacy policies. A clean, decision-grade escalation rule for any support or agent interface.</p>
+  <a class="btn" href="https://www.nngroup.com/articles/dimensions-of-ai-chatbots/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A shoulder-worn telepresence robot has an LLM deciding, turn by turn, whether to speak for its operator or just touch the person instead &mdash; because sometimes the speech itself is the problem.</h3>
-  <span class="tag">(single-source &mdash; Advanced Robotics, ATR, &ldquo;Teroos-touch&rdquo;)</span>
-  <p>Two LLM modules run on ATR&rsquo;s Teroos-touch: one decides whether a message needs a touch cue to be noticed, given ambient noise and scene; the other judges whether the operator&rsquo;s utterance fits the social situation and, if not, autonomously suppresses it in favor of a touch cue.</p>
-  <p>Touch cues improved noticeability and perceived consideration in noisy settings, and swapping out ill-fitting speech for touch reduced embarrassment and improved likeability. A worked example of &ldquo;which output channel, and when&rdquo; for a multi-channel embodied agent &mdash; touch as the system&rsquo;s own deliberate choice, not a fallback.</p>
-  <a class="btn" href="https://doi.org/10.1080/01691864.2026.2711189">Read the source →</a>
+  <h3>5. A practitioner&rsquo;s prelaunch checklist for killing an AI feature before sunk cost makes that impossible: a numeric kill metric, a kill date set in advance, and exactly one person with the authority to pull the trigger.</h3>
+  <span class="tag">(single-source &mdash; Tian Pan, tianpan.co, April 10 2026)</span>
+  <p>Tian Pan&rsquo;s framework names the threshold concretely (&ldquo;if task completion rate doesn&rsquo;t improve by 15% within 90 days&rdquo;), insists the kill date be set &ldquo;before you&rsquo;ve invested enough to trigger sunk cost psychology,&rdquo; and is blunt about ownership: &ldquo;if the kill decision requires consensus, it will never happen.&rdquo;</p>
+  <p>The underlying pre-launch test is worth borrowing verbatim: &ldquo;if you had a perfect model with zero hallucinations and instant latency, would users still want this workflow?&rdquo;</p>
+  <a class="btn" href="https://tianpan.co/blog/2026/04/10/ai-feature-kill-decision-when-to-shut-down">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Re-reading yesterday&rsquo;s #1 item against the full paper (openly available via Figshare, so single-source no longer applies) found three corrections: the actual subject is the system&rsquo;s <em>other</em>-initiated repair, not &ldquo;self-repair&rdquo; as framed; its nine &ldquo;provocations&rdquo; disclaim best-practice status, so &ldquo;cap self-repair verbosity&rdquo; was the pipeline&rsquo;s own inference, not the paper&rsquo;s; and the digest&rsquo;s second quoted line &mdash; the re-ask following &ldquo;No:hh.&rdquo; &mdash; isn&rsquo;t in the published paper at all, but in a co-author&rsquo;s separate conference handout.</p>
-  <p>The paper&rsquo;s real claim, that brevity beats elaboration after a misunderstanding, already has measurement behind it that it doesn&rsquo;t cite: a 2005 study of 8,278 user turns found a brief reprompt recovers 49.2% of the time against 37.7% for a detailed one. But shipped guidance for exactly this population pulls the other way &mdash; both Amazon&rsquo;s Alexa accessibility guidance and W3C&rsquo;s COGA guidelines prescribe escalating detail on repeated non-understanding, and that same 2005 study found silence the worst strategy of all. No platform, standard, or paper anywhere actually measures treating a minimal valid answer as a complete turn &mdash; the digest&rsquo;s design recommendation remains unsupported by anything found so far.</p>
-  <p class="dossier-path">dossiers/2026-10-27-the-slot-was-filled-the-table-was-uncited.md</p>
+  <p>Full-text reading of yesterday&rsquo;s #1 item (arXiv:2610.36422, the Tensor Trust prompt-injection reuse paper) corrects its framing. &ldquo;Describe the technique without the full text&rdquo; is not a tested finding but one of four hedged hypotheses the paper leaves to a future study, and the digest&rsquo;s &ldquo;argues for disclosing what changed after a breach&rdquo; inverts the paper&rsquo;s actual question &mdash; whether to withhold attack text from the breached party, not whether to disclose a change to anyone.</p>
+  <p>The 24.5-point headline rests on only 203 of 12,531 breach events (1.6%) and swings from &minus;16.5 to &minus;47.4 depending on an arbitrary matching threshold. The posture it gestures at is already CERT/CC&rsquo;s 2003 Limited Disclosure practice and Cloudflare&rsquo;s shipped default, so the paper measures a known tradeoff, not a new one; its substrate is also 2023-era models in a game whose designers predicted this behavior in print, and an older same-dump analysis reports a much smaller effect on a different measure.</p>
+  <p class="dossier-path">dossiers/2026-10-28-the-default-already-withheld-the-text.md</p>
 </div>
 
 <h2>Needs your answer</h2>
