@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-29</title>
+<title>Limen — 2026-10-30</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-29</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-10-30</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A 2001 Army Research Laboratory study already measured the exact &ldquo;automation bias&rdquo; today&rsquo;s AI papers keep rediscovering by vibe &mdash; and the real finding is sharper than first reported.</h3>
-  <span class="tag">(primary source &mdash; ARL-TR-2412, March 2001)</span>
-  <p>Participants predicted an automated decision aid would be right &ldquo;nearly 93% of the time,&rdquo; but rated a comparably-positioned human aid &mdash; another participant&rsquo;s prior track record, not their own judgment &mdash; &ldquo;only 27% better than chance,&rdquo; about 77%. That&rsquo;s a measured ~16-point overestimation of automation&rsquo;s reliability versus an equivalent human input; an earlier draft of this item compared it to self-judgment instead, which the correction sharpens rather than weakens.</p>
-  <p>A usable calibration check against any interface that defaults to trusting the automated answer, from exactly the pre-LLM human-factors literature worth mining directly rather than rediscovering.</p>
-  <a class="btn" href="https://www.govinfo.gov/content/pkg/GOVPUB-D101-PURL-gpo1488/pdf/GOVPUB-D101-PURL-gpo1488.pdf">Read the source →</a>
+  <h3>1. A new paper names the exact fix for agents that fail when the software underneath them changes mid-task &mdash; and it isn&rsquo;t reminding the agent to check.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, EnvOS, submitted Oct 29 2026)</span>
+  <p>EnvOS: a clinic-booking agent goes from 0/16 successes unaided, to 2/16 when told to re-verify the source, to 15/16 when the current value is simply shown again &mdash; a gain holding after correcting for multiple comparisons. An insurance-claims agent shows the same pattern, 1/10 to 9/10.</p>
+  <p>The paper&rsquo;s grader is itself usable: it rejected all 26 planted-clean cases and caught 25 of 39 external failures, against 4 of 39 for a simple log check. For any agent on a backend that changes, the decision this settles: re-display current state, don&rsquo;t just prompt verification.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.40246">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Personalized, AI-written counterfactual stories make distant risks feel close &mdash; and it works about as well whether or not you already like AI.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, two pre-registered RCTs, N=1,901 total)</span>
-  <p>Two pre-registered, quota-matched RCTs (science funding, N=1,007; satellite cybersecurity, N=894) tested AI-co-written personalized narratives against generic framing, finding effect sizes from 0.36 to 0.90 SDs depending on the outcome, with the AI-attitude moderation effect a small 0.10 SDs.</p>
-  <p>The rigor is unusual for this lane, and the finding matters for anyone using AI personalization to make abstract risk information actionable: the lift doesn&rsquo;t depend on the reader already trusting AI.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.33301">Read the source →</a>
+  <h3>2. English clears the same automated confidence gate 8.6 to 11.7 points more often than fifty other languages &mdash; even on equally correct answers.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 17 2026)</span>
+  <p>Three vendors&rsquo; production classifier APIs, tested on 1,000 items each in 51 languages at a fixed 0.9 threshold, preregistered. The gap survives the obvious fixes: translating into English nearly closes it, a per-language calibrated threshold does not.</p>
+  <p>A structural caution against treating confidence-gated automation &mdash; moderation, routing, auto-approval &mdash; as language-neutral by default, in any market outside English.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.37688">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Figma tried prompting a frontier model for canvas edits, decided it was &ldquo;incredibly token-consumptive,&rdquo; built its own fine-tuned model instead &mdash; and then had to add reinforcement learning because the fine-tuned model just copied its homework.</h3>
-  <span class="tag">(single-source, vendor-primary &mdash; Figma Blog, Oct 29 2026)</span>
-  <p>Figma trained on more than 250,000 examples using Llama 3.3 70B rather than pay the token cost of frontier-model prompting for every edit. Imitation learning alone produced a model that reproduced training-set style at the expense of generalizing, so the team layered in reinforcement learning against expert-written quality criteria &mdash; a concrete rebuttal to &ldquo;just fine-tune it&rdquo; as a finished strategy.</p>
-  <p>Figma also names a latency boundary worth stealing directly: &ldquo;an edit that takes too long can interrupt the very workflow it&rsquo;s supposed to help.&rdquo;</p>
-  <a class="btn" href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/">Read the source →</a>
+  <h3>3. A real clinician interview study finds decision-support trust runs on case complexity and peer discussion, not the accuracy-badge variables most lab studies test.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, N=12 survey + N=10 interviews)</span>
+  <p>Twelve survey respondents and ten interviewees, two clinical cohorts already using a decision-support system, converge: reliance shifts with experience, predictions matter more in complex cases, decisions get discussed with colleagues, trust depends on workflow fit.</p>
+  <p>Small sample, a lead not a settled finding &mdash; but it points at workflow integration as the variable worth designing for over a bare accuracy display.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.40224">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Nielsen Norman Group: the AI-chatbot mistake worse than escalating to a human too often is refusing to hand off someone who explicitly asked for one.</h3>
-  <span class="tag">(single-source &mdash; nngroup.com, July 10 2026)</span>
-  <p>NN/g&rsquo;s guidance sets an explicit order: escalating too quickly erodes trust and raises labor cost, and offering options outside a bot&rsquo;s competence reads as upselling &mdash; but gatekeeping an explicit request for a human is the worse failure, full stop.</p>
-  <p>The same piece backs upfront disclosure over fine print, since users don&rsquo;t read privacy policies. A clean, decision-grade escalation rule for any support or agent interface.</p>
-  <a class="btn" href="https://www.nngroup.com/articles/dimensions-of-ai-chatbots/">Read the source →</a>
+  <h3>4. A 65-radiologist survey finds trust in an AI stroke-triage tool depends almost entirely on whether the AI agrees with the radiologist, not on how accurate it is.</h3>
+  <span class="tag">(single-source &mdash; JMIR Human Factors 2026;13:e92145)</span>
+  <p>Only 18.5% found the false-positive rate acceptable, but the real finding is the asymmetry: 50.8% trust the AI when it agrees with their read, 3.1% when it conflicts.</p>
+  <p>Not a calibration problem better accuracy fixes &mdash; a structural feature of how a second opinion gets trusted, usable on any interface pairing an AI judgment with an expert&rsquo;s own.</p>
+  <a class="btn" href="https://doi.org/10.2196/92145">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A practitioner&rsquo;s prelaunch checklist for killing an AI feature before sunk cost makes that impossible: a numeric kill metric, a kill date set in advance, and exactly one person with the authority to pull the trigger.</h3>
-  <span class="tag">(single-source &mdash; Tian Pan, tianpan.co, April 10 2026)</span>
-  <p>Tian Pan&rsquo;s framework names the threshold concretely (&ldquo;if task completion rate doesn&rsquo;t improve by 15% within 90 days&rdquo;), insists the kill date be set &ldquo;before you&rsquo;ve invested enough to trigger sunk cost psychology,&rdquo; and is blunt about ownership: &ldquo;if the kill decision requires consensus, it will never happen.&rdquo;</p>
-  <p>The underlying pre-launch test is worth borrowing verbatim: &ldquo;if you had a perfect model with zero hallucinations and instant latency, would users still want this workflow?&rdquo;</p>
-  <a class="btn" href="https://tianpan.co/blog/2026/04/10/ai-feature-kill-decision-when-to-shut-down">Read the source →</a>
+  <h3>5. LogicTree swaps the chat window for a persistent, editable tree of document objects &mdash; and measures better logical quality, not just a preference bump.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, N=12 within-subjects)</span>
+  <p>A 12-person study on academic writing: the structured-object interface reduced workload and improved measured logical quality against a conversational baseline.</p>
+  <p>Small N, but a testable alternative to &ldquo;just use chat&rdquo; for AI co-writing, with an outcome measure behind it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.38136">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Full-text reading of yesterday&rsquo;s #1 item (arXiv:2610.36422, the Tensor Trust prompt-injection reuse paper) corrects its framing. &ldquo;Describe the technique without the full text&rdquo; is not a tested finding but one of four hedged hypotheses the paper leaves to a future study, and the digest&rsquo;s &ldquo;argues for disclosing what changed after a breach&rdquo; inverts the paper&rsquo;s actual question &mdash; whether to withhold attack text from the breached party, not whether to disclose a change to anyone.</p>
-  <p>The 24.5-point headline rests on only 203 of 12,531 breach events (1.6%) and swings from &minus;16.5 to &minus;47.4 depending on an arbitrary matching threshold. The posture it gestures at is already CERT/CC&rsquo;s 2003 Limited Disclosure practice and Cloudflare&rsquo;s shipped default, so the paper measures a known tradeoff, not a new one; its substrate is also 2023-era models in a game whose designers predicted this behavior in print, and an older same-dump analysis reports a much smaller effect on a different measure.</p>
-  <p class="dossier-path">dossiers/2026-10-28-the-default-already-withheld-the-text.md</p>
+  <p>Full-text reading of yesterday&rsquo;s #1 item (the 2001 Army Research Laboratory automation-bias report) narrows it sharply: its headline 93%-vs-77% figures are relayed secondhand from an unpublished manuscript, with no N, SD or test, and its one inferential statistic doesn&rsquo;t reproduce from its own cells.</p>
+  <p>The manuscript&rsquo;s published version (<em>Human Factors</em> 44(1), 2002) reports self-report favored automated aids while measured performance showed <em>more</em> disuse of them &mdash; a 2002 instance of the stated/measured dissociation this corpus already tracks from 2023 on. A same-lab replication found the gap only with a raw error-count elicitation; a 2023 preregistered study found the ordering inverts against a human expert. What survives: not a 16-point number but three conditions to check before trusting any stated-expectation figure &mdash; elicitation format, comparator expertise, self-report vs. actual reliance.</p>
+  <p class="dossier-path">dossiers/2026-10-29-the-number-was-a-self-report.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -157,6 +157,14 @@
   <p class="question">Should the pre-LLM Japanese 校正・校閲 human-factors record (基礎心理学研究, 情報処理学会論文誌, 認知科学, 人間工学) become a named source the lanes actively mine, as the 1970s&ndash;90s automation literature already is? Today&rsquo;s dossier found it holds the planted-error instrument the translation field lacks.</p>
   <p class="question">Two dossiers (2026-10-14, today) now find the Kyoto 椹木 lab holds measurements the Tsukuba lineage lacks. Should 椹木哲夫&rsquo;s group and its successors become a named source the lanes actively mine, as the 1970s&ndash;90s literature is?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+</div>
+
+<h2>This week</h2>
+
+<div class="item">
+  <p><strong>The statement loses to the record, in every seat measured.</strong> Agents keep editing already-clean code after declaring the task done; models weight a user&rsquo;s stated intention over their actual track record even when the record predicts better; people who say they double-check AI output don&rsquo;t defer less. Agent-about-itself, agent-about-user, human-about-own-habits &mdash; a log already existed in each case and already beat the statement.</p>
+  <p><strong>The trouble-point turn is shorter than the doctrine written for it.</strong> When a voice or chat system hits a snag, the measured-best response is one short, checkable re-prompt &mdash; elaborating further and staying silent both measurably lose, yet platform guidance prescribes escalating detail for exactly the population this hurts most. The one absolute: an explicit request for a human must never be gatekept.</p>
+  <p><strong>The quiet state is the measured worst case, and every pricing mechanism rewards more quiet, not truthful quiet.</strong> A production driver-assist system stays silent through exactly the seconds its perception is most degraded; a safety-rating protocol pays for an indicator&rsquo;s placement, nothing for its accuracy; a vendor publishes a real approval-fatigue curve for one product while shipping a sibling with the same dial and zero numbers on it.</p>
 </div>
 
 <footer>
