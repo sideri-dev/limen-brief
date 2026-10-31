@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-30</title>
+<title>Limen — 2026-10-31</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-30</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-10-31</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A new paper names the exact fix for agents that fail when the software underneath them changes mid-task &mdash; and it isn&rsquo;t reminding the agent to check.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, EnvOS, submitted Oct 29 2026)</span>
-  <p>EnvOS: a clinic-booking agent goes from 0/16 successes unaided, to 2/16 when told to re-verify the source, to 15/16 when the current value is simply shown again &mdash; a gain holding after correcting for multiple comparisons. An insurance-claims agent shows the same pattern, 1/10 to 9/10.</p>
-  <p>The paper&rsquo;s grader is itself usable: it rejected all 26 planted-clean cases and caught 25 of 39 external failures, against 4 of 39 for a simple log check. For any agent on a backend that changes, the decision this settles: re-display current state, don&rsquo;t just prompt verification.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.40246">Read the source →</a>
+  <h3>1. A large-scale study of Google&rsquo;s AI Overviews finds citation grounding has nothing to do with whether the answer is right.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 29 2026)</span>
+  <p>Across 3,611 benchmark health questions, Overviews appeared 96.4% of the time, cited pages scoring lower than top-5 results on four of six credibility criteria, and leaned toward commercial publishers over academic sources &mdash; and &ldquo;the accuracy of AIOs was unrelated to the grounding of their statements.&rdquo;</p>
+  <p>On a physician rubric, Overviews scored just 38.2% of available points, and 22.2% of anticipated-harmful-claim answers contained it. For any interface using citations to build trust: showing a source proves nothing about correctness.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.39339">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. English clears the same automated confidence gate 8.6 to 11.7 points more often than fifty other languages &mdash; even on equally correct answers.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 17 2026)</span>
-  <p>Three vendors&rsquo; production classifier APIs, tested on 1,000 items each in 51 languages at a fixed 0.9 threshold, preregistered. The gap survives the obvious fixes: translating into English nearly closes it, a per-language calibrated threshold does not.</p>
-  <p>A structural caution against treating confidence-gated automation &mdash; moderation, routing, auto-approval &mdash; as language-neutral by default, in any market outside English.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.37688">Read the source →</a>
+  <h3>2. A Toyota Research Institute/MIT shared-driving study finds the design element that reads as trustworthy is haptic steering coupling you can feel and override &mdash; most measured safety gains don&rsquo;t clear significance.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 26 2026)</span>
+  <p>Drivers rated &ldquo;AI knew my intent to pass&rdquo; M=5.33 (p&lt;.001) and &ldquo;AI&rsquo;s action was safe&rdquo; M=4.25 (p=.002), but &ldquo;AI helped me perform the maneuver&rdquo; was flat (p=.666). Steering is physically coupled &mdash; the driver feels the torque and can override at any moment &mdash; while throttle and braking are not; that&rsquo;s the pattern that survives.</p>
+  <p>Caveat: the paper&rsquo;s own urban-driving evaluation separately reports the AI increasing collisions, attributed to &ldquo;risk compensation and residual policy errors.&rdquo;</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.34650">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A real clinician interview study finds decision-support trust runs on case complexity and peer discussion, not the accuracy-badge variables most lab studies test.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, N=12 survey + N=10 interviews)</span>
-  <p>Twelve survey respondents and ten interviewees, two clinical cohorts already using a decision-support system, converge: reliance shifts with experience, predictions matter more in complex cases, decisions get discussed with colleagues, trust depends on workflow fit.</p>
-  <p>Small sample, a lead not a settled finding &mdash; but it points at workflow integration as the variable worth designing for over a bare accuracy display.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.40224">Read the source →</a>
+  <h3>3. A named practitioner shut down his own web server rather than keep defending it against AI agents, and built a guestbook instead.</h3>
+  <span class="tag">(single-source &mdash; Interconnected, Matt Webb, Oct 24 2026)</span>
+  <p>&ldquo;I shut down my web servers on Thursday&rdquo; &mdash; not from an attack, but because &ldquo;the calculus of whether it is worth my time just tipped&rdquo; against hardening years of PHP and CGI against agent-driven exploitation. He estimates 6-12 months before agent &ldquo;worms&rdquo; become real.</p>
+  <p>In place of the server he left a plain-text guestbook file for agents to sign instead &mdash; a minimal surface instead of an attack surface. A build-vs-retire decision someone actually made.</p>
+  <a class="btn" href="https://interconnected.org/home/2026/10/24/bunker">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A 65-radiologist survey finds trust in an AI stroke-triage tool depends almost entirely on whether the AI agrees with the radiologist, not on how accurate it is.</h3>
-  <span class="tag">(single-source &mdash; JMIR Human Factors 2026;13:e92145)</span>
-  <p>Only 18.5% found the false-positive rate acceptable, but the real finding is the asymmetry: 50.8% trust the AI when it agrees with their read, 3.1% when it conflicts.</p>
-  <p>Not a calibration problem better accuracy fixes &mdash; a structural feature of how a second opinion gets trusted, usable on any interface pairing an AI judgment with an expert&rsquo;s own.</p>
-  <a class="btn" href="https://doi.org/10.2196/92145">Read the source →</a>
+  <h3>4. The Browser Company is sunsetting Arc on December 22, naming security-maintenance cost &mdash; though its own reporting shows the real story is more complicated.</h3>
+  <span class="tag">(TechCrunch, Aditya Mehta, Oct 22 2026)</span>
+  <p>&ldquo;Keeping a browser secure takes constant, dedicated work that is only increasing in the age of AI,&rdquo; the company says, redirecting effort to Dia. New accounts stopped October 22; Arc loses AI features and sync November 23; it stops working December 22, data deleted within 30 days.</p>
+  <p>TechCrunch&rsquo;s own reporting complicates the framing: Arc had been stalled since 2025 over a &ldquo;novelty tax&rdquo; limiting adoption &mdash; the security story likely covers a product that had already stopped moving. Paired with item 3 above: an individual and a venture-backed company land on the same pressure nine days apart.</p>
+  <a class="btn" href="https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. LogicTree swaps the chat window for a persistent, editable tree of document objects &mdash; and measures better logical quality, not just a preference bump.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, N=12 within-subjects)</span>
-  <p>A 12-person study on academic writing: the structured-object interface reduced workload and improved measured logical quality against a conversational baseline.</p>
-  <p>Small N, but a testable alternative to &ldquo;just use chat&rdquo; for AI co-writing, with an outcome measure behind it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.38136">Read the source →</a>
+  <h3>5. A single-author study measures how long a computer-use agent&rsquo;s screenshot-then-click plan stays valid, and most agents wait the wrong amount of time.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 29 2026)</span>
+  <p>Only 0.4% of clicks planned on a fully loaded page go stale within 30 seconds, against 17% planned in the first second after a page opens &mdash; and eight of ten widely used open-source agents&rsquo; wait rules leave over 1% of clicks stale regardless.</p>
+  <p>Fix: pixel comparison verifies a click target as accurately as a frontier vision-language model, at one-eighth the latency. Single-author, two days old &mdash; a lead, not settled, but the number is usable now.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.39282">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Full-text reading of yesterday&rsquo;s #1 item (the 2001 Army Research Laboratory automation-bias report) narrows it sharply: its headline 93%-vs-77% figures are relayed secondhand from an unpublished manuscript, with no N, SD or test, and its one inferential statistic doesn&rsquo;t reproduce from its own cells.</p>
-  <p>The manuscript&rsquo;s published version (<em>Human Factors</em> 44(1), 2002) reports self-report favored automated aids while measured performance showed <em>more</em> disuse of them &mdash; a 2002 instance of the stated/measured dissociation this corpus already tracks from 2023 on. A same-lab replication found the gap only with a raw error-count elicitation; a 2023 preregistered study found the ordering inverts against a human expert. What survives: not a 16-point number but three conditions to check before trusting any stated-expectation figure &mdash; elicitation format, comparator expertise, self-report vs. actual reliance.</p>
-  <p class="dossier-path">dossiers/2026-10-29-the-number-was-a-self-report.md</p>
+  <p>Yesterday&rsquo;s #1 item (EnvOS) claimed showing an agent the current value beats reminding it to check &mdash; full-text reading finds the &ldquo;reminder&rdquo; was an in-page cue panel, never a prompt instruction, with identical task text in every arm. The only pre-registered contrast is LIVE vs. CUE (p=.000244); the headline 0/16&rarr;15/16 jump is explicitly descriptive, outside that family; the CUE&ndash;OFF contrast read as a null is p=.5, which the paper itself says doesn&rsquo;t establish absence of effect.</p>
+  <p>The result rests on 16 instances, one rollout per cell, one model, and isn&rsquo;t a novel direction either &mdash; a paper ten days earlier found the same shape. What survives: a reminder to look fails where a rule about which source wins does not.</p>
+  <p class="dossier-path">dossiers/2026-10-30-the-reminder-was-a-panel-not-a-prompt.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -159,12 +159,15 @@
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
-<h2>This week</h2>
+<h2>Gate</h2>
 
 <div class="item">
-  <p><strong>The statement loses to the record, in every seat measured.</strong> Agents keep editing already-clean code after declaring the task done; models weight a user&rsquo;s stated intention over their actual track record even when the record predicts better; people who say they double-check AI output don&rsquo;t defer less. Agent-about-itself, agent-about-user, human-about-own-habits &mdash; a log already existed in each case and already beat the statement.</p>
-  <p><strong>The trouble-point turn is shorter than the doctrine written for it.</strong> When a voice or chat system hits a snag, the measured-best response is one short, checkable re-prompt &mdash; elaborating further and staying silent both measurably lose, yet platform guidance prescribes escalating detail for exactly the population this hurts most. The one absolute: an explicit request for a human must never be gatekept.</p>
-  <p><strong>The quiet state is the measured worst case, and every pricing mechanism rewards more quiet, not truthful quiet.</strong> A production driver-assist system stays silent through exactly the seconds its perception is most degraded; a safety-rating protocol pays for an indicator&rsquo;s placement, nothing for its accuracy; a vendor publishes a real approval-fatigue curve for one product while shipping a sibling with the same dial and zero numbers on it.</p>
+  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty &mdash; 1 block, 1 objection</p>
+  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action &mdash; 2 blocks, 4 objections</p>
+  <p class="gate-row"><strong>DRAFT-KB-18</strong> &mdash; the statement loses to the already-logged record in all three seats of the loop &mdash; 1 block, 2 objections</p>
+  <p class="gate-row"><strong>DRAFT-KB-19</strong> &mdash; the trouble-point turn is one short re-prompt, against the platform doctrine prescribing elaboration &mdash; 1 block, 2 objections</p>
+  <p>BACKLOG.md is at its 5-item ceiling (#60&ndash;#64 QUEUED) &mdash; nothing more can be appended until one clears.</p>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 </div>
 
 <footer>
