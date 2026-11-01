@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-10-31</title>
+<title>Limen — 2026-11-01</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-10-31</p>
+  <p class="date">Limen — 2026-11-01</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A large-scale study of Google&rsquo;s AI Overviews finds citation grounding has nothing to do with whether the answer is right.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 29 2026)</span>
-  <p>Across 3,611 benchmark health questions, Overviews appeared 96.4% of the time, cited pages scoring lower than top-5 results on four of six credibility criteria, and leaned toward commercial publishers over academic sources &mdash; and &ldquo;the accuracy of AIOs was unrelated to the grounding of their statements.&rdquo;</p>
-  <p>On a physician rubric, Overviews scored just 38.2% of available points, and 22.2% of anticipated-harmful-claim answers contained it. For any interface using citations to build trust: showing a source proves nothing about correctness.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.39339">Read the source →</a>
+  <h3>1. A peer-reviewed conversation-analysis study finds the reason voice agents feel intrusive hasn&rsquo;t changed since before LLMs &mdash; it&rsquo;s structural, not a recognition bug.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ACM TOCHI 33(5), Article 46, 2026)</span>
+  <p>Rudaz, Broth and Mlynar&rsquo;s ACM TOCHI paper names &ldquo;omnirelevance of speech&rdquo; &mdash; the standing possibility that any utterance might wrongly trigger the agent &mdash; as constitutive of talking to a voice agent, present in both pre-LLM rule-based robots and today&rsquo;s LLM systems. People manage this risk constantly, not just when the agent mis-fires.</p>
+  <p>The finding argues for designed conversational off-ramps &mdash; ways to visibly take a turn out of the agent&rsquo;s address &mdash; rather than treating this as an ASR accuracy gap a bigger model eventually closes.</p>
+  <a class="btn" href="https://arxiv.org/abs/2510.22610">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A Toyota Research Institute/MIT shared-driving study finds the design element that reads as trustworthy is haptic steering coupling you can feel and override &mdash; most measured safety gains don&rsquo;t clear significance.</h3>
+  <h3>2. A two-year telemetry study of 800 developers finds AI coding assistants change behavior sharply while developers&rsquo; own sense of what changed barely moves.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ICSE 2026)</span>
+  <p>Logged activity: &ldquo;AI users produce substantially more code but also delete significantly more&rdquo; &mdash; a churn pattern invisible in a parallel 62-professional survey, where &ldquo;respondents report productivity gains and perceive minimal changes in other dimensions.&rdquo;</p>
+  <p>The gap between what the logs show and what people report about their own work is the finding, not either number alone. For anyone building an AI-adoption rollout dashboard: self-report measures something different from what&rsquo;s happening in the codebase, and treating it as sufficient hides the churn.</p>
+  <a class="btn" href="https://arxiv.org/abs/2601.10258">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. A new training method for full-duplex voice models fixes the exact ambiguous moment current systems can&rsquo;t learn from: is this a real interruption, or just a backchannel?</h3>
   <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 26 2026)</span>
-  <p>Drivers rated &ldquo;AI knew my intent to pass&rdquo; M=5.33 (p&lt;.001) and &ldquo;AI&rsquo;s action was safe&rdquo; M=4.25 (p=.002), but &ldquo;AI helped me perform the maneuver&rdquo; was flat (p=.666). Steering is physically coupled &mdash; the driver feels the torque and can override at any moment &mdash; while throttle and braking are not; that&rsquo;s the pattern that survives.</p>
-  <p>Caveat: the paper&rsquo;s own urban-driving evaluation separately reports the AI increasing collisions, attributed to &ldquo;risk compensation and residual policy errors.&rdquo;</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.34650">Read the source →</a>
+  <p>The Window Likelihood method beats binary-reward GRPO training across tested models &mdash; MiniCPM-o rises from 83.9 to 89.6, PersonaPlex from 52.4 to 77.2 &mdash; by giving a learning signal in the windows today&rsquo;s binary reward gives none, the paper&rsquo;s &ldquo;zero-gradient trap.&rdquo; The comparison isn&rsquo;t fully controlled for training data against Kyutai&rsquo;s released checkpoints &mdash; treat it as a lead, not a settled benchmark.</p>
+  <p>For duplex voice interfaces this names the barge-in problem precisely: the model has no signal for exactly the moments where interruption-vs-backchannel matters most.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.35581">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A named practitioner shut down his own web server rather than keep defending it against AI agents, and built a guestbook instead.</h3>
-  <span class="tag">(single-source &mdash; Interconnected, Matt Webb, Oct 24 2026)</span>
-  <p>&ldquo;I shut down my web servers on Thursday&rdquo; &mdash; not from an attack, but because &ldquo;the calculus of whether it is worth my time just tipped&rdquo; against hardening years of PHP and CGI against agent-driven exploitation. He estimates 6-12 months before agent &ldquo;worms&rdquo; become real.</p>
-  <p>In place of the server he left a plain-text guestbook file for agents to sign instead &mdash; a minimal surface instead of an attack surface. A build-vs-retire decision someone actually made.</p>
-  <a class="btn" href="https://interconnected.org/home/2026/10/24/bunker">Read the source →</a>
+  <h3>4. A six-month matched-cohort survey finds developers reporting a worsened experience nearly doubled even as perceived productivity held flat &mdash; not a tradeoff, a simultaneous rise.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted May 22 2026)</span>
+  <p>The share reporting a worsened experience went from 14% to 27%, while 84% still reported improvement on productivity at both measurement points. 82% report &ldquo;less&hellip; on writing code&rdquo; specifically (correcting a draft paraphrase; the underlying number is unchanged).</p>
+  <p>The authors propose &ldquo;supervisory engineering work&rdquo; as the shape the role is taking &mdash; a productivity metric moving the right way is not evidence the tool is working for the person using it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.23135">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. The Browser Company is sunsetting Arc on December 22, naming security-maintenance cost &mdash; though its own reporting shows the real story is more complicated.</h3>
-  <span class="tag">(TechCrunch, Aditya Mehta, Oct 22 2026)</span>
-  <p>&ldquo;Keeping a browser secure takes constant, dedicated work that is only increasing in the age of AI,&rdquo; the company says, redirecting effort to Dia. New accounts stopped October 22; Arc loses AI features and sync November 23; it stops working December 22, data deleted within 30 days.</p>
-  <p>TechCrunch&rsquo;s own reporting complicates the framing: Arc had been stalled since 2025 over a &ldquo;novelty tax&rdquo; limiting adoption &mdash; the security story likely covers a product that had already stopped moving. Paired with item 3 above: an individual and a venture-backed company land on the same pressure nine days apart.</p>
-  <a class="btn" href="https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. A single-author study measures how long a computer-use agent&rsquo;s screenshot-then-click plan stays valid, and most agents wait the wrong amount of time.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 29 2026)</span>
-  <p>Only 0.4% of clicks planned on a fully loaded page go stale within 30 seconds, against 17% planned in the first second after a page opens &mdash; and eight of ten widely used open-source agents&rsquo; wait rules leave over 1% of clicks stale regardless.</p>
-  <p>Fix: pixel comparison verifies a click target as accurately as a frontier vision-language model, at one-eighth the latency. Single-author, two days old &mdash; a lead, not settled, but the number is usable now.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.39282">Read the source →</a>
+  <h3>5. Letting people iteratively edit their own &ldquo;AI clone&rdquo; makes them rate it far better &mdash; and does almost nothing for the actual visitor talking to it.</h3>
+  <span class="tag">(single-source, peer-reviewed &mdash; ACM CUI &rsquo;26, Best Paper Award)</span>
+  <p>Sony CSL&rsquo;s field deployment found source users&rsquo; ratings of their own AI clone improved significantly on nine of ten communication dimensions after iterative self-editing, while visitor ratings &ldquo;showed no overall change and reached significance for only one of six AICs after FDR correction.&rdquo;</p>
+  <p>The asymmetry is clean: self-editing moves how the creator feels about their own representation, not how well it lands with the person on the other side of the conversation &mdash; a caution for any self-personalized agent design that treats the creator&rsquo;s satisfaction as a stand-in for the counterpart&rsquo;s experience.</p>
+  <a class="btn" href="https://doi.org/10.1145/3816046.3816205">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item (EnvOS) claimed showing an agent the current value beats reminding it to check &mdash; full-text reading finds the &ldquo;reminder&rdquo; was an in-page cue panel, never a prompt instruction, with identical task text in every arm. The only pre-registered contrast is LIVE vs. CUE (p=.000244); the headline 0/16&rarr;15/16 jump is explicitly descriptive, outside that family; the CUE&ndash;OFF contrast read as a null is p=.5, which the paper itself says doesn&rsquo;t establish absence of effect.</p>
-  <p>The result rests on 16 instances, one rollout per cell, one model, and isn&rsquo;t a novel direction either &mdash; a paper ten days earlier found the same shape. What survives: a reminder to look fails where a rule about which source wins does not.</p>
-  <p class="dossier-path">dossiers/2026-10-30-the-reminder-was-a-panel-not-a-prompt.md</p>
+  <p>Yesterday&rsquo;s #1 item (Google AI Overviews grounding study) comes apart under full-text reading: the headline null &mdash; &ldquo;grounding unrelated to accuracy&rdquo; &mdash; reverses into a significant positive correlation in the one subsample the paper calls closest to real search queries. The quoted &ldquo;56.7%&rdquo; figure uses a narrower denominator than it reads and carries a 23-point confidence interval the abstract omits; across comparable audits, support rates order by how permissive the measurement is, not by product, so the number isn&rsquo;t portable into a client room as-is.</p>
+  <p>Facebook.com, the fourth-most-cited AI Overview domain in the paper&rsquo;s own released data, is missing from its source table because of a readability gate &mdash; a direction that flatters the paper, not against it. Most importantly, the design conclusion that citation display doesn&rsquo;t earn trust is contradicted at its decisive step by a pre-registered CHI &rsquo;25 study finding real, relevant, accurate sources do reduce overreliance on wrong answers &mdash; this paper is evidence the sourcing condition failed here, not that showing sources is the wrong design.</p>
+  <p class="dossier-path">dossiers/2026-10-31-the-null-inverted-in-its-own-robustness-table.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -157,17 +157,6 @@
   <p class="question">Should the pre-LLM Japanese 校正・校閲 human-factors record (基礎心理学研究, 情報処理学会論文誌, 認知科学, 人間工学) become a named source the lanes actively mine, as the 1970s&ndash;90s automation literature already is? Today&rsquo;s dossier found it holds the planted-error instrument the translation field lacks.</p>
   <p class="question">Two dossiers (2026-10-14, today) now find the Kyoto 椹木 lab holds measurements the Tsukuba lineage lacks. Should 椹木哲夫&rsquo;s group and its successors become a named source the lanes actively mine, as the 1970s&ndash;90s literature is?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-</div>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty &mdash; 1 block, 1 objection</p>
-  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action &mdash; 2 blocks, 4 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-18</strong> &mdash; the statement loses to the already-logged record in all three seats of the loop &mdash; 1 block, 2 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-19</strong> &mdash; the trouble-point turn is one short re-prompt, against the platform doctrine prescribing elaboration &mdash; 1 block, 2 objections</p>
-  <p>BACKLOG.md is at its 5-item ceiling (#60&ndash;#64 QUEUED) &mdash; nothing more can be appended until one clears.</p>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 </div>
 
 <footer>
