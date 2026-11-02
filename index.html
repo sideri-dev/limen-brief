@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-01</title>
+<title>Limen — 2026-11-02</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-01</p>
+  <p class="date">Limen — 2026-11-02</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A peer-reviewed conversation-analysis study finds the reason voice agents feel intrusive hasn&rsquo;t changed since before LLMs &mdash; it&rsquo;s structural, not a recognition bug.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; ACM TOCHI 33(5), Article 46, 2026)</span>
-  <p>Rudaz, Broth and Mlynar&rsquo;s ACM TOCHI paper names &ldquo;omnirelevance of speech&rdquo; &mdash; the standing possibility that any utterance might wrongly trigger the agent &mdash; as constitutive of talking to a voice agent, present in both pre-LLM rule-based robots and today&rsquo;s LLM systems. People manage this risk constantly, not just when the agent mis-fires.</p>
-  <p>The finding argues for designed conversational off-ramps &mdash; ways to visibly take a turn out of the agent&rsquo;s address &mdash; rather than treating this as an ASR accuracy gap a bigger model eventually closes.</p>
-  <a class="btn" href="https://arxiv.org/abs/2510.22610">Read the source →</a>
+  <h3>1. A randomized trial of 802 patients finds a pre-visit prep agent works better when it&rsquo;s built from explicit sub-tasks, not an open chat window &mdash; and clinicians and patients judge the improvement differently.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
+  <p>Google Health compared a structured agent &mdash; context-gathering, expectation-setting, question-list building, summary, each a distinct step &mdash; against an open, minimally-prompted chatbot on the same base model. Clinician-rated comprehensive preparation rose from 50.6% to 67.2% (P&lt;0.05); patient confidence in knowing what to ask rose from 67.1% to 81.4% (P&lt;0.01).</p>
+  <p>The two numbers don&rsquo;t track each other &mdash; &ldquo;clinician and participant metrics were not significantly correlated&rdquo; &mdash; so one satisfaction score can&rsquo;t stand in for both audiences. The design lesson: decomposing a prep/intake flow into mandatory sub-tasks beats trusting an open conversation to cover the same ground.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.41437">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A two-year telemetry study of 800 developers finds AI coding assistants change behavior sharply while developers&rsquo; own sense of what changed barely moves.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; ICSE 2026)</span>
-  <p>Logged activity: &ldquo;AI users produce substantially more code but also delete significantly more&rdquo; &mdash; a churn pattern invisible in a parallel 62-professional survey, where &ldquo;respondents report productivity gains and perceive minimal changes in other dimensions.&rdquo;</p>
-  <p>The gap between what the logs show and what people report about their own work is the finding, not either number alone. For anyone building an AI-adoption rollout dashboard: self-report measures something different from what&rsquo;s happening in the codebase, and treating it as sufficient hides the churn.</p>
-  <a class="btn" href="https://arxiv.org/abs/2601.10258">Read the source →</a>
+  <h3>2. Replit found that AI-only security review gives different verdicts on functionally identical code depending on how it&rsquo;s phrased &mdash; so they kept a deterministic static-analysis layer instead of trusting the AI reviewer alone.</h3>
+  <span class="tag">(single-source, vendor-primary &mdash; Replit Blog, Oct 28 2026)</span>
+  <p>Replit&rsquo;s own account treats this as a reason to design around AI judgment, not on top of it: proposing a change and approving it for production &ldquo;must remain distinct&rdquo; roles, and MicroVMs isolate each execution environment at the kernel level. Its productivity numbers are explicitly caveated as &ldquo;internal experience, not a promised customer outcome.&rdquo;</p>
+  <p>The decision worth stealing: treat an AI reviewer as one signal among several, never the sole gate, when the judge is non-deterministic on phrasing.</p>
+  <a class="btn" href="https://replit.com/blog/architecture-behind-secure-agent-work">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A new training method for full-duplex voice models fixes the exact ambiguous moment current systems can&rsquo;t learn from: is this a real interruption, or just a backchannel?</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 26 2026)</span>
-  <p>The Window Likelihood method beats binary-reward GRPO training across tested models &mdash; MiniCPM-o rises from 83.9 to 89.6, PersonaPlex from 52.4 to 77.2 &mdash; by giving a learning signal in the windows today&rsquo;s binary reward gives none, the paper&rsquo;s &ldquo;zero-gradient trap.&rdquo; The comparison isn&rsquo;t fully controlled for training data against Kyutai&rsquo;s released checkpoints &mdash; treat it as a lead, not a settled benchmark.</p>
-  <p>For duplex voice interfaces this names the barge-in problem precisely: the model has no signal for exactly the moments where interruption-vs-backchannel matters most.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.35581">Read the source →</a>
+  <h3>3. A 360-person study finds people send an AI assistant&rsquo;s version of a message instead of what they actually meant to say &mdash; three-quarters of the time, even when they&rsquo;d said something different moments before.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
+  <p>75% of participants sent the AI&rsquo;s drafted suspension letter, &ldquo;including 11 participants who reported cancellation as their final stated intent.&rdquo; Arguing with the assistant didn&rsquo;t help: resisting its framing reduced task completion while the sent artifacts stayed faithful to the AI&rsquo;s original framing, not the user&rsquo;s correction.</p>
+  <p>The design problem: an agent holding conversation history can anchor on its own earlier framing hard enough that a user&rsquo;s later, explicit correction never makes it into what actually goes out.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.41367">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A six-month matched-cohort survey finds developers reporting a worsened experience nearly doubled even as perceived productivity held flat &mdash; not a tradeoff, a simultaneous rise.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted May 22 2026)</span>
-  <p>The share reporting a worsened experience went from 14% to 27%, while 84% still reported improvement on productivity at both measurement points. 82% report &ldquo;less&hellip; on writing code&rdquo; specifically (correcting a draft paraphrase; the underlying number is unchanged).</p>
-  <p>The authors propose &ldquo;supervisory engineering work&rdquo; as the shape the role is taking &mdash; a productivity metric moving the right way is not evidence the tool is working for the person using it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.23135">Read the source →</a>
+  <h3>4. Linear&rsquo;s CEO published six concrete rules for designing an AI agent that shares a product with a human &mdash; and argues that approving every agent step isn&rsquo;t oversight, it&rsquo;s &ldquo;rubber-stamping.&rdquo;</h3>
+  <span class="tag">(corroborated two ways &mdash; Every/Thesis + Linear&rsquo;s own developer docs)</span>
+  <p>Karri Saarinen&rsquo;s piece, corroborated against Linear&rsquo;s own developer docs, lands hardest on two points: an agent &ldquo;should be clear and transparent about its internal state&rdquo; &mdash; thinking, waiting, executing, or finished, always visibly one of those &mdash; and accountability sits with &ldquo;a person who set the agent loose within that system,&rdquo; not the agent itself.</p>
+  <p>Per-step approval turns the human into a bottleneck rubber-stamping work rather than directing it &mdash; a real cost worth weighing against whatever safety case justified the approval step you were about to add.</p>
+  <a class="btn" href="https://every.to/thesis/how-to-design-for-human-agent-interaction">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Letting people iteratively edit their own &ldquo;AI clone&rdquo; makes them rate it far better &mdash; and does almost nothing for the actual visitor talking to it.</h3>
-  <span class="tag">(single-source, peer-reviewed &mdash; ACM CUI &rsquo;26, Best Paper Award)</span>
-  <p>Sony CSL&rsquo;s field deployment found source users&rsquo; ratings of their own AI clone improved significantly on nine of ten communication dimensions after iterative self-editing, while visitor ratings &ldquo;showed no overall change and reached significance for only one of six AICs after FDR correction.&rdquo;</p>
-  <p>The asymmetry is clean: self-editing moves how the creator feels about their own representation, not how well it lands with the person on the other side of the conversation &mdash; a caution for any self-personalized agent design that treats the creator&rsquo;s satisfaction as a stand-in for the counterpart&rsquo;s experience.</p>
-  <a class="btn" href="https://doi.org/10.1145/3816046.3816205">Read the source →</a>
+  <h3>5. A continuously-updating meta-analysis of 420 papers reconfirms, at six times the prior evidence base, that human-AI teams beat either alone but underperform whichever of the two is individually stronger.</h3>
+  <span class="tag">(single-source, update on an established finding &mdash; arXiv preprint, submitted Oct 30 2026)</span>
+  <p>Not a new finding &mdash; MIT&rsquo;s Vaccaro, Almaatouq and Malone established the same comparator in 2024 (<em>Nature Human Behaviour</em>), already load-bearing across three dossiers here. What&rsquo;s new is AutoAnalysis itself: a live-updating artifact, not a frozen study, confirming the finding across 1,955 effect sizes from 420 papers &mdash; roughly six times the prior count, including post-agentic-AI literature.</p>
+  <p>The &ldquo;team beats either alone&rdquo; argument, and its ceiling clause, just got a much stronger evidence base.</p>
+  <a class="btn" href="https://arxiv.org/abs/2610.42001">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s #1 item (Google AI Overviews grounding study) comes apart under full-text reading: the headline null &mdash; &ldquo;grounding unrelated to accuracy&rdquo; &mdash; reverses into a significant positive correlation in the one subsample the paper calls closest to real search queries. The quoted &ldquo;56.7%&rdquo; figure uses a narrower denominator than it reads and carries a 23-point confidence interval the abstract omits; across comparable audits, support rates order by how permissive the measurement is, not by product, so the number isn&rsquo;t portable into a client room as-is.</p>
-  <p>Facebook.com, the fourth-most-cited AI Overview domain in the paper&rsquo;s own released data, is missing from its source table because of a readability gate &mdash; a direction that flatters the paper, not against it. Most importantly, the design conclusion that citation display doesn&rsquo;t earn trust is contradicted at its decisive step by a pre-registered CHI &rsquo;25 study finding real, relevant, accurate sources do reduce overreliance on wrong answers &mdash; this paper is evidence the sourcing condition failed here, not that showing sources is the wrong design.</p>
-  <p class="dossier-path">dossiers/2026-10-31-the-null-inverted-in-its-own-robustness-table.md</p>
+  <p>Four weeks after a dossier asked whether anyone measures the work co-present humans do to manage a voice agent&rsquo;s hearing, the gap has closed fast &mdash; and every new instrument measures the machine, not the human. New benchmarks put per-product numbers on shipped duplex agents for the first time (GPT-Live-1 yields the floor to 40.6% of backchannels, Gemini-3.8-Live to 97.7%) but still don&rsquo;t measure two humans talking past the agent, and the one dataset that did code private bystander conduct buried its counts in a supplementary file.</p>
+  <p>Nothing full-duplex has displaced the underlying defaults &mdash; OpenAI&rsquo;s 500ms VAD window, Gemini&rsquo;s newly-disclosed ~800ms server default &mdash; and the best new finding is qualitative: a co-author&rsquo;s own follow-up study found families &ldquo;backgrounding their own faces&rdquo; to get a toy robot&rsquo;s sensor to scan the right person. The most actionable defect: the pipeline&rsquo;s access-path problem is now failing on fully open, CC-BY-licensed papers, not just paywalled ones.</p>
+  <p class="dossier-path">dossiers/2026-11-01-the-gap-closed-and-every-instrument-measured-the-machine.md</p>
 </div>
 
 <h2>Needs your answer</h2>
