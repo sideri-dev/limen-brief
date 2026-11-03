@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-02</title>
+<title>Limen — 2026-11-03</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,73 +88,73 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-02</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-11-03</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A randomized trial of 802 patients finds a pre-visit prep agent works better when it&rsquo;s built from explicit sub-tasks, not an open chat window &mdash; and clinicians and patients judge the improvement differently.</h3>
+  <h3>1. Uncertainty displays don&rsquo;t just add caution &mdash; their granularity decides which direction behavior moves.</h3>
+  <span class="tag">(single-source &mdash; accepted, ACM FAccT &rsquo;26)</span>
+  <p>A 192-person randomized trial on medical questions tested three ways of showing an LLM&rsquo;s uncertainty and found they don&rsquo;t converge on &ldquo;more transparency, more scrutiny.&rdquo; Token-level uncertainty &mdash; marking individual uncertain words &mdash; actually <em>raised</em> agreement with the AI&rsquo;s answer (p&le;.05, odds ratio 1.62) rather than prompting more checking.</p>
+  <p>Output- and relation-level uncertainty didn&rsquo;t move agreement, but did measurably cut people&rsquo;s confidence in their own judgment, and the relation-level version also raised self-reported reliance on the AI &mdash; one participant skipped verification because the tool &ldquo;summarized all key information.&rdquo; Strong enough to upend the default single confidence-badge pattern: how granular an uncertainty display is matters more than whether one exists, and the obvious choice can backfire.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.28571">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>2. A clarifying question buys faster acceptance, not more careful review &mdash; especially on the thing it just asked about.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 31 2026)</span>
+  <p>A 180-person study across six decision scenarios found that when an AI asks a clarifying question before answering, people review the eventual response about a third faster (55 vs. 81 seconds) and accept it unchanged more often (60% vs. 46%). The effect holds even when the response is wrong: people agreed with incorrect answers more often after a clarifying question, and agreement climbed further specifically when the error sat next to the thing the question had asked about.</p>
+  <p>Uncomfortable for a popular design instinct &mdash; a clarifying question reads as careful collaboration but functions as a satisfaction shortcut, so content adjacent to it needs its own check, not less scrutiny.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.01087">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Anthropic is moving agent conversation state server-side &mdash; and naming the tradeoffs up front.</h3>
+  <span class="tag">(vendor-primary, single-source &mdash; Anthropic docs, Nov 2 2026)</span>
+  <p>A new beta feature called &ldquo;message threads&rdquo; lets a long-running agent stop re-uploading and re-tokenizing its entire growing conversation on every turn; the server keeps the state and the client sends only what&rsquo;s new. Anthropic is unusually blunt about the cost: a thread is best-effort, expiring five minutes after its last use and deleted within an hour regardless, with no Zero Data Retention or HIPAA eligibility.</p>
+  <p>Their own advice to builders: keep an independent copy of every message and build a replay path from day one. A real latency lever for any growing-context agent interface, but one with a session-loss and compliance tradeoff to design around, not assume away.</p>
+  <a class="btn" href="https://platform.claude.com/docs/en/build-with-claude/message-threads">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. Agent failure modes don&rsquo;t change with autonomy level &mdash; what a person can do about them does.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
-  <p>Google Health compared a structured agent &mdash; context-gathering, expectation-setting, question-list building, summary, each a distinct step &mdash; against an open, minimally-prompted chatbot on the same base model. Clinician-rated comprehensive preparation rose from 50.6% to 67.2% (P&lt;0.05); patient confidence in knowing what to ask rose from 67.1% to 81.4% (P&lt;0.01).</p>
-  <p>The two numbers don&rsquo;t track each other &mdash; &ldquo;clinician and participant metrics were not significantly correlated&rdquo; &mdash; so one satisfaction score can&rsquo;t stand in for both audiences. The design lesson: decomposing a prep/intake flow into mandatory sub-tasks beats trusting an open conversation to cover the same ground.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.41437">Read the source →</a>
+  <p>A taxonomy built from 695 real human-agent interaction incidents found all twelve identified failure modes show up whether an agent operates with tight oversight or wide autonomy; autonomy changes the shape a failure takes, not whether it happens. What actually shifts with configuration is recoverability: how much an agent completes between points of human involvement is fixed at deployment, so identical models on identical tasks fail differently depending only on how checkpoints are spaced.</p>
+  <p>That reframes &ldquo;how autonomous should this be&rdquo; from a risk question into a recovery-design question &mdash; checkpoint placement, not model trust, determines what a person can do when something goes wrong.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.00291">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Replit found that AI-only security review gives different verdicts on functionally identical code depending on how it&rsquo;s phrased &mdash; so they kept a deterministic static-analysis layer instead of trusting the AI reviewer alone.</h3>
-  <span class="tag">(single-source, vendor-primary &mdash; Replit Blog, Oct 28 2026)</span>
-  <p>Replit&rsquo;s own account treats this as a reason to design around AI judgment, not on top of it: proposing a change and approving it for production &ldquo;must remain distinct&rdquo; roles, and MicroVMs isolate each execution environment at the kernel level. Its productivity numbers are explicitly caveated as &ldquo;internal experience, not a promised customer outcome.&rdquo;</p>
-  <p>The decision worth stealing: treat an AI reviewer as one signal among several, never the sole gate, when the judge is non-deterministic on phrasing.</p>
-  <a class="btn" href="https://replit.com/blog/architecture-behind-secure-agent-work">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. A 360-person study finds people send an AI assistant&rsquo;s version of a message instead of what they actually meant to say &mdash; three-quarters of the time, even when they&rsquo;d said something different moments before.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
-  <p>75% of participants sent the AI&rsquo;s drafted suspension letter, &ldquo;including 11 participants who reported cancellation as their final stated intent.&rdquo; Arguing with the assistant didn&rsquo;t help: resisting its framing reduced task completion while the sent artifacts stayed faithful to the AI&rsquo;s original framing, not the user&rsquo;s correction.</p>
-  <p>The design problem: an agent holding conversation history can anchor on its own earlier framing hard enough that a user&rsquo;s later, explicit correction never makes it into what actually goes out.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.41367">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. Linear&rsquo;s CEO published six concrete rules for designing an AI agent that shares a product with a human &mdash; and argues that approving every agent step isn&rsquo;t oversight, it&rsquo;s &ldquo;rubber-stamping.&rdquo;</h3>
-  <span class="tag">(corroborated two ways &mdash; Every/Thesis + Linear&rsquo;s own developer docs)</span>
-  <p>Karri Saarinen&rsquo;s piece, corroborated against Linear&rsquo;s own developer docs, lands hardest on two points: an agent &ldquo;should be clear and transparent about its internal state&rdquo; &mdash; thinking, waiting, executing, or finished, always visibly one of those &mdash; and accountability sits with &ldquo;a person who set the agent loose within that system,&rdquo; not the agent itself.</p>
-  <p>Per-step approval turns the human into a bottleneck rubber-stamping work rather than directing it &mdash; a real cost worth weighing against whatever safety case justified the approval step you were about to add.</p>
-  <a class="btn" href="https://every.to/thesis/how-to-design-for-human-agent-interaction">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. A continuously-updating meta-analysis of 420 papers reconfirms, at six times the prior evidence base, that human-AI teams beat either alone but underperform whichever of the two is individually stronger.</h3>
-  <span class="tag">(single-source, update on an established finding &mdash; arXiv preprint, submitted Oct 30 2026)</span>
-  <p>Not a new finding &mdash; MIT&rsquo;s Vaccaro, Almaatouq and Malone established the same comparator in 2024 (<em>Nature Human Behaviour</em>), already load-bearing across three dossiers here. What&rsquo;s new is AutoAnalysis itself: a live-updating artifact, not a frozen study, confirming the finding across 1,955 effect sizes from 420 papers &mdash; roughly six times the prior count, including post-agentic-AI literature.</p>
-  <p>The &ldquo;team beats either alone&rdquo; argument, and its ceiling clause, just got a much stronger evidence base.</p>
-  <a class="btn" href="https://arxiv.org/abs/2610.42001">Read the source →</a>
+  <h3>5. A teleoperation wearable restores the feeling of control over a detached robotic arm &mdash; but not the feeling that the arm is yours.</h3>
+  <span class="tag">(single-source &mdash; accepted, IEEE-RAS Humanoids 2026)</span>
+  <p>MESSPa, a wearable interface for operating a robot arm that can detach from the body, significantly cut task time and restored &ldquo;sense of agency&rdquo; versus keyboard control once the arm detached &mdash; closing much of the gap between attached and detached performance. What didn&rsquo;t move was &ldquo;sense of ownership,&rdquo; the felt sense the arm belongs to you &mdash; that stayed flat regardless of interface.</p>
+  <p>Useful split for remote-embodiment design generally: motion-transfer plus positional haptic feedback recovers functional control, but that&rsquo;s not the same lever as whatever would make a detached limb feel like part of you.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.00509">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Four weeks after a dossier asked whether anyone measures the work co-present humans do to manage a voice agent&rsquo;s hearing, the gap has closed fast &mdash; and every new instrument measures the machine, not the human. New benchmarks put per-product numbers on shipped duplex agents for the first time (GPT-Live-1 yields the floor to 40.6% of backchannels, Gemini-3.8-Live to 97.7%) but still don&rsquo;t measure two humans talking past the agent, and the one dataset that did code private bystander conduct buried its counts in a supplementary file.</p>
-  <p>Nothing full-duplex has displaced the underlying defaults &mdash; OpenAI&rsquo;s 500ms VAD window, Gemini&rsquo;s newly-disclosed ~800ms server default &mdash; and the best new finding is qualitative: a co-author&rsquo;s own follow-up study found families &ldquo;backgrounding their own faces&rdquo; to get a toy robot&rsquo;s sensor to scan the right person. The most actionable defect: the pipeline&rsquo;s access-path problem is now failing on fully open, CC-BY-licensed papers, not just paywalled ones.</p>
-  <p class="dossier-path">dossiers/2026-11-01-the-gap-closed-and-every-instrument-measured-the-machine.md</p>
+  <p>A follow-up dossier re-read yesterday&rsquo;s #1 item (the Google Health visit-prep agent trial) against its full paper and found the headline framing wrong four ways: the 67.2%-vs-50.6% figure is a secondary outcome, not primary; the trial was unregistered until five months after enrollment began; it&rsquo;s a three-arm study with two variants pooled, not a clean A/B; and the repeated &ldquo;clinician and patient metrics weren&rsquo;t correlated&rdquo; claim rests on a test the paper never ran (tested against a minimum-effect threshold, not zero, with no coefficient printed).</p>
+  <p>What survives: the three-arm prompt design genuinely isolates conversational structure as the active variable &mdash; a correctly scoped, smaller finding than the digest conveyed.</p>
+  <p class="dossier-path">dossiers/2026-11-02-the-number-is-real-and-the-test-was-never-run.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item">
-  <p class="question">Should the person who is observed and acted on but is not the system&rsquo;s user &mdash; the care recipient, the bystander &mdash; become a standing emphasis for the ambient lane? Two dossiers this week found that party absent from every shipped role table.</p>
-  <p class="question">Should the pre-LLM Japanese 校正・校閲 human-factors record (基礎心理学研究, 情報処理学会論文誌, 認知科学, 人間工学) become a named source the lanes actively mine, as the 1970s&ndash;90s automation literature already is? Today&rsquo;s dossier found it holds the planted-error instrument the translation field lacks.</p>
+  <p class="question">Should large-scale independent audits of deployed AI surfaces &mdash; AI Overview, news-assistant and search audits &mdash; become a named source the lanes mine? Today&rsquo;s dossier found their headline rates order by instrument, not by product.</p>
+  <p class="question">Should payment-rail specifications (Stripe Link/SPT, ACP, AP2, Visa) become a named practice-lane source for agent approval surfaces? Today&rsquo;s dossier found the spec contradicted the vendor prose on what the card actually binds.</p>
   <p class="question">Two dossiers (2026-10-14, today) now find the Kyoto 椹木 lab holds measurements the Tsukuba lineage lacks. Should 椹木哲夫&rsquo;s group and its successors become a named source the lanes actively mine, as the 1970s&ndash;90s literature is?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
