@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-03</title>
+<title>Limen — 2026-11-04</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -88,66 +88,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-03</p>
+  <p class="date">Limen — 2026-11-04</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Uncertainty displays don&rsquo;t just add caution &mdash; their granularity decides which direction behavior moves.</h3>
-  <span class="tag">(single-source &mdash; accepted, ACM FAccT &rsquo;26)</span>
-  <p>A 192-person randomized trial on medical questions tested three ways of showing an LLM&rsquo;s uncertainty and found they don&rsquo;t converge on &ldquo;more transparency, more scrutiny.&rdquo; Token-level uncertainty &mdash; marking individual uncertain words &mdash; actually <em>raised</em> agreement with the AI&rsquo;s answer (p&le;.05, odds ratio 1.62) rather than prompting more checking.</p>
-  <p>Output- and relation-level uncertainty didn&rsquo;t move agreement, but did measurably cut people&rsquo;s confidence in their own judgment, and the relation-level version also raised self-reported reliance on the AI &mdash; one participant skipped verification because the tool &ldquo;summarized all key information.&rdquo; Strong enough to upend the default single confidence-badge pattern: how granular an uncertainty display is matters more than whether one exists, and the obvious choice can backfire.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.28571">Read the source →</a>
+  <h3>1. Figma rejected a flat network allowlist and a global lock for the sandboxes that run AI-written code &mdash; &ldquo;that&rsquo;s often too blunt for the products we want to build.&rdquo;</h3>
+  <span class="tag">(vendor-primary, single-source &mdash; Figma Blog, Nov 4 2026)</span>
+  <p>Figma&rsquo;s new &ldquo;Nimbus&rdquo; platform centralizes how it isolates AI-generated and agent-written code, after discarding several simpler designs. The allowlist was dropped for method-level restriction instead &mdash; trusted hosts get full access, everything else gets GET/HEAD/OPTIONS only, enough for web search while blocking POST/PUT.</p>
+  <p>Credentials are encrypted and swapped for their real value only at the intended destination, so exfiltrated code gets nothing exploitable; the global claim-lock became a single Postgres transaction per claim. Warm pools cut provisioning latency 90%, availability rose from 99% to 99.95% &mdash; a concrete infrastructure-layer answer to a decision every agent-code-running production system has to make.</p>
+  <a class="btn" href="https://www.figma.com/blog/how-figma-manages-sandboxes-at-scale/">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A clarifying question buys faster acceptance, not more careful review &mdash; especially on the thing it just asked about.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 31 2026)</span>
-  <p>A 180-person study across six decision scenarios found that when an AI asks a clarifying question before answering, people review the eventual response about a third faster (55 vs. 81 seconds) and accept it unchanged more often (60% vs. 46%). The effect holds even when the response is wrong: people agreed with incorrect answers more often after a clarifying question, and agreement climbed further specifically when the error sat next to the thing the question had asked about.</p>
-  <p>Uncomfortable for a popular design instinct &mdash; a clarifying question reads as careful collaboration but functions as a satisfaction shortcut, so content adjacent to it needs its own check, not less scrutiny.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.01087">Read the source →</a>
+  <h3>2. An AI that infers what you already know and leaves it unstated beats one that spells everything out &mdash; on speed and detection both.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 2 2026)</span>
+  <p>A preregistered 114-person study had people monitor four simulated delivery drones for problems, comparing alerts from a &ldquo;pragmatic&rdquo; planner that models what the listener already knows against a fully-specified baseline. The pragmatic version caught more real problems (85.8% vs 78.5% detection, p=.0032), with the gain concentrated where awareness was already low and absent where it was already high &mdash; no measured cost in mental demand or frustration.</p>
+  <p>Exhaustive disclosure isn&rsquo;t a safe default; inferring what&rsquo;s already understood can win on both speed and accuracy.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.03976">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Anthropic is moving agent conversation state server-side &mdash; and naming the tradeoffs up front.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Anthropic docs, Nov 2 2026)</span>
-  <p>A new beta feature called &ldquo;message threads&rdquo; lets a long-running agent stop re-uploading and re-tokenizing its entire growing conversation on every turn; the server keeps the state and the client sends only what&rsquo;s new. Anthropic is unusually blunt about the cost: a thread is best-effort, expiring five minutes after its last use and deleted within an hour regardless, with no Zero Data Retention or HIPAA eligibility.</p>
-  <p>Their own advice to builders: keep an independent copy of every message and build a replay path from day one. A real latency lever for any growing-context agent interface, but one with a session-loss and compliance tradeoff to design around, not assume away.</p>
-  <a class="btn" href="https://platform.claude.com/docs/en/build-with-claude/message-threads">Read the source →</a>
+  <h3>3. A head-worn gaze sensor skips the camera entirely &mdash; trading eye-tracking accuracy for structural bystander privacy.</h3>
+  <span class="tag">(single-source &mdash; ACM UIST 2026)</span>
+  <p>GazeTags are $2.20 infrared tags a head-worn device locates via a narrow infrared beam aligned to head direction, instead of a camera reading eye position. The CMU Future Interfaces Group&rsquo;s reasoning: cameras cause &ldquo;discomfort around image capture&rdquo; and uncertainty about what&rsquo;s recorded, so dropping image capture removes that problem structurally, not through a policy or an indicator light.</p>
+  <p>The cost is conceded: head direction is only a proxy for eye gaze, which can deviate well outside it, and the authors &ldquo;cannot track eye gaze&rdquo; directly. Bench testing held detection above 99% with up to 5 tags at 4&ndash;6 meters, dropping as tag count and distance rose; battery life runs roughly 1.4 years on a coin cell. A sensing-modality tradeoff for any gaze- or context-aware wearable: camera-free buys privacy by design, at a measured accuracy cost to weigh against what the product needs to sense.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.02599">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Agent failure modes don&rsquo;t change with autonomy level &mdash; what a person can do about them does.</h3>
+  <h3>4. Adding slider/dropdown controls next to the prompt box raises people&rsquo;s sense of control over an AI&rsquo;s output &mdash; without changing whether the AI gets the preference right.</h3>
+  <span class="tag">(peer-reviewed &mdash; ACM UIST 2026)</span>
+  <p>A 12-person within-subjects study compared &ldquo;Malleable Prompting&rdquo; &mdash; sliders, dropdowns and toggles with a live comparison view &mdash; against natural-language-only prompting for controlling LLM generation. Sense of control, transparency, and cause-effect understanding were all significantly higher with widgets (p=.002, .005, .012), and target-preference quality was modestly higher (p=.036) &mdash; but conveying what people wanted showed no significant difference.</p>
+  <p>Add adjustable controls alongside the text box, not instead of it: the gain is in felt control and comparing iterations, not in the model understanding the preference, which plain language already does about as well.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.10925">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Pasting tool results back into an LLM&rsquo;s context works fine at small table sizes and collapses almost completely past about 74 rows &mdash; at 200x the cost per correct answer.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
-  <p>A taxonomy built from 695 real human-agent interaction incidents found all twelve identified failure modes show up whether an agent operates with tight oversight or wide autonomy; autonomy changes the shape a failure takes, not whether it happens. What actually shifts with configuration is recoverability: how much an agent completes between points of human involvement is fixed at deployment, so identical models on identical tasks fail differently depending only on how checkpoints are spaced.</p>
-  <p>That reframes &ldquo;how autonomous should this be&rdquo; from a risk question into a recovery-design question &mdash; checkpoint placement, not model trust, determines what a person can do when something goes wrong.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.00291">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. A teleoperation wearable restores the feeling of control over a detached robotic arm &mdash; but not the feeling that the arm is yours.</h3>
-  <span class="tag">(single-source &mdash; accepted, IEEE-RAS Humanoids 2026)</span>
-  <p>MESSPa, a wearable interface for operating a robot arm that can detach from the body, significantly cut task time and restored &ldquo;sense of agency&rdquo; versus keyboard control once the arm detached &mdash; closing much of the gap between attached and detached performance. What didn&rsquo;t move was &ldquo;sense of ownership,&rdquo; the felt sense the arm belongs to you &mdash; that stayed flat regardless of interface.</p>
-  <p>Useful split for remote-embodiment design generally: motion-transfer plus positional haptic feedback recovers functional control, but that&rsquo;s not the same lever as whatever would make a detached limb feel like part of you.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.00509">Read the source →</a>
+  <p>A production award-travel agent compared two architectures for handing tabular data to a tool-calling model: re-emitting full records into context every turn (&ldquo;SYNTHESIS&rdquo;) versus a typed side channel the model never regenerates (&ldquo;BYPASS&rdquo;). Across 339 scored turns and four models, SYNTHESIS scored 45.7% fully correct overall but collapsed to 8% or worse beyond ~74 rows; BYPASS held 92.3% correct flat across every table size and model, at a flat $0.012 versus ~200x that cost per correct SYNTHESIS answer past 100 rows.</p>
+  <p>The lesson: route records through a deterministic channel rather than letting the model re-emit them &mdash; the failure is silent and scales with data size, not conversation length.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.00442">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>A follow-up dossier re-read yesterday&rsquo;s #1 item (the Google Health visit-prep agent trial) against its full paper and found the headline framing wrong four ways: the 67.2%-vs-50.6% figure is a secondary outcome, not primary; the trial was unregistered until five months after enrollment began; it&rsquo;s a three-arm study with two variants pooled, not a clean A/B; and the repeated &ldquo;clinician and patient metrics weren&rsquo;t correlated&rdquo; claim rests on a test the paper never ran (tested against a minimum-effect threshold, not zero, with no coefficient printed).</p>
-  <p>What survives: the three-arm prompt design genuinely isolates conversational structure as the active variable &mdash; a correctly scoped, smaller finding than the digest conveyed.</p>
-  <p class="dossier-path">dossiers/2026-11-02-the-number-is-real-and-the-test-was-never-run.md</p>
+  <p>A follow-up dossier tried to settle whether a practitioner&rsquo;s own catering-app study supports shelving AI personalization by cognitive style, and found the book&rsquo;s results pages withheld by the publisher &mdash; so the finding comes from his conference-talk recap and sentiment slide, whose own numbers contradict the reported sample size. Bigger finding: the anchor paper for &ldquo;cognitive style moderates AI overreliance&rdquo; asserts moderation in its abstract but never runs that test, and five independent replications since found nothing.</p>
+  <p>What holds up: people are hostile to being categorized by cognitive style and state consent conditions precisely, and low-need-for-cognition users decline on-demand AI help when offered &mdash; the usable finding, where the fashionable one isn&rsquo;t.</p>
+  <p class="dossier-path">dossiers/2026-11-03-the-pages-stayed-shut-the-slide-did-not.md</p>
 </div>
 
 <h2>Needs your answer</h2>
