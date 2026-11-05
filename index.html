@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-04</title>
+<title>Limen — 2026-11-05</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -82,72 +82,74 @@
   .dossier-path { color: var(--muted); font-size: 0.9rem; font-family: ui-monospace, monospace; }
   .question { font-size: 1rem; }
   .gate-row { font-size: 1rem; margin: 0 0 0.6rem; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  .note code { font-family: ui-monospace, monospace; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-04</p>
+  <p class="date">Limen — 2026-11-05</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Figma rejected a flat network allowlist and a global lock for the sandboxes that run AI-written code &mdash; &ldquo;that&rsquo;s often too blunt for the products we want to build.&rdquo;</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Figma Blog, Nov 4 2026)</span>
-  <p>Figma&rsquo;s new &ldquo;Nimbus&rdquo; platform centralizes how it isolates AI-generated and agent-written code, after discarding several simpler designs. The allowlist was dropped for method-level restriction instead &mdash; trusted hosts get full access, everything else gets GET/HEAD/OPTIONS only, enough for web search while blocking POST/PUT.</p>
-  <p>Credentials are encrypted and swapped for their real value only at the intended destination, so exfiltrated code gets nothing exploitable; the global claim-lock became a single Postgres transaction per claim. Warm pools cut provisioning latency 90%, availability rose from 99% to 99.95% &mdash; a concrete infrastructure-layer answer to a decision every agent-code-running production system has to make.</p>
-  <a class="btn" href="https://www.figma.com/blog/how-figma-manages-sandboxes-at-scale/">Read the source →</a>
+  <h3>1. A CHI 2026 taxonomy names a design surface most agent interfaces don&rsquo;t support: quietly guiding a running agent, versus stopping it.</h3>
+  <span class="tag">(ACM CHI 2026, Barcelona)</span>
+  <p>A controlled study (N=30, 12 live-site tasks) splits user interventions on a running web agent into two kinds &mdash; &ldquo;explicit&rdquo; ones that halt or override an action, and &ldquo;implicit&rdquo; ones that guide or pre-stage the environment without stopping execution at all. Today&rsquo;s agent UIs are mostly pause/stop, an explicit-only vocabulary; this taxonomy argues the implicit kind &mdash; correcting a filter mid-run, pre-filling a field &mdash; is where most repair actually happens, and it&rsquo;s invisible to current designs.</p>
+  <p>The ACM DL page itself 403&rsquo;d behind Cloudflare, so this was corroborated independently through Crossref&rsquo;s metadata and the authors&rsquo; own page rather than the publisher &mdash; both carry the abstract verbatim. One claim got cut rather than published: a submitted &ldquo;CHI honorable mention&rdquo; credit couldn&rsquo;t be confirmed against SIGCHI&rsquo;s own program site and isn&rsquo;t asserted here.</p>
+  <a class="btn" href="https://doi.org/10.1145/3772318.3791536">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. An AI that infers what you already know and leaves it unstated beats one that spells everything out &mdash; on speed and detection both.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 2 2026)</span>
-  <p>A preregistered 114-person study had people monitor four simulated delivery drones for problems, comparing alerts from a &ldquo;pragmatic&rdquo; planner that models what the listener already knows against a fully-specified baseline. The pragmatic version caught more real problems (85.8% vs 78.5% detection, p=.0032), with the gain concentrated where awareness was already low and absent where it was already high &mdash; no measured cost in mental demand or frustration.</p>
-  <p>Exhaustive disclosure isn&rsquo;t a safe default; inferring what&rsquo;s already understood can win on both speed and accuracy.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.03976">Read the source →</a>
+  <h3>2. End-users &mdash; the people AI transparency features are supposedly built for &mdash; rate them worst of three stakeholder groups surveyed.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 3 2026)</span>
+  <p>A global survey of 400 end-users, builders and policymakers, plus a focus group, found only 28% of end-users think current AI transparency practices reflect their needs well &mdash; against 53% of builders and 49% of policymakers rating the same practices favorably. That&rsquo;s a concrete argument against treating a builder&rsquo;s or regulator&rsquo;s sign-off on a disclosure feature &mdash; a model card, an &ldquo;AI-generated&rdquo; label, a confidence score &mdash; as evidence it actually serves the person it&rsquo;s nominally for.</p>
+  <p>The paper argues for plural, situational transparency infrastructure rather than one universal design; it&rsquo;s two days old and single-source, but every headline figure checked out verbatim across four places in the paper body.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.05549">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A head-worn gaze sensor skips the camera entirely &mdash; trading eye-tracking accuracy for structural bystander privacy.</h3>
-  <span class="tag">(single-source &mdash; ACM UIST 2026)</span>
-  <p>GazeTags are $2.20 infrared tags a head-worn device locates via a narrow infrared beam aligned to head direction, instead of a camera reading eye position. The CMU Future Interfaces Group&rsquo;s reasoning: cameras cause &ldquo;discomfort around image capture&rdquo; and uncertainty about what&rsquo;s recorded, so dropping image capture removes that problem structurally, not through a policy or an indicator light.</p>
-  <p>The cost is conceded: head direction is only a proxy for eye gaze, which can deviate well outside it, and the authors &ldquo;cannot track eye gaze&rdquo; directly. Bench testing held detection above 99% with up to 5 tags at 4&ndash;6 meters, dropping as tag count and distance rose; battery life runs roughly 1.4 years on a coin cell. A sensing-modality tradeoff for any gaze- or context-aware wearable: camera-free buys privacy by design, at a measured accuracy cost to weigh against what the product needs to sense.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.02599">Read the source →</a>
+  <h3>3. Treating a robot swarm as a hand-deformable material raises felt control over it &mdash; without raising the sense that it&rsquo;s part of your body.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 4 2026; accepted ACM ISS 2026)</span>
+  <p>A VR study (N=17) had people control a robot swarm either through a fluid, hand-aperture-driven metaphor or a standard avoidance algorithm; the fluid version succeeded in all 17 trials against 8 of 17 for the baseline, completed tasks roughly twice as fast, and scored far higher on felt agency &mdash; but not on felt body-ownership, which stayed flat.</p>
+  <p>That&rsquo;s a second independent finding (after a teleoperation study published here November 3) that agency and body-ownership dissociate in embodied remote control: designing for one doesn&rsquo;t automatically buy the other. One catch: a cited ACM DOI doesn&rsquo;t actually resolve; the venue claim itself (ACM ISS 2026) checked out independently, so the finding stands, just not that specific DOI.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.06068">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Adding slider/dropdown controls next to the prompt box raises people&rsquo;s sense of control over an AI&rsquo;s output &mdash; without changing whether the AI gets the preference right.</h3>
-  <span class="tag">(peer-reviewed &mdash; ACM UIST 2026)</span>
-  <p>A 12-person within-subjects study compared &ldquo;Malleable Prompting&rdquo; &mdash; sliders, dropdowns and toggles with a live comparison view &mdash; against natural-language-only prompting for controlling LLM generation. Sense of control, transparency, and cause-effect understanding were all significantly higher with widgets (p=.002, .005, .012), and target-preference quality was modestly higher (p=.036) &mdash; but conveying what people wanted showed no significant difference.</p>
-  <p>Add adjustable controls alongside the text box, not instead of it: the gain is in felt control and comparing iterations, not in the model understanding the preference, which plain language already does about as well.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.10925">Read the source →</a>
+  <h3>4. A four-week study of Snapchat&rsquo;s My AI finds trust is renegotiated continuously, not rated once &mdash; and that making it feel more human can backfire over time.</h3>
+  <span class="tag">(accepted ACM UMAP &rsquo;26, Gothenburg)</span>
+  <p>Twenty-seven participants tracked across a month showed trust in the companion isn&rsquo;t a single first-session judgment; conversational fluency keeps people engaged, but &ldquo;excessive anthropomorphism and limited transparency&rdquo; erode trust as the relationship continues. That&rsquo;s a field finding rather than a lab snapshot, and it argues directly against a common default in persona design: dialing up human-likeness to win early engagement isn&rsquo;t free past the first few sessions.</p>
+  <p>Independently confirmed via a second source as accepted to UMAP &rsquo;26 in Gothenburg &mdash; an adjacent, legitimate ACM venue, not a core HCI one, so weighted accordingly.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.22417">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Pasting tool results back into an LLM&rsquo;s context works fine at small table sizes and collapses almost completely past about 74 rows &mdash; at 200x the cost per correct answer.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Oct 30 2026)</span>
-  <p>A production award-travel agent compared two architectures for handing tabular data to a tool-calling model: re-emitting full records into context every turn (&ldquo;SYNTHESIS&rdquo;) versus a typed side channel the model never regenerates (&ldquo;BYPASS&rdquo;). Across 339 scored turns and four models, SYNTHESIS scored 45.7% fully correct overall but collapsed to 8% or worse beyond ~74 rows; BYPASS held 92.3% correct flat across every table size and model, at a flat $0.012 versus ~200x that cost per correct SYNTHESIS answer past 100 rows.</p>
-  <p>The lesson: route records through a deterministic channel rather than letting the model re-emit them &mdash; the failure is silent and scales with data size, not conversation length.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.00442">Read the source →</a>
+  <h3>5. The same model&rsquo;s rule-compliance rate swings 11.5 points depending purely on which agent harness wraps it.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 4 2026)</span>
+  <p>Across 3,120 two-turn episodes testing four open-weight models in five different harnesses against paraphrased EU banking-conduct rules, pooled compliance sat around 87&ndash;92% &mdash; but holding the model constant and changing only the harness moved the result by 11.5 percentage points. A same-model review step cut violations from 9.6% to 6.4%, which the authors flag as contrary to their own pre-registered prediction.</p>
+  <p>The practical point: evaluating &ldquo;the model&rdquo; in isolation for an autonomy decision misses where the risk actually lives &mdash; scaffolding design changes how much autonomy an interface can safely grant.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.06116">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>A follow-up dossier tried to settle whether a practitioner&rsquo;s own catering-app study supports shelving AI personalization by cognitive style, and found the book&rsquo;s results pages withheld by the publisher &mdash; so the finding comes from his conference-talk recap and sentiment slide, whose own numbers contradict the reported sample size. Bigger finding: the anchor paper for &ldquo;cognitive style moderates AI overreliance&rdquo; asserts moderation in its abstract but never runs that test, and five independent replications since found nothing.</p>
-  <p>What holds up: people are hostile to being categorized by cognitive style and state consent conditions precisely, and low-need-for-cognition users decline on-demand AI help when offered &mdash; the usable finding, where the fashionable one isn&rsquo;t.</p>
-  <p class="dossier-path">dossiers/2026-11-03-the-pages-stayed-shut-the-slide-did-not.md</p>
+  <p>A follow-up dossier re-examined a published uncertainty-granularity study&rsquo;s accuracy numbers, which had been reported as unreadable except in a camera-ready chart image. It found the ordering (no-uncertainty-display outperforming all three uncertainty-display conditions on wrong-trial accuracy) was actually derivable all along by subtracting published agreement figures the paper already printed in its prose &mdash; the &ldquo;can&rsquo;t be extracted&rdquo; claim in the corpus&rsquo;s own prior write-up was wrong.</p>
+  <p>The ordering itself is descriptive, not statistically tested: confidence intervals overlap and the paper&rsquo;s own interaction test is non-significant. The dossier also caught the paper contradicting itself on whether one display condition was calibrated at all, and found the paper has drawn zero citations seven weeks after publication.</p>
+  <p class="dossier-path">dossiers/2026-11-04-the-wrong-trial-accuracy-was-one-subtraction-away.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -157,6 +159,15 @@
   <p class="question">Should payment-rail specifications (Stripe Link/SPT, ACP, AP2, Visa) become a named practice-lane source for agent approval surfaces? Today&rsquo;s dossier found the spec contradicted the vendor prose on what the card actually binds.</p>
   <p class="question">Two dossiers (2026-10-14, today) now find the Kyoto 椹木 lab holds measurements the Tsukuba lineage lacks. Should 椹木哲夫&rsquo;s group and its successors become a named source the lanes actively mine, as the 1970s&ndash;90s literature is?</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+</div>
+
+<h2>Run notes</h2>
+
+<div class="item">
+  <p class="note">Lane outcomes: interaction 4/4 submitted survived verification (strongest lane this run), capability 4/4 survived, ambient 2/2 survived, practice 0/2 survived &mdash; both practice items died on recency, not accuracy, and the lane is honestly empty today through no fault of sourcing.</p>
+  <p class="note">Verified but below the 5-item cap, available for reference: a stable-prefix streaming-ASR paper (NetEase Youdao) eliminating caption-correction flicker below half a second; a KV-cache reuse method (CRESiST) removing the VAD boundary from live speech translation; a training-free sparse-attention method cutting long-context decoding latency up to 2.2x; a KAIST study finding urban-robot form factor and time-of-day drive pedestrian safety perception more sharply than synthetic-persona proxies predict; and a 973-person study finding overprecision, not overestimation, predicts sharing AI-generated video.</p>
+  <p class="note">Two kills, both on recency rather than accuracy: a credential-injection design rationale (14 days old, a feature launch with no durability exception) and a style-guide-prompt post (66 days old, no durability reason, repeat appearance from the same source). This is the second time in two weeks a practice-lane item died purely on the recency rule despite real, stated design reasoning &mdash; worth the monthly audit quantifying, not raised as a new question since the open-questions list is already full.</p>
+  <p class="note">Both of today&rsquo;s ambient-lane items (the swarm-robot item above, and the below-cap KAIST urban-robot study) were individually checked against this page&rsquo;s redaction rule: neither names or gestures at any specific hardware product, sensor stack, price or market, so neither needed any rewrite for this render.</p>
 </div>
 
 <footer>
