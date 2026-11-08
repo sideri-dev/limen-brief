@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-07</title>
+<title>Limen — 2026-11-08</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,66 +90,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-07</p>
-  <p class="read-time">~7 min read</p>
+  <p class="date">Limen — 2026-11-08</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A UIST 2026 study finds the agent-UI architecture that improves multitasking is three things together &mdash; ambient cue, resumption summary, verbalized reasoning &mdash; and it doesn&rsquo;t buy more trust.</h3>
-  <span class="tag">(peer-reviewed &mdash; ACM UIST 2026)</span>
-  <p>Thirty participants using Sidekick cut spreadsheet errors to 1.31 against 2.51 for a chat-only agent and 2.32 for ambient-text-only feedback, and scored higher on multitasking than either baseline (all p &le; .001). People felt more able to intervene &mdash; but trust didn&rsquo;t move across any condition.</p>
-  <p>Peer-reviewed, from this week&rsquo;s conference: visible reasoning changes performance and interruptibility, not confidence in the system.</p>
-  <a class="btn" href="https://arxiv.org/abs/2607.17527">Read the source →</a>
+  <h3>1. Show an agent&rsquo;s steps, but don&rsquo;t keep doing it forever.</h3>
+  <span class="tag">(peer-reviewed &mdash; CHI 2026)</span>
+  <p>A CHI 2026 study of an in-car voice assistant finds that showing planned steps and intermediate results &mdash; not just a final answer &mdash; raises perceived speed, trust, and user experience while lowering task load, consistently across task complexity and context.</p>
+  <p>But interviewed afterward, nobody asked for permanently verbose feedback: people wanted heavy disclosure up front to establish trust, tapering off as the system proves itself reliable, adjusted by how much is at stake &mdash; a schedule a progress-display surface should follow, not a fixed amount of status.</p>
+  <a class="btn" href="https://arxiv.org/abs/2602.15569">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A 275-clinician study finds trust in medical AI runs on how the interface behaves socially, not on the accuracy it claims.</h3>
+  <h3>2. Anthropic just gave agent interfaces a first-party &ldquo;progress update&rdquo; channel, separate from reasoning.</h3>
+  <span class="tag">(vendor-primary &mdash; Claude Platform docs)</span>
+  <p>Anthropic&rsquo;s Claude API now supports a dedicated progress-update content block &mdash; a short note on what the model just found and what it&rsquo;s doing next, written explicitly for the person watching rather than as internal reasoning &mdash; now returns as its own signed block, distinct from any reasoning the model produces. A new display mode lets a product keep reasoning hidden entirely while still surfacing a live status line at each step.</p>
+  <p>This formalizes, as a shipped primitive, exactly the surface practitioners have been improvising around lately; agent-UI builders no longer need to parse a reasoning trace for progress cues.</p>
+  <a class="btn" href="https://platform.claude.com/docs/en/build-with-claude/thinking#progress-updates">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. A measurement rubric for &ldquo;distracting&rdquo; voice interfaces: 144 drivers, six systems, pupil diameter and heart-rate variability &mdash; and it&rsquo;s still sitting in federal review.</h3>
+  <span class="tag">(regulatory-primary &mdash; U.S. federal docket)</span>
+  <p>A U.S. federal information-collection request lays out exactly how voice-command-interface distraction in cars will be judged: 24 participants each across six systems including Android Auto, Apple CarPlay and Google Built-In, with cognitive workload read from pupil diameter, heart-rate variability, and a tactile detection response task &mdash; not a usability survey. As of a status check run today, the request has sat in regulatory review for 88 days with no control number yet assigned.</p>
+  <p>For anyone designing a voice interface for a car, this is the measurement stack a regulator will actually use, published well before any rule exists &mdash; worth designing against now, not after.</p>
+  <a class="btn" href="https://www.govinfo.gov/content/pkg/FR-2026-07-23/html/2026-14904.htm">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. A phone-sized AI drafter can speed up generation 2&ndash;4x on just 5 megabytes of memory, and barely loses anything when squeezed to 4-bit weights.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Interface familiarity, visible team consensus, and explainability each moved stated trust far more than disclosed accuracy &mdash; by the study&rsquo;s own accounting, process cues carried roughly four-fifths of the total effect, accuracy a fifth. The paper opens by naming the assumption it tests against: that accuracy and outcome data usually drive trust in automation.</p>
-  <p>The design lesson for clinician-facing tools: spend effort on legible process, not a bigger accuracy disclosure.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.00007">Read the source →</a>
+  <p>HyFlash, a new on-device speculative-decoding method, fits its entire working memory into a fixed 5 MiB budget and beats a comparable prior method at every model size tested &mdash; roughly 2.1&ndash;2.6x speedup against 1.9&ndash;2.2x. Quantizing the drafter itself down to 4-bit weights keeps 99.2% of the speedup it had at full precision.</p>
+  <p>A specific, dated memory-and-latency budget for anyone trying to make an assistant run faster entirely on-device rather than leaning on a server round-trip &mdash; the kind of number that goes stale in weeks, which is exactly why it&rsquo;s worth capturing now.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.07263">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A new auditing method shows an agent&rsquo;s stored memory, on its own, can swing which sources it cites by up to 39 points.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, submitted Nov 2 2026)</span>
-  <p>Holding the question and search results fixed and varying only what the agent remembered about the user, one researcher found memory favoring a publisher raised that publisher&rsquo;s odds of landing among the top three cited sources by 33-39 points, and memory expressing distrust of mainstream media raised citation of misinformation sources by 6.3 points &mdash; 3,000 trials, six models, two providers.</p>
-  <p>The case: let people see, and clear, the memory feeding a given answer. Citation isn&rsquo;t neutral once memory is in the loop.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.03939">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. A GitHub Next designer argues the standard way agents show their plan is built for the agent, not the person reading it &mdash; and two shipped prototypes try to fix that.</h3>
-  <span class="tag">(named practitioner &mdash; Maggie Appleton, GitHub Next)</span>
-  <p>Maggie Appleton&rsquo;s case: a shared plan document that a human and an agent both &ldquo;read&rdquo; is really two different objects wearing the same file extension, and that mismatch is why plan review feels unsatisfying.</p>
-  <p>Chopin, a multiplayer planning editor, and Mindwalk, a visualization of the files an agent actually touched, are her lab&rsquo;s attempt at interfaces built for how each party actually perceives a plan, not a text file both sides only pretend to read the same way.</p>
-  <a class="btn" href="https://maggieappleton.com/planning-agents">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Granola&rsquo;s own account of designing its meeting-AI agent picks breadth with visible gaps over depth with false confidence.</h3>
-  <span class="tag">(vendor-primary, single-source &mdash; Granola blog)</span>
-  <p>Rather than reading a full meeting transcript (10x the tokens) or pulling every piece of available context per query, Granola reads shallowly across all of a user&rsquo;s meetings and shows &ldquo;Coverage Notes&rdquo; &mdash; what it actually looked at &mdash; instead of a confidence score it admits isn&rsquo;t always warranted.</p>
-  <p>A shipped alternative to the single confident answer: show the gaps instead of hiding them.</p>
-  <a class="btn" href="https://www.granola.ai/blog/how-granola-thinks-about-designing-agents">Read the source →</a>
+  <h3>5. Carrying a user&rsquo;s learned preferences across a model upgrade can now cost 38 minutes of overnight charging instead of a labeled-retraining pipeline.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Heirloom migrates a phone&rsquo;s personalization settings to a new base model using only the user&rsquo;s existing, unlabeled interaction history, losing at most 1.7 percentage points of accuracy compared with retraining on properly labeled data. For a 4-billion-parameter upgrade, the whole migration takes 38 minutes and about a fifth of the battery &mdash; well within an overnight charge.</p>
+  <p>A concrete feasibility number for a problem every on-device personalization feature eventually hits: what happens to what the system learned about you when the model underneath it changes.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.00650">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>A follow-up dossier corrected the Memory Trap paper (yesterday&rsquo;s #1): &ldquo;worsens with the strongest models&rdquo; overstates it &mdash; the gain is within model family, and the strongest model tested barely moves (0.18&rarr;0.19). What holds up and matters more: every text-level fix the authors tried is dead &mdash; scope audits of a memory note don&rsquo;t predict unsafe behavior, diluting bad notes with benign ones doesn&rsquo;t remove the effect, keyword detection misses the masking twice.</p>
-  <p>The same mechanism was measured once before, nine years ago, in Android&rsquo;s ask-on-first-use permission grants. The conclusion: an instruction crossing from a layer that&rsquo;s explicitly non-authoritative (memory) into one that treats it as authoritative (the agent) &mdash; a permission-layer problem, not a chat-interface one.</p>
-  <p class="dossier-path">dossiers/2026-11-06-the-permission-layer-was-never-told-a-grant-had-been-made.md</p>
+  <p>Yesterday&rsquo;s dossier corrected the digest&rsquo;s #1 item (Sidekick, UIST 2026): the study actually ran four conditions, not three, and the headline Sidekick-versus-chat comparison on total score is only a marginal trend (p = .079), not the significant result the digest attached to it. &ldquo;No significant trust difference&rdquo; overclaims too &mdash; the paper never ran a significance test on trust at all.</p>
+  <p>What does hold up: Sidekick&rsquo;s one real, significant gain is a spreadsheet sub-score and error count, scored by a rule the authors built and calibrated themselves, against errors the agent was prompted to inject &mdash; and only Sidekick carried a built-in automatic-pause-on-error subsystem the paper&rsquo;s own limitations section never names, so none of its three claimed &ldquo;communication mechanisms&rdquo; is actually isolated from that capability difference. Read against the corpus, this is a fourth measurement of &ldquo;does showing the agent&rsquo;s process help?&rdquo; landing where three prior studies already did: null-to-trend against a plain chat baseline.</p>
+  <p class="dossier-path">dossiers/2026-11-07-the-fourth-condition-was-already-in-the-digests-numbers.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -159,19 +159,6 @@
   <p class="question">Should large-scale independent audits of deployed AI surfaces &mdash; AI Overview, news-assistant and search audits &mdash; become a named source the lanes mine? Today&rsquo;s dossier found their headline rates order by instrument, not by product.</p>
   <p class="question">Should security-usability permission research &mdash; the Android/iOS permission field studies (Wijesekera 2015/2017) and their successors &mdash; become a named source the lanes mine for agent approval surfaces? Today&rsquo;s dossier found the measured precedent there, not in human factors.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
-</div>
-
-<h2>Gate</h2>
-
-<div class="item">
-  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty &mdash; 2 blocks, 1 objection</p>
-  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action &mdash; 3 blocks, 4 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-18</strong> &mdash; the statement loses to the already-logged record in all three seats of the loop &mdash; 2 blocks, 2 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-19</strong> &mdash; the trouble-point turn is one short re-prompt, against the platform doctrine prescribing elaboration &mdash; 2 blocks, 2 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-20</strong> &mdash; the agent never holds the asset: credentials, tool records, state, memory writes and verdicts travel channels the model cannot rewrite &mdash; 1 block, 5 objections</p>
-  <p class="gate-row"><strong>DRAFT-KB-21</strong> &mdash; the oversight budget is spent at configuration time, and per-step approval has a regulator and a named practitioner against it &mdash; 1 block, 3 objections</p>
-  <p>BACKLOG.md is at its 5-item ceiling (#65&ndash;#69 QUEUED) &mdash; nothing more can be appended until one clears.</p>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 </div>
 
 <footer>
