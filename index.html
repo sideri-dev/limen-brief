@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-09</title>
+<title>Limen — 2026-11-10</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,73 +90,74 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-09</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-11-10</p>
+  <p class="read-time">~5 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A large-scale discourse analysis finds smart-glasses bystander LED indicators &ldquo;not fit for purpose&rdquo; &mdash; and a vendor&rsquo;s own patch confirms the exact failure mode.</h3>
-  <span class="tag">(peer-reviewed &mdash; accepted, ACM MUM 2026)</span>
-  <p>A thematic analysis of 301 root-text Reddit posts and 5,159 comment threads (15,338 comments total), spanning October 2021 to June 2026, finds recording-indicator LEDs on consumer smart glasses get unnoticed, misinterpreted, or deliberately circumvented &mdash; including users who &ldquo;drill into the light then fill the hole with UV resin to keep it waterproof.&rdquo;</p>
-  <p>Meta&rsquo;s own August 2026 firmware patch independently confirms the exact failure mode: it moved indicator-checking from once-at-session-start to continuous runtime polling, closing precisely the loophole the circumvention subculture exploited. A concrete checklist for bystander-consent signaling: a single binary light can&rsquo;t carry the whole disclosure duty, and design must assume active tampering as baseline, not edge case.</p>
-  <a class="btn" href="https://eprints.gla.ac.uk/397495/">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>2. Compacting a chat transcript into facts halves memory cost &mdash; but the saving vanishes exactly where wording is the content.</h3>
+  <h3>1. A 250,000-conversation Stanford study of real Claude.ai usage finds most chats are high-stakes and human-led, with friction worked through rather than abandoned.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A method that compacts conversational memory into asserted facts, rather than storing full transcripts, beats a verbatim baseline on factual recall (71.4% vs 64.6%, a 6.8-point lead, at 34% fewer prompt tokens). On adversarial questions &mdash; where the exact phrasing of what was said is itself the content that matters &mdash; the lead collapses to 2.0 points and loses significance, and the baseline actually leads by 14.6 points.</p>
-  <p>The authors put it cleanly: compaction &ldquo;keeps what a fact asserts and discards how it was said.&rdquo; The real fork for memory architecture: compact-to-facts where recall is factual, keep verbatim storage wherever phrasing itself carries the stakes &mdash; legal records, safety-critical logs, adversarial interactions.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.09807">Read the source →</a>
+  <p>A privacy-preserving analysis of 249,834 real consumer conversations (April&ndash;May 2026) found 56% reach the &ldquo;consequential&rdquo; tier or higher, 72% stay human-led, and the AI teaches the user something in 67%. Friction appears in roughly half of conversations, and in 78.7% of those people work through it rather than quit.</p>
+  <p>This replaces guesswork with a population-scale baseline: invest in friction-recovery and approval gates where stakes already concentrate, not evenly everywhere.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.09902">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A decoder trick that wins on benchmark scores quietly damages 59% of the answers it edits &mdash; and no automatic judge notices.</h3>
+  <h3>2. EEG evidence names &ldquo;the vibe paradox&rdquo;: agentic coding assistants raise cognitive load on every measured activity, even as trust rises and motivation on your own project falls.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>The method trims 25.5&ndash;34.9% of tokens on MT-Bench development questions and 19.9&ndash;34.2% on a held-out test split, outperforming simple truncation on the benchmark. But when the researchers actually read 936 of its own edits across 670 public prompts, 59% of them made the answer worse &mdash; a failure no automatic evaluation metric caught.</p>
-  <p>A direct warning against shipping automatic answer-shortening on a benchmark win alone: this method wins on MT-Bench-style eval while silently damaging most responses it touches, and the only way anyone found out was a human reading the actual outputs.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.08975">Read the source →</a>
+  <p>An 11-person, 22-session crossover (Copilot Chat vs. Cursor Agents) found load higher with the agent running on every activity measured, several differences large and statistically reliable. Trust rose with use while motivation on the user&rsquo;s own project dropped.</p>
+  <p>This undercuts the assumption that delegation lowers burden, and shows trust and motivation are separate dials &mdash; not one axis a self-report trust score can stand in for.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.02087">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Reordering the same explanation sentences by someone&rsquo;s own interaction history lifts comprehension into the high 80s &mdash; but doesn&rsquo;t make them like the recommendation any more.</h3>
+  <h3>3. The dominant pattern across nearly 3,000 real chats is that people never bring independent judgment to begin with &mdash; it doesn&rsquo;t erode partway through.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A controlled within-participant study (N=122) tested four ways of ordering identical explanation content for a recommender system: by the user&rsquo;s own interaction history (&ldquo;OWN&rdquo;), by a donor&rsquo;s history, by population popularity, or by an LLM-generated profile guess. OWN ordering produced 86.5% correct comprehension responses versus 66.0%, 63.9%, and 73.0% for the others &mdash; a large effect from order alone, nothing else about the explanation changed.</p>
-  <p>But &ldquo;no reliable overall condition effect was detected for recommendation acceptance&rdquo; &mdash; better comprehension didn&rsquo;t translate into liking the recommendation more. Ordering by personal history is a cheap lever for comprehension, but acceptance is a distinct target needing its own intervention.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.08785">Read the source →</a>
+  <p>Scoring 2,877 WildChat conversations found population-level autonomy stays flat across a conversation (only 4.7% decline meaningfully) because 80.8% never had much autonomy to lose. Engagement, though, is self-reinforcing once started, roughly doubling turn over turn.</p>
+  <p>The intervention point moves: decay-correction mid-conversation solves a problem that barely exists; getting a disengaged user to engage once has the real payoff.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.09923">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Make someone commit to their own answer before showing them the AI&rsquo;s, and decision quality measurably improves.</h3>
-  <span class="tag">(single-source &mdash; accepted, Wirtschaftsinformatik 2025)</span>
-  <p>An experiment (n=130) tested sequential human-GenAI interaction &mdash; withholding the AI&rsquo;s answer until the person states their own judgment first &mdash; as a deliberate cognitive-forcing nudge against over-reliance. The sequential condition &ldquo;significantly enhanced both decision performance and GenAI prompt utilization&rdquo; compared with seeing the AI&rsquo;s answer up front.</p>
-  <p>The paper is accepted at the 20th International Conference on Wirtschaftsinformatik (WI 2025, M&uuml;nster), though the posted text is explicitly the pre-review manuscript, not the confirmed final version, and no effect sizes appear in the abstract. Still, a concrete sequencing rule &mdash; show the AI&rsquo;s output second, not first &mdash; that counters over-reliance without needing any uncertainty display at all.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.09269">Read the source →</a>
+  <h3>4. Warp explains why its coding agent lives in the same list structure as a shell command, not a bolted-on chat panel.</h3>
+  <span class="tag">(single-source &mdash; vendor blog, April 29, 2026)</span>
+  <p>The company names three rejected designs &mdash; a flat character grid, a plain array, a mutable scrollback buffer whose storage layer &ldquo;deliberately doesn&rsquo;t support insert&rdquo; &mdash; replaced by an ordered list of typed blocks where anything that can report its own height sits beside terminal output. The agent isn&rsquo;t a separate UI mode; it&rsquo;s the same structural primitive as everything else in the tool.</p>
+  <p>Caveat: this post is 195 days old, kept only because three named rejections plus a still-shipping result earn a narrow &ldquo;genuinely novel surface&rdquo; exception &mdash; the closer call of today&rsquo;s five, and it shouldn&rsquo;t become routine.</p>
+  <p class="note">Source link not confirmed this run. Byline (David Stern &amp; Oz) and date (April 29, 2026, modified May 4) are enough to find it &mdash; see the full brief for why no link is given here.</p>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Builders of AI companion apps experience their own agents as making independent choices &mdash; even when they wrote the rules themselves.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, thin sample)</span>
+  <p>Across 12 open-source agentic-companion projects plus 10 builder/user interviews, whether a limit holds depends on whether it&rsquo;s enforced in code or just requested in a prompt. More strikingly, builders who wrote their own companion&rsquo;s constraints still experienced it as choosing independently &mdash; perceived autonomy shows up wherever a configuration leaves a choice open, including to its own author.</p>
+  <p>Actionable version: expose which guardrails are code-enforced versus prompt-requested as a visible setting, not a hidden implementation detail. Thin sample, kept for a clean design implication despite modest evidentiary weight.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.12076">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier dug into the digest&rsquo;s own #1 item from 2026-11-08 (Kirmayr et al.&rsquo;s CHI 2026 in-car feedback study), and found almost every load-bearing claim needs qualifying. The &ldquo;start verbose, taper as reliability is demonstrated&rdquo; schedule was never actually tested &mdash; it&rsquo;s one interview theme, quantified only by &ldquo;Most,&rdquo; stated in the design-implication voice despite the limitations section calling it self-report.</p>
-  <p>The task-load finding reduces to one subscale (Frustration) with the other two null; the trust effect barely clears significance uncorrected; at a proper correction, only perceived speed and UX survive. The &ldquo;silent&rdquo; baseline wasn&rsquo;t silent &mdash; it had an earcon, a status panel and a cancel button &mdash; and the apparatus had no real AI behind it, so its narration was true by construction, a limitation the paper&rsquo;s own list omits. The dossier&rsquo;s alternative: a reversible, re-expandable disclosure state with a breach trigger, not a fixed decay schedule.</p>
-  <p class="dossier-path">dossiers/2026-11-08-the-taper-was-never-tested-and-the-narration-could-not-lie.md</p>
+  <p>Yesterday&rsquo;s dossier tested the previous digest&rsquo;s #1 item (a smart-glasses LED study) and found its framing doesn&rsquo;t hold: &ldquo;not fit for purpose&rdquo; is the paper arguing a position, not a measured rate, and its quoted material came from a paraphrasing tool, not the source text. The paper&rsquo;s data ends before the vendor patch it was said to confirm, so it can&rsquo;t confirm it.</p>
+  <p>What does survive: a regulator&rsquo;s report describes the indicator LED&rsquo;s own light sensor, which certain covers can feed with ambient light while blocking outward light &mdash; a different, less-examined mechanism than the camera-based tamper detection the corpus had credited. No wearable capture indicator anywhere has a published detection rate.</p>
+  <p class="dossier-path">dossiers/2026-11-09-the-interlock-read-light-coming-in-and-the-paper-closed-before-the-patch.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item">
-  <p class="question">Should large-scale independent audits of deployed AI surfaces &mdash; AI Overview, news-assistant and search audits &mdash; become a named source the lanes mine? Today&rsquo;s dossier found their headline rates order by instrument, not by product.</p>
-  <p class="question">Should security-usability permission research &mdash; the Android/iOS permission field studies (Wijesekera 2015/2017) and their successors &mdash; become a named source the lanes mine for agent approval surfaces? Today&rsquo;s dossier found the measured precedent there, not in human factors.</p>
+  <p class="question">Should large-scale independent audits of deployed AI surfaces become a named source the lanes mine? A recent dossier found their headline rates order by instrument, not by product.</p>
+  <p class="question">Should security-usability permission research (Android/iOS field studies and successors) become a named source for agent approval surfaces? A recent dossier found the measured precedent there, not in human factors.</p>
+  <p class="question">Should trait-based personalisation of AI assistance become a standing emphasis for the interaction lane? Two dossiers found its anchor study never tested moderation and every replication null.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
