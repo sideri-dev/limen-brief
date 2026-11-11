@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-10</title>
+<title>Limen — 2026-11-11</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,73 +90,73 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-10</p>
-  <p class="read-time">~5 min read</p>
+  <p class="date">Limen — 2026-11-11</p>
+  <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A 250,000-conversation Stanford study of real Claude.ai usage finds most chats are high-stakes and human-led, with friction worked through rather than abandoned.</h3>
+  <h3>1. A 1.26-million-vote Chatbot Arena analysis explains why a model you haven&rsquo;t touched can look like it&rsquo;s getting worse: the evaluators are getting pickier, not the model.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A privacy-preserving analysis of 249,834 real consumer conversations (April&ndash;May 2026) found 56% reach the &ldquo;consequential&rdquo; tier or higher, 72% stay human-led, and the AI teaches the user something in 67%. Friction appears in roughly half of conversations, and in 78.7% of those people work through it rather than quit.</p>
-  <p>This replaces guesswork with a population-scale baseline: invest in friction-recovery and approval gates where stakes already concentrate, not evenly everywhere.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.09902">Read the source →</a>
+  <p>Isolating fixed, unchanged model pairs across May 2023&ndash;August 2024, the &ldquo;both are bad&rdquo; vote share rose 1.71 points a month on a 17.1% mean (1.91 points a month in 2024 alone), and rose in all fourteen pairs tracked across both years &mdash; 15.5% to 23.3% &mdash; while the stronger model&rsquo;s share of decisive votes stayed flat.</p>
+  <p>Before shipping a reactive fix for a falling satisfaction score on a model nobody&rsquo;s changed, check whether the comparison itself has drifted; this is the first time that drift has a number attached to it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.14333">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. EEG evidence names &ldquo;the vibe paradox&rdquo;: agentic coding assistants raise cognitive load on every measured activity, even as trust rises and motivation on your own project falls.</h3>
+  <h3>2. A new turn-taking benchmark puts a real number on how good a duplex voice agent can ever get at knowing when to speak &mdash; and it&rsquo;s a lot closer to one-in-three wrong than to human-level.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>An 11-person, 22-session crossover (Copilot Chat vs. Cursor Agents) found load higher with the agent running on every activity measured, several differences large and statistically reliable. Trust rose with use while motivation on the user&rsquo;s own project dropped.</p>
-  <p>This undercuts the assumption that delegation lowers burden, and shows trust and motivation are separate dials &mdash; not one axis a self-report trust score can stand in for.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.02087">Read the source →</a>
+  <p>The best model tested hits 66.5&ndash;67.9% accuracy predicting the right moment to take a turn, against a human ceiling of just 70.1% majority-vote agreement &mdash; and even that ceiling is capped by the same bottleneck a live system faces, since the human judges worked from clips no longer than 10 seconds and any cue inside the gap was lost to them too.</p>
+  <p>For anyone building duplex or voice-first interaction, this is a budget number: design for roughly one-in-three turn-transition misjudgments and a graceful recovery, not for near-human barge-in.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.13957">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. The dominant pattern across nearly 3,000 real chats is that people never bring independent judgment to begin with &mdash; it doesn&rsquo;t erode partway through.</h3>
+  <h3>3. A disclaimer warning users about an AI&rsquo;s political bias works &mdash; for about a week, and worst on exactly the people who need it most.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Scoring 2,877 WildChat conversations found population-level autonomy stays flat across a conversation (only 4.7% decline meaningfully) because 80.8% never had much autonomy to lose. Engagement, though, is self-reinforcing once started, roughly doubling turn over turn.</p>
-  <p>The intervention point moves: decay-correction mid-conversation solves a problem that barely exists; getting a disengaged user to engage once has the real payoff.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.09923">Read the source →</a>
+  <p>A preregistered study of 1,586 people found the disclaimer reduced persuasion, but the effect didn&rsquo;t persist across contexts, and Republicans in the sample were both more persuaded and more trusting than Democrats regardless of condition. A separate finding in the same data: people who use AI more often in a given week showed higher trust and more persuasion afterward.</p>
+  <p>One-time disclaimers aren&rsquo;t a durable fix; they need re-triggering, or a design that treats different audiences differently.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.05347">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Warp explains why its coding agent lives in the same list structure as a shell command, not a bolted-on chat panel.</h3>
-  <span class="tag">(single-source &mdash; vendor blog, April 29, 2026)</span>
-  <p>The company names three rejected designs &mdash; a flat character grid, a plain array, a mutable scrollback buffer whose storage layer &ldquo;deliberately doesn&rsquo;t support insert&rdquo; &mdash; replaced by an ordered list of typed blocks where anything that can report its own height sits beside terminal output. The agent isn&rsquo;t a separate UI mode; it&rsquo;s the same structural primitive as everything else in the tool.</p>
-  <p>Caveat: this post is 195 days old, kept only because three named rejections plus a still-shipping result earn a narrow &ldquo;genuinely novel surface&rdquo; exception &mdash; the closer call of today&rsquo;s five, and it shouldn&rsquo;t become routine.</p>
-  <p class="note">Source link not confirmed this run. Byline (David Stern &amp; Oz) and date (April 29, 2026, modified May 4) are enough to find it &mdash; see the full brief for why no link is given here.</p>
+  <h3>4. When researchers redesigned an AI code-review explanation, usability and actual remediation rates improved &mdash; but self-reported trust didn&rsquo;t move at all.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>A 24-person crossover study (after a 20-person pilot and a 19-practitioner workshop) found System Usability Scale scores rose from 77.3 to 85.0 and the odds of fixing the actual problem correctly were 2.6 times higher with the new explanation design &mdash; while trust, measured the normal way, was flat. The authors note a flat accuracy/time result elsewhere in the study is uninformative, not proof of equivalence.</p>
+  <p>The practical lesson: if you&rsquo;re testing whether an explanation redesign worked, measure the downstream task outcome, not a trust survey &mdash; trust can sit still while everything that matters moves.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.13041">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Builders of AI companion apps experience their own agents as making independent choices &mdash; even when they wrote the rules themselves.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, thin sample)</span>
-  <p>Across 12 open-source agentic-companion projects plus 10 builder/user interviews, whether a limit holds depends on whether it&rsquo;s enforced in code or just requested in a prompt. More strikingly, builders who wrote their own companion&rsquo;s constraints still experienced it as choosing independently &mdash; perceived autonomy shows up wherever a configuration leaves a choice open, including to its own author.</p>
-  <p>Actionable version: expose which guardrails are code-enforced versus prompt-requested as a visible setting, not a hidden implementation detail. Thin sample, kept for a clean design implication despite modest evidentiary weight.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.12076">Read the source →</a>
+  <h3>5. The same prompt can cost up to 13.7 times more tokens depending on what script it&rsquo;s written in &mdash; a real, measurable budget tax that falls hardest on under-resourced languages.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>On GPT-4o&rsquo;s tokenizer, the same content needs 1.57x the tokens for Hindi, 5.01x for Odia, and 13.7x for Santali written in Ol Chiki script, compared to English; GPT-4&rsquo;s tokenizer is worse, up to 12.8x. Only one third-party tokenizer tested, Sarvam-30B/105B, stayed under 2.6x across every language measured.</p>
+  <p>Neither Japanese nor Thai was tested directly here, but the mechanism &mdash; non-Latin and under-resourced scripts costing disproportionately more to tokenize &mdash; generalizes, and it&rsquo;s a real line item for anyone budgeting context windows or per-message cost across a multilingual practice.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.13058">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier tested the previous digest&rsquo;s #1 item (a smart-glasses LED study) and found its framing doesn&rsquo;t hold: &ldquo;not fit for purpose&rdquo; is the paper arguing a position, not a measured rate, and its quoted material came from a paraphrasing tool, not the source text. The paper&rsquo;s data ends before the vendor patch it was said to confirm, so it can&rsquo;t confirm it.</p>
-  <p>What does survive: a regulator&rsquo;s report describes the indicator LED&rsquo;s own light sensor, which certain covers can feed with ambient light while blocking outward light &mdash; a different, less-examined mechanism than the camera-based tamper detection the corpus had credited. No wearable capture indicator anywhere has a published detection rate.</p>
-  <p class="dossier-path">dossiers/2026-11-09-the-interlock-read-light-coming-in-and-the-paper-closed-before-the-patch.md</p>
+  <p>Yesterday&rsquo;s dossier re-read the Stanford Clio study behind the previous digest&rsquo;s #1 item against the full 249,834-conversation sample and against Anthropic&rsquo;s own published guidance for that exact dataset, and found four of its five headline percentages mean less than they appear to: against the full sample, &ldquo;56% consequential&rdquo; is 36.9%, &ldquo;67% teaching&rdquo; is 47.0%, and &ldquo;72% human-led&rdquo; is 70.6% &mdash; only the 49.7% friction figure holds roughly as stated. Anthropic&rsquo;s own documentation for this dataset says accuracy figures &ldquo;were measured on facets describing the topic of each conversation,&rdquo; not on the judgment-style facets (teaching, friction, task stakes) the paper built its headlines from.</p>
+  <p>What survives is direction, not level: the dataset still shows stakes-labelled work is common, friction is mostly interactional rather than a model defect, and repair strategies differ sharply in outcome &mdash; but the claim that this bears directly on where to invest approval gates doesn&rsquo;t survive, since the sample contains no gateable system action at all.</p>
+  <p class="dossier-path">dossiers/2026-11-10-the-warning-was-in-the-appendix-the-denominators-were-in-the-released-file.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item">
-  <p class="question">Should large-scale independent audits of deployed AI surfaces become a named source the lanes mine? A recent dossier found their headline rates order by instrument, not by product.</p>
-  <p class="question">Should security-usability permission research (Android/iOS field studies and successors) become a named source for agent approval surfaces? A recent dossier found the measured precedent there, not in human factors.</p>
+  <p class="question">Should large-scale independent audits of deployed AI surfaces become a named source the lanes mine? Today&rsquo;s dossier found their headline rates order by instrument, not by product.</p>
+  <p class="question">Should security-usability permission research (Android/iOS field studies and successors) become a named source for agent approval surfaces? Today&rsquo;s dossier found the measured precedent there, not in human factors.</p>
   <p class="question">Should trait-based personalisation of AI assistance become a standing emphasis for the interaction lane? Two dossiers found its anchor study never tested moderation and every replication null.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
