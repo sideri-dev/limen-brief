@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-11</title>
+<title>Limen — 2026-11-12</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,66 +90,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-11</p>
+  <p class="date">Limen — 2026-11-12</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A 1.26-million-vote Chatbot Arena analysis explains why a model you haven&rsquo;t touched can look like it&rsquo;s getting worse: the evaluators are getting pickier, not the model.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Isolating fixed, unchanged model pairs across May 2023&ndash;August 2024, the &ldquo;both are bad&rdquo; vote share rose 1.71 points a month on a 17.1% mean (1.91 points a month in 2024 alone), and rose in all fourteen pairs tracked across both years &mdash; 15.5% to 23.3% &mdash; while the stronger model&rsquo;s share of decisive votes stayed flat.</p>
-  <p>Before shipping a reactive fix for a falling satisfaction score on a model nobody&rsquo;s changed, check whether the comparison itself has drifted; this is the first time that drift has a number attached to it.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.14333">Read the source →</a>
+  <h3>1. Anthropic&rsquo;s own account of two rejected designs for how Claude asks clarifying questions, and why Claude Code reads code with Grep instead of retrieval.</h3>
+  <span class="tag">(single-source &mdash; vendor-primary)</span>
+  <p>Asking Claude for a plan and a set of clarifying questions about that plan in the same turn confused the model &mdash; it would drop options or abandon the plan&rsquo;s structure entirely &mdash; so Anthropic split the two into separate turns. A persistent todo-list reminder had a similar problem: it made Claude treat its own plan as fixed rather than revisable once circumstances changed.</p>
+  <p>The same post explains why Claude Code&rsquo;s tool is Grep, not retrieval-augmented generation: pre-fetching context for Claude, instead of letting it search for the context itself the way it already searches for everything else, didn&rsquo;t match how the model actually works. Anyone designing an agent&rsquo;s plan-display or retrieval layer now has a first-party counter-example to both defaults.</p>
+  <a class="btn" href="https://claude.com/blog/seeing-like-an-agent">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A new turn-taking benchmark puts a real number on how good a duplex voice agent can ever get at knowing when to speak &mdash; and it&rsquo;s a lot closer to one-in-three wrong than to human-level.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>The best model tested hits 66.5&ndash;67.9% accuracy predicting the right moment to take a turn, against a human ceiling of just 70.1% majority-vote agreement &mdash; and even that ceiling is capped by the same bottleneck a live system faces, since the human judges worked from clips no longer than 10 seconds and any cue inside the gap was lost to them too.</p>
-  <p>For anyone building duplex or voice-first interaction, this is a budget number: design for roughly one-in-three turn-transition misjudgments and a graceful recovery, not for near-human barge-in.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.13957">Read the source →</a>
+  <h3>2. A field experiment in a real store: a retail AI agent that appears to catch attention and disappears to redirect it beats one that&rsquo;s always visible or never there.</h3>
+  <span class="tag">(single-source &mdash; peer-reviewed journal)</span>
+  <p>Researchers at Keio University deployed a mixed-reality retail agent under three conditions &mdash; timed appearance/disappearance, constantly present, and constantly absent &mdash; and measured actual purchase conversion. The timed condition beat the always-present one significantly (odds ratio 1.74, overall model p=.011).</p>
+  <p>For ambient and kiosk interfaces, this is a direct argument against the &ldquo;always-on assistant&rdquo; default: timed intermittency, not constant visibility, is the lever that moves behavior.</p>
+  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_339/_article/-char/ja">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. A disclaimer warning users about an AI&rsquo;s political bias works &mdash; for about a week, and worst on exactly the people who need it most.</h3>
+  <h3>3. Showing an evaluator a metric&rsquo;s full distribution &mdash; not a single aggregate score &mdash; helps them catch more flawed AI explanations.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A preregistered study of 1,586 people found the disclaimer reduced persuasion, but the effect didn&rsquo;t persist across contexts, and Republicans in the sample were both more persuaded and more trusting than Democrats regardless of condition. A separate finding in the same data: people who use AI more often in a given week showed higher trust and more persuasion afterward.</p>
-  <p>One-time disclaimers aren&rsquo;t a durable fix; they need re-triggering, or a design that treats different audiences differently.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.05347">Read the source →</a>
+  <p>A 16-person study found that people reviewing AI-generated explanations spotted significantly more real flaws when shown the spread behind an explanation-quality metric than when shown one number standing in for it (p=.04).</p>
+  <p>The effect is modest, but it&rsquo;s an interface decision, not a modeling one: expose the distribution, don&rsquo;t collapse it to a point estimate, when the reviewer&rsquo;s job is finding what&rsquo;s wrong.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.11932">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. When researchers redesigned an AI code-review explanation, usability and actual remediation rates improved &mdash; but self-reported trust didn&rsquo;t move at all.</h3>
+  <h3>4. Keep a failed tool call visible in the conversation &mdash; scrubbing it from history can make some models stop retrying altogether.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A 24-person crossover study (after a 20-person pilot and a 19-practitioner workshop) found System Usability Scale scores rose from 77.3 to 85.0 and the odds of fixing the actual problem correctly were 2.6 times higher with the new explanation design &mdash; while trust, measured the normal way, was flat. The authors note a flat accuracy/time result elsewhere in the study is uninformative, not proof of equivalence.</p>
-  <p>The practical lesson: if you&rsquo;re testing whether an explanation redesign worked, measure the downstream task outcome, not a trust survey &mdash; trust can sit still while everything that matters moves.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.13041">Read the source →</a>
+  <p>Testing recovery after a tool-call error, researchers found that opening a fresh user turn while keeping the failed exchange in context avoids a severe stopping failure specific to Llama model families when that exchange gets removed from history &mdash; a 14.2-point swing in explicit-error recovery for smaller models, 10.5 points for larger ones. The effect didn&rsquo;t show up on a different benchmark at all &mdash; a model-family-dependent fix, not a universal rule.</p>
+  <p>A &ldquo;clean up the history&rdquo; edit that removes a visible failure can cost more in broken recovery than it saves in tokens.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.11581">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. The same prompt can cost up to 13.7 times more tokens depending on what script it&rsquo;s written in &mdash; a real, measurable budget tax that falls hardest on under-resourced languages.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>On GPT-4o&rsquo;s tokenizer, the same content needs 1.57x the tokens for Hindi, 5.01x for Odia, and 13.7x for Santali written in Ol Chiki script, compared to English; GPT-4&rsquo;s tokenizer is worse, up to 12.8x. Only one third-party tokenizer tested, Sarvam-30B/105B, stayed under 2.6x across every language measured.</p>
-  <p>Neither Japanese nor Thai was tested directly here, but the mechanism &mdash; non-Latin and under-resourced scripts costing disproportionately more to tokenize &mdash; generalizes, and it&rsquo;s a real line item for anyone budgeting context windows or per-message cost across a multilingual practice.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.13058">Read the source →</a>
+  <h3>5. Superhuman rebuilt its Docs AI on a separate, agent-shaped API instead of wrapping its existing human-facing API in MCP.</h3>
+  <span class="tag">(single-source &mdash; vendor-primary)</span>
+  <p>Superhuman&rsquo;s own writeup draws a clean line between an API &ldquo;built for people&rdquo; and one built for &ldquo;agent ergonomics&rdquo;: the new API moves whole pages as Markdown blocks so a single workflow doesn&rsquo;t fan out into dozens of small calls, and its calls are synchronous so one action needs one request instead of a client-side polling loop.</p>
+  <p>The decision argues against the common shortcut of exposing an existing human-facing API to agents through an MCP wrapper, once the two usage patterns diverge this far. This is the fourth capped or near-capped item from this blog in recent weeks &mdash; a concentration pattern worth watching, not a reason to discount this post.</p>
+  <a class="btn" href="https://blog.superhuman.com/how-we-rebuilt-the-ai-in-superhuman-docs/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-read the Stanford Clio study behind the previous digest&rsquo;s #1 item against the full 249,834-conversation sample and against Anthropic&rsquo;s own published guidance for that exact dataset, and found four of its five headline percentages mean less than they appear to: against the full sample, &ldquo;56% consequential&rdquo; is 36.9%, &ldquo;67% teaching&rdquo; is 47.0%, and &ldquo;72% human-led&rdquo; is 70.6% &mdash; only the 49.7% friction figure holds roughly as stated. Anthropic&rsquo;s own documentation for this dataset says accuracy figures &ldquo;were measured on facets describing the topic of each conversation,&rdquo; not on the judgment-style facets (teaching, friction, task stakes) the paper built its headlines from.</p>
-  <p>What survives is direction, not level: the dataset still shows stakes-labelled work is common, friction is mostly interactional rather than a model defect, and repair strategies differ sharply in outcome &mdash; but the claim that this bears directly on where to invest approval gates doesn&rsquo;t survive, since the sample contains no gateable system action at all.</p>
-  <p class="dossier-path">dossiers/2026-11-10-the-warning-was-in-the-appendix-the-denominators-were-in-the-released-file.md</p>
+  <p>Yesterday&rsquo;s dossier re-read the Chatbot Arena &ldquo;both are bad&rdquo; vote-share study behind the previous digest&rsquo;s #1 item against the full public battle log it cites, and the numbers reproduce exactly &mdash; sample counts, table rows, every printed month effect. But the headline rise is a staircase, not a smooth drift: 70% of votes sit in three flat plateaus with no detectable trend inside them, concentrated instead in a few steps lining up with model-version arrivals (gpt-4o, May 2024; chatgpt-4o-latest, Aug 2024) &mdash; controlling for those steps, the trend falls from +1.71 to +0.79 points a month.</p>
+  <p>The paper&rsquo;s defense of a stable interface uses main-branch commit dates, but production ran ahead of main every time it was checkable; a direct test at the true dates still clears the leading rival explanation (a new UI button). The mechanism &mdash; rising judge standards reading as falling model quality &mdash; isn&rsquo;t new; it matches established criterion-drift findings (Levari et al. 2018, NAEP scoring), which the lanes should cite rather than re-prove. Left open: whether the steps are ordinary resets at visible public launches, or tied to something else that happens to coincide with launches.</p>
+  <p class="dossier-path">dossiers/2026-11-11-the-drift-was-a-staircase-and-the-log-dated-its-own-instrument.md</p>
 </div>
 
 <h2>Needs your answer</h2>
