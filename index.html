@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-12</title>
+<title>Limen — 2026-11-13</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,66 +90,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-12</p>
+  <p class="date">Limen — 2026-11-13</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Anthropic&rsquo;s own account of two rejected designs for how Claude asks clarifying questions, and why Claude Code reads code with Grep instead of retrieval.</h3>
-  <span class="tag">(single-source &mdash; vendor-primary)</span>
-  <p>Asking Claude for a plan and a set of clarifying questions about that plan in the same turn confused the model &mdash; it would drop options or abandon the plan&rsquo;s structure entirely &mdash; so Anthropic split the two into separate turns. A persistent todo-list reminder had a similar problem: it made Claude treat its own plan as fixed rather than revisable once circumstances changed.</p>
-  <p>The same post explains why Claude Code&rsquo;s tool is Grep, not retrieval-augmented generation: pre-fetching context for Claude, instead of letting it search for the context itself the way it already searches for everything else, didn&rsquo;t match how the model actually works. Anyone designing an agent&rsquo;s plan-display or retrieval layer now has a first-party counter-example to both defaults.</p>
-  <a class="btn" href="https://claude.com/blog/seeing-like-an-agent">Read the source →</a>
+  <h3>1. Multi-agent AI deliberation gets its accuracy gain from going back and forth, not from adding more agents &mdash; and a built-in devil&rsquo;s advocate backfires.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, well-powered)</span>
+  <p>Two user studies (N=401, N=417) isolating what drives multi-agent deliberation&rsquo;s benefit found it&rsquo;s multiple rounds of exchange, not agent headcount, that produced the accuracy gain over single-round AI assistance. A built-in &ldquo;devil&rsquo;s advocate&rdquo; persona, added on the assumption friction sharpens judgment, instead hurt both accuracy and user experience.</p>
+  <p>Active human participation raised accuracy on one task, at a real cost in frustration. For multi-agent review surfaces: spend effort on rounds, not headcount, and test an adversarial persona rather than assume it helps.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.14901">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. A field experiment in a real store: a retail AI agent that appears to catch attention and disappears to redirect it beats one that&rsquo;s always visible or never there.</h3>
-  <span class="tag">(single-source &mdash; peer-reviewed journal)</span>
-  <p>Researchers at Keio University deployed a mixed-reality retail agent under three conditions &mdash; timed appearance/disappearance, constantly present, and constantly absent &mdash; and measured actual purchase conversion. The timed condition beat the always-present one significantly (odds ratio 1.74, overall model p=.011).</p>
-  <p>For ambient and kiosk interfaces, this is a direct argument against the &ldquo;always-on assistant&rdquo; default: timed intermittency, not constant visibility, is the lever that moves behavior.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_339/_article/-char/ja">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Showing an evaluator a metric&rsquo;s full distribution &mdash; not a single aggregate score &mdash; helps them catch more flawed AI explanations.</h3>
+  <h3>2. People trust a consistently wrong AI almost as much as a consistently right one &mdash; until they&rsquo;re shown it&rsquo;s wrong.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A 16-person study found that people reviewing AI-generated explanations spotted significantly more real flaws when shown the spread behind an explanation-quality metric than when shown one number standing in for it (p=.04).</p>
-  <p>The effect is modest, but it&rsquo;s an interface decision, not a modeling one: expose the distribution, don&rsquo;t collapse it to a point estimate, when the reviewer&rsquo;s job is finding what&rsquo;s wrong.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.11932">Read the source →</a>
+  <p>Four experiments found people learn to prefer a helpful AI over an unhelpful one only once given direct accuracy feedback (67% vs. 21%). Without that feedback, a reliably wrong model still persuades people 48% of the time, barely behind a genuinely helpful one&rsquo;s 38% &mdash; consistent tone alone buys a bad advisor almost as much trust as being right.</p>
+  <p>People also trusted AI advisors over human ones giving the same advice (83% vs. 65%). The lever: a trust surface must expose outcome feedback, not just persona consistency.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.14833">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. Keep a failed tool call visible in the conversation &mdash; scrubbing it from history can make some models stop retrying altogether.</h3>
+  <h3>3. Winning a user&rsquo;s ear and winning the authority to act for them are two different design problems.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Testing recovery after a tool-call error, researchers found that opening a fresh user turn while keeping the failed exchange in context avoids a severe stopping failure specific to Llama model families when that exchange gets removed from history &mdash; a 14.2-point swing in explicit-error recovery for smaller models, 10.5 points for larger ones. The effect didn&rsquo;t show up on a different benchmark at all &mdash; a model-family-dependent fix, not a universal rule.</p>
-  <p>A &ldquo;clean up the history&rdquo; edit that removes a visible failure can cost more in broken recovery than it saves in tokens.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.11581">Read the source →</a>
+  <p>A 121-person study found the advisor people most wanted to talk to (40%) reasoned through the user&rsquo;s own values but still recommended the opposite decision &mdash; reasoning alignment beat agreement. As the advisor&rsquo;s role shifted toward acting on the user&rsquo;s behalf, preference flipped toward decision-matching advisors, and opt-out nearly tripled, from 12% consulting to 38% delegating.</p>
+  <p>A good advice-giver is not automatically ready to be handed delegated authority &mdash; different trust relationships, different requirements.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.15732">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Superhuman rebuilt its Docs AI on a separate, agent-shaped API instead of wrapping its existing human-facing API in MCP.</h3>
-  <span class="tag">(single-source &mdash; vendor-primary)</span>
-  <p>Superhuman&rsquo;s own writeup draws a clean line between an API &ldquo;built for people&rdquo; and one built for &ldquo;agent ergonomics&rdquo;: the new API moves whole pages as Markdown blocks so a single workflow doesn&rsquo;t fan out into dozens of small calls, and its calls are synchronous so one action needs one request instead of a client-side polling loop.</p>
-  <p>The decision argues against the common shortcut of exposing an existing human-facing API to agents through an MCP wrapper, once the two usage patterns diverge this far. This is the fourth capped or near-capped item from this blog in recent weeks &mdash; a concentration pattern worth watching, not a reason to discount this post.</p>
-  <a class="btn" href="https://blog.superhuman.com/how-we-rebuilt-the-ai-in-superhuman-docs/">Read the source →</a>
+  <h3>4. Voice-agent evaluation needs two listening tests, because &ldquo;sounds human&rdquo; and &ldquo;I&rsquo;d rather talk to this&rdquo; are different judgments &mdash; and naturalness scores predict neither.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Two listening studies on 120 customer-service exchanges found listeners chose an AI system over a human actor in 19% of human-likeness trials but 36% of conversational-preference trials (49% for the best system). None of three naturalness scores predicted conversational preference; two predicted lower human-likeness.</p>
+  <p>If the design goal is sustained engagement, not passing as human, naturalness is the wrong instrument.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.16051">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Live transcription systems lose whispered speech badly, and can silently drop the non-English half of a bilingual conversation.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, methodology benchmark)</span>
+  <p>A benchmark of 11 live streaming ASR systems found Zoom Scribe and OpenAI&rsquo;s GPT-Live-Transcribe nearly tied on quiet English (7.4% vs. 7.3% WER) but diverging sharply whispered (34.7% vs. 8.8%); pairing Whisper with a standard voice-activity detector pushed whispered WER from 10.1% to 51.4%.</p>
+  <p>English-locked, Gemini, Deepgram and self-hosted Whisper all lost the non-English half of a two-language recording 86-99% of the time &mdash; a vanishing turn, not degraded text. For bilingual dictation: test the VAD-and-model pairing together, never ship single-language-locked transcription where speakers code-switch.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.16919">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-read the Chatbot Arena &ldquo;both are bad&rdquo; vote-share study behind the previous digest&rsquo;s #1 item against the full public battle log it cites, and the numbers reproduce exactly &mdash; sample counts, table rows, every printed month effect. But the headline rise is a staircase, not a smooth drift: 70% of votes sit in three flat plateaus with no detectable trend inside them, concentrated instead in a few steps lining up with model-version arrivals (gpt-4o, May 2024; chatgpt-4o-latest, Aug 2024) &mdash; controlling for those steps, the trend falls from +1.71 to +0.79 points a month.</p>
-  <p>The paper&rsquo;s defense of a stable interface uses main-branch commit dates, but production ran ahead of main every time it was checkable; a direct test at the true dates still clears the leading rival explanation (a new UI button). The mechanism &mdash; rising judge standards reading as falling model quality &mdash; isn&rsquo;t new; it matches established criterion-drift findings (Levari et al. 2018, NAEP scoring), which the lanes should cite rather than re-prove. Left open: whether the steps are ordinary resets at visible public launches, or tied to something else that happens to coincide with launches.</p>
-  <p class="dossier-path">dossiers/2026-11-11-the-drift-was-a-staircase-and-the-log-dated-its-own-instrument.md</p>
+  <p>Yesterday&rsquo;s dossier re-read the paper behind the previous dossier target &mdash; an offline first-aid assistant running a 4-bit Gemma model on a Pixel 7 Pro &mdash; and found its two headlines belong to different systems: the 6.86s/14.88s phone timings measured the fine-tuned model alone, while every accuracy score, including the &ldquo;best&rdquo; 2.51/5, ran on a GPU config never tested on the phone.</p>
+  <p>Re-auditing the training corpus found it doesn&rsquo;t just lack first-aid detail, it sometimes teaches wrong answers outright, while two &ldquo;missing&rdquo; details the paper flagged aren&rsquo;t actually in the guideline it checked against. No sub-4B on-device model has yet produced complete, guideline-adherent free text in this domain, and the latency that matters &mdash; 27-34s to a first chest compression &mdash; makes 6.86s a fraction of the real wait.</p>
+  <p class="dossier-path">dossiers/2026-11-12-the-clock-and-the-score-were-different-systems-and-the-corpus-disagreed.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -159,6 +159,14 @@
   <p class="question">Should security-usability permission research (Android/iOS field studies and successors) become a named source for agent approval surfaces? Today&rsquo;s dossier found the measured precedent there, not in human factors.</p>
   <p class="question">Should trait-based personalisation of AI assistance become a standing emphasis for the interaction lane? Two dossiers found its anchor study never tested moderation and every replication null.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+</div>
+
+<h2>This week</h2>
+
+<div class="item">
+  <p>Three patterns converged. What an agent&rsquo;s context keeps or discards is a behavioral control surface, not a storage question &mdash; compacting memory, scrubbing a failed tool call, and letting benign notes persist each changed behavior in ways no reading of the text would predict; never let memory function as authorization, since text can&rsquo;t predict what the model does with it.</p>
+  <p>A task&rsquo;s measured outcome and its self-reported trust score moved independently, in both directions, across five studies this week &mdash; one redesign improved correctness while trust stayed flat, another raised cognitive load while trust rose &mdash; so task outcome, not trust score, should decide whether a design works.</p>
+  <p>And two field-strength results agreed ambient-agent presence should be scheduled to task events, not accumulated trust: a retail agent timing its own appearance/disappearance beat an always-present baseline on real purchase conversion, while the popular &ldquo;taper as trust builds&rdquo; disclosure schedule was found never tested &mdash; its trigger is the best-replicated antecedent of automation complacency in the human-factors literature.</p>
 </div>
 
 <footer>
