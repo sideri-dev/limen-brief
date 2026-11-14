@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-13</title>
+<title>Limen — 2026-11-14</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -90,66 +90,65 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-13</p>
-  <p class="read-time">~6 min read</p>
+  <p class="date">Limen — 2026-11-14</p>
+  <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Multi-agent AI deliberation gets its accuracy gain from going back and forth, not from adding more agents &mdash; and a built-in devil&rsquo;s advocate backfires.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, well-powered)</span>
-  <p>Two user studies (N=401, N=417) isolating what drives multi-agent deliberation&rsquo;s benefit found it&rsquo;s multiple rounds of exchange, not agent headcount, that produced the accuracy gain over single-round AI assistance. A built-in &ldquo;devil&rsquo;s advocate&rdquo; persona, added on the assumption friction sharpens judgment, instead hurt both accuracy and user experience.</p>
-  <p>Active human participation raised accuracy on one task, at a real cost in frustration. For multi-agent review surfaces: spend effort on rounds, not headcount, and test an adversarial persona rather than assume it helps.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.14901">Read the source →</a>
+  <h3>1. A UIST 2026 technology probe swaps the prompt box for material gestures &mdash; stretch, sculpt, cluster &mdash; to steer generative AI.</h3>
+  <p>MaterialVellum maps material properties like elasticity and malleability onto spatial and proportional constraints on generative output, letting a designer shape AI output with multi-touch gestures instead of a prompt. Demonstrated across urban-design, flower-arrangement and graphic-design probes, though the study is qualitative only (N=10) &mdash; a direction, not yet a shipped pattern.</p>
+  <p>It&rsquo;s the first concrete, peer-reviewed alternative to the text box worth tracking as a UI primitive.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.01800">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. People trust a consistently wrong AI almost as much as a consistently right one &mdash; until they&rsquo;re shown it&rsquo;s wrong.</h3>
+  <h3>2. Figma Weave&rsquo;s co-founder names the real design fork in creative AI tools: labor versus thinking.</h3>
+  <span class="tag">(single-source &mdash; vendor)</span>
+  <p>Itay Schiff argues some friction in a creative workflow is just labor &mdash; hand it to the machine &mdash; while other friction is where the thinking happens, worth protecting. Weave ships two named modes: &ldquo;open mode&rdquo; for exploring and drafting, &ldquo;closed mode&rdquo; for committing and repeating, illustrated with a Gaussian-splat campaign whose first AI pass was &ldquo;far from finished.&rdquo;</p>
+  <p>A reusable rule for scoping which steps an assistant should own outright versus merely propose.</p>
+  <a class="btn" href="https://www.figma.com/blog/ai-role-in-the-creative-process/">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Attio built its AI assistant as code inside the product, not a chat panel, and refuses to lock to one model vendor.</h3>
+  <span class="tag">(single-source &mdash; vendor; ~8 months old, kept for tradeoff specificity)</span>
+  <p>&ldquo;Ask Attio&rdquo; is &ldquo;a system embedded into the core of the product,&rdquo; not a standalone chat interface &mdash; and it runs across Anthropic, Vertex AI and OpenAI behind a shared abstraction rather than one vendor. It also names a real cost: batching the full response avoids visual noise but gives up streaming&rsquo;s responsiveness entirely.</p>
+  <p>A concrete counter-example to &ldquo;ship the chat panel first.&rdquo;</p>
+  <a class="btn" href="https://attio.com/engineering/blog/ask-attio-a-technical-look-at-our-new-agent">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. GitHub&rsquo;s Copilot routing layer treats &ldquo;which model to call&rdquo; as an optimization problem &mdash; and names what hiding drafts costs the user.</h3>
+  <span class="tag">(single-source &mdash; vendor)</span>
+  <p>Project HydraFusion dynamically constructs a task-specific path across multiple models rather than picking one best model, and GitHub states the tradeoff plainly: &ldquo;waiting without enough visibility is a real trade-off for developers.&rdquo; Against Claude Opus 5 it gains on TerminalBench 2.1 (+4.9 points, 67% cheaper) but loses slightly on DeepSWE and CheckpointBench &mdash; the benefit isn&rsquo;t uniform across tasks.</p>
+  <p>Independent reporting puts this live as &ldquo;Copilot Fusion&rdquo; since October 28, 2026 &mdash; not stated on GitHub&rsquo;s own page.</p>
+  <a class="btn" href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Profiling the actual phone beats asking a frontier model to guess its constraints &mdash; by up to 60 points.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Four experiments found people learn to prefer a helpful AI over an unhelpful one only once given direct accuracy feedback (67% vs. 21%). Without that feedback, a reliably wrong model still persuades people 48% of the time, barely behind a genuinely helpful one&rsquo;s 38% &mdash; consistent tone alone buys a bad advisor almost as much trust as being right.</p>
-  <p>People also trusted AI advisors over human ones giving the same advice (83% vs. 65%). The lever: a trust surface must expose outcome feedback, not just persona consistency.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.14833">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Winning a user&rsquo;s ear and winning the authority to act for them are two different design problems.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A 121-person study found the advisor people most wanted to talk to (40%) reasoned through the user&rsquo;s own values but still recommended the opposite decision &mdash; reasoning alignment beat agreement. As the advisor&rsquo;s role shifted toward acting on the user&rsquo;s behalf, preference flipped toward decision-matching advisors, and opt-out nearly tripled, from 12% consulting to 38% delegating.</p>
-  <p>A good advice-giver is not automatically ready to be handed delegated authority &mdash; different trust relationships, different requirements.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.15732">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. Voice-agent evaluation needs two listening tests, because &ldquo;sounds human&rdquo; and &ldquo;I&rsquo;d rather talk to this&rdquo; are different judgments &mdash; and naturalness scores predict neither.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Two listening studies on 120 customer-service exchanges found listeners chose an AI system over a human actor in 19% of human-likeness trials but 36% of conversational-preference trials (49% for the best system). None of three naturalness scores predicted conversational preference; two predicted lower human-likeness.</p>
-  <p>If the design goal is sustained engagement, not passing as human, naturalness is the wrong instrument.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.16051">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Live transcription systems lose whispered speech badly, and can silently drop the non-English half of a bilingual conversation.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, methodology benchmark)</span>
-  <p>A benchmark of 11 live streaming ASR systems found Zoom Scribe and OpenAI&rsquo;s GPT-Live-Transcribe nearly tied on quiet English (7.4% vs. 7.3% WER) but diverging sharply whispered (34.7% vs. 8.8%); pairing Whisper with a standard voice-activity detector pushed whispered WER from 10.1% to 51.4%.</p>
-  <p>English-locked, Gemini, Deepgram and self-hosted Whisper all lost the non-English half of a two-language recording 86-99% of the time &mdash; a vanishing turn, not degraded text. For bilingual dictation: test the VAD-and-model pairing together, never ship single-language-locked transcription where speakers code-switch.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.16919">Read the source →</a>
+  <p>Mobile AI Factory&rsquo;s on-device search against real hardware measurements beats two five-shot frontier models on five tasks and matches them on three more, at 19&times; less GPU time than training every variant exhaustively. Given only the spec sheet, Claude Opus 5.5 misses real requirements in a quarter of easy/moderate cases and 60% of hard ones.</p>
+  <p>Don&rsquo;t let a model guess a device budget it has never touched &mdash; measure it.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.13509">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s dossier re-read the paper behind the previous dossier target &mdash; an offline first-aid assistant running a 4-bit Gemma model on a Pixel 7 Pro &mdash; and found its two headlines belong to different systems: the 6.86s/14.88s phone timings measured the fine-tuned model alone, while every accuracy score, including the &ldquo;best&rdquo; 2.51/5, ran on a GPU config never tested on the phone.</p>
-  <p>Re-auditing the training corpus found it doesn&rsquo;t just lack first-aid detail, it sometimes teaches wrong answers outright, while two &ldquo;missing&rdquo; details the paper flagged aren&rsquo;t actually in the guideline it checked against. No sub-4B on-device model has yet produced complete, guideline-adherent free text in this domain, and the latency that matters &mdash; 27-34s to a first chest compression &mdash; makes 6.86s a fraction of the real wait.</p>
-  <p class="dossier-path">dossiers/2026-11-12-the-clock-and-the-score-were-different-systems-and-the-corpus-disagreed.md</p>
+  <p>The multi-agent deliberation dossier re-read the paper behind yesterday&rsquo;s #1 digest item at full text and corrects it: the real result is two-model, three-round deliberation beating single-round assistance on two tasks with about fifty people per arm, not 401/417 as published, and no power analysis exists in the paper at all; round 1 carried most of the measured gain, with no test anywhere of three rounds against two.</p>
+  <p>The devil&rsquo;s-advocate accuracy penalty rides on two confounds the paper never names &mdash; a fixed speaking order and an on-screen &ldquo;(devil&rsquo;s advocate)&rdquo; label &mdash; so it doesn&rsquo;t hold up as cleanly as the digest item claimed. Of the two headline claims, only &ldquo;rounds beat single-shot&rdquo; has outside peer-reviewed support.</p>
+  <p class="dossier-path">dossiers/2026-11-13-the-gain-was-mostly-round-one-the-cells-were-fifty-and-the-devils-advocate-wore-a-label.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -161,12 +160,19 @@
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
-<h2>This week</h2>
+<h2>Gate</h2>
 
 <div class="item">
-  <p>Three patterns converged. What an agent&rsquo;s context keeps or discards is a behavioral control surface, not a storage question &mdash; compacting memory, scrubbing a failed tool call, and letting benign notes persist each changed behavior in ways no reading of the text would predict; never let memory function as authorization, since text can&rsquo;t predict what the model does with it.</p>
-  <p>A task&rsquo;s measured outcome and its self-reported trust score moved independently, in both directions, across five studies this week &mdash; one redesign improved correctness while trust stayed flat, another raised cognitive load while trust rose &mdash; so task outcome, not trust score, should decide whether a design works.</p>
-  <p>And two field-strength results agreed ambient-agent presence should be scheduled to task events, not accumulated trust: a retail agent timing its own appearance/disappearance beat an always-present baseline on real purchase conversion, while the popular &ldquo;taper as trust builds&rdquo; disclosure schedule was found never tested &mdash; its trigger is the best-replicated antecedent of automation complacency in the human-factors literature.</p>
+  <p class="gate-row"><strong>DRAFT-KB-16</strong> &mdash; the watched party isn&rsquo;t a principal in any shipped role table or safety eval. Review: 3 blocks, 1 objection.</p>
+  <p class="gate-row"><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not effort, moves a human&rsquo;s catch of a bad AI action. Review: 3 blocks, 4 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-18</strong> &mdash; a statement loses to the already-logged record in all three seats of the loop. Review: 3 blocks, 2 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-19</strong> &mdash; the trouble-point turn is one short re-prompt, against platform doctrine prescribing elaboration. Review: 2 blocks, 2 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-20</strong> &mdash; the agent never holds the asset: credentials, tool records, state and memory travel channels it can&rsquo;t rewrite. Review: 2 blocks, 5 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-21</strong> &mdash; the oversight budget is spent at configuration time; per-step approval has a regulator and a named practitioner against it. Review: 2 blocks, 3 objections.</p>
+  <p class="gate-row"><strong>DRAFT-KB-22</strong> &mdash; context-retention policy is interface behavior; a remembered preference is a grant the permission layer was never told about. Review: 1 block, 1 objection.</p>
+  <p class="gate-row"><strong>DRAFT-KB-23</strong> &mdash; the paired-instrument dissociation on ambient/agentic surfaces, sign inverted: outcome pass/fail, trust telemetry, a cannot-lie trust gain is a ceiling. Review: 1 block, 3 objections.</p>
+  <p class="note">No BACKLOG changes to flag for the gate this run.</p>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/GATE.md">Decide on GitHub →</a>
 </div>
 
 <footer>
