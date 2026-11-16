@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-15</title>
+<title>Limen — 2026-11-16</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -89,66 +89,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-15</p>
+  <p class="date">Limen — 2026-11-16</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A CHI 2026 paper names the actual repair loop a confirmation surface needs to support, and argues against both every-step and end-only approval.</h3>
+  <h3>1. A tool's search result returning a bare count instead of a list is enough to make an agent write to the wrong account &mdash; in about a quarter of conversations.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>The paper frames agent-confirmation placement as a scheduling problem balancing interruption cost against rollback cost, and a formative study (N=8) surfaced a recurring &ldquo;Confirmation-Diagnosis-Correction-Redo&rdquo; (CDCR) pattern &mdash; the actual shape a user&rsquo;s repair takes when an agent gets something wrong mid-task. A larger within-subjects evaluation (N=48) found 81% of participants preferred intermediate confirmation over confirm-at-end, with task completion time cut 13.54%.</p>
-  <p>It&rsquo;s a measured model with a named taxonomy, not another &ldquo;reject per-step approval&rdquo; opinion essay &mdash; worth building a monitoring/undo surface around CDCR specifically rather than a generic checkpoint.</p>
-  <a class="btn" href="https://arxiv.org/abs/2510.05307">Read the source →</a>
+  <p>A new study varies whether a tool&rsquo;s lookup lists, counts, or simply omits a second matching record when one exists, grounding the design in presupposition theory from linguistics. Current frontier models (the newest Claude and GPT models) correctly pause when a second record is merely counted &mdash; they open it and check before acting &mdash; but a weaker lookup that doesn&rsquo;t surface the ambiguity produces wrong-account writes in roughly a quarter of conversations.</p>
+  <p>This locates the failure in the tool&rsquo;s return shape, not in model capability, which means it&rsquo;s fixable this week without waiting on a bigger model: a lookup must surface competing records explicitly, not just acknowledge there&rsquo;s more than one.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.17639">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. People rate AI advice as more rational and trustworthy than human advice, but it doesn&rsquo;t move the behavior it&rsquo;s meant to change.</h3>
+  <h3>2. Geoffrey Litt &mdash; now a Design Engineer at Notion, not at Ink &amp; Switch as his piece is sometimes credited &mdash; argues raw-diff review and passive explanation-reading both fail, and ships three built things instead.</h3>
+  <span class="tag">(single-source &mdash; personal blog)</span>
+  <p>He rejects diff review (&ldquo;a pile of files edited in alphabetical order with no explanation&rdquo;) and rejects reading an AI&rsquo;s own explanation of its work (&ldquo;books don&rsquo;t work&rdquo; &mdash; too easy to believe you understood when you didn&rsquo;t). His fix: an <code>/explain-diff</code> skill, a quiz layer that acts as &ldquo;a speed regulator&rdquo; against skimming, and interactive micro-worlds &mdash; a Prolog debugger, an agent-built &ldquo;command center&rdquo; for a website port. He discloses his own vendor bias, and some of this is built around Notion&rsquo;s own output format.</p>
+  <p>The distinction still holds generally: &ldquo;the agent verified its own work&rdquo; and &ldquo;the human can still participate&rdquo; are different review-UI targets, and a diff, a chat explanation, and a built interactive check are not interchangeable answers to which one you&rsquo;re solving for.</p>
+  <a class="btn" href="https://geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Superfluid, a new open-source local LLM server, holds first-token latency at 1.5 seconds under concurrent multi-agent load where the standard options take 5&ndash;10 minutes.</h3>
+  <span class="tag">(single-source &mdash; open-source artifact)</span>
+  <p>On a single Apple M5 Pro with eight concurrent agents, Superfluid returns a first token in 1.5s against 291&ndash;612 seconds on llama-server, Ollama, and mlx_lm.server. Scaled to six machines across three chip vendors serving 64 users for an hour &mdash; machines joining, one killed mid-run &mdash; throughput grows from 112 to 534 tok/s and median first-token time falls from 99 to 12s; on twelve Mac Studios it sustains 10,656 tok/s across 38,563 requests from 384 agents without a failure.</p>
+  <p>Apache-2.0, shipped, not a benchmark claim. The practical point: request-queuing under load, not model size, gates whether &ldquo;local-first, multi-agent&rdquo; is a real interface promise or just a demo.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.17753">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. A standard memory-permission preview &mdash; one allowed example, one blocked example &mdash; cannot tell a user which rule actually governs their data, even in the best case.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Participants judged LLM advisors significantly more rational, trustworthy, convincing &mdash; and sycophantic &mdash; than human advisors in a multi-turn conversation. Despite that preference gap, donation decisions didn&rsquo;t vary across conditions at all.</p>
-  <p>This matters for how you evaluate an AI advisory feature: a lift in trust or satisfaction ratings is not evidence the feature changed the decision it was built to influence, and a feature that reads well in a survey can still be doing nothing.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.16667">Read the source →</a>
+  <p>A combinatorial analysis of every rule consistent with a one-allowed/one-blocked preview finds 36 of 39 possible pairs contain a blocked case no rule in that pair actually allows, and no pair uniquely identifies the rule &mdash; the ambiguity is structural, not a copywriting problem. A small pilot backs this practically: of 20 people shown a weak preview of a rule they&rsquo;d just chosen, half mispredicted or were unsure about at least one of its two uses.</p>
+  <p>The paper is honest the fix &mdash; adaptive, multi-query confirmation, three or four well-chosen tests &mdash; is untested for whether it helps users, but the case against the common one-example pattern stands on its own.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.17874">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Builder.io&rsquo;s new Claude Code skill rejects freeform plans for schema-enforced components, and is explicit about where that stops working.</h3>
-  <span class="tag">(single-source &mdash; vendor)</span>
-  <p>/visual-plan replaces &ldquo;wall of text&rdquo; agent plans with typed, scannable MDX components, on the reasoning that freeform text has &ldquo;infinite entropy&rdquo; &mdash; left alone, an agent wanders, omits details, or hallucinates structure that was never checked. The schema isn&rsquo;t decoration, it&rsquo;s enforcement: a typed field forces an explicit gap into the open where a paragraph could paper over it.</p>
-  <p>The company is equally clear about scope &mdash; this model is for autonomous, long-running execution loops, not interactive work, where a structured plan is &ldquo;your only lever for control.&rdquo;</p>
-  <a class="btn" href="https://www.builder.io/blog/claude-code-plan">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. A millisecond figure for an embodied agent&rsquo;s nod: ~300ms reads as empathy, instant reads as proactive.</h3>
-  <span class="tag">(single-source &mdash; Japanese-original; participant count partially unverified, tooling gap)</span>
-  <p>A Japanese HCI journal study on character-gaze response found a 300ms delay before a nod rated highest for empathy and reassurance, while an immediate, 0ms response rated highest for felt activeness/proactiveness. That&rsquo;s a concrete number for a design choice usually left to intuition &mdash; nod latency is a decision about which impression you&rsquo;re building, not a performance detail.</p>
-  <p>One caveat: the paper&rsquo;s participant count couldn&rsquo;t be recovered from the PDF in this environment (a CJK-font extraction gap, not a sourcing problem) &mdash; the millisecond figures and direction come cleanly from the paper&rsquo;s own English abstract regardless.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_397/_article/-char/ja">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Timing an agent&rsquo;s emotional expression to the exact moment of shared musical tension reads as more co-present than generic expressiveness.</h3>
-  <span class="tag">(single-source &mdash; Japanese-original)</span>
-  <p>In a 37-participant study, a music co-listening agent&rsquo;s sigh expression at a chord-resolution moment read as relief, and pairing strong facial-expression intensity with that sigh produced a stronger sense of empathy &mdash; an effect that was more pronounced for musically experienced participants than for novices.</p>
-  <p>The design lesson generalizes past music: affect typed and timed to the structure of a shared experience reads as genuine co-presence, where generic expressiveness doesn&rsquo;t, and the effect depends on how expert your user already is.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/2/28_243/_article/-char/ja">Read the source →</a>
+  <h3>5. Notion&rsquo;s design head is on record rejecting the instinct to surface every new AI feature prominently.</h3>
+  <span class="tag">(single-source &mdash; press interview)</span>
+  <p>Randy Hunt: &ldquo;You can&rsquo;t have every new tool screaming at you.&rdquo; He frames Notion&rsquo;s approach as &ldquo;tending a garden&rdquo; &mdash; replanting continuously rather than redesigning around each release &mdash; and accepts that this costs some immediate feature discovery.</p>
+  <p>It&rsquo;s a named, on-record counter-case to &ldquo;put every AI feature in the primary UI,&rdquo; and it bears on the disappearing-chat-box question this research has been tracking since Notion&rsquo;s 2024 UI shift &mdash; this time it&rsquo;s the stated philosophy behind it, not just the shipped surface.</p>
+  <a class="btn" href="https://fortune.com/2026/06/12/it-isnt-our-goal-for-design-to-be-distinctive-says-notion-design-head-randy-hunt-on-prioritizing-quality-over-novelty-when-building-ai-apps/">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>MaterialVellum is a refereed UIST 2026 full paper, but two of the digest&rsquo;s framing claims don&rsquo;t hold up: the paper&rsquo;s own text says material metaphors &ldquo;complement rather than replace&rdquo; other control paradigms and calls itself a technology probe three times, not a text-box replacement or a UI primitive. A text prompt survives in all four model-conditioned paths, written by the designers at build time, not the user; a third of the six demonstrated constraints never reach the model at all, and no objective measure of whether a generated image honored its constraint exists anywhere in the paper.</p>
-  <p>The material-metaphor move isn&rsquo;t new either &mdash; PromptPaint (UIST 2023) did it first from a different lab, and this team&rsquo;s own earlier work (Texterial, CHI 2026) is the direct ancestor. What&rsquo;s worth keeping is the constraint anatomy as a checklist, plus one thing the paper itself doesn&rsquo;t notice: its best-rated gesture is a placed prompt-picker with a hard mask and a reversible overlay, not a departure from prompting at all.</p>
-  <p class="dossier-path">dossiers/2026-11-14-the-prompt-moved-to-build-time-and-nobody-checked-the-constraint.md</p>
+  <p>No daily-chain dossier was set yesterday &mdash; the target picked turned out to be a ledger-listed kill an existing dossier already owned, so the dossier run correctly declined to write it again. A queue-sourced backfill dossier did land on 2026-11-15: no published study sets a self-rated cognitive style against a scored instrument, and across three literatures that don&rsquo;t cite each other &mdash; learner-control research, HCI&rsquo;s adaptive-versus-adaptable experiments, and the automation line &mdash; letting someone choose their own assistance mode buys preference and felt motivation, never a measured outcome.</p>
+  <p>The direct test &mdash; assigning versus choosing an AI assistance mode, outcome measured &mdash; has never been run, and several existing nulls are weaker than they look once you check how the trait was split. Takeaway: a mode toggle is a preference control, not an outcome intervention &mdash; the default, not the toggle, should carry the outcome.</p>
+  <p class="dossier-path">dossiers/2026-11-15-the-self-label-was-never-scored-and-choosing-bought-motivation-not-outcomes.md</p>
 </div>
 
 <h2>Needs your answer</h2>
