@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-16</title>
+<title>Limen — 2026-11-17</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -83,72 +83,74 @@
   .question { font-size: 1rem; }
   .note { font-size: 0.95rem; color: var(--muted); }
   .note code { font-family: ui-monospace, monospace; }
+  .note ul { padding-left: 1.2rem; }
+  .note li { margin-bottom: 0.6rem; }
   footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-16</p>
+  <p class="date">Limen — 2026-11-17</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A tool's search result returning a bare count instead of a list is enough to make an agent write to the wrong account &mdash; in about a quarter of conversations.</h3>
+  <h3>1. A teleoperated &ldquo;mirror robot&rdquo; made strangers in a waiting room meet through its mirrors before they met face to face &mdash; and the design lesson is about knowing when to stop.</h3>
+  <span class="tag">(single-source &mdash; primary paper unreachable; institutional account)</span>
+  <p>MirrorBot moved between preset positions until two strangers could see both themselves and each other in its mirrors, with no screen, no voice, no direct prompt. In the primary study (16 pairs), 12 of 16 groups reported their first meaningful contact happened through the mirrors, not face to face; a follow-up against a mirrorless robot, a wall mirror, and no device confirmed MirrorBot won specifically because of the eye contact it facilitated.</p>
+  <p>The catch: some participants found it &ldquo;an overenthusiastic friend&rdquo; &mdash; the paper&rsquo;s real conclusion is that social technology needs to know not just how to initiate interaction but when to step back. A clean case of an indirect affordance beating a direct one, with its own failure mode built in. Research: Guo, Yu, Niu, Gao, Hoffman, Leshed and Green, ACM/IEEE HRI 2026 Design Track Best Paper.</p>
+  <a class="btn" href="https://news.cornell.edu/stories/2026/04/mirrorbot-fostering-human-connection">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>2. Routing an LLM&rsquo;s facilitation to the whole group, not to individuals privately, nearly doubled how often three-person teams reached the correct hiring decision.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A new study varies whether a tool&rsquo;s lookup lists, counts, or simply omits a second matching record when one exists, grounding the design in presupposition theory from linguistics. Current frontier models (the newest Claude and GPT models) correctly pause when a second record is merely counted &mdash; they open it and check before acting &mdash; but a weaker lookup that doesn&rsquo;t surface the ambiguity produces wrong-account writes in roughly a quarter of conversations.</p>
-  <p>This locates the failure in the tool&rsquo;s return shape, not in model capability, which means it&rsquo;s fixable this week without waiting on a bigger model: a lookup must surface competing records explicitly, not just acknowledge there&rsquo;s more than one.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.17639">Read the source →</a>
+  <p>138 three-person groups (N=414) ran a classic hidden-profile hiring task &mdash; the kind where the correct candidate only emerges if everyone&rsquo;s partial information gets shared &mdash; under three conditions: no help, an LLM messaging each person individually, or an LLM messaging the group as a whole. Both AI conditions helped, but the group-level version pushed correct-consensus from 32.6% to 56.5% and beat the individual version on disclosure and usability too, even though the LLM never knew which candidate was right.</p>
+  <p>For mixed-initiative group tools, this names the real design choice: the intervention&rsquo;s target &mdash; individual or group &mdash; matters more than giving everyone their own assistant. Research: Córdova, Chiang, Schirmer, Yin and Horvát, arXiv:2611.19652.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.19652">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Geoffrey Litt &mdash; now a Design Engineer at Notion, not at Ink &amp; Switch as his piece is sometimes credited &mdash; argues raw-diff review and passive explanation-reading both fail, and ships three built things instead.</h3>
-  <span class="tag">(single-source &mdash; personal blog)</span>
-  <p>He rejects diff review (&ldquo;a pile of files edited in alphabetical order with no explanation&rdquo;) and rejects reading an AI&rsquo;s own explanation of its work (&ldquo;books don&rsquo;t work&rdquo; &mdash; too easy to believe you understood when you didn&rsquo;t). His fix: an <code>/explain-diff</code> skill, a quiz layer that acts as &ldquo;a speed regulator&rdquo; against skimming, and interactive micro-worlds &mdash; a Prolog debugger, an agent-built &ldquo;command center&rdquo; for a website port. He discloses his own vendor bias, and some of this is built around Notion&rsquo;s own output format.</p>
-  <p>The distinction still holds generally: &ldquo;the agent verified its own work&rdquo; and &ldquo;the human can still participate&rdquo; are different review-UI targets, and a diff, a chat explanation, and a built interactive check are not interchangeable answers to which one you&rsquo;re solving for.</p>
-  <a class="btn" href="https://geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Superfluid, a new open-source local LLM server, holds first-token latency at 1.5 seconds under concurrent multi-agent load where the standard options take 5&ndash;10 minutes.</h3>
-  <span class="tag">(single-source &mdash; open-source artifact)</span>
-  <p>On a single Apple M5 Pro with eight concurrent agents, Superfluid returns a first token in 1.5s against 291&ndash;612 seconds on llama-server, Ollama, and mlx_lm.server. Scaled to six machines across three chip vendors serving 64 users for an hour &mdash; machines joining, one killed mid-run &mdash; throughput grows from 112 to 534 tok/s and median first-token time falls from 99 to 12s; on twelve Mac Studios it sustains 10,656 tok/s across 38,563 requests from 384 agents without a failure.</p>
-  <p>Apache-2.0, shipped, not a benchmark claim. The practical point: request-queuing under load, not model size, gates whether &ldquo;local-first, multi-agent&rdquo; is a real interface promise or just a demo.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.17753">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. A standard memory-permission preview &mdash; one allowed example, one blocked example &mdash; cannot tell a user which rule actually governs their data, even in the best case.</h3>
+  <h3>3. When someone makes a mistake, a Socratic dialogue that walks them back to it beats a better explanation &mdash; and explanation quality barely matters at all.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A combinatorial analysis of every rule consistent with a one-allowed/one-blocked preview finds 36 of 39 possible pairs contain a blocked case no rule in that pair actually allows, and no pair uniquely identifies the rule &mdash; the ambiguity is structural, not a copywriting problem. A small pilot backs this practically: of 20 people shown a weak preview of a rule they&rsquo;d just chosen, half mispredicted or were unsure about at least one of its two uses.</p>
-  <p>The paper is honest the fix &mdash; adaptive, multi-query confirmation, three or four well-chosen tests &mdash; is untested for whether it helps users, but the case against the common one-example pattern stands on its own.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.17874">Read the source →</a>
+  <p>A preregistered 400-person study compared four ways of responding to a learner&rsquo;s error: just show the right answer, a generic explanation, a personalized LLM-written explanation, or a Socratic back-and-forth. The dialogue resolved 64% of errors and scored 0.24 SD higher on posttests than either explanation condition &mdash; personalization bought nothing over a generic explanation, and neither beat simply showing the answer.</p>
+  <p>It took almost twice as long but people rated it more interesting, less frustrating. The design lever for correction UIs isn&rsquo;t explanation quality, it&rsquo;s dialogue structure. Research: Asher, Cao and Carvalho, arXiv:2611.20061.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.20061">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Notion&rsquo;s design head is on record rejecting the instinct to surface every new AI feature prominently.</h3>
-  <span class="tag">(single-source &mdash; press interview)</span>
-  <p>Randy Hunt: &ldquo;You can&rsquo;t have every new tool screaming at you.&rdquo; He frames Notion&rsquo;s approach as &ldquo;tending a garden&rdquo; &mdash; replanting continuously rather than redesigning around each release &mdash; and accepts that this costs some immediate feature discovery.</p>
-  <p>It&rsquo;s a named, on-record counter-case to &ldquo;put every AI feature in the primary UI,&rdquo; and it bears on the disappearing-chat-box question this research has been tracking since Notion&rsquo;s 2024 UI shift &mdash; this time it&rsquo;s the stated philosophy behind it, not just the shipped surface.</p>
-  <a class="btn" href="https://fortune.com/2026/06/12/it-isnt-our-goal-for-design-to-be-distinctive-says-notion-design-head-randy-hunt-on-prioritizing-quality-over-novelty-when-building-ai-apps/">Read the source →</a>
+  <h3>4. A home robot a parent partly operates themselves gets more parent-child talking than a fully autonomous one &mdash; at no cost in perceived effort.</h3>
+  <span class="tag">(single-source &mdash; peer-reviewed journal, Japanese-original)</span>
+  <p>A Nagoya University study ran 12 parent-child pairs through three conditions &mdash; no robot, a fully autonomous robot, and a semi-autonomous one the parent partly drives &mdash; in a home-learning setting. The semi-autonomous condition significantly increased parent talk compared to the autonomous robot, without raising felt workload (some comparisons borderline; the sample is small at 12 dyads).</p>
+  <p>The design decision this names, generically, for home or educational companion robots: partial human operation can be the engagement lever full autonomy quietly removes. Research: Go, Kubota, Iwasaki, Sato and Ogawa, ヒューマンインタフェース学会論文誌 Vol.28 No.3.</p>
+  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_353/_article/-char/ja">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. A 337-designer survey finds AI-tool loyalty is narrow, and adoption drops by half once a project moves from defining the problem to building the solution.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Across Product, Industrial, and UX/UI designers in 40 countries, Industrial Designers used AI noticeably less (73.9% vs. 87&ndash;88% for the other two roles), and of 60 named AI tools, just 25 carried at least 90% of every role&rsquo;s picks &mdash; loyalty concentrates hard on a handful of generalist tools.</p>
+  <p>Sharper still: predicted adoption among UX/UI designers fell from 87.2% in Define to 43.9% in Develop, a confirmed phase effect. For anyone advising a design team&rsquo;s tool stack, especially across Japanese, Thai and English-language markets, this is the real adoption curve to plan around, not an assumed flat one. Research: Tajarmakan and Hojjati Emami, arXiv:2611.20519.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.20519">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>No daily-chain dossier was set yesterday &mdash; the target picked turned out to be a ledger-listed kill an existing dossier already owned, so the dossier run correctly declined to write it again. A queue-sourced backfill dossier did land on 2026-11-15: no published study sets a self-rated cognitive style against a scored instrument, and across three literatures that don&rsquo;t cite each other &mdash; learner-control research, HCI&rsquo;s adaptive-versus-adaptable experiments, and the automation line &mdash; letting someone choose their own assistance mode buys preference and felt motivation, never a measured outcome.</p>
-  <p>The direct test &mdash; assigning versus choosing an AI assistance mode, outcome measured &mdash; has never been run, and several existing nulls are weaker than they look once you check how the trait was split. Takeaway: a mode toggle is a preference control, not an outcome intervention &mdash; the default, not the toggle, should carry the outcome.</p>
-  <p class="dossier-path">dossiers/2026-11-15-the-self-label-was-never-scored-and-choosing-bought-motivation-not-outcomes.md</p>
+  <p>Yesterday&rsquo;s daily-chain dossier dug into the &ldquo;count vs. list&rdquo; agent-tool paper that led the 2026-11-16 digest, and found the digest&rsquo;s own framing needed correcting: the result is signal-versus-no-signal, not count-versus-list &mdash; a count alone stops only three specific newer models (and Gemini 3.1 Pro), while 36 earlier agents need a full listing to stop acting on an ambiguous record. The retail &ldquo;quarter of wrong-account writes&rdquo; figure actually comes from a lookup showing no signal at all, and the harm itself is a store-order artifact: an identical duplicate record sorted second produces zero wrong writes, sorted first it produces up to 23%.</p>
+  <p>Every tested fix carries a measured cost &mdash; listing leaks other customers&rsquo; data in 38.6% of completions, a hard policy line can tank legitimate task completion from 67/80 to 2/80. The underlying design rule (&ldquo;disambiguate before acting&rdquo;) isn&rsquo;t new &mdash; Microsoft&rsquo;s HAX guidelines stated it in 2019 &mdash; but this paper measures, for the first time, that agent compliance tracks the tool&rsquo;s return shape rather than the model&rsquo;s capability.</p>
+  <p class="dossier-path">dossiers/2026-11-16-the-count-did-not-stop-them-any-signal-did-and-the-harm-was-store-order.md</p>
 </div>
 
 <h2>Needs your answer</h2>
