@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-17</title>
+<title>Limen — 2026-11-18</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,66 +91,67 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-17</p>
+  <p class="date">Limen — 2026-11-18</p>
   <p class="read-time">~7 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A teleoperated &ldquo;mirror robot&rdquo; made strangers in a waiting room meet through its mirrors before they met face to face &mdash; and the design lesson is about knowing when to stop.</h3>
-  <span class="tag">(single-source &mdash; primary paper unreachable; institutional account)</span>
-  <p>MirrorBot moved between preset positions until two strangers could see both themselves and each other in its mirrors, with no screen, no voice, no direct prompt. In the primary study (16 pairs), 12 of 16 groups reported their first meaningful contact happened through the mirrors, not face to face; a follow-up against a mirrorless robot, a wall mirror, and no device confirmed MirrorBot won specifically because of the eye contact it facilitated.</p>
-  <p>The catch: some participants found it &ldquo;an overenthusiastic friend&rdquo; &mdash; the paper&rsquo;s real conclusion is that social technology needs to know not just how to initiate interaction but when to step back. A clean case of an indirect affordance beating a direct one, with its own failure mode built in. Research: Guo, Yu, Niu, Gao, Hoffman, Leshed and Green, ACM/IEEE HRI 2026 Design Track Best Paper.</p>
-  <a class="btn" href="https://news.cornell.edu/stories/2026/04/mirrorbot-fostering-human-connection">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>2. Routing an LLM&rsquo;s facilitation to the whole group, not to individuals privately, nearly doubled how often three-person teams reached the correct hiring decision.</h3>
+  <h3>1. A pre-registered, 9,341-person, six-country study finds that disclosure captions on AI demonstration videos work only as long as they stay on screen.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>138 three-person groups (N=414) ran a classic hidden-profile hiring task &mdash; the kind where the correct candidate only emerges if everyone&rsquo;s partial information gets shared &mdash; under three conditions: no help, an LLM messaging each person individually, or an LLM messaging the group as a whole. Both AI conditions helped, but the group-level version pushed correct-consensus from 32.6% to 56.5% and beat the individual version on disclosure and usability too, even though the LLM never knew which candidate was right.</p>
-  <p>For mixed-initiative group tools, this names the real design choice: the intervention&rsquo;s target &mdash; individual or group &mdash; matters more than giving everyone their own assistant. Research: Córdova, Chiang, Schirmer, Yin and Horvát, arXiv:2611.19652.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.19652">Read the source →</a>
+  <p>Without any disclosure, viewers already call real-vs-CGI footage correctly 62% of the time and autonomous-vs-teleoperated behavior correctly 52% of the time &mdash; better than chance, nowhere near confident. Adding a disclosure caption measurably sharpens both judgments, but when the same survey later showed viewers undisclosed clips, the improvement vanished &mdash; the paper&rsquo;s own words are that the effect was &ldquo;no longer distinguishable from zero.&rdquo;</p>
+  <p>For anyone building or reviewing a capability demo reel, this kills the idea that one disclosure at the top does lasting work: calibration needs the label on every clip, not just the first. Research: Nozomi Nakajima, arXiv:2611.18982 (cs.RO).</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.18982">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. When someone makes a mistake, a Socratic dialogue that walks them back to it beats a better explanation &mdash; and explanation quality barely matters at all.</h3>
+  <h3>2. Japan&rsquo;s actors&rsquo; union has published a staged, written-consent framework for AI voice use, and it draws a hard line at death.</h3>
+  <span class="tag">(two independent sources)</span>
+  <p>日本俳優連合&rsquo;s new guideline (a preamble plus 22 articles) requires a performer&rsquo;s written consent at each of three separate stages &mdash; training, generation, and project use of the generated audio &mdash; capped at one year and renewable, with retroactive-damages language clawing back revenue from unauthorized use. Separately, per Kyodo/Kumanichi&rsquo;s reporting specifically (not the corroborating bengo4.com account, which doesn&rsquo;t carry this claim), the guideline asks that a deceased performer&rsquo;s voice stay out of new work and that AI not substitute for dubbing, with an exception only where family or estate consent is given.</p>
+  <p>It&rsquo;s a concrete, usable template &mdash; staged consent, a time cap, a posthumous carve-out &mdash; for anyone building voice-cloning or dubbing into the Japanese market; 34 days old, but self-regulatory documents don&rsquo;t age out like capability claims. Research: reported by 弁護士ドットコムニュース (塚田賢慎) and 共同通信/熊本日日新聞.</p>
+  <a class="btn" href="https://bengo4.com/c_23/n_21058">Read the source →</a>
+  <a class="btn" href="https://kumanichi.com/articles/2046861">Read the corroborating source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Google is retiring Gems for an open, portable &ldquo;Skills&rdquo; format, and the reasoning is the real story.</h3>
+  <span class="tag">(vendor-primary; corroborated independently)</span>
+  <p>Skills apply tailored instructions directly inside a conversation or workflow instead of forcing open a separate Gem window, built on an open Markdown spec (SKILL.md) explicitly pitched against platform lock-in. Rollout is dated precisely: Gemini app October 13, Workspace November 9, Gems moved into Settings yesterday, Business/Enterprise keeps old-style Gems until &ldquo;no sooner than&rdquo; March 1, 2027.</p>
+  <p>The lesson travels past Google: a locked, single-window custom-instruction pattern is a dead end &mdash; the fix is modular, composable instructions, not a dedicated chat window per customization. Research: Google Workspace Help.</p>
+  <a class="btn" href="https://knowledge.workspace.google.com/p/gems-migration">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. A new control scheme for proactive AI agents splits &ldquo;is it watching&rdquo; from &ldquo;is it acting&rdquo; &mdash; and logging what it quietly chose not to do turns out to matter a lot.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A preregistered 400-person study compared four ways of responding to a learner&rsquo;s error: just show the right answer, a generic explanation, a personalized LLM-written explanation, or a Socratic back-and-forth. The dialogue resolved 64% of errors and scored 0.24 SD higher on posttests than either explanation condition &mdash; personalization bought nothing over a generic explanation, and neither beat simply showing the answer.</p>
-  <p>It took almost twice as long but people rated it more interesting, less frustrating. The design lever for correction UIs isn&rsquo;t explanation quality, it&rsquo;s dialogue structure. Research: Asher, Cao and Carvalho, arXiv:2611.20061.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.20061">Read the source →</a>
+  <p>SpotMe, flagged independently by two of this corpus&rsquo;s research threads this week, lets someone turn down an agent&rsquo;s participation &mdash; to just asking, or to outright silence &mdash; without also having to turn off its sensing. The sharper finding comes from a civic-dashboard follow-up: showing people the actions an agent silently decided to skip rated as genuinely clarifying (average 6.44 out of 7), and one participant described a visibly-withheld action as reading like &ldquo;a calculated decision&rdquo; rather than an absence.</p>
+  <p>For anyone designing ambient or sensor-driven agents, the lesson is to decouple the sensing switch from the action switch, and keep a visible record of what the agent chose not to do, not just what it did. Research: Khan, Ali and Huang, arXiv:2611.22431.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.22431">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. A home robot a parent partly operates themselves gets more parent-child talking than a fully autonomous one &mdash; at no cost in perceived effort.</h3>
-  <span class="tag">(single-source &mdash; peer-reviewed journal, Japanese-original)</span>
-  <p>A Nagoya University study ran 12 parent-child pairs through three conditions &mdash; no robot, a fully autonomous robot, and a semi-autonomous one the parent partly drives &mdash; in a home-learning setting. The semi-autonomous condition significantly increased parent talk compared to the autonomous robot, without raising felt workload (some comparisons borderline; the sample is small at 12 dyads).</p>
-  <p>The design decision this names, generically, for home or educational companion robots: partial human operation can be the engagement lever full autonomy quietly removes. Research: Go, Kubota, Iwasaki, Sato and Ogawa, ヒューマンインタフェース学会論文誌 Vol.28 No.3.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_353/_article/-char/ja">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. A 337-designer survey finds AI-tool loyalty is narrow, and adoption drops by half once a project moves from defining the problem to building the solution.</h3>
+  <h3>5. More reasoning effort makes a shopping agent sound more sure of itself without making it right more often.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Across Product, Industrial, and UX/UI designers in 40 countries, Industrial Designers used AI noticeably less (73.9% vs. 87&ndash;88% for the other two roles), and of 60 named AI tools, just 25 carried at least 90% of every role&rsquo;s picks &mdash; loyalty concentrates hard on a handful of generalist tools.</p>
-  <p>Sharper still: predicted adoption among UX/UI designers fell from 87.2% in Define to 43.9% in Develop, a confirmed phase effect. For anyone advising a design team&rsquo;s tool stack, especially across Japanese, Thai and English-language markets, this is the real adoption curve to plan around, not an assumed flat one. Research: Tajarmakan and Hojjati Emami, arXiv:2611.20519.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.20519">Read the source →</a>
+  <p>Across ten frontier models and three shopping benchmarks (WebShop, Amazon SQID, Wayfair WANDS), turning up how hard a model &ldquo;thinks&rdquo; before answering produced no statistically meaningful gain in decision quality &mdash; in the researchers&rsquo; own words, it &ldquo;buys confidence rather than correctness.&rdquo;</p>
+  <p>That kills a design instinct showing up across agent UX: surfacing &ldquo;the agent thought hard about this&rdquo; as a trust signal. If effort doesn&rsquo;t track accuracy, showing it off just dresses up overconfidence. Research: Krishnamoorthy and Han, arXiv:2611.22033.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.22033">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>Yesterday&rsquo;s daily-chain dossier dug into the &ldquo;count vs. list&rdquo; agent-tool paper that led the 2026-11-16 digest, and found the digest&rsquo;s own framing needed correcting: the result is signal-versus-no-signal, not count-versus-list &mdash; a count alone stops only three specific newer models (and Gemini 3.1 Pro), while 36 earlier agents need a full listing to stop acting on an ambiguous record. The retail &ldquo;quarter of wrong-account writes&rdquo; figure actually comes from a lookup showing no signal at all, and the harm itself is a store-order artifact: an identical duplicate record sorted second produces zero wrong writes, sorted first it produces up to 23%.</p>
-  <p>Every tested fix carries a measured cost &mdash; listing leaks other customers&rsquo; data in 38.6% of completions, a hard policy line can tank legitimate task completion from 67/80 to 2/80. The underlying design rule (&ldquo;disambiguate before acting&rdquo;) isn&rsquo;t new &mdash; Microsoft&rsquo;s HAX guidelines stated it in 2019 &mdash; but this paper measures, for the first time, that agent compliance tracks the tool&rsquo;s return shape rather than the model&rsquo;s capability.</p>
-  <p class="dossier-path">dossiers/2026-11-16-the-count-did-not-stop-them-any-signal-did-and-the-harm-was-store-order.md</p>
+  <p>The MirrorBot item rested on a press release, but the HRI &rsquo;26 paper and its CHI &rsquo;26 companion are both openly readable and say less than the release did. In the 40-pair controlled study, strangers with the mirror robot talked for 46.3% of the session and strangers left alone in an empty room talked for 45.8% (p = 0.977) &mdash; the robot&rsquo;s advantage is in self-reported ease of starting a conversation, not in measured behavior, and no eye-contact variable exists in either study.</p>
+  <p>&ldquo;Knowing when to step back&rdquo; was a rule the designers wrote before the study and executed by a human operator on a roughly five-minute exit schedule, not autonomous judgment. The underlying mechanism &mdash; a shared object that gives strangers an excuse to connect &mdash; was named &ldquo;triangulation&rdquo; by William H. Whyte in 1980 and cited by neither paper. The real cost of over-persistence is better measured outside HRI entirely: clinical-reminder acceptance drops 30% per added reminder in a single encounter.</p>
+  <p class="dossier-path">dossiers/2026-11-17-the-eye-contact-was-never-measured-the-robot-tied-the-empty-room-and-the-stepping-back-was-a-person.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -158,6 +159,7 @@
 <div class="item">
   <p class="question">Should security-usability permission research (Android/iOS field studies and successors) become a named source for agent approval surfaces? Today&rsquo;s dossier found the measured precedent there, not in human factors.</p>
   <p class="question">Should trait-based personalisation of AI assistance become a standing emphasis for the interaction lane? Two dossiers found its anchor study never tested moderation and every replication null.</p>
+  <p class="question">Should the pre-digital public-space literature &mdash; Whyte and Goffman on how strangers meet around objects &mdash; become a named source the ambient lane mines? Today&rsquo;s dossier found a 2026 robot paper&rsquo;s mechanism named there in 1980, uncited.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
