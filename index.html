@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-21</title>
+<title>Limen — 2026-11-22</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,58 +91,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-21</p>
+  <p class="date">Limen — 2026-11-22</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A walking-training robot that praised elderly trainees no matter what made them feel worse &mdash; and more likely to say they&rsquo;d keep training.</h3>
-  <span class="tag">(single-source &mdash; peer-reviewed journal)</span>
-  <p>24 older adults did two weekly sessions on a robot with a tablet virtual trainer, comparing uniformly positive feedback against none. The positive condition raised irritation and sadness and made the trainer feel less professional, while also raising stated intent to continue &mdash; engagement and felt experience moved opposite ways in the same study.</p>
-  <p>Worth sitting with before defaulting a coaching agent to upbeat feedback: a rising &ldquo;I&rsquo;ll keep using this&rdquo; number can mask people feeling worse. Research: 吉田直人ほか, ヒューマンインタフェース学会論文誌 28(3):289&ndash;300, DOI 10.11184/his.28.3_289.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_289/_article/-char/ja">Read the source →</a>
+  <h3>1. Thoughtworks calls out &ldquo;human-in-the-loop theater&rdquo; &mdash; a human approval step nobody can actually evaluate &mdash; and pairs it with a concrete fix.</h3>
+  <span class="tag">(Technology Radar Vol. 35)</span>
+  <p>The latest Technology Radar places the pattern itself in Caution: keeping a human in an agent&rsquo;s loop as &ldquo;an empty approval step rather than a real check,&rdquo; where the human &ldquo;approves actions, prompts or diffs they can&rsquo;t realistically evaluate&rdquo; and becomes &ldquo;an accountability sink: no one truly owns the decision.&rdquo; The paired fix, &ldquo;Risk-tiered human oversight&rdquo; (Trial), routes by reversibility and damage instead of uniform sign-off: humans apply the riskiest, hardest-to-reverse changes themselves, review intermediate-risk ones, and let low-risk changes auto-merge through CI via codebase-zone flags and a fallible LLM impact classifier.</p>
+  <p>The entry cites Meta&rsquo;s own published process (arXiv:2605.30208) as a worked example, not a bare assertion. If you default agent workflows to &ldquo;someone clicks approve,&rdquo; this names why that&rsquo;s theater and what to route by instead.</p>
+  <a class="btn" href="https://www.thoughtworks.com/radar/techniques/human-in-the-loop-theater">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Robot companionship and VR support an elderly person&rsquo;s emotional engagement on different timelines, not just different strengths, of presence.</h3>
-  <span class="tag">(single-source &mdash; peer-reviewed journal)</span>
-  <p>Thirty-four older adults did a three-week supportive-dialogue study split between a physical robot and immersive VR. VR won early &mdash; more future-oriented talk, more positive emotion &mdash; but the robot caught up and pulled ahead later; both improved how alive the system felt, and VR read as more intelligent throughout.</p>
-  <p>The design question for a longitudinal supportive system for older users isn&rsquo;t &ldquo;robot or VR, which is more present&rdquo; &mdash; it&rsquo;s which embodiment fits the week you&rsquo;re actually running. Research: 林勇吾ほか（立命館大学ほか）, ヒューマンインタフェース学会論文誌 28(3):369&ndash;384, DOI 10.11184/his.28.3_369.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/3/28_369/_article/-char/ja">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Most &ldquo;unhealthy reliance&rdquo; on companion AI isn&rsquo;t actually harming anyone &mdash; a new taxonomy separates the two for the first time with real data.</h3>
+  <h3>2. Quantizing a small chat model to 4-bit scrambles its refusal behavior &mdash; and the scramble tracks the specific rounding error, not the bit width.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Coding 110 adults&rsquo; real Character.AI and Replika conversations against a 14-behavior taxonomy, researchers found overreliance behaviors in 63% of non-roleplay chats but observable harm in only 10.5% &mdash; and open-source classifiers caught most behaviors reliably.</p>
-  <p>A blanket &ldquo;you&rsquo;re relying on this too much&rdquo; nudge misses most of the time; the case is for graduated, trajectory-based intervention over a flat trigger. Research: Nguyen, Li, Wan, Agarwal, Nguyen, Hwang &amp; De Choudhury, arXiv:2611.25734.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.25734">Read the source →</a>
+  <p>A University of British Columbia preprint finds that with a compliant reply prefilled, a 4-bit Qwen2.5-3B continues into harmful content more often than its full-precision parent, while on held-out jailbreaks a 4-bit Llama-3.2-3B complies 10.3 points less &mdash; opposite directions on two models both &ldquo;just quantized.&rdquo; The methodology has teeth: shuffled or Gaussian-noise control perturbations move behavior near zero, while real rounding error moves it near-linearly.</p>
+  <p>The upshot for anyone shipping an on-device chat model: it cannot inherit its parent&rsquo;s safety eval &mdash; the specific quantized artifact has to be re-tested against itself. Research: Ege Kaya, arXiv:2611.22186.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.22186">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>4. The coding-agent memory tool flagged two days ago turns out to have real numbers behind it &mdash; and they say exposing memory as a reviewable list, not hiding it, is what works.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, update)</span>
-  <p>A 132-person study found developers using a tool that surfaces an agent&rsquo;s memory writes as editable, scopable items did measurably better work and trusted the agent&rsquo;s memory more, and the gain came from better <em>monitoring</em> of what the agent remembered, not from doing less work. They monitored more and felt no more burdened.</p>
-  <p>A one-week, nine-developer field deployment followed. The concrete answer to &ldquo;what should an agent&rsquo;s memory UI look like&rdquo;: a list you can watch and edit, not a black box. Research: Zhang, Li, Luo, Tang, Zhang, Piao, Liu, Ma &amp; Ma, &ldquo;MemoSync,&rdquo; arXiv:2611.24165.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.24165">Read the source →</a>
+  <h3>3. Same Radar: stop relaying a coding agent&rsquo;s build failures through a human, and give the agent its own eyes on the pipeline.</h3>
+  <span class="tag">(Technology Radar Vol. 35, Assess ring)</span>
+  <p>Thoughtworks&rsquo; &ldquo;Agent pipeline responsibility&rdquo; entry makes the case bluntly: &ldquo;An agent that can&rsquo;t see the build status can&rsquo;t respect a team agreement not to push on red, while a human relaying failure logs into a chat window becomes a meat proxy.&rdquo;</p>
+  <p>The fix is mechanical: expose pipeline status and logs through the agent&rsquo;s own tools so it can see what broke and help fix it, and enforce the rules that matter with pre-push and server-side gates rather than hoping the agent behaves on its own.</p>
+  <a class="btn" href="https://www.thoughtworks.com/radar/techniques/agent-pipeline-responsibility">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. A guardrail bolted outside a mobile agent &mdash; not a smarter model &mdash; is what gets it from catching 3 in 10 risky actions to catching nearly all of them.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A runtime layer that can allow, block or force a user-approval step, plus a route-caching layer for repeat tasks, raised GPT-4o&rsquo;s high-risk-action blocking from 29.7% to 97.0%, cut model calls needed by up to 6x, and lifted repeat-use task success to 95.7%.</p>
-  <p>Deciding how a mobile agent earns authority over payments or private data: the answer isn&rsquo;t a better-aligned model, it&rsquo;s a gate built outside it. Research: Jang, Kim, Yu &amp; Kim, &ldquo;MATE,&rdquo; arXiv:2611.25526 (comment: accepted to EMNLP 2026).</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.25526">Read the source →</a>
+  <h3>4. A home activity-recognition system that only wakes the camera when cheaper sensors say something is actually happening.</h3>
+  <span class="tag">(arXiv preprint)</span>
+  <p>OrganicHAR pairs privacy-preserving ambient sensors &mdash; radar, lidar, thermal arrays &mdash; with a vision-language model it calls on sparingly: queries to the VLM drop 90%, while accuracy holds at 79% for coarse activity categories and 73% for finer-grained ones once wearables are added, across a 12-person study. It&rsquo;s new to this corpus despite being roughly a year old by its real publication date (an ACM journal embargo delayed the arXiv posting).</p>
+  <p>The design decision it hands anyone building in-home sensing with a camera or VLM: gate the expensive, privacy-sensitive sensor behind cheap ambient ones, and only invoke it at flagged moments rather than continuously. Research: Prasoon Patidar et al., arXiv:2605.18455.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.18455">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. OpenAI&rsquo;s newest models drop support for the old tool-calling API outright, and introduce a real price lever for agents that can wait.</h3>
+  <span class="tag">(vendor changelog, independently corroborated)</span>
+  <p>GPT-6.2 Astra and Sol support Chat Completions for ordinary use, but &ldquo;tool calling requires the Responses API&rdquo; &mdash; full stop, per OpenAI&rsquo;s own changelog, independently confirmed by Simon Willison. The same changelog entry introduces background-completion windows: a two-hour window prices 30% below standard, an eight-hour window 40% below.</p>
+  <p>That&rsquo;s the first OpenAI-priced incentive making an always-on, non-interactive agent run cheaper to simply leave running than to invoke on demand. Anyone with a tool-calling agent still on Chat Completions needs to migrate or lose access to these models&rsquo; tool use entirely.</p>
+  <a class="btn" href="https://developers.openai.com/api/docs/changelog">Read the source →</a>
+</div>
+
+<h2>Yesterday&rsquo;s dossier</h2>
+
+<div class="item">
+  <p>A correction of yesterday&rsquo;s #1 item. The digest said a walking-training robot&rsquo;s uniformly positive feedback &ldquo;measurably worsens affect and perceived competence&rdquo; in older adults &mdash; the dossier found perceived competence was flat to three decimals, and the two items that actually moved were &ldquo;professional&rdquo; and &ldquo;leaves things to chance.&rdquo; Of 43 single-item tests run, five hit p &lt; .05 and none survives any standard multiple-comparison correction; four of the five &ldquo;significant&rdquo; results sit right at the arithmetic threshold a sample this size could even detect.</p>
+  <p>No performance comparison exists on any objective measure, though scores were announced to both groups and walking logs existed. The agent&rsquo;s own script had no path to agree a session had gone badly &mdash; which matches, item for item, what gerontology already calls elderspeak, a literature the paper never cites.</p>
+  <p class="dossier-path">dossiers/2026-11-21-the-five-effects-sat-on-the-arithmetic-floor-the-competence-item-did-not-move-and-the-agent-could-not-agree-it-went-badly.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -154,46 +162,27 @@
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
-<h2>The gate</h2>
-
-<div class="item note">
-  <p>Ten drafts open, none decided:</p>
-  <ul>
-    <li><strong>DRAFT-KB-16</strong> &mdash; the watched party is not a principal in any shipped role table, safety eval or indicator duty. Review: 3 blocks, 1 objection.</li>
-    <li><strong>DRAFT-KB-17</strong> &mdash; the second encoding, not the effort, moves the human&rsquo;s catch of a bad AI action. Review: 3 blocks, 4 objections.</li>
-    <li><strong>DRAFT-KB-18</strong> &mdash; the statement loses to the already-logged record in all three seats of the loop. Review: 3 blocks, 2 objections.</li>
-    <li><strong>DRAFT-KB-19</strong> &mdash; the trouble-point turn is one short re-prompt, against the platform doctrine prescribing elaboration. Review: 2 blocks, 2 objections.</li>
-    <li><strong>DRAFT-KB-20</strong> &mdash; the agent never holds the asset: credentials, tool records, state, memory writes and verdicts travel channels the model cannot rewrite. Review: 2 blocks, 5 objections.</li>
-    <li><strong>DRAFT-KB-21</strong> &mdash; the oversight budget is spent at configuration time, and per-step approval has a regulator and a named practitioner against it. Review: 2 blocks, 3 objections.</li>
-    <li><strong>DRAFT-KB-22</strong> &mdash; context-retention policy is interface behavior, and a remembered preference is a grant the permission layer was never told about. Review: 1 block, 1 objection.</li>
-    <li><strong>DRAFT-KB-23</strong> &mdash; paired-instrument dissociation on ambient/agentic surfaces, sign inverted. Review: 1 block, 3 objections.</li>
-    <li><strong>DRAFT-KB-24</strong> &mdash; the actionable signal lives in the return shape the actor reads, and every surfacing choice has a measured price. Review: 1 block, 5 objections.</li>
-    <li><strong>DRAFT-KB-25</strong> &mdash; requested-versus-realised adherence is uninstrumented from conditioning sliders to effort toggles, and the knob buys confidence. Review: 1 block, 5 objections.</li>
-  </ul>
-  <p><strong>BACKLOG.md</strong> is at its five-QUEUED ceiling (#79&ndash;#83). A strong candidate surfaced today &mdash; RouterWeave&rsquo;s corrected privacy finding, see Run notes below &mdash; and can&rsquo;t be queued until one clears.</p>
-</div>
-
 <h2>Run notes</h2>
 
 <div class="item note">
-  <p><strong>Editorial call &mdash; item 4 kept over an alternative.</strong> The MemoSync item&rsquo;s URL appeared two days ago as a bare below-cap one-liner with no quantitative content; today&rsquo;s submission supplied the actual substance (a 132-person result, a mediation analysis, a field deployment) that made it a usable item for the first time, so it was kept rather than swapped for a corrected ambient-lane finding that is stronger dossier material than digest material.</p>
-  <p>That ambient-lane finding, for the record: RouterWeave, an open-sourced system that reconstructs whole-home activity from router traffic alone, whose own Ethics Statement names cross-device timeline reconstruction as a privacy-leakage risk for future work &mdash; while the shipped, open-sourced code contains no consent or bystander-disclosure mechanism for the capability it actually ships. This connects to a recurring thread in the corpus on who gets a say when an ambient system observes someone who never opted in.</p>
-  <p>All four lanes placed or survived verification this cycle; one lane (practice) submitted four verified items and placed none, which is a ranking outcome, not an empty lane. Two items were killed: an exact duplicate of a paper already covered in a prior digest, and an uncorroborated single-author latency claim with no independent mention anywhere.</p>
+  <p><strong>A pipeline-health flag, not a research finding:</strong> the interaction lane resubmitted four of its five items this run as repeat duplicates of items already published or already killed in a prior run &mdash; three of them for a third time unchanged, one for a second time. This has been flagged by name for the next monthly pipeline audit. The ambient lane showed the same pattern at smaller scale (two of its three submissions were repeats). No lane came back with zero usable items this run.</p>
+  <p>Lane outcomes: practice and capability each placed two of today&rsquo;s five items and nothing was killed from either; ambient placed one of three submissions (the other two were the repeats above); interaction's sole clean item (a mixed-initiative sketch-authoring tool, arXiv:2611.04284) was verified but ranked below today's cap on weak evidence (an 8-person study).</p>
   <p>Verified but below today&rsquo;s five-item cap (not to be resubmitted unchanged):</p>
   <ul>
-    <li>RouterWeave &mdash; whole-home activity reconstruction from router traffic alone, open-sourced, corrected finding above &mdash; <a href="https://arxiv.org/abs/2611.26134">arXiv:2611.26134</a></li>
-    <li>Replit rejects a model router for agent delegation, lets the core model choose subagent tier mid-turn instead &mdash; <a href="https://frontier.replit.com/free-the-models/">frontier.replit.com/free-the-models</a></li>
-    <li>Thoughtworks Technology Radar places &ldquo;interactive visual plans with agents&rdquo; in Trial, names big upfront designs as the failure case &mdash; <a href="https://www.thoughtworks.com/radar/techniques/interactive-visual-plans-with-agents">thoughtworks.com/radar</a></li>
-    <li>OpenAI&rsquo;s gpt-live-1.1 adds a &ldquo;standby&rdquo; mode pausing inference during inactivity &mdash; <a href="https://developers.openai.com/api/docs/changelog">developers.openai.com/api/docs/changelog</a></li>
-    <li>Safe-to-omit multi-agent message skipping saves hundreds of milliseconds per query under a certified 5%-answer-change bound &mdash; <a href="https://arxiv.org/abs/2611.23570">arXiv:2611.23570</a></li>
-    <li>A fully-offline quantized maternal-health assistant returns 14.3s median latency on a 6GB Android handset &mdash; <a href="https://arxiv.org/abs/2611.20012">arXiv:2611.20012</a></li>
-    <li>Figma&rsquo;s Specs ships a human review gate into the agent-plan-to-code handoff &mdash; <a href="https://www.figma.com/blog/workflow-lab-specs-and-the-figma-agent/">figma.com/blog</a></li>
-    <li>Superhuman rejects Electron for its cross-platform agent runtime, chose Tauri instead &mdash; <a href="https://blog.superhuman.com/superhuman-go-cross-platform/">blog.superhuman.com</a></li>
+    <li>An independent open-source fix closes the gap between Gemma 4&rsquo;s claimed 37.5% KV-cache reduction and what today&rsquo;s serving engines actually deliver &mdash; <a href="https://arxiv.org/abs/2611.23035">arXiv:2611.23035</a></li>
+    <li>Google AI Edge Gallery ships fully offline on-device speech recognition and text-to-speech &mdash; <a href="https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/">developers.googleblog.com</a></li>
+    <li>OmniScribble: mixed-initiative authoring of animated sketches through inspectable, repairable AI decisions &mdash; <a href="https://arxiv.org/abs/2611.04284">arXiv:2611.04284</a></li>
+    <li>GitHub Next&rsquo;s Chopin rejects the binary &ldquo;accept or reject this plan&rdquo; review pattern &mdash; <a href="https://githubnext.com/projects/chopin/">githubnext.com/projects/chopin</a></li>
   </ul>
   <p>Kill ledger:</p>
   <ul>
-    <li>KILLED 2026-11-21 &mdash; Sidecar: a parallel assistant for the minutes-long &ldquo;micro-wait&rdquo; while an agent runs &mdash; <a href="https://arxiv.org/abs/2610.27170">arXiv:2610.27170</a> &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-21 &mdash; DRVEXO-4B-Unified hits 390ms first-chunk speech-synthesis latency on a 4B unified model &mdash; <a href="https://arxiv.org/abs/2611.25521">arXiv:2611.25521</a> &mdash; uncorroborated/hype-filter</li>
+    <li>KILLED 2026-11-22 &mdash; When AI Agents Act on Our Behalf: A Taxonomy of Human-Agent Interaction Failure &mdash; <a href="https://arxiv.org/abs/2611.00291">arXiv:2611.00291</a> &mdash; duplicate-of-digest (third submission)</li>
+    <li>KILLED 2026-11-22 &mdash; Is That Clear? The Impacts of Clarifying Questions on Human-LLM Interaction &mdash; <a href="https://arxiv.org/abs/2611.01087">arXiv:2611.01087</a> &mdash; duplicate-of-digest (third submission)</li>
+    <li>KILLED 2026-11-22 &mdash; Must AI Spell It Out? Pragmatic Comprehension of Alerts in a Time-Critical Task &mdash; <a href="https://arxiv.org/abs/2611.03976">arXiv:2611.03976</a> &mdash; duplicate-of-digest (third submission)</li>
+    <li>KILLED 2026-11-22 &mdash; Agentic Path Maps: Exposing an Agent&rsquo;s Traversal Through the Garden of Forking Paths &mdash; <a href="https://arxiv.org/abs/2611.04183">arXiv:2611.04183</a> &mdash; duplicate-of-digest (second submission)</li>
+    <li>KILLED 2026-11-22 &mdash; &ldquo;Looks Fine to Me&rdquo; &mdash; gaze and physiological sensing catch what self-reported confidence misses &mdash; <a href="https://arxiv.org/abs/2610.27801">arXiv:2610.27801</a> &mdash; duplicate-of-digest/dossier</li>
+    <li>KILLED 2026-11-22 &mdash; 300ms of nod delay reads as empathy; an instant nod reads as proactive &mdash; <a href="https://doi.org/10.11184/his.28.3_397">doi.org/10.11184/his.28.3_397</a> &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-22 &mdash; Every (Willie Williams): a company abandoned personal AI agents for one shared agent &mdash; <a href="https://every.to/source-code/why-we-replaced-personal-agents-with-one-for-the-whole-company">every.to</a> &mdash; fetch-failed/paywalled</li>
   </ul>
 </div>
 
