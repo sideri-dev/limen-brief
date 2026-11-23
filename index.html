@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-22</title>
+<title>Limen — 2026-11-23</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,66 +91,66 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-22</p>
+  <p class="date">Limen — 2026-11-23</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Thoughtworks calls out &ldquo;human-in-the-loop theater&rdquo; &mdash; a human approval step nobody can actually evaluate &mdash; and pairs it with a concrete fix.</h3>
-  <span class="tag">(Technology Radar Vol. 35)</span>
-  <p>The latest Technology Radar places the pattern itself in Caution: keeping a human in an agent&rsquo;s loop as &ldquo;an empty approval step rather than a real check,&rdquo; where the human &ldquo;approves actions, prompts or diffs they can&rsquo;t realistically evaluate&rdquo; and becomes &ldquo;an accountability sink: no one truly owns the decision.&rdquo; The paired fix, &ldquo;Risk-tiered human oversight&rdquo; (Trial), routes by reversibility and damage instead of uniform sign-off: humans apply the riskiest, hardest-to-reverse changes themselves, review intermediate-risk ones, and let low-risk changes auto-merge through CI via codebase-zone flags and a fallible LLM impact classifier.</p>
-  <p>The entry cites Meta&rsquo;s own published process (arXiv:2605.30208) as a worked example, not a bare assertion. If you default agent workflows to &ldquo;someone clicks approve,&rdquo; this names why that&rsquo;s theater and what to route by instead.</p>
-  <a class="btn" href="https://www.thoughtworks.com/radar/techniques/human-in-the-loop-theater">Read the source →</a>
+  <h3>1. Anthropic tried five ways to give an agent memory, and names exactly how each one failed before landing on its current design.</h3>
+  <span class="tag">(Anthropic Research, vendor-primary)</span>
+  <p>Writing to memory indiscriminately (Sonnet 3.7, in a Pokémon-playing test) produced a directory with &ldquo;413 files and 977,930 characters&rdquo; &mdash; ten times Fable 5&rsquo;s equivalent &mdash; because the game state kept changing and the record kept going stale, costing the agent more time combing notes than playing. A stricter rule, write-only-on-failure, cost both Opus 5 and Opus 4.7 &ldquo;much of the performance boost that memory gave them.&rdquo; A shared summary table lost facts outright (41 of 57 survived, versus all 57 when each agent kept its own page), and an unbounded wiki grew to 1.77 times the material it compressed while &ldquo;effectively abstracting nothing.&rdquo;</p>
+  <p>What worked: wiki paired with search beat either alone, and Claude Code caps what auto-loads to the first 200 lines or 25KB. A vendor&rsquo;s own postmortem on its own system, not a benchmark claim &mdash; the first first-party answer to a question this month&rsquo;s memory-tool coverage has only approached from outside.</p>
+  <a class="btn" href="https://www.anthropic.com/research/components-of-agent-memory">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Quantizing a small chat model to 4-bit scrambles its refusal behavior &mdash; and the scramble tracks the specific rounding error, not the bit width.</h3>
+  <h3>2. Anthropic also explains why it stopped trusting single-score safety graders and scripted test users.</h3>
+  <span class="tag">(Anthropic Research, vendor-primary)</span>
+  <p>A model that refuses every self-harm-adjacent prompt &ldquo;would get a perfect score on a refusal-rate eval&rdquo; without being any safer &mdash; so Anthropic moved graders to sets of yes/no questions instead of one overall number. Scripted adversarial test scripts &ldquo;can&rsquo;t anticipate&rdquo; how a model will actually respond, so a separate Claude model now generates the user&rsquo;s side of the conversation instead.</p>
+  <p>The same page discloses that Anthropic &ldquo;temporarily stopped running many evaluations that give models internet access&rdquo; and added real-time monitoring for the ones that still do. This is a usable methodology for anyone designing human-in-the-loop review or red-teaming, not just Anthropic&rsquo;s own process.</p>
+  <a class="btn" href="https://www.anthropic.com/research/building-strong-safety-evaluations">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. An EEG study on AI tutoring finds that the design judged &ldquo;best&rdquo; by test score is the one that gives answers away.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, MIT Media Lab)</span>
+  <p>MIT Media Lab researchers put 50 participants through three chatbot-tutor conditions wearing a Muse EEG headband. The unrestricted, no-guardrails chatbot produced the highest immediate post-test scores (p &lt; .03, d &gt; 0.80), while the EEG-adaptive, Socratic-style condition produced significantly higher engagement on the brain data (p = .018). The authors&rsquo; own reading: the unrestricted chatbot&rsquo;s win &ldquo;is not an evidence of deeper learning, but rather a result of the immediate post-test evaluation&rdquo; &mdash; the measurement window rewarded the shallowest design.</p>
+  <p>Double-blind, ACM-archived full-paper track at HAI 2026 (Osaka, Nov 16-19). The lesson travels past tutoring: an evaluation window is itself a design decision. Research: Alexandre Clin Deffarges, Nataliya Kosmyna, Pattie Maes, arXiv:2609.00584.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.00584">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. Teachers in Punjab drew a sharp, standard-shaped line around what they&rsquo;d let AI touch.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A University of British Columbia preprint finds that with a compliant reply prefilled, a 4-bit Qwen2.5-3B continues into harmful content more often than its full-precision parent, while on held-out jailbreaks a 4-bit Llama-3.2-3B complies 10.3 points less &mdash; opposite directions on two models both &ldquo;just quantized.&rdquo; The methodology has teeth: shuffled or Gaussian-noise control perturbations move behavior near zero, while real rounding error moves it near-linearly.</p>
-  <p>The upshot for anyone shipping an on-device chat model: it cannot inherit its parent&rsquo;s safety eval &mdash; the specific quantized artifact has to be re-tested against itself. Research: Ege Kaya, arXiv:2611.22186.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.22186">Read the source →</a>
+  <p>Nine of thirteen teachers studied took AI help with lesson planning, but none accepted AI-drafted learning objectives, and most wouldn&rsquo;t let AI handle emotional support for students. Several skipped AI grading even where answer keys existed, because students expect evidence of a teacher&rsquo;s own effort, not just a correct mark.</p>
+  <p>The researchers&rsquo; proposed fix: have the tool ask which external standard applies before generating, show the output beside that standard, and budget the checking time as a real cost &mdash; a standard is necessary but not sufficient for delegation. Research: arXiv:2611.27533.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.27533">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>3. Same Radar: stop relaying a coding agent&rsquo;s build failures through a human, and give the agent its own eyes on the pipeline.</h3>
-  <span class="tag">(Technology Radar Vol. 35, Assess ring)</span>
-  <p>Thoughtworks&rsquo; &ldquo;Agent pipeline responsibility&rdquo; entry makes the case bluntly: &ldquo;An agent that can&rsquo;t see the build status can&rsquo;t respect a team agreement not to push on red, while a human relaying failure logs into a chat window becomes a meat proxy.&rdquo;</p>
-  <p>The fix is mechanical: expose pipeline status and logs through the agent&rsquo;s own tools so it can see what broke and help fix it, and enforce the rules that matter with pre-push and server-side gates rather than hoping the agent behaves on its own.</p>
-  <a class="btn" href="https://www.thoughtworks.com/radar/techniques/agent-pipeline-responsibility">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. A home activity-recognition system that only wakes the camera when cheaper sensors say something is actually happening.</h3>
-  <span class="tag">(arXiv preprint)</span>
-  <p>OrganicHAR pairs privacy-preserving ambient sensors &mdash; radar, lidar, thermal arrays &mdash; with a vision-language model it calls on sparingly: queries to the VLM drop 90%, while accuracy holds at 79% for coarse activity categories and 73% for finer-grained ones once wearables are added, across a 12-person study. It&rsquo;s new to this corpus despite being roughly a year old by its real publication date (an ACM journal embargo delayed the arXiv posting).</p>
-  <p>The design decision it hands anyone building in-home sensing with a camera or VLM: gate the expensive, privacy-sensitive sensor behind cheap ambient ones, and only invoke it at flagged moments rather than continuously. Research: Prasoon Patidar et al., arXiv:2605.18455.</p>
-  <a class="btn" href="https://arxiv.org/abs/2605.18455">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. OpenAI&rsquo;s newest models drop support for the old tool-calling API outright, and introduce a real price lever for agents that can wait.</h3>
-  <span class="tag">(vendor changelog, independently corroborated)</span>
-  <p>GPT-6.2 Astra and Sol support Chat Completions for ordinary use, but &ldquo;tool calling requires the Responses API&rdquo; &mdash; full stop, per OpenAI&rsquo;s own changelog, independently confirmed by Simon Willison. The same changelog entry introduces background-completion windows: a two-hour window prices 30% below standard, an eight-hour window 40% below.</p>
-  <p>That&rsquo;s the first OpenAI-priced incentive making an always-on, non-interactive agent run cheaper to simply leave running than to invoke on demand. Anyone with a tool-calling agent still on Chat Completions needs to migrate or lose access to these models&rsquo; tool use entirely.</p>
-  <a class="btn" href="https://developers.openai.com/api/docs/changelog">Read the source →</a>
+  <h3>5. Five years of interviews with Chinese digital painters show the AI-collaboration boundary moving, not fixed.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Seventeen painters interviewed annually from 2021 to 2025 moved from blanket resistance &mdash; protecting observation, originality, signature, ownership &mdash; to bounded delegation: AI handling references, backgrounds, rough sketches, client-facing drafts, while copyright and creative labor stayed off-limits throughout. The shift tracked task type and career stage, not just model generation.</p>
+  <p>The implication: a revisable boundary control with provenance scaffolding and community authorship norms, not a single static permission setting. Research: arXiv:2609.09333.</p>
+  <a class="btn" href="https://arxiv.org/abs/2609.09333">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>A correction of yesterday&rsquo;s #1 item. The digest said a walking-training robot&rsquo;s uniformly positive feedback &ldquo;measurably worsens affect and perceived competence&rdquo; in older adults &mdash; the dossier found perceived competence was flat to three decimals, and the two items that actually moved were &ldquo;professional&rdquo; and &ldquo;leaves things to chance.&rdquo; Of 43 single-item tests run, five hit p &lt; .05 and none survives any standard multiple-comparison correction; four of the five &ldquo;significant&rdquo; results sit right at the arithmetic threshold a sample this size could even detect.</p>
-  <p>No performance comparison exists on any objective measure, though scores were announced to both groups and walking logs existed. The agent&rsquo;s own script had no path to agree a session had gone badly &mdash; which matches, item for item, what gerontology already calls elderspeak, a literature the paper never cites.</p>
-  <p class="dossier-path">dossiers/2026-11-21-the-five-effects-sat-on-the-arithmetic-floor-the-competence-item-did-not-move-and-the-agent-could-not-agree-it-went-badly.md</p>
+  <p>A correction of yesterday&rsquo;s #1 item (Thoughtworks&rsquo; &ldquo;human-in-the-loop theater&rdquo; / &ldquo;risk-tiered human oversight&rdquo; pair). The dossier traced the Trial blip&rsquo;s own links and found its three-tier scheme in neither cited source, and the two sources contradict each other on whether an LLM may assign the tier. The Meta paper it cites measures throughput on 535,290 diffs but reports no error rate for its LLM reviewer and nothing on review quality.</p>
+  <p>Two independent audits found the underlying failure directly &mdash; Rootly (3,661 PRs: 90.5% approved with no human comment) and a CMU/Stanford panel (substantive review falling from 39% to 21% of PRs) &mdash; with revert rates flat in both, meaning the standard metric cannot see the problem. No study compares tiered against uniform review, and where a tiering policy publishes its own error split, errors skew toward unnecessary holds (61%), not wrong approvals (&lt;1%).</p>
+  <p class="dossier-path">dossiers/2026-11-22-the-blip-cites-two-sources-that-disagree-the-approval-record-was-measured-twice-and-the-remedy-has-no-comparison.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -165,25 +165,23 @@
 <h2>Run notes</h2>
 
 <div class="item note">
-  <p><strong>A pipeline-health flag, not a research finding:</strong> the interaction lane resubmitted four of its five items this run as repeat duplicates of items already published or already killed in a prior run &mdash; three of them for a third time unchanged, one for a second time. This has been flagged by name for the next monthly pipeline audit. The ambient lane showed the same pattern at smaller scale (two of its three submissions were repeats). No lane came back with zero usable items this run.</p>
-  <p>Lane outcomes: practice and capability each placed two of today&rsquo;s five items and nothing was killed from either; ambient placed one of three submissions (the other two were the repeats above); interaction's sole clean item (a mixed-initiative sketch-authoring tool, arXiv:2611.04284) was verified but ranked below today's cap on weak evidence (an 8-person study).</p>
+  <p><strong>Lane outcomes:</strong> ambient submitted 1, survived (took the slot). interaction submitted 4, all 4 survived (2 at cap, 2 below cap). capability submitted 4, all 4 survived but all 4 ranked below cap &mdash; a second cycle running of this pattern, flagged for the next monthly audit as a pattern worth attention, not a verification failure. practice submitted 4, all 4 survived (2 at cap, 2 below cap).</p>
+  <p><strong>Quoting-discipline correction:</strong> two paraphrase-presented-as-verbatim corrections were made during verification of today&rsquo;s #1 item (the practice researcher&rsquo;s quotes were corrected to the source page&rsquo;s actual wording). Underlying numbers were all correct, no fact was fabricated, but this is the practice lane producing a defect already flagged for the interaction lane &mdash; noted for the next audit.</p>
+  <p><strong>Capability-lane correction (not published):</strong> a naming error was resolved in a below-cap item &mdash; a dramatic latency swing a researcher attributed to one model actually belongs to a sibling model. Corrected before ranking; the item never ran.</p>
   <p>Verified but below today&rsquo;s five-item cap (not to be resubmitted unchanged):</p>
   <ul>
-    <li>An independent open-source fix closes the gap between Gemma 4&rsquo;s claimed 37.5% KV-cache reduction and what today&rsquo;s serving engines actually deliver &mdash; <a href="https://arxiv.org/abs/2611.23035">arXiv:2611.23035</a></li>
-    <li>Google AI Edge Gallery ships fully offline on-device speech recognition and text-to-speech &mdash; <a href="https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/">developers.googleblog.com</a></li>
-    <li>OmniScribble: mixed-initiative authoring of animated sketches through inspectable, repairable AI decisions &mdash; <a href="https://arxiv.org/abs/2611.04284">arXiv:2611.04284</a></li>
-    <li>GitHub Next&rsquo;s Chopin rejects the binary &ldquo;accept or reject this plan&rdquo; review pattern &mdash; <a href="https://githubnext.com/projects/chopin/">githubnext.com/projects/chopin</a></li>
+    <li>ToRA, a streaming tool-use safety benchmark &mdash; capability</li>
+    <li>ToolTurns, a multi-turn tool-use benchmark &mdash; capability</li>
+    <li>Gemini 4 Neon/Hydrogen reasoning-effort latency, corrected model-naming error &mdash; capability</li>
+    <li>GLiDE, a calibrated decision model &mdash; capability</li>
+    <li>MSR &ldquo;Shared Understanding&rdquo; coordination-continuity framework paper &mdash; interaction</li>
+    <li>NN/g raw-vs-synthesized-data design study &mdash; interaction</li>
+    <li>GitHub Copilot Fusion GA, an update/extension of a prior digest item with a corrected customer-quote attribution &mdash; practice</li>
+    <li>The Browser Company&rsquo;s Josh Miller on ad-free Dia pricing, kept single-source &mdash; practice</li>
   </ul>
-  <p>Kill ledger:</p>
-  <ul>
-    <li>KILLED 2026-11-22 &mdash; When AI Agents Act on Our Behalf: A Taxonomy of Human-Agent Interaction Failure &mdash; <a href="https://arxiv.org/abs/2611.00291">arXiv:2611.00291</a> &mdash; duplicate-of-digest (third submission)</li>
-    <li>KILLED 2026-11-22 &mdash; Is That Clear? The Impacts of Clarifying Questions on Human-LLM Interaction &mdash; <a href="https://arxiv.org/abs/2611.01087">arXiv:2611.01087</a> &mdash; duplicate-of-digest (third submission)</li>
-    <li>KILLED 2026-11-22 &mdash; Must AI Spell It Out? Pragmatic Comprehension of Alerts in a Time-Critical Task &mdash; <a href="https://arxiv.org/abs/2611.03976">arXiv:2611.03976</a> &mdash; duplicate-of-digest (third submission)</li>
-    <li>KILLED 2026-11-22 &mdash; Agentic Path Maps: Exposing an Agent&rsquo;s Traversal Through the Garden of Forking Paths &mdash; <a href="https://arxiv.org/abs/2611.04183">arXiv:2611.04183</a> &mdash; duplicate-of-digest (second submission)</li>
-    <li>KILLED 2026-11-22 &mdash; &ldquo;Looks Fine to Me&rdquo; &mdash; gaze and physiological sensing catch what self-reported confidence misses &mdash; <a href="https://arxiv.org/abs/2610.27801">arXiv:2610.27801</a> &mdash; duplicate-of-digest/dossier</li>
-    <li>KILLED 2026-11-22 &mdash; 300ms of nod delay reads as empathy; an instant nod reads as proactive &mdash; <a href="https://doi.org/10.11184/his.28.3_397">doi.org/10.11184/his.28.3_397</a> &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-22 &mdash; Every (Willie Williams): a company abandoned personal AI agents for one shared agent &mdash; <a href="https://every.to/source-code/why-we-replaced-personal-agents-with-one-for-the-whole-company">every.to</a> &mdash; fetch-failed/paywalled</li>
-  </ul>
+  <p><strong>Questions:</strong> five entries open, at the five-open cap, so no new question could be added this run. None have yet crossed the 14-day expiry threshold (oldest is 13 days old).</p>
+  <p><strong>Branch hygiene (recurrence, not new):</strong> roughly 21 stray branches with git history unrelated to the main line were found again this run and left untouched, consistent with a prior run&rsquo;s flagging of this as a likely branch-based injection attempt.</p>
+  <p>Kill ledger: none. No item among today&rsquo;s 13 submitted items died outright this cycle.</p>
 </div>
 
 <footer>
