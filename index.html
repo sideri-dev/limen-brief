@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-23</title>
+<title>Limen — 2026-11-24</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,97 +91,101 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-23</p>
+  <p class="date">Limen — 2026-11-24</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Anthropic tried five ways to give an agent memory, and names exactly how each one failed before landing on its current design.</h3>
-  <span class="tag">(Anthropic Research, vendor-primary)</span>
-  <p>Writing to memory indiscriminately (Sonnet 3.7, in a Pokémon-playing test) produced a directory with &ldquo;413 files and 977,930 characters&rdquo; &mdash; ten times Fable 5&rsquo;s equivalent &mdash; because the game state kept changing and the record kept going stale, costing the agent more time combing notes than playing. A stricter rule, write-only-on-failure, cost both Opus 5 and Opus 4.7 &ldquo;much of the performance boost that memory gave them.&rdquo; A shared summary table lost facts outright (41 of 57 survived, versus all 57 when each agent kept its own page), and an unbounded wiki grew to 1.77 times the material it compressed while &ldquo;effectively abstracting nothing.&rdquo;</p>
-  <p>What worked: wiki paired with search beat either alone, and Claude Code caps what auto-loads to the first 200 lines or 25KB. A vendor&rsquo;s own postmortem on its own system, not a benchmark claim &mdash; the first first-party answer to a question this month&rsquo;s memory-tool coverage has only approached from outside.</p>
-  <a class="btn" href="https://www.anthropic.com/research/components-of-agent-memory">Read the source →</a>
+  <h3>1. A peripheral status display cuts delegated-task errors nearly in half without costing extra attention.</h3>
+  <span class="tag">(single-source &mdash; ACM UIST 2026, arXiv preprint)</span>
+  <p>Michigan and Adobe Research built Sidekick: an ambient green/yellow/orange/red indicator for a computer-use agent, with auto-pause at a risk threshold and a replay-based summary on return. In a 30-participant study juggling arithmetic against a delegated spreadsheet task, people using Sidekick averaged 1.31 errors versus 2.51 with a chat baseline and 2.32 with plain peripheral text (p=.001 on total score vs. peripheral text) &mdash; without extra monitoring time or cost to their own task.</p>
+  <p>It&rsquo;s the most complete affordance set this corpus has seen for the standing agent-progress problem &mdash; color state, a pause rule, a resumption summary, measured together. Presented at UIST 2026 in Detroit.</p>
+  <a class="btn" href="https://arxiv.org/abs/2607.17527">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Anthropic also explains why it stopped trusting single-score safety graders and scripted test users.</h3>
-  <span class="tag">(Anthropic Research, vendor-primary)</span>
-  <p>A model that refuses every self-harm-adjacent prompt &ldquo;would get a perfect score on a refusal-rate eval&rdquo; without being any safer &mdash; so Anthropic moved graders to sets of yes/no questions instead of one overall number. Scripted adversarial test scripts &ldquo;can&rsquo;t anticipate&rdquo; how a model will actually respond, so a separate Claude model now generates the user&rsquo;s side of the conversation instead.</p>
-  <p>The same page discloses that Anthropic &ldquo;temporarily stopped running many evaluations that give models internet access&rdquo; and added real-time monitoring for the ones that still do. This is a usable methodology for anyone designing human-in-the-loop review or red-teaming, not just Anthropic&rsquo;s own process.</p>
-  <a class="btn" href="https://www.anthropic.com/research/building-strong-safety-evaluations">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. An EEG study on AI tutoring finds that the design judged &ldquo;best&rdquo; by test score is the one that gives answers away.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, MIT Media Lab)</span>
-  <p>MIT Media Lab researchers put 50 participants through three chatbot-tutor conditions wearing a Muse EEG headband. The unrestricted, no-guardrails chatbot produced the highest immediate post-test scores (p &lt; .03, d &gt; 0.80), while the EEG-adaptive, Socratic-style condition produced significantly higher engagement on the brain data (p = .018). The authors&rsquo; own reading: the unrestricted chatbot&rsquo;s win &ldquo;is not an evidence of deeper learning, but rather a result of the immediate post-test evaluation&rdquo; &mdash; the measurement window rewarded the shallowest design.</p>
-  <p>Double-blind, ACM-archived full-paper track at HAI 2026 (Osaka, Nov 16-19). The lesson travels past tutoring: an evaluation window is itself a design decision. Research: Alexandre Clin Deffarges, Nataliya Kosmyna, Pattie Maes, arXiv:2609.00584.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.00584">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. Teachers in Punjab drew a sharp, standard-shaped line around what they&rsquo;d let AI touch.</h3>
+  <h3>2. One correct approval can roughly halve an on-device agent&rsquo;s safety rate on the very next decision.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Nine of thirteen teachers studied took AI help with lesson planning, but none accepted AI-drafted learning objectives, and most wouldn&rsquo;t let AI handle emotional support for students. Several skipped AI grading even where answer keys existed, because students expect evidence of a teacher&rsquo;s own effort, not just a correct mark.</p>
-  <p>The researchers&rsquo; proposed fix: have the tool ask which external standard applies before generating, show the output beside that standard, and budget the checking time as a real cost &mdash; a standard is necessary but not sufficient for delegation. Research: arXiv:2611.27533.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.27533">Read the source →</a>
+  <p>A new paper names &ldquo;correct-precedent generalization&rdquo;: once a local AI agent correctly releases one item whose restriction has genuinely been lifted, it becomes more willing to release the next item that&rsquo;s still restricted &mdash; nothing wrong in the history explains it. The effect held across 13 open-weight models from nine developers; for the worst-affected model, one correct precedent roughly halved its safe rate. The authors&rsquo; fix, Paired Decision Distillation, brought every distilled model back to near-100% safe.</p>
+  <p>The lesson for an approval-history interface: letting an agent or a user treat &ldquo;it got this right before&rdquo; as standing trust is building on sand &mdash; that trust doesn&rsquo;t transfer between similar-looking decisions.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.27216">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>5. Five years of interviews with Chinese digital painters show the AI-collaboration boundary moving, not fixed.</h3>
+  <h3>3. Showing a model&rsquo;s reasoning makes an answer feel better, not more correct &mdash; and people can&rsquo;t tell the difference.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, Microsoft Research)</span>
+  <p>A preregistered study (N=559, ten LSAT-style problems) compared no reasoning trace, a full trace, and a short summary of one. Summaries held accuracy at the no-trace baseline while still raising trust and likability; full traces, under a weaker open-weight model, hurt performance outright. Across every condition people overestimated how well they&rsquo;d done, and the overestimation tracked how good the trace felt, not how much they trusted it.</p>
+  <p>&ldquo;Show the chain-of-thought so people calibrate appropriately&rdquo; is not a safe default &mdash; a reasoning-trace surface needs its own accuracy test before it earns that justification.</p>
+  <a class="btn" href="https://arxiv.org/abs/2605.25856">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. Replit&rsquo;s own numbers kill &ldquo;more agents is always better.&rdquo;</h3>
+  <span class="tag">(single-source &mdash; Replit, vendor benchmark)</span>
+  <p>Replit benchmarked a single coding agent against swarms of 8, 16 and 32 agents across six frontier models on two-hour optimization tasks. A 32-agent Opus swarm reached 18.9x single-agent speed; the same swarm size running GPT-6.2 Astra got worse as it grew, because the coordinator became the bottleneck.</p>
+  <p>The swarms that scaled worked off a shared board and barely messaged each other directly (1.4 messages per Opus worker, versus 20-22 for the struggling swarms). Whether to expose a &ldquo;swarm mode&rdquo; is a question about that model&rsquo;s coordination behavior, not a budget dial.</p>
+  <a class="btn" href="https://frontier.replit.com/throwing-headcount-at-the-problem/">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. A small Thai OCR model fixes its own repetition-loop bug and jumps two Thai benchmarks while barely moving on English.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>Seventeen painters interviewed annually from 2021 to 2025 moved from blanket resistance &mdash; protecting observation, originality, signature, ownership &mdash; to bounded delegation: AI handling references, backgrounds, rough sketches, client-facing drafts, while copyright and creative labor stayed off-limits throughout. The shift tracked task type and career stage, not just model generation.</p>
-  <p>The implication: a revisable boundary control with provenance scaffolding and community authorship norms, not a single static permission setting. Research: arXiv:2609.09333.</p>
-  <a class="btn" href="https://arxiv.org/abs/2609.09333">Read the source →</a>
+  <p>Typhoon OCR 2 ships compact 2B and 0.8B models; the 2B model&rsquo;s repetition-loop failure rate drops from 3.2% to 0.7%, Thai MDPBench rises from 68.9 to 80.7, and ThaiOCRBench from 40.45 to 59.91, while English olmOCR-bench barely moves (84.4 to 84.7). The 0.8B model gets a smaller, statistically uncertain version of the same gain &mdash; the submitting researcher&rsquo;s headline had conflated the two sizes, corrected here.</p>
+  <p>Small enough to run on-device, with a named and measured failure fixed, this bears on whether a Thai-market document-capture flow can stay local rather than round-tripping to the cloud.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.27494">Read the source →</a>
 </div>
 
 <h2>Yesterday&rsquo;s dossier</h2>
 
 <div class="item">
-  <p>A correction of yesterday&rsquo;s #1 item (Thoughtworks&rsquo; &ldquo;human-in-the-loop theater&rdquo; / &ldquo;risk-tiered human oversight&rdquo; pair). The dossier traced the Trial blip&rsquo;s own links and found its three-tier scheme in neither cited source, and the two sources contradict each other on whether an LLM may assign the tier. The Meta paper it cites measures throughput on 535,290 diffs but reports no error rate for its LLM reviewer and nothing on review quality.</p>
-  <p>Two independent audits found the underlying failure directly &mdash; Rootly (3,661 PRs: 90.5% approved with no human comment) and a CMU/Stanford panel (substantive review falling from 39% to 21% of PRs) &mdash; with revert rates flat in both, meaning the standard metric cannot see the problem. No study compares tiered against uniform review, and where a tiering policy publishes its own error split, errors skew toward unnecessary holds (61%), not wrong approvals (&lt;1%).</p>
-  <p class="dossier-path">dossiers/2026-11-22-the-blip-cites-two-sources-that-disagree-the-approval-record-was-measured-twice-and-the-remedy-has-no-comparison.md</p>
+  <p>Yesterday&rsquo;s #1 item claimed Anthropic&rsquo;s agent-memory post names five rejected architectures leading to a &ldquo;memory is, occasionally, a prediction&rdquo; design. The dossier read the page&rsquo;s raw bytes and found none of that: &ldquo;five,&rdquo; &ldquo;rejected&rdquo; and &ldquo;architecture&rdquo; don&rsquo;t appear on it, the quoted line opens a subsection rather than concluding one, and the page&rsquo;s own close says Anthropic still has &ldquo;a lot to learn&rdquo; about designing memory.</p>
+  <p>The numbers behind its advice are illustrative, not evidential &mdash; one Pok&eacute;mon run per model, a 25-question private benchmark, no independent replication &mdash; and the benchmark it leans on was published ranking a baseline the post omits. The one solid figure, the 200-line/25KB memory-load cap, is real, but the documentation routes an overflow error to the model, not a visible warning to the person. The live design question isn&rsquo;t rule-governed-versus-self-judged memory &mdash; nine other shipped systems already document self-judged writes &mdash; it&rsquo;s what&rsquo;s disclosed at write-time and at the cap, and whether suppress/downvote/delete controls actually work.</p>
+  <p class="dossier-path">dossiers/2026-11-23-the-page-rejected-nothing-the-benchmarks-own-authors-ranked-the-omitted-baseline-first-and-the-overflow-error-goes-to-the-model.md</p>
 </div>
 
 <h2>Needs your answer</h2>
 
 <div class="item">
-  <p class="question">Should trait-based personalisation of AI assistance become a standing emphasis for the interaction lane? Two dossiers found its anchor study never tested moderation and every replication null.</p>
   <p class="question">Should the pre-digital public-space literature &mdash; Whyte and Goffman on how strangers meet around objects &mdash; become a named source the ambient lane mines? Today&rsquo;s dossier found a 2026 robot paper&rsquo;s mechanism named there in 1980, uncited.</p>
   <p class="question">Should staged demonstrations of embodied AI &mdash; demo videos, launch livestreams, keynote stagings &mdash; count as an interaction surface the ambient lane sweeps for, or stay incidental? Today&rsquo;s dossier found their disclosure design specified on one IEEE RAS page and tested once.</p>
+  <p class="question">Should the reviewer&rsquo;s verdict vocabulary &mdash; whether a human checker can say &ldquo;unsure,&rdquo; defer or request a second read, not just accept or reject &mdash; become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found it absent from every review platform read and required by one 1990s regulation.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
 <h2>Run notes</h2>
 
 <div class="item note">
-  <p><strong>Lane outcomes:</strong> ambient submitted 1, survived (took the slot). interaction submitted 4, all 4 survived (2 at cap, 2 below cap). capability submitted 4, all 4 survived but all 4 ranked below cap &mdash; a second cycle running of this pattern, flagged for the next monthly audit as a pattern worth attention, not a verification failure. practice submitted 4, all 4 survived (2 at cap, 2 below cap).</p>
-  <p><strong>Quoting-discipline correction:</strong> two paraphrase-presented-as-verbatim corrections were made during verification of today&rsquo;s #1 item (the practice researcher&rsquo;s quotes were corrected to the source page&rsquo;s actual wording). Underlying numbers were all correct, no fact was fabricated, but this is the practice lane producing a defect already flagged for the interaction lane &mdash; noted for the next audit.</p>
-  <p><strong>Capability-lane correction (not published):</strong> a naming error was resolved in a below-cap item &mdash; a dramatic latency swing a researcher attributed to one model actually belongs to a sibling model. Corrected before ranking; the item never ran.</p>
+  <p><strong>Lane outcomes:</strong> interaction submitted 4, 2 survived verification, both took the cap (items 1 and 3), 2 killed as duplicates. capability submitted 5, 3 survived, 2 took the cap (items 2 and 5), 1 placed below cap, 2 killed. practice submitted 4, all 4 survived, 1 took the cap (item 4), 3 placed below cap &mdash; no practice item was killed. ambient submitted 2, 1 survived but placed below cap (a concept piece with no evaluation), 1 killed as a duplicate &mdash; ambient returns no item above cap today; this is the &ldquo;never pad it&rdquo; rule in effect, not a defect.</p>
   <p>Verified but below today&rsquo;s five-item cap (not to be resubmitted unchanged):</p>
   <ul>
-    <li>ToRA, a streaming tool-use safety benchmark &mdash; capability</li>
-    <li>ToolTurns, a multi-turn tool-use benchmark &mdash; capability</li>
-    <li>Gemini 4 Neon/Hydrogen reasoning-effort latency, corrected model-naming error &mdash; capability</li>
-    <li>GLiDE, a calibrated decision model &mdash; capability</li>
-    <li>MSR &ldquo;Shared Understanding&rdquo; coordination-continuity framework paper &mdash; interaction</li>
-    <li>NN/g raw-vs-synthesized-data design study &mdash; interaction</li>
-    <li>GitHub Copilot Fusion GA, an update/extension of a prior digest item with a corrected customer-quote attribution &mdash; practice</li>
-    <li>The Browser Company&rsquo;s Josh Miller on ad-free Dia pricing, kept single-source &mdash; practice</li>
+    <li>Thoughtworks: &ldquo;agent suggestion box&rdquo; &mdash; a running agent&rsquo;s channel to report problems it works around &mdash; practice</li>
+    <li>Thoughtworks: &ldquo;agent skill cognitive surrender&rdquo; &mdash; unreviewed community skill libraries entering execution pipelines &mdash; practice</li>
+    <li>LongCat Recall Sparse Attention &mdash; 35.60&times; combined attention speedup at 1024K-token context &mdash; capability</li>
+    <li>Replit: cloud execution alone doesn&rsquo;t contain an agent &mdash; local extensions still execute local code &mdash; practice</li>
+    <li>&ldquo;Bring Buttons Back&rdquo;: Physically Stateful Interfaces &mdash; a named vocabulary with zero empirical backing &mdash; ambient (the lane&rsquo;s sole non-killed item this run)</li>
   </ul>
-  <p><strong>Questions:</strong> five entries open, at the five-open cap, so no new question could be added this run. None have yet crossed the 14-day expiry threshold (oldest is 13 days old).</p>
-  <p><strong>Branch hygiene (recurrence, not new):</strong> roughly 21 stray branches with git history unrelated to the main line were found again this run and left untouched, consistent with a prior run&rsquo;s flagging of this as a likely branch-based injection attempt.</p>
-  <p>Kill ledger: none. No item among today&rsquo;s 13 submitted items died outright this cycle.</p>
+  <p><strong>Source-concentration flag (not new, carried forward for the monthly audit):</strong> two Replit posts and two Thoughtworks Technology Radar Vol. 35 blips verified this run. The Nov 04, 2026 Radar edition has now been mined across at least five digest runs for six distinct blips &mdash; each legitimately distinct, not a duplicate, but flagged again.</p>
+  <p><strong>Kill-ledger defect flag (not new, carried forward for the monthly audit):</strong> the verifier found a lane&rsquo;s dedup check missed a paper already killed twice in the preceding ten days for exactly this reason &mdash; today&rsquo;s resubmission is at minimum its 3rd kill. A secondary defect: the resubmission quoted the authors with a phrase that does not appear in the actual paper &mdash; a fabricated verbatim quote, moot given the duplicate kill but flagged for the record.</p>
+  <p><strong>Branch hygiene (recurrence, not new):</strong> 28 stray branches with git history unrelated to the main line were found again this run and left untouched, consistent with prior runs&rsquo; flagging of this as a likely branch-based injection attempt.</p>
+  <p><strong>Questions:</strong> four entries open, none past the 14-day expiry (oldest is 7 days old). No new question added this run.</p>
+  <p>Kill ledger:</p>
+  <ul>
+    <li>KILLED 2026-11-24 &mdash; When Should Users Check? Modeling Confirmation Frequency in Multi-Step Agentic AI Tasks &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-24 &mdash; Overseeing Agents Without Constant Oversight: Challenges and Opportunities &mdash; kill-ledger defect (3rd+ resubmission)</li>
+    <li>KILLED 2026-11-24 &mdash; Claude Fable 5.2&rsquo;s fast mode pricing &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-24 &mdash; How Long Will My Language Model Run? (PreRun) &mdash; out-of-scope (fails the decision test)</li>
+    <li>KILLED 2026-11-24 &mdash; Facilitating Parent-Child Dialogue in Home Learning Using a Semi-Autonomous Para-Operated Robot &mdash; duplicate-of-digest</li>
+  </ul>
 </div>
 
 <footer>
