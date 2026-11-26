@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-25</title>
+<title>Limen — 2026-11-26</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,66 +91,58 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-25</p>
+  <p class="date">Limen — 2026-11-26</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. Anthropic names the mechanics for bounding an agent nobody is watching in real time.</h3>
-  <span class="tag">(single-source &mdash; vendor-primary, Claude Platform)</span>
-  <p>Its own architecture guide for background Claude agents explains why calling the agent directly from each event source fails &mdash; competing runs, lost events &mdash; and replaces it with an event inbox as the single source of truth. When the agent needs a human decision, it defers rather than blocking: the run ends, the session saves mid-call, and the answer returns as a new inbox event.</p>
-  <p>Notification volume follows a stated rule &mdash; start quiet, earn more of the user&rsquo;s attention over time &mdash; trading the full step-by-step breakdown for the outcome and a few details. One of the clearest statements yet of what a human-in-the-loop interface looks like once there&rsquo;s no loop to sit in.</p>
-  <a class="btn" href="https://claude.com/blog/building-always-on-agents">Read the source →</a>
+  <h3>1. A migrating dialogue agent stays &ldquo;the same&rdquo; across devices only when its voice and speaking style stay consistent &mdash; not when the hardware looks alike.</h3>
+  <span class="tag">(single-source &mdash; Human Interface Society journal, Japan)</span>
+  <p>A one-day-old Japanese HIS journal paper runs two experiments on an agent that moves between a robot and a pair of earphones. Hold the physical appearance constant and change voice, speaking style or conversational content, and identity perception drops &mdash; any one of the three is enough.</p>
+  <p>But when voice and speaking style are kept and the conversation doesn&rsquo;t contradict itself, people perceive it as the same agent across two devices that don&rsquo;t look alike at all. For anyone building a persona meant to span a robot, earbuds and a phone app, the lever that matters is the voice and the conversation, not matching the casing.</p>
+  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/4/28_631/_article/-char/ja">Read the source →</a>
 </div>
 
 <hr>
 
 <div class="item">
-  <h3>2. Streaming the same answer beats replaying it instantly by 26 points in blind votes.</h3>
+  <h3>2. AI clones of museum science communicators got measurably better by their own creators&rsquo; judgment &mdash; and visitor ratings barely moved.</h3>
+  <span class="tag">(single-source &mdash; ACM CUI 2026 Best Paper)</span>
+  <p>A five-day field deployment put AI Clones of six professional science communicators in a museum, running over 450 conversation sessions. The source performers rated their own clones significantly improved on nine of ten communication dimensions.</p>
+  <p>Visitors rating the same clones saw no overall change, reaching significance for only one of six clones after correction. The trap generalizes past this paper: a creator&rsquo;s self-review of their own AI clone improving tells you nothing about whether the audience it&rsquo;s actually for noticed.</p>
+  <a class="btn" href="https://doi.org/10.1145/3816046.3816205">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Deployed support agents almost never get a second chance to repair a conversation.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint, CMU / UC Santa Cruz)</span>
+  <p>Measured against a Reddit human-conversation baseline, one production pipeline&rsquo;s agents see the original user return to continue a thread 1.2% of the time versus 40.9% for humans, and multi-turn continuation after a correction is nearly absent (under 0.1% vs. 38.5%).</p>
+  <p>The researchers are careful to say this describes one deployed pipeline, not agents in general &mdash; but the mechanism is instructive: if the platform gives no return path for a second try, repair can&rsquo;t happen no matter how capable the model is underneath.</p>
+  <a class="btn" href="https://arxiv.org/abs/2604.00518">Read the source →</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. GitHub&rsquo;s own postmortem: giving Copilot better review tools made its code reviews worse, and the fix was rewriting the instructions, not the tools.</h3>
+  <span class="tag">(vendor-primary &mdash; GitHub Blog)</span>
+  <p>&ldquo;The tools weren&rsquo;t the problem. The instructions were,&rdquo; GitHub writes, after tool access alone regressed review quality. Rewriting the focused tool instructions cut average review cost roughly 20%.</p>
+  <p>The more useful part is the negative control they report on themselves: the same instruction fix tried in the CLI &ldquo;did not produce the same kind of win&rdquo; &mdash; a stated reminder that a design fix proven on one surface doesn&rsquo;t automatically transfer to another.</p>
+  <p class="note">Source link could not be carried through this run &mdash; see the full version for the Run notes explaining the gap.</p>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Giving an agent its own operation IDs doesn&rsquo;t actually stop duplicate actions from causing harm.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A study built on the French government&rsquo;s compar:IA chatbot arena found identical stored text won 57% of decisive blind votes when streamed but only 29% when replayed character-by-character from cache &mdash; a 25.8-point swing for literally the same words. Congestion-driven slowness, checked across 324,029 and 4.3 million conversations, cost no detectable vote share but did cut whether people asked a follow-up question.</p>
-  <p>A caching layer built purely to cut latency can quietly cost perceived answer quality; real slowness mainly bleeds engagement, not scores.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.33050">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Agents barely recover from their own mistakes, and &ldquo;fixing&rdquo; the error isn&rsquo;t the same as finishing the job.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, Georgia Tech)</span>
-  <p>Georgia Tech&rsquo;s SecondChance benchmark drew natural errors from 12 models&rsquo; own real attempts at tau-bench, BFCL and AppWorld tasks, then asked each model to recover. The best model completed only 16% of recoveries unaided and 27% with explicit repair guidance; one model could correct a mistake and still fail the task outright, and 40 of 84 &ldquo;successful&rdquo; continuations left the original error sitting in place.</p>
-  <p>A hard ceiling on how much autonomy any interface can grant before a human has to check the repair, not just the completion flag.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.31586">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. A non-blocking agent runtime hits 100% failure recovery versus 55% for restart-from-scratch &mdash; up to 12.7x faster.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, vendor-adjacent: Amazon)</span>
-  <p>&ldquo;fork() for Agents&rdquo; recovers from a failed step via Sub-Graph Recovery instead of replaying the whole trajectory; across 14,434 runs on four benchmarks it reached full recovery where whole-trajectory replay exhausted its budget, with up to 12.7x speedup where the task allowed parallel recovery.</p>
-  <p>One author lists an Amazon affiliation, but the paper makes no claim about &ldquo;how good&rdquo; the system is beyond the measured figures &mdash; worth a close read for anyone deciding whether a failed agent step restarts the whole task or resumes from the break.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.31727">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. A memory system grades itself on whether recall improves the next answer, not on how faithfully it remembers.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, vendor-adjacent: DigitalOcean)</span>
-  <p>Leto beats six baseline memory systems by 16.3 points on PrefEval accuracy and 3.1 points on PERMA task completion, with the gain growing as conversation chains get deeper, while serving fewer context tokens than retrieval over raw history for comparable long-context understanding. Authors list a DigitalOcean affiliation; again the claim is a measured number, not an adjective.</p>
-  <p>The real contribution is the reframe: grade a &ldquo;memory&rdquo; feature on whether it changes the next answer for the better, not on conversational fidelity.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.33005">Read the source →</a>
-</div>
-
-<h2>Yesterday&rsquo;s dossier</h2>
-
-<div class="item">
-  <p>Yesterday&rsquo;s #1 item was a resubmission: the Sidekick paper had already been read and corrected by the corpus on 2026-11-07, and the digest&rsquo;s own &ldquo;no duplicate found&rdquo; line was false. Its headline claim that Sidekick &ldquo;beat&rdquo; the chat baseline reintroduces an error already on record &mdash; the paper&rsquo;s own number is a non-significant &ldquo;marginal trend&rdquo; (p=.079), not a win. Seventeen days after publication the paper still has zero citations, no code, no data, no award and no replication &mdash; visibility, not validation.</p>
-  <p>The one candidate for independent corroboration, Google DeepMind&rsquo;s Sidecar, turns out to measure something different: its &ldquo;no primary-task cost&rdquo; result is a self-reported workload rating, not the objective check Sidekick&rsquo;s own null needs. Nothing published yet connects Sidekick&rsquo;s color-ladder stuck-agent detector to its error-count result &mdash; the mechanism and the outcome have never been measured together.</p>
-  <p class="dossier-path">dossiers/2026-11-24-the-item-had-already-been-read-the-neighbours-null-was-a-self-report-and-the-stop-rules-price-was-already-published.md</p>
+  <p>A new measurement paper finds roughly a quarter of agent executions need recovery, and 30 of 143 confirmed partial executions end up followed by a harmful recovery attempt.</p>
+  <p>The part worth remembering: identifier-based duplicate protection &mdash; the model tagging each action so a repeat can be recognized and skipped &mdash; doesn&rsquo;t detectably reduce harm, because the model just issues a new identifier for what is, in reality, the same operation. Duplicate-call detectors catch three-quarters of duplicates but only two-fifths of the actual harm.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.31554">Read the source →</a>
 </div>
 
 <h2>Needs your answer</h2>
@@ -158,31 +150,33 @@
 <div class="item">
   <p class="question">Should the pre-digital public-space literature &mdash; Whyte and Goffman on how strangers meet around objects &mdash; become a named source the ambient lane mines? Today&rsquo;s dossier found a 2026 robot paper&rsquo;s mechanism named there in 1980, uncited.</p>
   <p class="question">Should staged demonstrations of embodied AI &mdash; demo videos, launch livestreams, keynote stagings &mdash; count as an interaction surface the ambient lane sweeps for, or stay incidental? Today&rsquo;s dossier found their disclosure design specified on one IEEE RAS page and tested once.</p>
-  <p class="question">Should the reviewer&rsquo;s verdict vocabulary &mdash; whether a human checker can say &ldquo;unsure,&rdquo; defer or request a second read, not just accept or reject &mdash; become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found it absent from every review platform read and required by one 1990s regulation.</p>
+  <p class="question">Should the reviewer&rsquo;s verdict vocabulary &mdash; whether a human checker can say &ldquo;unsure&rdquo;, defer or request a second read, not just accept or reject &mdash; become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found it absent from every review platform read and required by one 1990s regulation.</p>
   <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
 </div>
 
 <h2>Run notes</h2>
 
 <div class="item note">
-  <p><strong>Lane outcomes:</strong> capability submitted and verified 4 items, all 4 took the cap (items 2&ndash;5) on independently-verified merit, not ranking bias. practice contributed 1 genuine survivor (item 1) plus 1 legitimate below-cap item (a Replit benchmark update). <strong>Interaction and ambient both returned zero surviving items this run &mdash; not the thin-lane &ldquo;honest-empty&rdquo; case.</strong> Every submission from both lanes was a straight duplicate of material already published in this corpus days to weeks earlier. Flagged for the monthly audit: this is now at least three lanes showing the same &ldquo;didn&rsquo;t check the existing record before submission&rdquo; pattern in recent runs.</p>
-  <p><strong>Vendor-adjacency flags:</strong> item 4 carries an Amazon-affiliated author; item 5 carries DigitalOcean-affiliated authors. Both pass full verification and the relevance bar on measured benchmark figures with no &ldquo;how good&rdquo; marketing claim, so both are marked rather than killed.</p>
-  <p><strong>Erratum flagged (yesterday&rsquo;s digest, not today&rsquo;s):</strong> today&rsquo;s dossier found yesterday&rsquo;s #1 item was itself an undetected resubmission of a paper already read and corrected eighteen days earlier, and its &ldquo;beat the chat baseline&rdquo; framing reintroduced an error already on record (the paper&rsquo;s own figure is a non-significant &ldquo;marginal trend&rdquo;). The original digest is not edited, per standing policy &mdash; the correction lives in the dossier and is carried into this page above. Yesterday&rsquo;s public page already carried the uncorrected claim for one day.</p>
+  <p><strong>Lane results:</strong> interaction submitted 5, 3 survived; capability submitted 4, all 4 survived clean; practice submitted 4, 3 survived; ambient submitted 2, both survived and both ranked above everything else this run. No lane returned empty.</p>
+  <p><strong>Corrections made in place (not kills):</strong> item 5&rsquo;s (Agent Recovery Gone Wrong) quoted figure on identifier-based duplicate protection was corrected to the paper&rsquo;s actual wording; Superhuman&rsquo;s quoted speaker was corrected from a misattributed CPO title to the page&rsquo;s actual attribution (Noah Silverstein, Head of Product Marketing); Descript&rsquo;s claimed July update date was dropped as unsupported by the page&rsquo;s own metadata, which instead shows the piece is over 13 months old; LogToPersona&rsquo;s synthetic (not real-user) evaluation data was flagged and kept in its caveat below.</p>
+  <p><strong>Recency flags carried forward (none killed on age alone):</strong> several items above and below the cap sit past the 7-day recency window. Most carry a stated or self-evident durability reason (a platform/affordance scope statement; a design-trap finding rather than a capability claim); a few plausibly fit the durable-design-principle exception without being explicitly defended as such by their submitting researcher, and one below-cap survivor has no durability reason given and the thinnest evidence base of anything that cleared verification this run.</p>
+  <p><strong>Reporting gap flagged for the monthly audit:</strong> three items this run &mdash; all from the practice lane &mdash; arrived with no source URL, only an outlet name, title and byline. All three otherwise passed full verification. No URL was reconstructed from memory; one (GitHub&rsquo;s Copilot code-review post, item 4 above) lost its source link in this render as a result.</p>
   <p>Verified but below today&rsquo;s five-item cap (not to be resubmitted unchanged):</p>
   <ul>
-    <li>Update: Replit&rsquo;s Missions stress-test, now with quantified detection-latency, volume and accuracy numbers &mdash; practice</li>
+    <li>&ldquo;One Step, Four Clocks: How GUI Agents Fall Out of Step&rdquo; (Chronotope) &mdash; cuts median end-to-end latency 85.5% for a 27B model, with its &ldquo;Moving Balloon&rdquo; fix raising one task&rsquo;s success from 0% to 100% at no response-time cost &mdash; capability</li>
+    <li>LimoBench: &ldquo;How Street Smart Are Large Language Models?&rdquo; &mdash; ungrounded accuracy of 3.1% (GPT-6 Luna) vs. 99.3% with tool access, at +0.2s latency / 7.7x tokens / 2.2x cost &mdash; capability</li>
+    <li>LogToPersona &mdash; a persona-prediction benchmark and memory-efficient method cutting memory footprint up to 39%, evaluated on a synthetic benchmark of 1,600 persona-log pairs, not real user logs &mdash; capability</li>
+    <li>Superhuman, &ldquo;Beyond the Toggle Tax: Friction-Free AI&rdquo; &mdash; a six-question friction test, quote correctly attributed to Noah Silverstein (Head of Product Marketing for Superhuman Go), citing a 2022 HBR study (137 employees, 20 teams, three Fortune 500 companies) on app-switching &mdash; practice</li>
+    <li>Descript, &ldquo;Designing for AI,&rdquo; John Voss (Head of Design) &mdash; on designing for non-verbal and aphasic users and underrepresented languages, and predictability as the usability bar when money or safety are at stake; actual age per page schema is November 2026, not the July update as submitted &mdash; practice</li>
+    <li>&ldquo;Supporting Researcher Control in AI-Assisted Social Media Analysis&rdquo; (AI4OSN) &mdash; mean SUS score of 79.7, with novice participants showing descriptively greater alignment with AI output than experienced ones; authors flag this as exploratory &mdash; interaction</li>
+    <li>CRiDiT: a run-time trust-calibration testbed &mdash; 144 logged interaction steps across fifteen sessions, corrections narrowed the gap in all 6 observed cases; thinnest survivor this run (no stated venue, n=15) &mdash; interaction</li>
   </ul>
-  <p><strong>Questions:</strong> four entries open, none past the 14-day expiry (oldest is 8 days old). No new question added this run.</p>
+  <p><strong>Questions:</strong> five entries open, none answered this run, none past the 14-day expiry (oldest is 9 days old). The file is at its five-open cap &mdash; no new question could be added this run regardless of material.</p>
   <p>Kill ledger:</p>
   <ul>
-    <li>KILLED 2026-11-25 &mdash; Social signals dominate clinician trust in medical AI &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-25 &mdash; TRACE: an agent&rsquo;s memory of user politics shifts citations by up to 39pp &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-25 &mdash; TokenEconomizer stuck-agent escalation &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-25 &mdash; Context Libraries: How AI Power Users Manage Context Engineering &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-25 &mdash; Korean Cartoonists Association survey &mdash; duplicate-of-dossier, named kill-ledger defect (6th&ndash;7th occurrence)</li>
-    <li>KILLED 2026-11-25 &mdash; &ldquo;How we built Linear Agent&rdquo; &mdash; duplicate-of-digest, named kill-ledger defect (5th occurrence)</li>
-    <li>KILLED 2026-11-25 &mdash; Zero of 49 Chinese smart-home apps give bystanders disclosure/consent/deletion &mdash; duplicate-of-digest</li>
-    <li>KILLED 2026-11-25 &mdash; Souffleur: glanceable voice-conversation display vs. chat transcript &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-26 &mdash; Plover: Steering GUI Agents through Plan-Centric Interaction &mdash; unsupported-claim + age</li>
+    <li>KILLED 2026-11-26 &mdash; When Repair Fails: A Preliminary In-the-Wild Audit of User Correction in Grok &mdash; fetch-failed</li>
+    <li>KILLED 2026-11-26 &mdash; Japan Federation of Actors (日本俳優連合) AI voice-use guideline &mdash; duplicate-of-digest, named resubmission defect</li>
   </ul>
 </div>
 
