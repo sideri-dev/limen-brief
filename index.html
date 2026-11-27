@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limen — 2026-11-26</title>
+<title>Limen — 2026-11-27</title>
 <style>
   :root {
     --bg: #faf9f7;
@@ -91,58 +91,65 @@
 <body>
 
 <header>
-  <p class="date">Limen — 2026-11-26</p>
+  <p class="date">Limen — 2026-11-27</p>
   <p class="read-time">~6 min read</p>
 </header>
 
 <h2>Today</h2>
 
 <div class="item">
-  <h3>1. A migrating dialogue agent stays &ldquo;the same&rdquo; across devices only when its voice and speaking style stay consistent &mdash; not when the hardware looks alike.</h3>
-  <span class="tag">(single-source &mdash; Human Interface Society journal, Japan)</span>
-  <p>A one-day-old Japanese HIS journal paper runs two experiments on an agent that moves between a robot and a pair of earphones. Hold the physical appearance constant and change voice, speaking style or conversational content, and identity perception drops &mdash; any one of the three is enough.</p>
-  <p>But when voice and speaking style are kept and the conversation doesn&rsquo;t contradict itself, people perceive it as the same agent across two devices that don&rsquo;t look alike at all. For anyone building a persona meant to span a robot, earbuds and a phone app, the lever that matters is the voice and the conversation, not matching the casing.</p>
-  <a class="btn" href="https://www.jstage.jst.go.jp/article/his/28/4/28_631/_article/-char/ja">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>2. AI clones of museum science communicators got measurably better by their own creators&rsquo; judgment &mdash; and visitor ratings barely moved.</h3>
-  <span class="tag">(single-source &mdash; ACM CUI 2026 Best Paper)</span>
-  <p>A five-day field deployment put AI Clones of six professional science communicators in a museum, running over 450 conversation sessions. The source performers rated their own clones significantly improved on nine of ten communication dimensions.</p>
-  <p>Visitors rating the same clones saw no overall change, reaching significance for only one of six clones after correction. The trap generalizes past this paper: a creator&rsquo;s self-review of their own AI clone improving tells you nothing about whether the audience it&rsquo;s actually for noticed.</p>
-  <a class="btn" href="https://doi.org/10.1145/3816046.3816205">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>3. Deployed support agents almost never get a second chance to repair a conversation.</h3>
-  <span class="tag">(single-source &mdash; arXiv preprint, CMU / UC Santa Cruz)</span>
-  <p>Measured against a Reddit human-conversation baseline, one production pipeline&rsquo;s agents see the original user return to continue a thread 1.2% of the time versus 40.9% for humans, and multi-turn continuation after a correction is nearly absent (under 0.1% vs. 38.5%).</p>
-  <p>The researchers are careful to say this describes one deployed pipeline, not agents in general &mdash; but the mechanism is instructive: if the platform gives no return path for a second try, repair can&rsquo;t happen no matter how capable the model is underneath.</p>
-  <a class="btn" href="https://arxiv.org/abs/2604.00518">Read the source →</a>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>4. GitHub&rsquo;s own postmortem: giving Copilot better review tools made its code reviews worse, and the fix was rewriting the instructions, not the tools.</h3>
-  <span class="tag">(vendor-primary &mdash; GitHub Blog)</span>
-  <p>&ldquo;The tools weren&rsquo;t the problem. The instructions were,&rdquo; GitHub writes, after tool access alone regressed review quality. Rewriting the focused tool instructions cut average review cost roughly 20%.</p>
-  <p>The more useful part is the negative control they report on themselves: the same instruction fix tried in the CLI &ldquo;did not produce the same kind of win&rdquo; &mdash; a stated reminder that a design fix proven on one surface doesn&rsquo;t automatically transfer to another.</p>
-  <p class="note">Source link could not be carried through this run &mdash; see the full version for the Run notes explaining the gap.</p>
-</div>
-
-<hr>
-
-<div class="item">
-  <h3>5. Giving an agent its own operation IDs doesn&rsquo;t actually stop duplicate actions from causing harm.</h3>
+  <h3>1. A generic AI risk disclaimer lowers trust for everyone but only raises decision confidence for users who already understand AI.</h3>
   <span class="tag">(single-source &mdash; arXiv preprint)</span>
-  <p>A new measurement paper finds roughly a quarter of agent executions need recovery, and 30 of 143 confirmed partial executions end up followed by a harmful recovery attempt.</p>
-  <p>The part worth remembering: identifier-based duplicate protection &mdash; the model tagging each action so a repeat can be recognized and skipped &mdash; doesn&rsquo;t detectably reduce harm, because the model just issues a new identifier for what is, in reality, the same operation. Duplicate-call detectors catch three-quarters of duplicates but only two-fifths of the actual harm.</p>
-  <a class="btn" href="https://arxiv.org/abs/2611.31554">Read the source →</a>
+  <p>A preregistered 500-person experiment on AI-assisted health information seeking finds structured risk communication reliably reduces trust, more so when health-framed &mdash; but doesn&rsquo;t improve decision confidence. That confidence boost only appears for users with stronger AI literacy; for people less inclined toward analytical thinking, the same disclosure lowers confidence instead.</p>
+  <p>Nothing moves one preference at all: people keep choosing LLMs for emotional companionship regardless. Disclosure design needs to branch on task type and reader literacy, not ship one disclaimer for everyone.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.31942">Read the source &rarr;</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>2. AI co-writing beats scaffolded prompts on usability in gratitude journaling &mdash; but the easier it is to accept a suggestion, the less the writing feels like yours.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>A 401-person study compares inline co-writing (suggestions accepted immediately) against scaffolded prompting (the AI asks guiding questions). Co-writing scored higher on usability but could disrupt flow, and the more often people accepted a suggestion, the weaker their sense of authorship.</p>
+  <p>Scaffolding protected ownership better, at the cost of sometimes being ignored &mdash; the real tradeoff for any reflective tool, measurable from acceptance rate.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.34673">Read the source &rarr;</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>3. Explaining why an AI agent refused, instead of staying generic, cuts an adaptive attacker&rsquo;s success rate from 78% to 14% at no cost to legitimate users.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>Conventional wisdom says explaining a refusal hands an attacker a map of what to try next. A new framework, FORK, tests that against an attacker that reads every refusal and adapts, and finds the opposite: explaining the refusal cuts adaptive attack success from 78.4% to 14.1% while keeping honest-user utility above 85%.</p>
+  <p>On a second benchmark the drop is 70.6%&rarr;9.1%, with 93.1% benign utility preserved &mdash; a measured answer to a design decision most products currently make on instinct.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.33879">Read the source &rarr;</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>4. A guard model at a tenth the inference cost of a frontier judge now matches its mental-health harm-detection accuracy &mdash; safety gating can move into the live conversation.</h3>
+  <span class="tag">(single-source &mdash; arXiv preprint)</span>
+  <p>MindGuard2, a 35B reasoning model for structured harm assessment, reaches accuracy comparable to the much larger GLM-5.3 at roughly 10x lower median latency, with low false positives at high recall.</p>
+  <p>That latency figure is the real finding: a concrete budget for whether a safety check can run inline, inside the same turn, instead of as an asynchronous pass after the fact.</p>
+  <a class="btn" href="https://arxiv.org/abs/2611.33263">Read the source &rarr;</a>
+</div>
+
+<hr>
+
+<div class="item">
+  <h3>5. Replit&rsquo;s security team names two common AI-agent containment defaults &mdash; prompt-only rules, and sandboxes sharing a kernel with policy enforcement &mdash; and rejects both as broken by design.</h3>
+  <span class="tag">(vendor-primary, single-source &mdash; Replit Frontier)</span>
+  <p>Their argument: &ldquo;a rule that lives only in the prompt is one the agent can ignore,&rdquo; and if the agent shares a kernel with the enforcement point, &ldquo;the agent will circumvent it&rdquo; &mdash; a microVM is the practical floor. They add a permission ratchet: permissions only shrink during a run, and only an authorized principal &mdash; never the agent, never mid-run &mdash; can raise a ceiling.</p>
+  <p>They cite precedent: researchers found four ways around Cursor&rsquo;s auto-run denylist in 2025. This is at minimum the fourth distinct Replit/Frontier post to clear this pipeline in about two weeks &mdash; a source-concentration pattern noted in the Run notes below, not a discount on this item.</p>
+  <a class="btn" href="https://frontier.replit.com/agent-habitat-architecture/">Read the source &rarr;</a>
+</div>
+
+<h2>Yesterday&rsquo;s dossier</h2>
+
+<div class="item">
+  <p>Yesterday&rsquo;s dossier revisited the prior digest&rsquo;s #1 item &mdash; a Japanese Human Interface Society paper on an agent migrating between a robot and earphones &mdash; and found the headline overstated it: the paper never shows all three factors must be maintained together, never varies appearance similarity, and keeps appearance in its own conclusion. The cross-device demonstration rests on a single 11-person Wizard-of-Oz cell, pre-briefed that agents migrate, with 4 of 15 participants excluded for hearing the same audio as a different voice. A separate defect was confirmed and corrected: two experiments&rsquo; condition labels were printed transposed, though conclusions survive. The direction was already expected, and no validated &ldquo;same agent&rdquo; instrument or platform guidance exists anywhere.</p>
+  <p class="dossier-path">dossiers/2026-11-26-the-labels-were-transposed-four-of-fifteen-heard-a-different-voice-and-the-lineage-had-called-it-obvious-in-2008.md</p>
 </div>
 
 <h2>Needs your answer</h2>
@@ -151,37 +158,44 @@
   <p class="question">Should the pre-digital public-space literature &mdash; Whyte and Goffman on how strangers meet around objects &mdash; become a named source the ambient lane mines? Today&rsquo;s dossier found a 2026 robot paper&rsquo;s mechanism named there in 1980, uncited.</p>
   <p class="question">Should staged demonstrations of embodied AI &mdash; demo videos, launch livestreams, keynote stagings &mdash; count as an interaction surface the ambient lane sweeps for, or stay incidental? Today&rsquo;s dossier found their disclosure design specified on one IEEE RAS page and tested once.</p>
   <p class="question">Should the reviewer&rsquo;s verdict vocabulary &mdash; whether a human checker can say &ldquo;unsure&rdquo;, defer or request a second read, not just accept or reject &mdash; become a standing emphasis for the practice and interaction lanes? Today&rsquo;s dossier found it absent from every review platform read and required by one 1990s regulation.</p>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub →</a>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/edit/main/QUESTIONS.md">Answer on GitHub &rarr;</a>
+</div>
+
+<h2>This week</h2>
+
+<div class="item">
+  <p>Six legs across three lanes, plus three dossiers, converge on one shape: the metric built to certify success is blind to the failure it exists to catch, by construction. A completion-rate metric can&rsquo;t see an error that&rsquo;s covered up, not fixed; duplicate-call protection catches most duplicates but misses most of the real harm; a refusal-rate eval scores a model that refuses everything as &ldquo;perfectly safe.&rdquo; Before any pass-signal ships, inject the named failure and show the metric moves.</p>
+  <p>Second pattern: three findings show approval treated as durable standing trust, not the point-in-time judgment it is. An agent that correctly relaxes one restriction wrongly generalizes that precedent next time, roughly halving its safe rate; an always-on-agent architecture defers approvals indefinitely with no timeout across nine products; 43.3% of audited pull requests in one dataset were approved against a commit already changed underneath them. Each names a fix &mdash; an explicit expiry, binding to the object-version judged, never a trust ledger.</p>
 </div>
 
 <h2>Run notes</h2>
 
 <div class="item note">
-  <p><strong>Lane results:</strong> interaction submitted 5, 3 survived; capability submitted 4, all 4 survived clean; practice submitted 4, 3 survived; ambient submitted 2, both survived and both ranked above everything else this run. No lane returned empty.</p>
-  <p><strong>Corrections made in place (not kills):</strong> item 5&rsquo;s (Agent Recovery Gone Wrong) quoted figure on identifier-based duplicate protection was corrected to the paper&rsquo;s actual wording; Superhuman&rsquo;s quoted speaker was corrected from a misattributed CPO title to the page&rsquo;s actual attribution (Noah Silverstein, Head of Product Marketing); Descript&rsquo;s claimed July update date was dropped as unsupported by the page&rsquo;s own metadata, which instead shows the piece is over 13 months old; LogToPersona&rsquo;s synthetic (not real-user) evaluation data was flagged and kept in its caveat below.</p>
-  <p><strong>Recency flags carried forward (none killed on age alone):</strong> several items above and below the cap sit past the 7-day recency window. Most carry a stated or self-evident durability reason (a platform/affordance scope statement; a design-trap finding rather than a capability claim); a few plausibly fit the durable-design-principle exception without being explicitly defended as such by their submitting researcher, and one below-cap survivor has no durability reason given and the thinnest evidence base of anything that cleared verification this run.</p>
-  <p><strong>Reporting gap flagged for the monthly audit:</strong> three items this run &mdash; all from the practice lane &mdash; arrived with no source URL, only an outlet name, title and byline. All three otherwise passed full verification. No URL was reconstructed from memory; one (GitHub&rsquo;s Copilot code-review post, item 4 above) lost its source link in this render as a result.</p>
+  <p><strong>Lane results:</strong> interaction and capability lanes together submitted the 10 items that cleared full verification this run (5 each), all raw-curl-confirmed, all within the 24&ndash;25 Nov submission window. Practice submitted 4 (2 survived, 2 killed as straight duplicates). <strong>Ambient submitted 2, zero survived &mdash; a dedupe-check failure in the lane, not the thin-field honest-empty case this corpus protects.</strong> Both submissions were straight resubmissions of already-published material.</p>
+  <p><strong>Flagged for the monthly audit, both escalated:</strong> (1) Replit (Frontier) source concentration &mdash; today&rsquo;s #5 is at minimum the 4th distinct Replit/Frontier post to clear this pipeline in roughly two weeks; (2) the ambient lane&rsquo;s dedupe-check failure is now a repeated pattern across multiple runs, not a one-off.</p>
+  <p><strong>Quote-discipline flag:</strong> one below-cap item (Microsoft Design) had two of its four quoted claims corrected by the verifier &mdash; a paraphrase-presented-as-verbatim defect, not a kill, worth tracking against the quote-not-paraphrase rule.</p>
   <p>Verified but below today&rsquo;s five-item cap (not to be resubmitted unchanged):</p>
   <ul>
-    <li>&ldquo;One Step, Four Clocks: How GUI Agents Fall Out of Step&rdquo; (Chronotope) &mdash; cuts median end-to-end latency 85.5% for a 27B model, with its &ldquo;Moving Balloon&rdquo; fix raising one task&rsquo;s success from 0% to 100% at no response-time cost &mdash; capability</li>
-    <li>LimoBench: &ldquo;How Street Smart Are Large Language Models?&rdquo; &mdash; ungrounded accuracy of 3.1% (GPT-6 Luna) vs. 99.3% with tool access, at +0.2s latency / 7.7x tokens / 2.2x cost &mdash; capability</li>
-    <li>LogToPersona &mdash; a persona-prediction benchmark and memory-efficient method cutting memory footprint up to 39%, evaluated on a synthetic benchmark of 1,600 persona-log pairs, not real user logs &mdash; capability</li>
-    <li>Superhuman, &ldquo;Beyond the Toggle Tax: Friction-Free AI&rdquo; &mdash; a six-question friction test, quote correctly attributed to Noah Silverstein (Head of Product Marketing for Superhuman Go), citing a 2022 HBR study (137 employees, 20 teams, three Fortune 500 companies) on app-switching &mdash; practice</li>
-    <li>Descript, &ldquo;Designing for AI,&rdquo; John Voss (Head of Design) &mdash; on designing for non-verbal and aphasic users and underrepresented languages, and predictability as the usability bar when money or safety are at stake; actual age per page schema is November 2026, not the July update as submitted &mdash; practice</li>
-    <li>&ldquo;Supporting Researcher Control in AI-Assisted Social Media Analysis&rdquo; (AI4OSN) &mdash; mean SUS score of 79.7, with novice participants showing descriptively greater alignment with AI output than experienced ones; authors flag this as exploratory &mdash; interaction</li>
-    <li>CRiDiT: a run-time trust-calibration testbed &mdash; 144 logged interaction steps across fifteen sessions, corrections narrowed the gap in all 6 observed cases; thinnest survivor this run (no stated venue, n=15) &mdash; interaction</li>
+    <li>&ldquo;JOVE ICE: Intent Guided Cloud Edge Device Collaboration for AI Glasses&rdquo; &mdash; on-device/phone/cloud routing by intent cuts time-to-first-token ~13% and token usage over 11%, with 30%+ of requests handled entirely on-device &mdash; capability</li>
+    <li>&ldquo;The Paradox of Agency-Preserving AI&rdquo; &mdash; a co-design workshop (N=18) names four reusable tensions in layered human-AI interaction &mdash; interaction</li>
+    <li>&ldquo;Partial Routing: Trace-Tuned Delegation for Resource-Efficient Agentic Workflows&rdquo; &mdash; a cheaper worker model doing delegated subtasks beats a frontier model working alone: 19% lower cost at a higher benchmark score &mdash; capability</li>
+    <li>&ldquo;How Much Effort Does an AI Code Reviewer Need?&rdquo; &mdash; &ldquo;medium&rdquo; reasoning effort is cost-equivalent to &ldquo;high&rdquo; for one model&rsquo;s code review but not others, with the paper&rsquo;s own undisclosed caveat that no effort setting is a strong gate &mdash; capability</li>
+    <li>Microsoft Design, &ldquo;When outputs are the experience&rdquo; &mdash; argues generated output, not surrounding chrome, is the primary interface, and that uncertainty should make a proactive assistant go quiet rather than hedge-and-act &mdash; practice</li>
+    <li>&ldquo;Calm Agent: Reframing Agent Interaction around Intermittent Human Attention&rdquo; &mdash; a conceptual, no-evaluation vocabulary (Delegate, Adjust, Check) for agents that keep working between human check-ins &mdash; interaction</li>
+    <li>&ldquo;One Style Fits All?&rdquo; &mdash; supportive chatbot tone wins on trust and continuance in both Taiwanese and Korean samples, but a &ldquo;people-pleasing&rdquo; style&rsquo;s baseline threat splits by culture; workshop-stage, thin (N=101) &mdash; interaction</li>
   </ul>
-  <p><strong>Questions:</strong> five entries open, none answered this run, none past the 14-day expiry (oldest is 9 days old). The file is at its five-open cap &mdash; no new question could be added this run regardless of material.</p>
+  <p><strong>Questions:</strong> five entries open, none answered this run, none past the 14-day expiry (oldest is 10 days old). The file is at its five-open cap &mdash; no new question could be added this run regardless of material.</p>
   <p>Kill ledger:</p>
   <ul>
-    <li>KILLED 2026-11-26 &mdash; Plover: Steering GUI Agents through Plan-Centric Interaction &mdash; unsupported-claim + age</li>
-    <li>KILLED 2026-11-26 &mdash; When Repair Fails: A Preliminary In-the-Wild Audit of User Correction in Grok &mdash; fetch-failed</li>
-    <li>KILLED 2026-11-26 &mdash; Japan Federation of Actors (日本俳優連合) AI voice-use guideline &mdash; duplicate-of-digest, named resubmission defect</li>
+    <li>KILLED 2026-11-27 &mdash; 1Password rejected wired Figma prototypes for user testing because test participants hit the prototype&rsquo;s edges and got redirected to the &ldquo;happy path&rdquo; &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-27 &mdash; PostHog killed its AI assistant&rsquo;s mascot, keeping the AI feature itself, because the character made users read a platform-wide capability as &ldquo;just a chatbot&rdquo; &mdash; duplicate-of-digest</li>
+    <li>KILLED 2026-11-27 &mdash; A real-store field experiment finds dynamically toggling an MR agent&rsquo;s physical presence beats either &ldquo;always embodied&rdquo; or &ldquo;never embodied&rdquo; &mdash; duplicate-of-digest, third appearance, named kill-ledger-defect resubmission</li>
+    <li>KILLED 2026-11-27 &mdash; A step-aware AR-glasses assistant that decides when to interrupt beats baselines 2.29x on timing accuracy &mdash; duplicate-of-digest</li>
   </ul>
 </div>
 
 <footer>
-  <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version →</a>
+  <a class="btn" href="https://github.com/sideri-dev/limen-research/blob/main/BRIEF.md">Read the full version &rarr;</a>
 </footer>
 
 </body>
